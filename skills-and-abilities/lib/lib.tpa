@@ -1,0 +1,549 @@
+
+DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment = 100 BEGIN
+  COUNT_2DA_COLS num_col
+  READ_2DA_ENTRIES_NOW r2en num_col
+  c = 0
+  newrow = r2en + 1
+  SPRINT newrow "fl#row%newrow%"
+  FOR (i=f_MinLevel;i < num_col AND i <= f_MaxLevel;i += f_Increment) BEGIN
+    SPRINT cell ""
+    FOR (j = 0;!"%cell%" STRING_EQUAL_CASE "****" AND j < r2en;++j) BEGIN
+      READ_2DA_ENTRY_FORMER r2en j i cell
+      PATCH_IF "%cell%" STRING_EQUAL_CASE "****" BEGIN
+        SET_2DA_ENTRY_LATER s2el j i "%f_Entry%"
+      END
+    END
+    PATCH_IF !"%cell%" STRING_EQUAL_CASE "****" BEGIN
+      FOR (j = c;j < i - 1;++j) BEGIN //- 1 because that's where we'd want our entry
+        SPRINT newrow "%newrow% ****"
+        ++c
+      END
+      SPRINT newrow "%newrow% %f_Entry%"
+      ++c
+    END
+  END
+  SET_2DA_ENTRIES_NOW s2el num_col
+  PATCH_IF c > 0 BEGIN
+    FOR (i = c;i < num_col - 1;++i) BEGIN //- 1 because num_col includes the row name
+      SPRINT newrow "%newrow% ****"
+    END
+    INSERT_2DA_ROW r2en num_col "%newrow%"
+  END
+END
+
+DEFINE_PATCH_FUNCTION set_lu_2da_entries STR_VAR f_Replace = "*" f_Icon = "*" f_Strref = "*" f_MinLevel = 1 f_MaxLevel = 99 f_NumAllowed = 16 f_Prereq = "*" f_ExcludedBy = "*" f_Alignment = "*" BEGIN
+  COUNT_2DA_COLS num_col
+  READ_2DA_ENTRIES_NOW r2en num_col
+  SPRINT cell ""
+  FOR (i = 0;!"%cell%" STRING_EQUAL_CASE "%f_Replace%" AND !"%cell%" STRING_EQUAL_CASE "*" AND i < r2en;++i) BEGIN
+    READ_2DA_ENTRY_FORMER r2en i 1 cell
+    PATCH_IF "%cell%" STRING_EQUAL_CASE "%f_Replace%" OR "%cell%" STRING_EQUAL_CASE "*" BEGIN
+      SET_2DA_ENTRY_LATER s2el i 1 "%f_Ability%"
+      SET_2DA_ENTRY_LATER s2el i 2 "%f_Icon%"
+      SET_2DA_ENTRY_LATER s2el i 3 "%f_Strref%"
+      SET_2DA_ENTRY_LATER s2el i 4 "%f_MinLevel%"
+      SET_2DA_ENTRY_LATER s2el i 5 "%f_MaxLevel%"
+      SET_2DA_ENTRY_LATER s2el i 6 "%f_NumAllowed%"
+      SET_2DA_ENTRY_LATER s2el i 7 "%f_Prereq%"
+      SET_2DA_ENTRY_LATER s2el i 8 "%f_ExcludedBy%"
+      SET_2DA_ENTRY_LATER s2el i 9 "%f_Alignment%"
+    END
+  END
+  SET_2DA_ENTRIES_NOW s2el num_col
+  PATCH_IF !"%cell%" STRING_EQUAL_CASE "*" AND !"%cell%" STRING_EQUAL_CASE "%f_Replace%" BEGIN //Quite regardless of the fact only so many HLAs fit in the GUI
+    newrow = r2en + 1
+    SPRINT newrow "fl#row%newrow% %f_Ability% %f_Icon% %f_Strref% %f_MinLevel% %f_MaxLevel% %f_NumAllowed% %f_Prereq% %f_ExcludedBy% %f_Alignment%"
+    INSERT_2DA_ROW r2en num_col "%newrow%"
+  END
+END
+
+// Cure & cause wound spell immunities
+DEFINE_PATCH_FUNCTION cure_spell_immunities BEGIN
+  PATCH_FOR_EACH resource IN
+                 SPPR103                          // Cure Light Wounds
+                 SPPR215                          // Cure Medium Wounds  (Spell Revisions)
+                 SPPR315                          // Cure Medium Wounds
+                 SPPR401                          // Cure Serious Wounds
+                 SPPR404                          // Neutralize Poison
+                 SPPR502                          // Cure Critical Wounds
+                 SPPR514                          // Mass Cure
+                 SPPR607                          // Heal
+                 SPIN101                          // Cure Light Wounds (Bhaalpower)
+                 SPIN551                          // Cause Serious Wounds (Hive Mother)
+                 SPIN986                          // Cause Serious Wounds (Beholder)
+                 RR#DCSW                          // RR/aTweaks Cause Serious Wounds (Marilith)
+                 SPCL211                          // Paladin Lay On Hands
+  BEGIN
+    READ_ASCII 0 sig (3)
+    PATCH_MATCH "%sig%" WITH
+      CRE BEGIN
+        LPF ADD_CRE_EFFECT
+          INT_VAR
+            opcode     = 206                      // effect: #206 (Protection from Spell)
+            target     = 1                        // target: 1 (self)
+            timing     = 9                        // timing mode: 9 (permanent after death)
+            parameter1 = RESOLVE_STR_REF (@10015) // param1: string (Spell Ineffective)
+          STR_VAR
+            resource
+        END
+      END
+      ITM BEGIN
+        LPF ADD_ITEM_EQEFFECT
+          INT_VAR
+            opcode     = 206                      // effect: #206 (Protection from Spell)
+            target     = 1                        // target: 1 (self)
+            timing     = 2                        // timing mode: 2 (while equipped)
+            parameter1 = RESOLVE_STR_REF (@10015) // param1: string (Spell Ineffective)
+          STR_VAR
+            resource
+        END
+      END
+      DEFAULT
+    END
+  END
+END
+
+DEFINE_PATCH_FUNCTION add_item_onequip_animation STR_VAR resource = "" BEGIN
+  PATCH_IF resource STR_CMP "" BEGIN
+    LPF ADD_ITEM_EQEFFECT
+      INT_VAR
+        opcode = 215
+        target = 1
+        timing = 2
+        parameter2 = 1
+      STR_VAR
+        resource
+    END
+  END
+END
+
+DEFINE_ACTION_FUNCTION get_from_file_by_row_count INT_VAR f_Label_col = 0 STR_VAR f_Label = "" f_File = "" RET f_Value BEGIN
+  ACTION_IF "%f_Label%" STR_CMP "" AND "%f_File%" STR_CMP "" BEGIN
+    COPY_EXISTING "%f_File%" override
+      READ_2DA_ENTRIES_NOW buff 2
+      FOR (i = 0; i < buff; ++i) BEGIN
+        READ_2DA_ENTRY_FORMER buff i f_Label_col label
+        PATCH_IF "%label%" STRING_EQUAL_CASE "%f_Label%" BEGIN
+          f_Value = i - 1 // -1 because row 0 is (2DA|IDS) V1.0
+          i = buff
+        END
+      END
+    BUT_ONLY
+  END
+END
+
+DEFINE_ACTION_FUNCTION get_from_file_by_assoc INT_VAR f_Label_col = 0 f_Value_col = 1 STR_VAR f_Label = "" f_File = "" RET f_Value BEGIN
+  ACTION_IF "%f_Label%" STR_CMP "" AND "%f_File%" STR_CMP "" BEGIN
+    COPY_EXISTING "%f_File%" override
+      READ_2DA_ENTRIES_NOW buff 2
+      FOR (i = buff - 1; i >= 0; --i) BEGIN
+        READ_2DA_ENTRY_FORMER buff i f_Label_col label
+        PATCH_IF "%label%" STRING_EQUAL_CASE "%f_Label%" BEGIN
+          READ_2DA_ENTRY_FORMER buff i f_Value_col f_Value
+          i = "-1"
+        END
+      END
+    BUT_ONLY
+  END
+END
+
+DEFINE_ACTION_FUNCTION get_sectype STR_VAR f_Label = "" RET f_Value BEGIN
+  LAF get_from_file_by_row_count STR_VAR f_Label f_File = msectype.2da RET f_Value = f_Value END
+END
+
+DEFINE_ACTION_FUNCTION get_projectile STR_VAR f_Label = "" RET f_Value BEGIN
+  LAF get_from_file_by_assoc INT_VAR f_Label_col = 1 f_Value_col = 0 STR_VAR f_Label f_File = missile.ids RET f_Value = f_Value END
+END
+
+DEFINE_ACTION_MACRO load_RR#DEATA_var BEGIN
+  ACTION_IF !VARIABLE_IS_SET RR#DEATA OR !IS_AN_INT RR#DEATA BEGIN
+    LAF get_sectype STR_VAR f_Label = RR#DEATA RET RR#DEATA = f_Value END
+  END
+END
+
+DEFINE_ACTION_MACRO load_RR#FSCNT_var BEGIN
+  ACTION_IF !VARIABLE_IS_SET RR#FSCNT OR !IS_AN_INT RR#FSCNT BEGIN
+    LAF get_sectype STR_VAR f_Label = RR#FSCNT RET RR#FSCNT = f_Value END
+  END
+END
+
+DEFINE_ACTION_MACRO load_RR#VRPO_var BEGIN
+  ACTION_IF !VARIABLE_IS_SET RR#VRPO OR !IS_AN_INT RR#VRPO BEGIN
+    LAF get_projectile STR_VAR f_Label = RR#VRPO RET RR#VRPO = f_Value END
+  END
+END
+
+DEFINE_ACTION_MACRO load_RR#VRNP_var BEGIN
+  ACTION_IF !VARIABLE_IS_SET RR#VRNP OR !IS_AN_INT RR#VRNP BEGIN
+    LAF get_projectile STR_VAR f_Label = RR#VRNP RET RR#VRNP = f_Value END
+  END
+END
+
+/*
+ * Canon kit names as per KIT.IDS
+ */
+ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#canon_labels BEGIN
+  archer => feralan
+  assassin => assasin
+  wizard_slayer => wizardslayer
+  undead_hunter => undeadhunter
+  abjurer => mageschool_abjurer
+  conjurer => mageschool_conjurer
+  diviner => mageschool_diviner
+  enchanter => mageschool_enchanter
+  illusionist => mageschool_illusionist
+  invoker => mageschool_invoker
+  necromancer => mageschool_necromancer
+  transmuter => mageschool_transmuter
+  generalist => mageschool_generalist
+  beast_master => beastmaster
+  bounty_hunter => bountyhunter
+  talos => godtalos
+  helm => godhelm
+  lathander => godlathander
+  totemic_druid => totemic
+  totemicdruid => totemic
+  shape_shifter => shapeshifter
+  beast_friend => beastfriend
+  avenger => beastfriend
+  wild_mage => wildmage
+  black_guard => blackguard
+  shadow_dancer => shadowdancer
+  dwarvendefender => dwarwen_defender
+  dragondisciple => dragon_disciple
+  darkmoon => dark_moon
+  sunsoul => sun_soul
+END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#kitlist_labels BEGIN
+  wizardslayer => wizard_slayer
+  undeadhunter => undead_hunter
+  mageschool_abjurer => abjurer
+  mageschool_conjurer => conjurer
+  mageschool_diviner => diviner
+  mageschool_enchanter => enchanter
+  mageschool_illusionist => illusionist
+  mageschool_invoker => invoker
+  mageschool_necromancer => necromancer
+  mageschool_transmuter => transmuter
+  mageschool_generalist => ""
+  bountyhunter => bounty_hunter
+  godtalos => talos
+  godhelm => helm
+  godlathander => lathander
+  totemic => totemic_druid
+  beastfriend => beast_friend
+  trueclass => ""
+  generalist => ""
+END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#clastext_labels BEGIN
+  wizardslayer => wizard_slayer
+  feralan => archer
+  beastmaster => beast_master
+  undeadhunter => undead_hunter
+  totemic => totemic_druid
+  beastfriend => avenger
+  mageschool_abjurer => abjurer
+  mageschool_conjurer => conjurer
+  mageschool_diviner => diviner
+  mageschool_enchanter => enchanter
+  mageschool_illusionist => illusionist
+  mageschool_invoker => invoker
+  mageschool_necromancer => necromancer
+  mageschool_transmuter => transmuter
+  mageschool_generalist => ""
+  wildmage => wild_mage
+  assasin => assassin
+  bountyhunter => bounty_hunter
+END
+
+DEFINE_ACTION_FUNCTION transform_label
+  STR_VAR
+    label = ""
+    array_name = "fl#canon_labels"
+  RET
+    label
+BEGIN
+  ACTION_TO_LOWER label
+  ACTION_IF VARIABLE_IS_SET $EVAL "%array_name%"("%label%") BEGIN
+    OUTER_SPRINT label $EVAL "%array_name%"("%label%")
+  END
+END
+
+DEFINE_ACTION_FUNCTION set_kitlist_description
+  STR_VAR
+    kit = ""
+    desc = ""
+BEGIN
+  LAF transform_label
+    STR_VAR
+      label = EVAL "%kit%"
+      array_name = "fl#kitlist_labels"
+    RET
+      kit = label
+  END
+  OUTER_SET strref = "-1"
+  COPY_EXISTING kitlist.2da override
+    READ_2DA_ENTRIES_NOW kitlist 9
+    FOR (i = 0; i < kitlist; ++i) BEGIN
+      READ_2DA_ENTRY_FORMER kitlist i 1 k
+      PATCH_IF "%k%" STRING_EQUAL_CASE "%kit%" BEGIN
+        READ_2DA_ENTRY_FORMER kitlist i 4 strref
+        i = kitlist
+      END
+    END
+  BUT_ONLY
+
+  ACTION_IF strref > 0 BEGIN
+    STRING_SET_EVALUATE strref "%desc%"
+  END ELSE PRINT "Kit description for %kit% not set because the kit is unlisted"
+END
+
+DEFINE_ACTION_FUNCTION set_clastext_description
+  STR_VAR
+    kit = ""
+    desc = ""
+BEGIN
+  LAF transform_label
+    STR_VAR
+      label = EVAL "%kit%"
+      array_name = "fl#clastext_labels"
+    RET
+      kit = label
+  END
+  OUTER_SET strref = "-1"
+  COPY_EXISTING clastext.2da override
+    READ_2DA_ENTRIES_NOW clastext 9
+    FOR (i = 0; i < clastext; ++i) BEGIN
+      READ_2DA_ENTRY_FORMER clastext i 0 k
+      PATCH_IF "%k%" STRING_EQUAL_CASE "%kit%" BEGIN
+        READ_2DA_ENTRY_FORMER clastext i 4 strref
+        i = clastext
+      END
+    END
+  BUT_ONLY
+
+  ACTION_IF strref > 0 BEGIN
+    STRING_SET_EVALUATE strref "%desc%"
+  END ELSE PRINT "Kit description for %kit% not set because the kit is unlisted"
+END
+
+DEFINE_ACTION_FUNCTION set_kit_description
+  STR_VAR
+    kit = ""
+    desc = ""
+BEGIN
+  LAF transform_label
+    STR_VAR
+      label = EVAL "%kit%"
+      array_name = "fl#canon_labels"
+    RET
+      kit = label
+  END
+  LAF set_kitlist_description STR_VAR kit desc END
+  ACTION_IF ENGINE_IS ~bgee bg2ee iwdee~ BEGIN
+    LAF set_clastext_description STR_VAR kit desc END
+  END
+END
+
+DEFINE_PATCH_FUNCTION signature
+  RET
+    sig
+    ver
+BEGIN
+  READ_ASCII 0 sig ELSE invalid (4)
+  READ_ASCII 4 ver ELSE invalid (4)
+END
+
+DEFINE_PATCH_FUNCTION protection_from_string
+  INT_VAR
+    header = 0 // all headers
+    target = 2
+    timing = 0
+    duration = 6
+  STR_VAR
+    string = ""
+BEGIN
+  PATCH_MATCH "%string%" WITH
+    "blind" "blinded" "blindness"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 1474 12015 12948 13017 14071 14674 17399 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12015 12948 13017 14071 14674 17399 25861 26295 26352 31786 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 17399 37608 14674 35907 37800 12015 12948 13017 14071 36136 36153 END
+      END
+    END
+
+    "charm" "charmed" "dire charmed" "dominated"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 1476 14672 14780 8364 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14672 14780 31787 26206 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14672 17391 35546 37801 14780 17392 11598 14712 35544 END
+      END
+    END
+
+    "confused" "rigid thinking"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12101 12931 14782 14791 17393 17394 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12101 12931 14782 14791 17393 17394 25807 26182 26184 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14782 17394 35570 37604 12101 12931 14791 17393 35569 36285 37603 END
+      END
+    END
+
+    "devour brain"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 32089 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END
+    END
+
+    "diseased" "stricken by a foul disease"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 39752 54337 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 26453 31238 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 17398 34528 35593 35594 39752 END
+      END
+    END
+
+    "haste" "hasted" "hastened"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 349 8825 14023 14667 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14023 14667 26019 31731 31800 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END
+    END
+
+    "held"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 340 384 915 1473 8823 14102 17404 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14102 17404 25866 31730 31738 31769 31785 31799 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14102 17404 35547 35601 35602 35603 35604 35605 35606 END
+      END
+    END
+
+    "level drain"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 41495 40968 40969 40979 41616 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END
+    END
+
+    "panic"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14007 17427 END /* 20568? */
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14007 17427 25817 25818 END /* 20568? */
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14007 17427 35483 35484 END
+      END
+    END
+
+    "poison" "poisoned"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 5805 14662 14017 17397 30988 32304 END /* 10405? */
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14017 14662 17397 24454 25425 26215 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END
+    END
+
+    "sleep" "unconscious"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12047 12958 13027 14001 17405 20438 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12047 12958 13027 14001 17405 20438 25130 26040 26371 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12047 12958 13027 14001 35543 36487 37613 END
+      END
+    END
+
+    "slow" "slowed"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 335 1446 11799 12081 12992 13062 13692 14000 14668 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 11799 12081 12992 13062 13692 14000 14668 25856 26103 31728 31772 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END
+    END
+
+    "stun" "stunned"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 1280 14043 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14043 25862 26050 END
+      END ELSE PATCH_IF ENGINE_IS ~iwdee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14043 35567 1280 14703 34774 35568 END
+      END
+    END
+
+    DEFAULT
+      PATCH_WARN "protection_from_string does not know about string %string%"
+  END
+  LPF signature RET sig END
+  PATCH_MATCH "%sig%" WITH
+    "ITM "
+    BEGIN
+      PHP_EACH strrefs AS _ => parameter1 BEGIN
+        LPF ADD_ITEM_EQEFFECT
+          INT_VAR
+            opcode = 267
+            target = 1
+            timing = 2
+            parameter1
+        END
+      END
+    END
+
+    "SPL "
+    BEGIN
+      PHP_EACH strrefs AS _ => parameter1 BEGIN
+        LPF ADD_SPELL_EFFECT
+          INT_VAR
+            insert_point = 0
+            header
+            target
+            timing
+            duration
+            opcode = 267
+            parameter1
+        END
+      END
+    END
+
+    DEFAULT
+      PATCH_WARN "protection_from_string does not know what to do with file type %sig%"
+  END
+END

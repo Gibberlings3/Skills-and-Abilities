@@ -1,0 +1,101 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Sets Ranger Thieving Skills                                           //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Add Required Files to Override                                        //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
+  COPY ~thieving-skills-for-bards/lua/M_B3THI1.lua~ ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+END
+COPY ~thieving-skills-for-bards/lua/M_B3THI3.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+
+///////////////////////////////////////////////////////////////////////////
+// Modify THIEFSKL.2da to Allow Rangers to Gain Thief Skill Progression    //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 15 Skill points at Level 1 then 20 skill points per level up
+APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 15 Skill points at Level 1 then 20 skill points per level up
+
+///////////////////////////////////////////////////////////////////////////
+// Set Max Skills Points in THIEFSCL.2da for Ranger and Cleric/Ranger    //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~THIEFSCL.2DA~ ~override~
+  SET_2DA_ENTRY 8 8 1 ~100~   // DETECT_ILLUSION
+  SET_2DA_ENTRY 8 18 1 ~100~  // DETECT_ILLUSION
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Remove 1st Level Skill Bonus for Ranger and Cleric/Ranger             //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~CLASISKL.2DA~ ~override~
+  SET_2DA_ENTRY 6 8 1 ~0~    // MOVE_SILENTLY
+  SET_2DA_ENTRY 7 8 1 ~0~    // HIDE_IN_SHADOWS
+  SET_2DA_ENTRY 6 18 1 ~0~   // MOVE_SILENTLY
+  SET_2DA_ENTRY 7 18 1 ~0~   // HIDE_IN_SHADOWS
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Set Ranger and Cleric/Ranger Move Silently to 0                       //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~SKILLRNG.2DA~ ~override~
+  COUNT_2DA_ROWS 2 rows
+  FOR (index = 1 ; index < rows ; ++index) BEGIN
+    SET_2DA_ENTRY (index + 2) 1 1 ~0~
+  END
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Set Skills for ALL Ranger Kits                                        //
+///////////////////////////////////////////////////////////////////////////
+ COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~ranger_kitlist~ 10
+  FOR (row = 3; row < ranger_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 8 kit_class
+
+  PATCH_IF (%kit_class% = 12 || %kit_class% = 18) BEGIN
+  
+    // Modify THIEFSKL.2da to Allow Ranger Kits to Gain Thief Skill Progression
+    INNER_ACTION BEGIN
+      APPEND ~THIEFSKL.2da~ ~%kit_label% 15 5~
+    BUT_ONLY
+    END
+
+    // Set Max Skills Points in THIEFSCL.2DA
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~THIEFSCL.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW thiefscl 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER thiefscl 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+        SET_2DA_ENTRY 8 (col + 1) 1 ~100~   // DETECT_ILLUSION
+        PRETTY_PRINT_2DA
+      END
+      END
+    BUT_ONLY
+    END
+
+    // Remove 1st Level MOVE_SILENTLY and HIDE_IN_SHADOWS Bonus from ALL Ranger Kits
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~CLASISKL.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW clasiskl 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER clasiskl 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+        SET_2DA_ENTRY 6 (col + 1) 1 ~0~   // MOVE_SILENTLY
+        SET_2DA_ENTRY 7 (col + 1) 1 ~0~   // HIDE_IN_SHADOWS
+        PRETTY_PRINT_2DA
+      END
+      END
+    BUT_ONLY
+    END
+  END
+  END

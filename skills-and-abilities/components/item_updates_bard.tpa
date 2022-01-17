@@ -1,0 +1,27 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Update Items for Bards                                                //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Allow Bards to Use Potions & Items                                    //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH item IN
+			BOOT02 		// Worn Whispers
+			BOOT02ZH 	// Zhurlong's Boots
+			POTN39 		// Potion of Perception
+			DW#PTN39 	// Potion of Perception (SCS)
+			LEAT08 		// Shadow Armor
+			D0LEAT08 	// Shadow Armor
+			RR#BEL01 	// Masterbelt
+			RR#BEL11 	// Masterbelt of Fortune
+			RR#HEL02 	// Cowl of Acuity
+		BEGIN
+			ACTION_IF FILE_EXISTS_IN_GAME ~%item%.ITM~ BEGIN
+				COPY_EXISTING ~%item%.ITM~ ~override~ 
+					READ_BYTE 0x1E bard
+					WRITE_BYTE 0x1E (bard BAND 0b10111111)
+				BUT_ONLY_IF_IT_CHANGES
+			END
+		END

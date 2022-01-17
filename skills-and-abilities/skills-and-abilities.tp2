@@ -1,0 +1,60 @@
+/* Thieving Skills for Bards
+ *
+ * Allows Bards and Bard Kits to use Thieving Skills for BG: EE, BGII: EE, and EET
+ *
+ */
+
+BACKUP ~thieving-skills-for-bards/backup~
+AUTHOR ~morpheus562~
+
+VERSION ~v1.2~
+README ~thieving-skills-for-bards/readme.html~
+AUTO_EVAL_STRINGS
+
+ASK_EVERY_COMPONENT
+
+ALWAYS
+	INCLUDE ~thieving-skills-for-bards/lib/always.tph~
+
+	//ACTION_DEFINE_ARRAY moreload BEGIN item_descriptions script_descriptions spell_descriptions script_dialog END
+	//LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~thieving-skills-for-bards/languages~ reload_array = moreload END
+
+END
+
+LANGUAGE ~American English~
+         ~american~
+         ~thieving-skills-for-bards/languages/american/setup.tra~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Thieving Skills for Bards by Morpheus562 (Main Component)             //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Skills to Bards                                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @1 DESIGNATED 1 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+INCLUDE ~thieving-skills-for-bards/components/set_bard_skills.tpa~
+INCLUDE ~thieving-skills-for-bards/components/quests_bard.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Detect Illusion to Rangers                                     //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @3 DESIGNATED 3 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+INCLUDE ~thieving-skills-for-bards/components/set_ranger_skills.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Update Items for Bards                                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @2 DESIGNATED 2 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+INCLUDE ~thieving-skills-for-bards/components/item_updates_bard.tpa~
