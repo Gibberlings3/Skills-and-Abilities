@@ -38,9 +38,8 @@ BEGIN @11 DESIGNATED 11 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-OUTER_SET bard_skill=0
+OUTER_SET bard_skill=0 // Add Pick Locks
 INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
-INCLUDE ~skills-and-abilities/components/quests_bard.tpa~
 
 ////////////////////////////////////////////////////
 
@@ -48,9 +47,8 @@ BEGIN @12 DESIGNATED 12 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-OUTER_SET bard_skill=1
+OUTER_SET bard_skill=1 // Add Pick Locks and Find/Disarm Traps
 INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
-INCLUDE ~skills-and-abilities/components/quests_bard.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Monks                                                //
