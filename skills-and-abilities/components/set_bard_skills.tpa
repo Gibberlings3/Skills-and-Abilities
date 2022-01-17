@@ -148,7 +148,7 @@ END
       FOR (col = 0; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER thiefscl 0 col column_name
       // Lockpicking and Find/Disarm Traps ONLY
-      ACTION_IF bard_skill THEN BEGIN
+      PATCH_IF bard_skill BEGIN
         PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 3 (col + 1) 1 ~100~   // PICK_POCKETS
           SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
@@ -175,7 +175,7 @@ END
       FOR (col = 0; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER clasiskl 0 col column_name
       // Lockpicking and Find/Disarm Traps ONLY
-      ACTION_IF bard_skill THEN BEGIN
+      PATCH_IF bard_skill BEGIN
         PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 3 (col + 1) 1 ~0~   // PICK_POCKETS
           PRETTY_PRINT_2DA
