@@ -3,7 +3,11 @@
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
-@1 = ~Skill Updates~
+@1 = ~Class Skill Updates~
+@2 = ~New Skills and Pseudo-Skills~
+@3 = ~New Proficiencies~
+@4 = ~More Meaningful Stat Bonuses~
+@5 = ~Improved Turning/Wild Sense~
 
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
@@ -14,7 +18,9 @@
 @12 = ~Add Lockpicking and Find/Disarm Traps~	
 @20 = ~Update Skills for Monks~					
 @30 = ~Update Skills for Barbarians~			
-@40 = ~Update Skills for Rangers~				
+@40 = ~Update Skills for Rangers~
+@41 = ~Add Set Natural Snares and Tracking~
+@42 = ~Added Detect Illusion, Set Natural Snares, and Tracking~				
 @50 = ~Add Detect Illusion for Wizard Slayer and Inquisitor~
 
 ///////////////////////////////////////////////////////////////////////////
