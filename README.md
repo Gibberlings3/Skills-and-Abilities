@@ -6,7 +6,7 @@
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
 
-**Authors**: [Grammarsalad](https://www.gibberlings3.net/profile/6114-grammarsalad/)[morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
+**Authors**: [Grammarsalad](https://www.gibberlings3.net/profile/6114-grammarsalad/) and [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
 **On the Web**: [Discussion Topic]()
 
