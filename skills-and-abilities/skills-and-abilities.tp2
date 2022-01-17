@@ -1,46 +1,58 @@
-/* Thieving Skills for Bards
+/* Skills and Abilities
  *
- * Allows Bards and Bard Kits to use Thieving Skills for BG: EE, BGII: EE, and EET
+ * Description goes here
  *
  */
 
-BACKUP ~thieving-skills-for-bards/backup~
-AUTHOR ~morpheus562~
+BACKUP ~skills-and-abilities/backup~
+AUTHOR ~Grammarsalad and morpheus562~ // Not sure if this is the proper way for multiple authors
 
-VERSION ~v1.2~
-README ~thieving-skills-for-bards/readme.html~
+VERSION ~v1.0~
+README ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 
-ASK_EVERY_COMPONENT
+// ASK_EVERY_COMPONENT
 
 ALWAYS
-	INCLUDE ~thieving-skills-for-bards/lib/always.tph~
+	INCLUDE ~skills-and-abilities/lib/always.tph~
 
 	//ACTION_DEFINE_ARRAY moreload BEGIN item_descriptions script_descriptions spell_descriptions script_dialog END
-	//LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~thieving-skills-for-bards/languages~ reload_array = moreload END
+	//LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~skills-and-abilities/languages~ reload_array = moreload END
 
 END
 
 LANGUAGE ~American English~
          ~american~
-         ~thieving-skills-for-bards/languages/american/setup.tra~
+         ~skills-and-abilities/languages/american/setup.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// Thieving Skills for Bards by Morpheus562 (Main Component)             //
+// Skills and Abilities by Grammarsalad and morpheus562                  //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Bards                                                //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @1 DESIGNATED 1 
+BEGIN @11 DESIGNATED 11 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-INCLUDE ~thieving-skills-for-bards/components/set_bard_skills.tpa~
-INCLUDE ~thieving-skills-for-bards/components/quests_bard.tpa~
+OUTER_SET bard_skill=0
+INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
+INCLUDE ~skills-and-abilities/components/quests_bard.tpa~
 
+////////////////////////////////////////////////////
+
+BEGIN @12 DESIGNATED 12 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+OUTER_SET bard_skill=1
+INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
+INCLUDE ~skills-and-abilities/components/quests_bard.tpa~
+
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Assign Detect Illusion to Rangers                                     //
 ///////////////////////////////////////////////////////////////////////////
@@ -48,7 +60,7 @@ BEGIN @3 DESIGNATED 3
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-INCLUDE ~thieving-skills-for-bards/components/set_ranger_skills.tpa~
+INCLUDE ~skills-and-abilities/components/set_ranger_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Update Items for Bards                                                //
@@ -57,4 +69,5 @@ BEGIN @2 DESIGNATED 2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-INCLUDE ~thieving-skills-for-bards/components/item_updates_bard.tpa~
+INCLUDE ~skills-and-abilities/components/item_updates_bard.tpa~
+*/

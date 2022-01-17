@@ -8,5 +8,5 @@
 // Narlen Darkwalk - BGEE Thieves Guild                                  //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
-  COMPILE ~thieving-skills-for-bards/dlg/narlen.d~
+  COMPILE ~skills-and-abilities/dlg/narlen.d~
 END

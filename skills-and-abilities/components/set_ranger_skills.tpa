@@ -8,9 +8,9 @@
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
-  COPY ~thieving-skills-for-bards/lua/M_B3THI1.lua~ ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+  COPY ~skills-and-abilities/lua/M_B3THI1.lua~ ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 END
-COPY ~thieving-skills-for-bards/lua/M_B3THI3.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~skills-and-abilities/lua/M_B3THI3.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 ///////////////////////////////////////////////////////////////////////////
 // Modify THIEFSKL.2da to Allow Rangers to Gain Thief Skill Progression    //

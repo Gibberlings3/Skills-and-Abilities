@@ -14,7 +14,7 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
 // General variables, macros and functions                               //
 ///////////////////////////////////////////////////////////////////////////
-   INCLUDE "thieving-skills-for-bards/lib/lib.tpa"
+   INCLUDE "skills-and-abilities/lib/lib.tpa"
 
    //SILENT
 
