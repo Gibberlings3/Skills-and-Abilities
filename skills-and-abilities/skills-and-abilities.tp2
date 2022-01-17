@@ -44,7 +44,7 @@ INCLUDE ~skills-and-abilities/components/quests_bard.tpa~
 
 ////////////////////////////////////////////////////
 
-BEGIN @12 DESIGNATED 12 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1 
+BEGIN @12 DESIGNATED 12 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard2 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 

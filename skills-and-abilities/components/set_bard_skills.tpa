@@ -33,14 +33,15 @@ ACTION_IF bard_skill THEN BEGIN
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 5 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
     PRETTY_PRINT_2DA
+  BUT_ONLY
 
 // Lockpicking ONLY
 END ELSE BEGIN
   COPY_EXISTING ~CLABBA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK03 END
     PRETTY_PRINT_2DA
+  BUT_ONLY
 END
-BUT_ONLY
 
 /* Once EEex is updated for Bard Thief Skill Natural Progression
 ///////////////////////////////////////////////////////////////////////////
@@ -60,6 +61,7 @@ ACTION_IF bard_skill THEN BEGIN
     SET_2DA_ENTRY 4 5 1 ~100~   // OPEN_LOCKS
     SET_2DA_ENTRY 5 5 1 ~100~   // FIND_TRAPS
     PRETTY_PRINT_2DA
+  BUT_ONLY
 
 // Lockpicking ONLY
 END ELSE BEGIN
@@ -67,8 +69,8 @@ END ELSE BEGIN
     SET_2DA_ENTRY 3 5 1 ~100~   // PICK_POCKETS
     SET_2DA_ENTRY 4 5 1 ~100~   // OPEN_LOCKS
     PRETTY_PRINT_2DA
+  BUT_ONLY
 END
-BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
 // Remove 1st Level Skill Bonus for Base Bard                            //
@@ -79,8 +81,8 @@ ACTION_IF bard_skill THEN BEGIN
   COPY_EXISTING ~CLASISKL.2DA~ ~override~
     SET_2DA_ENTRY 3 5 1 ~0~   // PICK_POCKETS
     PRETTY_PRINT_2DA
+  BUT_ONLY
 END
-BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Standard Bard Pick Pocket Skill Progression to 0                  //
@@ -94,8 +96,8 @@ ACTION_IF bard_skill THEN BEGIN
       SET_2DA_ENTRY (index + 2) 1 1 ~0~
     END
     PRETTY_PRINT_2DA
+  BUT_ONLY
 END
-BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Skills for ALL Bard Kits                                          //
@@ -119,13 +121,14 @@ BUT_ONLY
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 5 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
           PRETTY_PRINT_2DA
+        BUT_ONLY
       // Lockpicking ONLY
       END ELSE BEGIN
         COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK03 END
           PRETTY_PRINT_2DA
+        BUT_ONLY
       END
-      BUT_ONLY
       END
     END
 
@@ -151,6 +154,7 @@ BUT_ONLY
           SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
           SET_2DA_ENTRY 5 (col + 1) 1 ~100~   // FIND_TRAPS
           PRETTY_PRINT_2DA
+        BUT_ONLY
         END
       // Lockpicking ONLY
       END ELSE BEGIN
@@ -158,9 +162,9 @@ BUT_ONLY
           SET_2DA_ENTRY 3 (col + 1) 1 ~100~   // PICK_POCKETS
           SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
           PRETTY_PRINT_2DA
+        BUT_ONLY
       END
       END
-    BUT_ONLY
     END
 
     // Remove 1st Level Pick Pocket Bonus from ALL Bard Kits
@@ -175,10 +179,10 @@ BUT_ONLY
         PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 3 (col + 1) 1 ~0~   // PICK_POCKETS
           PRETTY_PRINT_2DA
+        BUT_ONLY
       END
       END
       END
-    BUT_ONLY
     END
   END
   END
