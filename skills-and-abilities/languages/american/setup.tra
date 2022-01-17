@@ -5,9 +5,9 @@
 
 
 // Components/Sub-Components
-@10 = ~Thief Skills for Bards~ 				// Group 1
-@11 = ~Lockpicking ONLY~ 					// Group 1
-@12 = ~Lockpicking and Find/Disarm Traps~	// Group 1
+@10 = ~Thief Skills for Bards~ 					// Group 1
+@11 = ~Add Lockpicking~ 						// Group 1
+@12 = ~Add Lockpicking and Find/Disarm Traps~	// Group 1
 // @2 = ~Allow more items  to be usable by Bards~
 // @3 = ~Install Detect Illusion for Rangers~
 
