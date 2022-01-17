@@ -154,7 +154,7 @@ END
           SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
           SET_2DA_ENTRY 5 (col + 1) 1 ~100~   // FIND_TRAPS
           PRETTY_PRINT_2DA
-        BUT_ONLY
+          BUT_ONLY
         END
       // Lockpicking ONLY
       END ELSE BEGIN
@@ -162,7 +162,8 @@ END
           SET_2DA_ENTRY 3 (col + 1) 1 ~100~   // PICK_POCKETS
           SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
           PRETTY_PRINT_2DA
-        BUT_ONLY
+          BUT_ONLY
+        END
       END
       END
     END
