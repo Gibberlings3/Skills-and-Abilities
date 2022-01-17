@@ -1,17 +1,25 @@
 // Thieving Skills for Bards, American English
 
-// Groups
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
 @1 = ~Skill Updates~
 
+///////////////////////////////////////////////////////////////////////////
+// Components/Sub-Components                                             //
+///////////////////////////////////////////////////////////////////////////
+// Group 1
+@10 = ~Update Skills for Bards~ 				
+@11 = ~Add Lockpicking~ 					
+@12 = ~Add Lockpicking and Find/Disarm Traps~	
+@20 = ~Update Skills for Monks~					
+@30 = ~Update Skills for Barbarians~			
+@40 = ~Update Skills for Rangers~				
+@50 = ~Add Detect Illusion for Wizard Slayer and Inquisitor~
 
-// Components/Sub-Components
-@10 = ~Updated Skills for Bards~ 				// Group 1
-@11 = ~Add Lockpicking~ 						// Group 1
-@12 = ~Add Lockpicking and Find/Disarm Traps~	// Group 1
-// @2 = ~Allow more items  to be usable by Bards~
-// @3 = ~Install Detect Illusion for Rangers~
-
-// Requirements
+///////////////////////////////////////////////////////////////////////////
+// Requirements                                                          //
+///////////////////////////////////////////////////////////////////////////
 @3000 = ~Component requires BG: EE, BGII: EE, or EET~
 @3001 = ~DLCMerger is needed before modding SoD games~
 @3002 = ~EEex is required for installation~

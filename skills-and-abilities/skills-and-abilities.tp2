@@ -52,22 +52,61 @@ OUTER_SET bard_skill=1
 INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
 INCLUDE ~skills-and-abilities/components/quests_bard.tpa~
 
-/*
 ///////////////////////////////////////////////////////////////////////////
-// Assign Detect Illusion to Rangers                                     //
+// Assign Skills to Monks                                                //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @3 DESIGNATED 3 
+BEGIN @20 DESIGNATED 20 GROUP @1 LABEL SkillsAndAbilitiesMonk 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
+// Add Pick Locks, Find/Disable Traps, Detect Illusion (Hear Noise) (1e AD&D)
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Skills to Barbarians                                           //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @30 DESIGNATED 30 GROUP @1 LABEL SkillsAndAbilitiesBarb 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+// Add Hide in Natural Surroundings, Detect Illusions, Tracking, Set Natural Snares (1e AD&D)
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Skills to Rangers                                              //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @41 DESIGNATED 41 SUBCOMPONENT @40 GROUP @1 LABEL SkillsAndAbilitiesRang1 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+// Add Set Natural Snares, Hide in Natural Surroundings, and Tracking
+
+////////////////////////////////////////////////////
+
+BEGIN @42 DESIGNATED 42 SUBCOMPONENT @40 GROUP @1 LABEL SkillsAndAbilitiesRang2 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+// Add Set Natural Snares, Hide in Natural Surroundings, and Tracking
 INCLUDE ~skills-and-abilities/components/set_ranger_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Add Detect Illusion for Wizard Slayer and Inquisitor                  //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @50 DESIGNATED 50 GROUP @1 LABEL SkillsAndAbilitiesDI 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+// Add in Detect Illusion for Wizard Slayer and Inquisitor
+// I can replace Turn Undead with Detect Illusion for Inquisitor
+
+/*
+///////////////////////////////////////////////////////////////////////////
 // Update Items for Bards                                                //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @2 DESIGNATED 2 
+BEGIN @X DESIGNATED X 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/item_updates_bard.tpa~
+
+// Will need to update items for Monks too since they can also do these things.
 */
