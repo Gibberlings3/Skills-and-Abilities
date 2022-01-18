@@ -23,8 +23,6 @@
 // Assigned/Work in Progress                                             //
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
-- Barbarian: Detect Illusions
-	- Need to create new .tpa for this
 - Wizard Slayer & Inquisitor: Add in Detect Illusion
 	- Need to create new .tpa for this
 
@@ -36,12 +34,13 @@ Assigned to Grammarsalad
 ///////////////////////////////////////////////////////////////////////////
 // Needs Testing                                                         //
 ///////////////////////////////////////////////////////////////////////////
-- 
+- Barbarian receives skill points in Detect Illusions, Hide in Shadows, and Move Silently
+- Update Rangers to Detect Illusions
+- Assigning Bards Skills
+- Assigning Monks Skills
 
 
 ///////////////////////////////////////////////////////////////////////////
 // Completed                                                             //
 ///////////////////////////////////////////////////////////////////////////
-- Update Rangers to Detect Illusions
-- Assigning Bards Skills
-- Assigning Monks Skills
+- 
