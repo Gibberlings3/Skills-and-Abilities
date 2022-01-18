@@ -35,10 +35,13 @@ Assigned to Grammarsalad
 // Needs Testing                                                         //
 ///////////////////////////////////////////////////////////////////////////
 - Barbarian receives skill points in Detect Illusions, Hide in Shadows, and Move Silently
+	- Though illegal, I want to test dual classing since people do it with this kit
 - Updated Rangers to Detect Illusions
+	- Want to test dual classing
 - Assigned Bards Skills
 - Assigned Monks Skills
 - Wizard Slayer can Detect Illusions
+	- Want to test dual classing
 - Replaced Inquisitor True Seeing for Detect Illusion Skill
 
 
