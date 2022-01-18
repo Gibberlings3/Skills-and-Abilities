@@ -34,11 +34,11 @@ Assigned to Grammarsalad
 // Needs Testing                                                         //
 ///////////////////////////////////////////////////////////////////////////
 - Barbarian receives skill points in Detect Illusions, Hide in Shadows, and Move Silently
-- Update Rangers to Detect Illusions
-- Assigning Bards Skills
-- Assigning Monks Skills
+- Updated Rangers to Detect Illusions
+- Assigned Bards Skills
+- Assigned Monks Skills
 - Wizard Slayer can Detect Illusions
-- Replace Inquisitor True Seeing for Detect Illusion Skill
+- Replaced Inquisitor True Seeing for Detect Illusion Skill
 
 
 ///////////////////////////////////////////////////////////////////////////
