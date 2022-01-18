@@ -10,6 +10,7 @@
 - Assign @ range to components and files
 	- Class Description range
 - Add new class descriptions
+- Update item useability
 - Flesh out new skills/pseudo-skills
 - Flesh out new proficiencies
 - Flesh out meaningful stat changes
