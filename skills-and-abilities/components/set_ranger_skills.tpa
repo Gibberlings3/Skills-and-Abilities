@@ -14,7 +14,7 @@ END
 COPY ~skills-and-abilities/lua/M_B3THI3.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 ///////////////////////////////////////////////////////////////////////////
-// Modify THIEFSKL.2da to Allow Rangers to Gain Thief Skill Progression    //
+// Modify THIEFSKL.2da to Allow Rangers to Gain Skill Progression        //
 ///////////////////////////////////////////////////////////////////////////
 APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 15 Skill points at Level 1 then 20 skill points per level up
 APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 15 Skill points at Level 1 then 20 skill points per level up
