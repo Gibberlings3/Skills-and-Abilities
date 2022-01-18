@@ -98,7 +98,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 INCLUDE ~skills-and-abilities/components/set_wiz_slayer_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Add Detect Illusion for Inquisitor                                    //
+// Replace Inquisitor True Seeing for Detect Illusion Skill              //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @60 DESIGNATED 60 GROUP @1 LABEL SkillsAndAbilitiesDI2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000

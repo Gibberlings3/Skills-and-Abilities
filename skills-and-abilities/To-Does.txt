@@ -38,6 +38,8 @@ Assigned to Grammarsalad
 - Update Rangers to Detect Illusions
 - Assigning Bards Skills
 - Assigning Monks Skills
+- Wizard Slayer can Detect Illusions
+- Replace Inquisitor True Seeing for Detect Illusion Skill
 
 
 ///////////////////////////////////////////////////////////////////////////

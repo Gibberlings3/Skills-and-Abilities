@@ -18,6 +18,7 @@ COPY ~skills-and-abilities/spl/MO#BSK05.SPL~   ~override~ // Sets Detect Illusio
 // Modify Base Inquisitor CLAB File to Assign Thief Skills Points        //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABPA03.2DA~ override
+  REPLACE_TEXTUALLY ~GA_SPCL232~ ~****~ // Remove True Seeing
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK05 END
   PRETTY_PRINT_2DA
 BUT_ONLY
