@@ -1,4 +1,4 @@
-
+// Borrowed from Rogue Rebalancing Mod to assist in updating CLAB files.
 DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment = 100 BEGIN
   COUNT_2DA_COLS num_col
   READ_2DA_ENTRIES_NOW r2en num_col
