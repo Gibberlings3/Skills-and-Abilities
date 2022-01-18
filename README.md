@@ -15,7 +15,7 @@
 Coming soon...
 
 ## Compatibility
-This mod requires [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. This means you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file. Additionally, please install this after any other mods that add Bard kits or alter bard spells/abilities. 
+This mod requires [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. This means you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file.
 
 Being this requires EEex to run, Windows is required at this time.
 
