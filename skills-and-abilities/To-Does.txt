@@ -9,15 +9,29 @@
 ///////////////////////////////////////////////////////////////////////////
 - Assign @ range to components and files
 	- Class Description range
+	---
+	Grammarsalad: I'm happy to do this. 
+	---
 - Add new class descriptions
+        ---
+	Grammarsalad: I'm happy to do this. 
+	---
 - Update item useability
 - Flesh out new skills/pseudo-skills
 - Flesh out new proficiencies
 - Flesh out meaningful stat changes
 	- Where do we pull/find character abilities?
+	---
+	Grammarsalad: I have a relatively seamless way to do this via Splprot.2da and various effects, especially 326. I have a lot of examples but the basic idea is to assign an ability to the class in the clab that checks the stat every ~1 round and applies bonuses or penalties as needed. This has been tested with hundereds of such effects (by SD and people that have been using his mods) with no slowdown. A nice thing is that it changes as the ability is altered.  
+	---
+
 	- I figure, if we can pull character stat (i.e. Strength/exceptional strength), I can use opcode 177 to apply EFF files on all 2-handed weapons to confer 1.5x strength damage.
-- Improved Turning/Wild Sense
+	---
+	Grammarsalad: My sense is that this could be handled in the individual items themselves essentially as you have there (though, I do think the splprot method described above is a good way to go as it has been throughly tested.) 
+	---
+- Improved Turning/Wild Sense	
 - Other?
+
 
 
 
@@ -31,7 +45,11 @@ Assigned to Grammarsalad
 - Ranger: Add Set Natural Snares and Tracking
 	- I can add the set snare ability or create a new one (along with assigning skill points) that can be assigned at level up? Do you want a nerfed version of what thieves have? Same applies for Barbarian below.
 - Barbarian: Add Hide in Natural Surroundings, Tracking, and Set Natural Snares (1e AD&D)
-
+      ---
+      Grammarsalad:
+      Hide in natural surroundings; set natural snares: They are essentially nerfed versions of the thief skills that only work in the given environments. Hide in natural surroundings works essentially like described above, disabling the hide button if the char is in a city/town environment.  
+      Set natrual snares works a little differently, but based on the same principle. When the ability is used, it does not function if in a non-wilderness environment and gives a message similar to if you were to try to set a trap with enemies nearby or tried to cast call lightning indoors. 
+      ---
 ///////////////////////////////////////////////////////////////////////////
 // Needs Testing                                                         //
 ///////////////////////////////////////////////////////////////////////////
