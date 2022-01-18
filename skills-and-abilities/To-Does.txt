@@ -14,6 +14,8 @@
 - Flesh out new skills/pseudo-skills
 - Flesh out new proficiencies
 - Flesh out meaningful stat changes
+	- Where do we pull/find character abilities?
+	- I figure, if we can pull character stat (i.e. Strength/exceptional strength), I can use opcode 177 to apply EFF files on all 2-handed weapons to confer 1.5x strength damage.
 - Improved Turning/Wild Sense
 - Other?
 
