@@ -27,7 +27,6 @@ Assigned to morpheus562
 
 Assigned to Grammarsalad
 - Ranger: Add Set Natural Snares and Tracking
-	- Need to create new .tpa for this
 	- I can add the set snare ability or create a new one (along with assigning skill points) that can be assigned at level up? Do you want a nerfed version of what thieves have? Same applies for Barbarian below.
 - Barbarian: Add Hide in Natural Surroundings, Tracking, and Set Natural Snares (1e AD&D)
 
