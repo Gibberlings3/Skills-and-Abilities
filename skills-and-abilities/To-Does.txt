@@ -23,8 +23,6 @@
 // Assigned/Work in Progress                                             //
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
-- Monk: Add Pick Locks, Find/Disable Traps, Detect Illusion (Hear Noise)
-	- Need to create new .tpa for this
 - Barbarian: Detect Illusions
 	- Need to create new .tpa for this
 - Wizard Slayer & Inquisitor: Add in Detect Illusion
@@ -38,12 +36,12 @@ Assigned to Grammarsalad
 ///////////////////////////////////////////////////////////////////////////
 // Needs Testing                                                         //
 ///////////////////////////////////////////////////////////////////////////
-- Components 11 and 12 to Assign Bard Skills
-	- Installs on BG2EE with correct behavior
-	- Prior versions worked on BGEE, BG2EE, and EET
+- 
 
 
 ///////////////////////////////////////////////////////////////////////////
 // Completed                                                             //
 ///////////////////////////////////////////////////////////////////////////
 - Update Rangers to Detect Illusions
+- Assigning Bards Skills
+- Assigning Monks Skills
