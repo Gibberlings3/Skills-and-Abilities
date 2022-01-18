@@ -15,7 +15,6 @@ AUTO_EVAL_STRINGS
 
 ALWAYS
 	INCLUDE ~skills-and-abilities/lib/always.tph~
-	INCLUDE ~skills-and-abilities/lib/functions.tpa~
 	//ACTION_DEFINE_ARRAY moreload BEGIN item_descriptions script_descriptions spell_descriptions script_dialog END
 	//LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~skills-and-abilities/languages~ reload_array = moreload END
 
