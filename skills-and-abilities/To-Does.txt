@@ -40,6 +40,7 @@
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
 - Testing
+- Working on STR Bonus for 2H Weapon (str_bonus.tpa)
 
 Assigned to Grammarsalad
 - Ranger: Add Set Natural Snares and Tracking

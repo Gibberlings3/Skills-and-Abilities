@@ -12,7 +12,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
 ///////////////////////////////////////////////////////////////////////////
-// Group 1
+// Group 1 (Update 100-199?)
 @10 = ~Update Skills for Bards~ 				
 @11 = ~Add Lockpicking~ 					
 @12 = ~Add Lockpicking and Find/Disarm Traps~	
@@ -24,13 +24,14 @@
 @50 = ~Add Detect Illusion for Wizard Slayer~
 @60 = ~Replace Inquisitor True Seeing for Detect Illusion Skill~
 
-// Group 2
+// Group 2 (Update 200-299?)
 
-// Group 3
+// Group 3 (Update 300-399?)
 
-// Group 4
+// Group 4 (Update 400-499?)
+@400 = ~2H Weapon Additional Strength Bonus~
 
-// Group 5
+// Group 5 (Update 500-599?)
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
