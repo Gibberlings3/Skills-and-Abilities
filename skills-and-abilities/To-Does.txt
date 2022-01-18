@@ -23,8 +23,7 @@
 // Assigned/Work in Progress                                             //
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
-- Wizard Slayer & Inquisitor: Add in Detect Illusion
-	- Need to create new .tpa for this
+- Testing
 
 Assigned to Grammarsalad
 - Ranger: Add Set Natural Snares and Tracking
