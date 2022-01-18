@@ -51,13 +51,13 @@ OUTER_SET bard_skill=1 // Add Pick Locks and Find/Disarm Traps
 INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Assign Skills to Monks                                                //
+// Assign Skills to Monks - Do we want ALL monk or just base to get this //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @20 DESIGNATED 20 GROUP @1 LABEL SkillsAndAbilitiesMonk 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-// Add Pick Locks, Find/Disable Traps, Detect Illusion (Hear Noise) (1e AD&D)
+INCLUDE ~skills-and-abilities/components/set_monk_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Barbarians                                           //

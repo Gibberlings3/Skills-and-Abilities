@@ -1,0 +1,67 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Sets Monk Skills                                                      //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Add Required Files to Override                                        //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/lua/M_B3THI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+END
+
+COPY ~skills-and-abilities/lua/M_B3THI4.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+
+///////////////////////////////////////////////////////////////////////////
+// Set Max Skills Points in THIEFSCL.2da for Base Monk                   //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~THIEFSCL.2DA~ ~override~
+  SET_2DA_ENTRY 4 48 1 ~100~   // OPEN_LOCKS
+  SET_2DA_ENTRY 5 48 1 ~100~   // FIND_TRAPS
+  SET_2DA_ENTRY 8 48 1 ~100~   // DETECT_ILLUSION
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Set Skills for ALL Monk Kits                                          //
+///////////////////////////////////////////////////////////////////////////
+ COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~monk_kitlist~ 10
+  FOR (row = 3; row < monk_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~monk_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~monk_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~monk_kitlist~ row 8 kit_class
+  
+  PATCH_IF (%kit_class% = 20) BEGIN
+    // Set Max Skills Points in THIEFSCL.2DA
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~THIEFSCL.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW thiefscl 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER thiefscl 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+        SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
+        SET_2DA_ENTRY 5 (col + 1) 1 ~100~   // FIND_TRAPS
+        SET_2DA_ENTRY 8 (col + 1) 1 ~100~   // DETECT_ILLUSION
+        PRETTY_PRINT_2DA
+      END
+      END
+    END
+  END
+  END
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Updates Quests for Monks                                              //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+/*
+///////////////////////////////////////////////////////////////////////////
+// Narlen Darkwalk - BGEE Thieves Guild                                  //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+  COMPILE ~skills-and-abilities/dlg/narlen.d~
+END
+*/

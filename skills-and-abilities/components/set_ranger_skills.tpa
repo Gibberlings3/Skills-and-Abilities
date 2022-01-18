@@ -10,6 +10,7 @@
 ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
   COPY ~skills-and-abilities/lua/M_B3THI1.lua~ ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 END
+
 COPY ~skills-and-abilities/lua/M_B3THI3.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 ///////////////////////////////////////////////////////////////////////////
