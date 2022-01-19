@@ -15,9 +15,9 @@ ACTION_FOR_EACH str_import IN
       5 // 24 STR +6 DMG
       6 // 25 STR +7 DMG
     BEGIN
-      COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~              ~override/MOSTR0%str_import%.SPL~
-      COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%%str_import%.SPL~  ~override/MOSTR0%str_import%%str_import%.SPL~
-      COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~              ~override/MOSTR0%str_import%.EFF~
+      COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
+      COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
+      COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
     END
 
 /* Already built in to check
