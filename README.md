@@ -14,35 +14,35 @@
 
 The below is a small taste of what is being worked on. More to come...
 
-### Class Skill Updates
+## Class Skill Updates
 
-#### Bards (EEex Required)
+### Bards (EEex Required)
 
 Adds the option to either select Open Locks only or Open Locks and Disarm/Find Traps for Bards and Bard kits.
 
-#### Monks (EEex Required)
+### Monks (EEex Required)
 
 Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk kits. 
 
-#### Barbarians (EEex Required)
+### Barbarians (EEex Required)
 
 Adds Detect Illusions and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit.
 
-#### Rangers (EEex Required)
+### Rangers (EEex Required)
 
 Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers and Ranger kits. Ranger's Move Silently/Hide in Shadows becomes an outdoor area only ability.
 
-#### Wizard Slayer (EEex Required)
+### Wizard Slayer (EEex Required)
 
 Adds Detect Illusions (Set at 100) to the Wizard Slayer.
 
-#### Inquisitor (EEex Required)
+### Inquisitor (EEex Required)
 
 Replaces the Inquisitor's True Seeing with the Detect Illusion Skill (Set at 100).
 
-### More Meaningful Stat Bonuses (EEex Required)
+## More Meaningful Stat Bonuses (EEex Required)
 
-#### Strength 
+### Strength 
 
 Two-handed attacks receive one and a half times the Strength damage bonus, rounded down.
 
