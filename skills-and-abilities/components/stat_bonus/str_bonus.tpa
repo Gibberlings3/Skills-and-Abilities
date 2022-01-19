@@ -20,44 +20,6 @@ ACTION_FOR_EACH str_import IN
       COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
     END
 
-/* Already built in to check
-///////////////////////////////////////////////////////////////////////////
-// Add to SPLPROT.2DA                                                    //
-///////////////////////////////////////////////////////////////////////////
-ACTION_FOR_EACH str_bonus IN
-      18
-      19
-      20
-      22
-      24
-      25
-    BEGIN
-      APPEND ~splprot.2da~ ~mo_str%str_bonus%_bonus%TAB%36%TAB%%str_bonus%%TAB%2~ UNLESS ~mo_str%str_bonus%_bonus~
-    END
-
-COPY_EXISTING ~splprot.2da~ ~override~
-    COUNT_2DA_COLS cols
-    READ_2DA_ENTRIES_NOW rows cols
-    FOR (row = 1; row < rows; ++row) BEGIN
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~
-      // 2H APR Bonus
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str18_bonus~ BEGIN 
-        SET str18_bonus = %row%
-      // Sword and Shield 2 pip Bonus
-      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str19_bonus~ BEGIN 
-        SET str19_bonus = %row%
-      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str20_bonus~ BEGIN 
-        SET str20_bonus = %row%
-      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str22_bonus~ BEGIN 
-        SET str22_bonus = %row%
-      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str24_bonus~ BEGIN 
-        SET str24_bonus = %row%
-      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str25_bonus~ BEGIN 
-        SET str25_bonus = %row%
-      END
-    END
-*/
-
 ///////////////////////////////////////////////////////////////////////////
 // Update all 2H Weapons                                                 //
 ///////////////////////////////////////////////////////////////////////////
@@ -83,38 +45,6 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr01~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr02~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr03~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr04~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr05~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr06~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr11~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr22~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr33~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr44~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr55~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr66~ END
     END
   END
   BUT_ONLY
-
-
-  /*
-    PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR01~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR02~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR03~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR04~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR05~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR06~ END      
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str18_bonus% timing = 2 STR_VAR resource = ~MOSTR01~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str19_bonus% timing = 2 STR_VAR resource = ~MOSTR02~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str20_bonus% timing = 2 STR_VAR resource = ~MOSTR03~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str22_bonus% timing = 2 STR_VAR resource = ~MOSTR04~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str24_bonus% timing = 2 STR_VAR resource = ~MOSTR05~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str25_bonus% timing = 2 STR_VAR resource = ~MOSTR06~ END
-    END
-  END
-  BUT_ONLY
-  */
