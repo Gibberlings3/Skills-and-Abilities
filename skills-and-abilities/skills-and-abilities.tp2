@@ -23,6 +23,14 @@ END
 LANGUAGE ~American English~
          ~american~
          ~skills-and-abilities/languages/american/setup.tra~
+//kit/class
+         ~skills-and-abilities/languages/american/barbarian.tra~
+         ~skills-and-abilities/languages/american/bard.tra~
+         ~skills-and-abilities/languages/american/monk.tra~
+         ~skills-and-abilities/languages/american/ranger.tra~
+         ~skills-and-abilities/languages/american/wizard_slayer.tra~
+//attributes
+         ~skills-and-abilities/languages/american/strength.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////

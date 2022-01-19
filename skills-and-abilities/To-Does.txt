@@ -7,8 +7,6 @@
 ///////////////////////////////////////////////////////////////////////////
 // To-Do (Not Yet Assigned)                                              //
 ///////////////////////////////////////////////////////////////////////////
-- Assign @ range to components and files
-	- Class Description range
 	---
 	Grammarsalad: I'm happy to do this. 
 	---
@@ -50,6 +48,10 @@ Assigned to Grammarsalad
       Hide in natural surroundings; set natural snares: They are essentially nerfed versions of the thief skills that only work in the given environments. Hide in natural surroundings works essentially like described above, disabling the hide button if the char is in a city/town environment.  
       Set natrual snares works a little differently, but based on the same principle. When the ability is used, it does not function if in a non-wilderness environment and gives a message similar to if you were to try to set a trap with enemies nearby or tried to cast call lightning indoors. 
       ---
+- Assign @ range to components and files
+	- Class Description range (Bard, Monk, Barbarian, Ranger, Wizard Slayer, Inquisitor Competed) 
+	- Attribute Description range (Strength completed)
+
 ///////////////////////////////////////////////////////////////////////////
 // Needs Testing                                                         //
 ///////////////////////////////////////////////////////////////////////////

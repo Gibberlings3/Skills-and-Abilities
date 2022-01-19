@@ -1,5 +1,5 @@
-// Thieving Skills for Bards, American English
-
+// Skills and Abilities, American English
+//range @1 to @3500
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -39,3 +39,5 @@
 @3000 = ~Component requires BG: EE, BGII: EE, or EET~
 @3001 = ~DLCMerger is needed before modding SoD games~
 @3002 = ~EEex is required for installation~
+
+@3500 = ~[LAST TRA HERE]~

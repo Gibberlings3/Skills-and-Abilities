@@ -16,6 +16,8 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
    INCLUDE ~skills-and-abilities/lib/lib.tpa~
    INCLUDE ~skills-and-abilities/lib/functions.tpa~
+   INCLUDE ~skills-and-abilities/lib/splprot_kits.tpa~
+   INCLUDE ~skills-and-abilities/lib/splprot_attributes.tpa~
    //SILENT
 
 ///////////////////////////////////////////////////////////////////////////

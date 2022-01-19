@@ -1,0 +1,103 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                Attributes               //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Strength
+APPEND ~splprot.2da~ ~B_STR_GR%TAB%36%TAB%-1%TAB%3~  //str Greater than
+APPEND ~splprot.2da~ ~B_STR_EQ%TAB%36%TAB%-1%TAB%1~  //str equal to
+APPEND ~splprot.2da~ ~B_STR_LS%TAB%36%TAB%-1%TAB%2~  //str Less than
+
+//Dex
+APPEND ~splprot.2da~ ~B_DEX_GR%TAB%40%TAB%-1%TAB%3~  //dex Greater than
+APPEND ~splprot.2da~ ~B_DEX_EQ%TAB%40%TAB%-1%TAB%1~  //dex equal to
+APPEND ~splprot.2da~ ~B_DEX_LS%TAB%40%TAB%-1%TAB%2~  //dex Less than
+
+//constituton
+APPEND ~splprot.2da~ ~B_CON_GR%TAB%41%TAB%-1%TAB%3~  //con Greater than
+APPEND ~splprot.2da~ ~B_CON_EQ%TAB%41%TAB%-1%TAB%1~  //con equal to
+APPEND ~splprot.2da~ ~B_CON_LS%TAB%41%TAB%-1%TAB%2~  //con Less than
+
+//wisdom
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~splprot.2da~ ~D5_WIS_IS~)) BEGIN  //wis = if not already added
+ APPEND ~splprot.2da~ ~D5_WIS_IS%TAB%39%TAB%-1%TAB%1~
+END
+APPEND ~splprot.2da~ ~B_WIS_GR%TAB%39%TAB%-1%TAB%3~  //Wisdom Greater than
+APPEND ~splprot.2da~ ~B_WIS_LS%TAB%39%TAB%-1%TAB%2~  //Wisdom Less than
+
+//intelligence
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~splprot.2da~ ~D5_INT_IS~)) BEGIN  //int = if not already added
+ APPEND ~splprot.2da~ ~D5_INT_IS%TAB%38%TAB%-1%TAB%1~
+END
+APPEND ~splprot.2da~ ~B_INT_GR%TAB%38%TAB%-1%TAB%3~  //Int Greater than
+APPEND ~splprot.2da~ ~B_INT_LS%TAB%38%TAB%-1%TAB%2~  //Int Less than
+
+//charisma
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~splprot.2da~ ~D5_CHA_IS~)) BEGIN  //cha = if not already added
+   APPEND ~splprot.2da~ ~D5_CHA_IS%TAB%42%TAB%-1%TAB%1~
+END
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_STR_GR~ BEGIN  //str>
+         SET str_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_STR_EQ~ BEGIN  //str =
+         SET str_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_STR_LS~ BEGIN  //str<
+         SET str_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_DEX_GR~ BEGIN  //dex>
+         SET dex_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_DEX_EQ~ BEGIN  //dex =
+         SET dex_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_DEX_LS~ BEGIN  //dex<
+         SET dex_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_GR~ BEGIN  //con>
+         SET con_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_EQ~ BEGIN  //con =
+         SET con_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_LS~ BEGIN  //con<
+         SET con_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~D5_WIS_IS~ BEGIN  //wis =
+         SET wis_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_GR~ BEGIN  //wis >
+         SET wis_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_LS~ BEGIN  //wis <
+         SET wis_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~D5_INT_IS~ BEGIN //int =
+         SET int_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_GR~ BEGIN //int >
+         SET int_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_LS~ BEGIN //int <
+         SET int_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~D5_CHA_IS~ BEGIN  //cha =
+         SET cha_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~NOTENOCHR~ BEGIN  //cha <
+         SET cha_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~ENOUGHCHR~ BEGIN  //cha =>
+         SET cha_gr = %row%
+      END
+   END
+BUT_ONLY
