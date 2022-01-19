@@ -12,10 +12,42 @@
 
 ## Introduction
 
-Coming soon...
+The below is a small taste of what is being worked on. More to come...
+
+### Class Skill Updates
+
+#### Bards (EEex Required)
+
+Adds the option to either select Open Locks only or Open Locks and Disarm/Find Traps for Bards and Bard kits.
+
+#### Monks (EEex Required)
+
+Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk kits. 
+
+#### Barbarians (EEex Required)
+
+Adds Detect Illusions and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit.
+
+#### Rangers (EEex Required)
+
+Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers and Ranger kits. Ranger's Move Silently/Hide in Shadows becomes an outdoor area only ability.
+
+#### Wizard Slayer (EEex Required)
+
+Adds Detect Illusions to the Wizard Slayer.
+
+#### Inquisitor (EEex Required)
+
+Replaces the Inquisitor's True Seeing with the Detect Illusion Skill (Set at 100).
+
+### More Meaningful Stat Bonuses (EEex Required)
+
+#### Strength 
+
+Two-handed attacks receive one and a half times the Strength damage bonus, rounded down.
 
 ## Compatibility
-This mod requires [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. This means you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file.
+This mod has components (outlined above) requiring [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. If you install these components, you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file.
 
 Being this requires EEex to run, Windows is required at this time.
 
