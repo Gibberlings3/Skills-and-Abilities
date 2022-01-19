@@ -1,56 +1,69 @@
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// Will Update ALL                             //
+// Strength Bonus                                                        //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Import Files                                                          //
+// Import Files and Add to SPLPROT.2DA                                   //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~forgotten-armament/spl/MO2HAPR.SPL~   ~override/MO2HAPR.SPL~
-COPY ~forgotten-armament/2da/STYLBONU.2DA~  ~override/STYLBONU.2DA~
-COPY ~forgotten-armament/spl/MOSWSH01.SPL~  ~override/MOSWSH01.SPL~
-COPY ~forgotten-armament/eff/MOSWSH01.EFF~  ~override/MOSWSH01.EFF~
+ACTION_FOR_EACH str_import IN
+      01 // 18 STR +1 DMG
+      02 // 19 STR +3 DMG
+      03 // 20 STR +4 DMG
+      04 // 22 STR +5 DMG
+      05 // 24 STR +6 DMG
+      06 // 25 STR +7 DMG
+    BEGIN
+      COPY ~skills-and-abilities/spl/MOSTR%str_import%.SPL~  ~override/MOSTR%str_import%.SPL~
+      COPY ~skills-and-abilities/eff/MOSTR%str_import%.EFF~  ~override/MOSTR%str_import%.EFF~
+    END
 
 ///////////////////////////////////////////////////////////////////////////
-// Set Descriptions                                                      //
+// Add to SPLPROT.2DA                                                    //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-  STRING_SET ~34173~ @200 // Sword and Shield Style
-  STRING_SET ~34174~ @300 // Single Weapon Style
-END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
-  STRING_SET ~25045~ @200 // Sword and Shield Style
-  STRING_SET ~25046~ @300 // Single Weapon Style
-END
+ACTION_FOR_EACH str_bonus IN
+      18
+      19
+      20
+      22
+      24
+      25
+    BEGIN
+      APPEND ~splprot.2da~ ~mo_str%str_bonus%_bonus%TAB%36%TAB%%str_import%%TAB%2~ UNLESS ~mo_str%str_bonus%_bonus~
+    END
 
-///////////////////////////////////////////////////////////////////////////
-// Add Bonuses to SPLPROT.2da                                            //
-///////////////////////////////////////////////////////////////////////////
-APPEND ~splprot.2da~ ~mo_2h_bonus%TAB%111%TAB%2%TAB%2~ UNLESS ~mo_2h_bonus~
-APPEND ~splprot.2da~ ~mo_swsh_bonus%TAB%112%TAB%2%TAB%2~ UNLESS ~mo_swsh_bonus~
 COPY_EXISTING ~splprot.2da~ ~override~
     COUNT_2DA_COLS cols
     READ_2DA_ENTRIES_NOW rows cols
     FOR (row = 1; row < rows; ++row) BEGIN
       READ_2DA_ENTRY_FORMER rows row 0 ~stat~
       // 2H APR Bonus
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_2h_bonus~ BEGIN 
-        SET 2h_bonus = %row%
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str18_bonus~ BEGIN 
+        SET str18_bonus = %row%
       // Sword and Shield 2 pip Bonus
-      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_swsh_bonus~ BEGIN
-        SET swsh_bonus = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str19_bonus~ BEGIN 
+        SET str19_bonus = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str20_bonus~ BEGIN 
+        SET str20_bonus = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str22_bonus~ BEGIN 
+        SET str22_bonus = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str24_bonus~ BEGIN 
+        SET str24_bonus = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_str25_bonus~ BEGIN 
+        SET str25_bonus = %row%
       END
     END
 
 ///////////////////////////////////////////////////////////////////////////
-// Update all Items                                                      //
+// Update all 2H Weapons                                                 //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_BYTE  0x31 prof
   READ_BYTE  0x18 handed
   READ_SHORT 0x1c type
 
-  // 2H Weapons Gain APR Bonus
+  // 2H Weapons Gain 1.5x STR DMG Bonus
   PATCH_IF (prof = 89) OR // Bastard Sword
       (prof = 92) OR      // Axe
       (prof = 99) OR      // Halberd
@@ -59,37 +72,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       (prof = 98) OR      // Spear
       (prof = 93) BEGIN   // Two-Handed Sword
     PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 2 STR_VAR resource = ~MO2HAPR~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %2h_bonus% timing = 2 STR_VAR resource = ~MO2HAPR~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
-    // These are items that could be 2H with weapons, but those patches are not installed
-    END ELSE BEGIN
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR01~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR02~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR03~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR04~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR05~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR06~ END      
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str18_bonus% timing = 2 STR_VAR resource = ~MOSTR01~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str19_bonus% timing = 2 STR_VAR resource = ~MOSTR02~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str20_bonus% timing = 2 STR_VAR resource = ~MOSTR03~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str22_bonus% timing = 2 STR_VAR resource = ~MOSTR04~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str24_bonus% timing = 2 STR_VAR resource = ~MOSTR05~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %str25_bonus% timing = 2 STR_VAR resource = ~MOSTR06~ END
     END
-  END
-
-  // Ensures non-2H weapons remove APR bonus if assigned from 2H weapons
-  PATCH_IF (prof = 90) OR // Longsword
-    (prof = 91) OR        // Short Sword        
-    (prof = 95) OR        // Scimitar Wakizashi NinjaTo
-    (prof = 96) OR        // Dagger
-    (prof = 97) OR        // Warhammer
-    (prof = 100) OR       // Flail Morningstar
-    (prof = 101) OR       // Mace
-    (prof = 103) OR       // Crossbow
-    (prof = 104) OR       // Long Bow
-    (prof = 105) OR       // Short Bow
-    (prof = 106) OR       // Dart
-    (prof = 107) OR       // Sling
-    (prof = 108) OR       // Black Jack
-    (prof = 115) BEGIN // Club
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
-  END ELSE PATCH_IF (prof = 0) && (type = 28) BEGIN // Fist Weapons
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
-  END
-
-  PATCH_IF (type = 12) BEGIN // Shields
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH01~ END
   END
   BUT_ONLY
