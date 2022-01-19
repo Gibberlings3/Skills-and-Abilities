@@ -5,20 +5,22 @@
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Import Files and Add to SPLPROT.2DA                                   //
+// Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_FOR_EACH str_import IN
-      01 // 18 STR +1 DMG
-      02 // 19 STR +3 DMG
-      03 // 20 STR +4 DMG
-      04 // 22 STR +5 DMG
-      05 // 24 STR +6 DMG
-      06 // 25 STR +7 DMG
+      1 // 18 STR +1 DMG
+      2 // 19 STR +3 DMG
+      3 // 20 STR +4 DMG
+      4 // 22 STR +5 DMG
+      5 // 24 STR +6 DMG
+      6 // 25 STR +7 DMG
     BEGIN
-      COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%.SPL~  ~override/MOSTR%str_import%.SPL~
-      COPY ~skills-and-abilities/eff/str_bonus/MOSTR%str_import%.EFF~  ~override/MOSTR%str_import%.EFF~
+      COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~              ~override/MOSTR0%str_import%.SPL~
+      COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%%str_import%.SPL~  ~override/MOSTR0%str_import%%str_import%.SPL~
+      COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~              ~override/MOSTR0%str_import%.EFF~
     END
 
+/* Already built in to check
 ///////////////////////////////////////////////////////////////////////////
 // Add to SPLPROT.2DA                                                    //
 ///////////////////////////////////////////////////////////////////////////
@@ -54,6 +56,7 @@ COPY_EXISTING ~splprot.2da~ ~override~
         SET str25_bonus = %row%
       END
     END
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Update all 2H Weapons                                                 //
@@ -71,6 +74,33 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       (prof = 102) OR     // Quarterstaff
       (prof = 98) OR      // Spear
       (prof = 93) BEGIN   // Two-Handed Sword
+
+
+    PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr01~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr02~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr03~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr04~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr05~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 1 STR_VAR resource = ~mostr06~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr11~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr22~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr33~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr44~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr55~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~mostr66~ END
+    END
+  END
+  BUT_ONLY
+
+
+  /*
     PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR01~ END
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSTR02~ END
@@ -87,3 +117,4 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     END
   END
   BUT_ONLY
+  */
