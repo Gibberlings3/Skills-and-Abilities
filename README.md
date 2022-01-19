@@ -34,7 +34,7 @@ Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers an
 
 #### Wizard Slayer (EEex Required)
 
-Adds Detect Illusions to the Wizard Slayer.
+Adds Detect Illusions (Set at 100) to the Wizard Slayer.
 
 #### Inquisitor (EEex Required)
 
