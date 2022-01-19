@@ -30,7 +30,7 @@ ACTION_FOR_EACH str_bonus IN
       24
       25
     BEGIN
-      APPEND ~splprot.2da~ ~mo_str%str_bonus%_bonus%TAB%36%TAB%%str_import%%TAB%2~ UNLESS ~mo_str%str_bonus%_bonus~
+      APPEND ~splprot.2da~ ~mo_str%str_bonus%_bonus%TAB%36%TAB%%str_bonus%%TAB%2~ UNLESS ~mo_str%str_bonus%_bonus~
     END
 
 COPY_EXISTING ~splprot.2da~ ~override~
