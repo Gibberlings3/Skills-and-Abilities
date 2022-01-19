@@ -36,8 +36,6 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       (prof = 102) OR     // Quarterstaff
       (prof = 98) OR      // Spear
       (prof = 93) BEGIN   // Two-Handed Sword
-
-
     PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
