@@ -40,7 +40,6 @@
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
 - Testing
-- Working on STR Bonus for 2H Weapon (str_bonus.tpa)
 
 Assigned to Grammarsalad
 - Ranger: Add Set Natural Snares and Tracking
@@ -63,6 +62,9 @@ Assigned to Grammarsalad
 - Wizard Slayer can Detect Illusions
 	- Want to test dual classing
 - Replaced Inquisitor True Seeing for Detect Illusion Skill
+- All 2H weapons confer 1.5x STR damage (exceptional str is excluded)
+	- I followed a similar method as SD, and tested for all values from 18-25 STR. I also tested with adding str randomly (i.e. equipping strength belt) and values changed as desired. 
+	- I also check for any 1H weapons that can become 2H weapons due to mods (i.e. axes, bastard swords, katanas, etc.)
 
 
 ///////////////////////////////////////////////////////////////////////////
