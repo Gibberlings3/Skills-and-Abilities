@@ -80,19 +80,12 @@ INCLUDE ~skills-and-abilities/components/set_barbarian_skills.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Rangers                                              //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @41 DESIGNATED 41 SUBCOMPONENT @40 GROUP @1 LABEL SkillsAndAbilitiesRang1 
+BEGIN @40 DESIGNATED 40 GROUP @1 LABEL SkillsAndAbilitiesRang 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 // Add Set Natural Snares and Tracking
 
-////////////////////////////////////////////////////
-
-BEGIN @42 DESIGNATED 42 SUBCOMPONENT @40 GROUP @1 LABEL SkillsAndAbilitiesRang2 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
-
-// Add Set Natural Snares and Tracking
 INCLUDE ~skills-and-abilities/components/set_ranger_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
