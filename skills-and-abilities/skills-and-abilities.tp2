@@ -5,13 +5,11 @@
 /*************************************************************************/
 
 BACKUP ~skills-and-abilities/backup~
-AUTHOR ~Grammarsalad and morpheus562~ // Not sure if this is the proper way for multiple authors
+AUTHOR ~Grammarsalad and morpheus562~
 
 VERSION ~v1.0~
 README ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
-
-// ASK_EVERY_COMPONENT
 
 ALWAYS
 	INCLUDE ~skills-and-abilities/lib/always.tph~
@@ -23,7 +21,8 @@ END
 LANGUAGE ~American English~
          ~american~
          ~skills-and-abilities/languages/american/setup.tra~
-/*
+
+/* You can add new tra files to the array listed above
 //kit/class
          ~skills-and-abilities/languages/american/barbarian.tra~
          ~skills-and-abilities/languages/american/bard.tra~
@@ -33,7 +32,7 @@ LANGUAGE ~American English~
 
 //attributes
          ~skills-and-abilities/languages/american/strength.tra~
-         */
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
