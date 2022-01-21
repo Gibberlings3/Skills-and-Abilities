@@ -18,20 +18,33 @@
 - Flesh out new skills/pseudo-skills
 - Flesh out new proficiencies
 - Flesh out meaningful stat changes
-	- Where do we pull/find character abilities?
-	---
-	Grammarsalad: I have a relatively seamless way to do this via Splprot.2da and various effects, especially 326. I have a lot of examples but the basic idea is to assign an ability to the class in the clab that checks the stat every ~1 round and applies bonuses or penalties as needed. This has been tested with hundereds of such effects (by SD and people that have been using his mods) with no slowdown. A nice thing is that it changes as the ability is altered.  
-	---
+	- Wis (etc.) bonus vs. Spells (easy to difficulty implementation--see below)
+	- Int immunity to illusions (medium to difficult)
+	- Wis/Int/Cha: Spell power for high attribute casters. (Medium to difficult implementation-- similar issues to what is being discussed in Wis bonus vs Spells below)
+	- Cha bonus to turn (simple--done-- to more complex)
+	- Variant attribute bonuses to skills (simple to medium)
 
-	- I figure, if we can pull character stat (i.e. Strength/exceptional strength), I can use opcode 177 to apply EFF files on all 2-handed weapons to confer 1.5x strength damage.
-	---
-	Grammarsalad: My sense is that this could be handled in the individual items themselves essentially as you have there (though, I do think the splprot method described above is a good way to go as it has been throughly tested.) 
-	---
+Wis bonus vs Spells: A relatively easy one is wis bonus for saves vs magic (and maybe wands?) I have been working on a more complex system: dex bonus for evocation spells, wis vs enchantment, con vs necro, int vs illusion, etc. but Bubb showed me a much easier implementation that would mean starting over virtually from scratch.
+
+I was doing this from the spell side, because I wanted the bonus to apply to non player characters as well, but it would be much easier to do it via clab and 326 applications of opcode 346.
+
+Int immunity to illusions (medium)
+
+The problem with this one is it doesn't have much applicability without more complex code. I have something in the works that e.g. dispels invisibility if invisible creature gets within 5 feet of a creature with int 20 
+
+Wis/Int/Cha: Spell power for high attribute casters
+
+Basically like 3e to 5e, where spells cast by creatures with high scores in certain attributes apply a save penalty. This would need to be done by alerting spells, so even a relatively 'simple' inimical implication would be somewhat complicated.
+
+Cha bonus to turn
+
+I already have a mini mod that gives a turn level bonus for priests of higher level. This basic idea could be expanded for variant Turn/channel divinity abilities, but it could be more complex if only because it would probably need to apply differently on a case by case basis.
+
+Variant attribute bonuses to skills
+
+E.g. using intelligence or wisdom as bonus (or penalty) to find/remove trap. Prob more complex for custom skills (if that makes a comeback). 
 - Improved Turning/Wild Sense	
 - Other?
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////
 // Assigned/Work in Progress                                             //

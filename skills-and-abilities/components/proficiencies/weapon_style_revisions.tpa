@@ -1,0 +1,104 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Skills and Abilities Weapon Style Revisions                           //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Import Files                                                          //
+///////////////////////////////////////////////////////////////////////////
+COPY ~skills-and-abilities/eff/proficiencies/MO2HAPR.EFF~   ~override/MO2HAPR.EFF~
+COPY ~skills-and-abilities/spl/proficiencies/MO2HAPR.SPL~   ~override/MO2HAPR.SPL~
+COPY ~skills-and-abilities/spl/proficiencies/MOSWSH01.SPL~  ~override/MOSWSH01.SPL~
+COPY ~skills-and-abilities/eff/proficiencies/MOSWSH01.EFF~  ~override/MOSWSH01.EFF~
+COPY ~skills-and-abilities/2da/STYLBONU.2DA~                ~override/STYLBONU.2DA~
+
+///////////////////////////////////////////////////////////////////////////
+// Set Descriptions                                                      //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+  STRING_SET ~34171~ @7001 // 2H Weapon Style
+  STRING_SET ~34173~ @7002 // Sword and Shield Style
+  STRING_SET ~34174~ @7003 // Single Weapon Style
+  STRING_SET ~34176~ @7004 // Two-Weapon Style
+END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
+  STRING_SET ~25044~ @7001 // 2H Weapon Style
+  STRING_SET ~25045~ @7002 // Sword and Shield Style
+  STRING_SET ~25046~ @7003 // Single Weapon Style
+  STRING_SET ~24999~ @7004 // Two-Weapon Style
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Add Bonuses to SPLPROT.2da                                            //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~splprot.2da~ ~mo_2h_bonus%TAB%111%TAB%2%TAB%2~   UNLESS ~mo_2h_bonus~
+APPEND ~splprot.2da~ ~mo_swsh_bonus%TAB%112%TAB%2%TAB%2~ UNLESS ~mo_swsh_bonus~
+COPY_EXISTING ~splprot.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~
+      // 2H APR Bonus
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_2h_bonus~ BEGIN 
+        SET 2h_bonus = %row%
+      // Sword and Shield 2 pip Bonus
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_swsh_bonus~ BEGIN
+        SET swsh_bonus = %row%
+      END
+    END
+
+///////////////////////////////////////////////////////////////////////////
+// Update all Items                                                      //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_BYTE  0x31 prof
+  READ_BYTE  0x18 handed
+  READ_SHORT 0x1c type
+
+  // 2H Weapons Gain APR Bonus
+  PATCH_IF (prof = 89) OR // Bastard Sword
+      (prof = 92) OR      // Axe
+      (prof = 99) OR      // Halberd
+      (prof = 94) OR      // Katana
+      (prof = 102) OR     // Quarterstaff
+      (prof = 98) OR      // Spear
+      (prof = 93) BEGIN   // Two-Handed Sword
+    PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MO2HAPR~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MO2HAPR~ END
+      /*
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 2 STR_VAR resource = ~MO2HAPR~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %2h_bonus% timing = 2 STR_VAR resource = ~MO2HAPR~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END    
+    // These are items that could be 2H with weapons, but those patches are not installed
+    END ELSE BEGIN
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
+    */
+    END
+  END
+  /*
+  // Ensures non-2H weapons remove APR bonus if assigned from 2H weapons
+  PATCH_IF (prof = 90) OR // Longsword
+    (prof = 91) OR        // Short Sword        
+    (prof = 95) OR        // Scimitar Wakizashi NinjaTo
+    (prof = 96) OR        // Dagger
+    (prof = 97) OR        // Warhammer
+    (prof = 100) OR       // Flail Morningstar
+    (prof = 101) OR       // Mace
+    (prof = 103) OR       // Crossbow
+    (prof = 104) OR       // Long Bow
+    (prof = 105) OR       // Short Bow
+    (prof = 106) OR       // Dart
+    (prof = 107) OR       // Sling
+    (prof = 108) OR       // Black Jack
+    (prof = 115) BEGIN // Club
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
+  END ELSE PATCH_IF (prof = 0) && (type = 28) BEGIN // Fist Weapons
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
+  END
+  */
+  PATCH_IF (type = 12) BEGIN // Shields
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH01~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH01~ END
+  END
+  BUT_ONLY

@@ -1,0 +1,37 @@
+// Skills and Abilities, American English
+//Strength range @7001 to @8000
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@7001 = ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+
+Proficient (1 slot): The wielder gets a +1 bonus to damage rolls and a -2 bonus to Speed Factor when using a two-handed weapon.
+
+Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, a -4 bonus to Speed Factor, and an extra 1/2 attack per round when using a two-handed weapon.
+
+NOTE: Magical two-handed weapons are more powerful than their single-handed counterparts. This counterbalances the fact that you can't use a second weapon or shield when using a two-handed weapon. The Holy Avenger and Vorpal Sword are examples of weapons that are two-handed.~
+
+@7002 = ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+
+Proficient (1 slot): The wielder gets a -1 bonus to AC.
+
+Specialized (2 slots): The wielder gets a -2 bonus to AC and a becomes immune to dragon Wing Buffets.
+
+NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
+
+@7003 = ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+
+Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, -1 bonus to Thaco, -1 bonus to AC, and inflicts critical damage on an attack roll of 19 or 20.
+
+Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, -2 bonus to Thaco, -2 bonus to AC, and inflicts critical damage on an attack roll of 18 to 20.~
+
+@7004 = ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon, a -8 penalty with the off-hand weapon, and a -4 penalty to damage rolls for both weapons. 
+
+Proficient (1 slot): The wielder's penalties are reduced to -2, attack and damage rolls, with the main weapon and -6 attack roll and -4 damage roll with the off-hand weapon.
+
+Specialized (2 slots): The wielder's penalties are reduced to 0 attack roll and -2 damage roll with the main weapon and -4 attack roll and -2 damage roll with the off-hand weapon.
+
+Master (3 slots): The wielder's penalties to attack and damage rolls are reduced to 0 with the main weapon and -2 with the off-hand weapon.~
+
+
+@8000 = ~[LAST TRA HERE]~
