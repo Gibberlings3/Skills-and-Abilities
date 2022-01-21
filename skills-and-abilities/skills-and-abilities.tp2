@@ -15,22 +15,25 @@ AUTO_EVAL_STRINGS
 
 ALWAYS
 	INCLUDE ~skills-and-abilities/lib/always.tph~
-	//ACTION_DEFINE_ARRAY moreload BEGIN item_descriptions script_descriptions spell_descriptions script_dialog END
-	//LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~skills-and-abilities/languages~ reload_array = moreload END
+	ACTION_DEFINE_ARRAY moreload BEGIN barbarian bard inquisitor monk proficiency_descriptions ranger strength wizard_splayer END
+	LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~skills-and-abilities/languages~ reload_array = moreload END
 
 END
 
 LANGUAGE ~American English~
          ~american~
          ~skills-and-abilities/languages/american/setup.tra~
+/*
 //kit/class
          ~skills-and-abilities/languages/american/barbarian.tra~
          ~skills-and-abilities/languages/american/bard.tra~
          ~skills-and-abilities/languages/american/monk.tra~
          ~skills-and-abilities/languages/american/ranger.tra~
          ~skills-and-abilities/languages/american/wizard_slayer.tra~
+
 //attributes
          ~skills-and-abilities/languages/american/strength.tra~
+         */
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
