@@ -143,7 +143,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 ///////////////////////////////////////////////////////////////////////////
 // Update Weapon Fighting Styles                                         //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @300 DESIGNATED 300 LABEL SkillsAndAbilitiesWeapStyle
+BEGIN @300 DESIGNATED 300 GROUP @3 LABEL SkillsAndAbilitiesWeapStyle
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 
 LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra~
