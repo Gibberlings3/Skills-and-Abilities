@@ -1,0 +1,61 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Notes Provided by Olvyn to Add/Extend Skills                          //
+// Keeping here for future reference                                     //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+//Here's a function for adding a new skill to the game. Feel free to put this function in your own mod.
+DEFINE_ACTION_FUNCTION ADD_EXTENDED_SKILL
+	INT_VAR
+		stat=~-1~ //ID of the stat (either from STATS.IDS, or some big number if you're using an extended stat).
+		name=~-1~ //Strref of the skill's name.
+		description=~-1~ //Strref of the skill's description.
+		opcode=401 //The opcode that will be used to modify the skill.
+		visibility=1 //Whether the skill will appear alongside other skills in the character record screen.
+						// 0: Always show
+						// 1: Show if character can put points in skill
+						// 2: Show if skill != 0
+						// 3: Show if skill != 0 and character can put points in skill
+						// 4: Don't show
+	STR_VAR
+		class_include=~{}~ //A character with one of these classes (from CLASS.IDS) can put points in the skill.
+		kit_include=~{}~ //A character with one of these kits can put points in the skill, even if their class is not in the "class_include" list.
+		kit_exclude=~{}~ //A character with one of these kits cannot put points in the skill, even if their class is in the "class_include" list.
+		stat_exclude=~{}~ //A character cannot put points in the skill if its stats meet any of these conditions.
+							//Each stat condition is represented by an inner list with 3 numbers: the stat, a value, and a method of comparing the stat to the value.
+							//The syntax is similar to a SPLPROT.2DA condition, and it accepts all the relations (0 - 11) that SPLPROT.2DA does.
+							//For example, if you set stat_exclude to ~{{41, 12, 0}}~, a character cannot put points in the skill if their Constitution <= 12.
+BEGIN
+	ACTION_IF stat = (0 - 1) BEGIN
+		FAIL ~ADD_EXTENDED_SKILL: You must choose a stat for the skill; otherwise the stat is -1, and that's not okay.~
+	END
+	COPY_EXISTING ~m__skill.lua~ ~override~
+		REPLACE_TEXTUALLY CASE_SENSITIVE ~extendedskilllist = {~ ~extendedskilllist = {
+	{
+		["stat"] = %stat%,
+		["name"] = %name%,
+		["description"] = %description%,
+		["opcode"] = %opcode%,
+		["visibility"] = %visibility%,
+		["class_include"] = %class_include%,
+		["kit_include"] = %kit_include%,
+		["kit_exclude"] = %kit_exclude%,
+		["stat_exclude"] = %stat_exclude%
+	},~
+END
+//To add the example skill shown in M__SKILL.LUA, you'd do this:
+/* LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 25 //Lore
+	name = RESOLVE_STR_REF(~Lore~)
+	description = RESOLVE_STR_REF(~LORE: The character's lore determines <PRO_HISHER> ability to identify the properties of magic items.~)
+	opcode = 21 //Modify Lore
+	visibility = 4 //Will not appear in character record screen (Lore's already there)
+STR_VAR
+	class_include = ~{4, 9, 10, 13, 15}~ //Usable by thief, fighter/thief, fighter/mage/thief, mage/thief, and cleric/thief
+	kit_include = ~{0x4008}~ //Usable by stalker as well
+	kit_exclude = ~{0x400C, 0x4021}~ //Not usable by swashbuckler or shadowdancer
+	stat_exclude = ~{{38, 16, 2}, {39, 14, 2}}~ //Not usable if your Intelligence is less than 16 or your Wisdom is less than 14
+END
+*/

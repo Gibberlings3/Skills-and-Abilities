@@ -50,7 +50,12 @@ E.g. using intelligence or wisdom as bonus (or penalty) to find/remove trap. Pro
 // Assigned/Work in Progress                                             //
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
-- Testing
+- Proficiency Overhaul. I will be in the proficiency_overhaul.tpa and proficiency_descriptions.tra
+	- Combine Weapon Proficiencies into OG BG1 model.
+	- Use extra proficiency areas to add non-weapon proficiencies.
+	- Automate update of weapprof.2da for all kits.
+	- Update all weapons to fall into the new Weapon Proficiency categories.
+	- Traverse all characters and reassign Modify_Proficiency to ensure it aligns with the new system.
 
 Assigned to Grammarsalad
 - Ranger: Add Set Natural Snares and Tracking

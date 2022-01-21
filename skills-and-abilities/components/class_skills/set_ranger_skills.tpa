@@ -20,6 +20,8 @@ COPY ~skills-and-abilities/lua/M_B3THI3.lua~   ~override~ // Lua file read by EE
 ///////////////////////////////////////////////////////////////////////////
 APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 15 Skill points at Level 1 then 20 skill points per level up
 APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 15 Skill points at Level 1 then 20 skill points per level up
+APPEND ~TRAPLIMT.2da~ ~RANGER 6~            // Sets Trap Limit
+APPEND ~TRAPLIMT.2da~ ~CLERIC_RANGER 6~     // Sets Trap Limit
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Snares to Ranger Class                                         //
@@ -78,6 +80,7 @@ BUT_ONLY
     // Modify THIEFSKL.2da to Allow Ranger Kits to Gain Thief Skill Progression
     INNER_ACTION BEGIN
       APPEND ~THIEFSKL.2da~ ~%kit_label% 15 5~
+      APPEND ~TRAPLIMT.2da~ ~%kit_label% 6~
     BUT_ONLY
     END
 

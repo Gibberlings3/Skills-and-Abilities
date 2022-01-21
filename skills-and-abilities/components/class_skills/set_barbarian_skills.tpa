@@ -14,6 +14,8 @@ END
 COPY ~skills-and-abilities/lua/M_B3THI5.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override~ // Assigns 5-5-5-5 skill points to Barbarian
 
+APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
+
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Barb CLAB File to Assign Thief Skills Points              //
 ///////////////////////////////////////////////////////////////////////////
