@@ -39,14 +39,14 @@ LANGUAGE ~American English~
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Assign Skills to Bards                                                //
+// Assign Skills to Bards (EEex Required)                                //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @11 DESIGNATED 11 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 OUTER_SET bard_skill=0 // Add Pick Locks
-INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/set_bard_skills.tpa~
 
 ////////////////////////////////////////////////////
 
@@ -55,19 +55,19 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 OUTER_SET bard_skill=1 // Add Pick Locks and Find/Disarm Traps
-INCLUDE ~skills-and-abilities/components/set_bard_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/set_bard_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Assign Skills to Monks - Do we want ALL monk or just base to get this //
+// Assign Skills to Monks (EEex Required)                                //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @20 DESIGNATED 20 GROUP @1 LABEL SkillsAndAbilitiesMonk 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-INCLUDE ~skills-and-abilities/components/set_monk_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Assign Skills to Barbarians                                           //
+// Assign Skills to Barbarians (EEex Required)                           //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @30 DESIGNATED 30 GROUP @1 LABEL SkillsAndAbilitiesBarb 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
@@ -75,36 +75,36 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 // Add Hide in Natural Surroundings, Detect Illusions, Tracking, Set Natural Snares (1e AD&D)
 // Setting skills like a Thief will lock up the level up screen.
-INCLUDE ~skills-and-abilities/components/set_barbarian_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Rangers                                              //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @40 DESIGNATED 40 GROUP @1 LABEL SkillsAndAbilitiesRang 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+// REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 // Add Set Natural Snares and Tracking
 
-INCLUDE ~skills-and-abilities/components/set_ranger_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/set_ranger_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Add Detect Illusion for Wizard Slayer                                 //
+// Add Detect Illusion for Wizard Slayer (EEex Required)                 //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @50 DESIGNATED 50 GROUP @1 LABEL SkillsAndAbilitiesDI1 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-INCLUDE ~skills-and-abilities/components/set_wiz_slayer_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/set_wiz_slayer_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Replace Inquisitor True Seeing for Detect Illusion Skill              //
+// Replace Inquisitor True Seeing for Detect Illusion (EEex Required)    //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @60 DESIGNATED 60 GROUP @1 LABEL SkillsAndAbilitiesDI2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-INCLUDE ~skills-and-abilities/components/set_inquisitor_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/set_inquisitor_skills.tpa~
 
 /*
 ///////////////////////////////////////////////////////////////////////////

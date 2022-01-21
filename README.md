@@ -28,7 +28,7 @@ Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk k
 
 Adds Detect Illusions and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit.
 
-### Rangers (EEex Required)
+### Rangers
 
 Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers and Ranger kits. Ranger's Move Silently/Hide in Shadows becomes an outdoor area only ability.
 
@@ -40,7 +40,7 @@ Adds Detect Illusions (Set at 100) to the Wizard Slayer.
 
 Replaces the Inquisitor's True Seeing with the Detect Illusion Skill (Set at 100).
 
-## More Meaningful Stat Bonuses (EEex Required)
+## More Meaningful Stat Bonuses
 
 ### Strength 
 
