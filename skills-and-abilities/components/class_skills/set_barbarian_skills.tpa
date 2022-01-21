@@ -12,13 +12,15 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
 END
 
 COPY ~skills-and-abilities/lua/M_B3THI5.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
-COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override~ // Assigns 10-10-10 skill points to Barbarian
+COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override~ // Assigns 5-5-5-5 skill points to Barbarian
 
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Barb CLAB File to Assign Thief Skills Points              //
 ///////////////////////////////////////////////////////////////////////////
+// This gives Barbarian the Thief snare at the same frequency Thieves get them.
 COPY_EXISTING ~CLABFI05.2DA~ override
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK04 END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_SPCL412 END
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -29,6 +31,7 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 6 49 1 ~100~   // MOVE_SILENTLY
   SET_2DA_ENTRY 7 49 1 ~100~   // HIDE_IN_SHADOWS
   SET_2DA_ENTRY 8 49 1 ~100~   // DETECT_ILLUSION
+  SET_2DA_ENTRY 9 49 1 ~100~   // SET_TRAPS
   PRETTY_PRINT_2DA
 BUT_ONLY
 

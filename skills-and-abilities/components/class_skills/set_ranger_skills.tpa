@@ -26,7 +26,7 @@ APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 15 Skill points at Level 1 then 2
 ///////////////////////////////////////////////////////////////////////////
 // This gives Ranger the Thief snare at the same frequency Thieves get them.
 COPY_EXISTING ~CLABRN01.2DA~ override
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 5 STR_VAR f_Entry = GA_SPCL412 END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_SPCL412 END
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -84,7 +84,7 @@ BUT_ONLY
     INNER_ACTION BEGIN
       // This gives Ranger kits the Thief snare at the same frequency Thieves get them.
       COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 5 STR_VAR f_Entry = GA_SPCL412 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_SPCL412 END
         PRETTY_PRINT_2DA
       BUT_ONLY
     END
