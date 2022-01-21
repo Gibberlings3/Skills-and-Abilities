@@ -66,37 +66,9 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MO2HAPR~ END 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %2h_bonus% timing = 2 STR_VAR resource = ~MO2HAPR~ END
-      /*
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 0 parameter2 = 1 timing = 2 STR_VAR resource = ~MO2HAPR~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %2h_bonus% timing = 2 STR_VAR resource = ~MO2HAPR~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END    
-    // These are items that could be 2H with weapons, but those patches are not installed
-    END ELSE BEGIN
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
-    */
     END
   END
-  /*
-  // Ensures non-2H weapons remove APR bonus if assigned from 2H weapons
-  PATCH_IF (prof = 90) OR // Longsword
-    (prof = 91) OR        // Short Sword        
-    (prof = 95) OR        // Scimitar Wakizashi NinjaTo
-    (prof = 96) OR        // Dagger
-    (prof = 97) OR        // Warhammer
-    (prof = 100) OR       // Flail Morningstar
-    (prof = 101) OR       // Mace
-    (prof = 103) OR       // Crossbow
-    (prof = 104) OR       // Long Bow
-    (prof = 105) OR       // Short Bow
-    (prof = 106) OR       // Dart
-    (prof = 107) OR       // Sling
-    (prof = 108) OR       // Black Jack
-    (prof = 115) BEGIN // Club
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
-  END ELSE PATCH_IF (prof = 0) && (type = 28) BEGIN // Fist Weapons
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = ~MO2HAPR~ END
-  END
-  */
+
   PATCH_IF (type = 12) BEGIN // Shields
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH01~ END 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH01~ END
