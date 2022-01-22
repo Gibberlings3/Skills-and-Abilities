@@ -146,6 +146,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Bow
   PATCH_IF (prof = 104) OR (prof = 105) BEGIN
     WRITE_BYTE 0x31 100
+    // Add EFF File here to add +1 Thac0 if Elf
   END
 
   // Spiked
@@ -157,6 +158,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (prof = 91) OR (prof = 96) BEGIN
     WRITE_BYTE 0x31 102
   END
+
+  // Add EFF File here to add +1 Thac0 to Long Swords if Elf
 
   // Large Sword
   PATCH_IF (prof = 89) OR   // Bastard Sword
@@ -179,6 +182,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (prof = 102) BEGIN  // Quarterstaff
     WRITE_BYTE 0x31 105
   END
+
+  // Add EFF File here to add +1 Thac0 to Slings if Halfling
 
   // Missile
   PATCH_IF (prof = 103) OR  // Crossbow
