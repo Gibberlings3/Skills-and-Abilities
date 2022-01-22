@@ -137,3 +137,69 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     PRETTY_PRINT_2DA
     BUT_ONLY
 
+///////////////////////////////////////////////////////////////////////////
+// Update All Weapons to the New Weapon Groups                           //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_BYTE  0x31 prof
+
+  // Bow
+  PATCH_IF (prof = 104) OR (prof = 105) BEGIN
+    WRITE_BYTE 0x31 100
+  END
+
+  // Spiked
+  PATCH_IF (prof = 100) BEGIN
+    WRITE_BYTE 0x31 101
+  END
+
+  // Small Sword
+  PATCH_IF (prof = 91) OR (prof = 96) BEGIN
+    WRITE_BYTE 0x31 102
+  END
+
+  // Large Sword
+  PATCH_IF (prof = 89) OR   // Bastard Sword
+        (prof = 90) OR      // Long Sword
+        (prof = 93) OR      // Two-Handed Sword
+        (prof = 94) OR      // Katana
+        (prof = 95) BEGIN   // Scimitar
+    WRITE_BYTE 0x31 103
+  END
+
+  // Axe
+  PATCH_IF (prof = 92) BEGIN
+    WRITE_BYTE 0x31 104
+  END
+
+  // Blunt
+  PATCH_IF (prof = 97) OR   // Warhammer
+        (prof = 115) OR     // Club
+        (prof = 101) OR     // Mace
+        (prof = 102) BEGIN  // Quarterstaff
+    WRITE_BYTE 0x31 105
+  END
+
+  // Missile
+  PATCH_IF (prof = 103) OR  // Crossbow
+        (prof = 106) OR     // Dart
+        (prof = 107) BEGIN  // Sling
+    WRITE_BYTE 0x31 100
+  END
+
+  // Spear
+  PATCH_IF (prof = 98) OR (prof = 99) BEGIN
+    WRITE_BYTE 0x31 107
+  END
+
+  BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Add New Proficiencies                                                 //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Weapon Finesse                                                        //
+///////////////////////////////////////////////////////////////////////////
