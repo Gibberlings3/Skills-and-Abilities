@@ -20,12 +20,12 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
   STRING_SET ~34171~ @7001 // 2H Weapon Style
   STRING_SET ~34173~ @7002 // Sword and Shield Style
   STRING_SET ~34174~ @7003 // Single Weapon Style
-  STRING_SET ~34176~ @7004 // Two-Weapon Style
+  //STRING_SET ~34176~ @7004 // Two-Weapon Style
 END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
   STRING_SET ~25044~ @7001 // 2H Weapon Style
   STRING_SET ~25045~ @7002 // Sword and Shield Style
   STRING_SET ~25046~ @7003 // Single Weapon Style
-  STRING_SET ~24999~ @7004 // Two-Weapon Style
+  //STRING_SET ~24999~ @7004 // Two-Weapon Style
 END
 
 ///////////////////////////////////////////////////////////////////////////
