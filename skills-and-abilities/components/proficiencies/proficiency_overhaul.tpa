@@ -8,14 +8,30 @@
 // Add OG BG1 Weapon Groups                                              //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-    SET_2DA_ENTRY 23 0 4 ~BOW 100 mobow1 mobow2~
-    SET_2DA_ENTRY 24 0 4 ~SPIKED 101 mospike1 mospike2~
-    SET_2DA_ENTRY 25 0 4 ~SMALL_SWORD 102 mossword1 mossword2~
-    SET_2DA_ENTRY 26 0 4 ~LARGE_SWORD 103 molsword1 molsword2~
-    SET_2DA_ENTRY 27 0 4 ~AXE 104 moaxe1 moaxe2~
-    SET_2DA_ENTRY 28 0 4 ~BLUNT 105 moblunt1 moblunt2~
-    SET_2DA_ENTRY 29 0 4 ~MISSILE 106 momiss1 momiss2~
-    SET_2DA_ENTRY 30 0 4 ~SPEAR 107 mospear1 mospear2~
+    SET_2DA_ENTRY 23 0 1 ~BOW~
+    SET_2DA_ENTRY 23 2 1 ~mobow1~
+    SET_2DA_ENTRY 23 3 1 ~mobow2~    
+    SET_2DA_ENTRY 24 0 1 ~SPIKED~
+    SET_2DA_ENTRY 24 2 1 ~mospike1~
+    SET_2DA_ENTRY 24 3 1 ~mospike2~
+    SET_2DA_ENTRY 25 0 1 ~SMALL_SWORD~
+    SET_2DA_ENTRY 25 2 1 ~mossword1~
+    SET_2DA_ENTRY 25 3 1 ~mossword2~
+    SET_2DA_ENTRY 26 0 1 ~LARGE_SWORD~
+    SET_2DA_ENTRY 26 2 1 ~molsword1~
+    SET_2DA_ENTRY 26 3 1 ~molsword2~
+    SET_2DA_ENTRY 27 0 1 ~AXE~
+    SET_2DA_ENTRY 27 2 1 ~moaxe1~
+    SET_2DA_ENTRY 27 3 1 ~moaxe2~
+    SET_2DA_ENTRY 28 0 1 ~BLUNT~
+    SET_2DA_ENTRY 28 2 1 ~moblunt1~
+    SET_2DA_ENTRY 28 3 1 ~moblunt2~
+    SET_2DA_ENTRY 29 0 1 ~MISSILE~
+    SET_2DA_ENTRY 29 2 1 ~momiss1~
+    SET_2DA_ENTRY 29 3 1 ~momiss2~
+    SET_2DA_ENTRY 30 0 1 ~SPEAR~
+    SET_2DA_ENTRY 30 2 1 ~mospear1~
+    SET_2DA_ENTRY 30 3 1 ~mospear2~
     PRETTY_PRINT_2DA
   BUT_ONLY
 
