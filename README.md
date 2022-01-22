@@ -54,3 +54,4 @@ Being this requires EEex to run, Windows is required at this time.
 ## Special Thanks
 
 - Bubb for all of his work on EEex.
+- aVENGER for use of a function to update clab files.
