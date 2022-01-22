@@ -8,34 +8,32 @@
 // Add OG BG1 Weapon Groups                                              //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-    SET_2DA_ENTRY 23 0 1 ~BOW~
-    SET_2DA_ENTRY 24 0 1 ~SPIKED~
-    SET_2DA_ENTRY 25 0 1 ~SMALL_SWORD~
-    SET_2DA_ENTRY 26 0 1 ~LARGE_SWORD~
-    SET_2DA_ENTRY 27 0 1 ~AXE~
-    SET_2DA_ENTRY 28 0 1 ~BLUNT~
-    SET_2DA_ENTRY 29 0 1 ~MISSILE~
-    SET_2DA_ENTRY 30 0 1 ~SPEAR~
+    SET_2DA_ENTRY 23 0 4 ~BOW 100 mobow1 mobow2~
+    SET_2DA_ENTRY 24 0 4 ~SPIKED 101 mospike1 mospike2~
+    SET_2DA_ENTRY 25 0 4 ~SMALL_SWORD 102 mossword1 mossword2~
+    SET_2DA_ENTRY 26 0 4 ~LARGE_SWORD 103 molsword1 molsword2~
+    SET_2DA_ENTRY 27 0 4 ~AXE 104 moaxe1 moaxe2~
+    SET_2DA_ENTRY 28 0 4 ~BLUNT 105 moblunt1 moblunt2~
+    SET_2DA_ENTRY 29 0 4 ~MISSILE 106 momiss1 momiss2~
+    SET_2DA_ENTRY 30 0 4 ~SPEAR 107 mospear1 mospear2~
     PRETTY_PRINT_2DA
   BUT_ONLY
 
-/*
-///////////////////////////////////////////////////////////////////////////
-// Add descriptions of the scripts to scrpdesc.2da                       //
-///////////////////////////////////////////////////////////////////////////
-APPEND ~scrpdesc.2DA~
-~mobasic    mbasic1      mbasic2
-mocore      mcore1       mcore2
-moskd       mskd1        mskd2~
-
-///////////////////////////////////////////////////////////////////////////
-// Copy the appended scrpdesc.2da to the override folder                 //
-///////////////////////////////////////////////////////////////////////////
-COPY_EXISTING ~scrpdesc.2da~ ~override~
-REPLACE ~mbasic1~ @1090
-REPLACE ~mbasic2~ @1091
-REPLACE ~mcore1~  @1100
-REPLACE ~mcore2~  @1101
-REPLACE ~mskd1~   @1070
-REPLACE ~mskd2~   @1071
-*/
+// Set Name and Description
+COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+REPLACE ~mobow1~    @7100
+REPLACE ~mobow2~    @7101
+REPLACE ~mospike1~  @7102
+REPLACE ~mospike2~  @7103
+REPLACE ~mossword1~ @7104
+REPLACE ~mossword2~ @7105
+REPLACE ~lsword1~   @7106
+REPLACE ~lsword2~   @7107
+REPLACE ~moaxe1~    @7108
+REPLACE ~moaxe2~    @7109
+REPLACE ~moblunt1~  @7110
+REPLACE ~moblunt2~  @7111
+REPLACE ~momiss1~   @7112
+REPLACE ~momiss2~   @7113
+REPLACE ~mospear1~  @7114
+REPLACE ~mospear2~  @7115
