@@ -43,8 +43,8 @@ REPLACE ~mospike1~  @7102
 REPLACE ~mospike2~  @7103
 REPLACE ~mossword1~ @7104
 REPLACE ~mossword2~ @7105
-REPLACE ~lsword1~   @7106
-REPLACE ~lsword2~   @7107
+REPLACE ~molsword1~ @7106
+REPLACE ~molsword2~ @7107
 REPLACE ~moaxe1~    @7108
 REPLACE ~moaxe2~    @7109
 REPLACE ~moblunt1~  @7110
@@ -53,3 +53,4 @@ REPLACE ~momiss1~   @7112
 REPLACE ~momiss2~   @7113
 REPLACE ~mospear1~  @7114
 REPLACE ~mospear2~  @7115
+PRETTY_PRINT_2DA
