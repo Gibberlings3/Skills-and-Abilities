@@ -289,7 +289,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 col 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -302,7 +302,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
@@ -318,7 +318,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
@@ -334,7 +334,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
@@ -350,7 +350,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
@@ -366,7 +366,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
@@ -382,7 +382,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
@@ -414,7 +414,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
@@ -430,7 +430,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
@@ -446,7 +446,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
@@ -462,7 +462,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
@@ -478,7 +478,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
@@ -494,7 +494,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
@@ -510,7 +510,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
@@ -526,7 +526,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
@@ -542,7 +542,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
       COUNT_2DA_COLS cols
-      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
