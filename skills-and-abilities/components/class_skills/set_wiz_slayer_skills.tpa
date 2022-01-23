@@ -20,7 +20,7 @@ COPY ~skills-and-abilities/spl/MO#BSK05.SPL~   ~override~ // Sets Detect Illusio
 COPY_EXISTING ~CLABFI03.2DA~ override
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK05 END
   PRETTY_PRINT_2DA
-//BUT_ONLY
+BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for the Wizard Slayer           //
