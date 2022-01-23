@@ -273,3 +273,283 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 21 1 ~2~   // CLERIC_RANGER - Armor Prof
     PRETTY_PRINT_2DA
   BUT_ONLY
+
+COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~all_kitlist~ 10
+  FOR (row = 3; row < all_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~all_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~all_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~all_kitlist~ row 8 kit_class
+
+  // FIGHTER
+  PATCH_IF (%kit_class% = 2) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // CLERIC
+  PATCH_IF (%kit_class% = 2) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // THIEF
+  PATCH_IF (%kit_class% = 4) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+  
+  // BARD
+  PATCH_IF (%kit_class% = 5) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // PALADIN
+  PATCH_IF (%kit_class% = 6) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // FIGHTER_MAGE
+  PATCH_IF (%kit_class% = 7) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // FIGHTER_CLERIC
+  PATCH_IF (%kit_class% = 8) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // FIGHTER_THIEF
+  PATCH_IF (%kit_class% = 9) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // FIGHTER_MAGE_THIEF
+  PATCH_IF (%kit_class% = 10) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // DRUID
+  PATCH_IF (%kit_class% = 11) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // RANGER
+  PATCH_IF (%kit_class% = 12) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // MAGE_THIEF
+  PATCH_IF (%kit_class% = 13) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // CLERIC_MAGE
+  PATCH_IF (%kit_class% = 14) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // CLERIC_THIEF
+  PATCH_IF (%kit_class% = 15) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // FIGHTER_DRUID
+  PATCH_IF (%kit_class% = 16) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // FIGHTER_MAGE_CLERIC
+  PATCH_IF (%kit_class% = 17) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+
+  // CLERIC_RANGER
+  PATCH_IF (%kit_class% = 18) BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+      READ_2DA_ENTRIES_NOW kitnames 3
+      COUNT_2DA_COLS cols
+      FOR (col = 0; col < cols - 1; ++col) BEGIN
+      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+      PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          PRETTY_PRINT_2DA
+      END 
+      END
+    END
+  END
+  END

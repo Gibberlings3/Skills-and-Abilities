@@ -34,30 +34,100 @@ Specialized (2 slots): The wielder's penalties are reduced to 0 attack roll and 
 Master (3 slots): The wielder's penalties to attack and damage rolls are reduced to 0 with the main weapon and -2 with the off-hand weapon.~
 
 @7100 = ~Bow~ 
-@7101 = ~BOW:  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. ~
+@7101 = ~BOW:  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. 
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 
 @7102 = ~Spiked Weapons~
-@7103 = ~SPIKED WEAPONS:  This weapon class allows the character to use Morning Stars and Flails.~
+@7103 = ~SPIKED WEAPONS:  This weapon class allows the character to use Morning Stars and Flails.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 
 @7104 = ~Small Sword~
-@7105 = ~SMALL SWORD:  This weapon class allows the character to use Daggers and Short swords. A Mage or Druid can select this class, but they are restricted to Daggers only.~
+@7105 = ~SMALL SWORD:  This weapon class allows the character to use Daggers and Short swords. A Mage or Druid can select this class, but they are restricted to Daggers only.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 
 @7106 = ~Large Sword~
-@7107 = ~LARGE SWORD:  This weapon class allows the character to use Bastard swords, Two handed swords, Long Swords, Katanas, Ninjatos, Wakizashis, and Scimitars.  The Thief is able to take this weapon class, but he is only allowed to use the Long Sword. The Druid is able to select this class, but is limited to Scimitars alone.~
+@7107 = ~LARGE SWORD:  This weapon class allows the character to use Bastard swords, Two handed swords, Long Swords, Katanas, Ninjatos, Wakizashis, and Scimitars.  The Thief is able to take this weapon class, but he is only allowed to use the Long Sword. The Druid is able to select this class, but is limited to Scimitars alone.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 
 @7108 = ~Axe~
 @7109 = ~AXE:  This weapon class allows the character to use Battle axes and Throwing axes.~
 
 @7110 = ~Blunt Weapons~
-@7111 = ~BLUNT WEAPONS:  This weapon class allows the character to use Maces, Clubs, Warhammers, and the Staff. Druids and thieves can choose this category, but are limited to the Club and Staff only. Mages can choose this category, but are limited to the Staff alone.~
+@7111 = ~BLUNT WEAPONS:  This weapon class allows the character to use Maces, Clubs, Warhammers, and the Staff. Druids and thieves can choose this category, but are limited to the Club and Staff only. Mages can choose this category, but are limited to the Staff alone.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 
 @7112 = ~Missile Weapons~
-@7113 = ~MISSILE WEAPONS: This weapon class allows the character to use Slings, Darts, and Crossbows. Mages, Druids, and Thieves can choose this proficiency but are restricted to Slings and Darts.  Clerics can choose this proficiency but are restricted to Slings alone.~
+@7113 = ~MISSILE WEAPONS: This weapon class allows the character to use Slings, Darts, and Crossbows. Mages, Druids, and Thieves can choose this proficiency but are restricted to Slings and Darts.  Clerics can choose this proficiency but are restricted to Slings alone.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 
 @7114 = ~Spear~
-@7115 = ~SPEAR:  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.~
+@7115 = ~SPEAR:  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
 
-@7116 = ~ARMOR~
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7116 = ~Armor~
 @7117 = ~ARMOR: This does these things...~
 
 @8000 = ~[LAST TRA HERE]~
