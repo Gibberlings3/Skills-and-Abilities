@@ -7,7 +7,19 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/itm/moprof.itm~ ~override~ // For tracking
+COPY ~skills-and-abilities/itm/moprof.itm~ ~override~ // For tracking of this mod component
+ACTION_FOR_EACH prof IN
+      1
+      2
+      3
+      4
+      5
+      6
+    BEGIN
+      COPY ~skills-and-abilities/spl/proficiencies/MOARM0%prof%.SPL~       ~override/MOARM0%prof%.SPL~
+      COPY ~skills-and-abilities/spl/proficiencies/MOARM%prof%%prof%.SPL~  ~override/MOARM%prof%%prof%.SPL~
+      COPY ~skills-and-abilities/eff/proficiencies/MOARM0%prof%.EFF~       ~override/MOARM0%prof%.EFF~
+    END
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -554,13 +566,18 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
   END
 
 ///////////////////////////////////////////////////////////////////////////
-// Armor Proficiency                                                     //
+// Assign Proficiencies to Items                                         //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_SHORT 0x1c type
 
+  // Armor Proficiency
   PATCH_IF (type = 2) BEGIN 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 190 target = 1 parameter1 = 1 timing = 2 END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 126 target = 1 parameter1 = -1 parameter2 = 0 timing = 2 END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm01~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm02~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm04~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm05~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm06~ END
   END
   BUT_ONLY
