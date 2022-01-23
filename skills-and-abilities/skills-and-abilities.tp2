@@ -74,7 +74,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// 1e Barbarians (EEex Required)                           //
+// 1e Barbarians (EEex Required)                                         //
 ///////////////////////////////////////////////////////////////////////////
 // Add Hide in Natural Surroundings, Detect Illusions, with option to lose barbarian rage (1e AD&D)
 // Setting skills like a Thief will lock up the level up screen.
@@ -83,7 +83,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
 // Tracking tras for areas in BG/IWD???
 
 //keep rage
-BEGIN @30 DESIGNATED 30 GROUP @1 LABEL SkillsAndAbilitiesBarb
+BEGIN @30 DESIGNATED 30 GROUP @1 LABEL SkillsAndAbilitiesBarb1
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
@@ -93,7 +93,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 ////////////////////////////////////////////////////
 
 //remove rage
-BEGIN @31 DESIGNATED 31 GROUP @1 LABEL SkillsAndAbilitiesBarb
+BEGIN @31 DESIGNATED 31 GROUP @1 LABEL SkillsAndAbilitiesBarb2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
