@@ -23,26 +23,50 @@ ACTION_FOR_EACH str_import IN
 ///////////////////////////////////////////////////////////////////////////
 // Update all 2H Weapons                                                 //
 ///////////////////////////////////////////////////////////////////////////
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-  READ_BYTE  0x31 prof
-  READ_BYTE  0x18 handed
-  READ_SHORT 0x1c type
+// Proficiency Overhaul installed
+ACTION_IF FILE_EXISTS_IN_GAME ~moprof.itm~ THEN BEGIN
+    COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+    READ_BYTE  0x31 prof
+    READ_BYTE  0x18 handed
+    READ_SHORT 0x1c type
 
-  // 2H Weapons Gain 1.5x STR DMG Bonus
-  PATCH_IF (prof = 89) OR // Bastard Sword
-      (prof = 92) OR      // Axe
-      (prof = 99) OR      // Halberd
-      (prof = 94) OR      // Katana
-      (prof = 102) OR     // Quarterstaff
-      (prof = 98) OR      // Spear
-      (prof = 93) BEGIN   // Two-Handed Sword
-    PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
-      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+    // 2H Weapons Gain 1.5x STR DMG Bonus
+    PATCH_IF (prof = 103) OR // Large Swords
+        (prof = 104) OR      // Axe
+        (prof = 105) OR      // Blunt
+        (prof = 107) BEGIN   // Spear
+      PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+      END
     END
-  END
+// Vanilla proficiencies
+END ELSE BEGIN
+  COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+    READ_BYTE  0x31 prof
+    READ_BYTE  0x18 handed
+    READ_SHORT 0x1c type
+
+    // 2H Weapons Gain 1.5x STR DMG Bonus
+    PATCH_IF (prof = 89) OR // Bastard Sword
+        (prof = 92) OR      // Axe
+        (prof = 99) OR      // Halberd
+        (prof = 94) OR      // Katana
+        (prof = 102) OR     // Quarterstaff
+        (prof = 98) OR      // Spear
+        (prof = 93) BEGIN   // Two-Handed Sword
+      PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+      END
+    END
+END
   BUT_ONLY
