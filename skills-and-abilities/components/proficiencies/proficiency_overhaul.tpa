@@ -228,8 +228,8 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
 
 // Set Name and Description
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-REPLACE ~moarm1~    @7100
-REPLACE ~moarm2~    @7101
+REPLACE ~moarm1~    @7116
+REPLACE ~moarm2~    @7117
 PRETTY_PRINT_2DA
 
 ///////////////////////////////////////////////////////////////////////////
@@ -240,7 +240,6 @@ APPEND ~stats.ids~ ~89 ARMOR_PROF~          UNLESS ~89 ARMOR_PROF~
 ///////////////////////////////////////////////////////////////////////////
 // Append to SPLPROT.2DA                                                 //
 ///////////////////////////////////////////////////////////////////////////
-// Append to SPLPROT.2DA
 ACTION_FOR_EACH armor IN
       1 
       2 
@@ -250,3 +249,27 @@ ACTION_FOR_EACH armor IN
     BEGIN
       APPEND ~splprot.2da~ ~mo_armor_prof%TAB%89%TAB%%armor%%TAB%2~
     END
+
+///////////////////////////////////////////////////////////////////////////
+// Update ALL Classes/Kits in WEAPPROF.2DA                               //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+    SET_2DA_ENTRY 5  11 1 ~5~   // FIGHTER - Armor Prof
+    SET_2DA_ENTRY 6  11 1 ~1~   // CLERIC - Armor Prof
+    SET_2DA_ENTRY 7  11 1 ~1~   // THIEF - Armor Prof
+    SET_2DA_ENTRY 8  11 1 ~1~   // BARD - Armor Prof
+    SET_2DA_ENTRY 9  11 1 ~2~   // PALADIN - Armor Prof
+    SET_2DA_ENTRY 10 11 1 ~1~   // DRUID - Armor Prof
+    SET_2DA_ENTRY 11 11 1 ~2~   // RANGER - Armor Prof
+    SET_2DA_ENTRY 12 11 1 ~2~   // FIGHTER_MAGE - Armor Prof
+    SET_2DA_ENTRY 13 11 1 ~2~   // FIGHTER_CLERIC - Armor Prof
+    SET_2DA_ENTRY 14 11 1 ~2~   // FIGHTER_THIEF - Armor Prof
+    SET_2DA_ENTRY 15 11 1 ~2~   // FIGHTER_MAGE_THIEF - Armor Prof
+    SET_2DA_ENTRY 16 11 1 ~1~   // MAGE_THIEF - Armor Prof
+    SET_2DA_ENTRY 17 11 1 ~1~   // CLERIC_MAGE - Armor Prof
+    SET_2DA_ENTRY 18 11 1 ~2~   // CLERIC_THIEF - Armor Prof
+    SET_2DA_ENTRY 19 11 1 ~2~   // FIGHTER_DRUID - Armor Prof
+    SET_2DA_ENTRY 20 11 1 ~2~   // FIGHTER_MAGE_CLERIC - Armor Prof
+    SET_2DA_ENTRY 21 11 1 ~2~   // CLERIC_RANGER - Armor Prof
+    PRETTY_PRINT_2DA
+  BUT_ONLY
