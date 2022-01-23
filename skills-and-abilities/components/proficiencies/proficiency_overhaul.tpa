@@ -560,7 +560,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_SHORT 0x1c type
 
   PATCH_IF (type = 2) BEGIN 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 190 target = 1 parameter1 = -2 timing = 2 resist_dispel = 0 probability1 = 100 END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 126 target = 1 parameter1 = -1 parameter2 = 0 timing = 2 resist_dispel = 0 END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 190 target = 1 parameter1 = -2 timing = 2 END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 126 target = 1 parameter1 = -1 parameter2 = 0 timing = 2 END
   END
   BUT_ONLY
