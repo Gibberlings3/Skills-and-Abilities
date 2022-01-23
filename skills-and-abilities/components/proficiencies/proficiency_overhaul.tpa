@@ -276,8 +276,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
 
 COPY_EXISTING ~KITLIST.2DA~ ~override~
   READ_2DA_ENTRIES_NOW ~all_kitlist~ 10
-  FOR (row = 3; row < all_kitlist; row += 1) BEGIN
-  READ_2DA_ENTRY_FORMER ~all_kitlist~ row 5 kit_clab
+  FOR (row = 0; row < all_kitlist; row += 1) BEGIN
   READ_2DA_ENTRY_FORMER ~all_kitlist~ row 1 kit_label
   READ_2DA_ENTRY_FORMER ~all_kitlist~ row 8 kit_class
 
@@ -298,7 +297,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
   END
 
   // CLERIC
-  PATCH_IF (%kit_class% = 2) BEGIN
+  PATCH_IF (%kit_class% = 3) BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       READ_2DA_ENTRIES_NOW kitnames 3
