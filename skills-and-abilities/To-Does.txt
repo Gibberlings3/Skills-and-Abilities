@@ -7,14 +7,19 @@
 ///////////////////////////////////////////////////////////////////////////
 // To-Do (Not Yet Assigned)                                              //
 ///////////////////////////////////////////////////////////////////////////
-	---
-	Grammarsalad: I'm happy to do this. 
-	---
+
 - Add new class descriptions
         ---
 	Grammarsalad: I'm happy to do this. 
 	---
 - Update item useability
+- Monk Overhaul
+	- Passive Flurry of Blows (double apr - will want to reduce apr progression, but would like to get to passive 8 ~ 10 apr)
+	- HLA for perm resistance to Time Stop
+- Paladin Overhaul
+	- Passive Auras that are always active
+	- Smiting
+	- Turn Undead
 - Flesh out new skills/pseudo-skills
 - Flesh out new proficiencies
 - Flesh out meaningful stat changes
@@ -51,10 +56,10 @@ E.g. using intelligence or wisdom as bonus (or penalty) to find/remove trap. Pro
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
 - Proficiency Overhaul. I will be in the proficiency_overhaul.tpa and proficiency_descriptions.tra
-	- Combine Weapon Proficiencies into OG BG1 model.
+	- (completed) Combine Weapon Proficiencies into OG BG1 model.
 	- Use extra proficiency areas to add non-weapon proficiencies.
-	- Automate update of weapprof.2da for all kits.
-	- Update all weapons to fall into the new Weapon Proficiency categories.
+	- (completed for og profs) Automate update of weapprof.2da for all kits.
+	- (completed) Update all weapons to fall into the new Weapon Proficiency categories.
 	- Traverse all characters and reassign Modify_Proficiency to ensure it aligns with the new system.
 
 Assigned to Grammarsalad
