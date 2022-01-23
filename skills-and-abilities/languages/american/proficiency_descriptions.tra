@@ -57,4 +57,7 @@ Master (3 slots): The wielder's penalties to attack and damage rolls are reduced
 @7114 = ~Spear~
 @7115 = ~SPEAR:  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.~
 
+@7116 = ~ARMOR~
+@7117 = ~ARMOR: This does these things...~
+
 @8000 = ~[LAST TRA HERE]~
