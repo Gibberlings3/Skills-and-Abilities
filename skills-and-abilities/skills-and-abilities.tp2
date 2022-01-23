@@ -21,13 +21,14 @@ END
 LANGUAGE ~American English~
          ~american~
          ~skills-and-abilities/languages/american/setup.tra~
-
-/* You can add new tra files to the array listed above
 //kit/class
          ~skills-and-abilities/languages/american/barbarian.tra~
+         ~skills-and-abilities/languages/american/ranger.tra~
+         
+/* You can add new tra files to the array listed above
+//kit/class
          ~skills-and-abilities/languages/american/bard.tra~
          ~skills-and-abilities/languages/american/monk.tra~
-         ~skills-and-abilities/languages/american/ranger.tra~
          ~skills-and-abilities/languages/american/wizard_slayer.tra~
 
 //attributes
@@ -43,9 +44,12 @@ LANGUAGE ~American English~
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Bards (EEex Required)                                //
 ///////////////////////////////////////////////////////////////////////////
+// Modify class description
+
 BEGIN @11 DESIGNATED 11 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+// Modify class description
 
 OUTER_SET bard_skill=0 // Add Pick Locks
 INCLUDE ~skills-and-abilities/components/class_skills/set_bard_skills.tpa~
@@ -65,18 +69,36 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_bard_skills.tpa~
 BEGIN @20 DESIGNATED 20 GROUP @1 LABEL SkillsAndAbilitiesMonk 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+// Modify class description
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Assign Skills to Barbarians (EEex Required)                           //
+// 1e Barbarians (EEex Required)                           //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @30 DESIGNATED 30 GROUP @1 LABEL SkillsAndAbilitiesBarb 
+// Add Hide in Natural Surroundings, Detect Illusions, with option to lose barbarian rage (1e AD&D)
+// Setting skills like a Thief will lock up the level up screen.
+// Modify class description
+// use REPLACE_TEXTUALLY to update set trap and track descriptions (check mods--Trap Revisions, what else?)
+// Tracking tras for areas in BG/IWD???
+
+//keep rage
+BEGIN @30 DESIGNATED 30 GROUP @1 LABEL SkillsAndAbilitiesBarb
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-// Add Hide in Natural Surroundings, Detect Illusions, Tracking, Set Natural Snares (1e AD&D)
-// Setting skills like a Thief will lock up the level up screen.
+OUTER_SET barb_rage=1 // Keep rage
+
+INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+////////////////////////////////////////////////////
+
+//remove rage
+BEGIN @31 DESIGNATED 31 GROUP @1 LABEL SkillsAndAbilitiesBarb
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+OUTER_SET barb_rage=0 // Remove rage
+
 INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
@@ -86,7 +108,8 @@ BEGIN @40 DESIGNATED 40 GROUP @1 LABEL SkillsAndAbilitiesRang
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 // REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-// Add Set Natural Snares and Tracking
+// Modify class description
+// use REPLACE_TEXTUALLY to update set trap descriptions (check mods--Trap Revisions, what else?) 
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_ranger_skills.tpa~
 

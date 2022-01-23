@@ -22,7 +22,9 @@ APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
 // This gives Barbarian the Thief snare at the same frequency Thieves get them.
 COPY_EXISTING ~CLABFI05.2DA~ override
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK04 END
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_SPCL412 END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK04 END                  //outdoors only hide
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_B_NTP01 END   //set natrual snare
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 6 STR_VAR f_Entry = GA_SPCL922 END   //tracking
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -36,4 +38,59 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 9 49 1 ~100~   // SET_TRAPS
   PRETTY_PRINT_2DA
 BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                    Set Snares Skill                 ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP01.spl~ THEN BEGIN
+ COPY_EXISTING ~SPCL412.spl~ ~override/B_NTP01.spl~   //thief trap to set nat snares
+  LPF CLONE_EFFECT INT_VAR match_opcode = 252 opcode = 318 timing = 0 duration = 1 parameter1 = 8 parameter2 = %not_ar% STR_VAR resource = ~B_NTP01~ END  //Protection complete below
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 326 STR_VAR resource = ~B_NTP02~ END  //For notifications
+        SAY NAME1 @4501              //barbarian reference (no need to duplicate)
+        SAY NAME2 @4501              //barbarian reference (no need to duplicate)
+        SAY UNIDENTIFIED_DESC @4502  //barbarian reference (no need to duplicate)
+	SAY DESC @4502               //barbarian reference (no need to duplicate)
+END
+ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP02.spl~ THEN BEGIN
+ COPY ~%folder%/spl/barbarian/B_NTP02.spl~ ~override~   //Set Natural Snares only works in natural environments
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4505) STR_VAR END        //barbarian reference (no need to duplicate)
+END
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                      Tracking                       ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+ACTION_IF !FILE_EXISTS_IN_GAME ~SPCL922.spl~ THEN BEGIN
+ COPY ~%folder%/data/spl/SPCL922.spl~ ~override~   //tracking
+        SAY NAME1 @4501              //barbarian reference (no need to duplicate)
+        SAY NAME2 @4501              //barbarian reference (no need to duplicate)
+        SAY UNIDENTIFIED_DESC @4502  //barbarian reference (update by class)
+	SAY DESC @4502               //barbarian reference (update by class)
+END
+//Tracking skill?
+//TO DO (Maybe)
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                   Detect Illusion                   ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+//TO DO
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////              Hide in Natural Surroundings           ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+//TO DO
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                        Rage                         ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF (%barb_rage% < 1) BEGIN  //
+  COPY_EXISTING ~CLABFI05.2DA~ ~override~
+      REPLACE_TEXTUALLY ~GA_SPCL152~ ~****~
+END
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Updates descriptions for Barbarians                                              //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+//TO DO
 
