@@ -44,6 +44,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~moprof.itm~ THEN BEGIN
         LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
       END
     END
+    BUT_ONLY
 // Vanilla proficiencies
 END ELSE BEGIN
   COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
@@ -68,5 +69,6 @@ END ELSE BEGIN
         LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
       END
     END
+    BUT_ONLY
 END
-  BUT_ONLY
+  
