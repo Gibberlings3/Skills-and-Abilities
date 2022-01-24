@@ -24,10 +24,10 @@ LANGUAGE ~American English~
 //kit/class
          ~skills-and-abilities/languages/american/barbarian.tra~
          ~skills-and-abilities/languages/american/ranger.tra~
+         ~skills-and-abilities/languages/american/bard.tra~
          
 /* You can add new tra files to the array listed above
 //kit/class
-         ~skills-and-abilities/languages/american/bard.tra~
          ~skills-and-abilities/languages/american/monk.tra~
          ~skills-and-abilities/languages/american/wizard_slayer.tra~
 
@@ -44,12 +44,10 @@ LANGUAGE ~American English~
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Bards (EEex Required)                                //
 ///////////////////////////////////////////////////////////////////////////
-// Modify class description
 
 BEGIN @11 DESIGNATED 11 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
-// Modify class description
 
 OUTER_SET bard_skill=0 // Add Pick Locks
 INCLUDE ~skills-and-abilities/components/class_skills/set_bard_skills.tpa~

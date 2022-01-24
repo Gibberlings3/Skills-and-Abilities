@@ -203,4 +203,32 @@ END
 // Updates descriptions for Bards                                              //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-//TO DO
+//
+//open lock
+//ACTION_IF (%bard_skill% = 0) BEGIN  // lockpicking is always in atm
+ OUTER_SPRINT old @3501 //old text: Pick Pockets
+ OUTER_SPRINT new @3502 //new text: Pick Pockets, Open Locks
+
+  ACTION_GET_STRREF 37236 bard_description
+
+    OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
+      REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+  END
+
+  STRING_SET_EVALUATE 37236 ~%bard_description%~
+//END
+
+//find/remove traps
+ACTION_IF (%bard_skill% <0) BEGIN  // lockpicking is always in atm
+ OUTER_SPRINT new @3503 //new text: Pick Pockets, Find Traps
+
+  ACTION_GET_STRREF 37236 bard_description
+
+    OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
+      REPLACE_TEXTUALLY ~%old%~ ~%new%~
+
+  END
+
+  STRING_SET_EVALUATE 37236 ~%bard_description%~
+END
