@@ -12,7 +12,8 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
 END
 
 COPY ~skills-and-abilities/lua/M_B3THI5.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
-//COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override~ // Assigns 5-5-5-5 skill points to Barbarian not used in favor or skill assignment (for now)
+COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override~ // Assigns 5-5-5-5 skill points to Barbarian and 100% track
+COPY ~skills-and-abilities/spl/barbarian/B_BRBVNC.SPL~   ~override~ // Grants +2%/level
 
 APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
 
@@ -21,7 +22,9 @@ APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
 ///////////////////////////////////////////////////////////////////////////
 // This gives Barbarian the Thief snare at the same frequency Thieves get them.
 COPY_EXISTING ~CLABFI05.2DA~ override
-//  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK04 END                //outdoors only hide TO DO
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_MO#BSK04 END //1 time bonus of 5% ea skill and 100% track
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_B_BRBVNC END //+4%/level
+//  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_ END //outdoors only hide TO DO
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_B_NTP01 END   //set natrual snare
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 6 STR_VAR f_Entry = GA_SPCL922 END   //tracking
   PRETTY_PRINT_2DA
@@ -86,7 +89,7 @@ END
 
 ACTION_IF (%barb_rage% < 1) BEGIN  //
   COPY_EXISTING ~CLABFI05.2DA~ ~override~
-      REPLACE_TEXTUALLY ~GA_SPCL152~ ~****~
+      REPLACE_TEXTUALLY ~GA_SPCL152~ ~****      ~
 END
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
