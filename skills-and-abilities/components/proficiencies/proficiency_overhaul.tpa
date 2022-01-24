@@ -809,8 +809,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
   END
-  END
-
+  
   // SORCERER
   PATCH_IF (%kit_class% = 19) BEGIN
     INNER_ACTION BEGIN
@@ -868,6 +867,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
+  END
   END
 
 ///////////////////////////////////////////////////////////////////////////
