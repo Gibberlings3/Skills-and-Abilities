@@ -368,16 +368,16 @@ COPY_EXISTING ~moarm06.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof5% END
 
 // Spellcraft Prof
-ACTION_FOR_EACH spl IN
-      1
-      2
-      3
-      4
-      5 
-    BEGIN
-      COPY_EXISTING ~mospl0%spl%.spl~ ~override~
-        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof%spl%% END
-    END
+COPY_EXISTING ~mospl01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof1% END
+COPY_EXISTING ~mospl02.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof2% END
+COPY_EXISTING ~mospl03.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof3% END
+COPY_EXISTING ~mospl04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof4% END
+COPY_EXISTING ~mospl05.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof5% END
 
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
