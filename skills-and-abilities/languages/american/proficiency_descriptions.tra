@@ -161,6 +161,6 @@ Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus t
 
 Quicken Spell (4 slots): The character decreases spellcasting time by 2.
 
-Spellcasting Prodigy (5 slots): The character can memorize one extra arcane spell of each level from 1st to 5th~
+Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored. ~
 
 @8000 = ~[LAST TRA HERE]~
