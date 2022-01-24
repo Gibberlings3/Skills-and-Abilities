@@ -86,7 +86,17 @@ Master (3 slots): The wielder's penalties to attack and damage rolls are reduced
 <DOTS5>~
 
 @7108 = ~Axe~
-@7109 = ~AXE:  This weapon class allows the character to use Battle axes and Throwing axes.~
+@7109 = ~AXE:  This weapon class allows the character to use Battle axes and Throwing axes.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 
 @7110 = ~Blunt Weapons~
 @7111 = ~BLUNT WEAPONS:  This weapon class allows the character to use Maces, Clubs, Warhammers, and the Staff. Druids and thieves can choose this category, but are limited to the Club and Staff only. Mages can choose this category, but are limited to the Staff alone.
