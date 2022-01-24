@@ -16,10 +16,12 @@ ACTION_FOR_EACH prof IN
       5
       6
     BEGIN
-      COPY ~skills-and-abilities/spl/proficiencies/MOARM0%prof%.SPL~       ~override/MOARM0%prof%.SPL~
-      COPY ~skills-and-abilities/spl/proficiencies/MOARM%prof%%prof%.SPL~  ~override/MOARM%prof%%prof%.SPL~
-      COPY ~skills-and-abilities/eff/proficiencies/MOARM0%prof%.EFF~       ~override/MOARM0%prof%.EFF~
+      COPY ~skills-and-abilities/spl/proficiencies/MOARM0%prof%.SPL~       ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MOARM%prof%%prof%.SPL~  ~override~
+      COPY ~skills-and-abilities/eff/proficiencies/MOARM0%prof%.EFF~       ~override~
     END
+
+COPY ~skills-and-abilities/2da/PROFS.2DA~ ~override~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
