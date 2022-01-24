@@ -69,6 +69,13 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - High Master (4 slots): The character bonus to AC increases to -2.
 - Grand Master (5 slots): The character receives -2 bonus to AC and 5% damage reduction to all physical attacks.
 
+**SPELLCRAFT:**  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
+- Silent Spell (1 slot): The character gains permanent Vocalize.
+- Practiced Spellcaster (2 slots): Caster level is increased by 1.
+- Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
+- Quicken Spell (4 slots): The character decreases spellcasting time by 2.
+- Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.
+
 **BOW:**  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. 
 
 **SPIKED WEAPONS:**  This weapon class allows the character to use Morning Stars and Flails.
