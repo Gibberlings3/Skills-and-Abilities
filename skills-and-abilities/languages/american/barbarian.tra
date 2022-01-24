@@ -3,7 +3,18 @@
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
-@4501 = ~[FIRST TRA HERE]~
+// Group 1 (Update 4501-????)
+@4501 = ~Set Natural Snares~
+@4502 = ~Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the character's level and can only be triggered by enemies.
+  1st Level: Deals 2d8+5 missile damage.
+  11th Level: Deals 2d8+5 missile damage, plus 2d6 poison damage per round for the next 3 rounds.
+  16th Level: Deals 3d8+5 missile damage, plus 4d8+2 fire damage.
+  21st Level: Deals 3d8+5 missile damage and 20 poison damage with no save; slays target if a Save vs. Death with a +4 bonus is failed.
 
+  Set Natural Snare only works in natural environments.~
+@4503 = ~Tracking~
+@4504 = ~Tracking
+With an intimate knowledge of <PRO_HISHER> surroundings and the creatures that live within them, a barbarian can use the Tracking ability to give <PRO_HIMHER>self a general idea of what creatures are in an area and which direction they are. Red arrows at the edge of the screen will point in the general direction of the creatures in the area.~
+@4505 = ~Set Natural Snares only works in natural environments~
 
 @5000 = ~[LAST TRA HERE]~
