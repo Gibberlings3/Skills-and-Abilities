@@ -303,7 +303,7 @@ COPY_EXISTING ~moarm04.spl~ ~override~
 COPY_EXISTING ~moarm05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof4% END
 COPY_EXISTING ~moarm06.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof6% END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof5% END
 
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
