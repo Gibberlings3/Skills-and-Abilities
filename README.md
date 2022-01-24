@@ -24,9 +24,11 @@ Adds the option to either select Open Locks only or Open Locks and Disarm/Find T
 
 Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk kits. 
 
-### Barbarians (EEex Required)
+### 1e Barbarians (EEex Required)
 
-Adds Detect Illusions and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit.
+Adds Detect Illusions, set natural snares (outdoor areas only) and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit. 
+
+Option to remove barbarian rage (as 1e barbarian did not have rage).
 
 ### Rangers
 
