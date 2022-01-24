@@ -253,36 +253,77 @@ APPEND ~stats.ids~ ~89 ARMOR_PROF~          UNLESS ~89 ARMOR_PROF~
 // Append to SPLPROT.2DA                                                 //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_FOR_EACH armor IN
-      1 
-      2 
-      3 
-      4 
+      0
+      1
+      2
+      3
+      4
       5 
     BEGIN
-      APPEND ~splprot.2da~ ~mo_armor_prof%TAB%89%TAB%%armor%%TAB%2~
+      APPEND ~splprot.2da~ ~mo_armor_prof%armor%%TAB%89%TAB%%armor%%TAB%1~
     END
+
+// Update all imported files so they point in the correct direction.
+COPY_EXISTING ~splprot.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~
+      // Armor Prof - 0 Pips
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_prof0~ BEGIN 
+        SET armor_prof0 = %row%
+      // Armor Prof - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_prof1~ BEGIN
+        SET armor_prof1 = %row%
+      // Armor Prof - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_prof2~ BEGIN
+        SET armor_prof2 = %row%
+      // Armor Prof - 3 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_prof3~ BEGIN
+        SET armor_prof3 = %row%
+      // Armor Prof - 4 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_prof4~ BEGIN
+        SET armor_prof4 = %row%
+      // Armor Prof - 5 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_prof5~ BEGIN
+        SET armor_prof5 = %row%
+      END
+    END
+
+COPY_EXISTING ~moarm01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof0% END
+COPY_EXISTING ~moarm02.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof1% END
+COPY_EXISTING ~moarm03.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof2% END
+COPY_EXISTING ~moarm04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof3% END
+COPY_EXISTING ~moarm05.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof4% END
+COPY_EXISTING ~moarm06.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %armor_prof6% END
 
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11  5 1 ~5~   // FIGHTER - Armor Prof
-    SET_2DA_ENTRY 11  6 1 ~1~   // CLERIC - Armor Prof
-    SET_2DA_ENTRY 11  7 1 ~1~   // THIEF - Armor Prof
-    SET_2DA_ENTRY 11  8 1 ~1~   // BARD - Armor Prof
-    SET_2DA_ENTRY 11  9 1 ~2~   // PALADIN - Armor Prof
-    SET_2DA_ENTRY 11 10 1 ~1~   // DRUID - Armor Prof
-    SET_2DA_ENTRY 11 11 1 ~2~   // RANGER - Armor Prof
-    SET_2DA_ENTRY 11 12 1 ~2~   // FIGHTER_MAGE - Armor Prof
-    SET_2DA_ENTRY 11 13 1 ~2~   // FIGHTER_CLERIC - Armor Prof
-    SET_2DA_ENTRY 11 14 1 ~2~   // FIGHTER_THIEF - Armor Prof
-    SET_2DA_ENTRY 11 15 1 ~2~   // FIGHTER_MAGE_THIEF - Armor Prof
-    SET_2DA_ENTRY 11 16 1 ~1~   // MAGE_THIEF - Armor Prof
-    SET_2DA_ENTRY 11 17 1 ~1~   // CLERIC_MAGE - Armor Prof
+    SET_2DA_ENTRY 11  6 1 ~2~   // CLERIC - Armor Prof
+    SET_2DA_ENTRY 11  7 1 ~2~   // THIEF - Armor Prof
+    SET_2DA_ENTRY 11  8 1 ~2~   // BARD - Armor Prof
+    SET_2DA_ENTRY 11  9 1 ~5~   // PALADIN - Armor Prof
+    SET_2DA_ENTRY 11 10 1 ~2~   // DRUID - Armor Prof
+    SET_2DA_ENTRY 11 11 1 ~5~   // RANGER - Armor Prof
+    SET_2DA_ENTRY 11 12 1 ~5~   // FIGHTER_MAGE - Armor Prof
+    SET_2DA_ENTRY 11 13 1 ~5~   // FIGHTER_CLERIC - Armor Prof
+    SET_2DA_ENTRY 11 14 1 ~5~   // FIGHTER_THIEF - Armor Prof
+    SET_2DA_ENTRY 11 15 1 ~5~   // FIGHTER_MAGE_THIEF - Armor Prof
+    SET_2DA_ENTRY 11 16 1 ~2~   // MAGE_THIEF - Armor Prof
+    SET_2DA_ENTRY 11 17 1 ~2~   // CLERIC_MAGE - Armor Prof
     SET_2DA_ENTRY 11 18 1 ~2~   // CLERIC_THIEF - Armor Prof
-    SET_2DA_ENTRY 11 19 1 ~2~   // FIGHTER_DRUID - Armor Prof
-    SET_2DA_ENTRY 11 20 1 ~2~   // FIGHTER_MAGE_CLERIC - Armor Prof
-    SET_2DA_ENTRY 11 21 1 ~2~   // CLERIC_RANGER - Armor Prof
+    SET_2DA_ENTRY 11 19 1 ~5~   // FIGHTER_DRUID - Armor Prof
+    SET_2DA_ENTRY 11 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Armor Prof
+    SET_2DA_ENTRY 11 21 1 ~5~   // CLERIC_RANGER - Armor Prof
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -317,7 +358,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -333,7 +374,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -349,7 +390,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -365,7 +406,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -381,7 +422,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -397,7 +438,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -413,7 +454,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 0; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -429,7 +470,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -445,7 +486,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -461,7 +502,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -477,7 +518,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -493,7 +534,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -509,7 +550,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~1~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -525,7 +566,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -541,7 +582,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -557,7 +598,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           PRETTY_PRINT_2DA
       END 
       END
@@ -575,7 +616,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (type = 2) BEGIN 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm01~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END // Basically No Effect
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm04~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm05~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm06~ END
