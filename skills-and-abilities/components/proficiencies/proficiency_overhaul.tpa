@@ -236,7 +236,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 0 1 ~ARMOR~
     SET_2DA_ENTRY 11 2 1 ~moarm1~
-    SET_2DA_ENTRY 11 3 1 ~moarm2~    
+    SET_2DA_ENTRY 11 3 1 ~moarm2~
+    SET_2DA_ENTRY 12 0 1 ~SPELLCRAFT~
+    SET_2DA_ENTRY 12 2 1 ~mospl1~
+    SET_2DA_ENTRY 12 3 1 ~mospl2~    
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -244,17 +247,20 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
 REPLACE ~moarm1~    @7116
 REPLACE ~moarm2~    @7117
+REPLACE ~mospl1~    @7118
+REPLACE ~mospl2~    @7119
 PRETTY_PRINT_2DA
 
 ///////////////////////////////////////////////////////////////////////////
 // Append to STATS.IDS                                                   //
 ///////////////////////////////////////////////////////////////////////////
 APPEND ~stats.ids~ ~89 ARMOR_PROF~          UNLESS ~89 ARMOR_PROF~
+APPEND ~stats.ids~ ~90 SPELLCRAFT~          UNLESS ~90 SPELLCRAFT~
 
 ///////////////////////////////////////////////////////////////////////////
 // Append to SPLPROT.2DA                                                 //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_FOR_EACH armor IN
+ACTION_FOR_EACH new_prof IN
       0
       1
       2
@@ -262,7 +268,8 @@ ACTION_FOR_EACH armor IN
       4
       5 
     BEGIN
-      APPEND ~splprot.2da~ ~mo_armor_prof%armor%%TAB%89%TAB%%armor%%TAB%1~
+      APPEND ~splprot.2da~ ~mo_armor_prof%new_prof%%TAB%89%TAB%%new_prof%%TAB%1~
+      APPEND ~splprot.2da~ ~mo_spl_prof%new_prof%%TAB%90%TAB%%new_prof%%TAB%1~
     END
 
 // Update all imported files so they point in the correct direction.
@@ -289,6 +296,24 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Armor Prof - 5 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_prof5~ BEGIN
         SET armor_prof5 = %row%
+      // Spellcraft - 0 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spl_prof0~ BEGIN
+        SET spl_prof0 = %row%
+      // Spellcraft - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spl_prof1~ BEGIN
+        SET spl_prof1 = %row%
+      // Spellcraft - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spl_prof2~ BEGIN
+        SET spl_prof2 = %row%
+      // Spellcraft - 3 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spl_prof3~ BEGIN
+        SET spl_prof3 = %row%
+      // Spellcraft - 4 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spl_prof4~ BEGIN
+        SET spl_prof4 = %row%
+      // Spellcraft - 5 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spl_prof5~ BEGIN
+        SET spl_prof5 = %row%
       END
     END
 
