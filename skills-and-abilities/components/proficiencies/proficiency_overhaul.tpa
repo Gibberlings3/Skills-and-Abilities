@@ -153,7 +153,6 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         READ_2DA_ENTRY (test + 25) col cols shortbow
         PATCH_IF (bow < shortbow) BEGIN SET bow = shortbow END
 
-        /*
         // Spiked
         READ_2DA_ENTRY (test + 20) col cols spiked
 
@@ -196,7 +195,6 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         READ_2DA_ENTRY (test + 20) col cols spear
         READ_2DA_ENTRY (test + 19) col cols halberd
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
-        */
 
         // Set Old Proficiencies to 0 - These will be reused/updated to new ones
         FOR (row = 11; row < 31; ++row) BEGIN
