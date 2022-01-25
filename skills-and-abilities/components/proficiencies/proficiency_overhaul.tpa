@@ -123,7 +123,7 @@ APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
 // Move Proficiency Points to Weapon Groups                              //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-    SET test = 0
+    SET test = -1
     READ_2DA_ENTRIES_NOW weapprof 3
     COUNT_2DA_COLS cols
     FOR (col = 2; col < cols; ++col) BEGIN
