@@ -164,20 +164,20 @@ Quicken Spell (4 slots): The character decreases spellcasting time by 2.
 Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.~
 
 @7120 = ~Devotion~
-@7121 = ~DEVOTION:  This proficiency grants additional abilities and benefits to divine spellcasters. All abilities are cumulative.
+@7121 = ~DEVOTION:  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
 
-Silent Spell (1 slot): The character gains permanent Vocalize.
+Pious (1 slot): The character gains 10% resistance to poison damage.
 
-Practiced Spellcaster (2 slots): Caster level is increased by 1.
+Divine Agent (2 slots): The character becomes immune to hold and paralysis.
 
-Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
+Divine Channeling (3 slots): The character decreases spellcasting time by 1.
 
-Quicken Spell (4 slots): The character decreases spellcasting time by 2.
+Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
 
-Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Divine spells will be restored.~
+Pneuma (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Divine spells will be restored.~
 
-@7122 = ~Physical Conditioning~
-@7123 = ~PHYSICAL CONDITIONING:  This proficiency epitomizes pushing ones body harder, faster, and further. All abilities are cumulative.
+@7122 = ~Conditioning~
+@7123 = ~CONDITIONING:  This proficiency epitomizes pushing ones body harder, faster, and further. All abilities are cumulative.
 
 Fortitude (1 slot): The character gains a +2 bonus to save vs. Paralysis / Poison / Death
 
@@ -189,31 +189,11 @@ Tireless (4 slots): The character does not become fatigued to include after usin
 
 Armor Skin (5 slots): The character's natural armor bonus to Armor Class increases by 1.~
 
-@7124 = ~Mental Conditioning~
-@7125 = ~MENTAL CONDITIONING:  All abilities are cumulative.
+@7124 = ~Resilience~
+@7125 = ~RESILIENCE:  The character gains 2% damage reduction to all physical attacks. This proficiency may be taken multiple times, up to a maximum of 10% damage reduction to all physical attacks.~
 
- (1 slot): 
-
- (2 slots): 
-
- (3 slots):  
-
- (4 slots): 
-
- (5 slots): ~
-
-@7126 = ~Mercantilism~
-@7127 = ~MERCANTILISM:  All abilities are cumulative.
-
- (1 slot): 
-
- (2 slots): 
-
- (3 slots):  
-
- (4 slots): 
-
- (5 slots): ~
+@7126 = ~Thievery~
+@7127 = ~THIEVERY:  The character gains +5 skills points in each skill. This proficiency may be taken multiple times, up to a maximum of +25 skill points in each skill.~
 
 @7128 = ~Archery Weapon Style~
 @7129 = ~ARCHERY:  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
@@ -221,5 +201,11 @@ Armor Skin (5 slots): The character's natural armor bonus to Armor Class increas
 Marksman (1 slot): The character gains a +2 bonus to damage rolls.
 
 Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.~
+
+@7130 = ~Elemental Resistance~
+@7131 = ~ELEMENTAL RESISTANCE:  The character gains 5% resistance to all elemental damage. This proficiency may be taken multiple times, up to a maximum of 25% resistance to elemental damage.~
+
+@7132 = ~Magid Damage Resistance~
+@7133 = ~MAGIC DAMAGE RESISTANCE:  The character gains 5% resistance to magic damage. This proficiency may be taken multiple times, up to a maximum of 25% resistance to magic damage.~
 
 @8000 = ~[LAST TRA HERE]~
