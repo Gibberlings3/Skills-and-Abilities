@@ -322,7 +322,7 @@ ACTION_FOR_EACH spell IN
 
 // Archery Weapon Style
 APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%99%TAB%1%TAB%4~
-APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%99%TAB%2%TAB%4~
+APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%99%TAB%2%TAB%4~
 
 // Update all imported files so they point in the correct direction.
 COPY_EXISTING ~splprot.2da~ ~override~
