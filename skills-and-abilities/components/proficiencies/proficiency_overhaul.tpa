@@ -123,55 +123,56 @@ APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
 // Move Proficiency Points to Weapon Groups                              //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+    SET test = 0
     READ_2DA_ENTRIES_NOW weapprof 3
     COUNT_2DA_COLS cols
     FOR (col = 2; col < cols; ++col) BEGIN
         // Bows
-        READ_2DA_ENTRY 26 col cols bow // longbow
-        READ_2DA_ENTRY 27 col cols shortbow
+        READ_2DA_ENTRY (test + 25) col cols bow // longbow
+        READ_2DA_ENTRY (test + 26) col cols shortbow
         PATCH_IF (bow < shortbow) BEGIN SET bow = shortbow END
 
         // Spiked
-        READ_2DA_ENTRY 22 col cols spiked
+        READ_2DA_ENTRY (test + 21) col cols spiked
 
         // Small Sword
-        READ_2DA_ENTRY 12 col cols ssword // short sword
-        READ_2DA_ENTRY 17 col cols dagger
+        READ_2DA_ENTRY (test + 11) col cols ssword // short sword
+        READ_2DA_ENTRY (test + 16) col cols dagger
         PATCH_IF (ssword < dagger) BEGIN SET ssword = dagger END
 
         // Large Sword
-        READ_2DA_ENTRY 10 col cols lsword // bastard
-        READ_2DA_ENTRY 11 col cols longsword
-        READ_2DA_ENTRY 14 col cols twohanded
-        READ_2DA_ENTRY 15 col cols katana
-        READ_2DA_ENTRY 16 col cols scimitar
+        READ_2DA_ENTRY (test + 9) col cols lsword // bastard
+        READ_2DA_ENTRY (test + 10) col cols longsword
+        READ_2DA_ENTRY (test + 13) col cols twohanded
+        READ_2DA_ENTRY (test + 14) col cols katana
+        READ_2DA_ENTRY (test + 15) col cols scimitar
         PATCH_IF (lsword < longsword) BEGIN SET lsword = longsword END
         PATCH_IF (lsword < twohanded) BEGIN SET lsword = twohanded END
         PATCH_IF (lsword < katana) BEGIN SET lsword = katana END
         PATCH_IF (lsword < scimitar) BEGIN SET lsword = scimitar END
 
         // Axe
-        READ_2DA_ENTRY 13 col cols axe
+        READ_2DA_ENTRY (test + 12) col cols axe
 
         // Blunt
-        READ_2DA_ENTRY 18 col cols blunt // warhammer
-        READ_2DA_ENTRY 19 col cols club
-        READ_2DA_ENTRY 23 col cols mace
-        READ_2DA_ENTRY 24 col cols staff
+        READ_2DA_ENTRY (test + 17) col cols blunt // warhammer
+        READ_2DA_ENTRY (test + 18) col cols club
+        READ_2DA_ENTRY (test + 22) col cols mace
+        READ_2DA_ENTRY (test + 23) col cols staff
         PATCH_IF (blunt < club) BEGIN SET blunt = club END
         PATCH_IF (blunt < mace) BEGIN SET blunt = mace END
         PATCH_IF (blunt < staff) BEGIN SET blunt = staff END
 
         // Missile
-        READ_2DA_ENTRY 25 col cols missile // crossbow
-        READ_2DA_ENTRY 28 col cols dart
-        READ_2DA_ENTRY 29 col cols sling
+        READ_2DA_ENTRY (test + 24) col cols missile // crossbow
+        READ_2DA_ENTRY (test + 27) col cols dart
+        READ_2DA_ENTRY (test + 28) col cols sling
         PATCH_IF (missile < dart) BEGIN SET missile = dart END
         PATCH_IF (missile < sling) BEGIN SET missile = sling END
 
         // Spear
-        READ_2DA_ENTRY 22 col cols spear
-        READ_2DA_ENTRY 21 col cols halberd
+        READ_2DA_ENTRY (test + 21) col cols spear
+        READ_2DA_ENTRY (test + 20) col cols halberd
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
 
         // Set Old Proficiencies to 0 - These will be reused/updated to new ones
