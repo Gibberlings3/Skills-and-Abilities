@@ -405,12 +405,6 @@ COPY_EXISTING ~mospl04.spl~ ~override~
 COPY_EXISTING ~mospl05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof5% END
 
-// Archery Weapon Style
-COPY_EXISTING ~moarc01.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %arch_prof1% END
-COPY_EXISTING ~moarc02.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %arch_prof2% END
-
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
 ///////////////////////////////////////////////////////////////////////////
@@ -444,7 +438,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 60 1 ~2~   // SHAMAN - Armor Prof
     
     // This is used if ALL Classes are getting the same prof
-    ACTION_FOR_EACH class_prof IN
+    PATCH_FOR_EACH class_prof IN
           4  // MAGE
           5  // FIGHTER
           6  // CLERIC
@@ -466,7 +460,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           51 // MONK
           60 // SHAMAN
         BEGIN
-          SET_2DA_ENTRY 22 %class_prof% 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 22 class_prof 1 ~2~   // Archery Weapon Style
         END
     PRETTY_PRINT_2DA
   BUT_ONLY
