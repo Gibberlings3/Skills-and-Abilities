@@ -175,11 +175,10 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
 
         // Set Old Proficiencies to 0 - These will be reused/updated to new ones
-        FOR (row = 11; row < 30; ++row) BEGIN
+        FOR (row = 11; row < 31; ++row) BEGIN
             SET_2DA_ENTRY row col 1 ~0~
         END
 
-        /*
         // Set New Proficiency Points
         SET_2DA_ENTRY 22 col 1 ~%bow%~
         SET_2DA_ENTRY 23 col 1 ~%spiked%~
@@ -189,7 +188,6 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         SET_2DA_ENTRY 27 col 1 ~%blunt%~
         SET_2DA_ENTRY 28 col 1 ~%missile%~
         SET_2DA_ENTRY 29 col 1 ~%spear%~
-        */
 
     END
     SET_2DA_ENTRY 22 0 1 ~BOW~
