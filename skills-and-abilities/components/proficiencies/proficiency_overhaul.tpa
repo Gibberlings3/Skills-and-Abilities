@@ -9,18 +9,20 @@
 ///////////////////////////////////////////////////////////////////////////
 COPY ~skills-and-abilities/itm/moprof.itm~ ~override~ // For tracking of this mod component
 COPY ~skills-and-abilities/2da/PROFS.2DA~ ~override~
-COPY ~skills-and-abilities/eff/proficiencies/MOARC01.EFF~   ~override/MOARC01.EFF~ // Archery Weapon Style
-COPY ~skills-and-abilities/eff/proficiencies/MOARC02.EFF~   ~override/MOARC02.EFF~ // Archery Weapon Style
-COPY ~skills-and-abilities/spl/proficiencies/MOARC01.SPL~   ~override/MOARC01.SPL~ // Archery Weapon Style
-COPY ~skills-and-abilities/spl/proficiencies/MOARC02.SPL~   ~override/MOARC02.SPL~ // Archery Weapon Style
+COPY ~skills-and-abilities/eff/proficiencies/MOARC01.EFF~   ~override~ // Archery Weapon Style
+COPY ~skills-and-abilities/eff/proficiencies/MOARC02.EFF~   ~override~ // Archery Weapon Style
+COPY ~skills-and-abilities/spl/proficiencies/MOARC01.SPL~   ~override~ // Archery Weapon Style
+COPY ~skills-and-abilities/spl/proficiencies/MOARC02.SPL~   ~override~ // Archery Weapon Style
+COPY ~skills-and-abilities/spl/proficiencies/MOARM06.SPL~   ~override~ // Armor 6th pip
+COPY ~skills-and-abilities/spl/proficiencies/MOARM66.SPL~   ~override~ // Armor 6th pip
+COPY ~skills-and-abilities/eff/proficiencies/MOARM06.EFF~   ~override~ // Armor 6th pip
 
 ACTION_FOR_EACH prof IN
       1
       2
       3
       4
-      5
-      6 
+      5 
     BEGIN
       // Armor Prof
       COPY ~skills-and-abilities/spl/proficiencies/MOARM0%prof%.SPL~       ~override~
@@ -31,6 +33,11 @@ ACTION_FOR_EACH prof IN
       COPY ~skills-and-abilities/spl/proficiencies/MOSPL%prof%%prof%.SPL~  ~override~
       COPY ~skills-and-abilities/eff/proficiencies/MOSPL0%prof%.EFF~       ~override~
       COPY ~skills-and-abilities/spl/proficiencies/MOSPLC%prof%.SPL~       ~override~
+      // Devotion Profs
+      COPY ~skills-and-abilities/spl/proficiencies/MODEV0%prof%.SPL~       ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MODEV%prof%%prof%.SPL~  ~override~
+      COPY ~skills-and-abilities/eff/proficiencies/MODEV0%prof%.EFF~       ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MODEVC%prof%.SPL~       ~override~
     END
 
 // Import Blank Wizard/Sorcerer CLAB Files
@@ -200,6 +207,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 12 0 1 ~SPELLCRAFT~
     SET_2DA_ENTRY 12 2 1 ~mospl1~
     SET_2DA_ENTRY 12 3 1 ~mospl2~
+    SET_2DA_ENTRY 13 0 1 ~DEVOTION~
+    SET_2DA_ENTRY 13 2 1 ~modev1~
+    SET_2DA_ENTRY 13 3 1 ~modev2~
 
     SET_2DA_ENTRY 30 0 1 ~ARCHERY~
     SET_2DA_ENTRY 30 2 1 ~moarc1~
@@ -213,6 +223,8 @@ REPLACE ~moarm1~    @7116
 REPLACE ~moarm2~    @7117
 REPLACE ~mospl1~    @7118
 REPLACE ~mospl2~    @7119
+REPLACE ~modev1~    @7120
+REPLACE ~modev2~    @7121
 
 REPLACE ~moarc1~    @7128
 REPLACE ~moarc2~    @7129
@@ -221,10 +233,11 @@ PRETTY_PRINT_2DA
 ///////////////////////////////////////////////////////////////////////////
 // Append to STATS.IDS                                                   //
 ///////////////////////////////////////////////////////////////////////////
-APPEND ~stats.ids~ ~89 ARMOR_PROF~          UNLESS ~89 ARMOR_PROF~
-APPEND ~stats.ids~ ~90 SPELLCRAFT~          UNLESS ~90 SPELLCRAFT~
+APPEND ~stats.ids~ ~89 ARMOR_PROF~      UNLESS ~89 ARMOR_PROF~
+APPEND ~stats.ids~ ~90 SPELLCRAFT~      UNLESS ~90 SPELLCRAFT~
+APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
 
-APPEND ~stats.ids~ ~107 ARCHERY~            UNLESS ~107 ARCHERY~
+APPEND ~stats.ids~ ~107 ARCHERY~        UNLESS ~107 ARCHERY~
 
 ///////////////////////////////////////////////////////////////////////////
 // Append to SPLPROT.2DA                                                 //
@@ -241,7 +254,7 @@ ACTION_FOR_EACH armor IN
       APPEND ~splprot.2da~ ~mo_armor_prof%armor%%TAB%89%TAB%%armor%%TAB%1~
     END
 
-// Spellcraft Prof
+// Spellcraft/Devotion Prof
 ACTION_FOR_EACH spell IN
       1
       2
@@ -249,7 +262,8 @@ ACTION_FOR_EACH spell IN
       4
       5
     BEGIN
-      APPEND ~splprot.2da~ ~mo_spl_prof%spell%%TAB%90%TAB%%spell%%TAB%4~
+      APPEND ~splprot.2da~ ~mo_spl_prof%spell%%TAB%90%TAB%%spell%%TAB%4~ // Spellcraft
+      APPEND ~splprot.2da~ ~mo_dev_prof%spell%%TAB%91%TAB%%spell%%TAB%4~ // Devotion
     END
 
 // Archery Weapon Style
@@ -300,6 +314,23 @@ COPY_EXISTING ~splprot.2da~ ~override~
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spl_prof5~ BEGIN
         SET spl_prof5 = %row%
 
+      // DEVOTION -------------------------------------------------------------//
+      // Devotion - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_dev_prof1~ BEGIN
+        SET dev_prof1 = %row%
+      // Devotion - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_dev_prof2~ BEGIN
+        SET dev_prof2 = %row%
+      // Devotion - 3 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_dev_prof3~ BEGIN
+        SET dev_prof3 = %row%
+      // Devotion - 4 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_dev_prof4~ BEGIN
+        SET dev_prof4 = %row%
+      // Devotion - 5 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_dev_prof5~ BEGIN
+        SET dev_prof5 = %row%
+
 
       // ARCHERY --------------------------------------------------------------//
       // Archery - 1 Pips
@@ -337,6 +368,18 @@ COPY_EXISTING ~mospl04.spl~ ~override~
 COPY_EXISTING ~mospl05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %spl_prof5% END
 
+// Devotion Prof
+COPY_EXISTING ~modev01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %dev_prof1% END
+COPY_EXISTING ~modev02.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %dev_prof2% END
+COPY_EXISTING ~modev03.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %dev_prof3% END
+COPY_EXISTING ~modev04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %dev_prof4% END
+COPY_EXISTING ~modev05.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %dev_prof5% END
+
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
 ///////////////////////////////////////////////////////////////////////////
@@ -345,15 +388,20 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 12  4 1 ~5~   // MAGE - Spellcraft Prof
     SET_2DA_ENTRY 11  5 1 ~5~   // FIGHTER - Armor Prof
     SET_2DA_ENTRY 11  6 1 ~2~   // CLERIC - Armor Prof
+    SET_2DA_ENTRY 13  6 1 ~5~   // CLERIC - Devotion Prof
     SET_2DA_ENTRY 11  7 1 ~2~   // THIEF - Armor Prof
     SET_2DA_ENTRY 11  8 1 ~2~   // BARD - Armor Prof
     SET_2DA_ENTRY 12  8 1 ~5~   // BARD - Spellcraft Prof
     SET_2DA_ENTRY 11  9 1 ~5~   // PALADIN - Armor Prof
+    SET_2DA_ENTRY 13  9 1 ~5~   // PALADIN - Devotion Prof
     SET_2DA_ENTRY 11 10 1 ~2~   // DRUID - Armor Prof
+    SET_2DA_ENTRY 13 10 1 ~5~   // DRUID - Devotion Prof
     SET_2DA_ENTRY 11 11 1 ~5~   // RANGER - Armor Prof
+    SET_2DA_ENTRY 13 11 1 ~5~   // RANGER - Devotion Prof
     SET_2DA_ENTRY 11 12 1 ~5~   // FIGHTER_MAGE - Armor Prof
     SET_2DA_ENTRY 12 12 1 ~5~   // FIGHTER_MAGE - Spellcraft Prof
     SET_2DA_ENTRY 11 13 1 ~5~   // FIGHTER_CLERIC - Armor Prof
+    SET_2DA_ENTRY 13 13 1 ~5~   // FIGHTER_CLERIC - Devotion Prof
     SET_2DA_ENTRY 11 14 1 ~5~   // FIGHTER_THIEF - Armor Prof
     SET_2DA_ENTRY 11 15 1 ~5~   // FIGHTER_MAGE_THIEF - Armor Prof
     SET_2DA_ENTRY 12 15 1 ~5~   // FIGHTER_MAGE_THIEF - Spellcraft Prof
@@ -361,14 +409,20 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 12 16 1 ~5~   // MAGE_THIEF - Spellcraft Prof
     SET_2DA_ENTRY 11 17 1 ~2~   // CLERIC_MAGE - Armor Prof
     SET_2DA_ENTRY 12 17 1 ~5~   // CLERIC_MAGE - Spellcraft Prof
+    SET_2DA_ENTRY 13 17 1 ~5~   // CLERIC_MAGE - Devotion Prof
     SET_2DA_ENTRY 11 18 1 ~2~   // CLERIC_THIEF - Armor Prof
+    SET_2DA_ENTRY 13 18 1 ~5~   // CLERIC_THIEF - Devotion Prof
     SET_2DA_ENTRY 11 19 1 ~5~   // FIGHTER_DRUID - Armor Prof
+    SET_2DA_ENTRY 13 19 1 ~5~   // FIGHTER_DRUID - Devotion Prof
     SET_2DA_ENTRY 11 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Armor Prof
     SET_2DA_ENTRY 12 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Spellcraft Prof
+    SET_2DA_ENTRY 13 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Devotion Prof
     SET_2DA_ENTRY 11 21 1 ~5~   // CLERIC_RANGER - Armor Prof
+    SET_2DA_ENTRY 13 21 1 ~5~   // CLERIC_RANGER - Devotion Prof
     SET_2DA_ENTRY 12 22 1 ~5~   // ABJURER - Spellcraft Prof
     //SET_2DA_ENTRY 11 51 1 ~5~   // MONK - 
     SET_2DA_ENTRY 11 60 1 ~2~   // SHAMAN - Armor Prof
+    SET_2DA_ENTRY 13 60 1 ~5~   // SHAMAN - Devotion Prof
     
     // This is used if ALL Classes are getting the same prof
     PATCH_FOR_EACH class_prof IN
@@ -409,6 +463,16 @@ COPY_EXISTING ~CLABMA01.2DA~ override
     PRETTY_PRINT_2DA
 BUT_ONLY
 
+// CLERIC BASE CLASS CLAB
+COPY_EXISTING ~CLABPR01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+
 // BARD BASE CLASS CLAB
 COPY_EXISTING ~CLABBA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -442,6 +506,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Devotion Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -488,6 +553,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
+    END
   END
 
   // THIEF KITS
@@ -524,6 +603,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Devotion Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABBA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -572,6 +652,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -600,6 +681,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
 
@@ -637,6 +732,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -702,6 +798,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -733,6 +830,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -741,6 +839,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
+    END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -761,6 +873,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
 
@@ -798,6 +924,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -806,6 +933,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
+    END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -827,6 +968,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
+    END
   END
   
   // SORCERER KITS
@@ -845,6 +1000,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
