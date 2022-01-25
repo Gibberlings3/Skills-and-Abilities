@@ -174,7 +174,7 @@ LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra
 INCLUDE ~skills-and-abilities/components/proficiencies/weapon_style_revisions.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Overhaul Proficiency System and Add Non-Weapon Proficiencies          //
+// Overhaul Proficiency System - Add New Proficiencies and Weapon Styles //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @301 DESIGNATED 301 GROUP @3 LABEL SkillsAndAbilitiesNewProf
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000

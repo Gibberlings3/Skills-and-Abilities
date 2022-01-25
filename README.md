@@ -60,7 +60,7 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, -1 bonus to Thaco, -1 bonus to AC, and inflicts critical damage on an attack roll of 19 or 20.
 - Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, -2 bonus to Thaco, -2 bonus to AC, and inflicts critical damage on an attack roll of 18 to 20.
 
-### Overhaul Proficiency System and Add Non-Weapon Proficiencies
+### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
 
 **ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a 10% reduction in movement speed, a -1 penalty to attack rolls, and a -1 penalty to speed factor. 
 - Proficient (1 slot): The character's penalties to movement speed are removed.
@@ -91,6 +91,10 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 **MISSILE WEAPONS:** This weapon class allows the character to use Slings, Darts, and Crossbows. Mages, Druids, and Thieves can choose this proficiency but are restricted to Slings and Darts.  Clerics can choose this proficiency but are restricted to Slings alone.
 
 **SPEAR:**  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
+
+**ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
+- Marksman (1 slot): The character gains a +2 bonus to damage rolls.
+- Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.
 
 ## More Meaningful Stat Bonuses
 
