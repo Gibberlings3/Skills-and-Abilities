@@ -218,8 +218,8 @@ Armor Skin (5 slots): The character's natural armor bonus to Armor Class increas
 @7128 = ~Archery Weapon Style~
 @7129 = ~ARCHERY:  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
 
-Rapid Shot/Reload (1 slot): The character gains an extra 1/2 attack per round when using ranged weapons.
+Marksman (1 slot): The character gains a +2 bonus to damage rolls.
 
-Sniper (2 slots): The character gains a bonus on damage rolls equal to half your Dexterity bonus for ranged weapons~
+Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.~
 
 @8000 = ~[LAST TRA HERE]~
