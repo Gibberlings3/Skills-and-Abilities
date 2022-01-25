@@ -510,7 +510,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    PATCH_IF !(%kit_clab% = CLABMA01) BEGIN
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -592,7 +592,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    PATCH_IF !(%kit_clab% = CLABBA01) BEGIN
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABBA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -640,6 +640,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -649,6 +650,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
@@ -703,6 +705,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -712,6 +715,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
@@ -766,6 +770,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -775,6 +780,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
@@ -795,6 +801,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -804,6 +811,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
@@ -858,6 +866,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -867,6 +876,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
@@ -903,6 +913,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -912,6 +923,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
