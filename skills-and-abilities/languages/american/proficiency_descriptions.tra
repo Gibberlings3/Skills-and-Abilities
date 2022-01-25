@@ -164,7 +164,7 @@ Quicken Spell (4 slots): The character decreases spellcasting time by 2.
 Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.~
 
 @7120 = ~Devotion~
-@7121 = ~DEVOTION:  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
+@7121 = ~DEVOTION:  This proficiency grants additional abilities and benefits to divine spellcasters. All abilities are cumulative.
 
 Silent Spell (1 slot): The character gains permanent Vocalize.
 
@@ -174,19 +174,52 @@ Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus t
 
 Quicken Spell (4 slots): The character decreases spellcasting time by 2.
 
-Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.~
+Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Divine spells will be restored.~
 
-@7122 = ~Conditioning~
-@7123 = ~CONDITIONING:  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
+@7122 = ~Physical Conditioning~
+@7123 = ~PHYSICAL CONDITIONING:  This proficiency epitomizes pushing ones body harder, faster, and further. All abilities are cumulative.
 
-Silent Spell (1 slot): The character gains permanent Vocalize.
+Fortitude (1 slot): The character gains a +2 bonus to save vs. Paralysis / Poison / Death
 
-Practiced Spellcaster (2 slots): Caster level is increased by 1.
+Dash (2 slots): The character is able to move 10% faster.
 
-Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
+Blind-Fight (3 slots): The character maintains the ability to fight well, and become immune to becoming blinded. 
 
-Quicken Spell (4 slots): The character decreases spellcasting time by 2.
+Tireless (4 slots): The character does not become fatigued to include after using rage or frenzy.
 
-Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.~
+Armor Skin (5 slots): The character's natural armor bonus to Armor Class increases by 1.~
+
+@7124 = ~Mental Conditioning~
+@7125 = ~MENTAL CONDITIONING:  All abilities are cumulative.
+
+ (1 slot): 
+
+ (2 slots): 
+
+ (3 slots):  
+
+ (4 slots): 
+
+ (5 slots): ~
+
+@7126 = ~Mercantilism~
+@7127 = ~MERCANTILISM:  All abilities are cumulative.
+
+ (1 slot): 
+
+ (2 slots): 
+
+ (3 slots):  
+
+ (4 slots): 
+
+ (5 slots): ~
+
+@7128 = ~Archery~
+@7129 = ~ARCHERY:  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
+
+Rapid Shot/Reload (1 slot): The character gains an extra 1/2 attack per round when using ranged weapons.
+
+Sniper (2 slots): The character gains a bonus on damage rolls equal to half your Dexterity bonus for ranged weapons~
 
 @8000 = ~[LAST TRA HERE]~
