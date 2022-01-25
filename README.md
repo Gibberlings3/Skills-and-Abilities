@@ -62,12 +62,12 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
 
-**ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a 10% reduction in movement speed, a -1 penalty to attack rolls, and a -1 penalty to speed factor. 
+**ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a 10% reduction in movement speed, a -1 penalty to attack rolls, and a -1 penalty to speed factor. All abilities are cumulative.
 - Proficient (1 slot): The character's penalties to movement speed are removed.
 - Specialized (2 slots): The character's penalties to attack roll and speed factor are removed.
 - Master (3 slots): The character's receives a -1 bonus to AC.
 - High Master (4 slots): The character bonus to AC increases to -2.
-- Grand Master (5 slots): The character receives -2 bonus to AC and 5% damage reduction to all physical attacks.
+- Grand Master (5 slots): The character receives a 5% damage reduction to all physical attacks.
 
 **SPELLCRAFT:**  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
 - Silent Spell (1 slot): The character gains permanent Vocalize.
