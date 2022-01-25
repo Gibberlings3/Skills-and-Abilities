@@ -127,92 +127,92 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     COUNT_2DA_COLS cols
     FOR (col = 2; col < cols; ++col) BEGIN
         // Bows
-        READ_2DA_ENTRY 25 col cols bow // longbow
-        READ_2DA_ENTRY 26 col cols shortbow
+        READ_2DA_ENTRY 28 col cols bow // longbow
+        READ_2DA_ENTRY 29 col cols shortbow
         PATCH_IF (bow < shortbow) BEGIN SET bow = shortbow END
 
         // Spiked
-        READ_2DA_ENTRY 21 col cols spiked
+        READ_2DA_ENTRY 24 col cols spiked
 
         // Small Sword
-        READ_2DA_ENTRY 11 col cols ssword // short sword
-        READ_2DA_ENTRY 16 col cols dagger
+        READ_2DA_ENTRY 14 col cols ssword // short sword
+        READ_2DA_ENTRY 19 col cols dagger
         PATCH_IF (ssword < dagger) BEGIN SET ssword = dagger END
 
         // Large Sword
-        READ_2DA_ENTRY 9 col cols lsword // bastard
-        READ_2DA_ENTRY 10 col cols longsword
-        READ_2DA_ENTRY 13 col cols twohanded
-        READ_2DA_ENTRY 14 col cols katana
-        READ_2DA_ENTRY 15 col cols scimitar
+        READ_2DA_ENTRY 12 col cols lsword // bastard
+        READ_2DA_ENTRY 13 col cols longsword
+        READ_2DA_ENTRY 16 col cols twohanded
+        READ_2DA_ENTRY 17 col cols katana
+        READ_2DA_ENTRY 18 col cols scimitar
         PATCH_IF (lsword < longsword) BEGIN SET lsword = longsword END
         PATCH_IF (lsword < twohanded) BEGIN SET lsword = twohanded END
         PATCH_IF (lsword < katana) BEGIN SET lsword = katana END
         PATCH_IF (lsword < scimitar) BEGIN SET lsword = scimitar END
 
         // Axe
-        READ_2DA_ENTRY 12 col cols axe
+        READ_2DA_ENTRY 15 col cols axe
 
         // Blunt
-        READ_2DA_ENTRY 17 col cols blunt // warhammer
-        READ_2DA_ENTRY 18 col cols club
-        READ_2DA_ENTRY 22 col cols mace
-        READ_2DA_ENTRY 23 col cols staff
+        READ_2DA_ENTRY 20 col cols blunt // warhammer
+        READ_2DA_ENTRY 23 col cols club
+        READ_2DA_ENTRY 25 col cols mace
+        READ_2DA_ENTRY 26 col cols staff
         PATCH_IF (blunt < club) BEGIN SET blunt = club END
         PATCH_IF (blunt < mace) BEGIN SET blunt = mace END
         PATCH_IF (blunt < staff) BEGIN SET blunt = staff END
 
         // Missile
-        READ_2DA_ENTRY 24 col cols missile // crossbow
-        READ_2DA_ENTRY 27 col cols dart
-        READ_2DA_ENTRY 28 col cols sling
+        READ_2DA_ENTRY 27 col cols missile // crossbow
+        READ_2DA_ENTRY 30 col cols dart
+        READ_2DA_ENTRY 31 col cols sling
         PATCH_IF (missile < dart) BEGIN SET missile = dart END
         PATCH_IF (missile < sling) BEGIN SET missile = sling END
 
         // Spear
-        READ_2DA_ENTRY 19 col cols spear
-        READ_2DA_ENTRY 20 col cols halberd
+        READ_2DA_ENTRY 22 col cols spear
+        READ_2DA_ENTRY 23 col cols halberd
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
 
         // Set New Proficiency Points
-        SET_2DA_ENTRY 20 col 1 ~%bow%~
-        SET_2DA_ENTRY 21 col 1 ~%spiked%~
-        SET_2DA_ENTRY 22 col 1 ~%ssword%~
-        SET_2DA_ENTRY 23 col 1 ~%lsword%~
-        SET_2DA_ENTRY 24 col 1 ~%axe%~
-        SET_2DA_ENTRY 25 col 1 ~%blunt%~
-        SET_2DA_ENTRY 26 col 1 ~%missile%~
-        SET_2DA_ENTRY 27 col 1 ~%spear%~
+        SET_2DA_ENTRY 23 col 1 ~%bow%~
+        SET_2DA_ENTRY 24 col 1 ~%spiked%~
+        SET_2DA_ENTRY 25 col 1 ~%ssword%~
+        SET_2DA_ENTRY 26 col 1 ~%lsword%~
+        SET_2DA_ENTRY 27 col 1 ~%axe%~
+        SET_2DA_ENTRY 28 col 1 ~%blunt%~
+        SET_2DA_ENTRY 29 col 1 ~%missile%~
+        SET_2DA_ENTRY 30 col 1 ~%spear%~
 
         // Set Old Proficiencies to 0 - These will be reused/updated to new ones
         FOR (row = 11; row < 22; ++row) BEGIN
             SET_2DA_ENTRY row col 1 ~0~
         END
     END
-    SET_2DA_ENTRY 20 0 1 ~BOW~
-    SET_2DA_ENTRY 20 2 1 ~mobow1~
-    SET_2DA_ENTRY 20 3 1 ~mobow2~    
-    SET_2DA_ENTRY 21 0 1 ~SPIKED~
-    SET_2DA_ENTRY 21 2 1 ~mospike1~
-    SET_2DA_ENTRY 21 3 1 ~mospike2~
-    SET_2DA_ENTRY 22 0 1 ~SMALL_SWORD~
-    SET_2DA_ENTRY 22 2 1 ~mossword1~
-    SET_2DA_ENTRY 22 3 1 ~mossword2~
-    SET_2DA_ENTRY 23 0 1 ~LARGE_SWORD~
-    SET_2DA_ENTRY 23 2 1 ~molsword1~
-    SET_2DA_ENTRY 23 3 1 ~molsword2~
-    SET_2DA_ENTRY 24 0 1 ~AXE~
-    SET_2DA_ENTRY 24 2 1 ~moaxe1~
-    SET_2DA_ENTRY 24 3 1 ~moaxe2~
-    SET_2DA_ENTRY 25 0 1 ~BLUNT~
-    SET_2DA_ENTRY 25 2 1 ~moblunt1~
-    SET_2DA_ENTRY 25 3 1 ~moblunt2~
-    SET_2DA_ENTRY 26 0 1 ~MISSILE~
-    SET_2DA_ENTRY 26 2 1 ~momiss1~
-    SET_2DA_ENTRY 26 3 1 ~momiss2~
-    SET_2DA_ENTRY 27 0 1 ~SPEAR~
-    SET_2DA_ENTRY 27 2 1 ~mospear1~
-    SET_2DA_ENTRY 27 3 1 ~mospear2~
+    SET_2DA_ENTRY 23 0 1 ~BOW~
+    SET_2DA_ENTRY 23 2 1 ~mobow1~
+    SET_2DA_ENTRY 23 3 1 ~mobow2~    
+    SET_2DA_ENTRY 24 0 1 ~SPIKED~
+    SET_2DA_ENTRY 24 2 1 ~mospike1~
+    SET_2DA_ENTRY 24 3 1 ~mospike2~
+    SET_2DA_ENTRY 25 0 1 ~SMALL_SWORD~
+    SET_2DA_ENTRY 25 2 1 ~mossword1~
+    SET_2DA_ENTRY 25 3 1 ~mossword2~
+    SET_2DA_ENTRY 26 0 1 ~LARGE_SWORD~
+    SET_2DA_ENTRY 26 2 1 ~molsword1~
+    SET_2DA_ENTRY 26 3 1 ~molsword2~
+    SET_2DA_ENTRY 27 0 1 ~AXE~
+    SET_2DA_ENTRY 27 2 1 ~moaxe1~
+    SET_2DA_ENTRY 27 3 1 ~moaxe2~
+    SET_2DA_ENTRY 28 0 1 ~BLUNT~
+    SET_2DA_ENTRY 28 2 1 ~moblunt1~
+    SET_2DA_ENTRY 28 3 1 ~moblunt2~
+    SET_2DA_ENTRY 29 0 1 ~MISSILE~
+    SET_2DA_ENTRY 29 2 1 ~momiss1~
+    SET_2DA_ENTRY 29 3 1 ~momiss2~
+    SET_2DA_ENTRY 30 0 1 ~SPEAR~
+    SET_2DA_ENTRY 30 2 1 ~mospear1~
+    SET_2DA_ENTRY 30 3 1 ~mospear2~
     PRETTY_PRINT_2DA
     BUT_ONLY
 
