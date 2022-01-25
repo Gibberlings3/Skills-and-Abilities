@@ -121,10 +121,9 @@ APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
 // Move Proficiency Points to Weapon Groups                              //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-    READ_2DA_ENTRY 0 0 3 foo
-    SET_2DA_ENTRY 0 0 3 ~CD_DELETE_ME %foo%~
+    READ_2DA_ENTRIES_NOW weapprof 3
     COUNT_2DA_COLS cols
-    FOR (col = 4; col < cols - 1; ++col) BEGIN
+    FOR (col = 2; col < cols; ++col) BEGIN
         // Bows
         READ_2DA_ENTRY 25 col cols bow // longbow
         READ_2DA_ENTRY 26 col cols shortbow
@@ -188,7 +187,6 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
             SET_2DA_ENTRY row col 1 ~0~
         END
     END
-    REPLACE_TEXTUALLY ~CD_DELETE_ME~ ~~
     PRETTY_PRINT_2DA
     BUT_ONLY
 
