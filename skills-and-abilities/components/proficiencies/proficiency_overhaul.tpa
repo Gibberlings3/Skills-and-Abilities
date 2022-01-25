@@ -434,6 +434,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Armor Prof
     SET_2DA_ENTRY 12 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Spellcraft Prof
     SET_2DA_ENTRY 11 21 1 ~5~   // CLERIC_RANGER - Armor Prof
+    SET_2DA_ENTRY 12 22 1 ~5~   // ABJURER - Spellcraft Prof
     //SET_2DA_ENTRY 11 51 1 ~5~   // MONK - 
     SET_2DA_ENTRY 11 60 1 ~2~   // SHAMAN - Armor Prof
     
@@ -457,6 +458,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           19 // FIGHTER_DRUID
           20 // FIGHTER_MAGE_CLERIC
           21 // CLERIC_RANGER
+          22 // ABJURERER
           51 // MONK
           60 // SHAMAN
         BEGIN
@@ -508,6 +510,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !(%kit_clab% = CLABMA01) BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -517,6 +520,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
@@ -588,6 +592,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
+    PATCH_IF !(%kit_clab% = CLABBA01) BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
@@ -597,6 +602,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
+    END
     END
   END
 
