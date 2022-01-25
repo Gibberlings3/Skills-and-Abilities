@@ -60,30 +60,30 @@ END
 // Create OG BG1 Weapon Groups                                           //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-    SET_2DA_ENTRY 23 0 1 ~BOW~
-    SET_2DA_ENTRY 23 2 1 ~mobow1~
-    SET_2DA_ENTRY 23 3 1 ~mobow2~    
-    SET_2DA_ENTRY 24 0 1 ~SPIKED~
-    SET_2DA_ENTRY 24 2 1 ~mospike1~
-    SET_2DA_ENTRY 24 3 1 ~mospike2~
-    SET_2DA_ENTRY 25 0 1 ~SMALL_SWORD~
-    SET_2DA_ENTRY 25 2 1 ~mossword1~
-    SET_2DA_ENTRY 25 3 1 ~mossword2~
-    SET_2DA_ENTRY 26 0 1 ~LARGE_SWORD~
-    SET_2DA_ENTRY 26 2 1 ~molsword1~
-    SET_2DA_ENTRY 26 3 1 ~molsword2~
-    SET_2DA_ENTRY 27 0 1 ~AXE~
-    SET_2DA_ENTRY 27 2 1 ~moaxe1~
-    SET_2DA_ENTRY 27 3 1 ~moaxe2~
-    SET_2DA_ENTRY 28 0 1 ~BLUNT~
-    SET_2DA_ENTRY 28 2 1 ~moblunt1~
-    SET_2DA_ENTRY 28 3 1 ~moblunt2~
-    SET_2DA_ENTRY 29 0 1 ~MISSILE~
-    SET_2DA_ENTRY 29 2 1 ~momiss1~
-    SET_2DA_ENTRY 29 3 1 ~momiss2~
-    SET_2DA_ENTRY 30 0 1 ~SPEAR~
-    SET_2DA_ENTRY 30 2 1 ~mospear1~
-    SET_2DA_ENTRY 30 3 1 ~mospear2~
+    SET_2DA_ENTRY 22 0 1 ~BOW~
+    SET_2DA_ENTRY 22 2 1 ~mobow1~
+    SET_2DA_ENTRY 22 3 1 ~mobow2~    
+    SET_2DA_ENTRY 23 0 1 ~SPIKED~
+    SET_2DA_ENTRY 23 2 1 ~mospike1~
+    SET_2DA_ENTRY 23 3 1 ~mospike2~
+    SET_2DA_ENTRY 24 0 1 ~SMALL_SWORD~
+    SET_2DA_ENTRY 24 2 1 ~mossword1~
+    SET_2DA_ENTRY 24 3 1 ~mossword2~
+    SET_2DA_ENTRY 25 0 1 ~LARGE_SWORD~
+    SET_2DA_ENTRY 25 2 1 ~molsword1~
+    SET_2DA_ENTRY 25 3 1 ~molsword2~
+    SET_2DA_ENTRY 26 0 1 ~AXE~
+    SET_2DA_ENTRY 26 2 1 ~moaxe1~
+    SET_2DA_ENTRY 26 3 1 ~moaxe2~
+    SET_2DA_ENTRY 27 0 1 ~BLUNT~
+    SET_2DA_ENTRY 27 2 1 ~moblunt1~
+    SET_2DA_ENTRY 27 3 1 ~moblunt2~
+    SET_2DA_ENTRY 28 0 1 ~MISSILE~
+    SET_2DA_ENTRY 28 2 1 ~momiss1~
+    SET_2DA_ENTRY 28 3 1 ~momiss2~
+    SET_2DA_ENTRY 29 0 1 ~SPEAR~
+    SET_2DA_ENTRY 29 2 1 ~mospear1~
+    SET_2DA_ENTRY 29 3 1 ~mospear2~
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -108,14 +108,14 @@ REPLACE ~mospear2~  @7115
 PRETTY_PRINT_2DA
 
 // Append to Stats.IDS
-APPEND ~stats.ids~ ~100 BOW~          UNLESS ~100 BOW~
-APPEND ~stats.ids~ ~101 SPIKED~       UNLESS ~101 SPIKED~
-APPEND ~stats.ids~ ~102 SMALL_SWORD~  UNLESS ~102 SMALL_SWORD~
-APPEND ~stats.ids~ ~103 LARGE_SWORD~  UNLESS ~103 LARGE_SWORD~
-APPEND ~stats.ids~ ~104 AXE~          UNLESS ~104 AXE~
-APPEND ~stats.ids~ ~105 BLUNT~        UNLESS ~105 BLUNT~
-APPEND ~stats.ids~ ~106 MISSILE~      UNLESS ~106 MISSILE~
-APPEND ~stats.ids~ ~107 SPEAR~        UNLESS ~107 SPEAR~
+APPEND ~stats.ids~ ~99 BOW~           UNLESS ~99 BOW~
+APPEND ~stats.ids~ ~100 SPIKED~       UNLESS ~100 SPIKED~
+APPEND ~stats.ids~ ~101 SMALL_SWORD~  UNLESS ~101 SMALL_SWORD~
+APPEND ~stats.ids~ ~102 LARGE_SWORD~  UNLESS ~102 LARGE_SWORD~
+APPEND ~stats.ids~ ~103 AXE~          UNLESS ~103 AXE~
+APPEND ~stats.ids~ ~104 BLUNT~        UNLESS ~104 BLUNT~
+APPEND ~stats.ids~ ~105 MISSILE~      UNLESS ~105 MISSILE~
+APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
 
 ///////////////////////////////////////////////////////////////////////////
 // Move Proficiency Points to Weapon Groups                              //
@@ -172,17 +172,17 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
 
         // Set New Proficiency Points
-        SET_2DA_ENTRY 23 col 1 ~%bow%~
-        SET_2DA_ENTRY 24 col 1 ~%spiked%~
-        SET_2DA_ENTRY 25 col 1 ~%ssword%~
-        SET_2DA_ENTRY 26 col 1 ~%lsword%~
-        SET_2DA_ENTRY 27 col 1 ~%axe%~
-        SET_2DA_ENTRY 28 col 1 ~%blunt%~
-        SET_2DA_ENTRY 29 col 1 ~%missile%~
-        SET_2DA_ENTRY 30 col 1 ~%spear%~
+        SET_2DA_ENTRY 22 col 1 ~%bow%~
+        SET_2DA_ENTRY 23 col 1 ~%spiked%~
+        SET_2DA_ENTRY 24 col 1 ~%ssword%~
+        SET_2DA_ENTRY 25 col 1 ~%lsword%~
+        SET_2DA_ENTRY 26 col 1 ~%axe%~
+        SET_2DA_ENTRY 27 col 1 ~%blunt%~
+        SET_2DA_ENTRY 28 col 1 ~%missile%~
+        SET_2DA_ENTRY 29 col 1 ~%spear%~
 
         // Set Old Proficiencies to 0 - These will be reused/updated to new ones
-        FOR (row = 11; row < 23; ++row) BEGIN
+        FOR (row = 11; row < 22; ++row) BEGIN
             SET_2DA_ENTRY row col 1 ~0~
         END
     END
@@ -197,18 +197,18 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
   // Bow
   PATCH_IF (prof = 104) OR (prof = 105) BEGIN
-    WRITE_BYTE 0x31 100
+    WRITE_BYTE 0x31 99
     // Add EFF File here to add +1 Thac0 if Elf
   END
 
   // Spiked
   PATCH_IF (prof = 100) BEGIN
-    WRITE_BYTE 0x31 101
+    WRITE_BYTE 0x31 100
   END
 
   // Small Sword
   PATCH_IF (prof = 91) OR (prof = 96) BEGIN
-    WRITE_BYTE 0x31 102
+    WRITE_BYTE 0x31 101
   END
 
   // Add EFF File here to add +1 Thac0 to Long Swords if Elf
@@ -219,12 +219,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (prof = 93) OR      // Two-Handed Sword
         (prof = 94) OR      // Katana
         (prof = 95) BEGIN   // Scimitar
-    WRITE_BYTE 0x31 103
+    WRITE_BYTE 0x31 102
   END
 
   // Axe
   PATCH_IF (prof = 92) BEGIN
-    WRITE_BYTE 0x31 104
+    WRITE_BYTE 0x31 103
   END
 
   // Blunt
@@ -232,7 +232,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (prof = 115) OR     // Club
         (prof = 101) OR     // Mace
         (prof = 102) BEGIN  // Quarterstaff
-    WRITE_BYTE 0x31 105
+    WRITE_BYTE 0x31 104
   END
 
   // Add EFF File here to add +1 Thac0 to Slings if Halfling
@@ -241,12 +241,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (prof = 103) OR  // Crossbow
         (prof = 106) OR     // Dart
         (prof = 107) BEGIN  // Sling
-    WRITE_BYTE 0x31 100
+    WRITE_BYTE 0x31 105
   END
 
   // Spear
   PATCH_IF (prof = 98) OR (prof = 99) BEGIN
-    WRITE_BYTE 0x31 107
+    WRITE_BYTE 0x31 106
   END
 
   BUT_ONLY
@@ -268,9 +268,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 12 2 1 ~mospl1~
     SET_2DA_ENTRY 12 3 1 ~mospl2~
 
-    SET_2DA_ENTRY 22 0 1 ~ARCHERY~
-    SET_2DA_ENTRY 22 2 1 ~moarc1~
-    SET_2DA_ENTRY 22 3 1 ~moarc2~     
+    SET_2DA_ENTRY 30 0 1 ~ARCHERY~
+    SET_2DA_ENTRY 30 2 1 ~moarc1~
+    SET_2DA_ENTRY 30 3 1 ~moarc2~     
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -291,7 +291,7 @@ PRETTY_PRINT_2DA
 APPEND ~stats.ids~ ~89 ARMOR_PROF~          UNLESS ~89 ARMOR_PROF~
 APPEND ~stats.ids~ ~90 SPELLCRAFT~          UNLESS ~90 SPELLCRAFT~
 
-APPEND ~stats.ids~ ~99 ARCHERY~             UNLESS ~99 ARCHERY~
+APPEND ~stats.ids~ ~107 ARCHERY~             UNLESS ~107 ARCHERY~
 
 ///////////////////////////////////////////////////////////////////////////
 // Append to SPLPROT.2DA                                                 //
@@ -462,7 +462,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           51 // MONK
           60 // SHAMAN
         BEGIN
-          SET_2DA_ENTRY 22 class_prof 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 class_prof 1 ~2~   // Archery Weapon Style
         END
     PRETTY_PRINT_2DA
   BUT_ONLY
@@ -504,7 +504,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -534,7 +534,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -551,7 +551,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -568,7 +568,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -586,7 +586,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -616,7 +616,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -634,7 +634,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -664,7 +664,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -681,7 +681,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -699,7 +699,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -729,7 +729,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -746,7 +746,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -764,7 +764,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -795,7 +795,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -825,7 +825,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -842,7 +842,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -860,7 +860,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -890,7 +890,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -907,7 +907,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -936,7 +936,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -953,7 +953,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // Archery Weapon Style
+          SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
@@ -979,7 +979,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   END
 
   // Archery Weapon Style
-  PATCH_IF (prof = 100) OR (prof = 106) BEGIN 
+  PATCH_IF (prof = 99) OR (prof = 105) BEGIN 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC02~ END 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof2% timing = 2 STR_VAR resource = ~MOARC02~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC01~ END 
