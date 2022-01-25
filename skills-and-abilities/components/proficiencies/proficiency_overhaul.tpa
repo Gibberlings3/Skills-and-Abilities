@@ -252,6 +252,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
   BUT_ONLY
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // Add New Proficiencies                                                 //
@@ -986,3 +987,4 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOARC01~ END
   END
   BUT_ONLY
+*/
