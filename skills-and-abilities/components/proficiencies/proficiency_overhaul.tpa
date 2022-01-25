@@ -59,6 +59,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Create OG BG1 Weapon Groups                                           //
 ///////////////////////////////////////////////////////////////////////////
+/*
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 22 0 1 ~BOW~
     SET_2DA_ENTRY 22 2 1 ~mobow1~
@@ -116,6 +117,7 @@ APPEND ~stats.ids~ ~103 AXE~          UNLESS ~103 AXE~
 APPEND ~stats.ids~ ~104 BLUNT~        UNLESS ~104 BLUNT~
 APPEND ~stats.ids~ ~105 MISSILE~      UNLESS ~105 MISSILE~
 APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Move Proficiency Points to Weapon Groups                              //
@@ -187,8 +189,62 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
             SET_2DA_ENTRY row col 1 ~0~
         END
     END
+    SET_2DA_ENTRY 20 0 1 ~BOW~
+    SET_2DA_ENTRY 20 2 1 ~mobow1~
+    SET_2DA_ENTRY 20 3 1 ~mobow2~    
+    SET_2DA_ENTRY 21 0 1 ~SPIKED~
+    SET_2DA_ENTRY 21 2 1 ~mospike1~
+    SET_2DA_ENTRY 21 3 1 ~mospike2~
+    SET_2DA_ENTRY 22 0 1 ~SMALL_SWORD~
+    SET_2DA_ENTRY 22 2 1 ~mossword1~
+    SET_2DA_ENTRY 22 3 1 ~mossword2~
+    SET_2DA_ENTRY 23 0 1 ~LARGE_SWORD~
+    SET_2DA_ENTRY 23 2 1 ~molsword1~
+    SET_2DA_ENTRY 23 3 1 ~molsword2~
+    SET_2DA_ENTRY 24 0 1 ~AXE~
+    SET_2DA_ENTRY 24 2 1 ~moaxe1~
+    SET_2DA_ENTRY 24 3 1 ~moaxe2~
+    SET_2DA_ENTRY 25 0 1 ~BLUNT~
+    SET_2DA_ENTRY 25 2 1 ~moblunt1~
+    SET_2DA_ENTRY 25 3 1 ~moblunt2~
+    SET_2DA_ENTRY 26 0 1 ~MISSILE~
+    SET_2DA_ENTRY 26 2 1 ~momiss1~
+    SET_2DA_ENTRY 26 3 1 ~momiss2~
+    SET_2DA_ENTRY 27 0 1 ~SPEAR~
+    SET_2DA_ENTRY 27 2 1 ~mospear1~
+    SET_2DA_ENTRY 27 3 1 ~mospear2~
     PRETTY_PRINT_2DA
     BUT_ONLY
+
+// Set Name and Description
+COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+REPLACE ~mobow1~    @7100
+REPLACE ~mobow2~    @7101
+REPLACE ~mospike1~  @7102
+REPLACE ~mospike2~  @7103
+REPLACE ~mossword1~ @7104
+REPLACE ~mossword2~ @7105
+REPLACE ~molsword1~ @7106
+REPLACE ~molsword2~ @7107
+REPLACE ~moaxe1~    @7108
+REPLACE ~moaxe2~    @7109
+REPLACE ~moblunt1~  @7110
+REPLACE ~moblunt2~  @7111
+REPLACE ~momiss1~   @7112
+REPLACE ~momiss2~   @7113
+REPLACE ~mospear1~  @7114
+REPLACE ~mospear2~  @7115
+PRETTY_PRINT_2DA
+
+// Append to Stats.IDS
+APPEND ~stats.ids~ ~99 BOW~           UNLESS ~99 BOW~
+APPEND ~stats.ids~ ~100 SPIKED~       UNLESS ~100 SPIKED~
+APPEND ~stats.ids~ ~101 SMALL_SWORD~  UNLESS ~101 SMALL_SWORD~
+APPEND ~stats.ids~ ~102 LARGE_SWORD~  UNLESS ~102 LARGE_SWORD~
+APPEND ~stats.ids~ ~103 AXE~          UNLESS ~103 AXE~
+APPEND ~stats.ids~ ~104 BLUNT~        UNLESS ~104 BLUNT~
+APPEND ~stats.ids~ ~105 MISSILE~      UNLESS ~105 MISSILE~
+APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
 
 ///////////////////////////////////////////////////////////////////////////
 // Update All Weapons to the New Weapon Groups                           //
