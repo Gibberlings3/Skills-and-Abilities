@@ -120,8 +120,10 @@ APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
 ///////////////////////////////////////////////////////////////////////////
 // Move Proficiency Points to Weapon Groups                              //
 ///////////////////////////////////////////////////////////////////////////
+READ_2DA_ENTRY 0 0 3 foo
+SET_2DA_ENTRY 0 0 3 ~CD_DELETE_ME %foo%~
+
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-    READ_2DA_ENTRIES_NOW weapon_groups_list 10
     COUNT_2DA_COLS cols
     FOR (col = 4; col < cols - 1; ++col) BEGIN
         // Bows
@@ -187,6 +189,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
             SET_2DA_ENTRY row col 1 ~0~
         END
     END
+    REPLACE_TEXTUALLY ~CD_DELETE_ME~ ~~
     PRETTY_PRINT_2DA
     BUT_ONLY
 
@@ -409,7 +412,6 @@ COPY_EXISTING ~mospl05.spl~ ~override~
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-    READ_2DA_ENTRIES_NOW create_new_profs 10
     // Set here if all classes are NOT getting the same amount
     SET_2DA_ENTRY 12  4 1 ~5~   // MAGE - Spellcraft Prof
     SET_2DA_ENTRY 11  5 1 ~5~   // FIGHTER - Armor Prof
