@@ -120,10 +120,9 @@ APPEND ~stats.ids~ ~106 SPEAR~        UNLESS ~106 SPEAR~
 ///////////////////////////////////////////////////////////////////////////
 // Move Proficiency Points to Weapon Groups                              //
 ///////////////////////////////////////////////////////////////////////////
-READ_2DA_ENTRY 0 0 3 foo
-SET_2DA_ENTRY 0 0 3 ~CD_DELETE_ME %foo%~
-
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+    READ_2DA_ENTRY 0 0 3 foo
+    SET_2DA_ENTRY 0 0 3 ~CD_DELETE_ME %foo%~
     COUNT_2DA_COLS cols
     FOR (col = 4; col < cols - 1; ++col) BEGIN
         // Bows
