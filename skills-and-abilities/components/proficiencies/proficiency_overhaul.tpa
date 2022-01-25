@@ -127,11 +127,33 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     READ_2DA_ENTRIES_NOW weapprof 3
     COUNT_2DA_COLS cols
     FOR (col = 2; col < cols; ++col) BEGIN
+        SET longbow = 0
+        SET shortbow = 0
+        SET spiked = 0
+        SET ssword = 0
+        SET dagger = 0
+        SET lsword = 0
+        SET longsword = 0
+        SET twohanded = 0
+        SET katana = 0
+        SET scimitar = 0
+        SET axe = 0
+        SET blunt = 0
+        SET club = 0
+        SET mace = 0
+        SET staff = 0
+        SET missile = 0
+        SET dart = 0
+        SET sling = 0
+        SET spear = 0
+        SET halberd = 0
+
         // Bows
         READ_2DA_ENTRY (test + 25) col cols bow // longbow
         READ_2DA_ENTRY (test + 26) col cols shortbow
         PATCH_IF (bow < shortbow) BEGIN SET bow = shortbow END
 
+        /*
         // Spiked
         READ_2DA_ENTRY (test + 21) col cols spiked
 
@@ -174,6 +196,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         READ_2DA_ENTRY (test + 21) col cols spear
         READ_2DA_ENTRY (test + 20) col cols halberd
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
+        */
 
         // Set Old Proficiencies to 0 - These will be reused/updated to new ones
         FOR (row = 11; row < 31; ++row) BEGIN
