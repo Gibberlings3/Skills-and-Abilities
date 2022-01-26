@@ -1354,11 +1354,20 @@ READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
 SET free_pips = 0
+SET bow = 0
+SET spiked = 0
+SET ssword = 0
+SET lsword = 0
+SET axe = 0
+SET blunt = 0
+SET missile = 0
+SET spear = 0
 //CLEAR_ARRAY cd_current_pips
 FOR (index = 0 ; index < fx_num ; ++index) BEGIN
   READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
   PATCH_IF (opcode = 233) BEGIN
     READ_LONG  (fx_off + 0x04 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param1 // pips
+    READ_LONG  (fx_off + 0x08 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param2 // type
     free_pips += param1
    END
 END
@@ -1368,6 +1377,21 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
   READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
   PATCH_IF (opcode = 233) BEGIN
     SET matched = 0
+
+
+    /*PATCH_IF (blunt < club) BEGIN SET blunt = club END
+        PATCH_IF (blunt < mace) BEGIN SET blunt = mace END
+        PATCH_IF (blunt < staff) BEGIN SET blunt = staff END
+
+        SET_2DA_ENTRY 21 col 1 ~%bow%~
+        SET_2DA_ENTRY 22 col 1 ~%spiked%~
+        SET_2DA_ENTRY 23 col 1 ~%ssword%~
+        SET_2DA_ENTRY 24 col 1 ~%lsword%~
+        SET_2DA_ENTRY 25 col 1 ~%axe%~
+        SET_2DA_ENTRY 26 col 1 ~%blunt%~
+        SET_2DA_ENTRY 27 col 1 ~%missile%~
+        SET_2DA_ENTRY 28 col 1 ~%spear%~
+        */
     READ_LONG  (fx_off + 0x04 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param1 // pips
     READ_LONG  (fx_off + 0x08 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param2 // type
     PHP_EACH cd_current_pips AS type => number BEGIN
