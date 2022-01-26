@@ -62,9 +62,9 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
 
-**ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a 10% reduction in movement speed, a -1 penalty to attack rolls, and a -1 penalty to speed factor. All abilities are cumulative.
-- Proficient (1 slot): The character's penalties to movement speed are removed.
-- Specialized (2 slots): The character's penalties to attack roll and speed factor are removed.
+**ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a -1 penalty to speed factor. All abilities are cumulative.
+- Proficient (1 slot): The character receives no penalties while wearing armor.
+- Specialized (2 slots): The character receives a -1 bonus to AC vs. missile attacks.
 - Master (3 slots): The character's receives a -1 bonus to AC.
 - High Master (4 slots): The character bonus to AC increases to -2.
 - Grand Master (5 slots): The character receives a 5% damage reduction to all physical attacks.
@@ -75,6 +75,13 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
 - Quicken Spell (4 slots): The character decreases spellcasting time by 2.
 - Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.
+
+**DEVOTION:**  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
+- Pious (1 slot): The character gains +2 bonus to saving throws.
+- Divine Agent (2 slots): The character becomes immune to hold and paralysis.
+- Divine Channeling (3 slots): The character decreases spellcasting time by 1.
+- Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
+- Pneuma (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Divine spells will be restored.
 
 **BOW:**  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. 
 
@@ -91,6 +98,11 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 **MISSILE WEAPONS:** This weapon class allows the character to use Slings, Darts, and Crossbows. Mages, Druids, and Thieves can choose this proficiency but are restricted to Slings and Darts.  Clerics can choose this proficiency but are restricted to Slings alone.
 
 **SPEAR:**  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
+
+**CRITICAL STRIKER:**  This weapon style makes the character's critical hits more damaging.
+- Improved Critical (1 slot): The character deals an additional +1d6 slashing damage on critical hit with any weapon.
+- Power Critical (2 slots): The character deals an additional +2d6 slashing damage on critical hit with any weapon.
+- Overwhelming Critical (3 slots): The character deals an additional +3d6 slashing damage on critical hit with any weapon.
 
 **ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
