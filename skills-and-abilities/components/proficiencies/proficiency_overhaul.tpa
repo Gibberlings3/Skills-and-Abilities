@@ -8,7 +8,7 @@
 // Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
 COPY ~skills-and-abilities/itm/moprof.itm~ ~override~ // For tracking of this mod component
-COPY ~skills-and-abilities/2da/PROFS.2DA~ ~override~
+COPY ~skills-and-abilities/2da/PROFS.2DA~ ~override~                   // Updates the frequency profs are gained
 COPY ~skills-and-abilities/eff/proficiencies/MOARC01.EFF~   ~override~ // Archery Weapon Style
 COPY ~skills-and-abilities/eff/proficiencies/MOARC02.EFF~   ~override~ // Archery Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOARC01.SPL~   ~override~ // Archery Weapon Style
