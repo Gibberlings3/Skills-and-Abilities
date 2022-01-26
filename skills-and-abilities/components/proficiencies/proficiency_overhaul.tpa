@@ -483,6 +483,46 @@ COPY_EXISTING ~CLABBA01.2DA~ override
     PRETTY_PRINT_2DA
   BUT_ONLY
 
+// PALADIN BASE CLASS CLAB
+COPY_EXISTING ~CLABPA01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+
+// DRUID BASE CLASS CLAB
+COPY_EXISTING ~CLABDR01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+
+// RANGER BASE CLASS CLAB
+COPY_EXISTING ~CLABRN01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+
+// SHAMAN BASE CLASS CLAB
+COPY_EXISTING ~CLABSH01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+
 COPY_EXISTING ~KITLIST.2DA~ ~override~
   READ_2DA_ENTRIES_NOW ~all_kitlist~ 10
   FOR (row = 1; row < all_kitlist; row += 1) BEGIN
@@ -506,7 +546,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -603,7 +643,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Spellcraft Prof
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABBA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -632,6 +672,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPA01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
 
@@ -762,6 +816,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABDR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
+    END
   END
 
   // RANGER KITS
@@ -778,6 +846,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABRN01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
 
@@ -905,6 +987,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABDR01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
+    END
   END
 
   // FIGHTER_MAGE_CLERIC KITS
@@ -967,6 +1063,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
+
+      // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABRN01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
+    END
     END
 
     // Devotion Prof
@@ -1045,6 +1155,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Devotion Prof
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABSH01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
   END
