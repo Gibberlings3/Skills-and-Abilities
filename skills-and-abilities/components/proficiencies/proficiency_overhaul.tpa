@@ -255,6 +255,7 @@ APPEND ~stats.ids~ ~89 ARMOR_PROF~      UNLESS ~89 ARMOR_PROF~
 APPEND ~stats.ids~ ~90 SPELLCRAFT~      UNLESS ~90 SPELLCRAFT~
 APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
 
+APPEND ~stats.ids~ ~106 CRITICAL~       UNLESS ~106 CRITICAL~
 APPEND ~stats.ids~ ~107 ARCHERY~        UNLESS ~107 ARCHERY~
 
 ///////////////////////////////////////////////////////////////////////////
@@ -289,9 +290,9 @@ APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%99%TAB%1%TAB%2~
 APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%99%TAB%2%TAB%2~
 
 // Critical Stiker Weapon Style
-APPEND ~splprot.2da~ ~mo_crit_prof1%TAB%106%TAB%1%TAB%1~
-APPEND ~splprot.2da~ ~mo_crit_prof2%TAB%106%TAB%2%TAB%1~
-APPEND ~splprot.2da~ ~mo_crit_prof3%TAB%106%TAB%2%TAB%1~
+APPEND ~splprot.2da~ ~mo_crit_prof1%TAB%106%TAB%1%TAB%5~
+APPEND ~splprot.2da~ ~mo_crit_prof2%TAB%106%TAB%2%TAB%5~
+APPEND ~splprot.2da~ ~mo_crit_prof3%TAB%106%TAB%3%TAB%5~
 
 // Update all imported files so they point in the correct direction.
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -1227,8 +1228,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Armor Proficiency
   PATCH_IF (type = 2) BEGIN 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm01~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm02~ END
-    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END // Basically No Effect
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm02~ END // Basically No Effect
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm04~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm05~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm06~ END
