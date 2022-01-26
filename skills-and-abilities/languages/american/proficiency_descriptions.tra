@@ -138,11 +138,11 @@ Master (3 slots): The wielder's penalties to attack and damage rolls are reduced
 <DOTS5>~
 
 @7116 = ~Armor~
-@7117 = ~ARMOR:  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a 10% reduction in movement speed, a -1 penalty to attack rolls, and a -1 penalty to speed factor. All abilities are cumulative. 
+@7117 = ~ARMOR:  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a -1 penalty to speed factor. All abilities are cumulative. 
 
-Proficient (1 slot): The character's penalties to movement speed are removed.
+Proficient (1 slot): The character's penalty to speed factor are removed.
 
-Specialized (2 slots): The character's penalties to attack roll and speed factor are removed.
+Specialized (2 slots): The character's <something>.
 
 Master (3 slots): The character's receives a -1 bonus to AC.
 
