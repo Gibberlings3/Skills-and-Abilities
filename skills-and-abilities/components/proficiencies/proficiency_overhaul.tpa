@@ -16,9 +16,9 @@ COPY ~skills-and-abilities/spl/proficiencies/MOARC02.SPL~   ~override~ // Archer
 COPY ~skills-and-abilities/spl/proficiencies/MOARM06.SPL~   ~override~ // Armor 6th pip
 COPY ~skills-and-abilities/spl/proficiencies/MOARM66.SPL~   ~override~ // Armor 6th pip
 COPY ~skills-and-abilities/eff/proficiencies/MOARM06.EFF~   ~override~ // Armor 6th pip
-//COPY ~skills-and-abilities/spl/proficiencies/MOCRS01.SPL~   ~override~ // Critical Striker Weapon Style
-//COPY ~skills-and-abilities/spl/proficiencies/MOCRS02.SPL~   ~override~ // Critical Striker Weapon Style
-//COPY ~skills-and-abilities/spl/proficiencies/MOCRS03.SPL~   ~override~ // Critical Striker Weapon Style
+COPY ~skills-and-abilities/spl/proficiencies/MOCRS01.SPL~   ~override~ // Critical Striker Weapon Style
+COPY ~skills-and-abilities/spl/proficiencies/MOCRS02.SPL~   ~override~ // Critical Striker Weapon Style
+COPY ~skills-and-abilities/spl/proficiencies/MOCRS03.SPL~   ~override~ // Critical Striker Weapon Style
 
 ACTION_FOR_EACH prof IN
       1
