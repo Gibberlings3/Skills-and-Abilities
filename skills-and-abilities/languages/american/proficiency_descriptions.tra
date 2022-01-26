@@ -208,4 +208,13 @@ Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round w
 @7132 = ~Magid Damage Resistance~
 @7133 = ~MAGIC DAMAGE RESISTANCE:  The character gains 5% resistance to magic damage. This proficiency may be taken multiple times, up to a maximum of 25% resistance to magic damage.~
 
+@7134 = ~Critical Striker Weapon Style~
+@7135 = ~CRITICAL STRIKER:  
+
+Improved Critical (1 slot): +1d6 damage on critical hit.
+
+Power Critical (2 slots): +2d6 damage on critical hit.
+
+Overwhelming Critical (3 slots): +3d6 damage on critical hit.~
+
 @8000 = ~[LAST TRA HERE]~

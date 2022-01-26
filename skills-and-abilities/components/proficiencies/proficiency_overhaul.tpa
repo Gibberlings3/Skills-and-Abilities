@@ -38,6 +38,16 @@ ACTION_FOR_EACH prof IN
       COPY ~skills-and-abilities/spl/proficiencies/MODEV%prof%%prof%.SPL~  ~override~
       COPY ~skills-and-abilities/eff/proficiencies/MODEV0%prof%.EFF~       ~override~
       COPY ~skills-and-abilities/spl/proficiencies/MODEVC%prof%.SPL~       ~override~
+      // Resilience Profs
+      //COPY ~skills-and-abilities/spl/proficiencies/MOPRS0%prof%.SPL~       ~override~
+      //COPY ~skills-and-abilities/spl/proficiencies/MOPRS%prof%%prof%.SPL~  ~override~
+      //COPY ~skills-and-abilities/eff/proficiencies/MOPRS0%prof%.EFF~       ~override~
+      //COPY ~skills-and-abilities/spl/proficiencies/MOPRSC%prof%.SPL~       ~override~
+      // Elemental Resistance Profs
+      //COPY ~skills-and-abilities/spl/proficiencies/MOERS0%prof%.SPL~       ~override~
+      //COPY ~skills-and-abilities/spl/proficiencies/MOERS%prof%%prof%.SPL~  ~override~
+      //COPY ~skills-and-abilities/eff/proficiencies/MOERS0%prof%.EFF~       ~override~
+      //COPY ~skills-and-abilities/spl/proficiencies/MOERSC%prof%.SPL~       ~override~
     END
 
 // Import Blank Wizard/Sorcerer CLAB Files
@@ -211,6 +221,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 13 2 1 ~modev1~
     SET_2DA_ENTRY 13 3 1 ~modev2~
 
+    SET_2DA_ENTRY 29 0 1 ~CRITICAL~
+    SET_2DA_ENTRY 29 2 1 ~mocri1~
+    SET_2DA_ENTRY 29 3 1 ~mocri2~
     SET_2DA_ENTRY 30 0 1 ~ARCHERY~
     SET_2DA_ENTRY 30 2 1 ~moarc1~
     SET_2DA_ENTRY 30 3 1 ~moarc2~     
@@ -226,6 +239,8 @@ REPLACE ~mospl2~    @7119
 REPLACE ~modev1~    @7120
 REPLACE ~modev2~    @7121
 
+REPLACE ~mocri1~    @7134
+REPLACE ~mocri2~    @7135
 REPLACE ~moarc1~    @7128
 REPLACE ~moarc2~    @7129
 PRETTY_PRINT_2DA
@@ -1180,7 +1195,29 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_BYTE  0x31 prof
   READ_SHORT 0x1c type
 
-    // Bow Weapon Group
+  // Armor Proficiency
+  PATCH_IF (type = 2) BEGIN 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm01~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm02~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END // Basically No Effect
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm04~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm05~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm06~ END
+  END
+
+  // Archery Weapon Style
+  PATCH_IF (prof = 104) OR 
+        (prof = 105) OR
+        (prof = 103) OR     // Crossbow
+        (prof = 106) OR     // Dart
+        (prof = 107) BEGIN  // Sling
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC02~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof2% timing = 2 STR_VAR resource = ~MOARC02~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC01~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOARC01~ END
+  END
+
+  // Bow Weapon Group
   PATCH_IF (prof = 104) OR (prof = 105) BEGIN
     WRITE_BYTE 0x31 99
     // Add EFF File here to add +1 Thac0 if Elf
@@ -1232,23 +1269,5 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Spear Weapon Group
   PATCH_IF (prof = 98) OR (prof = 99) BEGIN
     WRITE_BYTE 0x31 106
-  END
-
-  // Armor Proficiency
-  PATCH_IF (type = 2) BEGIN 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm01~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm02~ END
-    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END // Basically No Effect
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm04~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm05~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm06~ END
-  END
-
-  // Archery Weapon Style
-  PATCH_IF (prof = 99) OR (prof = 105) BEGIN 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC02~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof2% timing = 2 STR_VAR resource = ~MOARC02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOARC01~ END
   END
   BUT_ONLY
