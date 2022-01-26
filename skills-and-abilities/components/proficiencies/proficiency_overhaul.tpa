@@ -1513,7 +1513,7 @@ PATCH_IF (missile > 0) BEGIN
 END
 
 // Spear
-PATCH_IF (spear) > 0) BEGIN
+PATCH_IF (spear > 0) BEGIN
     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = spear parameter2 = 105 timing = 9 END
 END
 
