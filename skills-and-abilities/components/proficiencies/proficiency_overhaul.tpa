@@ -1537,7 +1537,7 @@ PATCH_IF (twoweapon > 0) BEGIN
     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
 END
 
-BUT_ONLY
+//BUT_ONLY
 /*
 
         SET_2DA_ENTRY 21 col 1 ~%bow%~
