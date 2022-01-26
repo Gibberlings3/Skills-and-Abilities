@@ -1362,26 +1362,183 @@ SET axe = 0
 SET blunt = 0
 SET missile = 0
 SET spear = 0
-//CLEAR_ARRAY cd_current_pips
+SET is_ranged = 0
+SET twohanded = 0
+SET swordandshield = 0
+SET singleweapon = 0
+SET twoweapon = 0
+
 FOR (index = 0 ; index < fx_num ; ++index) BEGIN
   READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
   PATCH_IF (opcode = 233) BEGIN
-    READ_LONG  (fx_off + 0x04 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param1 // pips
-    READ_LONG  (fx_off + 0x08 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param2 // type
-    free_pips += param1
-   END
+    READ_LONG  (fx_off + 0x04 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) pips
+    READ_LONG  (fx_off + 0x08 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) type
+    
+    // Bows
+    PATCH_IF (type = 104) OR (type = 105) BEGIN
+        is_ranged = 1
+        PATCH_IF (pips > bow) BEGIN
+            free_pips += bow
+            bow = pips
+        END ELSE BEGIN
+            free_pips += pips
+        END
+    END
+
+    // Spiked
+    PATCH_IF (type = 100) BEGIN
+        spiked = pips
+    END
+
+    // Small Sword
+    PATCH_IF (type = 91) OR (type = 96) BEGIN
+        PATCH_IF (pips > ssword) BEGIN
+            free_pips += ssword
+            ssword = pips
+        END ELSE BEGIN
+            free_pips += pips
+        END
+    END
+
+    // Large Sword
+    PATCH_IF (type = 89) OR 
+        (type = 90) OR
+        (type = 93) OR
+        (type = 94) OR
+        (type = 95) BEGIN
+        PATCH_IF (pips > lsword) BEGIN
+            free_pips += lsword
+            lsword = pips
+        END ELSE BEGIN
+            free_pips += pips
+        END
+    END
+
+    // Axe
+    PATCH_IF (type = 92) BEGIN
+        axe = pips
+    END
+
+    // Blunt
+    PATCH_IF (type = 97) OR 
+        (type = 115) OR
+        (type = 101) OR
+        (type = 102) BEGIN
+        PATCH_IF (pips > blunt) BEGIN
+            free_pips += blunt
+            blunt = pips
+        END ELSE BEGIN
+            free_pips += pips
+        END
+    END
+
+    // Missile
+    PATCH_IF (type = 103) OR (type = 106) OR (type = 107) BEGIN
+        is_ranged = 1
+        PATCH_IF (pips > missile) BEGIN
+            free_pips += missile
+            missile = pips
+        END ELSE BEGIN
+            free_pips += pips
+        END
+    END
+
+    // Spear
+    PATCH_IF (type = 98) OR (type = 99) BEGIN
+        PATCH_IF (pips > spear) BEGIN
+            free_pips += spear
+            spear = pips
+        END ELSE BEGIN
+            free_pips += pips
+        END
+    END
+
+    // Two-Handed Weapon Style
+    PATCH_IF (type = 111) BEGIN
+        twohanded = pips
+    END
+
+    // Sword and Shield Weapon Style
+    PATCH_IF (type = 112) BEGIN
+        swordandshield = pips
+    END
+
+    // Single Weapon Style
+    PATCH_IF (type = 113) BEGIN
+        singleweapon = pips
+    END
+
+    // Two Weapon Style
+    PATCH_IF (type = 114) BEGIN
+        twoweapon = pips
+    END
 END
 
+// Remove all old profs, these will be replaced
+LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
+
+// Bow
+PATCH_IF (bow > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = bow parameter2 = 98 timing = 9 END
+END
+
+// Spiked
+PATCH_IF (spiked > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = spiked parameter2 = 99 timing = 9 END
+END
+
+// Small Sword
+PATCH_IF (ssword > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = ssword parameter2 = 100 timing = 9 END
+END
+
+// Large Sword
+PATCH_IF (lsword > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = lsword parameter2 = 101 timing = 9 END
+END
+
+// Axe
+PATCH_IF (axe > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = axe parameter2 = 102 timing = 9 END
+END
+
+// Blunt
+PATCH_IF (blunt) > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = blunt parameter2 = 103 timing = 9 END
+END
+
+// Missile
+PATCH_IF (missile > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = missile parameter2 = 104 timing = 9 END
+END
+
+// Spear
+PATCH_IF (spear) > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = spear parameter2 = 105 timing = 9 END
+END
+
+// Two-Handed Weapon Style
+PATCH_IF (twohanded > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twohanded parameter2 = 111 timing = 9 END
+END
+
+// Sword and Shield Style
+PATCH_IF (swordandshield > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = swordandshield parameter2 = 112 timing = 9 END
+END
+
+// Single Weapon Style
+PATCH_IF (twohanded > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twohanded parameter2 = 113 timing = 9 END
+END
+
+// Two Weapon Style
+PATCH_IF (twoweapon > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
+END
+
+BUT_ONLY
 /*
-FOR (index = 0 ; index < fx_num ; ++index) BEGIN
-  READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
-  PATCH_IF (opcode = 233) BEGIN
-    SET matched = 0
-
-
-    /*PATCH_IF (blunt < club) BEGIN SET blunt = club END
-        PATCH_IF (blunt < mace) BEGIN SET blunt = mace END
-        PATCH_IF (blunt < staff) BEGIN SET blunt = staff END
 
         SET_2DA_ENTRY 21 col 1 ~%bow%~
         SET_2DA_ENTRY 22 col 1 ~%spiked%~
@@ -1391,7 +1548,12 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         SET_2DA_ENTRY 26 col 1 ~%blunt%~
         SET_2DA_ENTRY 27 col 1 ~%missile%~
         SET_2DA_ENTRY 28 col 1 ~%spear%~
-        */
+
+
+FOR (index = 0 ; index < fx_num ; ++index) BEGIN
+  READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
+  PATCH_IF (opcode = 233) BEGIN
+    SET matched = 0
     READ_LONG  (fx_off + 0x04 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param1 // pips
     READ_LONG  (fx_off + 0x08 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param2 // type
     PHP_EACH cd_current_pips AS type => number BEGIN
@@ -1410,7 +1572,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
     END
   END
 END
-*/
+
 
 PATCH_IF free_pips BEGIN // if cre file has overlapping/dupe profs
   PATCH_PRINT ~Trying to replace pips on %source%...~
@@ -1563,3 +1725,4 @@ PATCH_IF free_pips BEGIN // if cre file has overlapping/dupe profs
   END // col_no patch_if
 END // end free_pips patch_if
 BUT_ONLY
+*/
