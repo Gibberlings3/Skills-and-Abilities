@@ -1503,7 +1503,7 @@ PATCH_IF (axe > 0) BEGIN
 END
 
 // Blunt
-PATCH_IF (blunt) > 0) BEGIN
+PATCH_IF (blunt > 0) BEGIN
     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = blunt parameter2 = 103 timing = 9 END
 END
 
