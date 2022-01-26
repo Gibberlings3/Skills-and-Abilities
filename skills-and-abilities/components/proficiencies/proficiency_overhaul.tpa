@@ -1338,3 +1338,192 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     WRITE_BYTE 0x31 105
   END
   BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Update Proficiency Stats for all Creatures                            //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Move Proficiency Points to Weapon Groups                              //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
+SPRINT source ~%SOURCE_FILE%~
+READ_LONG 0x2c4 fx_off ELSE 0
+READ_LONG 0x2c8 fx_num ELSE 0
+READ_BYTE 0x33  fx_type ELSE 2
+SET free_pips = 0
+CLEAR_ARRAY cd_current_pips
+FOR (index = 0 ; index < fx_num ; ++index) BEGIN
+  READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
+  PATCH_IF (opcode = 233) BEGIN
+    SET matched = 0
+    READ_LONG  (fx_off + 0x04 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param1 // pips
+    READ_LONG  (fx_off + 0x08 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) param2 // type
+    PHP_EACH cd_current_pips AS type => number BEGIN
+      PATCH_IF (param2 = type) BEGIN
+        SET matched = 1
+        PATCH_IF (number < param1) BEGIN // if newly found 233 has more stars than current array, update array
+          DEFINE_ASSOCIATIVE_ARRAY cd_current_pips BEGIN ~%param2%~ => ~%param1%~ END
+          SET free_pips += number
+        END ELSE BEGIN // otherwise note duplicate, update count of new pips to distribute
+          SET free_pips += param1
+        END
+      END
+    END
+    PATCH_IF matched = 0 BEGIN
+      DEFINE_ASSOCIATIVE_ARRAY cd_current_pips BEGIN ~%param2%~ => ~%param1%~ END // newly discovered prof type
+    END
+  END
+END
+PATCH_IF free_pips BEGIN // if cre file has overlapping/dupe profs
+  PATCH_PRINT ~Trying to place free pips on %source%...~
+  READ_SHORT 0x010 dual         // flags for dual-classes
+  READ_BYTE  0x235 level_second // Highest attained level in secondary class (0-100)
+  READ_BYTE  0x273 class        // V1.0
+  READ_SHORT 0x246 kit          // 0x00004000 = trueclass
+  SET col_no = 0
+  PATCH_IF ((kit != 0) AND (kit != 0x00004000) AND (level_second = 0)) BEGIN // kitted, not some dual-class
+    SET kitno = kit - 0x4000
+    INNER_ACTION BEGIN
+          // add kit tables dynamically by reading kitlist
+      COPY_EXISTING ~kitlist.2da~ ~override~
+        COUNT_2DA_ROWS ~9~ "rows"
+        FOR (index = 1 ; index < rows ; ++index) BEGIN
+          READ_2DA_ENTRY "%index%" 0 9 kitno_entry
+          PATCH_IF kitno = kitno_entry BEGIN
+            READ_2DA_ENTRY "%index%" 6 9 col_no
+            SET index = rows // kill loop
+          END
+        END
+        BUT_ONLY
+
+    END // end inner_action
+  END ELSE // if not a kit...
+
+  PATCH_IF ((class = 2) AND (kit = 0x00004000)) BEGIN // barbarian
+    SET col_no = 52
+  END ELSE
+
+  PATCH_IF ((class = 1) AND (kit = 0x00004000)) BEGIN //  wild mage
+    SET col_no = 51
+  END ELSE
+
+  PATCH_IF (((class =  7) AND ((dual & BIT3) = BIT3)) OR // f>m dual
+            ((class = 13) AND ((dual & BIT6) = BIT6)) OR // t>m dual
+            ((class = 14) AND ((dual & BIT5) = BIT5)) OR // c>m dual
+            (class = 1) OR                               // plain mage
+            (class = 19)) BEGIN                          // plain sorcerer
+    SET col_no = 4
+  END ELSE
+
+  PATCH_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR // m>f dual
+            ((class =  9) AND ((dual & BIT6) = BIT6)) OR // t>f dual
+            ((class =  8) AND ((dual & BIT5) = BIT5)) OR // c>f dual
+            ((class = 16) AND ((dual & BIT7) = BIT7)) OR // d>f dual
+            (class = 2)) BEGIN                           // plain fighter
+    SET col_no = 5
+  END ELSE
+
+  PATCH_IF (((class =  8) AND ((dual & BIT3) = BIT3)) OR // f>c dual
+            ((class = 15) AND ((dual & BIT6) = BIT6)) OR // t>c dual
+            ((class = 14) AND ((dual & BIT4) = BIT4)) OR // m>c dual
+            ((class = 18) AND ((dual & BIT8) = BIT8)) OR // r>c dual
+            (class = 3)) BEGIN                           // plain cleric
+    SET col_no = 6
+  END ELSE
+
+  PATCH_IF (((class =  9) AND ((dual & BIT3) = BIT3)) OR // f>t dual
+            ((class = 13) AND ((dual & BIT4) = BIT4)) OR // m>t dual
+            ((class = 15) AND ((dual & BIT5) = BIT5)) OR // c>t dual
+            (class = 4)) BEGIN                           // plain thief
+    SET col_no = 7
+  END ELSE
+
+  PATCH_IF (((class = 16) AND ((dual & BIT3) = BIT3)) OR // f>d dual
+            (class = 11)) BEGIN                          // plain druid
+    SET col_no = 10
+  END ELSE
+
+  PATCH_IF (((class = 18) AND ((dual & BIT5) = BIT5)) OR // c>r dual
+            (class = 12)) BEGIN                          // plain ranger
+    SET col_no = 11
+  END ELSE
+
+  PATCH_IF ((class = 5) OR (class = 6) OR ((class > 12) OR (class < 19))) BEGIN // bards, paladins, m/t, c/m, c/t, f/d, f/m/c, c/r
+    SET col_no = class + 3
+  END ELSE
+  PATCH_IF ((class > 6) OR (class < 11)) BEGIN // f/m, f/c, f/t, fmt
+    SET col_no = class + 5
+  END ELSE
+  PATCH_IF (class = 20) BEGIN // monk
+    SET col_no = 51
+  END
+  PATCH_IF col_no BEGIN // abort here if no class/kit match and no weapprof column set
+    CLEAR_ARRAY cd_available_profs
+    INNER_ACTION BEGIN
+
+      COPY_EXISTING ~weapprof.2da~ ~override~
+        REPLACE_TEXTUALLY ~\([ %TAB%]ID[ %TAB%]\)~ ~CD_DELETE_ME\1~
+        READ_2DA_ENTRY 0 col_no (col_no + 1) col_header
+        FOR (index = 9 ; index < 34 ; ++index) BEGIN
+          READ_2DA_ENTRY index col_no (col_no + 1) max
+          PATCH_IF max BEGIN // non-zero entry
+            READ_2DA_ENTRY index 1 (col_no + 1) type
+            DEFINE_ASSOCIATIVE_ARRAY cd_available_profs BEGIN ~%type%~ => ~%max%~ END // add to array of available
+          END
+        END
+        REPLACE_TEXTUALLY ~CD_DELETE_ME~ ~~
+        BUT_ONLY
+
+    END // close inner_action
+
+    // first, see if existing profs can be maxed
+    PHP_EACH cd_current_pips AS c_type => c_max BEGIN
+      PATCH_IF free_pips BEGIN // kill this once out of stars
+        PHP_EACH cd_available_profs AS a_type => a_max BEGIN
+          PATCH_IF ((c_type = a_type) AND (a_max > c_max)) BEGIN // same prof, stars available
+            PATCH_IF (free_pips <= (a_max - c_max)) BEGIN // if all remaining points can go
+              SET new = (c_max + free_pips)
+              DEFINE_ASSOCIATIVE_ARRAY cd_current_pips BEGIN ~%c_type%~ => ~%new%~ END // dump all free pips
+              SET free_pips = 0
+            END ELSE BEGIN // if still leftover after maxing
+              DEFINE_ASSOCIATIVE_ARRAY cd_current_pips BEGIN ~%c_type%~ => ~%a_max%~ END // max prof
+              SET free_pips -= (a_max - c_max) // bump down prof points
+            END
+          END
+        END
+      END
+    END
+    PHP_EACH cd_available_profs AS a_type => a_max BEGIN
+      PATCH_IF free_pips BEGIN // kill this once out of stars
+        SET matched = 0
+        PHP_EACH cd_current_pips AS c_type => c_max BEGIN
+          PATCH_IF c_type = a_type BEGIN
+            SET matched = 1
+          END
+        END
+        PATCH_IF matched = 0 BEGIN
+          PATCH_IF free_pips < a_max BEGIN
+            DEFINE_ASSOCIATIVE_ARRAY cd_current_pips BEGIN ~%a_type%~ => ~%free_pips%~ END // add to array of current
+            SET free_pips = 0
+          END ELSE BEGIN
+            DEFINE_ASSOCIATIVE_ARRAY cd_current_pips BEGIN ~%a_type%~ => ~%a_max%~ END // add to array of current
+            SET free_pips -= a_max
+          END
+        END
+      END
+    END
+    // now to actually, you know, do this stuff
+    LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
+    PHP_EACH cd_current_pips AS type => pips BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = pips parameter2 = type timing = 9 END
+    END
+    // after all this, also spit out a warning if there are still pips left
+    PATCH_IF free_pips BEGIN
+      PATCH_PRINT ~ * Warning: not able to account for all free pips on %source%~
+    END
+  END // col_no patch_if
+END // end free_pips patch_if
+BUT_ONLY
