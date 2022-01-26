@@ -1472,6 +1472,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
     PATCH_IF (type = 114) BEGIN
         twoweapon = pips
     END
+  END
 END
 
 // Remove all old profs, these will be replaced
