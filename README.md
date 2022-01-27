@@ -24,6 +24,8 @@ Adds the option to either select Open Locks only or Open Locks and Disarm/Find T
 
 Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk kits. 
 
+**coming soon** more updates to the Monk class and kits.
+
 ### 1e Barbarians (EEex Required)
 
 Adds Detect Illusions, set natural snares (outdoor areas only) and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit. 
@@ -41,6 +43,8 @@ Adds Detect Illusions (Set at 100) to the Wizard Slayer.
 ### Inquisitor (EEex Required)
 
 Replaces the Inquisitor's True Seeing with the Detect Illusion Skill (Set at 100).
+
+**coming soon** more updates to the Paladin class and kits.
 
 ## Proficiencies
 
@@ -61,6 +65,8 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, -2 bonus to Thaco, -2 bonus to AC, and inflicts critical damage on an attack roll of 18 to 20.
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
+
+Yes, exactly as it says: you will get new proficiencies that can be assigned on the character creation and level up screens. These are actual, functional, useable, proficiencies. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod. While I am a fan of EEex and what it offers, it is actually NOT required for this component to run. 
 
 **ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a -1 penalty to speed factor. All abilities are cumulative.
 - Proficient (1 slot): The character receives no penalties while wearing armor.
