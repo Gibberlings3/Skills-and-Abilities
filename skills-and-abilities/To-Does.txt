@@ -55,12 +55,7 @@ E.g. using intelligence or wisdom as bonus (or penalty) to find/remove trap. Pro
 // Assigned/Work in Progress                                             //
 ///////////////////////////////////////////////////////////////////////////
 Assigned to morpheus562
-- Proficiency Overhaul. I will be in the proficiency_overhaul.tpa and proficiency_descriptions.tra
-	- (completed) Combine Weapon Proficiencies into OG BG1 model.
-	- Use extra proficiency areas to add non-weapon proficiencies.
-	- (completed for og profs) Automate update of weapprof.2da for all kits.
-	- (completed) Update all weapons to fall into the new Weapon Proficiency categories.
-	- Traverse all characters and reassign Modify_Proficiency to ensure it aligns with the new system.
+- Monk and Paladin Overhaul/Updates
 
 Assigned to Grammarsalad
 - Ranger: Add Set Natural Snares and Tracking
@@ -90,6 +85,10 @@ Assigned to Grammarsalad
 - All 2H weapons confer 1.5x STR damage (exceptional str is excluded)
 	- I followed a similar method as SD, and tested for all values from 18-25 STR. I also tested with adding str randomly (i.e. equipping strength belt) and values changed as desired. 
 	- I also check for any 1H weapons that can become 2H weapons due to mods (i.e. axes, bastard swords, katanas, etc.)
+- Proficiency Overhaul. I will be in the proficiency_overhaul.tpa and proficiency_descriptions.tra
+	- New proficiencies are added
+	- New weapon groups are assigned and item descriptions updated
+	- All creatures updated with new proficiencies
 
 
 ///////////////////////////////////////////////////////////////////////////
