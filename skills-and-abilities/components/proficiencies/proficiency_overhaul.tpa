@@ -1223,6 +1223,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
 // Assign Proficiencies to Items                                         //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  SPRINT weapon_name ~%SOURCE_FILE%~
   READ_BYTE  0x31 prof
   READ_SHORT 0x1c type
 
@@ -1289,16 +1290,19 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (prof = 104) OR (prof = 105) BEGIN
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END // Add +1 Thac0 to Bows for Elfs
     WRITE_BYTE 0x31 98
+    PATCH_PRINT ~Moving %weapon_name% to the Bow weapon group~
   END
 
   // Spiked Weapon Group
   PATCH_IF (prof = 100) BEGIN
     WRITE_BYTE 0x31 99
+    PATCH_PRINT ~Moving %weapon_name% to the Spiked weapon group~
   END
 
   // Small Sword Weapon Group
   PATCH_IF (prof = 91) OR (prof = 96) BEGIN
     WRITE_BYTE 0x31 100
+    PATCH_PRINT ~Moving %weapon_name% to the Small Sword weapon group~
   END
 
   // Add +1 Thac0 to Long Swords if Elf
@@ -1313,6 +1317,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (prof = 94) OR      // Katana
         (prof = 95) BEGIN   // Scimitar
     WRITE_BYTE 0x31 101
+    PATCH_PRINT ~Moving %weapon_name% to the Large Sword weapon group~
   END
 
   // Axe Weapon Group
@@ -1326,6 +1331,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (prof = 101) OR     // Mace
         (prof = 102) BEGIN  // Quarterstaff
     WRITE_BYTE 0x31 103
+    PATCH_PRINT ~Moving %weapon_name% to the Blunt weapon group~
   END
 
   // Add EFF +1 Thac0 to Slings if Halfling
@@ -1338,22 +1344,115 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (prof = 106) OR     // Dart
         (prof = 107) BEGIN  // Sling
     WRITE_BYTE 0x31 104
+    PATCH_PRINT ~Moving %weapon_name% to the Missile weapon group~
   END
 
   // Spear Weapon Group
   PATCH_IF (prof = 98) OR (prof = 99) BEGIN
     WRITE_BYTE 0x31 105
+    PATCH_IF (prof = 99) BEGIN
+        PATCH_PRINT ~Moving %weapon_name% to the Spear weapon group~
+    END
   END
 
-  PATCH_IF ((prof > 99) AND (prof < 108)) BEGIN // axes don't need changes
+  PATCH_IF ((prof >= 89) AND (prof < 108)) OR (prof = 115) BEGIN // axes don't need changes
     // update descriptions
     PATCH_FOR_EACH offset IN 0x50 0x54 BEGIN
         READ_LONG ~%offset%~ desc_strref
         PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
           READ_STRREF ~%offset%~ desc
-          INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-            REPLACE_TEXTUALLY ~Proficiency Type:~ ~Weapon Type:~
+          // Bastard Sword
+          PATCH_IF (prof = 89) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Bastard Sword~ ~Proficiency Type: Large Sword~
+              END
+          // Long Sword
+          END ELSE PATCH_IF (prof = 90) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Long Sword~ ~Proficiency Type: Large Sword~
+              END
+          // Short Sword
+          END ELSE PATCH_IF (prof = 91) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Short Sword~ ~Proficiency Type: Small Sword~
+              END
+          // Two-Handed Sword
+          END ELSE PATCH_IF (prof = 93) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Two-handed Sword~ ~Proficiency Type: Large Sword~
+              END
+          // Katana
+          END ELSE PATCH_IF (prof = 94) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Katana~ ~Proficiency Type: Large Sword~
+              END
+          // Scimitar/Wakizashi/Ninjatō
+          END ELSE PATCH_IF (prof = 95) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Scimitar/Wakizashi/Ninjatō~ ~Proficiency Type: Large Sword~
+              END
+          // Dagger    
+          END ELSE PATCH_IF (prof = 96) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Dagger~ ~Proficiency Type: Small Sword~
+              END
+          // Warhammer    
+          END ELSE PATCH_IF (prof = 97) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: War Hammer~ ~Proficiency Type: Blunt~
+              END
+          // Halberd    
+          END ELSE PATCH_IF (prof = 99) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Halberd~ ~Proficiency Type: Spear~
+              END
+          // Flail/Morningstar    
+          END ELSE PATCH_IF (prof = 100) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Flail/Morning Star~ ~Proficiency Type: Spiked~
+              END
+          // Mace    
+          END ELSE PATCH_IF (prof = 101) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Mace~ ~Proficiency Type: Blunt~
+              END
+          // Quarterstaff    
+          END ELSE PATCH_IF (prof = 102) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Quarterstaff~ ~Proficiency Type: Blunt~
+              END
+          // Crossbow    
+          END ELSE PATCH_IF (prof = 103) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Crossbow~ ~Proficiency Type: Missile~
+              END
+          // Longbow     
+          END ELSE PATCH_IF (prof = 104) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Longbow~ ~Proficiency Type: Bow~
+              END
+          // Shortbow    
+          END ELSE PATCH_IF (prof = 105) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Shortbow~ ~Proficiency Type: Bow~
+              END
+          // Dart    
+          END ELSE PATCH_IF (prof = 106) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Dart~ ~Proficiency Type: Missile~
+              END
+          // Sling    
+          END ELSE PATCH_IF (prof = 107) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Sling~ ~Proficiency Type: Missile~
+              END
+          // Club    
+          END ELSE PATCH_IF (prof = 115) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Club~ ~Proficiency Type: Blunt~
+              END
           END
+
           SAY_EVALUATED ~%offset%~ ~%desc%~
         END
     END
