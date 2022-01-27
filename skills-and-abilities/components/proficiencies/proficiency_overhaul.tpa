@@ -1355,7 +1355,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     END
   END
 
-  PATCH_IF ((prof >= 89) AND (prof < 108)) OR (prof = 115) BEGIN // axes don't need changes
+  // Update Item Descriptions with New Weapon Group
+  PATCH_IF ((prof >= 89) AND (prof < 108)) OR (prof = 115) BEGIN 
     // update descriptions
     PATCH_FOR_EACH offset IN 0x50 0x54 BEGIN
         READ_LONG ~%offset%~ desc_strref
