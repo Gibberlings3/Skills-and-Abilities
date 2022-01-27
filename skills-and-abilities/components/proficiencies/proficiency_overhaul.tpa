@@ -1349,7 +1349,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 // Provided by Cam, created by the_bigg                                  //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
-SPRINT source ~%SOURCE_FILE%~
+//SPRINT source ~%SOURCE_FILE%~
 READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
