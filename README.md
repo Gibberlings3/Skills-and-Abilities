@@ -73,7 +73,7 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Specialized (2 slots): The character receives a -1 bonus to AC vs. missile attacks.
 - Master (3 slots): The character's receives a -1 bonus to AC.
 - High Master (4 slots): The character bonus to AC increases to -2.
-- Grand Master (5 slots): The character receives a 5% damage reduction to all physical attacks.
+- Grand Master (5 slots): The character receives a 10% damage reduction to all physical attacks.
 
 **SPELLCRAFT:**  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
 - Silent Spell (1 slot): The character gains permanent Vocalize.
