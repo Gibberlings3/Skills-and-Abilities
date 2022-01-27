@@ -1794,7 +1794,7 @@ PATCH_IF (free_pips > 0) BEGIN
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
             END ELSE PATCH_IF (level > 1) AND (level < 4)  BEGIN
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
-            END ELSE PATCH_IF BEGIN
+            END ELSE BEGIN
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
             END
         END
