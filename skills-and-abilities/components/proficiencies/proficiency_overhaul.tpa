@@ -7,6 +7,8 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
+PATCH_PRINT ~Importing files~
+
 COPY ~skills-and-abilities/itm/moprof.itm~ ~override~ // For tracking of this mod component
 COPY ~skills-and-abilities/2da/PROFS.2DA~ ~override~                   // Updates the frequency profs are gained
 COPY ~skills-and-abilities/eff/proficiencies/MOARC01.EFF~   ~override~ // Archery Weapon Style
@@ -79,6 +81,8 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Move Proficiency Points to Weapon Groups                              //
 ///////////////////////////////////////////////////////////////////////////
+PATCH_PRINT ~Move proficiency points to the new weapon groups~
+
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     READ_2DA_ENTRIES_NOW weapprof 3
     COUNT_2DA_COLS cols
@@ -213,6 +217,8 @@ APPEND ~stats.ids~ ~105 SPEAR~        UNLESS ~105 SPEAR~
 ///////////////////////////////////////////////////////////////////////////
 // Add to WEAPPROF.2DA                                                   //
 ///////////////////////////////////////////////////////////////////////////
+PATCH_PRINT ~Adding new proficiencies to appropriate files~
+
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 0 1 ~ARMOR~
     SET_2DA_ENTRY 11 2 1 ~moarm1~
@@ -417,6 +423,8 @@ COPY_EXISTING ~modev05.spl~ ~override~
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
 ///////////////////////////////////////////////////////////////////////////
+PATCH_PRINT ~Updating all classes and kits to use the new proficiencies~
+
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     // Set here if all classes are NOT getting the same amount
     SET_2DA_ENTRY 12  4 1 ~5~   // MAGE - Spellcraft Prof
@@ -1221,6 +1229,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
 ///////////////////////////////////////////////////////////////////////////
 // Assign Proficiencies to Items                                         //
 ///////////////////////////////////////////////////////////////////////////
+PATCH_PRINT ~Assigning new proficiencies to items.~
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_BYTE  0x31 prof
   READ_SHORT 0x1c type
@@ -1344,12 +1353,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 // Update Proficiency Stats for all Creatures                            //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////
-// Provided by Cam, created by the_bigg                                  //
-///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
-//SPRINT source ~%SOURCE_FILE%~
+SPRINT source ~%SOURCE_FILE%~
 READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
@@ -1369,6 +1374,7 @@ SET twohanded = 0
 SET swordandshield = 0
 SET singleweapon = 0
 SET twoweapon = 0
+PATCH_PRINT ~Determining proficiencies for %source%~
 
 FOR (index = 0 ; index < fx_num ; ++index) BEGIN
   READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
