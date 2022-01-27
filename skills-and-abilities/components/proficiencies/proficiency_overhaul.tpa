@@ -1365,7 +1365,7 @@ SET twohanded = 0
 SET swordandshield = 0
 SET singleweapon = 0
 SET twoweapon = 0
-PATCH_PRINT ~Determining proficiencies for %source%~
+PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
 
 FOR (index = 0 ; index < fx_num ; ++index) BEGIN
   READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
