@@ -1344,6 +1344,21 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (prof = 98) OR (prof = 99) BEGIN
     WRITE_BYTE 0x31 105
   END
+
+  // This code to update descriptions is courtesy of Cam and the_biggs
+  PATCH_IF ((prof > 99) AND (prof < 108)) BEGIN // axes don't need changes
+    // update descriptions
+    PATCH_FOR_EACH offset IN 0x50 0x54 BEGIN
+        READ_LONG ~%offset%~ desc_strref
+        PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
+          READ_STRREF ~%offset%~ desc
+          INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            LAUNCH_PATCH_MACRO ~prof_descripts~
+          END
+          SAY_EVALUATED ~%offset%~ ~%desc%~ // write changes
+        END
+    END
+  END
   BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
