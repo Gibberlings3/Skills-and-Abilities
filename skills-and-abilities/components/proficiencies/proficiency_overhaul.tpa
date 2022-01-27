@@ -1303,7 +1303,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
   // Add +1 Thac0 to Long Swords if Elf
   PATCH_IF (prof = 90) BEGIN
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END 
   END
 
   // Large Sword Weapon Group
