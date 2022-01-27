@@ -6,7 +6,7 @@ call "%~dp0..\ModPackaging\utilities\ie_games.bat"
 
 REM /* MODIFY: set the values of the 3 variables below to reflect the current mod version */
 set "mod_name=Skills and Abilities"
-set "mod_version=v1.0"
+set "mod_version=v0.1-alpha"
 set mod_folder=skills-and-abilities
 
 REM /* MODIFY: list here which IE games the mod is compatible with, from this list of possibilities: */
@@ -28,8 +28,8 @@ set mod_readme=https://github.com/Gibberlings3/Skills-and-Abilities/blob/main/RE
 
 REM /* MODIFY: if you don't need to build a specific package, you can disable it by setting the appropriate variable below to 0 */
 set build_windows=1
-set build_osx=0
-set build_linux=0
+set build_osx=1
+set build_linux=1
 
 REM /* MODIFY: if you want to avoid making filenames lowercase, you can disable that by setting the variable below to 0 */
 set lowercase_filenames=1
