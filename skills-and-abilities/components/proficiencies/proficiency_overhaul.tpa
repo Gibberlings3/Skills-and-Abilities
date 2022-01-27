@@ -1711,7 +1711,7 @@ PATCH_IF ((SOURCE_SIZE >= 0x2d4) AND ((biography < 2147483647) AND (biography > 
     
 // Assign to all remaining creatures
 // PLEASE NOTE: These are assigned based off level and NOT if the creature has the prerequisite amount of pips
-END ELSE BEGIN
+END /*ELSE BEGIN
     // If pips in a 2h weapon but does not have the 2h weapon style
     PATCH_IF (is_twohanded = 1) AND (twohanded = 0) BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 111 timing = 9 END
@@ -1798,4 +1798,5 @@ END ELSE BEGIN
         END
     END
 END
-//BUT_ONLY
+*/
+BUT_ONLY
