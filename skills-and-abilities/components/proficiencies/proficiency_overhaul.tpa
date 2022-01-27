@@ -1347,13 +1347,15 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
   PATCH_IF ((prof > 99) AND (prof < 108)) BEGIN // axes don't need changes
     // update descriptions
-    READ_LONG 0x54 desc_strref
-    PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
-      READ_STRREF ~%offset%~ desc
-      INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-        REPLACE_TEXTUALLY ~Proficiency Type:~ ~Weapon Type:~
-      END
-      SAY_EVALUATED 0x54 ~%new_desc%~
+    PATCH_FOR_EACH offset IN 0x50 0x54 BEGIN
+        READ_LONG ~%offset%~ desc_strref
+        PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
+          READ_STRREF ~%offset%~ desc
+          INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+            REPLACE_TEXTUALLY ~Proficiency Type:~ ~Weapon Type:~
+          END
+          SAY_EVALUATED ~%offset%~ ~%desc%~
+        END
     END
   END
   BUT_ONLY
