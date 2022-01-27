@@ -12,7 +12,9 @@
 
 ## Introduction
 
-The below is a small taste of what is being worked on. More to come...
+This mod is a collection of class, skill, proficiency, and stat updates. This is an alpha release with the intention of adding more class, skill, and stat updates in the near future while further refining the new proficiencies that are being added. Yes, these are actual, functional, useable, proficiencies that can be assinged on the character creation and level up screens. Yes, eekeeper can recognize and adjust these proficiencies for characters. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod. 
+
+Some components require EEex to work, and those are identified with **(EEex Required)**.
 
 ## Class Updates
 
@@ -65,8 +67,6 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, -2 bonus to Thaco, -2 bonus to AC, and inflicts critical damage on an attack roll of 18 to 20.
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
-
-Yes, exactly as it says: you will get new proficiencies that can be assigned on the character creation and level up screens. These are actual, functional, useable, proficiencies. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod. While I am a fan of EEex and what it offers, it is actually **NOT** required for this component to run. 
 
 **ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a -1 penalty to speed factor. All abilities are cumulative.
 - Proficient (1 slot): The character receives no penalties while wearing armor.
