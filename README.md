@@ -129,3 +129,4 @@ Being this requires EEex to run, Windows is required at this time.
 
 - Bubb for all of his work on EEex.
 - aVENGER for use of a function to update clab files.
+- CamDawg_G3 and the_bigg for using their code as reference when consolidating weapon proficiencies into weapon groups. 
