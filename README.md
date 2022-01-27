@@ -66,7 +66,7 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
 
-Yes, exactly as it says: you will get new proficiencies that can be assigned on the character creation and level up screens. These are actual, functional, useable, proficiencies. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod. While I am a fan of EEex and what it offers, it is actually NOT required for this component to run. 
+Yes, exactly as it says: you will get new proficiencies that can be assigned on the character creation and level up screens. These are actual, functional, useable, proficiencies. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod. While I am a fan of EEex and what it offers, it is actually **NOT** required for this component to run. 
 
 **ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a -1 penalty to speed factor. All abilities are cumulative.
 - Proficient (1 slot): The character receives no penalties while wearing armor.
