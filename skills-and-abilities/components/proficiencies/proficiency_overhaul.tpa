@@ -19,6 +19,7 @@ COPY ~skills-and-abilities/eff/proficiencies/MOARM06.EFF~   ~override~ // Armor 
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS01.SPL~   ~override~ // Critical Striker Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS02.SPL~   ~override~ // Critical Striker Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS03.SPL~   ~override~ // Critical Striker Weapon Style
+COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial Thac0 Modifier on weapons
 
 ACTION_FOR_EACH prof IN
       1
@@ -1286,8 +1287,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
   // Bow Weapon Group
   PATCH_IF (prof = 104) OR (prof = 105) BEGIN
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END // Add +1 Thac0 to Bows for Elfs
     WRITE_BYTE 0x31 98
-    // Add EFF File here to add +1 Thac0 if Elf
   END
 
   // Spiked Weapon Group
@@ -1300,7 +1301,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     WRITE_BYTE 0x31 100
   END
 
-  // Add EFF File here to add +1 Thac0 to Long Swords if Elf
+  // Add +1 Thac0 to Long Swords if Elf
+  PATCH_IF (prof = 90) BEGIN
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END 
+  END
 
   // Large Sword Weapon Group
   PATCH_IF (prof = 89) OR   // Bastard Sword
@@ -1324,7 +1328,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     WRITE_BYTE 0x31 103
   END
 
-  // Add EFF File here to add +1 Thac0 to Slings if Halfling
+  // Add EFF +1 Thac0 to Slings if Halfling
+  PATCH_IF (prof = 107) BEGIN
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END 
+  END
 
   // Missile Weapon Group
   PATCH_IF (prof = 103) OR  // Crossbow
