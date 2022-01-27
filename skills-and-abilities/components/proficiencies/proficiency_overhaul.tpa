@@ -71,6 +71,37 @@ ACTION_FOR_EACH wiz_clab IN
       END
 END
 
+// Macro provided by Cam and the_biggs
+DEFINE_PATCH_MACRO ~prof_descripts~ BEGIN
+
+  SPRINT new_weap ""
+  PATCH_IF (prof = 98) BEGIN // bows
+    SPRINT new_weap ~%bow%~ // long bow, short bow
+  END ELSE
+  PATCH_IF (prof = 99) BEGIN // spiked
+    SPRINT new_weap ~%spiked%~ // flails and morningstars
+  END ELSE
+  PATCH_IF (prof = 100) BEGIN // small swords
+    SPRINT new_weap ~%prof_ssword%~ // daggers/short swords
+  END ELSE
+  PATCH_IF (prof = 101) BEGIN // large swords
+    SPRINT new_weap ~%prof_lsword%~ // all blades except daggs & short swords
+  END ELSE // 104 is axe, no change
+  PATCH_IF (prof = 103) BEGIN // blunt
+    SPRINT new_weap ~%blunt%~ // hammers, maces, clubs
+  END ELSE
+  PATCH_IF (prof = 104) BEGIN // missile
+    SPRINT new_weap ~%prof_missile%~ // dart, sling, crossbow
+  END ELSE
+  PATCH_IF (prof = 105) BEGIN // spear
+    SPRINT new_weap ~%spear%~ // spears and halberds (spears don't need changing)
+  END
+  PATCH_IF ("%new_weap%" STRING_COMPARE_CASE "") BEGIN // make sure new_weap is actually set before blindly patching
+    REPLACE_TEXTUALLY CASE_INSENSITIVE ~%prof_text_match%.+$~ ~%prof_text% %new_weap%~
+  END   
+
+END
+
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // Move Proficiencies into OG BG1 Weapon Groups                          //
