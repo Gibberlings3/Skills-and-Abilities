@@ -71,37 +71,6 @@ ACTION_FOR_EACH wiz_clab IN
       END
 END
 
-// Macro provided by Cam and the_biggs
-DEFINE_PATCH_MACRO ~prof_descripts~ BEGIN
-
-  SPRINT new_weap ""
-  PATCH_IF (prof = 98) BEGIN // bows
-    SPRINT new_weap ~%bow%~ // long bow, short bow
-  END ELSE
-  PATCH_IF (prof = 99) BEGIN // spiked
-    SPRINT new_weap ~%spiked%~ // flails and morningstars
-  END ELSE
-  PATCH_IF (prof = 100) BEGIN // small swords
-    SPRINT new_weap ~%prof_ssword%~ // daggers/short swords
-  END ELSE
-  PATCH_IF (prof = 101) BEGIN // large swords
-    SPRINT new_weap ~%prof_lsword%~ // all blades except daggs & short swords
-  END ELSE // 104 is axe, no change
-  PATCH_IF (prof = 103) BEGIN // blunt
-    SPRINT new_weap ~%blunt%~ // hammers, maces, clubs
-  END ELSE
-  PATCH_IF (prof = 104) BEGIN // missile
-    SPRINT new_weap ~%prof_missile%~ // dart, sling, crossbow
-  END ELSE
-  PATCH_IF (prof = 105) BEGIN // spear
-    SPRINT new_weap ~%spear%~ // spears and halberds (spears don't need changing)
-  END
-  PATCH_IF ("%new_weap%" STRING_COMPARE_CASE "") BEGIN // make sure new_weap is actually set before blindly patching
-    REPLACE_TEXTUALLY CASE_INSENSITIVE ~%prof_text_match%.+$~ ~%prof_text% %new_weap%~
-  END   
-
-END
-
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // Move Proficiencies into OG BG1 Weapon Groups                          //
@@ -1376,29 +1345,15 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     WRITE_BYTE 0x31 105
   END
 
-  // This code to update descriptions is courtesy of Cam and the_biggs
-  /*PATCH_IF ((prof > 99) AND (prof < 108)) BEGIN // axes don't need changes
-    // update descriptions
-    PATCH_FOR_EACH offset IN 0x50 0x54 BEGIN
-        READ_LONG ~%offset%~ desc_strref
-        PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
-          READ_STRREF ~%offset%~ desc
-          INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-            LAUNCH_PATCH_MACRO ~prof_descripts~
-          END
-          SAY_EVALUATED ~%offset%~ ~%desc%~ // write changes
-        END
-    END
-  END*/
-
   PATCH_IF ((prof > 99) AND (prof < 108)) BEGIN // axes don't need changes
     // update descriptions
-    READ_LONG ~%offset%~ desc_strref
+    READ_LONG 0x54 desc_strref
     PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
       READ_STRREF ~%offset%~ desc
       INNER_PATCH_SAVE desc ~%desc%~ BEGIN
         REPLACE_TEXTUALLY ~Proficiency Type:~ ~Weapon Type:~
       END
+      SAY_EVALUATED 0x54 ~%new_desc%~
     END
   END
   BUT_ONLY
