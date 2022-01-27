@@ -1716,7 +1716,7 @@ END ELSE BEGIN
     PATCH_IF (is_twohanded = 1) AND (twohanded = 0) BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 111 timing = 9 END
     END
-END /*
+
     // Archery, assigned to all NPCs regardless if they have a ranged weapon
     PATCH_IF (level >= 4) AND (is_ranged = 1) BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 107 timing = 9 END
@@ -1755,7 +1755,7 @@ END /*
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
         END
     END
-
+END /*
     // CLERIC_MAGE and FIGHTER_MAGE_CLERIC
     PATCH_IF (class = 14) OR (class = 17) BEGIN
         // Hybrid Spellcraft and Devotion 
