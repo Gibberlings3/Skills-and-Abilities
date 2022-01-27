@@ -1555,29 +1555,6 @@ READ_LONG  0x1cc biography ELSE 0
 // Assign profs to joinable NPC with free pips
 PATCH_IF ((SOURCE_SIZE >= 0x2d4) AND ((biography < 2147483647) AND (biography > 0))) BEGIN
         
-    // If pips in a 2h weapon but does not have the 2h weapon style, this will add the weapon style
-    PATCH_IF (is_twohanded = 1) AND (twohanded = 0) BEGIN
-        PATCH_IF (free_pips >= 2) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 111 timing = 9 END
-            free_pips -= 2
-        END ELSE PATCH_IF (free_pips = 1) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 111 timing = 9 END
-            free_pips -= 1
-        END
-    END
-
-    // PALADIN and RANGER
-    PATCH_IF (class = 6) OR (class = 12) BEGIN 
-        // Devotion
-        PATCH_IF (free_pips >= 2) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
-            free_pips -= 2
-        END ELSE PATCH_IF (free_pips = 1) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
-            free_pips -= 1
-        END
-    END
-
     // CLERICs and DRUIDs 
     PATCH_IF (class = 3) OR // CLERIC
         (class = 8)  OR // FIGHTER_CLERIC
@@ -1665,6 +1642,29 @@ PATCH_IF ((SOURCE_SIZE >= 0x2d4) AND ((biography < 2147483647) AND (biography > 
             free_pips -= 2
         END ELSE PATCH_IF (free_pips = 1) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
+            free_pips -= 1
+        END
+    END
+
+    // If pips in a 2h weapon but does not have the 2h weapon style, this will add the weapon style
+    PATCH_IF (is_twohanded = 1) AND (twohanded = 0) BEGIN
+        PATCH_IF (free_pips >= 2) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 111 timing = 9 END
+            free_pips -= 2
+        END ELSE PATCH_IF (free_pips = 1) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 111 timing = 9 END
+            free_pips -= 1
+        END
+    END
+
+    // PALADIN and RANGER
+    PATCH_IF (class = 6) OR (class = 12) BEGIN 
+        // Devotion
+        PATCH_IF (free_pips >= 2) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+            free_pips -= 2
+        END ELSE PATCH_IF (free_pips = 1) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
             free_pips -= 1
         END
     END
@@ -1755,11 +1755,11 @@ END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
         END
     END
-END /*
+
     // CLERIC_MAGE and FIGHTER_MAGE_CLERIC
     PATCH_IF (class = 14) OR (class = 17) BEGIN
         // Hybrid Spellcraft and Devotion 
-        END ELSE PATCH_IF (level >= 20) AND (level < 24)BEGIN
+        PATCH_IF (level >= 20) AND (level < 24)BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
         END ELSE PATCH_IF (level >= 16) AND (level < 20)BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
@@ -1798,5 +1798,4 @@ END /*
         END
     END
 END
-*/
 BUT_ONLY
