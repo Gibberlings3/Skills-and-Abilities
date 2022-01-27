@@ -1554,19 +1554,20 @@ PATCH_IF (free_pips > 0) BEGIN
     READ_BYTE 0x273 class
     READ_LONG  0x1cc biography ELSE 0
 
-    // If pips in a 2h weapon but does not have the 2h weapon style, this will add the weapon style
-    PATCH_IF (is_twohanded = 1) AND (twohanded = 0) BEGIN
-        PATCH_IF (free_pips >= 2) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 111 timing = 9 END
-            free_pips -= 2
-        END ELSE PATCH_IF (free_pips = 1) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 111 timing = 9 END
-            free_pips -= 1
-        END
-    END
-
     // Assign profs to joinable NPC with free pips
     PATCH_IF ((SOURCE_SIZE >= 0x2d4) AND ((biography < 2147483647) AND (biography > 0))) BEGIN // only joinable cre files
+        
+        // If pips in a 2h weapon but does not have the 2h weapon style, this will add the weapon style
+        PATCH_IF (is_twohanded = 1) AND (twohanded = 0) BEGIN
+            PATCH_IF (free_pips >= 2) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 111 timing = 9 END
+                free_pips -= 2
+            END ELSE PATCH_IF (free_pips = 1) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 111 timing = 9 END
+                free_pips -= 1
+            END
+        END
+
         // PALADIN and RANGER
         PATCH_IF (class = 6) OR (class = 12) BEGIN 
             // Devotion
@@ -1577,6 +1578,100 @@ PATCH_IF (free_pips > 0) BEGIN
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
                 free_pips -= 1
             END
+        END
+
+        // CLERICs and DRUIDs 
+        PATCH_IF (class = 3) OR // CLERIC
+            (class = 8)  OR // FIGHTER_CLERIC
+            (class = 11) OR // DRUID
+            (class = 15) OR // CLERIC_THIEF
+            (class = 16) OR // FIGHTER_DRUID
+            (class = 18) OR // CLERIC_RANGER
+            (class = 21) BEGIN // Shaman
+            // Devotion
+            PATCH_IF (free_pips >= 5) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
+                free_pips -= 5
+            END ELSE PATCH_IF (free_pips = 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 91 timing = 9 END
+                free_pips -= 4
+            END ELSE PATCH_IF (free_pips = 3) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 91 timing = 9 END
+                free_pips -= 3
+            END ELSE PATCH_IF (free_pips = 2) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+                free_pips -= 2
+            END ELSE PATCH_IF (free_pips = 1) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
+                free_pips -= 1
+            END
+        END
+
+        // CLERIC_MAGE and FIGHTER_MAGE_CLERIC
+        PATCH_IF (class = 14) OR (class = 17) BEGIN
+            // Spellcraft
+            PATCH_IF (free_pips >= 5) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 90 timing = 9 END
+                free_pips -= 5
+            END ELSE PATCH_IF (free_pips = 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 90 timing = 9 END
+                free_pips -= 4
+            END ELSE PATCH_IF (free_pips = 3) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
+                free_pips -= 3
+            END ELSE PATCH_IF (free_pips = 2) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
+                free_pips -= 2
+            END ELSE PATCH_IF (free_pips = 1) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
+                free_pips -= 1
+            END
+            // Devotion
+            PATCH_IF (free_pips >= 5) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
+                free_pips -= 5
+            END ELSE PATCH_IF (free_pips = 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 91 timing = 9 END
+                free_pips -= 4
+            END ELSE PATCH_IF (free_pips = 3) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 91 timing = 9 END
+                free_pips -= 3
+            END ELSE PATCH_IF (free_pips = 2) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+                free_pips -= 2
+            END ELSE PATCH_IF (free_pips = 1) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
+                free_pips -= 1
+            END
+        END
+
+        // MAGES, BARDS, and SORCERER
+        PATCH_IF (class = 1) OR // MAGE
+            (class = 5)  OR     // BARD
+            (class = 7)  OR     // FIGHTER_MAGE
+            (class = 10) OR     // FIGHTER_MAGE_THIEF
+            (class = 13) OR     // MAGE_THIEF
+            (class = 19) BEGIN  // SORCERER
+            // Spellcraft
+            PATCH_IF (free_pips >= 5) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 90 timing = 9 END
+                free_pips -= 5
+            END ELSE PATCH_IF (free_pips = 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 90 timing = 9 END
+                free_pips -= 4
+            END ELSE PATCH_IF (free_pips = 3) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
+                free_pips -= 3
+            END ELSE PATCH_IF (free_pips = 2) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
+                free_pips -= 2
+            END ELSE PATCH_IF (free_pips = 1) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
+                free_pips -= 1
+            END
+        END
+
+        PATCH_IF (free_pips > 0) BEGIN
             // Archery
             PATCH_IF (free_pips >= 2) AND (is_ranged = 1) BEGIN
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 107 timing = 9 END
@@ -1614,10 +1709,95 @@ PATCH_IF (free_pips > 0) BEGIN
                 free_pips -= 1
             END
         END
-
-        // CLERIC
-    // Assign to all remaining creatures with free pips
+    
+    // Assign to all remaining creatures
+    // PLEASE NOTE: These are assigned based off level and NOT if the creature has the prerequisite amount of pips
     END ELSE BEGIN
+        // If pips in a 2h weapon but does not have the 2h weapon style
+        PATCH_IF (is_twohanded = 1) AND (twohanded = 0) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 111 timing = 9 END
+        END
+
+        // Archery, assigned to all NPCs regardless if they have a ranged weapon
+        PATCH_IF (level >= 4) AND (is_ranged = 1) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 107 timing = 9 END
+        END ELSE PATCH_IF (level < 4) AND (is_ranged = 1)  BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 107 timing = 9 END
+        END
+
+        // PALADIN and RANGER
+        PATCH_IF (class = 6) OR (class = 12) BEGIN 
+            // Devotion
+            PATCH_IF (level >= 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+            END ELSE BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
+            END
+        END
+
+        // CLERICs and DRUIDs 
+        PATCH_IF (class = 3) OR // CLERIC
+            (class = 8)  OR // FIGHTER_CLERIC
+            (class = 11) OR // DRUID
+            (class = 15) OR // CLERIC_THIEF
+            (class = 16) OR // FIGHTER_DRUID
+            (class = 18) OR // CLERIC_RANGER
+            (class = 21) BEGIN // Shaman
+            // Devotion
+            PATCH_IF (level >= 12) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
+            END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 91 timing = 9 END
+            END ELSE PATCH_IF (level >= 4) AND (level < 8) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 91 timing = 9 END
+            END ELSE PATCH_IF (level > 1) AND (level < 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+            END ELSE BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
+            END
+        END
+
+        // CLERIC_MAGE and FIGHTER_MAGE_CLERIC
+        PATCH_IF (class = 14) OR (class = 17) BEGIN
+            // Hybrid Spellcraft and Devotion 
+            END ELSE PATCH_IF (level >= 20) AND (level < 24)BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
+            END ELSE PATCH_IF (level >= 16) AND (level < 20)BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
+            END ELSE PATCH_IF (level >= 12) AND (level < 16)BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
+            END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 91 timing = 9 END
+            END ELSE PATCH_IF (level >= 4) AND (level < 8) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 91 timing = 9 END
+            END ELSE PATCH_IF (level > 1) AND (level < 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+            END ELSE BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
+            END
+        END
+
+        // MAGES, BARDS, and SORCERER
+        PATCH_IF (class = 1) OR // MAGE
+            (class = 5)  OR     // BARD
+            (class = 7)  OR     // FIGHTER_MAGE
+            (class = 10) OR     // FIGHTER_MAGE_THIEF
+            (class = 13) OR     // MAGE_THIEF
+            (class = 19) BEGIN  // SORCERER
+            // Spellcraft
+            PATCH_IF (level >= 12) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 90 timing = 9 END
+            END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 90 timing = 9 END
+            END ELSE PATCH_IF (level >= 4) AND (level < 8) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
+            END ELSE PATCH_IF (level > 1) AND (level < 4)  BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
+            END ELSE PATCH_IF BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
+            END
+        END
     END
 END
 BUT_ONLY
