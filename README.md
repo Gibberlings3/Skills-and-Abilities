@@ -8,7 +8,7 @@
 
 **Authors**: [Grammarsalad](https://www.gibberlings3.net/profile/6114-grammarsalad/) and [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
-**On the Web**: [Discussion Topic]()
+**On the Web**: [Discussion Topic](https://www.gibberlings3.net/forums/topic/34217-skills-and-abilities-mod-alpha-release/)
 
 ## Introduction
 
