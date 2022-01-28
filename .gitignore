@@ -1,3 +1,6 @@
-
-skills-and-abilities-v1.0.exe
+*.7z
+*.rar
+*.zip
+*.tar.gz
 *.exe
+!iconv.exe
