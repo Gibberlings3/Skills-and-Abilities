@@ -73,6 +73,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // 1e Barbarians (EEex Required)                                         //
 ///////////////////////////////////////////////////////////////////////////
@@ -100,6 +101,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 OUTER_SET barb_rage=0 // Remove rage
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Rangers                                              //

@@ -28,7 +28,7 @@ Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk k
 
 **coming soon** more updates to the Monk class and kits.
 
-### 1e Barbarians (EEex Required)
+### **Coming Soon** 1e Barbarians (EEex Required)
 
 Adds Detect Illusions, set natural snares (outdoor areas only) and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit. 
 
@@ -114,11 +114,15 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
 - Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.
 
+**Coming soon** more proficiency options.
+
 ## More Meaningful Stat Bonuses
 
 ### Strength 
 
 Two-handed attacks receive one and a half times the Strength damage bonus, rounded down.
+
+**Coming soon** more benefits to other stats.
 
 ## Compatibility
 This mod has components (outlined above) requiring [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. If you install these components, you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file.
