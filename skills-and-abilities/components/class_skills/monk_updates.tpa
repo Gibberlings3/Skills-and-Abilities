@@ -7,11 +7,9 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3THI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
-END
-
-COPY ~skills-and-abilities/lua/M_B3THI4.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+// Import Flurry of Blows
+// Import Greater Flurry
+// Import Timeless
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for Base Monk                   //
