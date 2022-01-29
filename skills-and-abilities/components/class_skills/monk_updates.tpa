@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/spl/MO#MON01.SPL~    ~override~ // 0.5 APR Increase at level 11
+COPY ~skills-and-abilities/spl/MO#MON01.SPL~    ~override~ // 0.5 APR Increase at level 15
 COPY ~skills-and-abilities/spl/MO#MON02.SPL~    ~override~ // Flurry of Blows at level 1 
 // Import Timeless
 
@@ -16,11 +16,10 @@ COPY ~skills-and-abilities/spl/MO#MON02.SPL~    ~override~ // Flurry of Blows at
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABMO01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 11 f_MaxLevel = 11 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
-/*
 ///////////////////////////////////////////////////////////////////////////
 // Set Skills for ALL Monk Kits                                          //
 ///////////////////////////////////////////////////////////////////////////
@@ -48,7 +47,6 @@ COPY_EXISTING ~CLABMO01.2DA~ override
 
   END
   END
-  */
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
