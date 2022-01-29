@@ -56,10 +56,10 @@ COPY_EXISTING ~CLABMO01.2DA~ override
 // Updates descriptions for Monk                                         //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-OUTER_SPRINT old1 @4005 // Flurry of Blows
-OUTER_SPRINT old2 @4007 // Greater Flurry
-OUTER_SPRINT new1 @4006 // Flurry of Blows
-OUTER_SPRINT new2 @4008 // Greater Flurry
+OUTER_SPRINT oldflurry  @4005 // Flurry of Blows
+OUTER_SPRINT oldgreater @4007 // Greater Flurry
+OUTER_SPRINT newflurry  @4006 // Flurry of Blows
+OUTER_SPRINT newgreater @4008 // Greater Flurry
 
 ACTION_IF !monk_skills BEGIN
   // Set the strref for the specific game first
@@ -75,8 +75,8 @@ END
 ACTION_GET_STRREF ~%monk_strref%~ monk_description
 
 OUTER_PATCH_SAVE monk_description ~%monk_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
-  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+  REPLACE_TEXTUALLY ~%oldflurry%~  ~%newflurry%~
+  REPLACE_TEXTUALLY ~%oldgreater%~ ~%newgreater%~
 END
 
 STRING_SET_EVALUATE ~%monk_strref%~ ~%monk_description%~
