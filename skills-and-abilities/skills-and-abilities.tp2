@@ -69,9 +69,16 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_bard_skills.tpa~
 BEGIN @20 DESIGNATED 20 GROUP @1 LABEL SkillsAndAbilitiesMonk 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
-// Modify class description
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Skills to Monks (EEex Required)                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @70 DESIGNATED 70 GROUP @1 LABEL SkillsAndAbilitiesMonk2 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+
+INCLUDE ~skills-and-abilities/components/class_skills/monk_updates.tpa~
 
 /*
 ///////////////////////////////////////////////////////////////////////////
