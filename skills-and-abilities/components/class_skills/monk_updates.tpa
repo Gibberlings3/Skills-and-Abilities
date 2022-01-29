@@ -7,8 +7,6 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-// Import Flurry of Blows
-// Import Greater Flurry
 COPY ~skills-and-abilities/spl/MO#MON01.SPL~    ~override~ // 0.5 APR Increase at level 11
 COPY ~skills-and-abilities/spl/MO#MON02.SPL~    ~override~ // Flurry of Blows at level 1 
 // Import Timeless
@@ -38,12 +36,11 @@ COPY_EXISTING ~CLABMO01.2DA~ override
       
       INNER_ACTION BEGIN
       // Add new abilities to all Monk kits
-      ACTION_IF bard_skill THEN BEGIN
-        COPY_EXISTING ~%kit_clab%.2DA~ override
-          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
-          LPF set_clab_2da_entries INT_VAR f_MinLevel = 11 f_MaxLevel = 11 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
-          PRETTY_PRINT_2DA
-        BUT_ONLY
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 11 f_MaxLevel = 11 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
+        PRETTY_PRINT_2DA
+      BUT_ONLY
       END
     END
 
@@ -56,10 +53,10 @@ COPY_EXISTING ~CLABMO01.2DA~ override
 // Updates descriptions for Monk                                         //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-OUTER_SPRINT oldflurry  @4005 // Flurry of Blows
-OUTER_SPRINT oldgreater @4007 // Greater Flurry
-OUTER_SPRINT newflurry  @4006 // Flurry of Blows
-OUTER_SPRINT newgreater @4008 // Greater Flurry
+OUTER_SPRINT old1 @4005 // Flurry of Blows
+OUTER_SPRINT old2 @4007 // Greater Flurry
+OUTER_SPRINT new1 @4006 // Flurry of Blows
+OUTER_SPRINT new2 @4008 // Greater Flurry
 
 ACTION_IF !monk_skills BEGIN
   // Set the strref for the specific game first
@@ -75,8 +72,8 @@ END
 ACTION_GET_STRREF ~%monk_strref%~ monk_description
 
 OUTER_PATCH_SAVE monk_description ~%monk_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%oldflurry%~  ~%newflurry%~
-  REPLACE_TEXTUALLY ~%oldgreater%~ ~%newgreater%~
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE ~%monk_strref%~ ~%monk_description%~
