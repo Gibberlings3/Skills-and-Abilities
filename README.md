@@ -2,7 +2,7 @@
 
 [![Latest Release](https://img.shields.io/github/v/release/gibberlings3/Skills-and-Abilities?include_prereleases)](https://github.com/Gibberlings3/Skills-and-Abilities/releases/latest)
 ![Language](https://img.shields.io/static/v1?label=language&message=english&color=informational)
-![Platform](https://img.shields.io/static/v1?label=platform&message=windows&color=informational)
+![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
 
