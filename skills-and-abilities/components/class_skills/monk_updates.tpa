@@ -36,10 +36,8 @@ OUTER_SPRINT monk_name @4009 // MONK
         READ_2DA_ENTRY_FORMER monkhla row 1 monklu
 
         PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2da~ BEGIN
-          INNER_ACTION_BEGIN
-            COPY_EXISTING ~LU%monklu%.2da~ ~override~
-            REPLACE_TEXTUALLY ~*~ ~TEST~
-          END
+          COPY_EXISTING ~LU%monklu%.2da~ ~override~
+          REPLACE_TEXTUALLY ~*~ ~TEST~
         END
       END
       END
