@@ -59,7 +59,6 @@ BUT_ONLY
 ///////////////////////////////////////////////////////////////////////////
 //
 //open lock
-// @ starts at 4001 for old.
  OUTER_SPRINT old @3501 //old text: Pick Pockets
 
 //ACTION_IF (%bard_skill% = 0) BEGIN  // lockpicking is always in atm
