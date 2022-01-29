@@ -63,11 +63,11 @@ OUTER_SPRINT new @4002 //new text: Pick Pockets, Open Locks
 
 // Set the strref for the specific game first
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-  STRING_SET 24234 ~monk_strref~ // BGEE strref
+  OUTER_SET monk_strref = 24234 // BGEE strref
 END ELSE ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-  STRING_SET 45867 ~monk_strref~ // BG2EE and EET strref
+  OUTER_SET monk_strref = 45867 // BG2EE and EET strref
 END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
-  STRING_SET 37256 ~monk_strref~ // IWDEE strref
+  OUTER_SET monk_strref = 37256 // IWDEE strref
 END
 
 ACTION_GET_STRREF %monk_strref% monk_description
