@@ -57,62 +57,23 @@ BUT_ONLY
 // Updates descriptions for Monk                                         //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-//
-//open lock
-// @ starts at 4001 for old.
- OUTER_SPRINT old @3501 //old text: Pick Pockets
+OUTER_SPRINT old @4001 //old text: Pick Pockets
 
-//ACTION_IF (%bard_skill% = 0) BEGIN  // lockpicking is always in atm
+OUTER_SPRINT new @4002 //new text: Pick Pockets, Open Locks
 
- OUTER_SPRINT new @3502 //new text: Pick Pockets, Open Locks
- ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+// Set the strref for the specific game first
+ACTION_IF GAME_IS ~bgee bg2ee eet~ THEN BEGIN
+  monk_strref = 24234 // BGEE strref
+END ELSE ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  monk_strref = 45867 // BG2EE and EET strref
+END ELSE ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+  monk_strref = 37256 // IWDEE strref
+END
 
-  ACTION_GET_STRREF 37236 bard_description
+ACTION_GET_STRREF %monk_strref% monk_description
 
-    OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
-      REPLACE_TEXTUALLY ~%old%~ ~%new%~
+OUTER_PATCH_SAVE monk_description ~%monk_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
 
-  END
-
-  STRING_SET_EVALUATE 37236 ~%bard_description%~
- END //iwdee desc
- ACTION_IF GAME_IS ~bgee bg2ee eet~ THEN BEGIN
-
-  ACTION_GET_STRREF 9562 bard_description
-
-    OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
-      REPLACE_TEXTUALLY ~%old%~ ~%new%~
-
-  END
-
-  STRING_SET_EVALUATE 9562 ~%bard_description%~
- END //bgee/bg2ee/eet desc
-
-//END
-
-//find/remove traps
-ACTION_IF (%bard_skill% =1) BEGIN  // lockpicking is always in atm
- OUTER_SPRINT new @3503 //new text: Pick Pockets, Find Traps
- ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
-  ACTION_GET_STRREF 37236 bard_description
-
-    OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
-      REPLACE_TEXTUALLY ~%old%~ ~%new%~
-
-  END
-
-  STRING_SET_EVALUATE 37236 ~%bard_description%~
- END //iwdee desc
- ACTION_IF GAME_IS ~bgee bg2ee eet~ THEN BEGIN
-
-  ACTION_GET_STRREF 9562 bard_description
-
-    OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
-      REPLACE_TEXTUALLY ~%old%~ ~%new%~
-
-  END
-
-  STRING_SET_EVALUATE 9562 ~%bard_description%~
- END //bgee/bg2ee/eet desc
-
-END //bard_skill = 1
+STRING_SET_EVALUATE %monk_strref% ~%monk_description%~
