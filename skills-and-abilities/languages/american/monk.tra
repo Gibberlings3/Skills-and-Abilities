@@ -19,8 +19,8 @@
 
 FLURRY OF BLOWS: Monks double their attacks per round.~
 
-@4007 = ~This special ability automatically modifies normal attacks; no targeting needs to be done.~
-@4008 = ~This special ability automatically modifies normal attacks; no targeting needs to be done.
+@4007 = ~QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell or die. This special ability automatically modifies normal attacks; no targeting needs to be done.~
+@4008 = ~QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell or die. This special ability automatically modifies normal attacks; no targeting needs to be done.
 
 - 15th Level: Flurry of Blows improves to Greater Flurry.
 
