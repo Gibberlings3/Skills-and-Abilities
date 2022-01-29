@@ -19,8 +19,8 @@
 
 FLURRY OF BLOWS: Monks double their attacks per round.~
 
-@4007 = ~13th level: May use the Quivering Palm ability once per day.~
-@4008 = ~13th level: May use the Quivering Palm ability once per day.
+@4007 = ~This special ability automatically modifies normal attacks; no targeting needs to be done.~
+@4008 = ~This special ability automatically modifies normal attacks; no targeting needs to be done.
 
 - 15th Level: Flurry of Blows improves to Greater Flurry.
 
