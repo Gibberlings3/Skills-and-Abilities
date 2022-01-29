@@ -26,22 +26,21 @@ COPY_EXISTING ~CLABMO01.2DA~ override
 OUTER_SPRINT monk_name @4009 // MONK
 
 // Add HLAs to all Monk Kits
-    INNER_ACTION BEGIN
-    COPY_EXISTING ~LUABBR.2DA~ ~override~
-      READ_2DA_ENTRIES_NOW monkhla 2
-      COUNT_2DA_ROWS rows
-      FOR (index = 1; index < rows; ++index) BEGIN
-      READ_2DA_ENTRY_FORMER monkhla row 0 row_name
-      PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
-        READ_2DA_ENTRY_FORMER monkhla row 1 monklu
+COPY_EXISTING ~LUABBR.2DA~ ~override~
+READ_2DA_ENTRIES_NOW monkhla 2
+COUNT_2DA_ROWS rows
+FOR (index = 1; index < rows; ++index) BEGIN
+  READ_2DA_ENTRY_FORMER monkhla row 0 row_name
+  PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
+    READ_2DA_ENTRY_FORMER monkhla row 1 monklu
 
-        PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2da~ BEGIN
-          COPY_EXISTING ~LU%monklu%.2da~ ~override~
-          REPLACE_TEXTUALLY ~*~ ~TEST~
-        END
-      END
-      END
+    PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2da~ BEGIN
+      COPY_EXISTING ~LU%monklu%.2da~ ~override~
+      REPLACE_TEXTUALLY ~*~ ~TEST~
     END
+  END
+END
+
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Skills for ALL Monk Kits                                          //
