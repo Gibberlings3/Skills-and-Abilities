@@ -68,10 +68,10 @@ END ELSE ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
   monk_strref = 37256 // IWDEE strref
 END
 
-ACTION_GET_STRREF %monk_strref% monk_description
+ACTION_GET_STRREF ~%monk_strref%~ monk_description
 
 OUTER_PATCH_SAVE monk_description ~%monk_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old%~ ~%new%~
 END
 
-STRING_SET_EVALUATE %monk_strref% ~%monk_description%~
+STRING_SET_EVALUATE ~%monk_strref%~ ~%monk_description%~
