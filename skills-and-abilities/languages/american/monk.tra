@@ -3,7 +3,14 @@
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
-@4001 = ~[FIRST TRA HERE]~
+@4001 = ~– May only become Proficient (one slot) in Single-Weapon Style and may not put slots into any other style.~
+
+@4002 = ~– May only become Proficient (one slot) in Single-Weapon Style and may not put slots into any other style.
+– May distribute 10 points per level (0 at level 1) in thieving abilities: Open Locks, Pick Pockets, Find Traps, Move Silently, Hide In Shadows, Detect Illusion.
+– Starts with base scores of 15% in Find Traps, 10% in Move Silently, and 5% in Hide in Shadows.~
+
+@4003 = ~Perfect Self~
+@4004 = ~The monk is no longer constrained by the trappings of time and becomes immune to Time Stop.~
 
 
 @4500 = ~[LAST TRA HERE]~
