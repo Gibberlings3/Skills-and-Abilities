@@ -55,23 +55,15 @@ BUT_ONLY
 // Updates descriptions for Monk                                         //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-OUTER_SPRINT old @4001 //old text: Pick Pockets
 
-OUTER_SPRINT new @4002 //new text: Pick Pockets, Open Locks
-
-// Set the strref for the specific game first
-ACTION_IF GAME_IS ~bgee bg2ee eet~ THEN BEGIN
-  monk_strref = 24234 // BGEE strref
-END ELSE ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-  monk_strref = 45867 // BG2EE and EET strref
-END ELSE ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
-  monk_strref = 37256 // IWDEE strref
+ACTION_IF !monk_skills BEGIN
+  // Set the strref for the specific game first
+  ACTION_IF GAME_IS ~bgee~ BEGIN
+    OUTER_SET monk_strref = 24234 // BGEE strref
+  END ELSE ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+    OUTER_SET monk_strref = 45867 // BG2EE and EET strref
+  END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+    OUTER_SET monk_strref = 37256 // IWDEE strref
+  END
 END
 
-ACTION_GET_STRREF ~%monk_strref%~ monk_description
-
-OUTER_PATCH_SAVE monk_description ~%monk_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%old%~ ~%new%~
-END
-
-STRING_SET_EVALUATE ~%monk_strref%~ ~%monk_description%~
