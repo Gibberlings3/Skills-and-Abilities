@@ -42,7 +42,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Created by morpheus562 to add new HLA abilities to luxxx.2da files    //
 ///////////////////////////////////////////////////////////////////////////
-DEFINE_ACTION_FUNCTION ADD_HLA
+DEFINE_PATCH_FUNCTION ADD_HLA
   INT_VAR
     class = 2       // Class ID to add HLAs to
     min_lev = 1     // Min Lev to receive HLA
