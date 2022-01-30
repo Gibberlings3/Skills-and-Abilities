@@ -45,10 +45,10 @@ PATCH_PRINT ~Row: %mrows%~
   FOR (j = 1; j < mrows; ++j) BEGIN
     READ_2DA_ENTRY j 1 4 monkhla
     PATCH_IF ~%monkhla%~ STRING_EQUAL ~*~ BEGIN
-      SET_2DA_ENTRY (j) 1 1 ~AP_MO#MHL01~   // Timestop HLA
-      SET_2DA_ENTRY (j) 4 1 ~1~             // MIN_LEV
-      SET_2DA_ENTRY (j) 5 1 ~99~            // MAX_LEV
-      SET_2DA_ENTRY (j) 6 1 ~1~             // NUM_ALLOWED
+      SET_2DA_ENTRY (j+2) 1 1 ~AP_MO#MHL01~   // Timestop HLA
+      SET_2DA_ENTRY (j+2) 4 1 ~1~             // MIN_LEV
+      SET_2DA_ENTRY (j+2) 5 1 ~99~            // MAX_LEV
+      SET_2DA_ENTRY (j+2) 6 1 ~1~             // NUM_ALLOWED
       j = mrows
     END
   END
