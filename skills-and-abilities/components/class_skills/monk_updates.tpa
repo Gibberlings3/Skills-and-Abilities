@@ -38,7 +38,7 @@ FOR (index = 1; index < rows; ++index) BEGIN
         COUNT_2DA_ROWS 4 mrows
           FOR (j = 1; j < mrows; ++j) BEGIN
             READ_2DA_ENTRY index 1 4 monkhla
-              PATCH_IF "%monkhla%" STRING_EQUAL_CASE ~*~ BEGIN
+              PATCH_IF ~%monkhla%~ STRING_EQUAL_CASE ~*~ BEGIN
                 SET_2DA_ENTRY (j-3) 1 1 ~AP_MO#MHL01~   // Timestop HLA
                 SET_2DA_ENTRY (j-3) 4 1 ~1~             // MIN_LEV
                 SET_2DA_ENTRY (j-3) 5 1 ~99~            // MAX_LEV
