@@ -38,7 +38,7 @@ FOR (index = 1; index < rows; ++index) BEGIN
       COPY_EXISTING ~LU%monklu%.2DA~ ~override~
         COUNT_2DA_ROWS 4 mrows
           FOR (j = 1; j < mrows; ++j) BEGIN
-            READ_2DA_ENTRY index 0 4 monkhla
+            READ_2DA_ENTRY index 1 4 monkhla
               PATCH_IF ("%monkhla%" STRING_EQUAL_CASE "*") AND !mpass1 BEGIN
                 SET_2DA_ENTRY (j-3) 1 1 ~AP_MO#MHL01~   // Timestop HLA
                 SET_2DA_ENTRY (j-3) 4 1 ~1~             // MIN_LEV
