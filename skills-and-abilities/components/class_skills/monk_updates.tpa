@@ -79,26 +79,54 @@ END
       END
     END
 
-    /*
     // Add HLAs to all Monk Kits
-    INNER_ACTION BEGIN
     COPY_EXISTING ~LUABBR.2DA~ ~override~
-      READ_2DA_ENTRIES_NOW monkhla 2
-      COUNT_2DA_ROWS rows
-      FOR (index = 1; index < rows; ++index) BEGIN
-      READ_2DA_ENTRY_FORMER monkhla row 0 row_name
-      PATCH_IF "%row_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-        READ_2DA_ENTRY_FORMER monkhla row 1 monklu
-
-        PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2da~ BEGIN
-          INNER_ACTION_BEGIN
-            COPY_EXISTING ~LU%monklu%.2da~ ~override~
-            REPLACE_TEXTUALLY ~*~ ~TEST~
+    COUNT_2DA_ROWS 2 rows
+    FOR (index = 1; index < rows; ++index) BEGIN
+      READ_2DA_ENTRY index 0 2 row_name
+      PATCH_PRINT ~The Row: %row_name%~
+      PATCH_IF ~%row_name%~ STRING_EQUAL_CASE ~%kit_label%~ BEGIN
+        READ_2DA_ENTRY index 1 2 monklu
+        PATCH_PRINT ~Found the LU file %monklu%~
+        PATCH_IF FILE_EXISTS_IN_GAME ~lu%monklu%.2da~ BEGIN
+          INNER_ACTION BEGIN
+          COPY_EXISTING ~lu%monklu%.2da~ ~override~
+          PATCH_PRINT ~In file: lu%monklu%.2da~
+          COUNT_2DA_ROWS 4 mrows
+          PATCH_PRINT ~Row: %mrows%~
+          FOR (j = 1; j < mrows; ++j) BEGIN
+            READ_2DA_ENTRY j 1 4 monkhla
+            PATCH_IF ~%monkhla%~ STRING_EQUAL ~*~ BEGIN
+              SET_2DA_ENTRY (j+2) 1 1 ~AP_MO#MHL01~   // Timestop HLA
+              SET_2DA_ENTRY (j+2) 4 1 ~1~             // MIN_LEV
+              SET_2DA_ENTRY (j+2) 5 1 ~99~            // MAX_LEV
+              SET_2DA_ENTRY (j+2) 6 1 ~1~             // NUM_ALLOWED
+              PRETTY_PRINT_2DA
+              j = mrows
+            END
+          END
           END
         END
       END
-      END
     END
+/*
+ACTION_IF FILE_EXISTS_IN_GAME ~lu%monklu%.2da~ BEGIN
+COPY_EXISTING ~lu%monklu%.2da~ ~override~
+PATCH_PRINT ~In file: lu%monklu%.2da~
+COUNT_2DA_ROWS 4 mrows
+PATCH_PRINT ~Row: %mrows%~
+  FOR (j = 1; j < mrows; ++j) BEGIN
+    READ_2DA_ENTRY j 1 4 monkhla
+    PATCH_IF ~%monkhla%~ STRING_EQUAL ~*~ BEGIN
+      SET_2DA_ENTRY (j+2) 1 1 ~AP_MO#MHL01~   // Timestop HLA
+      SET_2DA_ENTRY (j+2) 4 1 ~1~             // MIN_LEV
+      SET_2DA_ENTRY (j+2) 5 1 ~99~            // MAX_LEV
+      SET_2DA_ENTRY (j+2) 6 1 ~1~             // NUM_ALLOWED
+      PRETTY_PRINT_2DA
+      j = mrows
+    END
+  END
+END
     */
   END
   END
