@@ -32,7 +32,7 @@ FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
   PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
     READ_2DA_ENTRY index 1 2 monklu
-    PRINT ~Found the LU file %monklu%~
+    PATCH_PRINT ~Found the LU file %monklu%~
   END
 END
 
