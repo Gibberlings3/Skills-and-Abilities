@@ -27,11 +27,11 @@ OUTER_SPRINT monk_name @4009 // MONK
 
 // Add HLAs to all Monk Kits
 COPY_EXISTING ~LUABBR.2DA~ ~override~
-READ_2DA_ENTRIES_NOW monkhla 2
-FOR (index = 1; index < monkhla; ++index) BEGIN
-  READ_2DA_ENTRY_FORMER monkhla row 0 row_name
+COUNT_2DA_ROWS 2 rows
+FOR (index = 1; index < rows; ++index) BEGIN
+  READ_2DA_ENTRY index 1 2 row_name
   PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
-    READ_2DA_ENTRY_FORMER monkhla row 1 monklu
+    READ_2DA_ENTRY index 2 2 monklu
     PATCH_PRINT ~The Monk LU file is: LU%monklu%.2da~
     PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2da~ BEGIN
       PATCH_PRINT ~Verified LU%monklu%.2da exists.~
