@@ -42,7 +42,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Created by morpheus562 to add new HLA abilities to luxxx.2da files    //
 ///////////////////////////////////////////////////////////////////////////
-DEFINE_PATCH_FUNCTION ADD_HLA
+DEFINE_ACTION_FUNCTION ADD_HLA
   INT_VAR
     class = 2       // Class ID to add HLAs to
     min_lev = 1     // Min Lev to receive HLA
@@ -76,7 +76,11 @@ DEFINE_PATCH_FUNCTION ADD_HLA
 
   // Add the new HLA to the correct class luxxx.2da file
   ACTION_IF FILE_EXISTS_IN_GAME ~lu%classlu%.2da~ BEGIN
-  COPY_EXISTING ~lu%classlu%.2da~ ~override~
+    COPY_EXISTING ~lu%classlu%.2da~ ~override~
+      LPF ADD_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = %ability% END
+      PRETTY_PRINT_2DA
+    BUT_ONLY
+  /*
   COUNT_2DA_ROWS 4 rows
     FOR (j = 1; j < rows; ++j) BEGIN
       READ_2DA_ENTRY j 1 4 classhla
@@ -92,8 +96,10 @@ DEFINE_PATCH_FUNCTION ADD_HLA
         j = krows
       END
     END
+    */
   END
 
+/*
   // ADD HLAS TO KITS -----------------------------------------------------//
   // Find kits in kitlist
   COPY_EXISTING ~KITLIST.2DA~ ~override~
@@ -136,5 +142,36 @@ DEFINE_PATCH_FUNCTION ADD_HLA
     END
     END
   END
+  END
+  */
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Created by morpheus562 to add new HLA abilities to luxxx.2da files    //
+///////////////////////////////////////////////////////////////////////////
+DEFINE_PATCH_FUNCTION ADD_NEW_HLA
+  INT_VAR
+    min_lev = 1     // Min Lev to receive HLA
+    max_lev = 99    // Max Level to receive HLA
+    num_allowed = 1 // Number of times the ability can be taken
+  STR_VAR
+    ability = ""       // New ability being added 
+    prerequisite = "*" // Ability is required first
+    excluded_by = "*"  // Excluded by field
+    alignment = "*"    // Alignment requirements
+  BEGIN  
+  COUNT_2DA_ROWS 4 rows
+  FOR (j = 1; j < rows; ++j) BEGIN
+    READ_2DA_ENTRY j 1 4 classhla
+    PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
+      SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
+      SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
+      SET_2DA_ENTRY (j+2) 5 1 ~%max_lev%~      // MAX_LEV
+      SET_2DA_ENTRY (j+2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
+      SET_2DA_ENTRY (j+2) 7 1 ~%prerequisite%~ // Prerequisite HLA
+      SET_2DA_ENTRY (j+2) 8 1 ~%excluded_by%~  // Excluded by HLA
+      SET_2DA_ENTRY (j+2) 9 1 ~%alignment%~    // Required Alignment
+      j = krows
+    END
   END
 END
