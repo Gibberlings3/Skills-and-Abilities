@@ -32,6 +32,7 @@ FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
   PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
     READ_2DA_ENTRY index 1 2 monklu
+    PATCH_PRINT ~Found %monklu%~
     PATCH_IF FILE_EXISTS_IN_GAME ~lu%monklu%.2da~ BEGIN
       PATCH_PRINT ~Found: LU%monklu%.2da~
       INNER_ACTION BEGIN
