@@ -36,9 +36,12 @@ FOR (index = 1; index < rows; ++index) BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~LU%monklu%.2DA~ ~override~
         COUNT_2DA_ROWS 4 mrows
+        PATCH_PRINT ~The Monk LU file is: LU%monklu%.2da~
           FOR (j = 1; j < mrows; ++j) BEGIN
+          PATCH_PRINT ~Row = %j%~
             READ_2DA_ENTRY j 1 4 monkhla
-              PATCH_IF ~%monkhla%~ STRING_EQUAL_CASE ~*~ BEGIN
+            PATCH_PRINT ~Value at row %j% is %monkhla%~
+              PATCH_IF "%monkhla%" STRING_EQUAL_CASE "*" BEGIN
                 SET_2DA_ENTRY (j) 1 1 ~AP_MO#MHL01~   // Timestop HLA
                 SET_2DA_ENTRY (j) 4 1 ~1~             // MIN_LEV
                 SET_2DA_ENTRY (j) 5 1 ~99~            // MAX_LEV
