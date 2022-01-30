@@ -33,6 +33,7 @@ FOR (index = 1; index < rows; ++index) BEGIN
   PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
     READ_2DA_ENTRY index 1 2 monklu
     PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2DA~ BEGIN
+      INNER_ACTION BEGIN
       COPY_EXISTING ~LU%monklu%.2DA~ ~override~
         COUNT_2DA_ROWS 4 mrows
           FOR (j = 1; j < mrows; ++j) BEGIN
@@ -44,6 +45,7 @@ FOR (index = 1; index < rows; ++index) BEGIN
                 SET_2DA_ENTRY (j-3) 6 1 ~1~             // NUM_ALLOWED
               END
           END
+        END
     END
   END
 END
