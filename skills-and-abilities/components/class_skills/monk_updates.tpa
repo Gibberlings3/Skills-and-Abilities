@@ -32,16 +32,16 @@ FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
   PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
     READ_2DA_ENTRY index 1 2 monklu
-    PRINT "Found the LU file %monklu%"
+    PRINT ~Found the LU file %monklu%~
   END
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~lu%monklu%.2da~ BEGIN
-PRINT "File Exists: lu%monklu%.2da"
+PRINT ~File Exists: lu%monklu%.2da~
 COPY_EXISTING ~lu%monklu%.2da~ ~override~
-PRINT "In file: lu%monklu%.2da"
+PRINT ~In file: lu%monklu%.2da~
 COUNT_2DA_ROWS 4 mrows
-PRINT "Row: %mrows%"
+PRINT ~Row: %mrows%~
   FOR (j = 1; j < mrows; ++j) BEGIN
     READ_2DA_ENTRY j 1 4 monkhla
     PATCH_IF "%monkhla%" STRING_EQUAL "*" BEGIN
