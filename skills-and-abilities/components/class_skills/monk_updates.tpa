@@ -30,21 +30,21 @@ COPY_EXISTING ~LUABBR.2DA~ ~override~
 COUNT_2DA_ROWS 4 rows
 FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
-  PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
+  PATCH_IF ~%row_name%~ STRING_EQUAL_CASE ~%monk_name%~ BEGIN
     READ_2DA_ENTRY index 1 2 monklu
     PATCH_PRINT ~Found the LU file %monklu%~
   END
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~lu%monklu%.2da~ BEGIN
-PRINT ~File Exists: lu%monklu%.2da~
+PATCH_PRINT ~File Exists: lu%monklu%.2da~
 COPY_EXISTING ~lu%monklu%.2da~ ~override~
-PRINT ~In file: lu%monklu%.2da~
+PATCH_PRINT ~In file: lu%monklu%.2da~
 COUNT_2DA_ROWS 4 mrows
-PRINT ~Row: %mrows%~
+PATCH_PRINT ~Row: %mrows%~
   FOR (j = 1; j < mrows; ++j) BEGIN
     READ_2DA_ENTRY j 1 4 monkhla
-    PATCH_IF "%monkhla%" STRING_EQUAL "*" BEGIN
+    PATCH_IF ~%monkhla%~ STRING_EQUAL ~*~ BEGIN
       SET_2DA_ENTRY (j) 1 1 ~AP_MO#MHL01~   // Timestop HLA
       SET_2DA_ENTRY (j) 4 1 ~1~             // MIN_LEV
       SET_2DA_ENTRY (j) 5 1 ~99~            // MAX_LEV
