@@ -37,7 +37,6 @@ FOR (index = 1; index < rows; ++index) BEGIN
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~lu%monklu%.2da~ BEGIN
-PATCH_PRINT ~File Exists: lu%monklu%.2da~
 COPY_EXISTING ~lu%monklu%.2da~ ~override~
 PATCH_PRINT ~In file: lu%monklu%.2da~
 COUNT_2DA_ROWS 4 mrows
