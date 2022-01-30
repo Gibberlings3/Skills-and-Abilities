@@ -27,7 +27,7 @@ OUTER_SPRINT monk_name @4009 // MONK
 
 // Add HLAs to all Monk Kits
 COPY_EXISTING ~LUABBR.2DA~ ~override~
-COUNT_2DA_ROWS 4 rows
+COUNT_2DA_ROWS 2 rows
 FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
   PATCH_PRINT ~The Row: %row_name%~
