@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/spl/MO#MON01.SPL~    ~override~ // 0.5 APR Increase at level 15
+//COPY ~skills-and-abilities/spl/MO#MON01.SPL~    ~override~ // 0.5 APR Increase at level 15
 COPY ~skills-and-abilities/spl/MO#MON02.SPL~    ~override~ // Flurry of Blows at level 1 
 // Import Timeless
 
@@ -16,13 +16,16 @@ COPY ~skills-and-abilities/spl/MO#MON02.SPL~    ~override~ // Flurry of Blows at
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABMO01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
+    //LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs                                                              //
 ///////////////////////////////////////////////////////////////////////////
+LPF ADD_HLA INT_VAR class = 20 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#MHL01 END
+
+/*
 OUTER_SPRINT monk_name @4009 // MONK
 
 // Add HLAs to all Monk Kits
@@ -50,7 +53,7 @@ COUNT_2DA_ROWS 4 mrows
     END
   END
 END
-
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Skills for ALL Monk Kits                                          //
@@ -69,12 +72,12 @@ END
       // Add new abilities to all Monk kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
+        //LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
         PRETTY_PRINT_2DA
       BUT_ONLY
       END
     END
-
+/*
     // Add HLAs to all Monk Kits
     INNER_ACTION BEGIN
     COPY_EXISTING ~LUABBR.2DA~ ~override~
@@ -103,6 +106,7 @@ END
       END
     END
     END
+    */
   END
   END
 
@@ -112,9 +116,9 @@ END
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 OUTER_SPRINT old1 @4005 // Flurry of Blows
-OUTER_SPRINT old2 @4007 // Greater Flurry
+//OUTER_SPRINT old2 @4007 // Greater Flurry
 OUTER_SPRINT new1 @4006 // Flurry of Blows
-OUTER_SPRINT new2 @4008 // Greater Flurry
+//OUTER_SPRINT new2 @4008 // Greater Flurry
 
 ACTION_IF !monk_skills BEGIN
   // Set the strref for the specific game first
@@ -131,7 +135,7 @@ ACTION_GET_STRREF ~%monk_strref%~ monk_description
 
 OUTER_PATCH_SAVE monk_description ~%monk_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
-  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+  //REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE ~%monk_strref%~ ~%monk_description%~
