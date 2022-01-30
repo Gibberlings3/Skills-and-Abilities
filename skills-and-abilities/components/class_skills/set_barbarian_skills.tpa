@@ -13,7 +13,7 @@ END
 
 COPY ~skills-and-abilities/lua/M_B3THI5.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override~ // Assigns 5-5-5-5 skill points to Barbarian and 100% track
-COPY ~skills-and-abilities/spl/barbarian/B_BRBVNC.SPL~   ~override~ // Grants +2%/level
+COPY ~skills-and-abilities/spl/barbarian/B_BRBADV.spl~   ~override~ // Grants +4%/level
 
 APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
 
@@ -68,7 +68,7 @@ END
 ///////////////////                      Tracking                       ///////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 ACTION_IF !FILE_EXISTS_IN_GAME ~SPCL922.spl~ THEN BEGIN
- COPY ~%folder%/data/spl/SPCL922.spl~ ~override~   //tracking
+ COPY ~%folder%/data/spl/barbarian/SPCL922.spl~ ~override~   //tracking
         SAY NAME1 @4501              //barbarian reference (no need to duplicate)
         SAY NAME2 @4501              //barbarian reference (no need to duplicate)
         SAY UNIDENTIFIED_DESC @4502  //barbarian reference (update by class)
