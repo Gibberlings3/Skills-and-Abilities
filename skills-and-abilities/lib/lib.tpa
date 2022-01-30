@@ -80,26 +80,8 @@ DEFINE_ACTION_FUNCTION ADD_HLA
       LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ END
       PRETTY_PRINT_2DA
     BUT_ONLY
-  /*
-  COUNT_2DA_ROWS 4 krows
-    FOR (j = 1; j < krows; ++j) BEGIN
-      READ_2DA_ENTRY j 1 4 classhla
-      PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
-        SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
-        SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
-        SET_2DA_ENTRY (j+2) 5 1 ~%max_lev%~      // MAX_LEV
-        SET_2DA_ENTRY (j+2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
-        SET_2DA_ENTRY (j+2) 7 1 ~%prerequisite%~ // Prerequisite HLA
-        SET_2DA_ENTRY (j+2) 8 1 ~%excluded_by%~  // Excluded by HLA
-        SET_2DA_ENTRY (j+2) 9 1 ~%alignment%~    // Required Alignment
-        PRETTY_PRINT_2DA
-        j = krows
-      END
-    END
-    */
   END
 
-/*
   // ADD HLAS TO KITS -----------------------------------------------------//
   // Find kits in kitlist
   COPY_EXISTING ~KITLIST.2DA~ ~override~
@@ -121,21 +103,9 @@ DEFINE_ACTION_FUNCTION ADD_HLA
         PATCH_IF FILE_EXISTS_IN_GAME ~lu%kitlu%.2da~ BEGIN
           INNER_ACTION BEGIN
           COPY_EXISTING ~lu%kitlu%.2da~ ~override~
-          COUNT_2DA_ROWS 4 krows
-          FOR (j = 1; j < krows; ++j) BEGIN
-            READ_2DA_ENTRY j 1 4 kithla
-            PATCH_IF ~%kithla%~ STRING_EQUAL ~*~ BEGIN
-              SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
-              SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
-              SET_2DA_ENTRY (j+2) 5 1 ~%max_lev%~      // MAX_LEV
-              SET_2DA_ENTRY (j+2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
-              SET_2DA_ENTRY (j+2) 7 1 ~%prerequisite%~ // Prerequisite HLA
-              SET_2DA_ENTRY (j+2) 8 1 ~%excluded_by%~  // Excluded by HLA
-              SET_2DA_ENTRY (j+2) 9 1 ~%alignment%~    // Required Alignment
-              PRETTY_PRINT_2DA
-              j = krows
-            END
-          END
+            LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ END
+            PRETTY_PRINT_2DA
+          BUT_ONLY
           END
         END
       END
@@ -143,7 +113,6 @@ DEFINE_ACTION_FUNCTION ADD_HLA
     END
   END
   END
-  */
 END
 
 ///////////////////////////////////////////////////////////////////////////
