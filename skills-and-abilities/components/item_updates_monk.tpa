@@ -20,8 +20,8 @@ ACTION_FOR_EACH item IN
 		BEGIN
 			ACTION_IF FILE_EXISTS_IN_GAME ~%item%.ITM~ BEGIN
 				COPY_EXISTING ~%item%.ITM~ ~override~ 
-					READ_BYTE 0x1E bard
-					WRITE_BYTE 0x1E (bard BAND 0b10111111)
+					READ_LONG 0x1e monk
+					WRITE_LONG 0x1e (monk BAND `BIT29)
 				BUT_ONLY_IF_IT_CHANGES
 			END
 		END
