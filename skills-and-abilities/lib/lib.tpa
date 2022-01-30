@@ -81,8 +81,8 @@ DEFINE_ACTION_FUNCTION ADD_HLA
       PRETTY_PRINT_2DA
     BUT_ONLY
   /*
-  COUNT_2DA_ROWS 4 rows
-    FOR (j = 1; j < rows; ++j) BEGIN
+  COUNT_2DA_ROWS 4 krows
+    FOR (j = 1; j < krows; ++j) BEGIN
       READ_2DA_ENTRY j 1 4 classhla
       PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
         SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
