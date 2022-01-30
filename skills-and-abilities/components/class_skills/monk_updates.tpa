@@ -30,7 +30,7 @@ COPY_EXISTING ~LUABBR.2DA~ ~override~
 COUNT_2DA_ROWS 4 rows
 FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
-  ACTION_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
+  PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
     READ_2DA_ENTRY index 1 2 monklu
   END
 END
