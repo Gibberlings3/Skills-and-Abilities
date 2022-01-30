@@ -32,9 +32,9 @@ FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
   PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
     READ_2DA_ENTRY index 1 2 monklu
-    PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2da~ BEGIN
-      COPY_EXISTING ~LU%monklu%.2da~ ~override~
-        COUNT_2DA_ROWS X mrows
+    PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2DA~ BEGIN
+      COPY_EXISTING ~LU%monklu%.2DA~ ~override~
+        COUNT_2DA_ROWS 4 mrows
           FOR (j = 1; j < mrows; ++j) BEGIN
             READ_2DA_ENTRY index 0 4 monkhla
               PATCH_IF "%monkhla%" STRING_EQUAL_CASE "*" BEGIN
