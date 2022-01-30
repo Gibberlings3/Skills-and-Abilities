@@ -32,16 +32,17 @@ FOR (index = 1; index < rows; ++index) BEGIN
   READ_2DA_ENTRY index 0 2 row_name
   PATCH_IF "%row_name%" STRING_EQUAL_CASE "%monk_name%" BEGIN
     READ_2DA_ENTRY index 1 2 monklu
-    PATCH_IF FILE_EXISTS_IN_GAME ~LU%monklu%.2DA~ BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~lu%monklu%.2da~ BEGIN
+      PATCH_PRINT ~Found: LU%monklu%.2da~
       INNER_ACTION BEGIN
-      COPY_EXISTING ~LU%monklu%.2DA~ ~override~
+      COPY_EXISTING ~lu%monklu%.2da~ ~override~
         COUNT_2DA_ROWS 4 mrows
         PATCH_PRINT ~The Monk LU file is: LU%monklu%.2da~
           FOR (j = 1; j < mrows; ++j) BEGIN
           PATCH_PRINT ~Row = %j%~
             READ_2DA_ENTRY j 1 4 monkhla
             PATCH_PRINT ~Value at row %j% is %monkhla%~
-              PATCH_IF "%monkhla%" STRING_EQUAL_CASE "*" BEGIN
+              PATCH_IF "%monkhla%" STRING_EQUAL "*" BEGIN
                 SET_2DA_ENTRY (j) 1 1 ~AP_MO#MHL01~   // Timestop HLA
                 SET_2DA_ENTRY (j) 4 1 ~1~             // MIN_LEV
                 SET_2DA_ENTRY (j) 5 1 ~99~            // MAX_LEV
