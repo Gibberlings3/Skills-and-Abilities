@@ -49,6 +49,7 @@ PATCH_PRINT ~Row: %mrows%~
       SET_2DA_ENTRY (j+2) 4 1 ~1~             // MIN_LEV
       SET_2DA_ENTRY (j+2) 5 1 ~99~            // MAX_LEV
       SET_2DA_ENTRY (j+2) 6 1 ~1~             // NUM_ALLOWED
+      PRETTY_PRINT_2DA
       j = mrows
     END
   END
