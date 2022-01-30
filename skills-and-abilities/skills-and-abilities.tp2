@@ -73,6 +73,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
+INCLUDE ~skills-and-abilities/components/item_updates_monk.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Monks (EEex Required)                                //
