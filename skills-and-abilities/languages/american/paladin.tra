@@ -6,5 +6,19 @@
 @6001 = ~May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.~
 @6002 = ~Detect Illusion is set to 100.~
 
+@6003 = ~Sanctify Strikes~
+@6004 = ~Sanctify Strikes
+You deal 2 extra points of magic damage with your attacks.~
+
 
 @6500 = ~[LAST TRA HERE]~
+
+// AURA OF COURAGE: A character with this feat is immune to fear. Additionally, each ally within 10 feet gains a +4 morale bonus on saving throws against fear effects.
+
+// AURA OF DESPAIR: Starting at 3rd level, the blackguard radiates a malign aura that causes all enemies within 10' of him to suffer a -2 penalty on all saving throws.
+
+// IMPROVED AURA OF DESPAIR: Your aura of despair causes a -4 morale penalty on all saving throws.
+
+// WIDEN AURA OF DESPAIR: Your aura of despair extends to all enemies within 100 feet of you.
+
+// PROTECTIVE AURA: At 1st level, the Nine gain an aura that grants +2 to all saving throws, +1 deflection bonus to armor class for all allies within 10 feet. This bonus does NOT apply to the Nine, only to his allies). At 4th level, this bonus increases to +3 saving throws, +2 deflection bonus, and the protection extends to allies within 15 feet.
