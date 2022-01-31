@@ -31,3 +31,28 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   PRETTY_PRINT_2DA
 BUT_ONLY
 
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Updates descriptions for Inquisitor                                   //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+OUTER_SPRINT old @6001 //old text: True Sight
+
+OUTER_SPRINT new @6002 //new text: Detect Illusions
+
+// Set the strref for the specific game first
+ACTION_IF GAME_IS ~bgee~ BEGIN
+  OUTER_SET inq_strref = 24288 // BGEE strref
+END ELSE ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+  OUTER_SET inq_strref = 25207 // BG2EE and EET strref
+END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+  OUTER_SET inq_strref = 37137 // IWDEE strref
+END
+
+ACTION_GET_STRREF ~%inq_strref%~ inq_description
+
+OUTER_PATCH_SAVE inq_description ~%inq_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
+
+STRING_SET_EVALUATE ~%inq_strref%~ ~%inq_description%~

@@ -3,7 +3,8 @@
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
-@6001 = ~[FIRST TRA HERE]~
+@6001 = ~May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.~
+@6002 = ~Detect Illusion is set to 100.~
 
 
 @6500 = ~[LAST TRA HERE]~
