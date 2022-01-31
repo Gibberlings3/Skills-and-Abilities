@@ -132,7 +132,9 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
   COUNT_2DA_ROWS 4 krows
   FOR (j = 1; j < krows; ++j) BEGIN
     READ_2DA_ENTRY j 1 4 classhla
-    PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
+    PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
+      j = krows
+    END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
       SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
       SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
       SET_2DA_ENTRY (j+2) 5 1 ~%max_lev%~      // MAX_LEV
