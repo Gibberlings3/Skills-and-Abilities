@@ -101,12 +101,13 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         READ_2DA_ENTRY 8 col cols lsword // bastard
         READ_2DA_ENTRY 9 col cols longsword
         READ_2DA_ENTRY 12 col cols twohanded
-        READ_2DA_ENTRY 13 col cols katana
-        READ_2DA_ENTRY 14 col cols scimitar
         PATCH_IF (lsword < longsword) BEGIN SET lsword = longsword END
         PATCH_IF (lsword < twohanded) BEGIN SET lsword = twohanded END
-        PATCH_IF (lsword < katana) BEGIN SET lsword = katana END
-        PATCH_IF (lsword < scimitar) BEGIN SET lsword = scimitar END
+
+        // Exotic Sword
+        READ_2DA_ENTRY 13 col cols exotic
+        READ_2DA_ENTRY 14 col cols scimitar
+        PATCH_IF (exotic < scimitar) BEGIN SET exotic = scimitar END
 
         // Axe
         READ_2DA_ENTRY 11 col cols axe
@@ -138,28 +139,32 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         END
 
         // Set New Proficiency Points
-        SET_2DA_ENTRY 21 col 1 ~%bow%~
-        SET_2DA_ENTRY 22 col 1 ~%spiked%~
-        SET_2DA_ENTRY 23 col 1 ~%ssword%~
-        SET_2DA_ENTRY 24 col 1 ~%lsword%~
+        SET_2DA_ENTRY 20 col 1 ~%bow%~
+        SET_2DA_ENTRY 21 col 1 ~%spiked%~
+        SET_2DA_ENTRY 22 col 1 ~%ssword%~
+        SET_2DA_ENTRY 23 col 1 ~%lsword%~
+        SET_2DA_ENTRY 24 col 1 ~%exotic%~
         SET_2DA_ENTRY 25 col 1 ~%axe%~
         SET_2DA_ENTRY 26 col 1 ~%blunt%~
         SET_2DA_ENTRY 27 col 1 ~%missile%~
         SET_2DA_ENTRY 28 col 1 ~%spear%~
 
     END
-    SET_2DA_ENTRY 21 0 1 ~BOW~
-    SET_2DA_ENTRY 21 2 1 ~mobow1~
-    SET_2DA_ENTRY 21 3 1 ~mobow2~    
-    SET_2DA_ENTRY 22 0 1 ~SPIKED~
-    SET_2DA_ENTRY 22 2 1 ~mospike1~
-    SET_2DA_ENTRY 22 3 1 ~mospike2~
-    SET_2DA_ENTRY 23 0 1 ~SMALL_SWORD~
-    SET_2DA_ENTRY 23 2 1 ~mossword1~
-    SET_2DA_ENTRY 23 3 1 ~mossword2~
-    SET_2DA_ENTRY 24 0 1 ~LARGE_SWORD~
-    SET_2DA_ENTRY 24 2 1 ~molsword1~
-    SET_2DA_ENTRY 24 3 1 ~molsword2~
+    SET_2DA_ENTRY 20 0 1 ~BOW~
+    SET_2DA_ENTRY 20 2 1 ~mobow1~
+    SET_2DA_ENTRY 20 3 1 ~mobow2~    
+    SET_2DA_ENTRY 21 0 1 ~SPIKED~
+    SET_2DA_ENTRY 21 2 1 ~mospike1~
+    SET_2DA_ENTRY 21 3 1 ~mospike2~
+    SET_2DA_ENTRY 22 0 1 ~SMALL_SWORD~
+    SET_2DA_ENTRY 22 2 1 ~mossword1~
+    SET_2DA_ENTRY 22 3 1 ~mossword2~
+    SET_2DA_ENTRY 23 0 1 ~LARGE_SWORD~
+    SET_2DA_ENTRY 23 2 1 ~molsword1~
+    SET_2DA_ENTRY 23 3 1 ~molsword2~
+    SET_2DA_ENTRY 24 0 1 ~EXOTIC_SWORD~
+    SET_2DA_ENTRY 24 2 1 ~moexotic1~
+    SET_2DA_ENTRY 24 3 1 ~moexotic2~
     SET_2DA_ENTRY 25 0 1 ~AXE~
     SET_2DA_ENTRY 25 2 1 ~moaxe1~
     SET_2DA_ENTRY 25 3 1 ~moaxe2~
@@ -185,6 +190,8 @@ REPLACE ~mossword1~ @7104
 REPLACE ~mossword2~ @7105
 REPLACE ~molsword1~ @7106
 REPLACE ~molsword2~ @7107
+REPLACE ~moexotic1~ @7136
+REPLACE ~moexotic2~ @7137
 REPLACE ~moaxe1~    @7108
 REPLACE ~moaxe2~    @7109
 REPLACE ~moblunt1~  @7110
@@ -196,10 +203,11 @@ REPLACE ~mospear2~  @7115
 PRETTY_PRINT_2DA
 
 // Append to Stats.IDS
-APPEND ~stats.ids~ ~98 BOW~           UNLESS ~98 BOW~
-APPEND ~stats.ids~ ~99 SPIKED~        UNLESS ~99 SPIKED~
-APPEND ~stats.ids~ ~100 SMALL_SWORD~  UNLESS ~100 SMALL_SWORD~
-APPEND ~stats.ids~ ~101 LARGE_SWORD~  UNLESS ~101 LARGE_SWORD~
+APPEND ~stats.ids~ ~97 BOW~           UNLESS ~97 BOW~
+APPEND ~stats.ids~ ~98 SPIKED~        UNLESS ~98 SPIKED~
+APPEND ~stats.ids~ ~99 SMALL_SWORD~   UNLESS ~99 SMALL_SWORD~
+APPEND ~stats.ids~ ~100 LARGE_SWORD~  UNLESS ~100 LARGE_SWORD~
+APPEND ~stats.ids~ ~101 EXOTIC_SWORD~ UNLESS ~101 EXOTIC_SWORD~
 APPEND ~stats.ids~ ~102 AXE~          UNLESS ~102 AXE~
 APPEND ~stats.ids~ ~103 BLUNT~        UNLESS ~103 BLUNT~
 APPEND ~stats.ids~ ~104 MISSILE~      UNLESS ~104 MISSILE~
@@ -1289,19 +1297,19 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Bow Weapon Group
   PATCH_IF (prof = 104) OR (prof = 105) BEGIN
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END // Add +1 Thac0 to Bows for Elfs
-    WRITE_BYTE 0x31 98
+    WRITE_BYTE 0x31 97
     PATCH_PRINT ~Moving %weapon_name% to the Bow weapon group~
   END
 
   // Spiked Weapon Group
   PATCH_IF (prof = 100) BEGIN
-    WRITE_BYTE 0x31 99
+    WRITE_BYTE 0x31 98
     PATCH_PRINT ~Moving %weapon_name% to the Spiked weapon group~
   END
 
   // Small Sword Weapon Group
   PATCH_IF (prof = 91) OR (prof = 96) BEGIN
-    WRITE_BYTE 0x31 100
+    WRITE_BYTE 0x31 99
     PATCH_PRINT ~Moving %weapon_name% to the Small Sword weapon group~
   END
 
@@ -1313,8 +1321,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Large Sword Weapon Group
   PATCH_IF (prof = 89) OR   // Bastard Sword
         (prof = 90) OR      // Long Sword
-        (prof = 93) OR      // Two-Handed Sword
-        (prof = 94) OR      // Katana
+        (prof = 93) BEGIN   // Two-Handed Sword
+    WRITE_BYTE 0x31 100
+    PATCH_PRINT ~Moving %weapon_name% to the Large Sword weapon group~
+  END
+
+  // Exotic Sword Weapon Group
+  PATCH_IF (prof = 94) OR   // Katana
         (prof = 95) BEGIN   // Scimitar
     WRITE_BYTE 0x31 101
     PATCH_PRINT ~Moving %weapon_name% to the Large Sword weapon group~
@@ -1476,6 +1489,7 @@ SET bow = 0
 SET spiked = 0
 SET ssword = 0
 SET lsword = 0
+SET exotic = 0
 SET axe = 0
 SET blunt = 0
 SET missile = 0
@@ -1531,12 +1545,20 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
     // Large Sword
     PATCH_IF (type = 89) OR 
         (type = 90) OR
-        (type = 93) OR
-        (type = 94) OR
-        (type = 95) BEGIN
+        (type = 93) BEGIN
         PATCH_IF (pips > lsword) BEGIN
             free_pips += lsword
             lsword = pips
+        END ELSE BEGIN
+            free_pips += pips
+        END
+    END
+
+    // Exotic Sword
+    PATCH_IF (type = 94) OR (type = 95) BEGIN
+        PATCH_IF (pips > exotic) BEGIN
+            free_pips += exotic
+            exotic = pips
         END ELSE BEGIN
             free_pips += pips
         END
@@ -1608,22 +1630,27 @@ LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
 
 // Bow
 PATCH_IF (bow > 0) BEGIN
-    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = bow parameter2 = 98 timing = 9 END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = bow parameter2 = 97 timing = 9 END
 END
 
 // Spiked
 PATCH_IF (spiked > 0) BEGIN
-    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = spiked parameter2 = 99 timing = 9 END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = spiked parameter2 = 98 timing = 9 END
 END
 
 // Small Sword
 PATCH_IF (ssword > 0) BEGIN
-    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = ssword parameter2 = 100 timing = 9 END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = ssword parameter2 = 99 timing = 9 END
 END
 
 // Large Sword
 PATCH_IF (lsword > 0) BEGIN
-    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = lsword parameter2 = 101 timing = 9 END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = lsword parameter2 = 100 timing = 9 END
+END
+
+// Exotic Sword
+PATCH_IF (exotic > 0) BEGIN
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = exotic parameter2 = 101 timing = 9 END
 END
 
 // Axe

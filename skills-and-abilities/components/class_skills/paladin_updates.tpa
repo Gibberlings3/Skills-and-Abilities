@@ -17,9 +17,8 @@ COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strike
 // Set Base Paladin New Abilities                                        //
 ///////////////////////////////////////////////////////////////////////////
 /*
-COPY_EXISTING ~CLABMO01.2DA~ override
+COPY_EXISTING ~CLABPA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
-    //LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
     PRETTY_PRINT_2DA
   BUT_ONLY
   */
