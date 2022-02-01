@@ -137,18 +137,18 @@ Master (3 slots): The wielder's penalties to attack and damage rolls are reduced
 
 <DOTS5>~
 
-@7116 = ~Armor~
-@7117 = ~ARMOR:  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a -1 penalty to speed factor. All abilities are cumulative. 
+@7116 = ~Heavy Armor~
+@7117 = ~HEAVY ARMOR:  This proficiency grants the knowledge to make effective use of Plate Mail and Full Plate armors. A character wearing heavy armor without a slot in this proficiency would incur a 10% loss in movement speed, -1 penalty to speed factor, and a -1 penalty to Thac0. All abilities are cumulative. 
 
-Proficient (1 slot): The character receives no penalties while wearing armor.
+Heavy Armor Proficiency (1 slot): The character receives no penalties while wearing heavy armor.
 
-Specialized (2 slots): The character receives a -1 bonus to AC vs. missile attacks.
+Heavy Armor Specialization (2 slots): The character receives a -1 bonus to AC vs. missile attacks while wearing heavy armor.
 
-Master (3 slots): The character receives a -1 bonus to AC.
+Heavy Armor Optimization (3 slots): The character receives a -1 bonus to AC while wearing heavy armor.
 
-High Master (4 slots): The character's bonus to AC increases to -2.
+Greater Heavy Armor Optimization (4 slots): The character's bonus to AC increases to -2 while wearing heavy armor.
 
-Grand Master (5 slots): The character receives a 10% damage reduction to all physical attacks.~
+Epic Heavy Armor Optimization (5 slots): The character receives a 10% damage reduction to all physical attacks while wearing heavy armor.~
 
 @7118 = ~Spellcraft~
 @7119 = ~SPELLCRAFT:  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
@@ -218,7 +218,7 @@ Power Critical (2 slots): The character deals an additional +2d6 slashing damage
 Overwhelming Critical (3 slots): The character deals an additional +3d6 slashing damage on critical hit with any weapon.~
 
 @7136 = ~Exotic Sword~
-@7137 = ~EXOTIC SWORD:  This weapon class allows the character to use Katanas, Ninjatos, Wakizashis, and Scimitars. The Druid is able to select this class, but is limited to Scimitars alone..
+@7137 = ~EXOTIC SWORD:  This weapon class allows the character to use Katanas, Ninjatos, Wakizashis, and Scimitars. The Druid is able to select this class, but is limited to Scimitars alone.
 
 <DOTS1>
 
