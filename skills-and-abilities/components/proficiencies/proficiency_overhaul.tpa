@@ -139,7 +139,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         END
 
         // Set New Proficiency Points
-        SET_2DA_ENTRY 20 col 1 ~%bow%~
+        SET_2DA_ENTRY 19 col 1 ~%bow%~
         SET_2DA_ENTRY 21 col 1 ~%spiked%~
         SET_2DA_ENTRY 22 col 1 ~%ssword%~
         SET_2DA_ENTRY 23 col 1 ~%lsword%~
@@ -150,9 +150,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         SET_2DA_ENTRY 28 col 1 ~%spear%~
 
     END
-    SET_2DA_ENTRY 20 0 1 ~BOW~
-    SET_2DA_ENTRY 20 2 1 ~mobow1~
-    SET_2DA_ENTRY 20 3 1 ~mobow2~    
+    SET_2DA_ENTRY 19 0 1 ~BOW~
+    SET_2DA_ENTRY 19 2 1 ~mobow1~
+    SET_2DA_ENTRY 19 3 1 ~mobow2~    
     SET_2DA_ENTRY 21 0 1 ~SPIKED~
     SET_2DA_ENTRY 21 2 1 ~mospike1~
     SET_2DA_ENTRY 21 3 1 ~mospike2~
