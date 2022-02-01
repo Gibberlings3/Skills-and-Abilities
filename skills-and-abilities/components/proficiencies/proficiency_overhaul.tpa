@@ -1330,7 +1330,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (prof = 94) OR   // Katana
         (prof = 95) BEGIN   // Scimitar
     WRITE_BYTE 0x31 101
-    PATCH_PRINT ~Moving %weapon_name% to the Large Sword weapon group~
+    PATCH_PRINT ~Moving %weapon_name% to the Exotic Sword weapon group~
   END
 
   // Axe Weapon Group
