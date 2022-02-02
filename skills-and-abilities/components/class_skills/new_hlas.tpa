@@ -32,8 +32,18 @@ ACTION_FOR_EACH class IN
       4  // THIEF
       5  // BARD
       6  // PALADIN
+      7  // FIGHTER_MAGE
+      8  // FIGHTER_CLERIC
+      9  // FIGHTER_THIEF
+      10 // FIGHTER_MAGE_THIEF
       11 // DRUID
       12 // RANGER
+      13 // MAGE_THIEF
+      14 // CLERIC_MAGE
+      15 // CLERIC_THIEF
+      16 // FIGHTER_DRUID
+      17 // FIGHTER_MAGE_THIEF
+      18 // CLERIC_RANGER
       19 // SORCERER
       20 // MONK
       21 // SHAMAN
