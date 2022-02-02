@@ -14,7 +14,7 @@ AUTO_EVAL_STRINGS
 ALWAYS
 	INCLUDE ~skills-and-abilities/lib/always.tph~
     // TRA Files go into this array to be loaded
-	ACTION_DEFINE_ARRAY moreload BEGIN barbarian bard paladin monk proficiency_descriptions ranger strength wizard_splayer hla_description END
+	ACTION_DEFINE_ARRAY moreload BEGIN barbarian bard paladin monk proficiency_descriptions ranger strength wizard_splayer hla_descriptions END
 	LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~skills-and-abilities/languages~ reload_array = moreload END
 
 END
