@@ -136,7 +136,7 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
   COUNT_2DA_COLS cols  
   COUNT_2DA_ROWS cols krows  
   FOR (j = 1; j < krows; ++j) BEGIN
-    READ_2DA_ENTRY j 1 4 classhla
+    READ_2DA_ENTRY j 1 cols classhla
     PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
       j = krows
       duplicate = 1
