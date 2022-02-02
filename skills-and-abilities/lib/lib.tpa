@@ -129,6 +129,7 @@ END
           INNER_ACTION BEGIN
           COPY_EXISTING ~lu%kitlu%.2da~ ~override~
             COUNT_2DA_ROWS 4 krows
+            COUNT_2DA_COLS cols
             SET space_found = 0
             FOR (j = 1; j < krows; ++j) BEGIN
               READ_2DA_ENTRY j 1 4 classhla
@@ -149,10 +150,7 @@ END
               END
             END
             PATCH_IF !space_found BEGIN
-              //INSERT_2DA_ROW ("%first_empty_row%") %cols% ~%2da_row% %ability% %icon% %strref% %min_lev% %max_level% %num_allowed% %prerequisite% %excluded_by% %alignment_restrict%~
-              INNER_ACTION BEGIN
-                APPEND ~lu%lu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
-              END
+              INSERT_2DA_ROW ("%krows%") %cols% ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
             END      
           END
         END
