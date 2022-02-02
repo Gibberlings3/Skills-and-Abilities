@@ -136,22 +136,22 @@ END
                 j = krows
                 space_found = 1
               END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
-                SET_2DA_ENTRY (hla_row + 2) 1 1 ~%ability%~      // HLA Name
-                SET_2DA_ENTRY (hla_row + 2) 4 1 ~%min_lev%~      // MIN_LEV
-                SET_2DA_ENTRY (hla_row + 2) 5 1 ~%max_lev%~      // MAX_LEV
-                SET_2DA_ENTRY (hla_row + 2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
-                SET_2DA_ENTRY (hla_row + 2) 7 1 ~%prerequisite%~ // Prerequisite HLA
-                SET_2DA_ENTRY (hla_row + 2) 8 1 ~%excluded_by%~  // Excluded by HLA
-                SET_2DA_ENTRY (hla_row + 2) 9 1 ~%alignment%~    // Required Alignment
+                SET_2DA_ENTRY (j + 2) 1 1 ~%ability%~      // HLA Name
+                SET_2DA_ENTRY (j + 2) 4 1 ~%min_lev%~      // MIN_LEV
+                SET_2DA_ENTRY (j + 2) 5 1 ~%max_lev%~      // MAX_LEV
+                SET_2DA_ENTRY (j + 2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
+                SET_2DA_ENTRY (j + 2) 7 1 ~%prerequisite%~ // Prerequisite HLA
+                SET_2DA_ENTRY (j + 2) 8 1 ~%excluded_by%~  // Excluded by HLA
+                SET_2DA_ENTRY (j + 2) 9 1 ~%alignment%~    // Required Alignment
                 PRETTY_PRINT_2DA
                 j = krows
                 space_found = 1
               END
             END
             PATCH_IF !space_found BEGIN
+              //INSERT_2DA_ROW ("%first_empty_row%") %cols% ~%2da_row% %ability% %icon% %strref% %min_lev% %max_level% %num_allowed% %prerequisite% %excluded_by% %alignment_restrict%~
               INNER_ACTION BEGIN
-                //APPEND ~lu%kitlu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
-                APPEND ~lu%kitlu%.2da~ ~%ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+                APPEND ~lu%lu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
               END
             END      
           END
