@@ -134,7 +134,7 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
   SET row_num = 0
   SET row_label = 0
   COUNT_2DA_COLS cols
-  READ_2DA_ENTRIES_NOW krows ols  
+  READ_2DA_ENTRIES_NOW krows cols  
   FOR (j = 1; j < krows; ++j) BEGIN
     READ_2DA_ENTRY_FORMER krows j 1 classhla
     PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
