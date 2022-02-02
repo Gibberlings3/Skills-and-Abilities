@@ -116,93 +116,15 @@ DEFINE_ACTION_FUNCTION ADD_HLA
 END
 
 ///////////////////////////////////////////////////////////////////////////
-// Created by morpheus562 to add new HLA abilities to luxxx.2da files    //
+// Created by morpheus562 to add new HLA rows to luxxx.2da files         //
 ///////////////////////////////////////////////////////////////////////////
-DEFINE_PATCH_FUNCTION ADD_NEW_HLA
-  INT_VAR
-    min_lev = 1     // Min Lev to receive HLA
-    max_lev = 99    // Max Level to receive HLA
-    num_allowed = 1 // Number of times the ability can be taken
-  STR_VAR
-    ability = ""       // New ability being added
-    prerequisite = "*" // Ability is required first
-    excluded_by = "*"  // Excluded by field
-    alignment = "*"    // Alignment requirements
-  BEGIN
-  SET space_found = 0
-  SET duplicate = 0
-  SET row_num = 0
-  SET row_label = 0
+DEFINE_PATCH_FUNCTION ADD_NEW_HLA_ROW BEGIN
   COUNT_2DA_COLS cols
-  READ_2DA_ENTRIES_NOW krows cols  
-  FOR (j = 1; j < krows; ++j) BEGIN
-    READ_2DA_ENTRY_FORMER krows j 1 classhla
-    PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
-      j = krows
-      duplicate = 1
-    END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
-      PATCH_IF row_num = 0 BEGIN
-        row_num = j + 2
-        space_found = 1
-      END
-    END 
-  END
-  PATCH_IF !space_found AND !duplicate BEGIN
-    row_num = krows + 1
-    INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% * * * * * * * * *~
-  END
-  PATCH_IF !duplicate BEGIN
-    SET_2DA_ENTRY row_num 1 1 ~%ability%~      // HLA Name
-    SET_2DA_ENTRY row_num 4 1 ~%min_lev%~      // MIN_LEV
-    SET_2DA_ENTRY row_num 5 1 ~%max_lev%~      // MAX_LEV
-    SET_2DA_ENTRY row_num 6 1 ~%num_allowed%~  // NUM_ALLOWED
-    SET_2DA_ENTRY row_num 7 1 ~%prerequisite%~ // Prerequisite HLA
-    SET_2DA_ENTRY row_num 8 1 ~%excluded_by%~  // Excluded by HLA
-    SET_2DA_ENTRY row_num 9 1 ~%alignment%~    // Required Alignment
-  END
+  COUNT_2DA_ROWS cols rows
+  SET row_num = rows + 1  
+  INSERT_2DA_ROW ("%rows%") %cols% ~%row_num% * * * * * * * * *~
 END
-/*
-DEFINE_PATCH_FUNCTION ADD_NEW_HLA
-  INT_VAR
-    min_lev = 1     // Min Lev to receive HLA
-    max_lev = 99    // Max Level to receive HLA
-    num_allowed = 1 // Number of times the ability can be taken
-  STR_VAR
-    ability = ""       // New ability being added
-    prerequisite = "*" // Ability is required first
-    excluded_by = "*"  // Excluded by field
-    alignment = "*"    // Alignment requirements
-  BEGIN
-  SET space_found = 0
-  SET row_num = 0
-  COUNT_2DA_COLS cols  
-  COUNT_2DA_ROWS cols krows  
-  FOR (j = 1; j < krows; ++j) BEGIN
-    READ_2DA_ENTRY j 1 4 classhla
-    PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
-      j = krows
-      space_found = 1
-    END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
-      SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
-      SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
-      SET_2DA_ENTRY (j+2) 5 1 ~%max_lev%~      // MAX_LEV
-      SET_2DA_ENTRY (j+2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
-      SET_2DA_ENTRY (j+2) 7 1 ~%prerequisite%~ // Prerequisite HLA
-      SET_2DA_ENTRY (j+2) 8 1 ~%excluded_by%~  // Excluded by HLA
-      SET_2DA_ENTRY (j+2) 9 1 ~%alignment%~    // Required Alignment
-      j = krows
-      space_found = 1
-    END 
-  END
-  PATCH_IF !space_found BEGIN
-    row_num = krows + 1
-    INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
-    space_found = 1
-  END
-END
-*/
 
-/*
 ///////////////////////////////////////////////////////////////////////////
 // Created by morpheus562 to add new HLA abilities to luxxx.2da files    //
 ///////////////////////////////////////////////////////////////////////////
@@ -234,4 +156,3 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     END 
   END
 END
-*/

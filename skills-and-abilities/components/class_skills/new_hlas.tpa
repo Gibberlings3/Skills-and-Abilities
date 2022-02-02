@@ -25,6 +25,10 @@ COPY ~skills-and-abilities/spl/MO#HLA04.SPL~       ~override~ // Magid Damage Re
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs                                                              //
 ///////////////////////////////////////////////////////////////////////////
+FOR (i = 1; i < 5; ++i) BEGIN
+  LPF ADD_NEW_HLA_ROW END
+END
+
 ACTION_FOR_EACH class IN
       1  // MAGE
       2  // FIGHTER
