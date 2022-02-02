@@ -132,6 +132,7 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
   SET space_found = 0
   SET duplicate = 0
   SET row_num = 0
+  SET row_label = 0
   COUNT_2DA_COLS cols  
   COUNT_2DA_ROWS cols krows  
   FOR (j = 1; j < krows; ++j) BEGIN
