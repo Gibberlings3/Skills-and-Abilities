@@ -152,7 +152,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 INCLUDE ~skills-and-abilities/components/class_skills/paladin_updates.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Add New HLAs for Single and Dual Class Characters                     //
+// Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @90 DESIGNATED 90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3000
