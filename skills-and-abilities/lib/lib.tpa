@@ -146,8 +146,8 @@ END
                 PRETTY_PRINT_2DA
                 j = krows
                 space_found = 1
-              BUT_ONLY
               END
+              BUT_ONLY
             END
             PATCH_IF !space_found BEGIN
               INNER_ACTION BEGIN
