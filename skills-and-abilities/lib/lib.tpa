@@ -149,7 +149,7 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
   END
   PATCH_IF space_found AND !duplicate BEGIN
     INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
-  END ELSE !space_found AND !duplicate BEGIN
+  END ELSE PATCH_IF !space_found AND !duplicate BEGIN
     row_num = krows + 1
     INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
   END
