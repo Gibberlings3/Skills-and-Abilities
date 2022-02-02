@@ -39,6 +39,48 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
   END
 END
 
+/*
+///////////////////////////////////////////////////////////////////////////
+// Created by morpheus562 to add HLA rows to luxxx.2da files             //
+///////////////////////////////////////////////////////////////////////////
+DEFINE_ACTION_FUNCTION ADD_HLA_ROW
+  INT_VAR
+    class = 2       // Class ID to add HLAs to
+    num_hlas = 1    // Number of New HLA rows to create
+  BEGIN
+
+  // Find class in class.ids
+  COPY_EXISTING ~CLASS.IDS~ ~override~
+  COUNT_2DA_ROWS 2 rows
+  PATCH_IF (%class% > 0) AND (%class% < rows) BEGIN
+    READ_2DA_ENTRY class 1 2 class_name
+  END ELSE BEGIN
+    PATCH_PRINT ~The selected class number, %class%, is out of bounds.~
+  END
+
+  // Find class in luabbr.2da
+  COPY_EXISTING ~LUABBR.2DA~ ~override~
+  COUNT_2DA_ROWS 2 rows
+  FOR (index = 1; index < rows; ++index) BEGIN
+    READ_2DA_ENTRY index 0 2 row_name
+    PATCH_IF ~%row_name%~ STRING_EQUAL_CASE ~%class_name%~ BEGIN
+      READ_2DA_ENTRY index 1 2 classlu
+    END
+  END
+
+  // Add the new HLA to the correct class luxxx.2da file
+  ACTION_IF FILE_EXISTS_IN_GAME ~lu%classlu%.2da~ BEGIN
+    COPY_EXISTING ~lu%classlu%.2da~ ~override~
+      FOR (i = 1; i <= num_hlas; ++i)
+        LPF ADD_NEW_HLA_ROW END
+        PRETTY_PRINT_2DA
+      END
+    BUT_ONLY
+  END
+
+END
+*/
+
 ///////////////////////////////////////////////////////////////////////////
 // Created by morpheus562 to add new HLA abilities to luxxx.2da files    //
 ///////////////////////////////////////////////////////////////////////////
@@ -77,6 +119,7 @@ DEFINE_ACTION_FUNCTION ADD_HLA
   // Add the new HLA to the correct class luxxx.2da file
   ACTION_IF FILE_EXISTS_IN_GAME ~lu%classlu%.2da~ BEGIN
     COPY_EXISTING ~lu%classlu%.2da~ ~override~
+      LPF ADD_NEW_HLA_ROW END
       LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ END
       PRETTY_PRINT_2DA
     BUT_ONLY
@@ -103,6 +146,7 @@ DEFINE_ACTION_FUNCTION ADD_HLA
         PATCH_IF FILE_EXISTS_IN_GAME ~lu%kitlu%.2da~ BEGIN
           INNER_ACTION BEGIN
           COPY_EXISTING ~lu%kitlu%.2da~ ~override~
+            LPF ADD_NEW_HLA_ROW END
             LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ END
             PRETTY_PRINT_2DA
           BUT_ONLY
