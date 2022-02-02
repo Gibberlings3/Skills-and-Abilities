@@ -147,11 +147,18 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
       END
     END 
   END
-  PATCH_IF space_found AND !duplicate BEGIN
-    INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
-  END ELSE PATCH_IF !space_found AND !duplicate BEGIN
+  PATCH_IF !space_found AND !duplicate BEGIN
     row_num = krows + 1
-    INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+    INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% * * * * * * * * *~
+  END
+  PATCH_IF !duplicate BEGIN
+    SET_2DA_ENTRY row_num 1 1 ~%ability%~      // HLA Name
+    SET_2DA_ENTRY row_num 4 1 ~%min_lev%~      // MIN_LEV
+    SET_2DA_ENTRY row_num 5 1 ~%max_lev%~      // MAX_LEV
+    SET_2DA_ENTRY row_num 6 1 ~%num_allowed%~  // NUM_ALLOWED
+    SET_2DA_ENTRY row_num 7 1 ~%prerequisite%~ // Prerequisite HLA
+    SET_2DA_ENTRY row_num 8 1 ~%excluded_by%~  // Excluded by HLA
+    SET_2DA_ENTRY row_num 9 1 ~%alignment%~    // Required Alignment
   END
 END
 /*
