@@ -144,10 +144,10 @@ END
                 SET_2DA_ENTRY (hla_row + 2) 8 1 ~%excluded_by%~  // Excluded by HLA
                 SET_2DA_ENTRY (hla_row + 2) 9 1 ~%alignment%~    // Required Alignment
                 PRETTY_PRINT_2DA
+                BUT_ONLY
                 j = krows
                 space_found = 1
               END
-              BUT_ONLY
             END
             PATCH_IF !space_found BEGIN
               INNER_ACTION BEGIN
