@@ -140,7 +140,6 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
       j = krows
       duplicate = 1
-      space_found = 1
     END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
       PATCH_IF row_num = 0 BEGIN
         row_num = j + 2
