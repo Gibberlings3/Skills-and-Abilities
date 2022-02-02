@@ -162,6 +162,8 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     SET_2DA_ENTRY (krows+1) 8 1 ~%excluded_by%~  // Excluded by HLA
     SET_2DA_ENTRY (krows+1) 9 1 ~%alignment%~    // Required Alignment
     */
-    APPEND ~lu%kitlu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+    INNER_ACTION BEGIN
+      APPEND ~lu%kitlu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+    END
   END
 END
