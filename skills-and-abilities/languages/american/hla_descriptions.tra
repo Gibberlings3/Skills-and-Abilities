@@ -1,0 +1,26 @@
+// Skills and Abilities, American English
+// Proficiency range @8001 to @9000
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@8001 = ~Resilience~
+@8002 = ~Resilience
+The character gains 2% damage reduction to all physical attacks. This proficiency may be taken multiple times, up to a maximum of 10% damage reduction to all physical attacks.~
+
+@8003 = ~Thievery~
+@8004 = ~Thievery
+The character gains +5 skills points in each skill. This proficiency may be taken multiple times, up to a maximum of +25 skill points in each skill.~
+
+@8005 = ~Elemental Resistance~
+@8006 = ~Elemental Resistance
+The character gains 5% resistance to all elemental damage. This proficiency may be taken multiple times, up to a maximum of 25% resistance to elemental damage.~
+
+@8007 = ~Magid Damage Resistance~
+@8008 = ~Magid Damage Resistance
+The character gains 5% resistance to magic damage. This proficiency may be taken multiple times, up to a maximum of 25% resistance to magic damage.~
+
+@8009 = ~Epic Toughness~
+@8010 = ~Epic Toughness
+The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of 200 hit points.~
+
+@9000 = ~[LAST TRA HERE]~
