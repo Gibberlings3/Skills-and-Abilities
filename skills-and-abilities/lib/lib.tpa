@@ -103,7 +103,7 @@ DEFINE_ACTION_FUNCTION ADD_HLA
         PATCH_IF FILE_EXISTS_IN_GAME ~lu%kitlu%.2da~ BEGIN
           INNER_ACTION BEGIN
           COPY_EXISTING ~lu%kitlu%.2da~ ~override~
-            LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ END
+            LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ lu = %kitlu% END
             PRETTY_PRINT_2DA
           BUT_ONLY
           END
@@ -124,7 +124,8 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     max_lev = 99    // Max Level to receive HLA
     num_allowed = 1 // Number of times the ability can be taken
   STR_VAR
-    ability = ""       // New ability being added 
+    ability = ""       // New ability being added
+    lu = ""            // LU file for the kit 
     prerequisite = "*" // Ability is required first
     excluded_by = "*"  // Excluded by field
     alignment = "*"    // Alignment requirements
@@ -149,6 +150,7 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     END 
   END
   PATCH_IF !space_found BEGIN
+    /*
     SET_2DA_ENTRY (krows+1) 0 1 ~%krows%~        // Row #
     SET_2DA_ENTRY (krows+1) 1 1 ~%ability%~      // HLA Name
     SET_2DA_ENTRY (krows+1) 2 1 ~*~              // ICON
@@ -159,5 +161,7 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     SET_2DA_ENTRY (krows+1) 7 1 ~%prerequisite%~ // Prerequisite HLA
     SET_2DA_ENTRY (krows+1) 8 1 ~%excluded_by%~  // Excluded by HLA
     SET_2DA_ENTRY (krows+1) 9 1 ~%alignment%~    // Required Alignment
+    */
+    APPEND ~lu%kitlu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
   END
 END
