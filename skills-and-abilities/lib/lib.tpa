@@ -149,7 +149,10 @@ END
               END
             END
             PATCH_IF !space_found BEGIN
-              APPEND ~lu%kitlu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+              INNER_ACTION BEGIN
+                //APPEND ~lu%kitlu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+                APPEND ~lu%kitlu%.2da~ ~* %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+              END
             END      
           END
         END
