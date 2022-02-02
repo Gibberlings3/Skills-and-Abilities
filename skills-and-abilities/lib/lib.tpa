@@ -130,6 +130,7 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     alignment = "*"    // Alignment requirements
   BEGIN
   SET space_found = 0
+  SET row_num = 0
   COUNT_2DA_COLS cols  
   COUNT_2DA_ROWS cols krows  
   FOR (j = 1; j < krows; ++j) BEGIN
@@ -150,7 +151,8 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     END 
   END
   PATCH_IF !space_found BEGIN
-    INSERT_2DA_ROW ("%krows%") %cols% ~(%krows%+1) %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
+    row_num = krows + 1
+    INSERT_2DA_ROW ("%krows%") %cols% ~%row_num% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
   END
 END
 
