@@ -149,15 +149,15 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     END 
   END
   PATCH_IF !space_found BEGIN
-    SET_2DA_ENTRY (krows+2) 0 1 ~%krows%~        // Row #
-    SET_2DA_ENTRY (krows+2) 1 1 ~%ability%~      // HLA Name
-    SET_2DA_ENTRY (krows+2) 2 1 ~*~              // ICON
-    SET_2DA_ENTRY (krows+2) 3 1 ~*~              // STRREF
-    SET_2DA_ENTRY (krows+2) 4 1 ~%min_lev%~      // MIN_LEV
-    SET_2DA_ENTRY (krows+2) 5 1 ~%max_lev%~      // MAX_LEV
-    SET_2DA_ENTRY (krows+2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
-    SET_2DA_ENTRY (krows+2) 7 1 ~%prerequisite%~ // Prerequisite HLA
-    SET_2DA_ENTRY (krows+2) 8 1 ~%excluded_by%~  // Excluded by HLA
-    SET_2DA_ENTRY (krows+2) 9 1 ~%alignment%~    // Required Alignment
+    SET_2DA_ENTRY (krows+1) 0 1 ~%krows%~        // Row #
+    SET_2DA_ENTRY (krows+1) 1 1 ~%ability%~      // HLA Name
+    SET_2DA_ENTRY (krows+1) 2 1 ~*~              // ICON
+    SET_2DA_ENTRY (krows+1) 3 1 ~*~              // STRREF
+    SET_2DA_ENTRY (krows+1) 4 1 ~%min_lev%~      // MIN_LEV
+    SET_2DA_ENTRY (krows+1) 5 1 ~%max_lev%~      // MAX_LEV
+    SET_2DA_ENTRY (krows+1) 6 1 ~%num_allowed%~  // NUM_ALLOWED
+    SET_2DA_ENTRY (krows+1) 7 1 ~%prerequisite%~ // Prerequisite HLA
+    SET_2DA_ENTRY (krows+1) 8 1 ~%excluded_by%~  // Excluded by HLA
+    SET_2DA_ENTRY (krows+1) 9 1 ~%alignment%~    // Required Alignment
   END
 END
