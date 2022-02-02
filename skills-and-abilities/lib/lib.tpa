@@ -129,13 +129,11 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     excluded_by = "*"  // Excluded by field
     alignment = "*"    // Alignment requirements
   BEGIN  
-  SET space_found = 0
   COUNT_2DA_ROWS 4 krows
   FOR (j = 1; j < krows; ++j) BEGIN
     READ_2DA_ENTRY j 1 4 classhla
     PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
       j = krows
-      space_found = 1
     END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
       SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
       SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
@@ -145,12 +143,6 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
       SET_2DA_ENTRY (j+2) 8 1 ~%excluded_by%~  // Excluded by HLA
       SET_2DA_ENTRY (j+2) 9 1 ~%alignment%~    // Required Alignment
       j = krows
-      space_found = 1
     END 
-  END
-  PATCH_IF !space_found BEGIN
-    INNER_ACTION BEGIN
-      APPEND ~lu%lu%.2da~ ~%krows% %ability% * * %min_lev% %max_lev% %num_allowed% %prerequisite% %excluded_by% %alignment%~
-    END
   END
 END
