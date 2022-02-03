@@ -49,7 +49,7 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
       // Add new abilities to all Paladin kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
       PATCH_IF (%kit_label% STRING_EQUAL_CASE "Blackguard") BEGIN
-        REPLACE_TEXTUALLY ~AP_SPCL103~ ~****~
+        REPLACE_TEXTUALLY ~GA_SPCL103~ ~****~
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC2 END
         PRETTY_PRINT_2DA
       END ELSE BEGIN
