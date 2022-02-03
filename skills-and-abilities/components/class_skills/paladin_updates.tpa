@@ -9,7 +9,7 @@
 ///////////////////////////////////////////////////////////////////////////
 COPY ~skills-and-abilities/eff/class/MOPAL01.EFF~  ~override~ // Aura of Courage
 COPY ~skills-and-abilities/spl/MOPAL01.SPL~        ~override~ // Aura of Courage
-COPY ~skills-and-abilities/spl/MOPALC01.SPL~       ~override~ // Aura of Courage
+COPY ~skills-and-abilities/spl/MOPALC1.SPL~        ~override~ // Aura of Courage
 COPY ~skills-and-abilities/eff/class/MO#PHL01.EFF~ ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strikes
