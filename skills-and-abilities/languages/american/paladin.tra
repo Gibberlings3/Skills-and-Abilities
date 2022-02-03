@@ -10,10 +10,16 @@
 @6004 = ~Sanctify Strikes
 You deal 2 extra points of magic damage with your attacks.~
 
+@6005 = ~Hit Die: d10~
+@6006 = ~Hit Die: d10
+- 3rd Level: Gains the Aura of Courage passive ability.
+
+AURA OF COURAGE: A character with this ability is protected against all forms of panic and boosts morale. Additionally, each ally within 15 feet gains a +2 bonus on all saving throws.~
+
 
 @6500 = ~[LAST TRA HERE]~
 
-// AURA OF COURAGE: A character with this feat is immune to fear. Additionally, each ally within 10 feet gains a +4 morale bonus on saving throws against fear effects.
+// AURA OF COURAGE: A character with this ability is protected against all forms of panic and boosts morale. Additionally, each ally within 10 feet gains a +4 morale bonus on saving throws against fear effects.
 
 // AURA OF DESPAIR: Starting at 3rd level, the blackguard radiates a malign aura that causes all enemies within 10' of him to suffer a -2 penalty on all saving throws.
 

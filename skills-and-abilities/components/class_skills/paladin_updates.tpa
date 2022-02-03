@@ -7,6 +7,9 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
+COPY ~skills-and-abilities/eff/class/MOPAL01.EFF~  ~override~ // Aura of Courage
+COPY ~skills-and-abilities/spl/MOPAL01.SPL~        ~override~ // Aura of Courage
+COPY ~skills-and-abilities/spl/MOPALC01.SPL~       ~override~ // Aura of Courage
 COPY ~skills-and-abilities/eff/class/MO#PHL01.EFF~ ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strikes
@@ -16,12 +19,10 @@ COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strike
 ///////////////////////////////////////////////////////////////////////////
 // Set Base Paladin New Abilities                                        //
 ///////////////////////////////////////////////////////////////////////////
-/*
 COPY_EXISTING ~CLABPA01.2DA~ override
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC01 END // Aura of Courage
     PRETTY_PRINT_2DA
   BUT_ONLY
-  */
 
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs                                                              //
@@ -31,7 +32,6 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
 ///////////////////////////////////////////////////////////////////////////
 // Set Abilities for all Paladin Kits                                    //
 ///////////////////////////////////////////////////////////////////////////
- /*
  COPY_EXISTING ~KITLIST.2DA~ ~override~
   READ_2DA_ENTRIES_NOW ~pal_kitlist~ 10
   FOR (row = 3; row < pal_kitlist; row += 1) BEGIN
@@ -45,17 +45,35 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
       INNER_ACTION BEGIN
       // Add new abilities to all Paladin kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
-        //LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC01 END
         PRETTY_PRINT_2DA
       BUT_ONLY
       END
     END
   END
   END
-*/
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // Updates descriptions for Paladin                                      //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
+OUTER_SPRINT old_pal @6005 
+
+OUTER_SPRINT new_pal @6006 //new text: Pick Pockets, Open Locks
+
+// Set the strref for the specific game first
+ACTION_IF GAME_IS ~bgee~ BEGIN
+  OUTER_SET pal_strref = 9558 // BGEE strref
+END ELSE ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+  OUTER_SET pal_strref = 9558 // BG2EE and EET strref
+END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+  OUTER_SET pal_strref = 9558 // IWDEE strref
+END
+
+ACTION_GET_STRREF ~%pal_strref%~ pal_description
+
+OUTER_PATCH_SAVE pal_description ~%pal_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_pal%~ ~%new_pal%~
+END
+
+STRING_SET_EVALUATE ~%pal_strref%~ ~%pal_description%~
