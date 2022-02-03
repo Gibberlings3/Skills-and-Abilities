@@ -31,8 +31,8 @@ COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABPA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = AP_MOPALC3 END // Smite
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_MOPALC3 END // Smite
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -59,13 +59,13 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
       COPY_EXISTING ~%kit_clab%.2DA~ override
       PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Blackguard") BEGIN
         REPLACE_TEXTUALLY ~GA_SPCL103~ ~AP_MOPALC2~
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = AP_MOPALC3 END // Smite
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_MOPALC3 END // Smite
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         PRETTY_PRINT_2DA
       END ELSE BEGIN
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = AP_MOPALC3 END // Smite
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_MOPALC3 END // Smite
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         PRETTY_PRINT_2DA
       END
       BUT_ONLY
@@ -78,10 +78,10 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
 // Updates descriptions for Paladin                                      //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-OUTER_SPRINT old_pal   @6005
-OUTER_SPRINT new_pal   @6006
-OUTER_SPRINT old_black @6007
-OUTER_SPRINT new_black @6008
+OUTER_SPRINT old_pal    @6005
+OUTER_SPRINT new_pal    @6006
+OUTER_SPRINT old_black  @6007
+OUTER_SPRINT new_black  @6008
 
 // Set the strref for the specific game first
 ACTION_IF GAME_IS ~bgee~ BEGIN
