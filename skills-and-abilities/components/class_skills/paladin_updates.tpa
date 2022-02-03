@@ -18,8 +18,8 @@ COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strike
 COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strikes
   SAY NAME1 @6003
   SAY UNIDENTIFIED_DESC @6004
-COPY ~skills-and-abilities/eff/class/MOPAL03.EFF~  ~override~ // Smite
-COPY ~skills-and-abilities/spl/MOPAL03.SPL~        ~override~ // Smite
+//COPY ~skills-and-abilities/eff/class/MOPAL03.EFF~  ~override~ // Smite
+//COPY ~skills-and-abilities/spl/MOPAL03.SPL~        ~override~ // Smite
 COPY ~skills-and-abilities/spl/MOPAL32.SPL~        ~override~ // Smite
 COPY ~skills-and-abilities/spl/MOPAL31.SPL~        ~override~ // Smite
 COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
