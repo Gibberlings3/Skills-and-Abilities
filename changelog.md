@@ -8,7 +8,7 @@ Feb XX, 2022
 - Added components to update the Monk and Paladin classes, kits, and new HLAs.
 - Added new Exotic Sword weapon group for katanas, scimitars, ninjatos, and wakizashis.
 - Changed Armor proficiency to Heavy Armor Proficiency.
-- Added new HLAs for all Single and Dual Classed Characters.
+- Added new HLAs for all classes and kits.
 
 ## Version 0.1 alpha
 
