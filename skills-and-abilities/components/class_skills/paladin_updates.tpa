@@ -10,6 +10,9 @@
 COPY ~skills-and-abilities/eff/class/MOPAL01.EFF~  ~override~ // Aura of Courage
 COPY ~skills-and-abilities/spl/MOPAL01.SPL~        ~override~ // Aura of Courage
 COPY ~skills-and-abilities/spl/MOPALC1.SPL~        ~override~ // Aura of Courage
+COPY ~skills-and-abilities/eff/class/MOPAL02.EFF~  ~override~ // Aura of Despair
+COPY ~skills-and-abilities/spl/MOPAL02.SPL~        ~override~ // Aura of Despair
+COPY ~skills-and-abilities/spl/MOPALC2.SPL~        ~override~ // Aura of Despair
 COPY ~skills-and-abilities/eff/class/MO#PHL01.EFF~ ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strikes
@@ -45,9 +48,16 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
       INNER_ACTION BEGIN
       // Add new abilities to all Paladin kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
+      PATCH_IF (%kit_label% STRING_EQUAL_CASE "Blackguard") BEGIN
+        REPLACE_TEXTUALLY ~AP_SPCL103~ ~****~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC2 END
+        PRETTY_PRINT_2DA
+        BUT_ONLY
+      END ELSE BEGIN
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END
         PRETTY_PRINT_2DA
-      BUT_ONLY
+        BUT_ONLY
+      END
       END
     END
   END
@@ -57,19 +67,24 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
 // Updates descriptions for Paladin                                      //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-OUTER_SPRINT old_pal @6005 
-
-OUTER_SPRINT new_pal @6006 //new text: Pick Pockets, Open Locks
+OUTER_SPRINT old_pal   @6005
+OUTER_SPRINT new_pal   @6006
+OUTER_SPRINT old_black @6007
+OUTER_SPRINT new_black @6008
 
 // Set the strref for the specific game first
 ACTION_IF GAME_IS ~bgee~ BEGIN
-  OUTER_SET pal_strref = 9558 // BGEE strref
+  OUTER_SET pal_strref = 9558    // BGEE strref
+  OUTER_SET black_strref = 28606 // BGEE strref
 END ELSE ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-  OUTER_SET pal_strref = 9558 // BG2EE and EET strref
+  OUTER_SET pal_strref = 9558    // BG2EE and EET strref
+  OUTER_SET black_strref = 77514 // BGEE strref
 END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
-  OUTER_SET pal_strref = 9558 // IWDEE strref
+  OUTER_SET pal_strref = 9558    // IWDEE strref
+  OUTER_SET black_strref = 37145 // BGEE strref
 END
 
+// Paladin strref
 ACTION_GET_STRREF ~%pal_strref%~ pal_description
 
 OUTER_PATCH_SAVE pal_description ~%pal_description%~ BEGIN
@@ -77,3 +92,12 @@ OUTER_PATCH_SAVE pal_description ~%pal_description%~ BEGIN
 END
 
 STRING_SET_EVALUATE ~%pal_strref%~ ~%pal_description%~
+
+// Blackguard strref
+ACTION_GET_STRREF ~%black_strref%~ black_description
+
+OUTER_PATCH_SAVE black_description ~%black_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_black%~ ~%new_black%~
+END
+
+STRING_SET_EVALUATE ~%black_strref%~ ~%black_description%~

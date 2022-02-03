@@ -14,12 +14,20 @@ You deal 2 extra points of magic damage with your attacks.~
 @6006 = ~Hit Die: d10
 - 3rd Level: Gains the Aura of Courage passive ability.
 
-AURA OF COURAGE: A character with this ability is protected against all forms of panic and boosts morale. Additionally, each ally within 15 feet gains a +2 bonus on all saving throws.~
+AURA OF COURAGE: This ability grants protection against all forms of panic, boosts morale, and grants +2 bonus to all saving throws for the character and all allies within 15 feet.~
 
+@6007 = ~level: May use the Aura of Despair ability once per day.
+
+AURA OF DESPAIR: When this ability is activated, all enemies within 15 feet of the Blackguard suffer ill effects based on the Blackguard's level:
+  3rd level - All enemies suffer a -1 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  6th level - All enemies suffer a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  15th level - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 8 or fewer Hit Dice are panicked as well.
+  20th Level - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 18 or fewer Hit Dice are panicked as well.~
+@6008 = ~Level: Gains the Aura of Despair passive ability instead of Aura of Courage.
+
+AURA OF DESPAIR: The blackguard radiates a malign aura that causes all enemies within 15 feet of <PRO_HIMHER> to suffer a -2 penalty on all saving throws.~
 
 @6500 = ~[LAST TRA HERE]~
-
-// AURA OF COURAGE: A character with this ability is protected against all forms of panic and boosts morale. Additionally, each ally within 10 feet gains a +4 morale bonus on saving throws against fear effects.
 
 // AURA OF DESPAIR: Starting at 3rd level, the blackguard radiates a malign aura that causes all enemies within 10' of him to suffer a -2 penalty on all saving throws.
 
