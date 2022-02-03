@@ -27,12 +27,8 @@ AURA OF DESPAIR: When this ability is activated, all enemies within 15 feet of t
 
 AURA OF DESPAIR: The blackguard radiates a malign aura that causes all enemies within 15 feet of <PRO_HIMHER> to suffer a -2 penalty on all saving throws.~
 
+@6009 = ~Smite~
+@6010 = ~Smite
+This ability allows the paladin to make a special attack against any enemy. Paladins apply their Charisma modifier to their attack roll and damage roll. Smite may be used once per day at 1st level. At 5th level and every five levels after that, the paladin gains an additional use per day.~
+
 @6500 = ~[LAST TRA HERE]~
-
-// AURA OF DESPAIR: Starting at 3rd level, the blackguard radiates a malign aura that causes all enemies within 10' of him to suffer a -2 penalty on all saving throws.
-
-// IMPROVED AURA OF DESPAIR: Your aura of despair causes a -4 morale penalty on all saving throws.
-
-// WIDEN AURA OF DESPAIR: Your aura of despair extends to all enemies within 100 feet of you.
-
-// PROTECTIVE AURA: At 1st level, the Nine gain an aura that grants +2 to all saving throws, +1 deflection bonus to armor class for all allies within 10 feet. This bonus does NOT apply to the Nine, only to his allies). At 4th level, this bonus increases to +3 saving throws, +2 deflection bonus, and the protection extends to allies within 15 feet.

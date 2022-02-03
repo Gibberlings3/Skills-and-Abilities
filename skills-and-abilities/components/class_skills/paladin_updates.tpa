@@ -18,12 +18,20 @@ COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strike
 COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strikes
   SAY NAME1 @6003
   SAY UNIDENTIFIED_DESC @6004
+COPY ~skills-and-abilities/eff/class/MOPAL03.EFF~  ~override~ // Smite
+COPY ~skills-and-abilities/spl/MOPAL03.SPL~        ~override~ // Smite
+COPY ~skills-and-abilities/spl/MOPAL32.SPL~        ~override~ // Smite
+COPY ~skills-and-abilities/spl/MOPAL31.SPL~        ~override~ // Smite
+COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
+  SAY NAME1 @6009
+  SAY UNIDENTIFIED_DESC @6010
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Base Paladin New Abilities                                        //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABPA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 5 STR_VAR f_Entry = AP_MOPALC3 END // Smite
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -50,10 +58,11 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
       COPY_EXISTING ~%kit_clab%.2DA~ override
       PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Blackguard") BEGIN
         REPLACE_TEXTUALLY ~GA_SPCL103~ ~AP_MOPALC2~
-        //LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC2 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 5 STR_VAR f_Entry = AP_MOPALC3 END // Smite
         PRETTY_PRINT_2DA
       END ELSE BEGIN
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 5 STR_VAR f_Entry = AP_MOPALC3 END // Smite
         PRETTY_PRINT_2DA
       END
       BUT_ONLY
