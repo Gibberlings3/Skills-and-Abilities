@@ -39,7 +39,8 @@ COPY_EXISTING ~CLABPA01.2DA~ override
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs                                                              //
 ///////////////////////////////////////////////////////////////////////////
-LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#PHL01 END  
+LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#PHL01 END
+LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 20 STR_VAR ability = GA_MOPALC3 END  
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Abilities for all Paladin Kits                                    //
