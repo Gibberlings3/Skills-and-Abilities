@@ -20,7 +20,7 @@ COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strike
 // Set Base Paladin New Abilities                                        //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABPA01.2DA~ override
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC01 END // Aura of Courage
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -45,7 +45,7 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR a
       INNER_ACTION BEGIN
       // Add new abilities to all Paladin kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC01 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END
         PRETTY_PRINT_2DA
       BUT_ONLY
       END
