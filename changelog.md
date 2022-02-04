@@ -1,3 +1,11 @@
+## Version 0.2.1 alpha
+
+Feb 3, 2022
+
+### Changed
+
+- Accelerated proficiency points was accidentally added into the release. It has now been removed.
+
 ## Version 0.2 alpha
 
 Feb 3, 2022
