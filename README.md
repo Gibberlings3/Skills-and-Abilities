@@ -32,7 +32,7 @@ Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk k
 
 FLURRY OF BLOWS: Monks double their attacks per round allowing for them to exceed the 5 attacks per round limit.
 
-New HLA Ability: Perfect Self.
+- New HLA Ability: Perfect Self.
 
 PERFECT SELF: The monk is no longer constrained by the trappings of time and becomes immune to Time Stop.
 
@@ -54,7 +54,7 @@ AURA OF COURAGE: This ability grants protection against all forms of panic, boos
 
 AURA OF DESPAIR: The blackguard radiates a malign aura that causes all enemies within 15 feet of him/her to suffer a -2 penalty on all saving throws.
 
-New HLA Ability: Sanctify Strikes.
+- New HLA Ability: Sanctify Strikes.
 
 SANCTIFY STRIKES: You deal 2 extra points of magic damage with your attacks. 
 
