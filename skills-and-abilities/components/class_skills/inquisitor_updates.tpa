@@ -32,9 +32,8 @@ BUT_ONLY
       PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "INQUISITOR") BEGIN
         REPLACE_TEXTUALLY ~AP_SPCL234~ ~****~
         PRETTY_PRINT_2DA
-      BUT_ONLY
       END
-      // BUT_ONLY
+      BUT_ONLY
       END
     END
   END
