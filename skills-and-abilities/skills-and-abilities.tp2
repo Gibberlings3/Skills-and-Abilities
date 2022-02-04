@@ -135,6 +135,14 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 INCLUDE ~skills-and-abilities/components/class_skills/set_wiz_slayer_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Assign New Abilities to Paladins                                      //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @80 DESIGNATED 80 GROUP @1 LABEL SkillsAndAbilitiesPaladin1
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+
+INCLUDE ~skills-and-abilities/components/class_skills/paladin_updates.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Replace Inquisitor True Seeing for Detect Illusion (EEex Required)    //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @60 DESIGNATED 60 GROUP @1 LABEL SkillsAndAbilitiesDI2
@@ -144,12 +152,12 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 INCLUDE ~skills-and-abilities/components/class_skills/set_inquisitor_skills.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Assign New Abilities to Paladins                                      //
+// Allow Inquisitor's to Cast Divine Spells                              //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @80 DESIGNATED 80 GROUP @1 LABEL SkillsAndAbilitiesPaladin1
+BEGIN @100 DESIGNATED 100 GROUP @1 LABEL SkillsAndAbilitiesInquisitor1
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 
-INCLUDE ~skills-and-abilities/components/class_skills/paladin_updates.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/inquisitor_updates.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //
