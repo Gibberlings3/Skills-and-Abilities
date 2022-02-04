@@ -74,8 +74,6 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~SPCL922.spl~ THEN BEGIN
         SAY UNIDENTIFIED_DESC @4502  //barbarian reference (update by class)
 	SAY DESC @4502               //barbarian reference (update by class)
 END
-//Tracking skill?
-//TO DO (Maybe)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -91,6 +89,17 @@ ACTION_IF (%barb_rage% < 1) BEGIN  //
   COPY_EXISTING ~CLABFI05.2DA~ ~override~
       REPLACE_TEXTUALLY ~GA_SPCL152~ ~****      ~
 END
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                     Feral Senses                    ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+//remove detect illusions button
+ACTION_IF (%barb_rage% < 2) BEGIN  //
+  COPY_EXISTING ~m_b3thi5.lua~ ~override~
+      REPLACE_TEXTUALLY ~EEex_Actionbar_SetButton(4, EEex_Actionbar_ButtonType.FIND_TRAPS)~ ~-- EEex_Actionbar_SetButton(4, EEex_Actionbar_ButtonType.FIND_TRAPS)~
+END
+//add detect illusions spl to barb rage
+
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // Updates descriptions for Barbarians                                              //
