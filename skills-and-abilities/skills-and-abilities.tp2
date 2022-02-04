@@ -102,6 +102,17 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 OUTER_SET barb_rage=0 // Remove rage
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+
+////////////////////////////////////////////////////
+
+//Feral Senses
+BEGIN @33 DESIGNATED 33 SUBCOMPONENT @30 GROUP @1 LABEL SkillsAndAbilitiesBarb2
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+OUTER_SET barb_rage=3 // Feral Senses
+
+INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 */
 
 ///////////////////////////////////////////////////////////////////////////

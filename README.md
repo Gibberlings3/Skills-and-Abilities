@@ -42,6 +42,8 @@ Adds Detect Illusions, set natural snares (outdoor areas only) and Move Silently
 
 Option to remove barbarian rage (as 1e barbarian did not have rage).
 
+Option to incorporate detect illusions into barbarian rage (as feral senses).
+
 ### Add New Paladin Abilities
 
 - 1st Level: May use the Smite ability once per day.
