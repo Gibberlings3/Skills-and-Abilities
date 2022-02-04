@@ -31,10 +31,11 @@ ACTION_IF FILE_EXISTS_IN_GAME ~moprof.itm~ THEN BEGIN
     READ_SHORT 0x1c type
 
     // 2H Weapons Gain 1.5x STR DMG Bonus
-    PATCH_IF (prof = 103) OR // Large Swords
-        (prof = 104) OR      // Axe
-        (prof = 105) OR      // Blunt
-        (prof = 107) BEGIN   // Spear
+    PATCH_IF (prof = 100) OR // Large Swords
+        (prof = 101) OR      // Exotic Swords
+        (prof = 102) OR      // Axe
+        (prof = 103) OR      // Blunt
+        (prof = 105) BEGIN   // Spear
       PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
         LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
         LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
