@@ -22,6 +22,7 @@ COPY ~skills-and-abilities/spl/MO#HLA03.SPL~       ~override~ // Elemental Resil
 COPY ~skills-and-abilities/spl/MO#HLA04.SPL~       ~override~ // Magid Damage Resistance
   SAY NAME1 @8007
   SAY UNIDENTIFIED_DESC @8008
+
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs                                                              //
 ///////////////////////////////////////////////////////////////////////////

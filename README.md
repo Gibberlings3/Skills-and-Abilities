@@ -18,35 +18,71 @@ Some components require EEex to work, and those are identified with **(EEex Requ
 
 ## Class Updates
 
-### Bards (EEex Required)
+### Bard Skills (EEex Required)
 
 Adds the option to either select Open Locks only or Open Locks and Disarm/Find Traps for Bards and Bard kits.
 
-### Monks (EEex Required)
+### Monk Skills (EEex Required)
 
 Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk kits. 
 
-**coming soon** more updates to the Monk class and kits.
+### Add New Monk Abilities
 
-### **Coming Soon** 1e Barbarians (EEex Required)
+- 1st Level: Gains use of the Flurry of Blows passive ability.
+
+FLURRY OF BLOWS: Monks double their attacks per round allowing for them to exceed the 5 attacks per round limit.
+
+New HLA Ability: Perfect Self.
+
+PERFECT SELF: The monk is no longer constrained by the trappings of time and becomes immune to Time Stop.
+
+### **Coming Soon** 1e Barbarian Skills (EEex Required)
 
 Adds Detect Illusions, set natural snares (outdoor areas only) and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit. 
 
 Option to remove barbarian rage (as 1e barbarian did not have rage).
 
-### Rangers
+### Add New Paladin Abilities
+
+- 1st Level: May use the Smite ability once per day.
+
+SMITE: This ability allows the paladin to make a special attack against any enemy. Paladins apply their Charisma modifier to their attack roll and damage roll for one round. Smite may be used once per day at 1st level. At 5th level and every five levels after that, the paladin gains an additional use per day.
+
+- 3rd Level: Gains the Aura of Courage passive ability. This will be Aura of Despair for Blackguards.
+
+AURA OF COURAGE: This ability grants protection against all forms of panic, boosts morale, and grants +2 bonus to all saving throws for the character and all allies within 15 feet.
+
+AURA OF DESPAIR: The blackguard radiates a malign aura that causes all enemies within 15 feet of him/her to suffer a -2 penalty on all saving throws.
+
+New HLA Ability: Sanctify Strikes.
+
+SANCTIFY STRIKES: You deal 2 extra points of magic damage with your attacks. 
+
+### Ranger Skills
 
 Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers and Ranger kits. Ranger's Move Silently/Hide in Shadows becomes an outdoor area only ability.
 
-### Wizard Slayer (EEex Required)
+### Wizard Slayer Detect Illusion (EEex Required)
 
 Adds Detect Illusions (Set at 100) to the Wizard Slayer.
 
-### Inquisitor (EEex Required)
+### Inquisitor Detect Illusion (EEex Required)
 
 Replaces the Inquisitor's True Seeing with the Detect Illusion Skill (Set at 100).
 
-**coming soon** more updates to the Paladin class and kits.
+### Allow Inquisitors to Cast Divine Spells
+
+As stated, Inquisitors will now gain spellcasting similar to other Paladins.
+
+### Add New HLAs for ALL Classes and Kits
+
+**RESILIENCE:** The character gains 2% damage reduction to all physical attacks. This ability may be taken multiple times, up to a maximum of 10% damage reduction to all physical attacks.
+
+**ELEMENTAL RESISTANCE:** The character gains 5% resistance to all elemental damage. This ability may be taken multiple times, up to a maximum of 25% resistance to elemental damage.
+
+**MAGIC DAMAGE RESISTANCE:** The character gains 5% resistance to magic damage. This ability may be taken multiple times, up to a maximum of 25% resistance to magic damage.
+
+**EPIC TOUGHNESS:** The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of 200 hit points.
 
 ## Proficiencies
 
@@ -68,12 +104,12 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
 
-**ARMOR:**  This proficiency grants the knowledge to make effective use of all armors. A character wearing armor without a slot in this proficiency would incur a -1 penalty to speed factor. All abilities are cumulative.
-- Proficient (1 slot): The character receives no penalties while wearing armor.
-- Specialized (2 slots): The character receives a -1 bonus to AC vs. missile attacks.
-- Master (3 slots): The character's receives a -1 bonus to AC.
-- High Master (4 slots): The character bonus to AC increases to -2.
-- Grand Master (5 slots): The character receives a 10% damage reduction to all physical attacks.
+**HEAVY ARMOR:**  This proficiency grants the knowledge to make effective use of Plate Mail and Full Plate armors. A character wearing heavy armor without a slot in this proficiency would incur a 10% loss in movement speed, -1 penalty to speed factor, and a -1 penalty to Thac0. All abilities are cumulative. 
+- Heavy Armor Proficiency (1 slot): The character receives no penalties while wearing heavy armor.
+- Heavy Armor Specialization (2 slots): The character receives a -1 bonus to AC vs. missile attacks while wearing heavy armor.
+- Heavy Armor Optimization (3 slots): The character receives a -1 bonus to AC while wearing heavy armor.
+- Greater Heavy Armor Optimization (4 slots): The character's bonus to AC increases to -2 while wearing heavy armor.
+- Epic Heavy Armor Optimization (5 slots): The character receives a 10% damage reduction to all physical attacks while wearing heavy armor.
 
 **SPELLCRAFT:**  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
 - Silent Spell (1 slot): The character gains permanent Vocalize.
@@ -95,7 +131,9 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 
 **SMALL SWORD:**  This weapon class allows the character to use Daggers and Short swords. A Mage or Druid can select this class, but they are restricted to Daggers only.
 
-**LARGE SWORD:**  This weapon class allows the character to use Bastard swords, Two handed swords, Long Swords, Katanas, Ninjatos, Wakizashis, and Scimitars.  The Thief is able to take this weapon class, but he is only allowed to use the Long Sword. The Druid is able to select this class, but is limited to Scimitars alone.
+**LARGE SWORD:**  This weapon class allows the character to use Bastard swords, Two handed swords, and Long Swords.  The Thief is able to take this weapon class, but he is only allowed to use the Long Sword. 
+
+**EXOTIC SWORD:**  This weapon class allows the character to use Katanas, Ninjatos, Wakizashis, and Scimitars. The Druid is able to select this class, but is limited to Scimitars alone.
 
 **AXE:**  This weapon class allows the character to use Battle axes and Throwing axes.
 
@@ -131,6 +169,6 @@ Being this requires EEex to run, Windows is required at this time.
 
 ## Special Thanks
 
-- Bubb for all of his work on EEex.
+- Bubb for all of his work on EEex and general coding assistance.
 - aVENGER for use of a function to update clab files.
 - CamDawg_G3 and the_bigg for using their code as reference when consolidating weapon proficiencies into weapon groups. 
