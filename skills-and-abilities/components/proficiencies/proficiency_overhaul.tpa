@@ -1389,12 +1389,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
           // Katana
           END ELSE PATCH_IF (prof = 94) BEGIN
               INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                REPLACE_TEXTUALLY ~Proficiency Type: Katana~ ~Proficiency Type: Large Sword~
+                REPLACE_TEXTUALLY ~Proficiency Type: Katana~ ~Proficiency Type: Exotic Sword~
               END
           // Scimitar/Wakizashi/Ninjatō
           END ELSE PATCH_IF (prof = 95) BEGIN
               INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                REPLACE_TEXTUALLY ~Proficiency Type: Scimitar/Wakizashi/Ninjatō~ ~Proficiency Type: Large Sword~
+                REPLACE_TEXTUALLY ~Proficiency Type: Scimitar/Wakizashi/Ninjatō~ ~Proficiency Type: Exotic Sword~
               END
           // Dagger    
           END ELSE PATCH_IF (prof = 96) BEGIN
