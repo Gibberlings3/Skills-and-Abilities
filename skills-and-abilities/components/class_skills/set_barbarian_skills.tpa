@@ -94,11 +94,19 @@ END
 ///////////////////                     Feral Senses                    ///////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 //remove detect illusions button
+//Remove skill for detect illusions
+
 ACTION_IF (%barb_rage% < 2) BEGIN  //
   COPY_EXISTING ~m_b3thi5.lua~ ~override~
       REPLACE_TEXTUALLY ~EEex_Actionbar_SetButton(4, EEex_Actionbar_ButtonType.FIND_TRAPS)~ ~-- EEex_Actionbar_SetButton(4, EEex_Actionbar_ButtonType.FIND_TRAPS)~
+  COPY_EXISTING ~MO#BSK04.SPL~ ~override~
+      LPF DELETE_EFFECT INT_VAR match_opcode = 276 END  //remove opcode 276 (inc detect illusions) from lev 1 spl
+  COPY_EXISTING ~B_BRBADV.SPL~ ~override~
+      LPF DELETE_EFFECT INT_VAR match_opcode = 276 END  //remove opcode 276 (inc detect illusions) from lev 1 spl
 END
 //add detect illusions spl to barb rage
+//TO DO
+
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
