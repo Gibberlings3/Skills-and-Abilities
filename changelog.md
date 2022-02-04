@@ -1,3 +1,11 @@
+## Version 0.2.2 alpha
+
+Feb xx, 2022
+
+### Changed
+
+- Updated how tra files are managed.
+
 ## Version 0.2.1 alpha
 
 Feb 3, 2022
