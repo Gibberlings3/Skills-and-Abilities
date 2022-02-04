@@ -15,6 +15,7 @@ ALWAYS
 	INCLUDE ~skills-and-abilities/lib/always.tph~
 END
 
+AUTO_TRA ~skills-and-abilities/languages/%s~
 LANGUAGE ~English~
          ~english~
          ~skills-and-abilities/languages/english/setup.tra~
