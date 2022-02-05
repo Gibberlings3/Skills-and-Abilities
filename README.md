@@ -50,7 +50,7 @@ Add Feral Senses (detect illusions as a spell like ability as a part of Barbaria
 
 Add Feral Senses (detect illusions thief ability as a part of Barbarian Rage)
 
-Remove Rage (the 1e barbarian does not have rage)
+Options to Remove Rage (the 1e barbarian does not have rage)
 
 ### Add New Paladin Abilities
 
