@@ -40,6 +40,10 @@ PERFECT SELF: The monk is no longer constrained by the trappings of time and bec
 
 Add Set Natural Snares, allowing snares to be set in outdoor areas only.  
 
+- 1st Level: Gains use of the Set Natural Snares ability. Gains an additional use every 5 levels. 
+
+SET NATURAL SNARES: DESC
+
 Hide in natural enviornments, allowing the barbarian to hide outdoors only (EEex required).
 
 Add Detect Illusions (three subcomponents):
@@ -48,7 +52,11 @@ Add Detect Illusions as a thief (EEex required)
 
 Add Feral Senses (detect illusions as a spell like ability as a part of Barbarian Rage)
 
+BARBARIAN RAGE: DESC
+
 Add Feral Senses (detect illusions thief ability as a part of Barbarian Rage)
+
+BARBARIAN RAGE: DESC
 
 Options to Remove Rage (the 1e barbarian does not have rage)
 
