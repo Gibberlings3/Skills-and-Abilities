@@ -36,13 +36,21 @@ FLURRY OF BLOWS: Monks double their attacks per round allowing for them to excee
 
 PERFECT SELF: The monk is no longer constrained by the trappings of time and becomes immune to Time Stop.
 
-### **Coming Soon** 1e Barbarian Skills (EEex Required)
+### **Coming Soon** 1e Barbarian Skills (EEex Recommended)
 
-Adds Detect Illusions, set natural snares (outdoor areas only) and Move Silently/Hide in Shadows (outdoor areas only) to the Barbarian kit. 
+Add Set Natural Snares, allowing snares to be set in outdoor areas only.  
 
-Option to remove barbarian rage (as 1e barbarian did not have rage).
+Hide in natural enviornments, allowing the barbarian to hide outdoors only (EEex required).
 
-Option to incorporate detect illusions into barbarian rage (as feral senses).
+Add Detect Illusions (three subcomponents):
+
+Add Detect Illusions as a thief (EEex required)
+
+Add Feral Senses (detect illusions as a spell like ability as a part of Barbarian Rage)
+
+Add Feral Senses (detect illusions thief ability as a part of Barbarian Rage)
+
+Remove Rage (the 1e barbarian does not have rage)
 
 ### Add New Paladin Abilities
 
