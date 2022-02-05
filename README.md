@@ -44,7 +44,7 @@ Add Set Natural Snares, allowing snares to be set in outdoor areas only.
 
 SET NATURAL SNARES: DESC
 
-Hide in natural enviornments, allowing the barbarian to hide outdoors only (EEex required).
+Hide in Natural Settings, allowing the barbarian to hide outdoors only (EEex required).
 
 Add Detect Illusions (three subcomponents):
 
