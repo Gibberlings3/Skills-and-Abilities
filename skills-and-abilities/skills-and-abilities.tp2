@@ -85,8 +85,35 @@ INCLUDE ~skills-and-abilities/components/class_skills/monk_updates.tpa~
 // use REPLACE_TEXTUALLY to update set trap and track descriptions (check mods--Trap Revisions, what else?)
 // Tracking tras for areas in BG/IWD???
 
-//keep rage
+////////////////////////////////////////////////////
+//Add Set Natural Snares
 BEGIN @31 DESIGNATED 31 SUBCOMPONENT @30 GROUP @1 LABEL SkillsAndAbilitiesBarb1
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+OUTER_SET barb_trap=1 // set natural snares
+
+INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+
+////////////////////////////////////////////////////
+//Add Hide in Natural Settings (EEex required)
+BEGIN @32 DESIGNATED 32 SUBCOMPONENT @30 GROUP @1 LABEL SkillsAndAbilitiesBarb2
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+OUTER_SET barb_trap=1 // set natural snares
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+OUTER_SET barb_hide=1 // barb hide
+
+INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+
+////////////////////////////////////////////////////
+//Add Detect Illusions as a thief (EEex required)
+
+////////////////////////////////////////////////////
+//Add Feral Senses (detect illusions as a spell like ability)
+
+////////////////////////////////////////////////////
+//Add Feral Senses (detect illusions as a thief-like ability)
+
+//keep rage
+BEGIN @31 DESIGNATED 31 SUBCOMPONENT @30 GROUP @1 LABEL SkillsAndAbilitiesBarb2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
