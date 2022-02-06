@@ -5,6 +5,8 @@ Feb xx, 2022
 ### Changed
 
 - Updated how tra files are managed.
+- Critical Striker Proficiency was missing from all kits. This has been corrected.
+
 
 ## Version 0.2.1 alpha
 
