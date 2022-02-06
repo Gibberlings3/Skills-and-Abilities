@@ -17,10 +17,13 @@
 @11 = ~Add Lockpicking~ 					
 @12 = ~Add Lockpicking and Find/Disarm Traps~	
 @20 = ~Update Skills for Monks~					
-@30 = ~1e Barbarians~
+@30 = ~1e Barbarians: Detect Illusions~
 @31 = ~Add Set Natural Snares~
-@32 = ~Remove Rage~			
-@33 = ~Feral Senses~
+@32 = ~Add Hide in Natural Settings (EEex required)~			
+@33 = ~Add Detect Illusions as a thief (EEex required)~
+@34 = ~Add Feral Senses (detect illusions as a spell like ability during rage)~
+@35 = ~Add Feral Senses (detect illusions as a thief-like ability during rage)~
+@36 = ~Remove Rage~
 @40 = ~Update Skills for Rangers~
 @50 = ~Add Detect Illusion for Wizard Slayer~
 @60 = ~Replace Inquisitor True Seeing for Detect Illusion Skill~
@@ -48,5 +51,6 @@
 @3002 = ~EEex is required for installation~
 @3003 = ~Barbarian Rage is required for Feral Senses~
 @3004 = ~Component requires BG: EE, BGII: EE, IWDEE, or EET~
+@3005 = ~Barbarian Rage has been removed~
 
 @3500 = ~[LAST TRA HERE]~
