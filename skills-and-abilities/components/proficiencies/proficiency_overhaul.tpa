@@ -286,8 +286,8 @@ ACTION_FOR_EACH spell IN
     END
 
 // Archery Weapon Style
-APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%99%TAB%1%TAB%2~
-APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%99%TAB%2%TAB%2~
+APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%107%TAB%1%TAB%2~
+APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 
 // Critical Stiker Weapon Style
 APPEND ~splprot.2da~ ~mo_crit_prof1%TAB%106%TAB%1%TAB%5~
