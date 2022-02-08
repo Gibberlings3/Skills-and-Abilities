@@ -40,7 +40,11 @@ PERFECT SELF: The monk is no longer constrained by the trappings of time and bec
 
 Select 1e Barbarian for the 1e barbarian 'package' or select each skill separately.
 
-1e Barbarian 'package'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Removes Rage
+1e Barbarian 'package' (two subcomponents)
+
+1e Barbarian 'package 1'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Removes Rage
+
+1e Barbarian 'package 2'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Keeps Rage
 
 Individual Barbarian Skills:
 
@@ -50,21 +54,27 @@ Add Set Natural Snares, allowing snares to be set in outdoor areas only.
 
 SET NATURAL SNARES: DESC
 
-Hide in Natural Settings, allowing the barbarian to hide outdoors only (EEex required).
+Hide in Natural Settings, allowing the barbarian to hide outdoors only (EEex Strongly Recommended).
 
-Add Detect Illusions (three subcomponents):
+Add Detect Illusions (five subcomponents):
 
-Add Detect Illusions as a thief (EEex required)
+Add Detect Illusions as a thief (EEex Strongly Recommended)
 
-Add Feral Senses (detect illusions as a spell like ability as a part of Barbarian Rage)
-
-BARBARIAN RAGE: DESC
-
-Add Feral Senses (detect illusions thief ability as a part of Barbarian Rage)
+Feral Senses: Detect Illusion spell-like ability while raging 
 
 BARBARIAN RAGE: DESC
 
-Options to Remove Rage (the 1e barbarian does not have rage)
+Feral Senses: Detect Illusion thief-like ability while raging 
+
+BARBARIAN RAGE: DESC
+
+Add Detect Illusions as a thief and feral senses as a spell like ability (EEex Strongly Recommended)
+
+BARBARIAN RAGE: DESC
+
+Add Detect Illusions as a thief and feral senses as a thief like ability, but with +20% bonus when raging.
+
+Remove Rage 
 
 ### Add New Paladin Abilities
 
