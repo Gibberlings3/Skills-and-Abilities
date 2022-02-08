@@ -42,9 +42,9 @@ Select 1e Barbarian for the 1e barbarian 'package' or select each skill separate
 
 1e Barbarian 'package' (two subcomponents)
 
-1e Barbarian 'package 1'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Removes Rage
+1e Barbarian 'package 1'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Removes Rage (1e barbarian did not have rage)
 
-1e Barbarian 'package 2'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Keeps Rage
+1e Barbarian 'package 2'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Keeps Rage 
 
 Individual Barbarian Skills:
 
