@@ -56,11 +56,11 @@ SET NATURAL SNARES: DESC
 
 Hide in Natural Settings, allowing the barbarian to hide outdoors only (EEex Strongly Recommended).
 
-Add Detect Illusions (five subcomponents):
-
 Add Detect Illusions as a thief (EEex Strongly Recommended)
 
-Feral Senses: Detect Illusion spell-like ability while raging 
+### **Coming Soon** Barbarian Abilities 
+
+Feral Senses: Detect Illusion spell-like ability or as a thief-like ability while raging
 
 BARBARIAN RAGE: DESC
 
@@ -68,13 +68,11 @@ Feral Senses: Detect Illusion thief-like ability while raging
 
 BARBARIAN RAGE: DESC
 
-Add Detect Illusions as a thief and feral senses as a spell like ability (EEex Strongly Recommended)
+Feral Senses: Detect Illusion as an improved thief-like ability while raging 
 
 BARBARIAN RAGE: DESC
 
-Add Detect Illusions as a thief and feral senses as a thief like ability, but with +20% bonus when raging.
-
-Remove Rage 
+Remove Rage: Removes rage from the barbarian
 
 ### Add New Paladin Abilities
 
