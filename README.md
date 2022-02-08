@@ -36,7 +36,13 @@ FLURRY OF BLOWS: Monks double their attacks per round allowing for them to excee
 
 PERFECT SELF: The monk is no longer constrained by the trappings of time and becomes immune to Time Stop.
 
-### **Coming Soon** 1e Barbarian Skills (EEex Recommended)
+### **Coming Soon** Barbarian Skills (EEex Recommended)
+
+Select 1e Barbarian for the 1e barbarian 'package' or select each skill separately.
+
+1e Barbarian 'package'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Removes Rage
+
+Individual Barbarian Skills:
 
 Add Set Natural Snares, allowing snares to be set in outdoor areas only.  
 
