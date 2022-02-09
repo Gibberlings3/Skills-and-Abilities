@@ -36,7 +36,17 @@ FLURRY OF BLOWS: Monks double their attacks per round allowing for them to excee
 
 PERFECT SELF: The monk is no longer constrained by the trappings of time and becomes immune to Time Stop.
 
-### **Coming Soon** 1e Barbarian Skills (EEex Recommended)
+### **Coming Soon** Barbarian Skills (EEex Recommended)
+
+Select 1e Barbarian for the 1e barbarian 'package' or select each skill separately.
+
+1e Barbarian 'package' (two subcomponents)
+
+1e Barbarian 'package 1'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Removes Rage (1e barbarian did not have rage)
+
+1e Barbarian 'package 2'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Keeps Rage 
+
+Individual Barbarian Skills:
 
 Add Set Natural Snares, allowing snares to be set in outdoor areas only.  
 
@@ -44,21 +54,25 @@ Add Set Natural Snares, allowing snares to be set in outdoor areas only.
 
 SET NATURAL SNARES: DESC
 
-Hide in Natural Settings, allowing the barbarian to hide outdoors only (EEex required).
+Hide in Natural Settings, allowing the barbarian to hide outdoors only (EEex Strongly Recommended).
 
-Add Detect Illusions (three subcomponents):
+Add Detect Illusions as a thief (EEex Strongly Recommended)
 
-Add Detect Illusions as a thief (EEex required)
+### **Coming Soon** Barbarian Abilities 
 
-Add Feral Senses (detect illusions as a spell like ability as a part of Barbarian Rage)
-
-BARBARIAN RAGE: DESC
-
-Add Feral Senses (detect illusions thief ability as a part of Barbarian Rage)
+Feral Senses: Detect Illusion spell-like ability or as a thief-like ability while raging
 
 BARBARIAN RAGE: DESC
 
-Options to Remove Rage (the 1e barbarian does not have rage)
+Feral Senses: Detect Illusion thief-like ability while raging 
+
+BARBARIAN RAGE: DESC
+
+Feral Senses: Detect Illusion as an improved thief-like ability while raging 
+
+BARBARIAN RAGE: DESC
+
+Remove Rage: Removes rage from the barbarian
 
 ### Add New Paladin Abilities
 
