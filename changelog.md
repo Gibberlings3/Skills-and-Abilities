@@ -7,6 +7,7 @@ Feb xx, 2022
 - Updated how tra files are managed.
 - Critical Striker Proficiency was missing from all kits. This has been corrected.
 - Corrected bug from Archery Weapon Style.
+- Nerfed Epic Toughness HLA to grant a max of +100HP (5 ability points max) instead of +200HP (10 ability points max).
 
 
 ## Version 0.2.1 alpha

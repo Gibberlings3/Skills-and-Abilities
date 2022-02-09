@@ -49,7 +49,7 @@ ACTION_FOR_EACH class IN
       20 // MONK
       21 // SHAMAN
     BEGIN
-      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 10 STR_VAR ability = AP_MO#HLA01 END  
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA01 END  
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA02 END
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA03 END
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA04 END     
