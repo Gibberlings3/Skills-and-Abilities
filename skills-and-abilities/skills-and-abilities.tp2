@@ -105,7 +105,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires B
 //exclude 30 and 31 above
 OUTER_SET barb_trap=1 // set natural snares
 
-//INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/barb_trap.tpa~
 
 ////////////////////////////////////////////////////
 //Add Hide in Natural Settings (EEex Strongly Recommended)
@@ -116,7 +116,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires B
 
 OUTER_SET barb_hide=1 // barb hide
 
-//INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/barb_hide.tpa~
 
 ////////////////////////////////////////////////////
 //Add Detect Illusions as a thief (EEex Strongly Recommended)
@@ -126,7 +126,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires B
 
 OUTER_SET barb_detect=1 // barb detect
 
-//INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
 
 ////////////
 
@@ -140,9 +140,9 @@ BEGIN @35 DESIGNATED 35 SUBCOMPONENT @3402 GROUP @1 LABEL SkillsAndAbilitiesBarb
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-//OUTER_SET barb_detect=1 // barb detect
+OUTER_SET barb_detect=2 // barb detect
 
-//INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
 
 ////////////
 
@@ -152,9 +152,9 @@ BEGIN @36 DESIGNATED 36 SUBCOMPONENT @3402 GROUP @1 LABEL SkillsAndAbilitiesBarb
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-//OUTER_SET barb_detect=1 // barb detect
+OUTER_SET barb_detect=3 // barb detect
 
-//INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
 
 ////////////
 
@@ -164,9 +164,9 @@ BEGIN @37 DESIGNATED 37 SUBCOMPONENT @3402 GROUP @1 LABEL SkillsAndAbilitiesBarb
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-//OUTER_SET barb_detect=1 // barb detect
+OUTER_SET barb_detect=4 // barb detect
 
-//INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
 
 ////////////
 
@@ -178,8 +178,8 @@ REQUIRE_PREDICATE !(%remove_rage% = 2)                        @3003 // Barbarian
 //add req not feral senses spl in game in case var gets reset @3003 // Barbarian Rage is required for Feral Senses~
 
 OUTER_SET remove_rage=1 // Remove rage
-
-//INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+OUTER_SET remove_rage_only=1 // Remove rage only
+INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 
 */
 
