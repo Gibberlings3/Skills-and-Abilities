@@ -6,6 +6,7 @@ Feb xx, 2022
 
 - Updated how tra files are managed.
 - Critical Striker Proficiency was missing from all kits. This has been corrected.
+- Corrected bug from Archery Weapon Style.
 
 
 ## Version 0.2.1 alpha
