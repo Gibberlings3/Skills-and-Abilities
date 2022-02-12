@@ -114,7 +114,7 @@ As stated, Inquisitors will now gain spellcasting similar to other Paladins.
 
 **MAGIC DAMAGE RESISTANCE:** The character gains 5% resistance to magic damage. This ability may be taken multiple times, up to a maximum of 25% resistance to magic damage.
 
-**EPIC TOUGHNESS:** The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of 200 hit points.
+**EPIC TOUGHNESS:** The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.
 
 ## Proficiencies
 
