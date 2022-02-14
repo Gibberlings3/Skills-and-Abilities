@@ -176,9 +176,9 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 **SPEAR:**  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
 
 **CRITICAL STRIKER:**  This weapon style makes the character's critical hits more damaging.
-- Improved Critical (1 slot): The character deals an additional +1d6 slashing damage on critical hit with any weapon.
-- Power Critical (2 slots): The character deals an additional +2d6 slashing damage on critical hit with any weapon.
-- Overwhelming Critical (3 slots): The character deals an additional +3d6 slashing damage on critical hit with any weapon.
+- Improved Critical (1 slot): The character deals an additional +1d6 damage on critical hit with any weapon.
+- Power Critical (2 slots): The character deals an additional +2d6 damage on critical hit with any weapon.
+- Overwhelming Critical (3 slots): The character deals an additional +3d6 damage on critical hit with any weapon.
 
 **ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
