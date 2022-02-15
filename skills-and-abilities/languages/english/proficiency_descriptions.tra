@@ -161,7 +161,7 @@ Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus t
 
 Quicken Spell (4 slots): The character decreases spellcasting time by 2.
 
-Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.~
+Spellcasting Prodigy (5 slots): Reduces the delay between casting spells.~
 
 @7120 = ~Devotion~
 @7121 = ~DEVOTION:  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
@@ -174,7 +174,7 @@ Divine Channeling (3 slots): The character decreases spellcasting time by 1.
 
 Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
 
-Pneuma (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Divine spells will be restored.~
+Pneuma (5 slots): Reduces the delay between casting spells.~
 
 @7122 = ~Conditioning~
 @7123 = ~CONDITIONING:  This proficiency epitomizes pushing ones body harder, faster, and further. All abilities are cumulative.
