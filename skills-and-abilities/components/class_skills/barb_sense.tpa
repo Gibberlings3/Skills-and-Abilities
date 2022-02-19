@@ -1,0 +1,121 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Sets Barbarian Skills                                                 //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Add Required Files to Override                                        //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/lua/M_B3THI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+END
+
+COPY ~skills-and-abilities/lua/M_B3THI5.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override~ // Assigns 5-5-5-5 skill points to Barbarian and 100% track
+COPY ~skills-and-abilities/spl/barbarian/B_BRBADV.spl~   ~override~ // Grants +4%/level
+
+APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
+
+///////////////////////////////////////////////////////////////////////////
+// Modify Base Barb CLAB File to Assign Thief Skills Points              //
+///////////////////////////////////////////////////////////////////////////
+// This gives Barbarian the Thief snare at the same frequency Thieves get them.
+COPY_EXISTING ~CLABFI05.2DA~ override
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_MO#BSK04 END //1 time bonus of 5% ea skill and 100% track
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_B_BRBVNC END //+4%/level
+//  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_ END //outdoors only hide TO DO
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_B_NTP01 END   //set natrual snare
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 6 STR_VAR f_Entry = GA_SPCL922 END   //tracking
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Set Max Skills Points in THIEFSCL.2da for the Barbarian               //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~THIEFSCL.2DA~ ~override~
+  SET_2DA_ENTRY 6 49 1 ~100~   // MOVE_SILENTLY
+  SET_2DA_ENTRY 7 49 1 ~100~   // HIDE_IN_SHADOWS
+  SET_2DA_ENTRY 8 49 1 ~100~   // DETECT_ILLUSION
+  SET_2DA_ENTRY 9 49 1 ~100~   // SET_TRAPS
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+//                    Make skill points assignable                       //
+///////////////////////////////////////////////////////////////////////////
+//not yet
+//APPEND ~thiefskl.2da~ ~BARBARIAN%TAB%30%TAB%15~
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                    Set Snares Skill                 ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP01.spl~ THEN BEGIN
+ COPY_EXISTING ~SPCL412.spl~ ~override/B_NTP01.spl~   //thief trap to set nat snares
+  LPF CLONE_EFFECT INT_VAR match_opcode = 252 opcode = 318 timing = 0 duration = 1 parameter1 = 8 parameter2 = %not_ar% STR_VAR resource = ~B_NTP01~ END  //Protection complete below
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 326 STR_VAR resource = ~B_NTP02~ END  //For notifications
+        SAY NAME1 @4501              //barbarian reference (no need to duplicate)
+        SAY NAME2 @4501              //barbarian reference (no need to duplicate)
+        SAY UNIDENTIFIED_DESC @4502  //barbarian reference (no need to duplicate)
+	SAY DESC @4502               //barbarian reference (no need to duplicate)
+END
+ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP02.spl~ THEN BEGIN
+ COPY ~%folder%/spl/barbarian/B_NTP02.spl~ ~override~   //Set Natural Snares only works in natural environments
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4505) STR_VAR END        //barbarian reference (no need to duplicate)
+END
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                      Tracking                       ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+ACTION_IF !FILE_EXISTS_IN_GAME ~SPCL922.spl~ THEN BEGIN
+ COPY ~%folder%/data/spl/barbarian/SPCL922.spl~ ~override~   //tracking
+        SAY NAME1 @4501              //barbarian reference (no need to duplicate)
+        SAY NAME2 @4501              //barbarian reference (no need to duplicate)
+        SAY UNIDENTIFIED_DESC @4502  //barbarian reference (update by class)
+	SAY DESC @4502               //barbarian reference (update by class)
+END
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////              Hide in Natural Surroundings           ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+//TO DO - Just assign AP_ that checks for environment and disables sneak in non-outdoors just use same ref as set natural snares
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                        Rage                         ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF (%barb_rage% < 1) BEGIN  //
+  COPY_EXISTING ~CLABFI05.2DA~ ~override~
+      REPLACE_TEXTUALLY ~GA_SPCL152~ ~****      ~
+END
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                     Feral Senses                    ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+ACTION_IF (%barb_rage% < 2) BEGIN  //
+//remove detect illusions button
+  COPY_EXISTING ~m_b3thi5.lua~ ~override~
+      REPLACE_TEXTUALLY ~EEex_Actionbar_SetButton(4, EEex_Actionbar_ButtonType.FIND_TRAPS)~ ~-- EEex_Actionbar_SetButton(4, EEex_Actionbar_ButtonType.FIND_TRAPS)~
+//Remove skill for detect illusions
+  COPY_EXISTING ~MO#BSK04.SPL~ ~override~
+      LPF DELETE_EFFECT INT_VAR match_opcode = 276 END  //remove opcode 276 (inc detect illusions) from lev 1 spl
+  COPY_EXISTING ~B_BRBADV.SPL~ ~override~
+      LPF DELETE_EFFECT INT_VAR match_opcode = 276 END  //remove opcode 276 (inc detect illusions) from lev 1 spl
+//add detect illusions spl to barb rage
+  COPY_EXISTING ~spcl152.SPL~ ~override~
+//TO DO
+END
+//TO DO
+//Modify Barb Rage description
+//add detect illusions spl to barb rage
+//TEST INSTALL AND Functionality (also of set snares in nat settings)
+
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Updates descriptions for Barbarians                                              //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+//TO DO
+
