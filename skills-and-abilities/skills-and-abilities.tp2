@@ -7,7 +7,7 @@
 BACKUP ~skills-and-abilities/backup~
 AUTHOR ~Grammarsalad and morpheus562~
 
-VERSION ~v0.2.2-alpha~
+VERSION ~v0.3-alpha~
 README ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 
@@ -28,6 +28,7 @@ LANGUAGE ~English~
          ~skills-and-abilities/languages/english/strength.tra~
          ~skills-and-abilities/languages/english/wizard_slayer.tra~
          ~skills-and-abilities/languages/english/hla_descriptions.tra~
+         ~skills-and-abilities/languages/english/cleric_mage_thief.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -228,6 +229,14 @@ BEGIN @100 DESIGNATED 100 GROUP @1 LABEL SkillsAndAbilitiesInquisitor1
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/inquisitor_updates.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Add Cleric/Mage/Thief Class                                           //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @110 DESIGNATED 110 GROUP @1 LABEL SkillsAndAbilitiesClericMageThief
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+
+INCLUDE ~skills-and-abilities/components/class_skills/cleric_mage_thief.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //

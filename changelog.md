@@ -1,3 +1,12 @@
+## Version 0.3 alpha
+
+March xx, 2022
+
+### Changed
+
+- Added Cleric/Mage/Thief multiclass.
+- Updated 5 pip bonuses for Devotion and Spellcraft.
+
 ## Version 0.2.2 alpha
 
 Feb 12, 2022
