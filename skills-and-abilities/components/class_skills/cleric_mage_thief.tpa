@@ -23,36 +23,35 @@ COPY ~skills-and-abilities/lua/M_B3THI8.lua~   ~override~ // Lua file read by EE
     ~MO_ClericMageThief 0 0 0 0 0 0~ //abdcscrq
     ~MO_ClericMageThief 1 1 1 1 1 1 1 1 1~ // Alignment
     ~MO_ClericMageThief 0 0 0 0 0 0~ // Dualclass
-    ~houserules/2da/CLABCMT0.2DA~ // CLAB
+    ~houserules/2da/moblank.2DA~ // CLAB
     ~K_FMC_HE~ 
     ~0x00004000 17~
-    ~MO0~ 
+    ~MOCMT0~  // Need to create custom LU file for CMT 
     ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-    SAY @1000
-    SAY @1001
-    SAY @1002
+    SAY @9001
+    SAY @9002
+    SAY @9003
 
-  LAF fl#add_kit_ee
-    INT_VAR
-      briefdesc = RESOLVE_STR_REF (@1002) 
+  LAF fl#add_kit_ee 
     STR_VAR 
       kit_name = MO_ClericMageThief
-      clswpbon = ~1 0 3~
-      hpclass = HPPRS
-      numwslot = 2
+      hpclass = HPFMT 
   END
 
-  COPY ~houserules/spl/MO#APB01.SPL~    ~override~ // 0.5 APR Increase at level 8
-  COPY ~houserules/spl/MO#APB02.SPL~    ~override~ // 0.5 APR Increase at level 15
-  COPY ~houserules/2da/CLABSOMO.2DA~    ~override~ // kit
-  COPY ~houserules/spl/MO#ELD01.SPL~    ~override~ // Create this to have -1 spell slot
-  COPY ~houserules/spl/MO#ELD02.SPL~    ~override~ // Sets two weapon fighting to 1
-  COPY ~houserules/spl/MO#ELD03.SPL~    ~override~ // Sets two weapon fighting to 2
-  COPY ~houserules/spl/MO#ELD04.SPL~    ~override~ // Sets two weapon fighting to 3
-  COPY ~houserules/spl/MO#ELD05.SPL~    ~override~ // Sets single weapon fighting to 1
-  COPY ~houserules/spl/MO#ELD06.SPL~    ~override~ // Sets single weapon fighting to 2
-  COPY ~houserules/spl/MO#ELD07.SPL~    ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20)
-  COPY ~houserules/spl/MOELD07.SPL~     ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20)
-  COPY ~houserules/eff/MO#ELD07.EFF~    ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20) 
-  COPY ~houserules/spl/MO#tsb01.SPL~    ~override~ // +1 Thaco
-  COPY ~houserules/spl/MO#tsb02.SPL~    ~override~ // -1 Thaco
+  LAF qd_multiclass
+  STR_VAR
+    kit_name = MO_ClericMageThief
+    kit_clab = CLABTH01 // This needs to change with custom one to reduce thac0 progression and apr gained from fighter levels
+    base_class = ~F~
+    mc_dir = ~%MOD_FOLDER%/2das~
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Modify LUA File                                                       //
+///////////////////////////////////////////////////////////////////////////
+// Replace kit in LUA file to point to CMT
+
+///////////////////////////////////////////////////////////////////////////
+// Modify THIEFSKL.2da to Allow Cleric/Mage/Thief to Gain Skills         //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~THIEFSKL.2da~ ~CLERIC_MAGE_THIEF 40 25~         // 40 Skill points at Level 1 then 25 skill points per level up
