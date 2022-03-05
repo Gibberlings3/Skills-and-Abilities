@@ -1,0 +1,33 @@
+// Skills and Abilities, American English
+//Monk range: @4001 to @4500
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@4001 = ~Ne peut être que compétent (1 point de compétence) dans le style de combat à une arme, et ne peut pas avoir recours aux autres styles de combat.~
+
+@4002 = ~Ne peut être que compétent (1 point de compétence) dans le style de combat à une arme, et ne peut pas avoir recours aux autres styles de combat.
+- Peut distribuer 10 points par niveau (0 point au niveau 1) aux capacités de voleur : Crochetage de serrures, Vol à la tire, Détection des pièges, Déplacement silencieux, Se cacher dans l'ombre et Détection des illusions.
+- Commence avec un score de base de 15% en Détection de pièges, 10% en Déplacement silencieux et 5% pour la capacité Se cacher dans l'ombre.~
+
+@4003 = ~Être Parfait ~
+@4004 = ~Être Parfait  
+Le moine n'est plus entravé par les pièges temporels et devient immunisé contre Arrêt du temps.~
+
+@4005 = ~SOUFFLE ÉTOURDISSANT : Toutes les attaques réussies au cours du prochain round obligeront la cible à réussir un jet de sauvegarde contre les sorts sous peine d'être étourdie. Cette capacité spéciale modifie automatiquement les attaques normales ; il n'est pas nécessaire de cibler un adversaire.~
+@4006 = ~SOUFFLE ÉTOURDISSANT : Toutes les attaques réussies au cours du prochain round obligeront la cible à réussir un jet de sauvegarde contre les sorts sous peine d'être étourdie. Cette capacité spéciale modifie automatiquement les attaques normales ; il n'est pas nécessaire de cibler un adversaire.
+
+- 1er niveau : Gagne la capacité passive Bourrasque.
+
+BOURRASQUE : Les moines doublent leurs nombres d'attaques, ce qui leur permet de dépasser la limite de 5 attaques par round.~
+
+@4007 = ~PAUME VACILLANTE : La prochaine attaque réussie obligera la cible à réussir un jet de sauvegarde contre les sorts sous peine de mort. Cette capacité spéciale modifie automatiquement les attaques normales ; il n'est pas nécessaire de cibler un adversaire.~
+@4008 = ~PAUME VACILLANTE : La prochaine attaque réussie obligera la cible à réussir un jet de sauvegarde contre les sorts sous peine de mort. Cette capacité spéciale modifie automatiquement les attaques normales ; il n'est pas nécessaire de cibler un adversaire.
+
+- 15ème niveau : Bourrasque s'améliore en Ouragan.
+
+OURAGAN : Les moines reçoivent une attaque supplémentaire par round.~
+
+@4009 = ~MOINE~
+
+
+@4500 = ~[LAST TRA HERE]~

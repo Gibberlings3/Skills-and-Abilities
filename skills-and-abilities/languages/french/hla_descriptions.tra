@@ -1,0 +1,26 @@
+// Skills and Abilities, American English
+// Proficiency range @8001 to @9000
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@8001 = ~Résilience~
+@8002 = ~Résilience
+Le personnage gagne 2% de réduction aux dégâts physiques. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 10% de réduction aux dégâts physiques.~
+
+@8003 = ~Arts du Voleur~
+@8004 = ~Arts du Voleur
+Le personnage gagne 5 points de compétence dans chaque compétence de voleur. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 25 points dans chaque compétence.~
+
+@8005 = ~Résistance Élémentaire~
+@8006 = ~Résistance Élémentaire
+Le personnage gagne 5% de résistance à tous les dégâts élémentaires. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 25% de résistance aux dégâts élémentaires.~
+
+@8007 = ~Résistance Magique~
+@8008 = ~Résistance Magique
+Le personnage gagne 5% de résistance aux dégâts magiques. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 25% de résistance aux dégâts magiques.~
+
+@8009 = ~Vitalité Épique~
+@8010 = ~Vitalité Épique
+Le personnage gagne 20 points de vie. Cet avantage peut être choisi plusieurs fois, jusqu'à un maximum de 100 points de vie~
+
+@9000 = ~[LAST TRA HERE]~

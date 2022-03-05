@@ -1,0 +1,11 @@
+// Skills and Abilities, American English
+//Ranger range @5001 to @5500
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@5001 = ~Pistage
+Grâce à leurs intime connaissance des milieux naturels et des créatures qui y vivent, les rôdeurs peuvent utiliser cette faculté pour avoir une idée générale des créatures présentes dans une zone donnée, ainsi que de leur direction. Des flèches rouges indiquent à l'écran la direction générale des créatures de la zone.~
+@4505 = ~Pose de Pièges Ancestral est utilisable dans la nature uniquement.~
+
+
+@5500 = ~[LAST TRA HERE]~

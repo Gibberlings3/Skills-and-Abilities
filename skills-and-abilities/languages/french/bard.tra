@@ -1,0 +1,11 @@
+// Skills and Abilities, American English
+//Bards: range @3501 to @4000
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@3501 = ~Vol à la tire~
+@3502 = ~Vol à la tire, Crochetage de serrures~
+@3503 = ~Vol à la tire, Détection des pièges~
+
+
+@4000 = ~[LAST TRA HERE]~

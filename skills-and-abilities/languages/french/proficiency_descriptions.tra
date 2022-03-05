@@ -1,0 +1,265 @@
+// Skills and Abilities, American English
+// Proficiency range @7001 to @8000
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@7001 = ~ARME À DEUX MAINS : Ce style de combat permet au personnage d'utiliser une arme de mêlée à deux mains et de bénéficier de bonus spéciaux.
+
+Compétent (1 point de compétence) : Le porteur de l'arme bénéficie d'un bonus de 1 aux jets de dégâts et d'un bonus de 2 au facteur de vitesse lorsqu'il utilise une arme à deux mains.
+
+Spécialisé (2 points de compétences) : Le porteur de l'arme bénéficie d'un bonus de 2 aux jets de dégâts, d'un bonus de 4 au facteur de vitesse et d'une demi-attaque supplémentaire par round lorsqu'il utilise une arme à deux mains.
+
+NOTE : Les armes magiques à deux mains sont plus puissantes que leurs équivalents à une main. Cela contrebalance le fait que vous ne pouvez pas utiliser une deuxième arme ou un bouclier lorsque vous utilisez une arme à deux mains. Carsomyr et l'Épée d'Argent sont des exemples d'armes à deux mains.~ ~ARME À DEUX MAINS : Ce style de combat permet au personnage d'utiliser une arme de mêlée à deux mains et de bénéficier de bonus spéciaux.
+
+Compétente (1 point de compétence) : La porteuse de l'arme bénéficie d'un bonus de 1 aux jets de dégâts et d'un bonus de 2 au facteur de vitesse lorsqu'elle utilise une arme à deux mains.
+
+Spécialisée (2 points de compétences) : La porteuse de l'arme bénéficie d'un bonus de 2 aux jets de dégâts, d'un bonus de 4 au facteur de vitesse et d'une demi-attaque supplémentaire par round lorsqu'elle utilise une arme à deux mains.
+
+NOTE : Les armes magiques à deux mains sont plus puissantes que leurs équivalents à une main. Cela contrebalance le fait que vous ne pouvez pas utiliser une deuxième arme ou un bouclier lorsque vous utilisez une arme à deux mains. Carsomyr et l'Épée d'Argent sont des exemples d'armes à deux mains.~
+
+@7002 = ~ÉPÉE ET BOUCLIER : N'importe qui peut prendre un bouclier et bénéficier de sa protection basiques, mais en dépensant des points de compétences dans ce style de combat, un aventurier peut optimiser sa protection.
+
+Compétent (1 point de compétence) : Le porteur du bouclier bénéficie d'un bonus de -1 à la CA.
+
+Spécialisé (2 points de compétences) : Le porteur du bouclier bénéficie d'un bonus de -2 à la CA et devient immunisé contre les Coups d'ailes des dragons.
+
+REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une main combinée à un bouclier bénéficie des bonus mentionnés.~ ~ÉPÉE ET BOUCLIER : N'importe qui peut prendre un bouclier et bénéficier de sa protection basiques, mais en dépensant des points de compétences dans ce style de combat, une aventurière peut optimiser sa protection.
+
+Compétente (1 point de compétence) : La porteuse du bouclier bénéficie d'un bonus de -1 à la CA.
+
+Spécialisée (2 points de compétences) : La porteuse du bouclier bénéficie d'un bonus de -2 à la CA et devient immunisée contre les Coups d'ailes des dragons.
+
+REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une main combinée à un bouclier bénéficie des bonus mentionnés.~
+
+@7003 = ~ARME À UNE MAIN : Ce style de combat est destiné aux personnages qui ne souhaitent pas utiliser de bouclier mais qui désirent un bonus lorsqu'ils utilisent une arme de mêlée à une main.
+
+Compétent (1 point de compétence) : Le porteur de l'arme bénéficie d'un bonus de 1 aux jets de dégâts, -1 au TAC0, -1 à la CA, et inflige des coups critiques sur un jet d'attaque de 19 ou 20.
+
+Spécialisé (2 points de compétences) : Le porteur de l'arme obtient un bonus de 2 aux jets de dégâts, -2 au TAC0, -2 à la CA, et inflige des coups critiques sur un jet d'attaque de 18 à 20.~ ~ARME À UNE MAIN : Ce style de combat est destiné aux personnages qui ne souhaitent pas utiliser de bouclier mais qui désirent un bonus lorsqu'ils utilisent une arme de mêlée à une main.
+
+Compétente (1 point de compétence) : La porteuse de l'arme bénéficie d'un bonus de 1 aux jets de dégâts, -1 au TAC0, -1 à la CA, et inflige des coups critiques sur un jet d'attaque de 19 ou 20.
+
+Spécialisée (2 points de compétences) : La porteuse de l'arme obtient un bonus de 2 aux jets de dégâts, -2 au TAC0, -2 à la CA, et inflige des coups critiques sur un jet d'attaque de 18 à 20.~
+
+@7004 = ~DEUX-ARMES : Ce style de combat permet au personnage d'utiliser deux armes de mêlée en même temps avec moins de pénalités. Un personnage maniant deux armes sans point de compétence dans ce style de combat subit un malus de -4 aux jets d'attaque avec l'arme principale, un malus de -8 à la deuxième main, et un malus de -4 aux jets de dégâts pour les deux armes. 
+
+Compétent (1 point de compétence) : Les pénalités du porteur sont réduites à -2, aux jets d'attaque et de dégâts, avec l'arme principale et à -6 au jet d'attaque et -4 au jet de dégâts avec la deuxième arme.
+
+Spécialisé (2 points de compétences) :  Les pénalités du porteur sont réduites à 0, aux jets d'attaque et -2 aux jets de dégâts, avec l'arme principale et à -4 au jet d'attaque et -2 au jet de dégâts avec la deuxième arme.
+
+Maître (3 points de compétences) : Les pénalités du porteur sont réduites à 0, aux jets d'attaque et de dégâts, avec l'arme principale et à -2 pour la deuxième arme.~ ~DEUX-ARMES: Ce style de combat permet au personnage d'utiliser deux armes de mêlée en même temps avec moins de pénalités. Un personnage maniant deux armes sans point de compétence dans ce style de combat subit un malus de -4 aux jets d'attaque avec l'arme principale, un malus de -8 à la deuxième main, et un malus de -4 aux jets de dégâts pour les deux armes. 
+
+Compétent (1 point de compétence) : Les pénalités de la porteuse sont réduites à -2, aux jets d'attaque et de dégâts, avec l'arme principale et à -6 au jet d'attaque et -4 au jet de dégâts avec la deuxième arme.
+
+Spécialisé (2 points de compétences) :  Les pénalités de la porteuse sont réduites à 0, aux jets d'attaque et -2 aux jets de dégâts, avec l'arme principale et à -4 au jet d'attaque et -2 au jet de dégâts avec la deuxième arme.
+
+Maître (3 points de compétences) : Les pénalités de la porteuse sont réduites à 0, aux jets d'attaque et de dégâts, avec l'arme principale et à -2 pour la deuxième arme.~
+
+@7100 = ~Arc~ 
+@7101 = ~ARC : Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts. 
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7102 = ~Fléau/Etoile du matin~
+@7103 = ~FLÉAU/ÉTOILE DU MATIN : Cette classe d'arme permet au personnage d'utiliser les morgensterns et les fléaux.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7104 = ~Petite épée~
+@7105 = ~PETITE ÉPÉE : Cette classe d'arme permet au personnage d'utiliser les dagues et les épées courtes. Un mage ou un druide peut aussi choisir cette compétence, mais il ne pourra utiliser que les dagues.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7106 = ~Grande épée~
+@7107 = ~GRANDE ÉPÉE : Cette classe d'arme permet au personnage d'utiliser les épées bâtardes, les épées à deux mains et les épées longues. Un voleur peut aussi choisir cette compétence, mais il ne pourra utiliser que l'épée longue. 
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7108 = ~Hache~
+@7109 = ~HACHE : Cette classe d'armes permet au personnage d'utiliser les haches d'armes et les haches de jet.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7110 = ~Armes Contondantes~
+@7111 = ~ARMES CONTONDANTES : cette classe d'armes permet au personnage d'utiliser les masses, les gourdins, les marteaux de guerre et les bâtons. Les druides et les voleurs peuvent choisir cette compétence, mais ne pourront utiliser que les gourdins et les bâtons. Quant aux mages, ils ne pouront utiliser que les bâtons.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7112 = ~Armes à Projectile~
+@7113 = ~ARMES A PROJECTILES : cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages, les druides et les voleurs peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Quant aux clercs, ils ne pourront se servir que des frondes.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7114 = ~Lance~
+@7115 = ~LANCE : cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes. Les druides peuvent sélectionner cette classe, mais ne pourront se servir que des lances.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@7116 = ~Armure Lourde~
+@7117 = ~ARMURE LOURDE : Cette compétence confère les connaissances nécessaires pour utiliser efficacement les armure de plates et les armure de plates complètes. Un personnage portant une armure lourde sans point de compétence subit une perte de 10% à sa vitesse de déplacement, une pénalité de 1 au facteur de vitesse et une pénalité de 1 au TAC0. Toutes les compétences sont cumulatives.
+
+Armure Lourde Compétence (1 point de compétence): Le personnage ne reçoit aucune pénalité lorsqu'il porte une armure lourde.
+
+Armure Lourde Spécialisation (2 points de compétence): Le personnage bénéficie d'un bonus de 1 à la CA contre les armes à projectile lorsqu'il porte une armure lourde.
+
+Armure Lourde Optimisée (3 points de compétence): Le personnage bénéficie d'un bonus de 1 à la CA lorsqu'il porte une armure lourde.
+
+Armure Lourde Optimisation Maîtrisée (4 points de compétence): Le bonus à la CA du personnage passe à 2 lorsqu'il porte une armure lourde.
+
+Armure Lourde Optimisation Épique (5 points de compétence): Le personnage bénéficie de 10% réduction aux dégâts physiques lorsqu'il porte une armure lourde.~
+
+@7118 = ~Art des Sortilèges~
+@7119 = ~ART DES SORTILÈGES : Cette compétence accorde des capacités et des avantages supplémentaires aux magiciens. Toutes les capacités sont cumulatives.
+
+Incantation silencieuse (1 point de compétence) : Le magicien gagne la capacité de Vocaliser de manière permanente.
+
+Magicien expérimenté (2 points de compétence) : Le niveau du lanceur de sorts est augmenté de 1.
+
+Immunité magique (3 points de compétence) : Le magicien gagne 10% de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
+
+Incantation accélérée (4 points de compétence) : Le magicien bénéficie d'un bonus de 2 au temps d'incantation des sorts.
+
+Incantation Prodigieuse (5 points de compétence): Réduit le délai entre les incantations.~ ~ART DES SORTILÈGES : Cette compétence accorde des capacités et des avantages supplémentaires aux magiciennes. Toutes les capacités sont cumulatives.
+
+Incantation silencieuse (1 point de compétence) : La magicienne gagne la capacité de Vocaliser de manière permanente.
+
+Magicienne expérimentée (2 points de compétence) : Le niveau de la lanceuse de sorts est augmenté de 1.
+
+Immunité magique (3 points de compétence) : La magicienne gagne 10% de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
+
+Incantation accélérée (4 points de compétence) : La magicienne bénéficie d'un bonus de 2 au temps d'incantation des sorts.
+
+Incantation Prodigieuse (5 points de compétence): Réduit le délai entre les incantations.~
+
+@7120 = ~Dévotion~
+@7121 = ~DÉVOTION : Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
+
+Piété (1 point de compétence) : Le personnage bénéficie d'un bonus de +2 aux jets de sauvegarde.
+
+Agent divin (2 points de compétence) : Le personnage devient immunisé contre l'immobilisation et la paralysie.
+
+Liens divins (3 points de compétence) : Réduit le temps d'incantations des sorts de 1.
+
+Protection divine (4 points de compétence) : Le personnage devient immunisé contre la mort magique et les coups vorpales.
+
+Esprit-Saint (5 points de compétence) : Réduit le délai entre les incantations.~
+
+@7122 = ~Conditionnement / Préparation~
+@7123 = ~CONDITIONNEMENT / PRÉPARATION : Cette compétence permet de dépasser ses limites physiques. Toutes les capacités sont cumulatives.
+
+Résistance (1 point de compétence) : Le personnage bénéficie d'un bonus de +2 aux sauvegardes contre la paralysie, le poison et la mort.
+
+Vigueur (2 points de compétence) : Le personnage est capable de se déplacer 10% plus vite.
+
+Aptitude (3 points de compétence) : Le personnage conserve ses facultés de combat et devient immunisé contre la cécité. 
+
+Inébranlable (4 points de compétence) : Le personnage ne ressent pas la fatigue même après avoir utilisé Rage ou Furie.
+
+Peau Cuirassée (5 points de compétence) : Le personnage bénéficie d'un bonus de 1 à la classe d'armure.~
+
+@7124 = ~~
+@7125 = ~~
+
+@7126 = ~~
+@7127 = ~~
+
+@7128 = ~Maîtrise des projectiles~
+@7129 = ~MAÎTRISE DES PROJECTILES : Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes, Frondes et Fléchettes.
+
+Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
+
+Élite (2 points de compétence) : Le personnage gagne 1/2 attaque supplémentaire par round lorsqu'il utilise des armes à distance.~
+
+@7130 = ~~
+@7131 = ~~
+
+@7132 = ~~
+@7133 = ~~
+
+@7134 = ~Coup Critique~
+@7135 = ~COUP CRITIQUE : Cette compétence rend les coups critiques plus puissants.
+
+Amélioration Critique (1 point de compétence) : Le personnage inflige 1d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
+
+Puissance Critique (2 points de compétence) : Le personnage inflige 2d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
+
+Démesure Critique (3 points de compétence) : Le personnage inflige 3d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.~
+
+@7136 = ~Cimeterre / Wakizashi / Ninjatō~
+@7137 = ~CIMETERRE / WAKIZASHI / NINJATŌ : Cette classe d'arme permet au personnage de se servir des diverses épées orientales : Cimeterre, Wakizashi et Ninjatō. Un druide peut aussi choisir cette compétence, mais il ne pourra utiliser que les cimeterres.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+@8000 = ~[LAST TRA HERE]~

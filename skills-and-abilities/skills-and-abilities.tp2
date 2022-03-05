@@ -29,6 +29,19 @@ LANGUAGE ~English~
          ~skills-and-abilities/languages/english/wizard_slayer.tra~
          ~skills-and-abilities/languages/english/hla_descriptions.tra~
          ~skills-and-abilities/languages/english/cleric_mage_thief.tra~
+LANGUAGE ~French~
+         ~french~
+         ~skills-and-abilities/languages/french/setup.tra~
+         ~skills-and-abilities/languages/french/barbarian.tra~
+         ~skills-and-abilities/languages/french/bard.tra~
+         ~skills-and-abilities/languages/french/paladin.tra~
+         ~skills-and-abilities/languages/french/monk.tra~
+         ~skills-and-abilities/languages/french/proficiency_descriptions.tra~
+         ~skills-and-abilities/languages/french/ranger.tra~
+         ~skills-and-abilities/languages/french/strength.tra~
+         ~skills-and-abilities/languages/french/wizard_slayer.tra~
+         ~skills-and-abilities/languages/french/hla_descriptions.tra~
+         ~skills-and-abilities/languages/french/cleric_mage_thief.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -230,6 +243,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/inquisitor_updates.tpa~
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Add Cleric/Mage/Thief Class                                           //
 ///////////////////////////////////////////////////////////////////////////
@@ -237,6 +251,7 @@ BEGIN @110 DESIGNATED 110 GROUP @1 LABEL SkillsAndAbilitiesClericMageThief
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/cleric_mage_thief.tpa~
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //
