@@ -152,14 +152,14 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Practiced Spellcaster (2 slots): Caster level is increased by 1.
 - Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
 - Quicken Spell (4 slots): The character decreases spellcasting time by 2.
-- Spellcasting Prodigy (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Arcane spells will be restored.
+- Spellcasting Prodigy (5 slots): Reduces the delay between casting spells.
 
 **DEVOTION:**  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
 - Pious (1 slot): The character gains +2 bonus to saving throws.
 - Divine Agent (2 slots): The character becomes immune to hold and paralysis.
 - Divine Channeling (3 slots): The character decreases spellcasting time by 1.
 - Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
-- Pneuma (5 slots): There is a 1% chance per round to restore one previously cast spell per spell level, levels one through four, to memory so they may be cast again. Only Divine spells will be restored.
+- Pneuma (5 slots): Reduces the delay between casting spells.
 
 **BOW:**  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. 
 
