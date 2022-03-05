@@ -108,7 +108,7 @@ As stated, Inquisitors will now gain spellcasting similar to other Paladins.
 
 ### **Coming Soon** Cleric/Mage/Thief Class (EEex Required)
 
-This adds the Cleric/Mage/Thief Class which is selected as a kit for the Fighter/Mage/Thief Class. This class will only be useable for Half-Elves.
+This adds the Cleric/Mage/Thief Class which is selected as a kit for the Fighter/Mage/Cleric Class. This class will only be useable for Half-Elves.
 
 ### Add New HLAs for ALL Classes and Kits
 
