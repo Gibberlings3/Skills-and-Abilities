@@ -1,11 +1,12 @@
-## Version 0.3 alpha
+## Version 0.4 alpha
 
-March 4, 2022
+March xx, 2022
 
 ### Changed
 
 - Corrected typo with Paladin Smite HLA.
 - Replaced 5 pip bonus for Devotion from Pneuma to Blessing of the Faithful.
+- Updated Spellcraft proficiency by removing Spellcasting Prodigy and creating new 1 pip option (Courteous Magocracy).
 
 ## Version 0.3 alpha
 
