@@ -420,42 +420,61 @@ COPY_EXISTING ~modev05.spl~ ~override~
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     // Set here if all classes are NOT getting the same amount
     SET_2DA_ENTRY 12  4 1 ~5~   // MAGE - Spellcraft Prof
+    SET_2DA_ENTRY 13  4 1 ~1~   // MAGE - Devotion Prof
     SET_2DA_ENTRY 11  5 1 ~5~   // FIGHTER - Armor Prof
+    SET_2DA_ENTRY 12  5 1 ~1~   // FIGHTER - Spellcraft Prof
+    SET_2DA_ENTRY 13  5 1 ~1~   // FIGHTER - Devotion Prof
     SET_2DA_ENTRY 11  6 1 ~2~   // CLERIC - Armor Prof
+    SET_2DA_ENTRY 12  6 1 ~1~   // CLERIC - Spellcraft Prof
     SET_2DA_ENTRY 13  6 1 ~5~   // CLERIC - Devotion Prof
-    //SET_2DA_ENTRY 11  7 1 ~2~   // THIEF - Armor Prof
-    //SET_2DA_ENTRY 11  8 1 ~2~   // BARD - Armor Prof
+    SET_2DA_ENTRY 12  7 1 ~1~   // THIEF - Spellcraft Prof
+    SET_2DA_ENTRY 13  7 1 ~1~   // THIEF - Devotion Prof
     SET_2DA_ENTRY 12  8 1 ~5~   // BARD - Spellcraft Prof
+    SET_2DA_ENTRY 13  8 1 ~1~   // BARD - Devotion Prof
     SET_2DA_ENTRY 11  9 1 ~5~   // PALADIN - Armor Prof
+    SET_2DA_ENTRY 12  9 1 ~1~   // PALADIN - Spellcraft Prof
     SET_2DA_ENTRY 13  9 1 ~2~   // PALADIN - Devotion Prof
     SET_2DA_ENTRY 11 10 1 ~2~   // DRUID - Armor Prof
+    SET_2DA_ENTRY 12 10 1 ~1~   // DRUID - Spellcraft Prof
     SET_2DA_ENTRY 13 10 1 ~5~   // DRUID - Devotion Prof
     SET_2DA_ENTRY 11 11 1 ~5~   // RANGER - Armor Prof
+    SET_2DA_ENTRY 12 11 1 ~1~   // RANGER - Spellcraft Prof
     SET_2DA_ENTRY 13 11 1 ~2~   // RANGER - Devotion Prof
     SET_2DA_ENTRY 11 12 1 ~5~   // FIGHTER_MAGE - Armor Prof
     SET_2DA_ENTRY 12 12 1 ~5~   // FIGHTER_MAGE - Spellcraft Prof
+    SET_2DA_ENTRY 13 12 1 ~1~   // FIGHTER_MAGE - Devotion Prof
     SET_2DA_ENTRY 11 13 1 ~5~   // FIGHTER_CLERIC - Armor Prof
+    SET_2DA_ENTRY 12 13 1 ~1~   // FIGHTER_CLERIC - Spellcraft Prof
     SET_2DA_ENTRY 13 13 1 ~5~   // FIGHTER_CLERIC - Devotion Prof
     SET_2DA_ENTRY 11 14 1 ~5~   // FIGHTER_THIEF - Armor Prof
+    SET_2DA_ENTRY 12 14 1 ~1~   // FIGHTER_THIEF - Spellcraft Prof
+    SET_2DA_ENTRY 13 14 1 ~1~   // FIGHTER_THIEF - Devotion Prof
     SET_2DA_ENTRY 11 15 1 ~5~   // FIGHTER_MAGE_THIEF - Armor Prof
     SET_2DA_ENTRY 12 15 1 ~5~   // FIGHTER_MAGE_THIEF - Spellcraft Prof
-    //SET_2DA_ENTRY 11 16 1 ~2~   // MAGE_THIEF - Armor Prof
+    SET_2DA_ENTRY 13 15 1 ~1~   // FIGHTER_MAGE_THIEF - Devotion Prof
     SET_2DA_ENTRY 12 16 1 ~5~   // MAGE_THIEF - Spellcraft Prof
+    SET_2DA_ENTRY 13 16 1 ~1~   // MAGE_THIEF - Devotion Prof
     SET_2DA_ENTRY 11 17 1 ~2~   // CLERIC_MAGE - Armor Prof
     SET_2DA_ENTRY 12 17 1 ~5~   // CLERIC_MAGE - Spellcraft Prof
     SET_2DA_ENTRY 13 17 1 ~5~   // CLERIC_MAGE - Devotion Prof
     SET_2DA_ENTRY 11 18 1 ~2~   // CLERIC_THIEF - Armor Prof
+    SET_2DA_ENTRY 12 18 1 ~1~   // CLERIC_THIEF - Spellcraft Prof
     SET_2DA_ENTRY 13 18 1 ~5~   // CLERIC_THIEF - Devotion Prof
     SET_2DA_ENTRY 11 19 1 ~5~   // FIGHTER_DRUID - Armor Prof
+    SET_2DA_ENTRY 12 19 1 ~1~   // FIGHTER_DRUID - Spellcraft Prof
     SET_2DA_ENTRY 13 19 1 ~5~   // FIGHTER_DRUID - Devotion Prof
     SET_2DA_ENTRY 11 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Armor Prof
     SET_2DA_ENTRY 12 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Spellcraft Prof
     SET_2DA_ENTRY 13 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Devotion Prof
     SET_2DA_ENTRY 11 21 1 ~5~   // CLERIC_RANGER - Armor Prof
+    SET_2DA_ENTRY 12 21 1 ~1~   // CLERIC_RANGER - Spellcraft Prof
     SET_2DA_ENTRY 13 21 1 ~5~   // CLERIC_RANGER - Devotion Prof
     SET_2DA_ENTRY 12 22 1 ~5~   // ABJURER - Spellcraft Prof
-    //SET_2DA_ENTRY 11 51 1 ~5~   // MONK - 
+    SET_2DA_ENTRY 13 22 1 ~1~   // ABJURER - Devotion Prof
+    SET_2DA_ENTRY 12 51 1 ~1~   // MONK - Spellcraft Prof
+    SET_2DA_ENTRY 13 51 1 ~1~   // MONK - Devotion Prof
     SET_2DA_ENTRY 11 60 1 ~2~   // SHAMAN - Armor Prof
+    SET_2DA_ENTRY 12 60 1 ~1~   // SHAMAN - Spellcraft Prof
     SET_2DA_ENTRY 13 60 1 ~5~   // SHAMAN - Devotion Prof
     
     // This is used if ALL Classes are getting the same prof
