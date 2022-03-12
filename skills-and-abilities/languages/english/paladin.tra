@@ -34,7 +34,7 @@ AURA OF DESPAIR: The blackguard radiates a malign aura that causes all enemies w
 
 @6009 = ~Smite~
 @6010 = ~Smite
-This ability allows the paladin to make a special attack against any enemy. Paladins apply their Charisma modifier to their attack roll and damage roll. Smite may be used once per day at 1st level. At 5th level and every five levels after that, the paladin gains an additional use per day.~
+This ability allows the paladin to make a special attack against any enemy. Paladins apply their Charisma modifier to their attack roll and damage roll for one round.~
 
 @6011 = ~– May not cast priest spells.~
 @6012 = ~~

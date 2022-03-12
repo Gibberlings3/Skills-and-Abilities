@@ -23,4 +23,9 @@ The character gains 5% resistance to magic damage. This ability may be taken mul
 @8010 = ~Epic Toughness
 The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.~
 
+// Cleric ONLY
+@8011 = ~Radiant Aura~
+@8012 = ~Radiant Aura
+A master of radiance can emanate an aura of brilliant light that weakens undead creatures. Each round, all undead within 15 feet of the cleric will take 1 point of damage.~
+
 @9000 = ~[LAST TRA HERE]~

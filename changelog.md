@@ -4,6 +4,15 @@ March 4, 2022
 
 ### Changed
 
+- Corrected typo with Paladin Smite HLA.
+- Replaced 5 pip bonus for Devotion from Pneuma to Blessing of the Faithful.
+
+## Version 0.3 alpha
+
+March 4, 2022
+
+### Changed
+
 - Added French translation courtesy of JohnBob.
 - Updated 5 pip bonuses for Devotion and Spellcraft.
 
