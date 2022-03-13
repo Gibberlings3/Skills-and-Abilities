@@ -23,4 +23,9 @@ Le personnage gagne 5% de résistance aux dégâts magiques. Cette capacité peu
 @8010 = ~Vitalité Épique
 Le personnage gagne 20 points de vie. Cet avantage peut être choisi plusieurs fois, jusqu'à un maximum de 100 points de vie~
 
+// Cleric ONLY
+@8011 = ~Onde Radieuse~
+@8012 = ~Onde Radieuse
+Un maître de la radiance peut diffuser une onde de lumière éclatante afin d'affaiblir les créatures mortes-vivantes. À chaque round, tous les morts-vivants situés dans un rayon de 5 mètres autour du prêtre subissent 1 point de dégâts.~
+
 @9000 = ~[LAST TRA HERE]~
