@@ -514,6 +514,14 @@ COPY_EXISTING ~CLABMA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    PRETTY_PRINT_2DA
+BUT_ONLY
+
+// FIGHTER BASE CLASS CLAB
+COPY_EXISTING ~CLABFI01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -524,8 +532,16 @@ COPY_EXISTING ~CLABPR01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
+
+// THIEF BASE CLASS CLAB
+COPY_EXISTING ~CLABTH01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    PRETTY_PRINT_2DA
+BUT_ONLY
 
 // BARD BASE CLASS CLAB
 COPY_EXISTING ~CLABBA01.2DA~ override
@@ -534,6 +550,7 @@ COPY_EXISTING ~CLABBA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -544,6 +561,7 @@ COPY_EXISTING ~CLABPA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -554,6 +572,7 @@ COPY_EXISTING ~CLABDR01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -564,8 +583,16 @@ COPY_EXISTING ~CLABRN01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
+
+// MONK BASE CLASS CLAB
+COPY_EXISTING ~CLABMO01.2DA~ override
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    PRETTY_PRINT_2DA
+BUT_ONLY
 
 // SHAMAN BASE CLASS CLAB
 COPY_EXISTING ~CLABSH01.2DA~ override
@@ -574,6 +601,7 @@ COPY_EXISTING ~CLABSH01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -594,6 +622,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -601,7 +630,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Spellcraft Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -610,6 +639,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -626,14 +656,29 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF ("%column_name%" STRING_EQUAL_CASE "%kit_label%") AND !("%kit_label%" STRING_EQUAL_CASE "KENSAI") BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END ELSE PATCH_IF ("%column_name%" STRING_EQUAL_CASE "%kit_label%") AND ("%kit_label%" STRING_EQUAL_CASE "KENSAI") BEGIN
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           PRETTY_PRINT_2DA
       END
       END
+    END
+
+    // Proficiencies
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABFI01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
 
@@ -647,6 +692,8 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -654,7 +701,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -663,6 +710,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -678,12 +726,24 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          //SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Proficiencies
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABTH01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
   
@@ -696,8 +756,8 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          //SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -705,7 +765,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Spellcraft Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABBA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -714,6 +774,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -730,6 +791,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -738,7 +800,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -747,6 +809,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -764,6 +827,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -771,7 +835,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Spellcraft Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -780,6 +844,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -796,6 +861,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -804,7 +870,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -813,6 +879,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -829,11 +896,24 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Proficiencies
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABTH01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
 
@@ -848,6 +928,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -855,7 +936,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Spellcraft Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -864,6 +945,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -880,6 +962,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -897,6 +980,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -913,6 +997,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -921,7 +1006,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABRN01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -930,6 +1015,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -945,8 +1031,8 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-          //SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -954,7 +1040,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Spellcraft Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -963,6 +1049,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1027,6 +1114,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1035,7 +1123,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -1044,6 +1132,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1060,6 +1149,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1068,7 +1158,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABDR01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -1077,6 +1167,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1141,6 +1232,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1148,7 +1240,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
 
-      // Devotion Prof
+      // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABRN01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -1157,13 +1249,14 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
     END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -1172,6 +1265,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1188,6 +1282,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1195,7 +1290,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Spellcraft Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -1204,6 +1299,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1219,11 +1315,24 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       FOR (col = 22; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END 
       END
+    END
+
+    // Proficiencies
+    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMO01") BEGIN
+    INNER_ACTION BEGIN
+    COPY_EXISTING ~%kit_clab%.2DA~ override
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          PRETTY_PRINT_2DA
+        BUT_ONLY
+    END
     END
   END
 
@@ -1237,6 +1346,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       READ_2DA_ENTRY_FORMER kitnames 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
+          SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1245,7 +1355,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
 
-    // Devotion Prof
+    // Proficiencies
     PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABSH01") BEGIN
     INNER_ACTION BEGIN
     COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -1254,6 +1364,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
