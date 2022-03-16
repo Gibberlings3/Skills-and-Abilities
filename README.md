@@ -148,18 +148,18 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Epic Heavy Armor Optimization (5 slots): The character receives a 10% damage reduction to all physical attacks while wearing heavy armor.
 
 **SPELLCRAFT:**  This proficiency grants additional abilities and benefits to arcane spellcasters. All abilities are cumulative.
-- Silent Spell (1 slot): The character gains permanent Vocalize.
-- Practiced Spellcaster (2 slots): Caster level is increased by 1.
-- Arcane Defense (3 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
-- Quicken Spell (4 slots): The character decreases spellcasting time by 2.
-- Spellcasting Prodigy (5 slots): Reduces the delay between casting spells.
+- Courteous Magocracy (1 slot): Character gains a +10 bonus to Lore.
+- Silent Spell (2 slots): The character gains permanent Vocalize.
+- Practiced Spellcaster (3 slots): Caster level is increased by 1.
+- Arcane Defense (4 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
+- Quicken Spell (5 slots): The character decreases spellcasting time by 2.
 
 **DEVOTION:**  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
-- Pious (1 slot): The character gains +2 bonus to saving throws.
+- Pious (1 slot): The character gains +1 bonus to saving throws.
 - Divine Agent (2 slots): The character becomes immune to hold and paralysis.
 - Divine Channeling (3 slots): The character decreases spellcasting time by 1.
 - Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
-- Pneuma (5 slots): Reduces the delay between casting spells.
+- Blessing of the Faithful (5 slots): The character grants a +1 bonus to Thac0, +1 bonus to AC, and +1 bonus to all saving throws for the character and all allies within 15 feet.
 
 **BOW:**  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. 
 
