@@ -1,7 +1,7 @@
 # Skills-and-Abilities
 
 [![Latest Release](https://img.shields.io/github/v/release/gibberlings3/Skills-and-Abilities?include_prereleases)](https://github.com/Gibberlings3/Skills-and-Abilities/releases/latest)
-![Language](https://img.shields.io/static/v1?label=language&message=english&color=informational)
+![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20french&color=informational)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
@@ -152,18 +152,18 @@ REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une ma
 - Armure Lourde Optimisation Épique (5 points de compétence): Le personnage bénéficie de 10% réduction aux dégâts physiques lorsqu'il porte une armure lourde.
 
 **ART DES SORTILÈGES :** Cette compétence accorde des capacités et des avantages supplémentaires aux magiciens. Toutes les capacités sont cumulatives.
-- Incantation silencieuse (1 point de compétence) : Le magicien gagne la capacité de Vocaliser de manière permanente.
-- Magicien expérimenté (2 points de compétence) : Le niveau du lanceur de sorts est augmenté de 1.
-- Immunité magique (3 points de compétence) : Le magicien gagne 10% de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
-- Incantation accélérée (4 points de compétence) : Le magicien bénéficie d'un bonus de 2 au temps d'incantation des sorts.
-- Incantation Prodigieuse (5 points de compétence): Réduit le délai entre les incantations.
+- Privilège Magique (1 point de compétence) : Le magicien bénéficie d'un bonus de 10 à ses connaissances.
+- Incantation Silencieuse (2 points de compétence) : Le magicien gagne la capacité de Vocaliser de manière permanente.
+- Magicien Expérimenté (3 points de compétence) : Le niveau du lanceur de sorts est augmenté de 1.
+- Immunité Magique (4 points de compétence) : Le magicien gagne 10% de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
+- Incantation Prodigieuse (5 points de compétence) : Le magicien bénéficie d'un bonus de 2 au temps d'incantation des sorts.
 
 **DÉVOTION :** Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
-- Piété (1 point de compétence) : Le personnage bénéficie d'un bonus de +2 aux jets de sauvegarde.
+- Piété (1 point de compétence) : Le personnage bénéficie d'un bonus de +1 aux jets de sauvegarde.
 - Agent divin (2 points de compétence) : Le personnage devient immunisé contre l'immobilisation et la paralysie.
 - Liens divins (3 points de compétence) : Réduit le temps d'incantations des sorts de 1.
 - Protection divine (4 points de compétence) : Le personnage devient immunisé contre la mort magique et les coups vorpales.
-- Esprit-Saint (5 points de compétence) : Réduit le délai entre les incantations.
+- Esprit-Saint (5 points de compétence) : Le personnage octroie, un bonus de 1 au TAC0, à la Classe d'armure et à tous les jets de sauvegarde, pour tous ses alliés dans un rayon de 5 mètres, le personnage bénéficie également de ces avantages.
 
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 
