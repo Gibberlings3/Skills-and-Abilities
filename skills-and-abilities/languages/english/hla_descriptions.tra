@@ -3,8 +3,8 @@
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
-@8001 = ~Resilience~
-@8002 = ~Resilience
+@8001 = ~Epic Damage Reduction~
+@8002 = ~Epic Damage Reduction
 The character gains 2% damage reduction to all physical attacks. This ability may be taken multiple times, up to a maximum of 10% damage reduction to all physical attacks.~
 
 @8003 = ~Thievery~
@@ -23,9 +23,46 @@ The character gains 5% resistance to magic damage. This ability may be taken mul
 @8010 = ~Epic Toughness
 The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.~
 
-// Cleric ONLY
-@8011 = ~Radiant Aura~
-@8012 = ~Radiant Aura
-A master of radiance can emanate an aura of brilliant light that weakens undead creatures. Each round, all undead within 15 feet of the cleric will take 1 point of damage.~
+@8011 = ~Epic Prowess~
+@8012 = ~Epic Prowess
+The character's skill at combat grows and <HESHE> gains a +1 bonus to Thac0.~
+
+@8013 = ~Armor Skin~
+@8014 = ~Armor Skin
+The character's natural armor bonus to Armor Class increases by 1.~
+
+@8015 = ~Epic Weapon Focus~
+@8016 = ~Epic Weapon Focus
+The warrior gains +2 bonus to Thac0.~
+
+@8017 = ~Epic Weapon Specialization~
+@8018 = ~Epic Weapon Specialization
+The warrior gains +2 bonus to damage.
+
+Requires: Epic Weapon Focus~
+
+@8019 = ~Great Charisma~
+@8020 = ~Great Charisma
+The character gains +1 bonus to Charisma. This feat may be taken multiple times, up to a maximum of +5 Charisma.~
+
+@8021 = ~Great Constitution~
+@8022 = ~Great Constitution
+The character gains +1 bonus to Constitution. This feat may be taken multiple times, up to a maximum of +5 Constitution.~
+
+@8023 = ~Great Dexterity~
+@8024 = ~Great Dexterity
+The character gains +1 bonus to Dexterity. This feat may be taken multiple times, up to a maximum of +5 Dexterity.~
+
+@8025 = ~Great Intelligence~
+@8026 = ~Great Intelligence
+The character gains +1 bonus to Intelligence. This feat may be taken multiple times, up to a maximum of +5 Intelligence.~
+
+@8027 = ~Great Strength~
+@8028 = ~Great Strength
+The character gains +1 bonus to Strength. This feat may be taken multiple times, up to a maximum of +5 Strength.~
+
+@8029 = ~Great Wisdom~
+@8030 = ~Great Wisdom
+The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.~
 
 @9000 = ~[LAST TRA HERE]~
