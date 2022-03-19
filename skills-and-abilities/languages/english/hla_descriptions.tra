@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////
 @8001 = ~Epic Damage Reduction~
 @8002 = ~Epic Damage Reduction
-The character gains 2% damage reduction to all physical attacks. This ability may be taken multiple times, up to a maximum of 10% damage reduction to all physical attacks.~
+The character gains 10% damage reduction to all physical attacks.~
 
 @8003 = ~Thievery~
 @8004 = ~Thievery
@@ -13,11 +13,11 @@ The character gains +5 skills points in each skill. This ability may be taken mu
 
 @8005 = ~Elemental Resistance~
 @8006 = ~Elemental Resistance
-The character gains 5% resistance to all elemental damage. This ability may be taken multiple times, up to a maximum of 25% resistance to elemental damage.~
+The character gains 10% resistance to all elemental damage.~
 
 @8007 = ~Magic Damage Resistance~
 @8008 = ~Magic Damage Resistance
-The character gains 5% resistance to magic damage. This ability may be taken multiple times, up to a maximum of 25% resistance to magic damage.~
+The character gains 10% resistance to magic damage.~
 
 @8009 = ~Epic Toughness~
 @8010 = ~Epic Toughness
