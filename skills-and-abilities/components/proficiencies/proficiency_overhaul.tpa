@@ -43,6 +43,11 @@ ACTION_FOR_EACH prof IN
       COPY ~skills-and-abilities/spl/proficiencies/MODEV%prof%%prof%.SPL~  ~override~
       COPY ~skills-and-abilities/eff/proficiencies/MODEV0%prof%.EFF~       ~override~
       COPY ~skills-and-abilities/spl/proficiencies/MODEVC%prof%.SPL~       ~override~
+      // Conditioning Profs
+      COPY ~skills-and-abilities/spl/proficiencies/MOCON0%prof%.SPL~       ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MOCON%prof%%prof%.SPL~  ~override~
+      COPY ~skills-and-abilities/eff/proficiencies/MOCON0%prof%.EFF~       ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MOCONC%prof%.SPL~       ~override~
     END
 
 // Import Blank Wizard/Sorcerer CLAB Files
@@ -223,6 +228,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 13 0 1 ~DEVOTION~
     SET_2DA_ENTRY 13 2 1 ~modev1~
     SET_2DA_ENTRY 13 3 1 ~modev2~
+    SET_2DA_ENTRY 14 0 1 ~CONDITIONING~
+    SET_2DA_ENTRY 14 2 1 ~mocon1~
+    SET_2DA_ENTRY 14 3 1 ~mocon2~
 
     SET_2DA_ENTRY 29 0 1 ~CRITICAL~
     SET_2DA_ENTRY 29 2 1 ~mocri1~
@@ -241,6 +249,8 @@ REPLACE ~mospl1~    @7118
 REPLACE ~mospl2~    @7119
 REPLACE ~modev1~    @7120
 REPLACE ~modev2~    @7121
+REPLACE ~mocon1~    @7122
+REPLACE ~mocon2~    @7123
 
 REPLACE ~mocri1~    @7134
 REPLACE ~mocri2~    @7135
@@ -254,6 +264,7 @@ PRETTY_PRINT_2DA
 APPEND ~stats.ids~ ~89 ARMOR_PROF~      UNLESS ~89 ARMOR_PROF~
 APPEND ~stats.ids~ ~90 SPELLCRAFT~      UNLESS ~90 SPELLCRAFT~
 APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
+APPEND ~stats.ids~ ~92 CONDITIONING~    UNLESS ~92 CONDITIONING~
 
 APPEND ~stats.ids~ ~106 CRITICAL~       UNLESS ~106 CRITICAL~
 APPEND ~stats.ids~ ~107 ARCHERY~        UNLESS ~107 ARCHERY~
@@ -283,6 +294,7 @@ ACTION_FOR_EACH spell IN
     BEGIN
       APPEND ~splprot.2da~ ~mo_spl_prof%spell%%TAB%90%TAB%%spell%%TAB%4~ // Spellcraft
       APPEND ~splprot.2da~ ~mo_dev_prof%spell%%TAB%91%TAB%%spell%%TAB%4~ // Devotion
+      APPEND ~splprot.2da~ ~mo_con_prof%spell%%TAB%92%TAB%%spell%%TAB%4~ // Conditioning
     END
 
 // Archery Weapon Style
@@ -355,6 +367,23 @@ COPY_EXISTING ~splprot.2da~ ~override~
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_dev_prof5~ BEGIN
         SET dev_prof5 = %row%
 
+      // CONDITIONING ---------------------------------------------------------//
+      // Conditioning - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_con_prof1~ BEGIN
+        SET con_prof1 = %row%
+      // Conditioning - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_con_prof2~ BEGIN
+        SET con_prof2 = %row%
+      // Conditioning - 3 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_con_prof3~ BEGIN
+        SET con_prof3 = %row%
+      // Conditioning - 4 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_con_prof4~ BEGIN
+        SET con_prof4 = %row%
+      // Conditioning - 5 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_con_prof5~ BEGIN
+        SET con_prof5 = %row%
+
       // CRITICAL STRIKER -----------------------------------------------------//
       // Critical Striker - 1 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_crit_prof1~ BEGIN
@@ -413,6 +442,18 @@ COPY_EXISTING ~modev04.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %dev_prof4% END
 COPY_EXISTING ~modev05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %dev_prof5% END
+
+// Conditioning Prof
+COPY_EXISTING ~mocon01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %con_prof1% END
+COPY_EXISTING ~mocon02.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %con_prof2% END
+COPY_EXISTING ~mocon03.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %con_prof3% END
+COPY_EXISTING ~mocon04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %con_prof4% END
+COPY_EXISTING ~mocon05.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %con_prof5% END
 
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
@@ -501,6 +542,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           51 // MONK
           60 // SHAMAN
         BEGIN
+          SET_2DA_ENTRY 14 class_prof 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 class_prof 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 class_prof 1 ~2~   // Archery Weapon Style
         END
@@ -515,6 +557,11 @@ COPY_EXISTING ~CLABMA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -522,6 +569,11 @@ BUT_ONLY
 COPY_EXISTING ~CLABFI01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -533,6 +585,11 @@ COPY_EXISTING ~CLABPR01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -540,6 +597,11 @@ COPY_EXISTING ~CLABPR01.2DA~ override
 COPY_EXISTING ~CLABTH01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -551,6 +613,11 @@ COPY_EXISTING ~CLABBA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -562,6 +629,11 @@ COPY_EXISTING ~CLABPA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -573,6 +645,11 @@ COPY_EXISTING ~CLABDR01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -584,6 +661,11 @@ COPY_EXISTING ~CLABRN01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -591,6 +673,11 @@ COPY_EXISTING ~CLABRN01.2DA~ override
 COPY_EXISTING ~CLABMO01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -602,6 +689,11 @@ COPY_EXISTING ~CLABSH01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -623,6 +715,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -640,6 +733,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -658,12 +756,14 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
       END ELSE PATCH_IF ("%column_name%" STRING_EQUAL_CASE "%kit_label%") AND ("%kit_label%" STRING_EQUAL_CASE "KENSAI") BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           PRETTY_PRINT_2DA
       END
@@ -676,6 +776,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -694,6 +799,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -711,6 +817,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -728,6 +839,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -741,6 +853,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -758,6 +875,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -775,6 +893,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -793,6 +916,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -810,6 +934,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -828,6 +957,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -845,6 +975,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -863,6 +998,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -880,6 +1016,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -898,6 +1039,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -911,6 +1053,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -929,6 +1076,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -946,6 +1094,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -964,6 +1117,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -981,6 +1135,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -999,6 +1158,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1016,6 +1176,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1033,6 +1198,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1050,6 +1216,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1068,6 +1239,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1084,6 +1256,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1098,6 +1275,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1116,6 +1298,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1133,6 +1316,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1151,6 +1339,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1168,6 +1357,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1186,6 +1380,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1202,6 +1397,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1216,6 +1416,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1234,6 +1439,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1250,6 +1456,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1266,6 +1477,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1283,6 +1499,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1300,6 +1517,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1317,6 +1539,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1330,6 +1553,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     COPY_EXISTING ~%kit_clab%.2DA~ override
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1348,6 +1576,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
+          SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1365,6 +1594,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
