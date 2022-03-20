@@ -125,17 +125,27 @@ Ce composant ajoute la classe Prêtre/Mage/Voleur disponible en tant que kit pou
 **VITALITÉ ÉPIQUE :** Le personnage gagne 20 points de vie. Cet avantage peut être choisi plusieurs fois, jusqu'à un maximum de 100 points de vie
 
 **PROUESSES ÉPIQUES :** Les compétences de combat du personnage augmentent, bonus de 1 au TAC0.
+
 **PEAU CUIRASSÉE :** Le personnage bénéficie d'un bonus de 1 à la classe d'armure.
+
 **CONCENTRATION ÉPIQUE :** Les combattants gagne un bonus de 2 à TAC0.
+
 **CONVERGENCE ÉPIQUE :** Les combattants gagne un bonus de 2 aux dégâts.
 
 Nécessite : Concentration Épique
+
 **CHARISME SUPRÊME :** Le personnage gagne un bonus de 1 au Charisme. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Charisme.
+
 **CONSTITUTION SUPRÊME :** Le personnage gagne un bonus de 1 à la Constitution. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Constitution.
+
 **DEXTÉRITÉ SUPRÊME :** Le personnage gagne un bonus de 1 à la Dextérité. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Dextérité.
+
 **INTELLIGENCE SUPRÊME :** Le personnage gagne un bonus de 1 à l'Intelligence. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Intelligence.
+
 **FORCE SUPRÊME :** Le personnage gagne un bonus de 1 à la Force. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Force.
+
 **SAGESSE SUPRÊME :** Le personnage gagne un bonus de 1 à la Sagesse. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Sagesse.
+
 ## Compétences/Talents
 
 ### Mises a Jour des styles de combat (ARME À DEUX MAINS, ÉPÉE ET BOUCLIER et ARME À UNE MAIN)
