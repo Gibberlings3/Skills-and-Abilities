@@ -120,7 +120,7 @@ This adds the Cleric/Mage/Thief Class which is selected as a kit for the Fighter
 
 **EPIC TOUGHNESS:** The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.
 
-**EPIC PROWESS:** The character's skill at combat grows and he gains a +1 bonus to Thac0.
+**EPIC PROWESS:** The character's skill at combat grows and (s)he gains a +1 bonus to Thac0.
 
 **ARMOR SKIN:** The character's natural armor bonus to Armor Class increases by 1.
 
