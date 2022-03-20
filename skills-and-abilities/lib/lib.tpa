@@ -120,7 +120,7 @@ DEFINE_ACTION_FUNCTION ADD_HLA
   ACTION_IF FILE_EXISTS_IN_GAME ~lu%classlu%.2da~ BEGIN
     COPY_EXISTING ~lu%classlu%.2da~ ~override~
       LPF ADD_NEW_HLA_ROW END
-      LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ END
+      LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ prerequisite = ~%prerequisite%~ END
       PRETTY_PRINT_2DA
     BUT_ONLY
   END
@@ -147,7 +147,7 @@ DEFINE_ACTION_FUNCTION ADD_HLA
           INNER_ACTION BEGIN
           COPY_EXISTING ~lu%kitlu%.2da~ ~override~
             LPF ADD_NEW_HLA_ROW END
-            LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ END
+            LPF ADD_NEW_HLA INT_VAR min_lev = %min_lev% max_lev = %max_lev% num_allowed = %num_allowed% STR_VAR ability = ~%ability%~ prerequisite = ~%prerequisite%~ END
             PRETTY_PRINT_2DA
           BUT_ONLY
           END
