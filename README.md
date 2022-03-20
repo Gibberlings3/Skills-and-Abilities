@@ -202,7 +202,7 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 
 **BLUNT WEAPONS:**  This weapon class allows the character to use Maces, Clubs, Warhammers, and the Staff. Druids and thieves can choose this category, but are limited to the Club and Staff only. Mages can choose this category, but are limited to the Staff alone.
 
-**MISSILE WEAPONS:** This weapon class allows the character to use Slings, Darts, and Crossbows. Mages, Druids, and Thieves can choose this proficiency but are restricted to Slings and Darts.  Clerics can choose this proficiency but are restricted to Slings alone.
+**MISSILE WEAPONS:** This weapon class allows the character to use Slings, Darts, and Crossbows. Mages and Druids can choose this proficiency but are restricted to Slings and Darts. Thieves can choose this proficiency but are restricted to Slings, Darts, and Light Crossbows. Clerics can choose this proficiency but are restricted to Slings alone.
 
 **SPEAR:**  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
 
