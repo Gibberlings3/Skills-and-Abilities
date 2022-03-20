@@ -6,7 +6,7 @@
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
 
-**Auteur**: [Grammarsalad](https://www.gibberlings3.net/profile/6114-grammarsalad/) and [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
+**Auteur**: [Grammarsalad](https://www.gibberlings3.net/profile/6114-grammarsalad/) et [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
 **Forum**: [Discussion Topic](https://www.gibberlings3.net/forums/topic/34217-skills-and-abilities-mod-alpha-release/)
 
@@ -116,14 +116,26 @@ Ce composant ajoute la classe Prêtre/Mage/Voleur disponible en tant que kit pou
 
 ### Ajouter des capacités de haut niveau pour toutes les classes et kits
 
-**RÉSILIENCE :** Le personnage gagne 2% de réduction aux dégâts physiques. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 10% de réduction aux dégâts physiques.
+**RÉSILIENCE :** Le personnage gagne 10% de réduction aux dégâts physiques.
 
-**RÉSISTANCE ÉLEMENTAIRE :** Le personnage gagne 5% de résistance à tous les dégâts élémentaires. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 25% de résistance aux dégâts élémentaires.
+**RÉSISTANCE ÉLEMENTAIRE :** Le personnage gagne 10% de résistance à tous les dégâts élémentaires.
 
-**RÉSISTANCE MAGIQUE :** Le personnage gagne 5% de résistance aux dégâts magiques. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 25% de résistance aux dégâts magiques.
+**RÉSISTANCE MAGIQUE :** Le personnage gagne 10% de résistance aux dégâts magiques.
 
 **VITALITÉ ÉPIQUE :** Le personnage gagne 20 points de vie. Cet avantage peut être choisi plusieurs fois, jusqu'à un maximum de 100 points de vie
 
+**PROUESSES ÉPIQUES :** Les compétences de combat du personnage augmentent, bonus de 1 au TAC0.
+**PEAU CUIRASSÉE :** Le personnage bénéficie d'un bonus de 1 à la classe d'armure.
+**CONCENTRATION ÉPIQUE :** Les combattants gagne un bonus de 2 à TAC0.
+**CONVERGENCE ÉPIQUE :** Les combattants gagne un bonus de 2 aux dégâts.
+
+Nécessite : Concentration Épique
+**CHARISME SUPRÊME :** Le personnage gagne un bonus de 1 au Charisme. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Charisme.
+**CONSTITUTION SUPRÊME :** Le personnage gagne un bonus de 1 à la Constitution. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Constitution.
+**DEXTÉRITÉ SUPRÊME :** Le personnage gagne un bonus de 1 à la Dextérité. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Dextérité.
+**INTELLIGENCE SUPRÊME :** Le personnage gagne un bonus de 1 à l'Intelligence. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Intelligence.
+**FORCE SUPRÊME :** Le personnage gagne un bonus de 1 à la Force. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Force.
+**SAGESSE SUPRÊME :** Le personnage gagne un bonus de 1 à la Sagesse. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Sagesse.
 ## Compétences/Talents
 
 ### Mises a Jour des styles de combat (ARME À DEUX MAINS, ÉPÉE ET BOUCLIER et ARME À UNE MAIN)
@@ -159,11 +171,18 @@ REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une ma
 - Incantation Prodigieuse (5 points de compétence) : Le magicien bénéficie d'un bonus de 2 au temps d'incantation des sorts.
 
 **DÉVOTION :** Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
-- Piété (1 point de compétence) : Le personnage bénéficie d'un bonus de +1 aux jets de sauvegarde.
+- Piété (1 point de compétence) : Le personnage bénéficie d'un bonus de 1 aux jets de sauvegarde.
 - Agent divin (2 points de compétence) : Le personnage devient immunisé contre l'immobilisation et la paralysie.
 - Liens divins (3 points de compétence) : Réduit le temps d'incantations des sorts de 1.
 - Protection divine (4 points de compétence) : Le personnage devient immunisé contre la mort magique et les coups vorpales.
 - Esprit-Saint (5 points de compétence) : Le personnage octroie, un bonus de 1 au TAC0, à la Classe d'armure et à tous les jets de sauvegarde, pour tous ses alliés dans un rayon de 5 mètres, le personnage bénéficie également de ces avantages.
+
+**CONDITIONNEMENT / PRÉPARATION :** Cette compétence permet de dépasser ses limites physiques. Toutes les capacités sont cumulatives.
+- Résistance (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux sauvegardes contre la paralysie, le poison et la mort.
+- Vigueur (2 points de compétence) : Le personnage est capable de se déplacer 10% plus vite.
+- Aptitude (3 points de compétence) : Le personnage conserve ses facultés de combat et devient immunisé contre la cécité.
+- Inébranlable (4 points de compétence) : Le personnage ne ressent pas la fatigue même après avoir utilisé Rage ou Furie.
+- Récupération Instantanée (5 points de compétence) : Le personnage régénère 1 point de vie par round. Cumulable avec d'autres aptitudes régénérantes.~
 
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 
@@ -179,7 +198,7 @@ REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une ma
 
 **ARMES CONTONDANTES :** Cette classe d'armes permet au personnage d'utiliser les masses, les gourdins, les marteaux de guerre et les bâtons. Les druides et les voleurs peuvent choisir cette compétence, mais ne pourront utiliser que les gourdins et les bâtons. Quant aux mages, ils ne pouront utiliser que les bâtons.
 
-**ARMES A PROJECTILES :** Cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages, les druides et les voleurs peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Quant aux clercs, ils ne pourront se servir que des frondes.
+**ARMES A PROJECTILES :** Cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages et les druides peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Les voleurs seront limités aux frondes et aux fléchettes et arbalètes légères. Quant aux clercs, ils ne pourront se servir que des frondes.
 
 **LANCE :** Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes. Les druides peuvent sélectionner cette classe, mais ne pourront se servir que des lances.
 
