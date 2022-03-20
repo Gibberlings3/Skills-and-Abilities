@@ -112,7 +112,7 @@ Master (3 slots): The wielder's penalties to attack and damage rolls are reduced
 <DOTS5>~
 
 @7112 = ~Missile Weapons~
-@7113 = ~MISSILE WEAPONS: This weapon class allows the character to use Slings, Darts, and Crossbows. Mages, Druids, and Thieves can choose this proficiency but are restricted to Slings and Darts.  Clerics can choose this proficiency but are restricted to Slings alone.
+@7113 = ~MISSILE WEAPONS: This weapon class allows the character to use Slings, Darts, and Crossbows. Mages and Druids can choose this proficiency but are restricted to Slings and Darts. Thieves can choose this proficiency but are restricted to Slings, Darts, and Light Crossbows. Clerics can choose this proficiency but are restricted to Slings alone.
 
 <DOTS1>
 
