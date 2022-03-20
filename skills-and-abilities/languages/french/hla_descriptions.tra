@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////
 @8001 = ~Résilience~
 @8002 = ~Résilience
-Le personnage gagne 2% de réduction aux dégâts physiques. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 10% de réduction aux dégâts physiques.~
+Le personnage gagne 10% de réduction aux dégâts physiques.~
 
 @8003 = ~Arts du Voleur~
 @8004 = ~Arts du Voleur
@@ -13,19 +13,60 @@ Le personnage gagne 5 points de compétence dans chaque compétence de voleur. C
 
 @8005 = ~Résistance Élémentaire~
 @8006 = ~Résistance Élémentaire
-Le personnage gagne 5% de résistance à tous les dégâts élémentaires. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 25% de résistance aux dégâts élémentaires.~
+Le personnage gagne 10% de résistance à tous les dégâts élémentaires.~
 
 @8007 = ~Résistance Magique~
 @8008 = ~Résistance Magique
-Le personnage gagne 5% de résistance aux dégâts magiques. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de 25% de résistance aux dégâts magiques.~
+Le personnage gagne 10% de résistance aux dégâts magiques.~
 
 @8009 = ~Vitalité Épique~
 @8010 = ~Vitalité Épique
 Le personnage gagne 20 points de vie. Cet avantage peut être choisi plusieurs fois, jusqu'à un maximum de 100 points de vie~
 
-// Cleric ONLY
-@8011 = ~Onde Radieuse~
-@8012 = ~Onde Radieuse
-Un maître de la radiance peut diffuser une onde de lumière éclatante afin d'affaiblir les créatures mortes-vivantes. À chaque round, tous les morts-vivants situés dans un rayon de 5 mètres autour du prêtre subissent 1 point de dégâts.~
+@8011 = ~Prouesses Épiques~
+@8012 = ~Prouesses Épiques
+Les compétences de combat du personnage augmentent, bonus de 1 au TAC0.~
+
+@8013 = ~Peau Cuirassée~
+@8014 = ~Peau Cuirassée
+Le personnage bénéficie d'un bonus de 1 à la classe d'armure.~
+
+@8015 = ~Concentration Épique~
+@8016 = ~Concentration Épique
+Les combattants gagne un bonus de 2 au TAC0.~ ~Concentration Épique
+Les combattantes gagne un bonus de 2 au TAC0.~
+
+@8017 = ~Convergence Épique~
+@8018 = ~Convergence Épique
+Les combattants gagne un bonus de 2 aux dégâts.
+
+Nécessite : Concentration Épique~ ~Convergence Épique
+Les combattantes gagne un bonus de 2 aux dégâts.
+
+Nécessite : Concentration Épique~
+
+@8019 = ~Charisme Suprême~
+@8020 = ~Charisme Suprême
+Le personnage gagne un bonus de 1 au Charisme. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Charisme.~
+
+@8021 = ~Constitution Suprême~
+@8022 = ~Constitution Suprême
+Le personnage gagne un bonus de 1 à la Constitution. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Constitution.~
+
+@8023 = ~Dextérité Suprême~
+@8024 = ~Dextérité Suprême
+Le personnage gagne un bonus de 1 à la Dextérité. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Dextérité.~
+
+@8025 = ~Intelligence Suprême~
+@8026 = ~Intelligence Suprême
+Le personnage gagne un bonus de 1 à l'Intelligence. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Intelligence.~
+
+@8027 = ~Force Suprême~
+@8028 = ~Force Suprême
+Le personnage gagne un bonus de 1 à la Force. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Force.~
+
+@8029 = ~Sagesse Suprême~
+@8030 = ~Sagesse Suprême
+Le personnage gagne un bonus de 1 à la Sagesse. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Sagesse.~
 
 @9000 = ~[LAST TRA HERE]~
