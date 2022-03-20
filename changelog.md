@@ -1,3 +1,11 @@
+## Version 0.5 alpha
+
+March xx, 2022
+
+### Changed
+
+- HLA
+
 ## Version 0.4 alpha
 
 March 16, 2022
