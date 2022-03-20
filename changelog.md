@@ -1,10 +1,12 @@
 ## Version 0.5 alpha
 
-March xx, 2022
+March 19, 2022
 
 ### Changed
 
-- HLA
+- Added Conditioning proficiency.
+- Modified Epic Damage Reduction, Elemental Resistance, and Magic Damage Resistance HLAs.
+- Added Epic Prowess, Armor Skin, Epic Weapon Focus, Epic Weapon Specialization, Great Charisma, Great Constitution, Great Dexterity, Great Intelligence, Great Strength, and Great Wisdom HLAs.
 
 ## Version 0.4 alpha
 

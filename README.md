@@ -112,13 +112,33 @@ This adds the Cleric/Mage/Thief Class which is selected as a kit for the Fighter
 
 ### Add New HLAs for ALL Classes and Kits
 
-**RESILIENCE:** The character gains 2% damage reduction to all physical attacks. This ability may be taken multiple times, up to a maximum of 10% damage reduction to all physical attacks.
+**EPIC DAMAGE REDUCTION:** The character gains 10% damage reduction to all physical attacks.
 
-**ELEMENTAL RESISTANCE:** The character gains 5% resistance to all elemental damage. This ability may be taken multiple times, up to a maximum of 25% resistance to elemental damage.
+**ELEMENTAL RESISTANCE:** The character gains 10% resistance to all elemental damage.
 
-**MAGIC DAMAGE RESISTANCE:** The character gains 5% resistance to magic damage. This ability may be taken multiple times, up to a maximum of 25% resistance to magic damage.
+**MAGIC DAMAGE RESISTANCE:** The character gains 10% resistance to magic damage.
 
 **EPIC TOUGHNESS:** The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.
+
+**EPIC PROWESS:** The character's skill at combat grows and he gains a +1 bonus to Thac0.
+
+**ARMOR SKIN:** The character's natural armor bonus to Armor Class increases by 1.
+
+**EPIC WEAPON FOCUS (FIGHTERS ONLY):** The warrior gains +2 bonus to Thac0.
+
+**EPIC WEAPON SPECIALIZATION (FIGHTERS ONLY - REQUIRES EPIC WEAPON FOCUS):** The warrior gains +2 bonus to damage.
+
+**GREAT CHARISMA:** The character gains +1 bonus to Charisma. This feat may be taken multiple times, up to a maximum of +5 Charisma.
+
+**GREAT CONSTITUTION:** The character gains +1 bonus to Constitution. This feat may be taken multiple times, up to a maximum of +5 Constitution.
+
+**GREAT DEXTERITY:** The character gains +1 bonus to Dexterity. This feat may be taken multiple times, up to a maximum of +5 Dexterity.
+
+**GREAT INTELLIGENCE:** The character gains +1 bonus to Intelligence. This feat may be taken multiple times, up to a maximum of +5 Intelligence.
+
+**GREAT STRENGTH:** The character gains +1 bonus to Strength. This feat may be taken multiple times, up to a maximum of +5 Strength.
+
+**GREAT WISDOM:** The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.
 
 ## Proficiencies
 
@@ -160,6 +180,13 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Divine Channeling (3 slots): The character decreases spellcasting time by 1.
 - Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
 - Blessing of the Faithful (5 slots): The character grants a +1 bonus to Thac0, +1 bonus to AC, and +1 bonus to all saving throws for the character and all allies within 15 feet.
+
+**CONDITIONING:**  This proficiency epitomizes pushing ones body harder, faster, and further. All abilities are cumulative.
+- Fortitude (1 slot): The character gains a +2 bonus to save vs. Paralysis / Poison / Death
+- Dash (2 slots): The character is able to move 10% faster.
+- Blind-Fight (3 slots): The character maintains the ability to fight well, and becomes immune to becoming blinded. 
+- Tireless (4 slots): The character does not become fatigued to include after using rage or frenzy.
+- Fast Healing (5 slots): The character regenerates 1 hit point per round. This will stack with other methods of regeneration.
 
 **BOW:**  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. 
 
