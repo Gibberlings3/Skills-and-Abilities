@@ -134,7 +134,7 @@ Maître (3 points de compétences) : Les pénalités de la porteuse sont réduit
 <DOTS5>~
 
 @7112 = ~Armes à Projectile~
-@7113 = ~ARMES A PROJECTILES : cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages, les druides et les voleurs peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Quant aux clercs, ils ne pourront se servir que des frondes.
+@7113 = ~ARMES A PROJECTILES : Cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages et les druides peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Les voleurs seront limités aux frondes et aux fléchettes et arbalètes légères. Quant aux clercs, ils ne pourront se servir que des frondes.
 
 <DOTS1>
 
@@ -147,7 +147,7 @@ Maître (3 points de compétences) : Les pénalités de la porteuse sont réduit
 <DOTS5>~
 
 @7114 = ~Lance~
-@7115 = ~LANCE : cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes. Les druides peuvent sélectionner cette classe, mais ne pourront se servir que des lances.
+@7115 = ~LANCE : Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes. Les druides peuvent sélectionner cette classe, mais ne pourront se servir que des lances.
 
 <DOTS1>
 
@@ -219,7 +219,7 @@ Aptitude (3 points de compétence) : Le personnage conserve ses facultés de com
 
 Inébranlable (4 points de compétence) : Le personnage ne ressent pas la fatigue même après avoir utilisé Rage ou Furie.
 
-Peau Cuirassée (5 points de compétence) : Le personnage bénéficie d'un bonus de 2 à la classe d'armure.~
+Récupération Instantanée (5 points de compétence) : Le personnage régénère 1 point de vie par round. Cumulable avec d'autres aptitudes régénérantes.~
 
 @7124 = ~~
 @7125 = ~~
