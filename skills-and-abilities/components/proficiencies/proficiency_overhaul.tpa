@@ -1868,14 +1868,12 @@ READ_LONG  0x1cc biography ELSE 0
 // Grabs the armor appearance for the creature
 READ_LONG 0x2b8 item_slots_offset ELSE 0
 READ_LONG 0x2bc items_offset ELSE 0
-PATCH_IF (items_offset > 0) BEGIN
-  READ_SHORT (item_slots_offset + 2) armor_slot
-  PATCH_IF !(armor_slot = ~-1~) BEGIN
-    READ_ASCII (items_offset + armor_slot * 0x14) armor
-    INNER_ACTION BEGIN
-      COPY_EXISTING ~%armor%.itm~ override
-        READ_LONG 0x22 appearance
-    END
+READ_SHORT (item_slots_offset + 2) armor_slot
+PATCH_IF !(armor_slot = ~-1~) BEGIN
+  WRITE_ASCII (items_offset + armor_slot * 0x14) armor
+  INNER_ACTION BEGIN
+    COPY_EXISTING ~%armor%.itm~ override
+      READ_LONG 0x22 appearance
   END
 END
 
