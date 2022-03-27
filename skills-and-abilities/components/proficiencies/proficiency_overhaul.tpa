@@ -2083,7 +2083,7 @@ PATCH_IF (swordandshield > 0) BEGIN
 END
 
 // Single Weapon Style
-PATCH_IF (twohanded > 0) BEGIN
+PATCH_IF (singleweapon > 0) BEGIN
     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twohanded parameter2 = 113 timing = 9 END
 END
 
@@ -2094,10 +2094,10 @@ END
 
 READ_BYTE 0x234 level
 READ_BYTE 0x273 class
-READ_LONG  0x1cc biography ELSE 0
+READ_LONG 0x1cc biography ELSE 0
 
 // Assign profs to joinable NPC with free pips
-PATCH_IF ((SOURCE_SIZE >= 0x2d4) AND ((biography < 2147483647) AND (biography > 0))) BEGIN
+PATCH_IF ((SOURCE_SIZE >= 0x2d3) AND ((biography < 2147483647) AND (biography > 0))) BEGIN
         
     // CLERICs and DRUIDs 
     PATCH_IF (class = 3) OR // CLERIC
@@ -2342,17 +2342,22 @@ END ELSE BEGIN
         // Hybrid Spellcraft and Devotion 
         // PATCH_IF (level >= 20) AND (level < 24) BEGIN
         PATCH_IF (level >= 20) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
         END ELSE PATCH_IF (level >= 16) AND (level < 20) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
         END ELSE PATCH_IF (level >= 12) AND (level < 16) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
         END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 91 timing = 9 END
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
         END ELSE PATCH_IF (level >= 4) AND (level < 8) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 91 timing = 9 END
         END ELSE PATCH_IF (level > 1) AND (level < 4) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
         END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
