@@ -1864,6 +1864,19 @@ READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
 READ_LONG  0x1cc biography ELSE 0
+
+// Grabs the armor appearance for the creature
+READ_LONG 0x2b8 item_slots_offset
+READ_LONG 0x2bc items_offset
+READ_SHORT (item_slots_offset + 2) armot_slot
+IF armor_slot != ~-1~ BEGIN
+  READ_ASCII (items_offset + armot_slot * 0x14) armor
+  INNER_ACTION BEGIN
+    COPY_EXISTING ~%armor%.itm~ override
+      READ_LONG 0x22 appearance
+  END
+END
+
 SET free_pips = 0
 SET bow = 0
 SET spiked = 0
@@ -1876,6 +1889,7 @@ SET missile = 0
 SET spear = 0
 SET is_ranged = 0
 SET is_twohanded = 0
+SET is_heavyarmor = 0
 SET twohanded = 0
 SET swordandshield = 0
 SET singleweapon = 0
@@ -1894,6 +1908,11 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         (type = 99) OR
         (type = 102) BEGIN
         is_twohanded = 1
+    END
+
+    // Checks if Heavy Armor is equipped
+    PATCH_IF (appearance = 16692) BEGIN
+      is_heavyarmor = 1
     END
 
     // Bows
@@ -2195,12 +2214,50 @@ PATCH_IF ((SOURCE_SIZE >= 0x2d4) AND ((biography < 2147483647) AND (biography > 
     END
 
     PATCH_IF (free_pips > 0) BEGIN
+        // Heavy Armor
+        PATCH_IF (is_heavyarmor = 1) BEGIN
+            PATCH_IF (free_pips >= 5) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 89 timing = 9 END
+                free_pips -= 5
+            END ELSE PATCH_IF (free_pips = 4) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 89 timing = 9 END
+                free_pips -= 4
+            END ELSE PATCH_IF (free_pips = 3) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 89 timing = 9 END
+                free_pips -= 3
+            END ELSE PATCH_IF (free_pips = 2) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 89 timing = 9 END
+                free_pips -= 2
+            END ELSE PATCH_IF (free_pips = 1) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 89 timing = 9 END
+                free_pips -= 1
+            END
+        END
+
         // Archery
         PATCH_IF (free_pips >= 2) AND (is_ranged = 1) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 107 timing = 9 END
             free_pips -= 2
         END ELSE PATCH_IF (free_pips = 1) AND (is_ranged = 1)  BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 107 timing = 9 END
+            free_pips -= 1
+        END
+
+        // Conditioning
+        PATCH_IF (free_pips >= 5) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 92 timing = 9 END
+            free_pips -= 5
+        END ELSE PATCH_IF (free_pips = 4) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 92 timing = 9 END
+            free_pips -= 4
+        END ELSE PATCH_IF (free_pips = 3) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 92 timing = 9 END
+            free_pips -= 3
+        END ELSE PATCH_IF (free_pips = 2) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 92 timing = 9 END
+            free_pips -= 2
+        END ELSE PATCH_IF (free_pips = 1) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 92 timing = 9 END
             free_pips -= 1
         END
             
@@ -2215,24 +2272,8 @@ PATCH_IF ((SOURCE_SIZE >= 0x2d4) AND ((biography < 2147483647) AND (biography > 
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 106 timing = 9 END
             free_pips -= 1
         END
-        // Heavy Armor
-        PATCH_IF (free_pips >= 5) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 89 timing = 9 END
-            free_pips -= 5
-        END ELSE PATCH_IF (free_pips = 4) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 89 timing = 9 END
-            free_pips -= 4
-        END ELSE PATCH_IF (free_pips = 3) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 89 timing = 9 END
-            free_pips -= 3
-        END ELSE PATCH_IF (free_pips = 2) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 89 timing = 9 END
-            free_pips -= 2
-        END ELSE PATCH_IF (free_pips = 1) BEGIN
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 89 timing = 9 END
-            free_pips -= 1
-        END
-    END
+
+      END
     
 // Assign to all remaining creatures
 // PLEASE NOTE: These are assigned based off level and NOT if the creature has the prerequisite amount of pips
@@ -2247,6 +2288,21 @@ END ELSE BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 107 timing = 9 END
     END ELSE PATCH_IF (level < 4) AND (is_ranged = 1)  BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 107 timing = 9 END
+    END
+
+    // Heavy Armor
+    PATCH_IF (is_heavyarmor = 1) BEGIN
+        PATCH_IF (level >= 16) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 89 timing = 9 END
+        END ELSE PATCH_IF (level >= 12) AND (level < 16) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 89 timing = 9 END
+        END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 89 timing = 9 END
+        END ELSE PATCH_IF (level >= 4) AND (level < 8) BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 89 timing = 9 END
+        END ELSE BEGIN
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 89 timing = 9 END
+        END
     END
 
     // PALADIN and RANGER
@@ -2284,11 +2340,12 @@ END ELSE BEGIN
     // CLERIC_MAGE and FIGHTER_MAGE_CLERIC
     PATCH_IF (class = 14) OR (class = 17) BEGIN
         // Hybrid Spellcraft and Devotion 
-        PATCH_IF (level >= 20) AND (level < 24)BEGIN
+        // PATCH_IF (level >= 20) AND (level < 24) BEGIN
+        PATCH_IF (level >= 20) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
-        END ELSE PATCH_IF (level >= 16) AND (level < 20)BEGIN
+        END ELSE PATCH_IF (level >= 16) AND (level < 20) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
-        END ELSE PATCH_IF (level >= 12) AND (level < 16)BEGIN
+        END ELSE PATCH_IF (level >= 12) AND (level < 16) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
         END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 4 parameter2 = 91 timing = 9 END
