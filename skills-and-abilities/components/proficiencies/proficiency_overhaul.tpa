@@ -1893,7 +1893,7 @@ READ_SSHORT (item_slots_offset + 0x02) armor_slot
 PATCH_IF !(armor_slot = ~-1~) BEGIN
   READ_ASCII (items_offset + armor_slot * 0x14) armor
   INNER_ACTION BEGIN
-    COPY_EXISTING ~%armor%.itm~ override
+    COPY_EXISTING - ~%armor%.itm~ override
       //READ_LONG 0x22 appearance
       READ_ASCII 0x22 appearance (2)
       //PATCH_IF (appearance = 16692) BEGIN
