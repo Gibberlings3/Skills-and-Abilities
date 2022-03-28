@@ -112,7 +112,7 @@ Comme indiqué, les inquisiteurs obtiendront désormais des sorts similaires à 
 
 ### **Coming Soon**  Classe de Prêtre/Mage/Voleur (EEex nécessaire)
 
-Ce composant ajoute la classe Prêtre/Mage/Voleur disponible en tant que kit pour la classe Guerrier/Mage/Voleur. Cette classe ne sera utilisable que par les Demi-Elfes.
+Ce composant ajoute la classe Prêtre/Mage/Voleur disponible en tant que kit pour la classe Guerrier/Mage/Prêtre. Cette classe ne sera utilisable que par les Demi-Elfes.
 
 ### Ajouter des capacités de haut niveau pour toutes les classes et kits
 
@@ -155,8 +155,8 @@ Nécessite : Concentration Épique
 - Spécialisé (2 points de compétences) : Le porteur de l'arme bénéficie d'un bonus de 2 aux jets de dégâts, d'un bonus de 4 au facteur de vitesse et d'une demi-attaque supplémentaire par round lorsqu'il utilise une arme à deux mains.
 
 **ÉPÉE ET BOUCLIER :** N'importe qui peut prendre un bouclier et bénéficier de sa protection basiques, mais en dépensant des points de compétences dans ce style de combat, un aventurier peut optimiser sa protection.
-- Compétent (1 point de compétence) : Le porteur du bouclier bénéficie d'un bonus de -1 à la CA.
-- Spécialisé (2 points de compétences) : Le porteur du bouclier bénéficie d'un bonus de -2 à la CA et devient immunisé contre les Coups d'ailes des dragons.
+- Compétent (1 point de compétence) : Le porteur du bouclier bénéficie d'un bonus de -1 à la CA et un bonus supplémentaire de -1 à la CA contre les armes à projectiles.
+- Spécialisé (2 points de compétences) : Le porteur du bouclier bénéficie d'un bonus de -2 à la CA, un bonus supplémentaire de -2 à la CA contre les armes à projectiles et devient immunisé contre les Coups d'ailes des dragons.
 
 REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une main combinée à un bouclier bénéficie des bonus mentionnés.
 
@@ -235,6 +235,8 @@ Les armes à deux mains font 50% de dégâts de Force en plus, arrondi à l'unit
 Ce mod possède des composants (décrits ci-dessus) nécessitant [EEex](https://github.com/Bubb13/EEex/releases/latest) créé par Bubb pour fonctionner. Si vous installez ces composants, vous devrez lancer votre jeu avec InfinityLoader.exe au lieu du fichier standard Baldur.exe.
 
 Étant donné que le fonctionnement d'EEex est nécessaire, Windows est requis pour le moment.
+
+Le composant "Revision du Systeme de Competence" ( Overhaul Proficiency System ) n'est pas compatible avec les mods qui modifient ou changent le système de compétence comme Tweaks Anthology et Scales of Balance. Ces deux mods sont excellents, choisissez celui qui vous convient le mieux.
 
 ## Remerciements
 
