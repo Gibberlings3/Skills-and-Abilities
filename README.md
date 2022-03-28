@@ -149,8 +149,8 @@ This adds the Cleric/Mage/Thief Class which is selected as a kit for the Fighter
 - Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, a -4 bonus to Speed Factor, and an extra 0.5 attack per round when using a two-handed weapon.
 
 **SWORD AND SHIELD:** Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
-- Proficient (1 slot): The wielder gets a -1 bonus to AC.
-- Specialized (2 slots): The wielder gets a -2 bonus to AC and a becomes immune to dragon Wing Buffets.
+- Proficient (1 slot): The wielder gets a -1 bonus to AC and an additional -1 bonus to AC against missile weapons.
+- Specialized (2 slots): The wielder gets a -2 bonus to AC, an additional -2 bonus to AC against missile weapons, and becomes immune to dragon Wing Buffets.
 
 NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.
 
