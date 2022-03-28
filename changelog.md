@@ -1,3 +1,11 @@
+## Version 0.6.1 alpha
+
+April xx, 2022
+
+### Changed
+
+- Updated check for armor appearance based on advice from CamDawg_G3.
+
 ## Version 0.6 alpha
 
 March 27, 2022
