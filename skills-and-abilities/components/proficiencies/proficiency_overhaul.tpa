@@ -1613,10 +1613,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   SPRINT weapon_name ~%SOURCE_FILE%~
   READ_BYTE  0x31 prof
   READ_SHORT 0x1c type
-  READ_LONG  0x22 appearance
+  //READ_LONG  0x22 appearance
+  READ_ASCII 0x22 appearance (2)
 
   // Heavy Armor Proficiency
-  PATCH_IF (type = 2) AND (appearance = 16692) BEGIN 
+  //PATCH_IF (type = 2) AND (appearance = 16692) BEGIN
+  PATCH_IF (type = 2) AND (~%appearance%~ STRING_COMPARE_CASE ~4a~ = 0) BEGIN 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm01~ END
     //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm02~ END // Basically No Effect
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~moarm03~ END 
@@ -1892,8 +1894,10 @@ PATCH_IF !(armor_slot = ~-1~) BEGIN
   READ_ASCII (items_offset + armor_slot * 0x14) armor
   INNER_ACTION BEGIN
     COPY_EXISTING ~%armor%.itm~ override
-      READ_LONG 0x22 appearance
-      PATCH_IF (appearance = 16692) BEGIN
+      //READ_LONG 0x22 appearance
+      READ_ASCII 0x22 appearance (2)
+      //PATCH_IF (appearance = 16692) BEGIN
+      PATCH_IF (~%appearance%~ STRING_COMPARE_CASE ~4a~ = 0) BEGIN
         is_heavyarmor = 1
       END
   END
