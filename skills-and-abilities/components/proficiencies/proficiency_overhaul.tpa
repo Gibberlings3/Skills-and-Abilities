@@ -1864,6 +1864,8 @@ READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
 READ_ASCII  0x280 deathvar
+READ_BYTE 0x234 level
+READ_BYTE 0x273 class
 // READ_LONG  0x1cc biography ELSE 0
 
 // Grabs the armor appearance for the creature
@@ -2092,10 +2094,6 @@ END
 PATCH_IF (twoweapon > 0) BEGIN
     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
 END
-
-READ_BYTE 0x234 level
-READ_BYTE 0x273 class
-READ_LONG 0x1cc biography ELSE 0
 
 // Assign profs to joinable NPC with free pips
 PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
