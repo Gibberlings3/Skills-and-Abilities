@@ -1893,6 +1893,7 @@ READ_SSHORT (item_slots_offset + 0x02) armor_slot
 PATCH_IF !(armor_slot = ~-1~) BEGIN
   READ_ASCII (items_offset + armor_slot * 0x14) armor
   INNER_ACTION BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%armor%.itm~ BEGIN
     COPY_EXISTING - ~%armor%.itm~ override
       //READ_LONG 0x22 appearance
       READ_ASCII 0x22 appearance (2)
@@ -1900,6 +1901,7 @@ PATCH_IF !(armor_slot = ~-1~) BEGIN
       PATCH_IF (~%appearance%~ STRING_COMPARE_CASE ~4a~ = 0) BEGIN
         is_heavyarmor = 1
       END
+    END
   END
 END
 PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
