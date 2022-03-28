@@ -1863,7 +1863,8 @@ SPRINT source ~%SOURCE_FILE%~
 READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
-READ_LONG  0x1cc biography ELSE 0
+READ_ASCII  0x280 deathvar
+// READ_LONG  0x1cc biography ELSE 0
 
 // Grabs the armor appearance for the creature
 READ_LONG 0x2b8 item_slots_offset ELSE 0
@@ -2097,7 +2098,7 @@ READ_BYTE 0x273 class
 READ_LONG 0x1cc biography ELSE 0
 
 // Assign profs to joinable NPC with free pips
-PATCH_IF ((SOURCE_SIZE >= 0x2d3) AND ((biography < 2147483647) AND (biography > 0))) BEGIN
+PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~))
         
     // CLERICs and DRUIDs 
     PATCH_IF (class = 3) OR // CLERIC
