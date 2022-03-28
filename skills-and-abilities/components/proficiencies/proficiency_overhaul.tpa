@@ -2198,6 +2198,14 @@ PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
 
     // PALADIN and RANGER
     PATCH_IF (class = 6) OR (class = 12) BEGIN 
+        // Heavy Armor
+        PATCH_IF (is_heavyarmor = 1) BEGIN
+            PATCH_IF (free_pips > 0) BEGIN
+                LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 89 timing = 9 END
+                free_pips -= 1
+            END
+        END
+
         // Devotion
         PATCH_IF (free_pips >= 2) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
@@ -2210,7 +2218,7 @@ PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
 
     PATCH_IF (free_pips > 0) BEGIN
         // Heavy Armor
-        PATCH_IF (is_heavyarmor = 1) BEGIN
+        PATCH_IF (is_heavyarmor = 1) AND !((class = 6) OR (class = 12)) BEGIN
             PATCH_IF (free_pips >= 5) BEGIN
                 LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 89 timing = 9 END
                 free_pips -= 5
