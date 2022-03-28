@@ -1863,20 +1863,10 @@ SPRINT source ~%SOURCE_FILE%~
 READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
-READ_LONG  0x1cc biography ELSE 0
-
-// Grabs the armor appearance for the creature
-READ_LONG 0x2b8 item_slots_offset ELSE 0
-READ_LONG 0x2bc items_offset ELSE 0
-READ_SSHORT (item_slots_offset + 0x02) armor_slot
-PATCH_IF !(armor_slot = ~-1~) BEGIN
-  READ_ASCII (items_offset + armor_slot * 0x14) armor
-  INNER_ACTION BEGIN
-    COPY_EXISTING ~%armor%.itm~ override
-      READ_LONG 0x22 appearance
-  END
-END
-
+READ_ASCII  0x280 deathvar
+READ_BYTE 0x234 level
+READ_BYTE 0x273 class
+// READ_LONG  0x1cc biography ELSE 0
 SET free_pips = 0
 SET bow = 0
 SET spiked = 0
@@ -1894,6 +1884,20 @@ SET twohanded = 0
 SET swordandshield = 0
 SET singleweapon = 0
 SET twoweapon = 0
+// Grabs the armor appearance for the creature
+READ_LONG 0x2b8 item_slots_offset ELSE 0
+READ_LONG 0x2bc items_offset ELSE 0
+READ_SSHORT (item_slots_offset + 0x02) armor_slot
+PATCH_IF !(armor_slot = ~-1~) BEGIN
+  READ_ASCII (items_offset + armor_slot * 0x14) armor
+  INNER_ACTION BEGIN
+    COPY_EXISTING ~%armor%.itm~ override
+      READ_LONG 0x22 appearance
+      PATCH_IF (appearance = 16692) BEGIN
+        is_heavyarmor = 1
+      END
+  END
+END
 PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
 
 FOR (index = 0 ; index < fx_num ; ++index) BEGIN
@@ -1908,11 +1912,6 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         (type = 99) OR
         (type = 102) BEGIN
         is_twohanded = 1
-    END
-
-    // Checks if Heavy Armor is equipped
-    PATCH_IF (appearance = 16692) BEGIN
-      is_heavyarmor = 1
     END
 
     // Bows
@@ -2092,12 +2091,8 @@ PATCH_IF (twoweapon > 0) BEGIN
     LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
 END
 
-READ_BYTE 0x234 level
-READ_BYTE 0x273 class
-READ_LONG 0x1cc biography ELSE 0
-
 // Assign profs to joinable NPC with free pips
-PATCH_IF ((SOURCE_SIZE >= 0x2d3) AND ((biography < 2147483647) AND (biography > 0))) BEGIN
+PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
         
     // CLERICs and DRUIDs 
     PATCH_IF (class = 3) OR // CLERIC
