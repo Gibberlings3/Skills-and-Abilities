@@ -1,10 +1,11 @@
 ## Version 0.6.1 alpha
 
-April xx, 2022
+March 28, 2022
 
 ### Changed
 
-- Updated check for armor appearance based on advice from CamDawg_G3.
+- Updated check for armor appearance based on advice from Ardanis and CamDawg_G3.
+- Corrected bug where it would check for armor appearance on invalid items.
 
 ## Version 0.6 alpha
 
