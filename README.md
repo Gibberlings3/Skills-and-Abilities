@@ -80,11 +80,13 @@ Remove Rage: Removes rage from the barbarian
 
 SMITE: This ability allows the paladin to make a special attack against any enemy. Paladins apply their Charisma modifier to their attack roll and damage roll for one round. Smite may be used once per day at 1st level. At 5th level and every five levels after that, the paladin gains an additional use per day.
 
-- 3rd Level: Gains the Aura of Courage passive ability. This will be Aura of Despair for Blackguards.
+- 3rd Level: Gains the Aura of Courage passive ability. This will be Aura of Despair for Blackguards and Aura of Protection for Cavaliers.
 
 AURA OF COURAGE: This ability grants protection against all forms of panic, boosts morale, and grants +2 bonus to all saving throws for the character and all allies within 15 feet.
 
 AURA OF DESPAIR: The blackguard radiates a malign aura that causes all enemies within 15 feet of him/her to suffer a -2 penalty on all saving throws.
+
+AURA OF PROTECTION: This ability grants -2 bonus to AC and +2 bonus to all saving throws for the character and all allies within 15 feet.
 
 - New HLA Ability: Sanctify Strikes.
 
@@ -215,8 +217,6 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
 - Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.
 
-**Coming soon** more proficiency options.
-
 ## More Meaningful Stat Bonuses
 
 ### Strength 
@@ -236,5 +236,6 @@ The Overhaul Proficiency System Component is not compatible with other mods that
 
 - Bubb for all of his work on EEex and general coding assistance.
 - aVENGER for use of a function to update clab files.
-- CamDawg_G3 and the_bigg for using their code as reference when consolidating weapon proficiencies into weapon groups and general coding assistance. 
+- CamDawg_G3 and the_bigg for using their code as reference when consolidating weapon proficiencies into weapon groups and general coding assistance. Additionally, many thanks to CamDawg_G3 for various other assistance with coding. 
 - JohnBob for the French translation.
+- Ardanis and Graion Dilach for assistance with identifying if a creature is wearing plate armor.

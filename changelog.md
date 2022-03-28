@@ -6,7 +6,7 @@ March 27, 2022
 
 - Updated assigning of proficiencies to all characters in the game.
 - Updated Sword and Shield weapon style to grant bonuses to AC against missile weapons.
-- (In progress) Updated Paladin Auras
+- Cavalier now receives the Aura of Protection passive instead of Aura of Courage.
 
 ## Version 0.5 alpha
 
