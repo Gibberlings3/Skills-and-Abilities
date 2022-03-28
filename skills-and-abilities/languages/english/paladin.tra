@@ -39,4 +39,11 @@ This ability allows the paladin to make a special attack against any enemy. Pala
 @6011 = ~– May not cast priest spells.~
 @6012 = ~~
 
+@6013 = ~20% resistance to fire and acid.~
+@6014 = ~20% resistance to fire and acid.
+
+- 3rd Level: Gains the Aura of Protection passive ability.
+
+AURA OF PROTECTION: This ability grants -2 bonus to AC and +2 bonus to all saving throws for the character and all allies within 15 feet.~
+
 @6500 = ~[LAST TRA HERE]~

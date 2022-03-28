@@ -7,19 +7,20 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/eff/class/MOPAL01.EFF~  ~override~ // Aura of Courage
-COPY ~skills-and-abilities/spl/MOPAL01.SPL~        ~override~ // Aura of Courage
-COPY ~skills-and-abilities/spl/MOPALC1.SPL~        ~override~ // Aura of Courage
-COPY ~skills-and-abilities/eff/class/MOPAL02.EFF~  ~override~ // Aura of Despair
-COPY ~skills-and-abilities/spl/MOPAL02.SPL~        ~override~ // Aura of Despair
-COPY ~skills-and-abilities/spl/MOPALC2.SPL~        ~override~ // Aura of Despair
+ACTION_FOR_EACH aura IN
+      1 // Aura of Courage
+      2 // Aura of Despair
+      4 // Aura of Protection
+    BEGIN
+      COPY ~skills-and-abilities/eff/class/MOPAL0%aura%.EFF~  ~override~ 
+      COPY ~skills-and-abilities/spl/MOPAL0%aura%.SPL~        ~override~
+      COPY ~skills-and-abilities/spl/MOPALC%aura%.SPL~        ~override~
+    END
 COPY ~skills-and-abilities/eff/class/MO#PHL01.EFF~ ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strikes
   SAY NAME1 @6003
   SAY UNIDENTIFIED_DESC @6004
-//COPY ~skills-and-abilities/eff/class/MOPAL03.EFF~  ~override~ // Smite
-//COPY ~skills-and-abilities/spl/MOPAL03.SPL~        ~override~ // Smite
 COPY ~skills-and-abilities/spl/MOPAL32.SPL~        ~override~ // Smite
 COPY ~skills-and-abilities/spl/MOPAL31.SPL~        ~override~ // Smite
 COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
@@ -59,12 +60,17 @@ LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 20 STR_VAR 
       // Add new abilities to all Paladin kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
       PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Blackguard") BEGIN
-        REPLACE_TEXTUALLY ~GA_SPCL103~ ~AP_MOPALC2~
+        REPLACE_TEXTUALLY ~GA_SPCL103~ ~AP_MOPALC2~ // Aura of Despair
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+        PRETTY_PRINT_2DA
+      END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Cavalier") BEGIN
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC4 END // Aura of Protection
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         PRETTY_PRINT_2DA
       END ELSE BEGIN
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         PRETTY_PRINT_2DA
@@ -83,17 +89,27 @@ OUTER_SPRINT old_pal    @6005
 OUTER_SPRINT new_pal    @6006
 OUTER_SPRINT old_black  @6007
 OUTER_SPRINT new_black  @6008
+OUTER_SPRINT old_cav    @6013
+OUTER_SPRINT new_cav    @6014
 
 // Set the strref for the specific game first
 ACTION_IF GAME_IS ~bgee~ BEGIN
-  OUTER_SET pal_strref = 9558    // BGEE strref
-  OUTER_SET black_strref = 28606 // BGEE strref
-END ELSE ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-  OUTER_SET pal_strref = 9558    // BG2EE and EET strref
-  OUTER_SET black_strref = 77514 // BGEE strref
+  OUTER_SET pal_strref = 9558 
+  OUTER_SET black_strref = 28606
+  OUTER_SET cav_strref = 24287
+END ELSE ACTION_IF GAME_IS ~bg2ee~ BEGIN
+  OUTER_SET pal_strref = 9558   
+  OUTER_SET black_strref = 77514
+  OUTER_SET cav_strref = 25206
+END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+  OUTER_SET palbg1_strref = 209558 // BG1EE archived strref
+  OUTER_SET pal_strref = 9558    
+  OUTER_SET black_strref = 77514 
+  OUTER_SET cav_strref = 25206   
 END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
-  OUTER_SET pal_strref = 9558    // IWDEE strref
-  OUTER_SET black_strref = 37145 // BGEE strref
+  OUTER_SET pal_strref = 9558    
+  OUTER_SET black_strref = 37145
+  OUTER_SET cav_strref = 37133
 END
 
 // Paladin strref
@@ -113,3 +129,23 @@ OUTER_PATCH_SAVE black_description ~%black_description%~ BEGIN
 END
 
 STRING_SET_EVALUATE ~%black_strref%~ ~%black_description%~
+
+// Cavalier strref
+ACTION_GET_STRREF ~%cav_strref%~ cav_description
+
+OUTER_PATCH_SAVE cav_description ~%cav_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_cav%~ ~%new_cav%~
+END
+
+STRING_SET_EVALUATE ~%cav_strref%~ ~%cav_description%~
+
+// EET ONLY
+ACTION_IF GAME_IS ~eet~ BEGIN
+  ACTION_GET_STRREF ~%palbg1_strref%~ palbg1_description
+
+  OUTER_PATCH_SAVE palbg1_description ~%palbg1_description%~ BEGIN
+    REPLACE_TEXTUALLY ~%old_pal%~ ~%new_pal%~
+  END
+
+STRING_SET_EVALUATE ~%palbg1_strref%~ ~%palbg1_description%~
+END

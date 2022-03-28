@@ -6,7 +6,6 @@ March 27, 2022
 
 - Updated assigning of proficiencies to all characters in the game.
 - Updated Sword and Shield weapon style to grant bonuses to AC against missile weapons.
-- (In progress) Updated spear damage from 1d6 to 1d8.
 - (In progress) Updated Paladin Auras
 
 ## Version 0.5 alpha
