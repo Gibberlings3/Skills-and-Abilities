@@ -2098,7 +2098,7 @@ READ_BYTE 0x273 class
 READ_LONG 0x1cc biography ELSE 0
 
 // Assign profs to joinable NPC with free pips
-PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~))
+PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
         
     // CLERICs and DRUIDs 
     PATCH_IF (class = 3) OR // CLERIC
