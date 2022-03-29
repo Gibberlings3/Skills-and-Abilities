@@ -1,3 +1,11 @@
+## Version 0.6.2 alpha
+
+March 29, 2022
+
+### Changed
+
+- Corrected bug where some new proficiencies could no longer be used if a character died and was resurrected.
+
 ## Version 0.6.1 alpha
 
 March 28, 2022
