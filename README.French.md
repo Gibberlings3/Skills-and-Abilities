@@ -84,11 +84,13 @@ Supprime Rage du barbare : le barbare ne disposera pas de la capacité spécial 
 
 PUNITION : Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur niveau de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round. Punition peut être utilisé une fois par jour au 1er niveau. Le paladin gagne une utilisation supplémentaire au 5e niveau et tous les cinq niveaux suivants.
 
-- 3ème niveau : Gagne la capacité passive Aura de Courage. Le Chevalier Noir disposera de la capacité passive Aura de Désespoir.
+- 3ème niveau : Gagne la capacité passive Aura de Courage. Le Chevalier Noir disposera à la place de la capacité Aura de Désespoir et le Cavalier de la capacité Aura de Protection.
 
 AURA DE COURAGE : Cette capacité confère une protection contre toutes les formes de panique, augmente le moral et accorde un bonus de 2 à tous les jets de sauvegarde du personnage et de ses alliés dans un rayon de 5 mètres.
 
 AURA DE DÉSESPOIR : Le Chevalier Noir dégage une aura maléfique qui fait subir un malus de 2 à tout les jets de sauvegarde des ennemis se trouvant à moins de 5 mètres.
+
+AURA DE PROTECTION : Cette capacité confère un bonus de 2 à la CA et un bonus de 2 à tous les jets de sauvegarde pour le personnage et tous ses alliés dans un rayon de 5 mètres.
 
 - Ajoute une capacité de haut niveau : Poings Sanctifier.
 

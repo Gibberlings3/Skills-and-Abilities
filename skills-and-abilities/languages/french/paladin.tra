@@ -39,4 +39,11 @@ Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'imp
 @6011 = ~– Ne peut pas utiliser de sorts de prêtres~
 @6012 = ~~
 
+@6013 = ~20% de résistance au feu et à l'acide.~
+@6014 = ~20% de résistance au feu et à l'acide.
+
+- 3ème niveau : Gagne la capacité passive Aura de protection.
+
+AURA DE PROTECTION : Cette capacité confère un bonus de 2 à la CA et un bonus de 2 à tous les jets de sauvegarde pour le personnage et tous ses alliés dans un rayon de 5 mètres.~
+
 @6500 = ~[LAST TRA HERE]~
