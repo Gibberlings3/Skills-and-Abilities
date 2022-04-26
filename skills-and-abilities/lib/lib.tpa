@@ -165,8 +165,12 @@ END
 DEFINE_PATCH_FUNCTION ADD_NEW_HLA_ROW BEGIN
   COUNT_2DA_COLS cols
   COUNT_2DA_ROWS cols rows
-  SET row_num = rows + 1  
-  INSERT_2DA_ROW ("%rows%") %cols% ~%row_num% * * * * * * * * *~
+  SET row_num = rows + 1
+  PATCH_IF (cols = 10) BEGIN  
+    INSERT_2DA_ROW ("%rows%") %cols% ~%row_num% * * * * * * * * *~
+  END ELSE BEGIN
+    INSERT_2DA_ROW ("%rows%") %cols% ~%row_num% * * * * * * * *~
+  END
 END
 
 ///////////////////////////////////////////////////////////////////////////
@@ -183,12 +187,13 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
     excluded_by = "*"  // Excluded by field
     alignment = "*"    // Alignment requirements
   BEGIN  
+  COUNT_2DA_COLS kcols
   COUNT_2DA_ROWS 4 krows
   FOR (j = 1; j < krows; ++j) BEGIN
     READ_2DA_ENTRY j 1 4 classhla
     PATCH_IF ~%classhla%~ STRING_EQUAL ~%ability%~ BEGIN
       j = krows
-    END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
+    END ELSE PATCH_IF (~%classhla%~ STRING_EQUAL ~*~) AND (kcols = 10) BEGIN
       SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
       SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
       SET_2DA_ENTRY (j+2) 5 1 ~%max_lev%~      // MAX_LEV
@@ -197,6 +202,14 @@ DEFINE_PATCH_FUNCTION ADD_NEW_HLA
       SET_2DA_ENTRY (j+2) 8 1 ~%excluded_by%~  // Excluded by HLA
       SET_2DA_ENTRY (j+2) 9 1 ~%alignment%~    // Required Alignment
       j = krows
-    END 
+    END ELSE PATCH_IF ~%classhla%~ STRING_EQUAL ~*~ BEGIN
+      SET_2DA_ENTRY (j+2) 1 1 ~%ability%~      // HLA Name
+      SET_2DA_ENTRY (j+2) 4 1 ~%min_lev%~      // MIN_LEV
+      SET_2DA_ENTRY (j+2) 5 1 ~%max_lev%~      // MAX_LEV
+      SET_2DA_ENTRY (j+2) 6 1 ~%num_allowed%~  // NUM_ALLOWED
+      SET_2DA_ENTRY (j+2) 7 1 ~%prerequisite%~ // Prerequisite HLA
+      SET_2DA_ENTRY (j+2) 8 1 ~%excluded_by%~  // Excluded by HLA
+      j = krows
+    END
   END
 END

@@ -1,3 +1,11 @@
+## Version 0.6.3 alpha
+
+April xx, 2022
+
+### Changed
+
+- Corrected bug when modifying HLA tables.
+
 ## Version 0.6.2 alpha
 
 March 29, 2022
