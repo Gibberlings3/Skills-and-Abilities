@@ -1,3 +1,11 @@
+## Version 0.6.4 alpha
+
+May xx, 2022
+
+### Changed
+
+- Corrected bug preventing Narlen Darkwalk from engaging in his appropriate dialog tree.
+
 ## Version 0.6.3 alpha
 
 April 26, 2022
