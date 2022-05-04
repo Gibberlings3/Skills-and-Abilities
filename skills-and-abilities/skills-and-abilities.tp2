@@ -13,6 +13,7 @@ AUTO_EVAL_STRINGS
 
 ALWAYS
 	INCLUDE ~skills-and-abilities/lib/always.tph~
+    //OUTER_SPRINT NEGATE ~!~
 END
 
 AUTO_TRA ~skills-and-abilities/languages/%s~
