@@ -4,16 +4,13 @@
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
+/*
 REPLACE_TRIGGER_TEXT ~narlen~ 
 ~Global("TalkedToNarlen","GLOBAL",0)
 !IfValidForPartyDialog([0.0.0.THIEF_ALL])~
 ~Global("TalkedToNarlen","GLOBAL",0)
 !IfValidForPartyDialog([0.0.0.THIEF_ALL])
-!IfValidForPartyDialog([0.0.0.BARD_ALL])~  
+!IfValidForPartyDialog([0.0.0.BARD_ALL])~
+*/  
 
-REPLACE_TRIGGER_TEXT ~narlen~ 
-~Global("TalkedToNarlen","GLOBAL",0)
-!InParty([0.0.0.THIEF_ALL])~
-~Global("TalkedToNarlen","GLOBAL",0)
-!InParty([0.0.0.THIEF_ALL])
-!InParty([0.0.0.BARD_ALL])~ 
+REPLACE_TRIGGER_TEXT NARLEN ~!InParty([0.0.0.THIEF_ALL])~ ~!InParty([0.0.0.THIEF_ALL]) !InParty([0.0.0.BARD_ALL])~ 
