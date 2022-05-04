@@ -194,7 +194,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Narlen Darkwalk - BGEE Thieves Guild                                  //
 ///////////////////////////////////////////////////////////////////////////
-PATCH_IF GAME_IS ~bgee eet~ BEGIN
+ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
   COMPILE EVAL ~skills-and-abilities/dlg/narlenb.d~
 END
 
