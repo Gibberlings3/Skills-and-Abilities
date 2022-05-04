@@ -13,5 +13,6 @@ REPLACE_TRIGGER_TEXT ~narlen~
 !IfValidForPartyDialog([0.0.0.BARD_ALL])~
 */  
 
-REPLACE_TRIGGER_TEXT NARLEN ~!InParty(\[0\.0\.0\.THIEF_ALL\])~ ~!InParty([0.0.0.THIEF_ALL]) !InParty([0.0.0.BARD_ALL])~ 
+REPLACE_TRIGGER_TEXT NARLEN ~!InParty(\[0\.0\.0\.THIEF_ALL\])~ ~!InParty([0.0.0.THIEF_ALL]) !InParty([0.0.0.BARD_ALL])~
+REPLACE_TRIGGER_TEXT NARLEN ~!IfValidForPartyDialog(\[0\.0\.0\.THIEF_ALL\])~ ~!IfValidForPartyDialog([0.0.0.THIEF_ALL]) !IfValidForPartyDialog([0.0.0.BARD_ALL])~  
 REPLACE_TRIGGER_TEXT NARLEN ~!See(\[PC\.0\.0\.BARD\])~ ~~
