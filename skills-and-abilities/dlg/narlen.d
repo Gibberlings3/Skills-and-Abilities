@@ -6,5 +6,4 @@
 
 REPLACE_STATE_TRIGGER NARLEN 0 
 ~Global("TalkedToNarlen","GLOBAL",0)
-!IfValidForPartyDialog([0.0.0.THIEF_ALL])
-!IfValidForPartyDialog([0.0.0.BARD_ALL])~ 
+!IfValidForPartyDialog([0.0.0.THIEF_ALL])~ 
