@@ -11,7 +11,7 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
   //SILENT
   OUTER_SET initialise=1
   OUTER_SET monk_skills=0
-  OUTER_SPRINT NEGATE ~"!"~
+  OUTER_SPRINT NEGATE ~!~
 
 ///////////////////////////////////////////////////////////////////////////
 // General variables, macros and functions                               //
