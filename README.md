@@ -108,10 +108,6 @@ Replaces the Inquisitor's True Seeing with the Detect Illusion Skill (Set at 100
 
 As stated, Inquisitors will now gain spellcasting similar to other Paladins.
 
-### **Coming Soon** Cleric/Mage/Thief Class (EEex Required)
-
-This adds the Cleric/Mage/Thief Class which is selected as a kit for the Fighter/Mage/Cleric Class. This class will only be useable for Half-Elves.
-
 ### Add New HLAs for ALL Classes and Kits
 
 **EPIC DAMAGE REDUCTION:** The character gains 10% damage reduction to all physical attacks.
