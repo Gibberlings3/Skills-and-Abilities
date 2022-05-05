@@ -1,10 +1,10 @@
 ## Version 0.6.4 alpha
 
-May xx, 2022
+May 4, 2022
 
 ### Changed
 
-- Corrected bug preventing Narlen Darkwalk from engaging in his appropriate dialog tree.
+- Corrected bug preventing Narlen Darkwalk from engaging in his appropriate dialog tree. Big thanks to Cam, Bubb, Ardanis, and Argent77 in figuring this one out.
 
 ## Version 0.6.3 alpha
 
