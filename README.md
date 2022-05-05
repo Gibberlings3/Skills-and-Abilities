@@ -238,4 +238,5 @@ The Overhaul Proficiency System Component is not compatible with other mods that
 - aVENGER for use of a function to update clab files.
 - CamDawg_G3 and the_bigg for using their code as reference when consolidating weapon proficiencies into weapon groups and general coding assistance. Additionally, many thanks to CamDawg_G3 for various other assistance with coding. 
 - JohnBob for the French translation.
-- Ardanis and Graion Dilach for assistance with identifying if a creature is wearing plate armor.
+- Ardanis and Graion Dilach for assistance with identifying if a creature is wearing plate armor and other coding assistance.
+- Argent77 for troubleshooting coding issues around REPLACE_TRIGGER_TEXT. 
