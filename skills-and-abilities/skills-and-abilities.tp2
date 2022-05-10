@@ -256,7 +256,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/cleric_mage_thief.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Turn Undead Overhaul                                                  //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @90 DESIGNATED 90 GROUP @1 LABEL SkillsAndAbilitiesTurnUndead
+BEGIN @120 DESIGNATED 120 GROUP @1 LABEL SkillsAndAbilitiesTurnUndead
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
@@ -264,7 +264,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @120 DESIGNATED 120 GROUP @1 LABEL SkillsAndAbilitiesNewHLA
+BEGIN @90 DESIGNATED 90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
 
 INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
