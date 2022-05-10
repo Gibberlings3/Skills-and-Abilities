@@ -37,6 +37,7 @@
 @90 = ~Add New HLAs for ALL Classes and Kits~
 @100 = ~Allow Inquisitor Kit to Cast Divine Spells~
 @110 = ~Add Cleric/Mage/Thief Class~
+@120 = ~Turn Undead Overhaul~
 
 // Group 2 (Update 200-299)
 
@@ -58,6 +59,7 @@
 @3003 = ~Barbarian Rage is required for Feral Senses~
 @3004 = ~Component requires BG: EE, BGII: EE, IWDEE, or EET~
 @3005 = ~Barbarian Rage has been removed~
+@3006 = ~Component requires BGII: EE or EET~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                          //

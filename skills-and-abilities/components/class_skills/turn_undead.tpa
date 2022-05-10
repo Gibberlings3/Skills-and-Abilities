@@ -1,0 +1,18 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Overhaul Turn Undead                                                  //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Add Required Files to Override                                        //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF FILE_EXISTS_IN_GAME ~M_B3THI7.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~   ~override~ // Inquisitor Dispel Illusion
+END ELSE BEGIN
+  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~   ~override~ // NO Inquisitor Dispel Illusion
+END
+
+COPY ~skills-and-abilities/lua/M_B3TUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
+COPY ~skills-and-abilities/lua/M_B3TUR4.lua~   ~override~ // Cleric/Thief 
+COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger 

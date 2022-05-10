@@ -7,7 +7,7 @@
 BACKUP ~skills-and-abilities/backup~
 AUTHOR ~Grammarsalad and morpheus562~
 
-VERSION ~v0.6.4-alpha~
+VERSION ~v0.7-alpha~
 README ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 
@@ -254,10 +254,18 @@ INCLUDE ~skills-and-abilities/components/class_skills/cleric_mage_thief.tpa~
 */
 
 ///////////////////////////////////////////////////////////////////////////
+// Turn Undead Overhaul                                                  //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @90 DESIGNATED 90 GROUP @1 LABEL SkillsAndAbilitiesTurnUndead
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+
+INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @90 DESIGNATED 90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3000
+BEGIN @120 DESIGNATED 120 GROUP @1 LABEL SkillsAndAbilitiesNewHLA
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
 
 INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
 

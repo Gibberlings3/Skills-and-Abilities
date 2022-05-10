@@ -1,3 +1,11 @@
+## Version 0.7 alpha
+
+May xx, 2022
+
+### Changed
+
+- Added Turn Undead Overhaul
+
 ## Version 0.6.4 alpha
 
 May 4, 2022
