@@ -8,9 +8,9 @@
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_IF FILE_EXISTS_IN_GAME ~M_B3THI7.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~   ~override~ // Inquisitor Dispel Illusion
+  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~   ~override~ // Inquisitor Dispel Illusion
 END ELSE BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~   ~override~ // NO Inquisitor Dispel Illusion
+  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~   ~override~ // NO Inquisitor Dispel Illusion
 END
 
 COPY ~skills-and-abilities/lua/M_B3TUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
