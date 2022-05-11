@@ -3,10 +3,18 @@
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
-@9001 = ~prêtre / mage / voleur~
+@9001 = ~Repousser les morts-vivants~
+@9002 = ~Repousser morts-vivants
+Les prêtres et les paladins ont la faculté de repousser ou de détruire les créatures mortes-vivantes. Cette capacité inflige, 2d6 points de dégâts + 1 point par niveau du prêtre/paladin + modificateur de Charisme, à tous les morts-vivants dans un rayon de 5 mètre autour du prêtre/paladin. Les morts-vivants doivent réussir un jet de sauvegarde contre le sort ou être repoussés en subissant une pénalité de -2 à la CA. Si le prêtre/paladin a deux fois plus de niveaux que la créature en question, elle sera détruite (de façon surnaturelle).~
 
-@9002 = ~Prêtre / Mage / Voleur~
 
-@9003 = ~PRÊTRE/MAGE/VOLEUR : Cette classe de personnage peut utiliser les capacités d'un Prêtre, d'un Mage et d'un Voleur, bien que ses armes soient limitées à celles autorisées pour les Prêtres, que les sorts de Mage ne puissent être lancés en portant une armure et que les compétences de voleur ne soient accessibles qu'avec une armure de cuir cloutée ou plus légère.~
+@9003 = ~Chasser les morts-vivants~
+@9004 = ~Chasser les morts-vivants 
+Cette HLA accorde une capacité repousser les morts-vivants supplémentaire.~
+
+@9005 = ~Pourchasser les morts-vivants~
+@9006 = ~Pourchasser les morts-vivants
+Vous pouvez repousser ou détruire plus de morts-vivants. Vous multipliez par 2 les dégâts se rapportant à votre niveau expérience ainsi que votre modificateur de Charisme.~
+
 
 @9500 = ~[LAST TRA HERE]~

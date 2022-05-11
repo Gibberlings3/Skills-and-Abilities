@@ -20,23 +20,24 @@
 
 @30 = ~1er Barbares (EEex fortement recommande) : Ajoute Pose de Pieges Ancestral, Se cacher dans la Nature, Detection des illusions, et supprime Rage du Barbare~
 @31 = ~1er Barbares (EEex fortement recommande) : Ajoute Pose de Pieges Ancestral, Se cacher dans la Nature, Detection des illusions, et conserve Rage du Barbare~
-@32 = ~Ajoute Pose de Pieges Ancestral~
-@33 = ~Ajoute Se cacher dans la Nature (EEex fortement recommande)~			
-@34 = ~Ajoute Detection des illusions comme les voleurs (EEex fortement recommande)~
-@35 = ~Ajoute Instinct Sauvage (Detection des illusions, capacite similaire a un sort sous l'effet de la Rage).~
-@36 = ~Ajoute Instinct Sauvage (Detection des illusions, capacite similaire a celle des voleurs sous l'effet de la Rage).~
-@37 = ~Ajoute Instinct Sauvage (Detection des illusions, capacite améliorée similaire a celle des voleurs sous l'effet de la Rage).~
+@32 = ~Ajouter Pose de Pieges Ancestral~
+@33 = ~Ajouter Se cacher dans la Nature (EEex fortement recommande)~			
+@34 = ~Ajouter Detection des illusions comme les voleurs (EEex fortement recommande)~
+@35 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite similaire a un sort sous l'effet de la Rage).~
+@36 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite similaire a celle des voleurs sous l'effet de la Rage).~
+@37 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite améliorée similaire a celle des voleurs sous l'effet de la Rage).~
 
 @39 = ~Supprime la Rage du Barbare~
 
 @40 = ~Mise a jour des Competences des Rodeurs~
-@50 = ~Ajoute Detection des illusions pour les Tueurs de magiciens~
+@50 = ~Ajouter Detection des illusions pour les Tueurs de magiciens~
 @60 = ~Remplacer la Vision veritable de l'Inquisiteur par la capacite Detection des illusions~
-@70 = ~Ajoute des capacites speciales pour les moines~
-@80 = ~Ajoute des capacites speciales pour les Paladins~
-@90 = ~Ajoute des capacites de haut niveau pour toutes les classes et kits~
+@70 = ~Ajouter des capacites speciales pour les moines~
+@80 = ~Ajouter des capacites speciales pour les Paladins~
+@90 = ~Ajouter des capacites de haut niveau pour toutes les classes et kits~
 @100 = ~Permettre a l'Inquisiteur de lancer des sorts divins~
-@110 = ~Ajoute la classe de Pretre/Mage/Voleur~
+@110 = ~Ajouter la classe de Clerc/Mage/Voleur~
+@120 = ~Revision de la capacite repousser les morts-vivants~
 
 // Group 2 (Update 200-299)
 
@@ -64,7 +65,7 @@
 ///////////////////////////////////////////////////////////////////////////
 
 @3401 = ~1er Barbares "contenu"~
-@3402 = ~Ajoute Instinct Sauvage~
+@3402 = ~Ajouter Instinct Sauvage~
 
 @3500 = ~[LAST TRA HERE]~
 
