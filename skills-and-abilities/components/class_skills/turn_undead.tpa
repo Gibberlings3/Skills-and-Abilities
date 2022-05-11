@@ -20,13 +20,17 @@ COPY ~skills-and-abilities/lua/M_B3TUR5.lua~      ~override~ // Cleric/Ranger
 COPY ~skills-and-abilities/eff/class/motur01.eff~ ~override~
 
 FOR (i = 1; i < 10; ++i) BEGIN
-  COPY_EXISTING ~motur01.eff~ ~override/motur0%i%.eff~
-    WRITE_LONG 0x1c i
+  INNER_ACTION BEGIN
+    COPY_EXISTING ~motur01.eff~ ~override/motur%i%.eff~
+      WRITE_LONG 0x1c i
+  END
 END
 
 FOR (j = 10; j < 51; ++j) BEGIN
-  COPY_EXISTING ~motur01.eff~ ~override/motur%j%.eff~
-    WRITE_LONG 0x1c j
+  INNER_ACTION BEGIN
+    COPY_EXISTING ~motur01.eff~ ~override/motur%j%.eff~
+      WRITE_LONG 0x1c j
+  END
 END
 
 COPY ~skills-and-abilities/spl/MOTURN1.SPL~    ~override~ // Turn Undead
