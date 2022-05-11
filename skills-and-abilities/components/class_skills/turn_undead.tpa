@@ -18,12 +18,12 @@ COPY ~skills-and-abilities/lua/M_B3TUR4.lua~   ~override~ // Cleric/Thief
 COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger
 
 FOR (i = 1; i < 10; ++i) BEGIN
-  COPY ~skills-and-abilities/eff/class/MOTUR01.EFF~   ~override/MOTURN0%i%.EFF~
+  COPY ~skills-and-abilities/eff/class/motur01.eff~   ~override/motur0%i%.eff~
     WRITE_LONG 0x1c i
 END
 
 FOR (j = 10; j < 51; ++j) BEGIN
-  COPY ~skills-and-abilities/eff/class/MOTUR01.EFF~    ~override/MOTURN%j%.EFF~
+  COPY ~skills-and-abilities/eff/class/motur01.eff~    ~override/motur%j%.eff~
     WRITE_LONG 0x1c j
 END
 
