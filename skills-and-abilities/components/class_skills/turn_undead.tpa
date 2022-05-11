@@ -57,7 +57,7 @@ COPY_EXISTING ~splprot.2da~ ~override~
     END
 
 COPY_EXISTING ~mocha13.eff~ ~override~
-    WRITE_LONG 0x2 %cha_mod%
+    WRITE_LONG 0x20 cha_mod
 
 ///////////////////////////////////////////////////////////////////////////
 // Give Paladin Turn Undead Ability                                      //
