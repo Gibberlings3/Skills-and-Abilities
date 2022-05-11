@@ -8,22 +8,24 @@
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_IF FILE_EXISTS_IN_GAME ~M_B3THI7.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~   ~override~ // Inquisitor Dispel Illusion
+  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~    ~override~ // Inquisitor Dispel Illusion
 END ELSE BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~   ~override~ // NO Inquisitor Dispel Illusion
+  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~    ~override~ // NO Inquisitor Dispel Illusion
 END
 
-COPY ~skills-and-abilities/lua/M_B3TUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
-COPY ~skills-and-abilities/lua/M_B3TUR4.lua~   ~override~ // Cleric/Thief 
-COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger
+COPY ~skills-and-abilities/lua/M_B3TUR3.lua~      ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
+COPY ~skills-and-abilities/lua/M_B3TUR4.lua~      ~override~ // Cleric/Thief 
+COPY ~skills-and-abilities/lua/M_B3TUR5.lua~      ~override~ // Cleric/Ranger
+
+COPY ~skills-and-abilities/eff/class/motur01.eff~ ~override~
 
 FOR (i = 1; i < 10; ++i) BEGIN
-  COPY ~skills-and-abilities/eff/class/motur01.eff~   ~override/motur0%i%.eff~
+  COPY_EXISTING ~motur01.eff~ ~override/motur0%i%.eff~
     WRITE_LONG 0x1c i
 END
 
 FOR (j = 10; j < 51; ++j) BEGIN
-  COPY ~skills-and-abilities/eff/class/motur01.eff~    ~override/motur%j%.eff~
+  COPY_EXISTING ~motur01.eff~ ~override/motur%j%.eff~
     WRITE_LONG 0x1c j
 END
 
