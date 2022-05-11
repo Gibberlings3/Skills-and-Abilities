@@ -21,7 +21,7 @@ COPY ~skills-and-abilities/lua/M_B3TUR5.lua~      ~override~ // Cleric/Ranger
 
 FOR (i = 1; i < 10; ++i) BEGIN
   INNER_ACTION BEGIN
-    COPY ~skills-and-abilities/eff/class/motur01.eff~ ~override/motur%i%.eff~
+    COPY ~skills-and-abilities/eff/class/motur01.eff~ ~override/motur0%i%.eff~
       WRITE_LONG 0x1c i
   END
 END
