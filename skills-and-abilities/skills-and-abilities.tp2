@@ -28,7 +28,7 @@ LANGUAGE ~English~
          ~skills-and-abilities/languages/english/strength.tra~
          ~skills-and-abilities/languages/english/wizard_slayer.tra~
          ~skills-and-abilities/languages/english/hla_descriptions.tra~
-         ~skills-and-abilities/languages/english/cleric_mage_thief.tra~
+         ~skills-and-abilities/languages/english/turn_undead.tra~
 LANGUAGE ~French~
          ~french~
          ~skills-and-abilities/languages/french/setup.tra~
@@ -41,7 +41,7 @@ LANGUAGE ~French~
          ~skills-and-abilities/languages/french/strength.tra~
          ~skills-and-abilities/languages/french/wizard_slayer.tra~
          ~skills-and-abilities/languages/french/hla_descriptions.tra~
-         ~skills-and-abilities/languages/french/cleric_mage_thief.tra~
+         ~skills-and-abilities/languages/french/turn_undead.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
