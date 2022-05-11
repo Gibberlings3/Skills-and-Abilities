@@ -7,30 +7,33 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
+// Lua files required for EEex
 ACTION_IF FILE_EXISTS_IN_GAME ~M_B3THI7.lua~ THEN BEGIN
   COPY ~skills-and-abilities/lua/M_B3TUR1.lua~ ~override~ // Inquisitor Dispel Illusion
 END ELSE BEGIN
   COPY ~skills-and-abilities/lua/M_B3TUR2.lua~ ~override~ // NO Inquisitor Dispel Illusion
 END
-
 COPY ~skills-and-abilities/lua/M_B3TUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
 COPY ~skills-and-abilities/lua/M_B3TUR4.lua~   ~override~ // Cleric/Thief 
 COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger
 
+// Creates 2d6 + Character Level damage eff files for levels 1-9
 FOR (i = 1; i < 10; ++i) BEGIN
   INNER_ACTION BEGIN
     COPY ~skills-and-abilities/eff/class/motur01.eff~ ~override/motur0%i%.eff~
-      WRITE_LONG 0x1c i
+      WRITE_LONG 0x1c i // Sets damage to character level
   END
 END
 
+// Creates 2d6 + Character Level damage eff files for levels 10-50
 FOR (j = 10; j < 51; ++j) BEGIN
   INNER_ACTION BEGIN
     COPY ~skills-and-abilities/eff/class/motur01.eff~ ~override/motur%j%.eff~
-      WRITE_LONG 0x1c j
+      WRITE_LONG 0x1c j // Sets damage to character level
   END
 END
 
+// New Turn Undead ability
 COPY ~skills-and-abilities/spl/MOTURN1.SPL~    ~override~ // Turn Undead
   SAY NAME1 @9001
   SAY UNIDENTIFIED_DESC @9002
@@ -80,3 +83,75 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     END
   END
   END
+
+/*
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Updates descriptions for Paladin                                      //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+OUTER_SPRINT old_pal    @6005
+OUTER_SPRINT new_pal    @6006
+OUTER_SPRINT old_black  @6007
+OUTER_SPRINT new_black  @6008
+OUTER_SPRINT old_cav    @6013
+OUTER_SPRINT new_cav    @6014
+
+// Set the strref for the specific game first
+ACTION_IF GAME_IS ~bgee~ BEGIN
+  OUTER_SET pal_strref = 9558 
+  OUTER_SET black_strref = 28606
+  OUTER_SET cav_strref = 24287
+END ELSE ACTION_IF GAME_IS ~bg2ee~ BEGIN
+  OUTER_SET pal_strref = 9558   
+  OUTER_SET black_strref = 77514
+  OUTER_SET cav_strref = 25206
+END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+  OUTER_SET palbg1_strref = 209558 // BG1EE archived strref
+  OUTER_SET pal_strref = 9558    
+  OUTER_SET black_strref = 77514 
+  OUTER_SET cav_strref = 25206   
+END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+  OUTER_SET pal_strref = 9558    
+  OUTER_SET black_strref = 37145
+  OUTER_SET cav_strref = 37133
+END
+
+// Paladin strref
+ACTION_GET_STRREF ~%pal_strref%~ pal_description
+
+OUTER_PATCH_SAVE pal_description ~%pal_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_pal%~ ~%new_pal%~
+END
+
+STRING_SET_EVALUATE ~%pal_strref%~ ~%pal_description%~
+
+// Blackguard strref
+ACTION_GET_STRREF ~%black_strref%~ black_description
+
+OUTER_PATCH_SAVE black_description ~%black_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_black%~ ~%new_black%~
+END
+
+STRING_SET_EVALUATE ~%black_strref%~ ~%black_description%~
+
+// Cavalier strref
+ACTION_GET_STRREF ~%cav_strref%~ cav_description
+
+OUTER_PATCH_SAVE cav_description ~%cav_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_cav%~ ~%new_cav%~
+END
+
+STRING_SET_EVALUATE ~%cav_strref%~ ~%cav_description%~
+
+// EET ONLY
+ACTION_IF GAME_IS ~eet~ BEGIN
+  ACTION_GET_STRREF ~%palbg1_strref%~ palbg1_description
+
+  OUTER_PATCH_SAVE palbg1_description ~%palbg1_description%~ BEGIN
+    REPLACE_TEXTUALLY ~%old_pal%~ ~%new_pal%~
+  END
+
+STRING_SET_EVALUATE ~%palbg1_strref%~ ~%palbg1_description%~
+END
+*/
