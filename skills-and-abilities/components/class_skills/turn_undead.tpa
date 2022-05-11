@@ -8,16 +8,14 @@
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_IF FILE_EXISTS_IN_GAME ~M_B3THI7.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~    ~override~ // Inquisitor Dispel Illusion
+  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~ ~override~ // Inquisitor Dispel Illusion
 END ELSE BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~    ~override~ // NO Inquisitor Dispel Illusion
+  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~ ~override~ // NO Inquisitor Dispel Illusion
 END
 
-COPY ~skills-and-abilities/lua/M_B3TUR3.lua~      ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
-COPY ~skills-and-abilities/lua/M_B3TUR4.lua~      ~override~ // Cleric/Thief 
-COPY ~skills-and-abilities/lua/M_B3TUR5.lua~      ~override~ // Cleric/Ranger
-
-// COPY ~skills-and-abilities/eff/class/motur01.eff~ ~override~
+COPY ~skills-and-abilities/lua/M_B3TUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
+COPY ~skills-and-abilities/lua/M_B3TUR4.lua~   ~override~ // Cleric/Thief 
+COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger
 
 FOR (i = 1; i < 10; ++i) BEGIN
   INNER_ACTION BEGIN
@@ -36,6 +34,7 @@ END
 COPY ~skills-and-abilities/spl/MOTURN1.SPL~    ~override~ // Turn Undead
   SAY NAME1 @9001
   SAY UNIDENTIFIED_DESC @9002
+  
 ///////////////////////////////////////////////////////////////////////////
 // Set Paladin Turn Undead                                               //
 ///////////////////////////////////////////////////////////////////////////
