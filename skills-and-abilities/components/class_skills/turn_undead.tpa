@@ -15,4 +15,19 @@ END
 
 COPY ~skills-and-abilities/lua/M_B3TUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
 COPY ~skills-and-abilities/lua/M_B3TUR4.lua~   ~override~ // Cleric/Thief 
-COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger 
+COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger
+
+COPY ~skills-and-abilities/eff/MOTUR01.EFF~    ~override~ // Turn Undead - 2d6 base damage
+COPY ~skills-and-abilities/eff/MOTUR02.EFF~    ~override~ // Turn Undead
+COPY ~skills-and-abilities/spl/MOTURN1.SPL~    ~override~ // Turn Undead
+  SAY NAME1 @9001
+  SAY UNIDENTIFIED_DESC @9002
+///////////////////////////////////////////////////////////////////////////
+// Set Paladin Turn Undead                                               //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~CLABPA01.2DA~ override
+    /*
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_Increment = 4 STR_VAR f_Entry = GA_MOTURN1 END // Turn Undead
+    */
+    PRETTY_PRINT_2DA
+  BUT_ONLY

@@ -1,0 +1,18 @@
+// Skills and Abilities, American English
+// Proficiency range @9001 to @9500
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@9001 = ~Turn Undead~
+@9002 = ~Turn Undead
+Any cleric and paladin has the power to rebuke or destroy undead creatures. This ability will deal 2d6 + cleric/paladin level + Charisma modifier points of damage to all undead within 15 feet of the cleric/paladin. Undead must save vs. Spell or be rebuked taking a -2 penalty to AC. If the cleric/paladin has twice the levels as the undead creature, you destroy (supernaturally kill) the undead creature instead.~
+
+@9003 = ~Extra Turning~
+@9004 = ~Extra Turning
+This HLA grants an extra Turn Undead ability.~
+
+@9005 = ~Empower Turning~
+@9006 = ~Empower Turning
+You can turn or rebuke more undead than usual. You multiply the turning damage from your cleric/paladin level and Charisma modifier by 2.~
+
+@9500 = ~[LAST TRA HERE]~
