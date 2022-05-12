@@ -49,6 +49,8 @@ COPY ~skills-and-abilities/eff/class/mocha24.eff~ ~override~
 COPY ~skills-and-abilities/eff/class/mocha25.eff~ ~override~
 */
 
+COPY ~skills-and-abilities/spl/mocha13.spl~ ~override~
+
 // New Turn Undead ability
 COPY ~skills-and-abilities/spl/MOTURN1.SPL~    ~override~ // Turn Undead
   SAY NAME1 @9001
