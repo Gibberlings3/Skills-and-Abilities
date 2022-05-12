@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////
 @9001 = ~Turn Undead~
 @9002 = ~Turn Undead
-Any cleric and paladin has the power to rebuke or destroy undead creatures. This ability will deal 2d6 + cleric/paladin level + Charisma modifier points of damage to all undead within 15 feet of the cleric/paladin. Undead must save vs. Spell or be rebuked taking a -2 penalty to AC. If the cleric/paladin has twice the levels as the undead creature, you destroy (supernaturally kill) the undead creature instead.~
+Any cleric and paladin has the power to rebuke or destroy undead creatures. This ability will deal 2d6 + cleric/paladin level + Charisma modifier points of damage to all undead within 15 feet of the cleric/paladin. If the cleric/paladin has twice the levels as the undead creature, you destroy (supernaturally kill) the undead creature instead.~
 
 @9003 = ~Extra Turning~
 @9004 = ~Extra Turning
