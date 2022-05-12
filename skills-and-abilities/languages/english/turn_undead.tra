@@ -15,4 +15,10 @@ This HLA grants an extra Turn Undead ability.~
 @9006 = ~Empower Turning
 You can turn or rebuke more undead than usual. You multiply the turning damage from your cleric/paladin level and Charisma modifier by 2.~
 
+@9007 = ~May Turn Undead as a Cleric two levels lower, starting at level 3.~
+@9008 = ~May cast Turn Undead once per day per every 4 levels (starts at 4th level with one use).~
+
+@9009 = ~May Turn Undead.~
+@9010 = ~May cast Turn Undead once per day per every 3 levels (starts at 3rd level with one use).~
+
 @9500 = ~[LAST TRA HERE]~

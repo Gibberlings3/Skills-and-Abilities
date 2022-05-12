@@ -121,74 +121,66 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
   END
   END
 
-/*
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// Updates descriptions for Paladin                                      //
+// Updates descriptions for Paladin and Cleric                           //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-OUTER_SPRINT old_pal    @6005
-OUTER_SPRINT new_pal    @6006
-OUTER_SPRINT old_black  @6007
-OUTER_SPRINT new_black  @6008
-OUTER_SPRINT old_cav    @6013
-OUTER_SPRINT new_cav    @6014
+OUTER_SPRINT old_pal_turn    @9007
+OUTER_SPRINT new_pal_turn    @9008
+OUTER_SPRINT old_cle_turn    @9009
+OUTER_SPRINT new_cle_turn    @9010
 
 // Set the strref for the specific game first
 ACTION_IF GAME_IS ~bgee~ BEGIN
-  OUTER_SET pal_strref = 9558 
-  OUTER_SET black_strref = 28606
-  OUTER_SET cav_strref = 24287
+  OUTER_SET pal_turn_strref = 9558 
+  OUTER_SET cle_turn_strref = 9559
 END ELSE ACTION_IF GAME_IS ~bg2ee~ BEGIN
-  OUTER_SET pal_strref = 9558   
-  OUTER_SET black_strref = 77514
-  OUTER_SET cav_strref = 25206
+  OUTER_SET pal_turn_strref = 9558   
+  OUTER_SET cle_turn_strref = 9559
 END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
-  OUTER_SET palbg1_strref = 209558 // BG1EE archived strref
-  OUTER_SET pal_strref = 9558    
-  OUTER_SET black_strref = 77514 
-  OUTER_SET cav_strref = 25206   
+  OUTER_SET palbg1_turn_strref = 209558 // BG1EE archived strref
+  OUTER_SET pal_turn_strref = 9558
+  OUTER_SET clebg1_turn_strref = 209559
+  OUTER_SET cle_turn_strref = 9559    
 END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
-  OUTER_SET pal_strref = 9558    
-  OUTER_SET black_strref = 37145
-  OUTER_SET cav_strref = 37133
+  OUTER_SET pal_turn_strref = 9558
+  OUTER_SET cle_turn_strref = 9559    
 END
 
 // Paladin strref
-ACTION_GET_STRREF ~%pal_strref%~ pal_description
+ACTION_GET_STRREF ~%pal_turn_strref%~ pal_turn_description
 
-OUTER_PATCH_SAVE pal_description ~%pal_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%old_pal%~ ~%new_pal%~
+OUTER_PATCH_SAVE pal_turn_description ~%pal_turn_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_pal_turn%~ ~%new_pal_turn%~
 END
 
-STRING_SET_EVALUATE ~%pal_strref%~ ~%pal_description%~
+STRING_SET_EVALUATE ~%pal_turn_strref%~ ~%pal_turn_description%~
 
-// Blackguard strref
-ACTION_GET_STRREF ~%black_strref%~ black_description
+// Cleric strref
+ACTION_GET_STRREF ~%cle_turn_strref%~ cle_turn_description
 
-OUTER_PATCH_SAVE black_description ~%black_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%old_black%~ ~%new_black%~
+OUTER_PATCH_SAVE cle_turn_description ~%cle_turn_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_cle_turn%~ ~%new_cle_turn%~
 END
 
-STRING_SET_EVALUATE ~%black_strref%~ ~%black_description%~
-
-// Cavalier strref
-ACTION_GET_STRREF ~%cav_strref%~ cav_description
-
-OUTER_PATCH_SAVE cav_description ~%cav_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%old_cav%~ ~%new_cav%~
-END
-
-STRING_SET_EVALUATE ~%cav_strref%~ ~%cav_description%~
+STRING_SET_EVALUATE ~%cle_turn_strref%~ ~%cle_turn_description%~
 
 // EET ONLY
 ACTION_IF GAME_IS ~eet~ BEGIN
-  ACTION_GET_STRREF ~%palbg1_strref%~ palbg1_description
+  ACTION_GET_STRREF ~%palbg1_turn_strref%~ palbg1_turn_description
 
-  OUTER_PATCH_SAVE palbg1_description ~%palbg1_description%~ BEGIN
-    REPLACE_TEXTUALLY ~%old_pal%~ ~%new_pal%~
+  OUTER_PATCH_SAVE palbg1_turn_description ~%palbg1_turn_description%~ BEGIN
+    REPLACE_TEXTUALLY ~%old_pal_turn%~ ~%new_pal_turn%~
   END
 
-STRING_SET_EVALUATE ~%palbg1_strref%~ ~%palbg1_description%~
+  STRING_SET_EVALUATE ~%palbg1_turn_strref%~ ~%palbg1_turn_description%~
+
+  ACTION_GET_STRREF ~%clebg1_turn_strref%~ clebg1_turn_description
+
+  OUTER_PATCH_SAVE clebg1_turn_description ~%clebg1_turn_description%~ BEGIN
+    REPLACE_TEXTUALLY ~%old_cle_turn%~ ~%new_cle_turn%~
+  END
+
+  STRING_SET_EVALUATE ~%clebg1_turn_strref%~ ~%clebg1_turn_description%~
 END
-*/
