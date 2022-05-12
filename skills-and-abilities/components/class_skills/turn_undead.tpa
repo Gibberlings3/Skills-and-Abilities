@@ -33,6 +33,7 @@ FOR (j = 10; j < 51; ++j) BEGIN
   END
 END
 
+/*
 ACTION_FOR_EACH charoveride IN
       13
       14
@@ -51,6 +52,12 @@ ACTION_FOR_EACH charoveride IN
       COPY ~skills-and-abilities/eff/class/mocha%charoveride%.eff~ ~override~
       COPY ~skills-and-abilities/spl/mocha%charoveride%.spl~ ~override~
     END
+*/
+
+COPY ~skills-and-abilities/eff/class/mocha13.eff~ ~override~
+COPY ~skills-and-abilities/spl/mocha13.spl~ ~override~
+COPY ~skills-and-abilities/eff/class/mocha14.eff~ ~override~
+COPY ~skills-and-abilities/spl/mocha14.spl~ ~override~
 
 // New Turn Undead ability
 COPY ~skills-and-abilities/spl/MOTURN1.SPL~    ~override~ // Turn Undead
@@ -96,6 +103,12 @@ ACTION_FOR_EACH charisma IN
 
 COPY_EXISTING ~mocha13.eff~ ~override~
     WRITE_LONG 0x20 cha_mod
+
+COPY_EXISTING ~mocha14.eff~ ~override~
+    WRITE_LONG 0x20 cha_mod
+
+COPY_EXISTING ~moturn1.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %cha_mod% END
 
 ///////////////////////////////////////////////////////////////////////////
 // Give Paladin Turn Undead Ability                                      //
