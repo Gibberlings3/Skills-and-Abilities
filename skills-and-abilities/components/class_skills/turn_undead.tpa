@@ -184,3 +184,32 @@ ACTION_IF GAME_IS ~eet~ BEGIN
 
   STRING_SET_EVALUATE ~%clebg1_turn_strref%~ ~%clebg1_turn_description%~
 END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Shield of Egons +2 to provide Caster Level Improvement         //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ AND GAME_IS ~bgee eet~ THEN BEGIN
+  COPY ~skills-and-abilities/eff/class/BDSHLD03.eff~ ~override~
+
+  COPY_EXISTING ~BDSHLD03.ITM~ ~override~
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 191 target = 1 parameter1 = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 END 
+    LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 323 END
+
+  OUTER_SPRINT old_egons    @9011
+  OUTER_SPRINT new_egons    @9012
+
+  ACTION_IF GAME_IS ~bgee~ BEGIN
+    OUTER_SET egons_strref = 47454
+  END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET egons_strref = 324911
+  END
+
+  // Shield of Egons strref
+  ACTION_GET_STRREF ~%egons_strref%~ egons_description
+
+  OUTER_PATCH_SAVE egons_description ~%egons_description%~ BEGIN
+    REPLACE_TEXTUALLY ~%old_egons%~ ~%new_egons%~
+  END
+
+  STRING_SET_EVALUATE ~%egons_strref%~ ~%egons_description%~
+END
