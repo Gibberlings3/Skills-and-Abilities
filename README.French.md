@@ -112,10 +112,10 @@ Remplacer la Vision veritable de l'Inquisiteur par la capacite Detection des ill
 
 Comme indiqué, les inquisiteurs obtiendront désormais des sorts similaires à ceux des autres paladins.
 
-### **Coming Soon**  Classe de Prêtre/Mage/Voleur (EEex nécessaire)
+### Révision de la capacité Repousser les morts-vivants (EEex nécessaire)
 
-Ce composant ajoute la classe Prêtre/Mage/Voleur disponible en tant que kit pour la classe Guerrier/Mage/Prêtre. Cette classe ne sera utilisable que par les Demi-Elfes.
-
+Le talent naturel pour repousser les morts-vivants est remplacé par une nouvelle capacité. Les clercs peuvent désormais lancer Repousser les morts-vivants une fois par jour, à partir du 3éme niveau,(gagne une utilisation supplémentaire tous les 3 niveaux) et les paladins une fois par jour, à partir du 4éme niveau (gagne une utilisation supplémentaire tous les 4 niveaux). Cette capacité inflige, 2d6 points de dégâts + 1 point par niveau du prêtre/paladin + modificateur de Charisme, à tous les morts-vivants dans un rayon de 4,5 mètre autour du prêtre/paladin. Si le prêtre/paladin a deux fois plus de niveaux que la créature en question, celle-ci sera détruite. Le modèle original de Repousser les morts-vivants est donc remplacé par une option supplémentaire de sort rapide.
+ 
 ### Ajouter des capacités de haut niveau pour toutes les classes et kits
 
 **RÉSILIENCE :** Le personnage gagne 10% de réduction aux dégâts physiques.
