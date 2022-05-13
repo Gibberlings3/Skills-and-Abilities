@@ -4,8 +4,8 @@
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
 @9001 = ~Repousser les morts-vivants~
-@9002 = ~Repousser morts-vivants
-Les prêtres et les paladins ont la faculté de repousser ou de détruire les créatures mortes-vivantes. Cette capacité inflige, 2d6 points de dégâts + 1 point par niveau du prêtre/paladin + modificateur de Charisme, à tous les morts-vivants dans un rayon de 5 mètre autour du prêtre/paladin. Si le prêtre/paladin a deux fois plus de niveaux que la créature en question, elle sera détruite (de façon surnaturelle).~
+@9002 = ~Repousser les morts-vivants
+Les prêtres et les paladins ont la faculté de repousser ou de détruire les créatures mortes-vivantes. Cette capacité inflige, 2d6 points de dégâts + 1 point par niveau du prêtre/paladin + modificateur de Charisme, à tous les morts-vivants dans un rayon de 4,5 mètre autour du prêtre/paladin. Si le prêtre/paladin a deux fois plus de niveaux que la créature en question, celle-ci sera détruite (de façon surnaturelle).~
 
 
 @9003 = ~Chasser les morts-vivants~
