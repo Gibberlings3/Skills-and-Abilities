@@ -1,6 +1,6 @@
 ## Version 0.7 alpha
 
-May xx, 2022
+May 12, 2022
 
 ### Changed
 
