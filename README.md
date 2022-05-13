@@ -108,7 +108,7 @@ Replaces the Inquisitor's True Seeing with the Detect Illusion Skill (Set at 100
 
 As stated, Inquisitors will now gain spellcasting similar to other Paladins.
 
-### Turn Undead Overhaul
+### Turn Undead Overhaul (EEex Required)
 
 The existing Turn Undead is being replaced with a new ability. Clerics may now cast Turn Undead once per day per every 3 levels (starts at 3rd level with one use) and paladins may now cast Turn Undead once per day per every 4 levels (starts at 4th level with one use). The ability will now deal 2d6 + Character level + charisma modifier points of damage to any undead within 15 feet. The caster will outright destroy any undead who are half the level (or less) of the cleric/paladin using Turn Undead. The original Turn Undead modal is replaced with an extra quick-spell option. 
 
