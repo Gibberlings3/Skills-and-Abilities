@@ -112,7 +112,7 @@ Remplacer la Vision veritable de l'Inquisiteur par la capacite Detection des ill
 
 Comme indiqué, les inquisiteurs obtiendront désormais des sorts similaires à ceux des autres paladins.
 
-### Révision de la capacité Repousser les morts-vivants
+### Révision de la capacité Repousser les morts-vivants (EEex nécessaire)
 
 Le talent naturel pour repousser les morts-vivants est remplacé par une nouvelle capacité. Les clercs peuvent désormais lancer Repousser les morts-vivants une fois par jour, à partir du 3éme niveau,(gagne une utilisation supplémentaire tous les 3 niveaux) et les paladins une fois par jour, à partir du 4éme niveau (gagne une utilisation supplémentaire tous les 4 niveaux). Cette capacité inflige, 2d6 points de dégâts + 1 point par niveau du prêtre/paladin + modificateur de Charisme, à tous les morts-vivants dans un rayon de 4,5 mètre autour du prêtre/paladin. Si le prêtre/paladin a deux fois plus de niveaux que la créature en question, celle-ci sera détruite. Le modèle original de Repousser les morts-vivants est donc remplacé par une option supplémentaire de sort rapide.
  
