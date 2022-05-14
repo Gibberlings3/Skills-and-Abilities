@@ -7,9 +7,8 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/itm/moprof.itm~ ~override~ // For tracking of this mod component
+COPY ~skills-and-abilities/itm/moprof.itm~                  ~override~ // For tracking of this mod component
 COPY ~skills-and-abilities/spl/proficiencies/bdhaerpr.spl~  ~override~ // Haer'Dalis Large Sword Specialization
-//COPY ~skills-and-abilities/2da/PROFS.2DA~ ~override~                   // Updates the frequency profs are gained
 COPY ~skills-and-abilities/eff/proficiencies/MOARC01.EFF~   ~override~ // Archery Weapon Style
 COPY ~skills-and-abilities/eff/proficiencies/MOARC02.EFF~   ~override~ // Archery Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOARC01.SPL~   ~override~ // Archery Weapon Style
@@ -21,6 +20,12 @@ COPY ~skills-and-abilities/spl/proficiencies/MOCRS01.SPL~   ~override~ // Critic
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS02.SPL~   ~override~ // Critical Striker Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS03.SPL~   ~override~ // Critical Striker Weapon Style
 COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial Thac0 Modifier on weapons
+
+ACTION_IF accelerated_profs THEN BEGIN
+  COPY ~skills-and-abilities/2da/prof01.2DA~                ~override/PROFS.2DA~
+END ELSE ACTION_IF nwn_profs THEN BEGIN
+  COPY ~skills-and-abilities/2da/prof02.2DA~                ~override/PROFS.2DA~
+END
 
 ACTION_FOR_EACH prof IN
       1
@@ -2050,7 +2055,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 ACTION_IF accelerated_profs THEN BEGIN
 
-// Cycle through all Warriors to capture starting pips
+  // Cycle through all Warriors to capture pips
   ACTION_IF ((class = 2) OR                                   // Fighter
             (class = 6) OR                                    // Paladin
             ((class =  7) AND !((dual & BIT4) = BIT4)) OR     // Fighter_Mage
@@ -2064,26 +2069,49 @@ ACTION_IF accelerated_profs THEN BEGIN
               new_pip_amount += 4 // 4 pips at level 1
                 FOR (wari = 2; wari <= 50; wari += 2) BEGIN
                   ACTION_IF (level >= wari) BEGIN
-                    new_pip_amount += 1
+                    new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
                 END
             END
 
 /*
-// Cycle through all Mage and Sorcerer to capture starting pips
+  // Cycle through all Mage and Sorcerer to capture pips
   ACTION_IF ((class = 1) OR                                   // Mage
             ((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
 
 )*/
 
-// Cycle through all else to capture starting pips
-
-
-// Cycle through all primary classes to assign pips
+// Cycle through all clerics, druids, shamans, monks, theives, and bards to capture pips
 
 // Cycle through all secondary classes (duals) to assign pips
 
   free_pips = new_pip_amount - assigned_pips
+
+END
+
+///////////////////////////////////////////////////////////////////////////
+// NWN2 Style Prof Points                                                //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF accelerated_profs THEN BEGIN
+  
+  // Cycle through all Warriors to capture pips
+  ACTION_IF ((class = 2) OR                                   // Fighter
+            ((class =  7) AND !((dual & BIT4) = BIT4)) OR     // Fighter_Mage
+            ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
+            ((class =  9) AND !((dual & BIT6) = BIT6)) OR     // Fighter_Thief
+            (class = 10) OR                                   // FMT
+            ((class = 16) AND !((dual & BIT7) = BIT7)) OR     // Fighter_Druid
+            (class = 17)) BEGIN                               // FMC
+              new_pip_amount += 4 // 4 pips at level 1
+                FOR (wari = 2; wari <= 50; wari += 2) BEGIN
+                  ACTION_IF (level >= wari) BEGIN
+                    new_pip_amount += 1 // Receive a new pip every 2 levels
+                  END
+                END
+            END
+
+  free_pips = new_pip_amount - assigned_pips
+
 END
 
 ///////////////////////////////////////////////////////////////////////////
