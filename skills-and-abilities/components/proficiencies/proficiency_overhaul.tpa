@@ -1866,7 +1866,9 @@ READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
 READ_ASCII  0x280 deathvar
+READ_SHORT 0x010 dual
 READ_BYTE 0x234 level
+READ_BYTE 0x235 level_second
 READ_BYTE 0x273 class
 // READ_LONG  0x1cc biography ELSE 0
 SET free_pips = 0
@@ -2044,14 +2046,28 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
 END
 
 ///////////////////////////////////////////////////////////////////////////
-// Check Updated Prof Points                                             //
+// Accelerated Prof Points                                               //
 ///////////////////////////////////////////////////////////////////////////
-/* Rename to new prof distribution
-// Run Check if component installed
 ACTION_IF accelerated_profs THEN BEGIN
 
+// Cycle through all Warriors to capture starting pips
+  ACTION_IF ((class = 2) OR                                   // Fighter
+            (class = 6) OR                                    // Paladin
+            ((class =  7) AND !((dual & BIT4) = BIT4)) OR     // Fighter_Mage
+            ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
+            ((class =  9) AND !((dual & BIT6) = BIT6)) OR     // Fighter_Thief
+            (class = 10) OR                                   // FMT
+            (class = 12) OR                                   // Ranger    
+            ((class = 16) AND !((dual & BIT7) = BIT7)) OR     // Fighter_Druid
+            (class = 17) OR                                   // FMC
+            ((class = 18) AND !((dual & BIT5) = BIT5))) BEGIN // Cleric_Ranger
+              new_pip_amount += 4 // 4 pips at level 1
+            END
 
-// Cycle through all classes to assign starting pips
+// Cycle through all Mage and Sorcerer to capture starting pips
+
+// Cycle through all else to capture starting pips
+
 
 // Cycle through all primary classes to assign pips
 
@@ -2059,7 +2075,6 @@ ACTION_IF accelerated_profs THEN BEGIN
 
   free_pips = new_pip_amount - assigned_pips
 END
-*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Pips                                                           //
