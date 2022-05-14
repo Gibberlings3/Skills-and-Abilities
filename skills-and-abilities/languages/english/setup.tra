@@ -43,7 +43,9 @@
 
 // Group 3 (Update 300-399)
 @300 = ~Update Weapon Fighting Styles~
-@301 = ~Overhaul Proficiency System - Add New Proficiencies and Weapon Styles~
+@310 = ~Overhaul Proficiency System - Add New Proficiencies and Weapon Styles~
+@311 = ~Vanilla Proficiency Progression~
+@312 = ~Accelerated Proficiency Progression~
 
 // Group 4 (Update 400-499)
 @400 = ~2H Weapon Additional Strength Bonus~

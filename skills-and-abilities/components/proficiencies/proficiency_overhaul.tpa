@@ -1886,6 +1886,8 @@ SET twohanded = 0
 SET swordandshield = 0
 SET singleweapon = 0
 SET twoweapon = 0
+SET assigned_pips = 0
+SET new_pip_amount = 0
 // Grabs the armor appearance for the creature
 READ_LONG 0x2b8 item_slots_offset ELSE 0
 READ_LONG 0x2bc items_offset ELSE 0
@@ -1929,6 +1931,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
+        assigned_pips += pips
     END
 
     // Spiked
@@ -1944,6 +1947,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
+        assigned_pips += pips
     END
 
     // Large Sword
@@ -1956,6 +1960,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
+        assigned_pips += pips
     END
 
     // Exotic Sword
@@ -1966,11 +1971,13 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
+        assigned_pips += pips
     END
 
     // Axe
     PATCH_IF (type = 92) BEGIN
         axe = pips
+        assigned_pips += pips
     END
 
     // Blunt
@@ -1984,6 +1991,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
+        assigned_pips += pips
     END
 
     // Missile
@@ -1995,6 +2003,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
+        assigned_pips += pips
     END
 
     // Spear
@@ -2005,30 +2014,56 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
+        assigned_pips += pips
     END
 
     // Two-Handed Weapon Style
     PATCH_IF (type = 111) BEGIN
         twohanded = pips
+        assigned_pips += pips
     END
 
     // Sword and Shield Weapon Style
     PATCH_IF (type = 112) BEGIN
         swordandshield = pips
+        assigned_pips += pips
     END
 
     // Single Weapon Style
     PATCH_IF (type = 113) BEGIN
         singleweapon = pips
+        assigned_pips += pips
     END
 
     // Two Weapon Style
     PATCH_IF (type = 114) BEGIN
         twoweapon = pips
+        assigned_pips += pips
     END
   END
 END
 
+///////////////////////////////////////////////////////////////////////////
+// Check Updated Prof Points                                             //
+///////////////////////////////////////////////////////////////////////////
+/* Rename to new prof distribution
+// Run Check if component installed
+ACTION_IF accelerated_profs THEN BEGIN
+
+
+// Cycle through all classes to assign starting pips
+
+// Cycle through all primary classes to assign pips
+
+// Cycle through all secondary classes (duals) to assign pips
+
+  free_pips = new_pip_amount - assigned_pips
+END
+*/
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Pips                                                           //
+///////////////////////////////////////////////////////////////////////////
 // Remove all old profs, these will be replaced
 LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
 
