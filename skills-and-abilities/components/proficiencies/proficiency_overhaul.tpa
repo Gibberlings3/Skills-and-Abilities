@@ -2062,9 +2062,19 @@ ACTION_IF accelerated_profs THEN BEGIN
             (class = 17) OR                                   // FMC
             ((class = 18) AND !((dual & BIT5) = BIT5))) BEGIN // Cleric_Ranger
               new_pip_amount += 4 // 4 pips at level 1
+                FOR (wari = 2; wari <= 50; wari += 2) BEGIN
+                  ACTION_IF (level >= wari) BEGIN
+                    new_pip_amount += 1
+                  END
+                END
             END
 
+/*
 // Cycle through all Mage and Sorcerer to capture starting pips
+  ACTION_IF ((class = 1) OR                                   // Mage
+            ((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
+
+)*/
 
 // Cycle through all else to capture starting pips
 
