@@ -2053,10 +2053,10 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Accelerated or NWN2 Style Prof Points                                 //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF accelerated_profs OR nwn_profs BEGIN
+PATCH_IF accelerated_profs OR nwn_profs BEGIN
 
   // Cycle through all Warriors to capture starting pips
-  ACTION_IF ((class = 2) OR                                   // Fighter
+  PATCH_IF ((class = 2) OR                                    // Fighter
             (class = 6) OR                                    // Paladin
             ((class =  7) AND !((dual & BIT4) = BIT4)) OR     // Fighter_Mage
             ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
@@ -2070,7 +2070,7 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
             END
 
   // Cycle through all Mage and Sorcerer to capture starting pips
-  ACTION_IF ((class = 1) OR                                   // Mage
+  PATCH_IF ((class = 1) OR                                    // Mage
             ((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
             ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
             ((class = 14) AND ((dual & BIT4) = BIT4)) OR      // Mage->Cleric
@@ -2079,7 +2079,7 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
             END
 
   // Cycle through all clerics, druids, shamans, monks, theives, and bards to capture starting pips
-  ACTION_IF ((class = 3) OR                                   // Cleric
+  PATCH_IF ((class = 3) OR                                    // Cleric
             (class = 4) OR                                    // Thief
             (class = 5) OR                                    // Bard
             ((class =  8) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Fighter
@@ -2096,10 +2096,10 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
             END
 
   // Accelerated Profs
-  ACTION_IF accelerated_profs BEGIN
+  PATCH_IF accelerated_profs BEGIN
     
     // Cycle through all Warriors to capture pips
-    ACTION_IF ((class = 2) OR                                   // Fighter
+    PATCH_IF ((class = 2) OR                                    // Fighter
               (class = 6) OR                                    // Paladin
               ((class =  7) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Mage
               ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
@@ -2110,27 +2110,27 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
               (class = 17) OR                                   // FMC
               ((class = 18) AND !((dual & BIT8) = BIT8))) BEGIN // Cleric_Ranger
                 FOR (i = 2; i <= 50; i += 2) BEGIN
-                  ACTION_IF (level >= i) BEGIN
+                  PATCH_IF (level >= i) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
                 END
               END
 
     // Cycle through all Mage and Sorcerer to capture pips
-    ACTION_IF ((class = 1) OR                                   // Mage
+    PATCH_IF ((class = 1) OR                                    // Mage
               ((class =  7) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Mage
               ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
               ((class = 14) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Mage
               (class = 19)) BEGIN                               // Sorcerer
                 FOR (j = 4; j <= 50; j += 4) BEGIN
-                  ACTION_IF (level >= j) BEGIN
+                  PATCH_IF (level >= j) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 4 levels
                   END
                 END
               END
     
     // Cycle through all clerics, druids, shamans, monks, theives, and bards to capture starting pips
-    ACTION_IF ((class = 3) OR                                   // Cleric
+    PATCH_IF ((class = 3) OR                                    // Cleric
               (class = 4) OR                                    // Thief
               (class = 5) OR                                    // Bard
               ((class =  8) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Cleric
@@ -2144,38 +2144,38 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
               (class = 20) OR                                   // Monk
               (class = 21)) BEGIN                               // Shaman
                 FOR (k = 3; k <= 50; k += 3) BEGIN
-                  ACTION_IF (level >= k) BEGIN
+                  PATCH_IF (level >= k) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
                 END
               END
 
     // Cycle through all Fighter/Ranger Starting Classes (Pre-Dual) for pips
-    ACTION_IF (((class =  7) AND ((dual & BIT3) = BIT3)) OR     // Fighter->Mage
+    PATCH_IF (((class =  7) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Mage
               ((class =  8) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Cleric
               ((class =  9) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Thief
               ((class = 16) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Druid
               ((class = 18) AND ((dual & BIT8) = BIT8))) BEGIN  // Ranger->Cleric
                 FOR (l = 2; l <= 50; l += 2) BEGIN
-                  ACTION_IF (level_second >= l) BEGIN
+                  PATCH_IF (level_second >= l) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
                 END
               END
 
     // Cycle through all Mage Starting Classes (Pre-Dual) for Pips
-    ACTION_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR     // Mage->Fighter
+    PATCH_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
               ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
               ((class = 14) AND ((dual & BIT4) = BIT4))) BEGIN  // Mage->Cleric
                 FOR (m = 4; m <= 50; m += 4) BEGIN
-                  ACTION_IF (level_second >= m) BEGIN
+                  PATCH_IF (level_second >= m) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 4 levels
                   END
                 END
               END
 
     // Cycle through all Thief, Cleric, and Druid Starting Clases (Pre-Dual) for pips
-    ACTION_IF (((class =  8) AND ((dual & BIT5) = BIT5)) OR     // Cleric->Fighter
+    PATCH_IF (((class =  8) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Fighter
               ((class =  9) AND ((dual & BIT6) = BIT6)) OR      // Thief->Fighter
               ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
               ((class = 14) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Mage
@@ -2184,7 +2184,7 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
               ((class = 16) AND ((dual & BIT7) = BIT7)) OR      // Druid->Fighter
               ((class = 18) AND ((dual & BIT5) = BIT5))) BEGIN  // Cleric->Ranger
                 FOR (n = 3; n <= 50; n += 3) BEGIN
-                  ACTION_IF (level_second >= n) BEGIN
+                  PATCH_IF (level_second >= n) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
                 END
@@ -2192,10 +2192,10 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
   END
 
   // NWN2 Style Profs
-  ACTION_IF nwn_profs BEGIN
+  PATCH_IF nwn_profs BEGIN
     
     // Cycle through all Warriors to capture pips
-    ACTION_IF ((class = 2) OR                                   // Fighter
+    PATCH_IF ((class = 2) OR                                    // Fighter
               ((class =  7) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Mage
               ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
               ((class =  9) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Thief
@@ -2203,32 +2203,32 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
               ((class = 16) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Druid
               (class = 17)) BEGIN                               // FMC
                 FOR (o = 2; o <= 50; o += 2) BEGIN
-                  ACTION_IF (level >= o) BEGIN
+                  PATCH_IF (level >= o) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
                 END
               END ELSE BEGIN
                 FOR (p = 3; p <= 50; p += 3) BEGIN
-                  ACTION_IF (level >= p) BEGIN
+                  PATCH_IF (level >= p) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
                 END
               END
 
     // Cycle through all Fighter Starting Classes (Pre-Dual) for pips
-    ACTION_IF (((class =  7) AND ((dual & BIT3) = BIT3)) OR     // Fighter->Mage
+    PATCH_IF (((class =  7) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Mage
               ((class =  8) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Cleric
               ((class =  9) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Thief
               ((class = 16) AND ((dual & BIT3) = BIT3))) BEGIN  // Fighter->Druid
                 FOR (q = 2; q <= 50; q += 2) BEGIN
-                  ACTION_IF (level_second >= q) BEGIN
+                  PATCH_IF (level_second >= q) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
                 END
               END
 
     // Cycle through all other Starting Classes (Pre-Dual) for pips
-    ACTION_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR     // Mage->Fighter
+    PATCH_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR     // Mage->Fighter
               ((class =  8) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Fighter
               ((class =  9) AND ((dual & BIT6) = BIT6)) OR      // Thief->Fighter
               ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
@@ -2241,7 +2241,7 @@ ACTION_IF accelerated_profs OR nwn_profs BEGIN
               ((class = 18) AND ((dual & BIT5) = BIT5)) OR      // Ranger->Cleric
               ((class = 18) AND ((dual & BIT5) = BIT5))) BEGIN  // Cleric->Ranger
                 FOR (r = 3; r <= 50; r += 3) BEGIN
-                  ACTION_IF (level_second >= r) BEGIN
+                  PATCH_IF (level_second >= r) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
                 END
