@@ -2053,7 +2053,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Accelerated or NWN2 Style Prof Points                                 //
 ///////////////////////////////////////////////////////////////////////////
-PATCH_IF accelerated_profs OR nwn_profs BEGIN
+PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
 
   // Cycle through all Warriors to capture starting pips
   PATCH_IF ((class = 2) OR                                    // Fighter
