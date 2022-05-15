@@ -2216,7 +2216,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               END
 
     // Cycle through all other Starting Classes (Pre-Dual) for pips
-    PATCH_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR     // Mage->Fighter
+    PATCH_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
               ((class =  8) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Fighter
               ((class =  9) AND ((dual & BIT6) = BIT6)) OR      // Thief->Fighter
               ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
