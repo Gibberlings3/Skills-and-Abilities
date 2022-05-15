@@ -1938,7 +1938,6 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
-        assigned_pips += pips
     END
 
     // Spiked
@@ -1954,7 +1953,6 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
-        assigned_pips += pips
     END
 
     // Large Sword
@@ -1967,7 +1965,6 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
-        assigned_pips += pips
     END
 
     // Exotic Sword
@@ -1978,13 +1975,11 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
-        assigned_pips += pips
     END
 
     // Axe
     PATCH_IF (type = 92) BEGIN
         axe = pips
-        assigned_pips += pips
     END
 
     // Blunt
@@ -1998,7 +1993,6 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
-        assigned_pips += pips
     END
 
     // Missile
@@ -2010,7 +2004,6 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
-        assigned_pips += pips
     END
 
     // Spear
@@ -2021,31 +2014,26 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
         END ELSE BEGIN
             free_pips += pips
         END
-        assigned_pips += pips
-    END
+     END
 
     // Two-Handed Weapon Style
     PATCH_IF (type = 111) BEGIN
         twohanded = pips
-        assigned_pips += pips
     END
 
     // Sword and Shield Weapon Style
     PATCH_IF (type = 112) BEGIN
         swordandshield = pips
-        assigned_pips += pips
     END
 
     // Single Weapon Style
     PATCH_IF (type = 113) BEGIN
         singleweapon = pips
-        assigned_pips += pips
     END
 
     // Two Weapon Style
     PATCH_IF (type = 114) BEGIN
         twoweapon = pips
-        assigned_pips += pips
     END
   END
 END
@@ -2054,7 +2042,7 @@ END
 // Accelerated or NWN2 Style Prof Points                                 //
 ///////////////////////////////////////////////////////////////////////////
 PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
-
+  
   // Cycle through all Warriors to capture starting pips
   PATCH_IF ((class = 2) OR                                    // Fighter
             (class = 6) OR                                    // Paladin
@@ -2066,7 +2054,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             ((class = 16) AND !((dual & BIT7) = BIT7)) OR     // Fighter_Druid
             (class = 17) OR                                   // FMC
             ((class = 18) AND !((dual & BIT5) = BIT5))) BEGIN // Cleric_Ranger
-              SET new_pip_amount += 4 // 4 pips at level 1
+              new_pip_amount += 4 // 4 pips at level 1
             END
 
   // Cycle through all Mage and Sorcerer to capture starting pips
@@ -2075,7 +2063,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
             ((class = 14) AND ((dual & BIT4) = BIT4)) OR      // Mage->Cleric
             (class = 19)) BEGIN                               // Sorcerer
-              SET new_pip_amount += 1 // 1 pip at level 1
+              new_pip_amount += 1 // 1 pip at level 1
             END
 
   // Cycle through all clerics, druids, shamans, monks, theives, and bards to capture starting pips
@@ -2092,7 +2080,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             ((class = 18) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Ranger
             (class = 20) OR                                   // Monk
             (class = 21)) BEGIN                               // Shaman
-              SET new_pip_amount += 2 // 2 pips at level 1
+              new_pip_amount += 2 // 2 pips at level 1
             END
 
   // Accelerated Profs
@@ -2111,7 +2099,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 18) AND !((dual & BIT8) = BIT8))) BEGIN // Cleric_Ranger
                 FOR (i = 2; i <= 50; i += 2) BEGIN
                   PATCH_IF (level >= i) BEGIN
-                    SET new_pip_amount += 1 // Receive a new pip every 2 levels
+                    new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
                 END
               END
@@ -2124,7 +2112,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               (class = 19)) BEGIN                               // Sorcerer
                 FOR (j = 4; j <= 50; j += 4) BEGIN
                   PATCH_IF (level >= j) BEGIN
-                    SET new_pip_amount += 1 // Receive a new pip every 4 levels
+                    new_pip_amount += 1 // Receive a new pip every 4 levels
                   END
                 END
               END
@@ -2145,7 +2133,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               (class = 21)) BEGIN                               // Shaman
                 FOR (k = 3; k <= 50; k += 3) BEGIN
                   PATCH_IF (level >= k) BEGIN
-                    SET new_pip_amount += 1 // Receive a new pip every 3 levels
+                    new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
                 END
               END
@@ -2158,7 +2146,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 18) AND ((dual & BIT8) = BIT8))) BEGIN  // Ranger->Cleric
                 FOR (l = 2; l <= 50; l += 2) BEGIN
                   PATCH_IF (level_second >= l) BEGIN
-                    SET new_pip_amount += 1 // Receive a new pip every 2 levels
+                    new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
                 END
               END
@@ -2169,7 +2157,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 14) AND ((dual & BIT4) = BIT4))) BEGIN  // Mage->Cleric
                 FOR (m = 4; m <= 50; m += 4) BEGIN
                   PATCH_IF (level_second >= m) BEGIN
-                    SET new_pip_amount += 1 // Receive a new pip every 4 levels
+                    new_pip_amount += 1 // Receive a new pip every 4 levels
                   END
                 END
               END
@@ -2185,7 +2173,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 18) AND ((dual & BIT5) = BIT5))) BEGIN  // Cleric->Ranger
                 FOR (n = 3; n <= 50; n += 3) BEGIN
                   PATCH_IF (level_second >= n) BEGIN
-                    SET new_pip_amount += 1 // Receive a new pip every 3 levels
+                    new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
                 END
               END
@@ -2248,7 +2236,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               END
   END
 
-  SET free_pips = new_pip_amount - assigned_pips
+  assigned_pips = bow + spiked + ssword + lsword + exotic + axe + blunt + missile + spear + twohanded + swordandshield + singleweapon + twoweapon
+  free_pips = new_pip_amount - assigned_pips
 
 END
 
