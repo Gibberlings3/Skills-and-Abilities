@@ -1,3 +1,11 @@
+## Version 0.8 alpha
+
+June xx, 2022
+
+### Changed
+
+- Added accelerated and NWN2 style proficiency progression as part of the proficiency overhaul component.
+
 ## Version 0.7 alpha
 
 May 12, 2022
