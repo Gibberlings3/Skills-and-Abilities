@@ -2107,7 +2107,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
     // Cycle through all Mage and Sorcerer to capture pips
     PATCH_IF ((class = 1) OR                                    // Mage
               ((class =  7) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Mage
-              ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
+              ((class = 13) AND !((dual & BIT4) = BIT4)) OR      // Thief->Mage
               ((class = 14) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Mage
               (class = 19)) BEGIN                               // Sorcerer
                 FOR (j = 4; j <= 50; j += 4) BEGIN
