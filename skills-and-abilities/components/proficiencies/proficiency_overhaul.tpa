@@ -2090,8 +2090,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             (class = 15) OR                                   // Cleric_Thief
             ((class = 16) AND ((dual & BIT7) = BIT7)) OR      // Druid->Fighter
             ((class = 18) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Ranger
-            (Class = 20) OR                                   // Monk
-            (Class = 21)) BEGIN                               // Shaman
+            (class = 20) OR                                   // Monk
+            (class = 21)) BEGIN                               // Shaman
               new_pip_amount += 2 // 2 pips at level 1
             END
 
