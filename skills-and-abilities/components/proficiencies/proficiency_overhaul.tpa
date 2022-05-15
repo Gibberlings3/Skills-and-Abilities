@@ -2124,7 +2124,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class =  8) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Cleric
               ((class =  9) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Thief
               (class = 11) OR                                   // Druid
-              ((class = 13) AND !((dual & BIT4) = BIT4)) OR     // Mage_Thief
+              ((class = 13) AND !((dual & BIT6) = BIT6)) OR     // Mage_Thief
               ((class = 14) AND !((dual & BIT5) = BIT5)) OR     // Cleric_Mage
               (class = 15) OR                                   // Cleric_Thief
               ((class = 16) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Druid
