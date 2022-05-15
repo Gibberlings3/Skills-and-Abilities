@@ -2086,9 +2086,10 @@ ACTION_IF accelerated_profs OR nwn_profs THEN BEGIN
             ((class =  9) AND ((dual & BIT6) = BIT6)) OR      // Thief->Fighter
             (class = 11) OR                                   // Druid
             ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
-            ((class = 14) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Mage
+            ((class = 14) AND !((dual & BIT4) = BIT4)) OR     // Cleric_Mage
             (class = 15) OR                                   // Cleric_Thief
             ((class = 16) AND ((dual & BIT7) = BIT7)) OR      // Druid->Fighter
+            ((class = 18) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Ranger
             (Class = 20) OR                                   // Monk
             (Class = 21)) BEGIN                               // Shaman
               new_pip_amount += 2 // 2 pips at level 1
@@ -2099,47 +2100,77 @@ ACTION_IF accelerated_profs OR nwn_profs THEN BEGIN
     
     // Cycle through all Warriors to capture pips
     ACTION_IF ((class = 2) OR                                   // Fighter
-              ((class =  7) AND !((dual & BIT4) = BIT4)) OR     // Fighter_Mage
+              (class = 6) OR                                    // Paladin
+              ((class =  7) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Mage
               ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
-              ((class =  9) AND !((dual & BIT6) = BIT6)) OR     // Fighter_Thief
+              ((class =  9) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Thief
               (class = 10) OR                                   // FMT
-              ((class = 16) AND !((dual & BIT7) = BIT7)) OR     // Fighter_Druid
-              (class = 17)) BEGIN                               // FMC
-                new_pip_amount += 4 // 4 pips at level 1
-                  FOR (wari = 2; wari <= 50; wari += 2) BEGIN
-                    ACTION_IF (level >= wari) BEGIN
-                      new_pip_amount += 1 // Receive a new pip every 2 levels
-                    END
+              (class = 12) OR                                   // Ranger
+              ((class = 16) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Druid
+              (class = 17) OR                                   // FMC
+              ((class = 18) AND !((dual & BIT8) = BIT8))) BEGIN // Cleric_Ranger
+                FOR (i = 2; i <= 50; i += 2) BEGIN
+                  ACTION_IF (level >= i) BEGIN
+                    new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
+                END
               END
 
-                  /*
-                  FOR (wari = 2; wari <= 50; wari += 2) BEGIN
-                    ACTION_IF (level >= wari) BEGIN
-                      new_pip_amount += 1 // Receive a new pip every 2 levels
-                    END
+    // Cycle through all Mage and Sorcerer to capture pips
+    ACTION_IF ((class = 1) OR                                   // Mage
+              ((class =  7) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Mage
+              ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
+              ((class = 14) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Mage
+              (class = 19)) BEGIN                               // Sorcerer
+                FOR (j = 4; j <= 50; j += 4) BEGIN
+                  ACTION_IF (level >= j) BEGIN
+                    new_pip_amount += 1 // Receive a new pip every 4 levels
                   END
-                  */
+                END
+              END
+    
+    // Cycle through all clerics, druids, shamans, monks, theives, and bards to capture starting pips
+    ACTION_IF ((class = 3) OR                                   // Cleric
+              (class = 4) OR                                    // Thief
+              (class = 5) OR                                    // Bard
+              ((class =  8) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Cleric
+              ((class =  9) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Thief
+              (class = 11) OR                                   // Druid
+              ((class = 13) AND !((dual & BIT6) = BIT6)) OR     // Mage_Thief
+              ((class = 14) AND !((dual & BIT5) = BIT5)) OR     // Cleric_Mage
+              (class = 15) OR                                   // Cleric_Thief
+              ((class = 16) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Druid
+              ((class = 18) AND ((dual & BIT8) = BIT8)) OR      // Ranger->Cleric
+              (class = 20) OR                                   // Monk
+              (class = 21)) BEGIN                               // Shaman
+                FOR (k = 3; k <= 50; k += 3) BEGIN
+                  ACTION_IF (level >= k) BEGIN
+                    new_pip_amount += 1 // Receive a new pip every 3 levels
+                  END
+                END
+              END
+
+    // Cycle through all Fighter/Ranger Primary Classes (Pre-Dual) for pips
+    ACTION_IF (((class =  7) AND ((dual & BIT3) = BIT3)) OR     // Fighter->Mage
+              ((class =  8) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Cleric
+              ((class =  9) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Thief
+              ((class = 16) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Druid
+              ((class = 18) AND ((dual & BIT8) = BIT8)) BEGIN   // Ranger->Cleric
+                FOR (l = 2; l <= 50; l += 2) BEGIN
+                  ACTION_IF (level_second >= l) BEGIN
+                    new_pip_amount += 1 // Receive a new pip every 2 levels
+                  END
+                END
+              END
+
+
   END
 
   // NWN2 Style Profs
   ACTION_IF nwn_profs THEN BEGIN
     
     // Cycle through all Warriors to capture pips
-    ACTION_IF ((class = 2) OR                                   // Fighter
-              ((class =  7) AND !((dual & BIT4) = BIT4)) OR     // Fighter_Mage
-              ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
-              ((class =  9) AND !((dual & BIT6) = BIT6)) OR     // Fighter_Thief
-              (class = 10) OR                                   // FMT
-              ((class = 16) AND !((dual & BIT7) = BIT7)) OR     // Fighter_Druid
-              (class = 17)) BEGIN                               // FMC
-                new_pip_amount += 4 // 4 pips at level 1
-                  FOR (wari = 2; wari <= 50; wari += 2) BEGIN
-                    ACTION_IF (level >= wari) BEGIN
-                      new_pip_amount += 1 // Receive a new pip every 2 levels
-                    END
-                  END
-              END
+    
 
   END
 
