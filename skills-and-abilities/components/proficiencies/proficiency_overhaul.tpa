@@ -2109,12 +2109,12 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 16) AND !((dual & BIT3) = BIT3)) OR     // Fighter_Druid
               (class = 17) OR                                   // FMC
               ((class = 18) AND !((dual & BIT8) = BIT8))) BEGIN // Cleric_Ranger
-                INNER_ACTION BEGIN
                 FOR (i = 2; i <= 50; i += 2) BEGIN
+                  INNER_ACTION BEGIN
                   PATCH_IF (level >= i) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
-                END
+                  END
                 END
               END
 
@@ -2124,12 +2124,12 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 13) AND ((dual & BIT6) = BIT6)) OR      // Thief->Mage
               ((class = 14) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Mage
               (class = 19)) BEGIN                               // Sorcerer
-                INNER_ACTION BEGIN
                 FOR (j = 4; j <= 50; j += 4) BEGIN
+                  INNER_ACTION BEGIN
                   PATCH_IF (level >= j) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 4 levels
                   END
-                END
+                  END
                 END
               END
     
@@ -2147,12 +2147,12 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 18) AND ((dual & BIT8) = BIT8)) OR      // Ranger->Cleric
               (class = 20) OR                                   // Monk
               (class = 21)) BEGIN                               // Shaman
-                INNER_ACTION BEGIN
                 FOR (k = 3; k <= 50; k += 3) BEGIN
+                  INNER_ACTION BEGIN
                   PATCH_IF (level >= k) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
-                END
+                  END
                 END
               END
 
@@ -2162,12 +2162,12 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class =  9) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Thief
               ((class = 16) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Druid
               ((class = 18) AND ((dual & BIT8) = BIT8))) BEGIN  // Ranger->Cleric
-                INNER_ACTION BEGIN
                 FOR (l = 2; l <= 50; l += 2) BEGIN
+                  INNER_ACTION BEGIN
                   PATCH_IF (level_second >= l) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
                   END
-                END
+                  END
                 END
               END
 
@@ -2175,12 +2175,12 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
     PATCH_IF (((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
               ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
               ((class = 14) AND ((dual & BIT4) = BIT4))) BEGIN  // Mage->Cleric
-                INNER_ACTION BEGIN
                 FOR (m = 4; m <= 50; m += 4) BEGIN
+                  INNER_ACTION BEGIN
                   PATCH_IF (level_second >= m) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 4 levels
                   END
-                END
+                  END
                 END
               END
 
@@ -2193,12 +2193,12 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 15) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Thief
               ((class = 16) AND ((dual & BIT7) = BIT7)) OR      // Druid->Fighter
               ((class = 18) AND ((dual & BIT5) = BIT5))) BEGIN  // Cleric->Ranger
-                INNER_ACTION BEGIN
                 FOR (n = 3; n <= 50; n += 3) BEGIN
+                  INNER_ACTION BEGIN
                   PATCH_IF (level_second >= n) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
                   END
-                END
+                  END
                 END
               END
   END
