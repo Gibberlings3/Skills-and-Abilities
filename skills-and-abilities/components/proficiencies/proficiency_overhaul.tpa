@@ -2110,10 +2110,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               (class = 17) OR                                   // FMC
               ((class = 18) AND !((dual & BIT8) = BIT8))) BEGIN // Cleric_Ranger
                 FOR (i = 2; i <= 50; i += 2) BEGIN
-                  INNER_ACTION BEGIN
-                  ACTION_IF (level >= i) BEGIN
+                  PATCH_IF (level >= i) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
-                  END
                   END
                 END
               END
@@ -2125,10 +2123,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 14) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Mage
               (class = 19)) BEGIN                               // Sorcerer
                 FOR (j = 4; j <= 50; j += 4) BEGIN
-                  INNER_ACTION BEGIN
-                  ACTION_IF (level >= j) BEGIN
+                  PATCH_IF (level >= j) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 4 levels
-                  END
                   END
                 END
               END
@@ -2148,10 +2144,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               (class = 20) OR                                   // Monk
               (class = 21)) BEGIN                               // Shaman
                 FOR (k = 3; k <= 50; k += 3) BEGIN
-                  INNER_ACTION BEGIN
-                  ACTION_IF (level >= k) BEGIN
+                  PATCH_IF (level >= k) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
-                  END
                   END
                 END
               END
@@ -2163,10 +2157,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 16) AND ((dual & BIT3) = BIT3)) OR      // Fighter->Druid
               ((class = 18) AND ((dual & BIT8) = BIT8))) BEGIN  // Ranger->Cleric
                 FOR (l = 2; l <= 50; l += 2) BEGIN
-                  INNER_ACTION BEGIN
-                  ACTION_IF (level_second >= l) BEGIN
+                  PATCH_IF (level_second >= l) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 2 levels
-                  END
                   END
                 END
               END
@@ -2176,10 +2168,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
               ((class = 14) AND ((dual & BIT4) = BIT4))) BEGIN  // Mage->Cleric
                 FOR (m = 4; m <= 50; m += 4) BEGIN
-                  INNER_ACTION BEGIN
-                  ACTION_IF (level_second >= m) BEGIN
+                  PATCH_IF (level_second >= m) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 4 levels
-                  END
                   END
                 END
               END
@@ -2194,10 +2184,8 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               ((class = 16) AND ((dual & BIT7) = BIT7)) OR      // Druid->Fighter
               ((class = 18) AND ((dual & BIT5) = BIT5))) BEGIN  // Cleric->Ranger
                 FOR (n = 3; n <= 50; n += 3) BEGIN
-                  INNER_ACTION BEGIN
-                  ACTION_IF (level_second >= n) BEGIN
+                  PATCH_IF (level_second >= n) BEGIN
                     new_pip_amount += 1 // Receive a new pip every 3 levels
-                  END
                   END
                 END
               END
