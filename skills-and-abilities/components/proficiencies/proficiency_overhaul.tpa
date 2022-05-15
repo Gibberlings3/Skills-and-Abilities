@@ -2053,7 +2053,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Accelerated or NWN2 Style Prof Points                                 //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF accelerated_profs OR nwn_profs THEN BEGIN
+ACTION_IF accelerated_profs OR nwn_profs BEGIN
 
   // Cycle through all Warriors to capture starting pips
   ACTION_IF ((class = 2) OR                                   // Fighter
@@ -2096,7 +2096,7 @@ ACTION_IF accelerated_profs OR nwn_profs THEN BEGIN
             END
 
   // Accelerated Profs
-  ACTION_IF accelerated_profs THEN BEGIN
+  ACTION_IF accelerated_profs BEGIN
     
     // Cycle through all Warriors to capture pips
     ACTION_IF ((class = 2) OR                                   // Fighter
@@ -2192,7 +2192,7 @@ ACTION_IF accelerated_profs OR nwn_profs THEN BEGIN
   END
 
   // NWN2 Style Profs
-  ACTION_IF nwn_profs THEN BEGIN
+  ACTION_IF nwn_profs BEGIN
     
     // Cycle through all Warriors to capture pips
     ACTION_IF ((class = 2) OR                                   // Fighter
