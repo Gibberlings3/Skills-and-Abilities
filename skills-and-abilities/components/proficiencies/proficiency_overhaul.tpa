@@ -2248,7 +2248,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               END
   END
 
-  free_pips = new_pip_amount - assigned_pips
+  SET free_pips = new_pip_amount - assigned_pips
 
 END
 
