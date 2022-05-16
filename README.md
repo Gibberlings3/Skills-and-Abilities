@@ -162,6 +162,25 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
 
+#### Vanilla Proficiency Progression
+
+Characters receive proficiency points at the normal progression
+
+#### Accelerated Proficiency Progression
+
+All characters receive proficiency points at an accelerated rate. The new rate is now:
+- Warriors: New prof point starting at level 2 and every 2 levels after.
+- Clerics, Thieves, Bards, Druids, Monk, and Shaman: New prof point starting at level 3 and every 3 levels after.
+- Mage and Sorcerers: New prof point starting at level 4 and every 4 levels after.
+
+#### NWN2 Style Proficiency Progression
+
+Proficiency progression is now more in line with how done in NWN2 (3.5e). The new rate is now:
+- Fighters and Fighter Multiclasses: New prof point starting at level 2 and every 2 levels after.
+- All other classes: New prof point starting at level 3 and every 3 levels after.
+
+#### New Proficiencies
+
 **HEAVY ARMOR:**  This proficiency grants the knowledge to make effective use of Plate Mail and Full Plate armors. A character wearing heavy armor without a slot in this proficiency would incur a 10% loss in movement speed, -1 penalty to speed factor, and a -1 penalty to Thac0. All abilities are cumulative. 
 - Heavy Armor Proficiency (1 slot): The character receives no penalties while wearing heavy armor.
 - Heavy Armor Specialization (2 slots): The character receives a -1 bonus to AC vs. missile attacks while wearing heavy armor.
