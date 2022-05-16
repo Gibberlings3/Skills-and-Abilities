@@ -191,18 +191,22 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ AND GAME_IS ~bgee eet~ THEN BEGIN
   COPY ~skills-and-abilities/eff/class/BDSHLD03.eff~ ~override~
 
-  COPY_EXISTING ~BDSHLD03.ITM~ ~override~
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 191 target = 1 parameter1 = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 END 
-    LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 323 END
-
   OUTER_SPRINT old_egons    @9011
   OUTER_SPRINT new_egons    @9012
 
+  COPY_EXISTING ~BDSHLD03.ITM~ ~override~
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 191 target = 1 parameter1 = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 END 
+    LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 323 END
+    READ_LONG 0x54 egons_strref
+
+  
+/*
   ACTION_IF GAME_IS ~bgee~ BEGIN
     OUTER_SET egons_strref = 47454
   END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
     OUTER_SET egons_strref = 324911
   END
+  */
 
   // Shield of Egons strref
   ACTION_GET_STRREF ~%egons_strref%~ egons_description
