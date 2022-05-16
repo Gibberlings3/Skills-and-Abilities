@@ -188,7 +188,7 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Update Shield of Egons +2 to provide Caster Level Improvement         //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ AND GAME_IS ~bgee eet~ THEN BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ THEN BEGIN
   COPY ~skills-and-abilities/eff/class/BDSHLD03.eff~ ~override~
 
   OUTER_SPRINT old_egons @9011
