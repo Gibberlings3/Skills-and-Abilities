@@ -198,7 +198,13 @@ ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ AND GAME_IS ~bgee eet~ THEN BEGIN
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 191 target = 1 parameter1 = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 END 
     LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 323 END
     READ_LONG 0x54 egons_strref
+    READ_STRREF 0x54 egons_description
 
+    INNER_PATCH_SAVE egons_description ~%egons_description%~ BEGIN
+      REPLACE_TEXTUALLY ~%old_egons%~ ~%new_egons%~
+    END
+
+    SAY_EVALUATED ~%egons_strref%~ ~%egons_description%~
   
 /*
   ACTION_IF GAME_IS ~bgee~ BEGIN
@@ -208,12 +214,4 @@ ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ AND GAME_IS ~bgee eet~ THEN BEGIN
   END
   */
 
-  // Shield of Egons strref
-  ACTION_GET_STRREF ~%egons_strref%~ egons_description
-
-  OUTER_PATCH_SAVE egons_description ~%egons_description%~ BEGIN
-    REPLACE_TEXTUALLY ~%old_egons%~ ~%new_egons%~
-  END
-
-  STRING_SET_EVALUATE ~%egons_strref%~ ~%egons_description%~
 END
