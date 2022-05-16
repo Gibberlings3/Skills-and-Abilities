@@ -7,7 +7,7 @@
 BACKUP ~skills-and-abilities/backup~
 AUTHOR ~Grammarsalad and morpheus562~
 
-VERSION ~v0.8-alpha~
+VERSION ~v0.7.1-alpha~
 README ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 

@@ -1,10 +1,11 @@
-## Version 0.8 alpha
+## Version 0.7.1 alpha
 
 June xx, 2022
 
 ### Changed
 
 - Added accelerated and NWN2 style proficiency progression as part of the proficiency overhaul component.
+- Fixed a bug where out of bounds string ref was being pulled for Turn Undead Overhaul.
 
 ## Version 0.7 alpha
 
