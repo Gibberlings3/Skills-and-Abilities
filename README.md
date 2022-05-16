@@ -175,7 +175,7 @@ All characters receive proficiency points at an accelerated rate. The new rate i
 
 #### NWN2 Style Proficiency Progression
 
-Proficiency progression is now more in line with how done in NWN2 (3.5e). The new rate is now:
+Proficiency progression is now more in line with the NWN2 (3.5e) feat progression system. The new rate is now:
 - Fighters and Fighter Multiclasses: New prof point starting at level 2 and every 2 levels after.
 - All other classes: New prof point starting at level 3 and every 3 levels after.
 
