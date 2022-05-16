@@ -204,7 +204,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ AND GAME_IS ~bgee eet~ THEN BEGIN
       REPLACE_TEXTUALLY ~%old_egons%~ ~%new_egons%~
     END
 
-    SAY_EVALUATED 0x54 ~%egons_description%~
+    STRING_SET_EVALUATE ~egons_strref~ ~%egons_description%~
     BUT_ONLY
 
   COPY_EXISTING ~BDSHLD03.ITM~ ~override~
