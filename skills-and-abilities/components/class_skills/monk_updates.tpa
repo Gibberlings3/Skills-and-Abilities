@@ -7,7 +7,8 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/spl/MO#MON02.SPL~    ~override~ // Flurry of Blows at level 1 
+COPY ~skills-and-abilities/spl/MO#MON02.SPL~    ~override~ // Flurry of Blows at level 1
+//COPY ~skills-and-abilities/spl/MO#MON01.SPL~    ~override~ // Greater Flurry of Blows at level 15 
 COPY ~skills-and-abilities/spl/MO#MHL01.SPL~    ~override~ // Perfect Self
   SAY NAME1 @4003
   SAY UNIDENTIFIED_DESC @4004
@@ -17,6 +18,7 @@ COPY ~skills-and-abilities/spl/MO#MHL01.SPL~    ~override~ // Perfect Self
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABMO01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON02 END
+    //LPF set_clab_2da_entries INT_VAR f_MinLevel = 15 f_MaxLevel = 15 f_Increment = 1 STR_VAR f_Entry = AP_MO#MON01 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
