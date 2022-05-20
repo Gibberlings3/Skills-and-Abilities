@@ -1,3 +1,11 @@
+## Version 0.7.2 alpha
+
+June xx, 2022
+
+### Changed
+
+- Added new component allowing the Bard Blade kit to specialize in melee weapons.
+
 ## Version 0.7.1 alpha
 
 May 15, 2022

@@ -7,7 +7,7 @@
 BACKUP ~skills-and-abilities/backup~
 AUTHOR ~Grammarsalad and morpheus562~
 
-VERSION ~v0.7.1-alpha~
+VERSION ~v0.7.2-alpha~
 README ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 
@@ -69,6 +69,14 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 OUTER_SET bard_skill=1 // Add Pick Locks and Find/Disarm Traps
 INCLUDE ~skills-and-abilities/components/class_skills/set_bard_skills.tpa~
 INCLUDE ~skills-and-abilities/components/item_updates_bard.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Allow Blade Kit to Specialize in Melee Weapons                        //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @130 DESIGNATED 130 GROUP @1 LABEL SkillsAndAbilitiesBlade 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+
+INCLUDE ~skills-and-abilities/components/class_skills/blade_kit.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Monks (EEex Required)                                //
