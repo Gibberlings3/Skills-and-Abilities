@@ -62,7 +62,7 @@ SET swordandshield = 0
 SET singleweapon = 0
 SET twoweapon = 0
 
-PATCH_IF (~%kit%~ STRING_EQUAL_CASE ~0x400D~) BEGIN
+PATCH_IF (~%kit%~ STRING_EQUAL_CASE ~"0x400D"~) BEGIN
   PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
 
   // Grab all assigned pips
