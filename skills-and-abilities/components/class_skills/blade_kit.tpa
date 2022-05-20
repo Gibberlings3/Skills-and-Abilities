@@ -64,7 +64,7 @@ SET swordandshield = 0
 SET singleweapon = 0
 SET twoweapon = 0
 
-PATCH_IF (~%kit%~ = ~0x400d0000~) BEGIN
+PATCH_IF (~%kit%~ = ~0x400d0000~) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
   PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
 
   // Grab all assigned pips
@@ -172,17 +172,16 @@ PATCH_IF (~%kit%~ = ~0x400d0000~) BEGIN
   END
 
   // Assign 2 prof points in melee weapons if 1 prof point exists
-  PATCH_IF !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
-    // Remove all old profs, these will be replaced
-    LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
+  // Remove all old profs, these will be replaced
+  LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
 
-    // bastard
-    PATCH_IF (bastard > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 89 timing = 9 END
-    END
+  // bastard
+  PATCH_IF (bastard > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 89 timing = 9 END
+  END
 
-    // longsword
-    PATCH_IF (longsword > 0) BEGIN
+  // longsword
+  PATCH_IF (longsword > 0) BEGIN
         LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
     END
 
@@ -268,8 +267,7 @@ PATCH_IF (~%kit%~ = ~0x400d0000~) BEGIN
 
     // Two Weapon Style
     PATCH_IF (twoweapon > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
-    END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
   END
 END
 BUT_ONLY
