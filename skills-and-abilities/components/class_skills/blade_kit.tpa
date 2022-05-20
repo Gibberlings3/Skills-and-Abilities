@@ -7,39 +7,27 @@
 ///////////////////////////////////////////////////////////////////////////
 // Update Weapon Prof Assingment                                         //
 ///////////////////////////////////////////////////////////////////////////
-COPY_EXISTING ~KITLIST.2DA~ ~override~
-  READ_2DA_ENTRIES_NOW ~all_kitlist~ 10
-  FOR (row = 1; row < all_kitlist; row += 1) BEGIN
-  READ_2DA_ENTRY_FORMER ~all_kitlist~ row 5 kit_clab
-  READ_2DA_ENTRY_FORMER ~all_kitlist~ row 1 kit_label
-  READ_2DA_ENTRY_FORMER ~all_kitlist~ row 8 kit_class
-
-  PATCH_IF (%kit_class% = 2) BEGIN
-    INNER_ACTION BEGIN
-    COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-      READ_2DA_ENTRIES_NOW kitnames 3
-      COUNT_2DA_COLS cols
-      FOR (col = 22; col < cols - 1; ++col) BEGIN
-      READ_2DA_ENTRY_FORMER kitnames 0 col column_name
-      PATCH_IF ("%column_name%" STRING_EQUAL_CASE "%kit_label%") AND ("%kit_label%" STRING_EQUAL_CASE "BLADE") BEGIN
-          SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // BASTARDSWORD
-          SET_2DA_ENTRY 12 (col + 1) 1 ~2~   // LONGSWORD
-          SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // SHORTSWORD
-          SET_2DA_ENTRY 14 (col + 1) 1 ~2~   // AXE
-          SET_2DA_ENTRY 15 (col + 1) 1 ~2~   // TWOHANDEDSWORD
-          SET_2DA_ENTRY 16 (col + 1) 1 ~2~   // KATANA
-          SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // SCIMITARWAKISASHININJATO
-          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // DAGGER
-          SET_2DA_ENTRY 19 (col + 1) 1 ~2~   // WARHAMMER
-          SET_2DA_ENTRY 20 (col + 1) 1 ~2~   // CLUB
-          SET_2DA_ENTRY 21 (col + 1) 1 ~2~   // SPEAR
-          SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // HALBERD
-          SET_2DA_ENTRY 23 (col + 1) 1 ~2~   // FLAILMORNINGSTAR
-          SET_2DA_ENTRY 24 (col + 1) 1 ~2~   // MACE
-          SET_2DA_ENTRY 26 (col + 1) 1 ~2~   // QUARTERSTAFF
-          PRETTY_PRINT_2DA
-      END
-      END
-    END
+COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW kitnames 3
+  COUNT_2DA_COLS cols
+  FOR (col = 22; col < cols - 1; ++col) BEGIN
+  READ_2DA_ENTRY_FORMER kitnames 0 col column_name
+  PATCH_IF ("%column_name%" STRING_EQUAL_CASE "BLADE") BEGIN
+      SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // BASTARDSWORD
+      SET_2DA_ENTRY 12 (col + 1) 1 ~2~   // LONGSWORD
+      SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // SHORTSWORD
+      SET_2DA_ENTRY 14 (col + 1) 1 ~2~   // AXE
+      SET_2DA_ENTRY 15 (col + 1) 1 ~2~   // TWOHANDEDSWORD
+      SET_2DA_ENTRY 16 (col + 1) 1 ~2~   // KATANA
+      SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // SCIMITARWAKISASHININJATO
+      SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // DAGGER
+      SET_2DA_ENTRY 19 (col + 1) 1 ~2~   // WARHAMMER
+      SET_2DA_ENTRY 20 (col + 1) 1 ~2~   // CLUB
+      SET_2DA_ENTRY 21 (col + 1) 1 ~2~   // SPEAR
+      SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // HALBERD
+      SET_2DA_ENTRY 23 (col + 1) 1 ~2~   // FLAILMORNINGSTAR
+      SET_2DA_ENTRY 24 (col + 1) 1 ~2~   // MACE
+      SET_2DA_ENTRY 26 (col + 1) 1 ~2~   // QUARTERSTAFF
+      PRETTY_PRINT_2DA
   END
   END
