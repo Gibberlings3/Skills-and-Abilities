@@ -271,3 +271,24 @@ PATCH_IF (~%kit%~ = ~0x400d0000~) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%
   END
 END
 BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Update Kit Descriptions                                               //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH clastext IN ~clastext~ ~sodcltxt~ BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%clastext%.2da~ BEGIN COPY_EXISTING ~%clastext%.2DA~ OVERRIDE
+    COUNT_2DA_COLS col_count
+    COUNT_2DA_ROWS col_count rows
+    FOR (index = 0; index < rows; ++index) BEGIN
+      READ_2DA_ENTRY index 0 col_count row_name
+      ACTION_IF "%row_name%" STRING_EQUAL_CASE "FIGHTER" BEGIN
+        READ_2DA_ENTRY index 4 col_count fighter_desc 
+        OUTER_SPRINT old ~May achieve Specialization (two slots) in any fighting style and allocate three slots in Two-Weapon Style.~
+        ACTION_GET_STRREF %fighter_desc% fighter_text
+        OUTER_INNER_PATCH_SAVE fighter_text ~%fighter_text%~ BEGIN
+          REPLACE_TEXTUALLY ~%old%~ ~May achieve Grand Mastery (five slots) in any fighting style.~
+        END
+      END
+    END
+  END
+END
