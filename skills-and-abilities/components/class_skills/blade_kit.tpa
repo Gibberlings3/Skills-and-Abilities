@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Update Weapon Prof Assingment                                         //
+// Update Weapon Prof Assignment                                         //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
   READ_2DA_ENTRIES_NOW kitnames 3
@@ -27,7 +27,243 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // HALBERD
       SET_2DA_ENTRY 23 (col + 1) 1 ~2~   // FLAILMORNINGSTAR
       SET_2DA_ENTRY 24 (col + 1) 1 ~2~   // MACE
-      SET_2DA_ENTRY 26 (col + 1) 1 ~2~   // QUARTERSTAFF
+      SET_2DA_ENTRY 25 (col + 1) 1 ~2~   // QUARTERSTAFF
       PRETTY_PRINT_2DA
   END
   END
+
+///////////////////////////////////////////////////////////////////////////
+// Update All Non-NPC CRE that are Blades                                //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
+SPRINT source ~%SOURCE_FILE%~
+READ_LONG 0x2c4 fx_off ELSE 0
+READ_LONG 0x2c8 fx_num ELSE 0
+READ_BYTE 0x33  fx_type ELSE 2
+READ_ASCII  0x280 deathvar
+READ_BYTE 0x244 kit
+SET bastard = 0
+SET longsword = 0
+SET shortsword = 0
+SET axe = 0
+SET twohandedsword = 0
+SET katana = 0
+SET swn = 0
+SET dagger = 0
+SET warhammer = 0
+SET club = 0
+SET spear = 0
+SET halberd = 0
+SET flailmorningstar = 0
+SET mace = 0
+SET quarterstaff = 0
+SET twohanded = 0
+SET swordandshield = 0
+SET singleweapon = 0
+SET twoweapon = 0
+
+// Grab all assigned pips
+FOR (index = 0 ; index < fx_num ; ++index) BEGIN
+  READ_SHORT (fx_off        + (0x08 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) opcode
+  PATCH_IF (opcode = 233) BEGIN
+    READ_LONG  (fx_off + 0x04 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) pips
+    READ_LONG  (fx_off + 0x08 + (0x10 * fx_type) + (index * (0x30 + (0xd8 * fx_type)))) type
+
+    // bastard
+    PATCH_IF (type = 89) BEGIN
+        bastard = pips
+    END
+
+    // longsword
+    PATCH_IF (type = 90) BEGIN
+        longsword = pips
+    END
+
+    // shortsword
+    PATCH_IF (type = 91) BEGIN
+        shortsword = pips
+    END
+
+    // axe
+    PATCH_IF (type = 92) BEGIN
+        axe = pips
+    END
+
+    // twohandedsword
+    PATCH_IF (type = 93) BEGIN
+        twohandedsword = pips
+    END
+
+    // katana
+    PATCH_IF (type = 94) BEGIN
+        katana = pips
+    END
+
+    // swn
+    PATCH_IF (type = 95) BEGIN
+        swn = pips
+    END
+
+    // dagger
+    PATCH_IF (type = 96) BEGIN
+        dagger = pips
+    END
+
+    // warhammer
+    PATCH_IF (type = 97) BEGIN
+        warhammer = pips
+    END
+
+    // club
+    PATCH_IF (type = 115) BEGIN
+        club = pips
+    END
+
+    // spear
+    PATCH_IF (type = 98) BEGIN
+        spear = pips
+    END
+
+    // halberd
+    PATCH_IF (type = 99) BEGIN
+        halberd = pips
+    END
+
+    // flailmorningstar
+    PATCH_IF (type = 100) BEGIN
+        flailmorningstar = pips
+    END
+
+    // mace
+    PATCH_IF (type = 101) BEGIN
+        mace = pips
+    END
+
+    // quarterstaff
+    PATCH_IF (type = 102) BEGIN
+        quarterstaff = pips
+    END
+
+    // Two-Handed Weapon Style
+    PATCH_IF (type = 111) BEGIN
+        twohanded = pips
+    END
+
+    // Sword and Shield Weapon Style
+    PATCH_IF (type = 112) BEGIN
+        swordandshield = pips
+    END
+
+    // Single Weapon Style
+    PATCH_IF (type = 113) BEGIN
+        singleweapon = pips
+    END
+
+    // Two Weapon Style
+    PATCH_IF (type = 114) BEGIN
+        twoweapon = pips
+    END
+  END
+END
+
+// Assign 2 prof points in melee weapons if 1 prof point exists
+PATCH_IF !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
+  // Remove all old profs, these will be replaced
+  LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
+
+  // bastard
+  PATCH_IF (bastard > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 89 timing = 9 END
+  END
+
+  // longsword
+  PATCH_IF (longsword > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
+  END
+
+  // shortsword
+  PATCH_IF (shortsword > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+  END
+
+  // axe
+  PATCH_IF (axe > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 92 timing = 9 END
+  END
+
+  // twohandedsword
+  PATCH_IF (twohandedsword > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 93 timing = 9 END
+  END
+
+  // katana
+  PATCH_IF (katana > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 94 timing = 9 END
+  END
+
+  // swn
+  PATCH_IF (swn > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 95 timing = 9 END
+  END
+
+  // dagger
+  PATCH_IF (dagger > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 96 timing = 9 END
+  END
+
+  // warhammer
+  PATCH_IF (warhammer > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 97 timing = 9 END
+  END
+
+  // club
+  PATCH_IF (club > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 115 timing = 9 END
+  END
+
+  // spear
+  PATCH_IF (spear > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 98 timing = 9 END
+  END
+
+  // halberd
+  PATCH_IF (halberd > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 99 timing = 9 END
+  END
+
+  // flailmorningstar
+  PATCH_IF (flailmorningstar > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 100 timing = 9 END
+  END
+
+  // mace
+  PATCH_IF (mace > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 101 timing = 9 END
+  END
+
+  // quarterstaff
+  PATCH_IF (quarterstaff > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 102 timing = 9 END
+  END
+
+  // Two-Handed Weapon Style
+  PATCH_IF (twohanded > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twohanded parameter2 = 111 timing = 9 END
+  END
+
+  // Sword and Shield Weapon Style
+  PATCH_IF (swordandshield > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = swordandshield parameter2 = 112 timing = 9 END
+  END
+
+  // Single Weapon Style
+  PATCH_IF (singleweapon > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = singleweapon parameter2 = 113 timing = 9 END
+  END
+
+  // Two Weapon Style
+  PATCH_IF (twoweapon > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
+  END
+END
+BUT_ONLY
