@@ -65,7 +65,8 @@ SET singleweapon = 0
 SET twoweapon = 0
 
 //PATCH_IF (~%kit%~ = ~0x400D0000~) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
-PATCH_IF (~%kit%~ = ~0x400D0000~) BEGIN
+//PATCH_IF (~%kit%~ = ~0x400D0000~) BEGIN
+PATCH_IF (~%kit_upper%~ = ~0x400D~) BEGIN
   PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
 
   // Grab all assigned pips
