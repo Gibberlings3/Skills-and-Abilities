@@ -284,9 +284,10 @@ ACTION_FOR_EACH description IN
       FOR (index = 0; index < rows; ++index) BEGIN
         READ_2DA_ENTRY index 0 col_count row_name
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "BLADE" BEGIN
+          READ_2DA_ENTRY index 4 col_count blade_desc
           SPRINT old_blade @3504
           SPRINT new_blade @3505
-          GET_STRREF ~%blade_desc%~ blade_text
+          GET_STRREF %blade_desc% blade_text
           INNER_PATCH_SAVE blade_text ~%blade_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_blade%~ ~%new_blade%~
           END/*
