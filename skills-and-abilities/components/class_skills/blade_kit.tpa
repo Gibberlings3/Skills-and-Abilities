@@ -270,25 +270,28 @@ PATCH_IF (~%kit%~ = 0x400d0000) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%de
 END
 BUT_ONLY
 
-/*
 ///////////////////////////////////////////////////////////////////////////
 // Update Kit Descriptions                                               //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_FOR_EACH clastext IN ~clastext~ ~sodcltxt~ BEGIN
-  ACTION_IF FILE_EXISTS_IN_GAME ~%clastext%.2da~ BEGIN COPY_EXISTING ~%clastext%.2DA~ OVERRIDE
-    COUNT_2DA_COLS col_count
-    COUNT_2DA_ROWS col_count rows
-    FOR (index = 0; index < rows; ++index) BEGIN
-      READ_2DA_ENTRY index 0 col_count row_name
-      ACTION_IF "%row_name%" STRING_EQUAL_CASE "FIGHTER" BEGIN
-        READ_2DA_ENTRY index 4 col_count fighter_desc 
-        OUTER_SPRINT old ~May achieve Specialization (two slots) in any fighting style and allocate three slots in Two-Weapon Style.~
-        ACTION_GET_STRREF %fighter_desc% fighter_text
-        OUTER_INNER_PATCH_SAVE fighter_text ~%fighter_text%~ BEGIN
-          REPLACE_TEXTUALLY ~%old%~ ~May achieve Grand Mastery (five slots) in any fighting style.~
+ACTION_FOR_EACH description IN 
+    clastext 
+    sodcltxt 
+  BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%description%.2da~ BEGIN
+      COPY_EXISTING ~%description%.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 0; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 0 col_count row_name
+        ACTION_IF "%row_name%" STRING_EQUAL_CASE "BLADE" BEGIN
+          OUTER_SPRINT old_blade @3504
+          OUTER_SPRINT new_blade @3505
+          ACTION_GET_STRREF %blade_desc% blade_text
+          OUTER_PATCH_SAVE blade_text ~%blade_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_blade%~ ~%new_blade%~
+          END
+          STRING_SET_EVALUATE ~%blade_desc%~ ~%blade_text%~
         END
       END
     END
   END
-END
-*/
