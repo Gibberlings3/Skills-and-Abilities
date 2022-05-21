@@ -41,9 +41,10 @@ READ_LONG 0x2c4 fx_off ELSE 0
 READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
 READ_ASCII  0x280 deathvar
-READ_SHORT 0x244 kit_upper
+/*READ_SHORT 0x244 kit_upper
 READ_SHORT 0x246 kit_lower
-SET kit = (kit_upper << 16) | kit_lower
+SET kit = (kit_upper << 16) | kit_lower*/
+READ_LONG 0x244 kit
 SET bastard = 0
 SET longsword = 0
 SET shortsword = 0
@@ -65,8 +66,8 @@ SET singleweapon = 0
 SET twoweapon = 0
 
 //PATCH_IF (~%kit%~ = ~0x400D0000~) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
-//PATCH_IF (~%kit%~ = ~0x400D0000~) BEGIN
-PATCH_IF (~%kit_upper%~ = ~0x400D~) BEGIN
+PATCH_IF (~%kit%~ = 0x400d0000) BEGIN
+//PATCH_IF (~%kit_upper%~ = ~0x400D~) BEGIN
   PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
 
   // Grab all assigned pips
