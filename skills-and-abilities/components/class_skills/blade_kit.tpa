@@ -287,7 +287,7 @@ ACTION_FOR_EACH description IN
           SPRINT old_blade @3504
           SPRINT new_blade @3505
           GET_STRREF %blade_desc% blade_text
-          OUTER_INNER_PATCH_SAVE blade_text ~%blade_text%~ BEGIN
+          INNER_PATCH_SAVE blade_text ~%blade_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_blade%~ ~%new_blade%~
           END
           //STRING_SET_EVALUATE ~%blade_desc%~ ~%blade_text%~
