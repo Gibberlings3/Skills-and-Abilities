@@ -64,7 +64,7 @@ SET swordandshield = 0
 SET singleweapon = 0
 SET twoweapon = 0
 
-PATCH_IF (~%kit%~ = ~0x400d0000~) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
+PATCH_IF (~%kit%~ = ~0x400D0000~) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
   PATCH_PRINT ~Determining and assigning proficiencies for: %source%~
 
   // Grab all assigned pips
@@ -182,96 +182,97 @@ PATCH_IF (~%kit%~ = ~0x400d0000~) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%
 
   // longsword
   PATCH_IF (longsword > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
-    END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
+  END
 
-    // shortsword
-    PATCH_IF (shortsword > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
-    END
+  // shortsword
+  PATCH_IF (shortsword > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+  END
 
-    // axe
-    PATCH_IF (axe > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 92 timing = 9 END
-    END
+  // axe
+  PATCH_IF (axe > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 92 timing = 9 END
+  END
 
-    // twohandedsword
-    PATCH_IF (twohandedsword > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 93 timing = 9 END
-    END
+  // twohandedsword
+  PATCH_IF (twohandedsword > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 93 timing = 9 END
+  END
 
-    // katana
-    PATCH_IF (katana > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 94 timing = 9 END
-    END
+  // katana
+  PATCH_IF (katana > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 94 timing = 9 END
+  END
 
-    // swn
-    PATCH_IF (swn > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 95 timing = 9 END
-    END
+  // swn
+  PATCH_IF (swn > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 95 timing = 9 END
+  END
 
-    // dagger
-    PATCH_IF (dagger > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 96 timing = 9 END
-    END
+  // dagger
+  PATCH_IF (dagger > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 96 timing = 9 END
+  END
 
-    // warhammer
-    PATCH_IF (warhammer > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 97 timing = 9 END
-    END
+  // warhammer
+  PATCH_IF (warhammer > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 97 timing = 9 END
+  END
 
-    // club
-    PATCH_IF (club > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 115 timing = 9 END
-    END
+  // club
+  PATCH_IF (club > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 115 timing = 9 END
+  END
 
-    // spear
-    PATCH_IF (spear > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 98 timing = 9 END
-    END
+  // spear
+  PATCH_IF (spear > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 98 timing = 9 END
+  END
 
-    // halberd
-    PATCH_IF (halberd > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 99 timing = 9 END
-    END
+  // halberd
+  PATCH_IF (halberd > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 99 timing = 9 END
+  END
 
-    // flailmorningstar
-    PATCH_IF (flailmorningstar > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 100 timing = 9 END
-    END
+  // flailmorningstar
+  PATCH_IF (flailmorningstar > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 100 timing = 9 END
+  END
 
-    // mace
-    PATCH_IF (mace > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 101 timing = 9 END
-    END
+  // mace
+  PATCH_IF (mace > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 101 timing = 9 END
+  END
 
-    // quarterstaff
-    PATCH_IF (quarterstaff > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 102 timing = 9 END
-    END
+  // quarterstaff
+  PATCH_IF (quarterstaff > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 102 timing = 9 END
+  END
 
-    // Two-Handed Weapon Style
-    PATCH_IF (twohanded > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twohanded parameter2 = 111 timing = 9 END
-    END
+  // Two-Handed Weapon Style
+  PATCH_IF (twohanded > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twohanded parameter2 = 111 timing = 9 END
+  END
 
-    // Sword and Shield Weapon Style
-    PATCH_IF (swordandshield > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = swordandshield parameter2 = 112 timing = 9 END
-    END
+  // Sword and Shield Weapon Style
+  PATCH_IF (swordandshield > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = swordandshield parameter2 = 112 timing = 9 END
+  END
 
-    // Single Weapon Style
-    PATCH_IF (singleweapon > 0) BEGIN
-        LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = singleweapon parameter2 = 113 timing = 9 END
-    END
+  // Single Weapon Style
+  PATCH_IF (singleweapon > 0) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = singleweapon parameter2 = 113 timing = 9 END
+  END
 
-    // Two Weapon Style
-    PATCH_IF (twoweapon > 0) BEGIN
+  // Two Weapon Style
+  PATCH_IF (twoweapon > 0) BEGIN
       LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
   END
 END
 BUT_ONLY
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Update Kit Descriptions                                               //
 ///////////////////////////////////////////////////////////////////////////
@@ -292,3 +293,4 @@ ACTION_FOR_EACH clastext IN ~clastext~ ~sodcltxt~ BEGIN
     END
   END
 END
+*/
