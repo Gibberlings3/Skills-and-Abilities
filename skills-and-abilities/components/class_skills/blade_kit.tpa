@@ -283,7 +283,7 @@ ACTION_FOR_EACH description IN
       COUNT_2DA_ROWS col_count rows
       FOR (index = 0; index < rows; ++index) BEGIN
         READ_2DA_ENTRY index 0 col_count row_name
-        ACTION_IF "%row_name%" STRING_EQUAL_CASE "BLADE" BEGIN
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "BLADE" BEGIN
           OUTER_SPRINT old_blade @3504
           OUTER_SPRINT new_blade @3505
           ACTION_GET_STRREF %blade_desc% blade_text
