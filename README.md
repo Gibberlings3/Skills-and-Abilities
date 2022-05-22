@@ -22,6 +22,10 @@ Some components require EEex to work, and those are identified with **(EEex Requ
 
 Adds the option to either select Open Locks only or Open Locks and Disarm/Find Traps for Bards and Bard kits.
 
+### Allow Blade Kit to Specialize in Melee Weapons
+
+This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice.
+
 ### Monk Skills (EEex Required)
 
 Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk kits. 
