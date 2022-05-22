@@ -22,6 +22,10 @@ Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifi
 
 Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit Crochetage de serrures et Detection des pieges pour Le barde et ses kits.
 
+### Permettre au Maître-lames de se spécialiser dans les armes de mêlée
+
+Cette option permet au Maître-lames de se spécialiser (2 points de compétence) dans les armes de mêlée. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
+
 ### Mise a jour des capacités des Moines (EEex nécessaire)
 
 Ajoute les capacités Crochetage de serrures, Détection des pieges et Détection des illusions pour le moine et ses kits.
@@ -167,6 +171,26 @@ REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une ma
 - Spécialisé (2 points de compétences) : Le porteur de l'arme obtient un bonus de 2 aux jets de dégâts, -2 au TAC0, -2 à la CA, et inflige des coups critiques sur un jet d'attaque de 18 à 20.
 
 ### Révision du Système de Compétence - ajout de nouvelles compétences et de nouveaux styles de combat.
+
+#### Progression normale des compétences
+
+Les personnages reçoivent leurs points de compétence selon le rythme de progression original du jeu.
+
+#### Progression accélérée des compétences
+
+Tous les personnages reçoivent leurs points de compétence à un rythme accéléré.
+- Guerriers : Un point de compétence au niveau 2 puis tous les 2 niveaux.
+- Prêtres, voleurs, bardes, druides, moines et chamans : Un point de compétence au niveau 3 puis tous les 3 niveaux.
+- Mage et Sorciers : Un point de compétence au niveau 4 puis tous les 4 niveaux.
+
+
+#### Progression des compétences similaire à NWN2
+
+La progression des compétences est désormais plus proche du système de progression de NWN2 (3.5e).
+- Guerriers et guerriers multi-classes : Un point de compétence au niveau 2 puis tous les 2 niveaux.
+- Toutes les autres classes : Un point de compétence au niveau 3 puis tous les 3 niveaux.
+
+#### Nouvelles compétences
 
 **ARMURE LOURDE :** Cette compétence confère les connaissances nécessaires pour utiliser efficacement les armure de plates et les armure de plates complètes. Un personnage portant une armure lourde sans point de compétence subit une perte de 10% à sa vitesse de déplacement, une pénalité de 1 au facteur de vitesse et une pénalité de 1 au TAC0. Toutes les compétences sont cumulatives.
 - Armure Lourde Compétence (1 point de compétence): Le personnage ne reçoit aucune pénalité lorsqu'il porte une armure lourde.
