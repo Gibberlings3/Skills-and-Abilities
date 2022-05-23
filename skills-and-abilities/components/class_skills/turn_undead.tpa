@@ -191,26 +191,49 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME ~BDSHLD03.ITM~ THEN BEGIN
   COPY ~skills-and-abilities/eff/class/BDSHLD03.eff~ ~override~
 
-  OUTER_SPRINT old_egons @9011
-  OUTER_SPRINT new_egons @9012
+  //OUTER_SPRINT old_egons @9011
+  //OUTER_SPRINT new_egons @9012
 
   COPY_EXISTING ~BDSHLD03.ITM~ ~override~
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 191 target = 1 parameter1 = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 END 
     LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 323 END
     READ_LONG 0x54 egons_strref
     READ_STRREF 0x54 egons_description
-
-    OUTER_PATCH_SAVE egons_description ~%egons_description%~ BEGIN
+    SPRINT old_egons @9011
+    SPRINT new_egons @9012
+    INNER_PATCH_SAVE egons_description ~%egons_description%~ BEGIN
       REPLACE_TEXTUALLY ~%old_egons%~ ~%new_egons%~
     END
-
-    STRING_SET_EVALUATE ~egons_strref~ ~%egons_description%~
+    INNER_ACTION BEGIN
+      STRING_SET_EVALUATE ~egons_strref~ ~%egons_description%~
+    END
   
 /*
-  ACTION_IF GAME_IS ~bgee~ BEGIN
-    OUTER_SET egons_strref = 47454
-  END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
-    OUTER_SET egons_strref = 324911
+ACTION_FOR_EACH description IN 
+    clastext 
+    sodcltxt 
+  BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%description%.2da~ BEGIN
+      COPY_EXISTING ~%description%.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 0; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 0 col_count row_name
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "BLADE" BEGIN
+          READ_2DA_ENTRY index 4 col_count blade_desc
+          SPRINT old_blade @3504
+          SPRINT new_blade @3505
+          GET_STRREF %blade_desc% blade_text
+          INNER_PATCH_SAVE blade_text ~%blade_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_blade%~ ~%new_blade%~
+          END
+          INNER_ACTION BEGIN
+            STRING_SET_EVALUATE ~%blade_desc%~ ~%blade_text%~
+          END
+        END
+      END
+      BUT_ONLY
+    END
   END
   */
 
