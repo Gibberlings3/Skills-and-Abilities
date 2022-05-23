@@ -38,13 +38,14 @@
 @100 = ~Permettre a l'Inquisiteur de lancer des sorts divins~
 @110 = ~Ajouter la classe de Clerc/Mage/Voleur~
 @120 = ~Revision de la capacite repousser les morts-vivants~
+@130 = ~Permettre au Maitre-lames de se specialiser dans les armes de melee~
 
 // Group 2 (Update 200-299)
 
 // Group 3 (Update 300-399)
 @300 = ~Mises a Jour des styles de combat~
 @310 = ~Revision du Systeme de Competence - Ajout de nouvelles competences et de nouveaux styles de combat~
-@311 = ~Progression normal des competences~
+@311 = ~Progression normale des competences~
 @312 = ~Progression acceleree des competences~
 @313 = ~Progression des competences similaire a NWN2~
 
