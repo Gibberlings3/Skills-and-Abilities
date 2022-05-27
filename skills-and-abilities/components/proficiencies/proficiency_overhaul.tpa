@@ -117,10 +117,8 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         READ_2DA_ENTRY 16 col cols blunt // warhammer
         READ_2DA_ENTRY 17 col cols club
         READ_2DA_ENTRY 21 col cols mace
-        READ_2DA_ENTRY 22 col cols staff
         PATCH_IF (blunt < club) BEGIN SET blunt = club END
         PATCH_IF (blunt < mace) BEGIN SET blunt = mace END
-        PATCH_IF (blunt < staff) BEGIN SET blunt = staff END
 
         // Missile
         READ_2DA_ENTRY 23 col cols missile // crossbow
@@ -132,7 +130,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         // Spear
         READ_2DA_ENTRY 20 col cols spear
         READ_2DA_ENTRY 19 col cols halberd
+        READ_2DA_ENTRY 22 col cols staff
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
+        PATCH_IF (spear < staff) BEGIN SET spear = staff END
 
         // Set Old Proficiencies to 0 - These will be reused/updated to new ones
         FOR (row = 11; row < 31; ++row) BEGIN
@@ -175,7 +175,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 27 0 1 ~MISSILE~
     SET_2DA_ENTRY 27 2 1 ~momiss1~
     SET_2DA_ENTRY 27 3 1 ~momiss2~
-    SET_2DA_ENTRY 28 0 1 ~SPEAR~
+    SET_2DA_ENTRY 28 0 1 ~POLEARM~
     SET_2DA_ENTRY 28 2 1 ~mospear1~
     SET_2DA_ENTRY 28 3 1 ~mospear2~
     PRETTY_PRINT_2DA
@@ -212,7 +212,7 @@ APPEND ~stats.ids~ ~101 EXOTIC_SWORD~ UNLESS ~101 EXOTIC_SWORD~
 APPEND ~stats.ids~ ~102 AXE~          UNLESS ~102 AXE~
 APPEND ~stats.ids~ ~103 BLUNT~        UNLESS ~103 BLUNT~
 APPEND ~stats.ids~ ~104 MISSILE~      UNLESS ~104 MISSILE~
-APPEND ~stats.ids~ ~105 SPEAR~        UNLESS ~105 SPEAR~
+APPEND ~stats.ids~ ~105 POLEARM~      UNLESS ~105 POLEARM~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -1728,8 +1728,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Blunt Weapon Group
   PATCH_IF (prof = 97) OR   // Warhammer
         (prof = 115) OR     // Club
-        (prof = 101) OR     // Mace
-        (prof = 102) BEGIN  // Quarterstaff
+        (prof = 101) BEGIN  // Mace
     WRITE_BYTE 0x31 103
     PATCH_PRINT ~Moving %weapon_name% to the Blunt weapon group~
   END
@@ -1747,11 +1746,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_PRINT ~Moving %weapon_name% to the Missile weapon group~
   END
 
-  // Spear Weapon Group
-  PATCH_IF (prof = 98) OR (prof = 99) BEGIN
+  // Polearm Weapon Group
+  PATCH_IF (prof = 98) OR  // Spear
+      (prof = 99) OR       // Halberd
+      (prof = 102) BEGIN   // Quarterstaff
     WRITE_BYTE 0x31 105
     PATCH_IF (prof = 99) BEGIN
-        PATCH_PRINT ~Moving %weapon_name% to the Spear weapon group~
+        PATCH_PRINT ~Moving %weapon_name% to the Polearm weapon group~
     END
   END
 
@@ -1802,10 +1803,15 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                 REPLACE_TEXTUALLY ~Proficiency Type: War Hammer~ ~Proficiency Type: Blunt~
               END
+          // Spear   
+          END ELSE PATCH_IF (prof = 98) BEGIN
+              INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+                REPLACE_TEXTUALLY ~Proficiency Type: Spear~ ~Proficiency Type: Polearm~
+              END
           // Halberd    
           END ELSE PATCH_IF (prof = 99) BEGIN
               INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                REPLACE_TEXTUALLY ~Proficiency Type: Halberd~ ~Proficiency Type: Spear~
+                REPLACE_TEXTUALLY ~Proficiency Type: Halberd~ ~Proficiency Type: Polearm~
               END
           // Flail/Morningstar    
           END ELSE PATCH_IF (prof = 100) BEGIN
@@ -1820,7 +1826,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
           // Quarterstaff    
           END ELSE PATCH_IF (prof = 102) BEGIN
               INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-                REPLACE_TEXTUALLY ~Proficiency Type: Quarterstaff~ ~Proficiency Type: Blunt~
+                REPLACE_TEXTUALLY ~Proficiency Type: Quarterstaff~ ~Proficiency Type: Polearm~
               END
           // Crossbow    
           END ELSE PATCH_IF (prof = 103) BEGIN
@@ -1985,8 +1991,7 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
     // Blunt
     PATCH_IF (type = 97) OR 
         (type = 115) OR
-        (type = 101) OR
-        (type = 102) BEGIN
+        (type = 101) BEGIN
         PATCH_IF (pips > blunt) BEGIN
             free_pips += blunt
             blunt = pips
@@ -2007,7 +2012,9 @@ FOR (index = 0 ; index < fx_num ; ++index) BEGIN
     END
 
     // Spear
-    PATCH_IF (type = 98) OR (type = 99) BEGIN
+    PATCH_IF (type = 98) OR 
+        (type = 99) OR
+        (type = 102) BEGIN
         PATCH_IF (pips > spear) BEGIN
             free_pips += spear
             spear = pips

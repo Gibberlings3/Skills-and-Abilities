@@ -1,3 +1,11 @@
+## Version 0.7.3 alpha
+
+June xx, 2022
+
+### Changed
+
+- Moved staffs from Blunt weapon proficiency to the new Polearm Weapon Proficiency.
+
 ## Version 0.7.2 alpha
 
 May 21, 2022

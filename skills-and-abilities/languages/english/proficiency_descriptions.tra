@@ -99,7 +99,7 @@ Master (3 slots): The wielder's penalties to attack and damage rolls are reduced
 <DOTS5>~
 
 @7110 = ~Blunt Weapons~
-@7111 = ~BLUNT WEAPONS:  This weapon class allows the character to use Maces, Clubs, Warhammers, and the Staff. Druids and thieves can choose this category, but are limited to the Club and Staff only. Mages can choose this category, but are limited to the Staff alone.
+@7111 = ~BLUNT WEAPONS:  This weapon class allows the character to use Maces, Clubs, and Warhammers. Druids and thieves can choose this category, but are limited to the Club only. 
 
 <DOTS1>
 
@@ -124,8 +124,8 @@ Master (3 slots): The wielder's penalties to attack and damage rolls are reduced
 
 <DOTS5>~
 
-@7114 = ~Spear~
-@7115 = ~SPEAR:  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
+@7114 = ~Polearm~
+@7115 = ~POLEARM:  This weapon class allows the character to use Spears, Staffs, and Halberds.  Druids can choose this class, but are restricted to Spears and Staffs only. Mages can choose this category, but are limited to the Staff alone.
 
 <DOTS1>
 
