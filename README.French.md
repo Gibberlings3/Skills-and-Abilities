@@ -232,11 +232,11 @@ La progression des compétences est désormais plus proche du système de progre
 
 **HACHE :** Cette classe d'armes permet au personnage d'utiliser les haches d'armes et les haches de jet.
 
-**ARMES CONTONDANTES :** Cette classe d'armes permet au personnage d'utiliser les masses, les gourdins, les marteaux de guerre et les bâtons. Les druides et les voleurs peuvent choisir cette compétence, mais ne pourront utiliser que les gourdins et les bâtons. Quant aux mages, ils ne pouront utiliser que les bâtons.
+**ARMES CONTONDANTES :** Cette classe d'armes permet au personnage d'utiliser les masses, les gourdins et les marteaux de guerre. Les druides et les voleurs peuvent choisir cette compétence, mais ne pourront utiliser que les gourdins.
 
 **ARMES A PROJECTILES :** Cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages et les druides peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Les voleurs seront limités aux frondes et aux fléchettes et arbalètes légères. Quant aux clercs, ils ne pourront se servir que des frondes.
 
-**LANCE :** Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes. Les druides peuvent sélectionner cette classe, mais ne pourront se servir que des lances.
+**ARMES À HAMPE :** Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes et les bâtons. Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
 
 **COUP CRITIQUE :** Cette compétence rend les coups critiques plus puissants.
 - Amélioration Critique (1 point de compétence) : Le personnage inflige 1d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
