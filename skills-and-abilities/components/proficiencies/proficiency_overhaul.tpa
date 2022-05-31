@@ -1667,7 +1667,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       (prof = 108) OR     // Black Jack
       (prof = 115) BEGIN  // Club
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS03~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 301 target = 1 parameter1 = 2 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS01~ END 
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END

@@ -211,11 +211,11 @@ Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round w
 @7134 = ~Critical Striker Weapon Style~
 @7135 = ~CRITICAL STRIKER:  This weapon style makes the character's critical hits more damaging.
 
-Improved Critical (1 slot): The character deals an additional +1d6 damage on critical hit with any weapon.
+Power Critical (1 slot): The character deals an additional +10 damage on critical hit with any weapon.
 
-Power Critical (2 slots): The character deals an additional +2d6 damage on critical hit with any weapon.
+Improved Critical (2 slots): Combat ability doubles the critical threat range with a given weapon. A longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20. 
 
-Overwhelming Critical (3 slots): The character deals an additional +3d6 damage on critical hit with any weapon.~
+Overwhelming Critical (3 slots): The character deals an additional +20 damage on critical hit with any weapon.~
 
 @7136 = ~Exotic Sword~
 @7137 = ~EXOTIC SWORD:  This weapon class allows the character to use Katanas, Ninjatos, Wakizashis, and Scimitars. The Druid is able to select this class, but is limited to Scimitars alone.
