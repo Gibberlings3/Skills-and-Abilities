@@ -5,8 +5,6 @@ June xx, 2022
 ### Changed
 
 - Moved staffs from Blunt weapon proficiency to the new Polearm Weapon Proficiency.
-- To-do:
-  - Update weapon category descriptions for IR. 
 
 ## Version 0.7.2 alpha
 
