@@ -232,9 +232,9 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 **SPEAR:**  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
 
 **CRITICAL STRIKER:**  This weapon style makes the character's critical hits more damaging.
-- Improved Critical (1 slot): The character deals an additional +1d6 damage on critical hit with any weapon.
-- Power Critical (2 slots): The character deals an additional +2d6 damage on critical hit with any weapon.
-- Overwhelming Critical (3 slots): The character deals an additional +3d6 damage on critical hit with any weapon.
+- Power Critical (1 slot): The character deals an additional +10 damage on critical hit with any weapon.
+- Improved Critical (2 slots): The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20. 
+- Overwhelming Critical (3 slots): The character deals an additional +20 damage on critical hit with any weapon.
 
 **ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
