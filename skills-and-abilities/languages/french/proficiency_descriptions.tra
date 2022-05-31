@@ -243,11 +243,11 @@ Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux 
 @7134 = ~Coup Critique~
 @7135 = ~COUP CRITIQUE : Cette compétence rend les coups critiques plus puissants.
 
-Amélioration Critique (1 point de compétence) : Le personnage inflige 1d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
+Puissance Critique (1 point de compétence) : Le personnage inflige 10 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
 
-Puissance Critique (2 points de compétence) : Le personnage inflige 2d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
+Amélioration Critique (2 points de compétence) : Le personnage augmente ses chances de dégâts critique par 2. Par exemple, une épée longue effectuant normalement un coup critique sur un jet de 19-20 permettra dorénavant d'obtenir un coup critique sur un jet de 17-20.
 
-Démesure Critique (3 points de compétence) : Le personnage inflige 3d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.~
+Démesure Critique (3 points de compétence) : Le personnage inflige 20 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.~
 
 @7136 = ~Cimeterre / Wakizashi / Ninjatō~
 @7137 = ~CIMETERRE / WAKIZASHI / NINJATŌ : Cette classe d'arme permet au personnage de se servir des diverses épées orientales : Cimeterre, Wakizashi et Ninjatō. Un druide peut aussi choisir cette compétence, mais il ne pourra utiliser que les cimeterres.
