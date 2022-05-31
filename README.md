@@ -225,11 +225,11 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 
 **AXE:**  This weapon class allows the character to use Battle axes and Throwing axes.
 
-**BLUNT WEAPONS:**  This weapon class allows the character to use Maces, Clubs, Warhammers, and the Staff. Druids and thieves can choose this category, but are limited to the Club and Staff only. Mages can choose this category, but are limited to the Staff alone.
+**BLUNT WEAPONS:**  This weapon class allows the character to use Maces, Clubs, and Warhammers. Druids and thieves can choose this category, but are limited to the Club only. 
 
 **MISSILE WEAPONS:** This weapon class allows the character to use Slings, Darts, and Crossbows. Mages and Druids can choose this proficiency but are restricted to Slings and Darts. Thieves can choose this proficiency but are restricted to Slings, Darts, and Light Crossbows. Clerics can choose this proficiency but are restricted to Slings alone.
 
-**SPEAR:**  This weapon class allows the character to use Spears and Halberds.  Druids can choose this class, but are restricted to Spears only.
+**POLEARM:**  This weapon class allows the character to use Spears, Staffs, and Halberds.  Druids can choose this class, but are restricted to Spears and Staffs only. Mages can choose this category, but are limited to the Staff alone.
 
 **CRITICAL STRIKER:**  This weapon style makes the character's critical hits more damaging.
 - Power Critical (1 slot): The character deals an additional +10 damage on critical hit with any weapon.
