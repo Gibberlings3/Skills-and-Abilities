@@ -19,7 +19,10 @@ COPY ~skills-and-abilities/eff/proficiencies/MOARM06.EFF~   ~override~ // Armor 
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS01.SPL~   ~override~ // Critical Striker Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS02.SPL~   ~override~ // Critical Striker Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS03.SPL~   ~override~ // Critical Striker Weapon Style
+COPY ~skills-and-abilities/spl/proficiencies/MOCRSC4.SPL~   ~override~ // Improved Critical
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS04.SPL~   ~override~ // Improved Critical
+COPY ~skills-and-abilities/spl/proficiencies/MOCRS44.SPL~   ~override~ // Improved Critical
+COPY ~skills-and-abilities/eff/proficiencies/MOCRS04.EFF~   ~override~ // Improved Critical
 COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial Thac0 Modifier on weapons
 
 ACTION_IF accelerated_profs THEN BEGIN
@@ -311,6 +314,7 @@ APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 APPEND ~splprot.2da~ ~mo_crit_prof1%TAB%106%TAB%1%TAB%5~
 APPEND ~splprot.2da~ ~mo_crit_prof2%TAB%106%TAB%2%TAB%5~
 APPEND ~splprot.2da~ ~mo_crit_prof3%TAB%106%TAB%3%TAB%5~
+APPEND ~splprot.2da~ ~mo_crit_prof2%TAB%106%TAB%2%TAB%4~
 
 // Update all imported files so they point in the correct direction.
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -400,6 +404,9 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Critical Striker - 3 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_crit_prof3~ BEGIN
         SET crit_prof3 = %row%
+      // Critical Striker - 2 Pips (Improved Critical)
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_crit_prof4~ BEGIN
+        SET crit_prof4 = %row%
 
       // ARCHERY --------------------------------------------------------------//
       // Archery - 1 Pips
@@ -460,6 +467,10 @@ COPY_EXISTING ~mocon04.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %con_prof4% END
 COPY_EXISTING ~mocon05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %con_prof5% END
+
+// Critical Striker Prof
+COPY_EXISTING ~mocrs04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %crit_prof4% END
 
 ///////////////////////////////////////////////////////////////////////////
 // Update ALL Classes/Kits in WEAPPROF.2DA                               //
@@ -568,6 +579,7 @@ COPY_EXISTING ~CLABMA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -580,6 +592,7 @@ COPY_EXISTING ~CLABFI01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -596,6 +609,7 @@ COPY_EXISTING ~CLABPR01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -608,6 +622,7 @@ COPY_EXISTING ~CLABTH01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -624,6 +639,7 @@ COPY_EXISTING ~CLABBA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -640,6 +656,7 @@ COPY_EXISTING ~CLABPA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -656,6 +673,7 @@ COPY_EXISTING ~CLABDR01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -672,6 +690,7 @@ COPY_EXISTING ~CLABRN01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -684,6 +703,7 @@ COPY_EXISTING ~CLABMO01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -700,6 +720,7 @@ COPY_EXISTING ~CLABSH01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -744,6 +765,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -787,6 +809,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -828,6 +851,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -864,6 +888,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -904,6 +929,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -945,6 +971,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -986,6 +1013,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1027,6 +1055,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1064,6 +1093,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1105,6 +1135,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1146,6 +1177,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1187,6 +1219,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1227,6 +1260,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1267,6 +1301,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1286,6 +1321,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1327,6 +1363,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1368,6 +1405,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1408,6 +1446,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1427,6 +1466,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1467,6 +1507,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1488,6 +1529,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1528,6 +1570,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1564,6 +1607,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
@@ -1605,6 +1649,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
           LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
           PRETTY_PRINT_2DA
         BUT_ONLY
     END
