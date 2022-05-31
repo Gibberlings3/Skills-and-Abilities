@@ -314,7 +314,7 @@ APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 APPEND ~splprot.2da~ ~mo_crit_prof1%TAB%106%TAB%1%TAB%5~
 APPEND ~splprot.2da~ ~mo_crit_prof2%TAB%106%TAB%2%TAB%5~
 APPEND ~splprot.2da~ ~mo_crit_prof3%TAB%106%TAB%3%TAB%5~
-APPEND ~splprot.2da~ ~mo_crit_prof2%TAB%106%TAB%2%TAB%4~
+APPEND ~splprot.2da~ ~mo_crit_prof4%TAB%106%TAB%2%TAB%4~
 
 // Update all imported files so they point in the correct direction.
 COPY_EXISTING ~splprot.2da~ ~override~
