@@ -239,9 +239,9 @@ La progression des compétences est désormais plus proche du système de progre
 **ARMES À HAMPE :** Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes et les bâtons. Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
 
 **COUP CRITIQUE :** Cette compétence rend les coups critiques plus puissants.
-- Amélioration Critique (1 point de compétence) : Le personnage inflige 1d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
-- Puissance Critique (2 points de compétence) : Le personnage inflige 2d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
-- Démesure Critique (3 points de compétence) : Le personnage inflige 3d6 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
+- Puissance Critique (1 point de compétence) : Le personnage inflige 10 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
+- Amélioration Critique (2 points de compétence) : Le personnage augmente ses chances de dégâts critique par 2. Par exemple, une épée longue effectuant normalement un coup critique sur un jet de 19-20 permettra dorénavant d'obtenir un coup critique sur un jet de 17-20.
+- Démesure Critique (3 points de compétence) : Le personnage inflige 20 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
 
 **MAÎTRISE DES PROJECTILES :** Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes, Frondes et Fléchettes.
 - Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
