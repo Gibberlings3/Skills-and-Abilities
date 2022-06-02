@@ -1,3 +1,11 @@
+## Version 0.7.4 alpha
+
+June 1, 2022
+
+### Changed
+
+- Removed bug from Critical Striker Proficiency
+
 ## Version 0.7.3 alpha
 
 May 31, 2022
