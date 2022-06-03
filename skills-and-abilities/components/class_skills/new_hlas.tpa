@@ -119,14 +119,27 @@ ACTION_FOR_EACH class IN
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA14 END   
 END
 
+///////////////////////////////////////////////////////////////////////////
+// Update Existing HLAs                                                  //
+///////////////////////////////////////////////////////////////////////////
 ACTION_IF existing_hla BEGIN
+  OUTER_SPRINT oldgww @8031
+  OUTER_SPRINT newgww @8032
   
   // Alter Greater Whirlwind to last 3 rounds
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WARRIOR_GREATER_WHIRLWIND~ RET spell_res END
     ACTION_IF FILE_EXISTS_IN_GAME ~%spell_res%.SPL~ BEGIN
       COPY_EXISTING ~%spell_res%.SPL~ ~override~ 
         LPF ALTER_EFFECT INT_VAR match_duration = 6 duration = 18 END
-        SAY UNIDENTIFIED_DESC @8031
-    END
+        //SAY UNIDENTIFIED_DESC @8031
 
+        READ_LONG 0x50 desc_strref
+          PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
+            READ_STRREF 0x50 desc
+            INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+              REPLACE_TEXTUALLY ~%oldgww%~ ~%newgww%~
+            END
+            SAY_EVALUATED 0x50 ~%desc%~
+          END
+    END
 END
