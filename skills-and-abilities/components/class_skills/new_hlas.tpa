@@ -121,4 +121,12 @@ END
 
 ACTION_IF existing_hla BEGIN
   
+  // Alter Greater Whirlwind to last 3 rounds
+  LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WARRIOR_GREATER_WHIRLWIND~ RET spell_res END
+    ACTION_IF FILE_EXISTS_IN_GAME ~%spell_res%.SPL~ BEGIN
+      COPY_EXISTING ~%spell_res%.SPL~ ~override~ 
+        LPF ALTER_EFFECT INT_VAR match_duration = 6 duration = 18 END
+        SAY UNIDENTIFIED_DESC @8031
+    END
+
 END
