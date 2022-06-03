@@ -131,7 +131,6 @@ ACTION_IF existing_hla BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~%spell_res%.SPL~ BEGIN
       COPY_EXISTING ~%spell_res%.SPL~ ~override~ 
         LPF ALTER_EFFECT INT_VAR match_duration = 6 duration = 18 END
-        //SAY UNIDENTIFIED_DESC @8031
 
         READ_LONG 0x50 desc_strref
           PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN

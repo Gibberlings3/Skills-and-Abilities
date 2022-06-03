@@ -65,13 +65,6 @@ The character gains +1 bonus to Strength. This feat may be taken multiple times,
 @8030 = ~Great Wisdom
 The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.~
 
-/*
-@8031 = ~Greater Whirlwind Attack
-A more powerful version of the Whirlwind Attack, Greater Whirlwind gives the warrior the same bonuses without penalties. Their number of attacks per round are set to 10 for three rounds.
-
-Requires: Whirlwind Attack~
-*/
-
 @8031 = ~one round~
 
 @8032 = ~three rounds~
