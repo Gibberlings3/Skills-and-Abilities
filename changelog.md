@@ -1,10 +1,18 @@
+## Version 0.7.5 alpha
+
+June xx, 2022
+
+### Changed
+
+- Updated GWW HLA to last for three rounds instead of one round.
+
 ## Version 0.7.4 alpha
 
 June 1, 2022
 
 ### Changed
 
-- Removed bug from Critical Striker Proficiency
+- Removed bug from Critical Striker Proficiency.
 
 ## Version 0.7.3 alpha
 
