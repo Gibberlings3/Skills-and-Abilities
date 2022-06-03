@@ -272,9 +272,18 @@ INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @90 DESIGNATED 90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA
+BEGIN @91 DESIGNATED 91 SUBCOMPONENT @90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA1
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
 
+OUTER_SET existing_hla=1
+INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
+
+////////////////////////////////////////////////////
+
+BEGIN @92 DESIGNATED 92 SUBCOMPONENT @90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA2
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
+
+OUTER_SET existing_hla=0
 INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
