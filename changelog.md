@@ -1,10 +1,12 @@
 ## Version 0.7.5 alpha
 
-June xx, 2022
+June 4, 2022
 
 ### Changed
 
 - Updated GWW HLA to last for three rounds instead of one round.
+- Removed the Critical Striker proficiency and created the Improved Critical HLA.
+- Fixed bug where Paladin Turn Undead UI was not behaving correctly.
 
 ## Version 0.7.4 alpha
 
