@@ -1715,16 +1715,16 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS03~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
   END ELSE PATCH_IF (prof = 0) && (type = 28) BEGIN // Fist Weapons
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS03~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
   END
 
   // Bow Weapon Group
