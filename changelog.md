@@ -4,7 +4,8 @@ June 4, 2022
 
 ### Changed
 
-- Updated GWW HLA to last for three rounds instead of one round.
+- Added sub-component to update existing HLAs.
+  - Updated GWW HLA to last for three rounds instead of one round.
 - Removed the Critical Striker proficiency and created the Improved Critical HLA.
 - Fixed bug where Paladin Turn Undead UI was not behaving correctly.
 
