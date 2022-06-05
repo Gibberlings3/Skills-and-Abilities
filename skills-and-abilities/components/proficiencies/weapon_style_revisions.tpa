@@ -33,7 +33,7 @@ END
 // Add Bonuses to SPLPROT.2da                                            //
 ///////////////////////////////////////////////////////////////////////////
 APPEND ~splprot.2da~ ~mo_2h_bonus%TAB%111%TAB%2%TAB%2~   UNLESS ~mo_2h_bonus~
-APPEND ~splprot.2da~ ~mo_swsh_bonus%TAB%112%TAB%2%TAB%2~ UNLESS ~mo_swsh_bonus~
+APPEND ~splprot.2da~ ~mo_swsh_bonus%TAB%112%TAB%2%TAB%1~ UNLESS ~mo_swsh_bonus~
 COPY_EXISTING ~splprot.2da~ ~override~
     COUNT_2DA_COLS cols
     READ_2DA_ENTRIES_NOW rows cols
