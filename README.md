@@ -134,6 +134,8 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 
 **EPIC WEAPON SPECIALIZATION (FIGHTERS ONLY - REQUIRES EPIC WEAPON FOCUS):** The warrior gains +2 bonus to damage.
 
+**IMPROVED CRITICAL (WARRIOR CLASSES ONLY)** The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.
+
 **GREAT CHARISMA:** The character gains +1 bonus to Charisma. This feat may be taken multiple times, up to a maximum of +5 Charisma.
 
 **GREAT CONSTITUTION:** The character gains +1 bonus to Constitution. This feat may be taken multiple times, up to a maximum of +5 Constitution.
@@ -145,6 +147,12 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 **GREAT STRENGTH:** The character gains +1 bonus to Strength. This feat may be taken multiple times, up to a maximum of +5 Strength.
 
 **GREAT WISDOM:** The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.
+
+#### Update Existing HLAs
+
+Greater Whirlwind: Will now last for three rounds instead of one.
+
+(more in progress)
 
 ## Proficiencies
 
@@ -230,11 +238,6 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 **MISSILE WEAPONS:** This weapon class allows the character to use Slings, Darts, and Crossbows. Mages and Druids can choose this proficiency but are restricted to Slings and Darts. Thieves can choose this proficiency but are restricted to Slings, Darts, and Light Crossbows. Clerics can choose this proficiency but are restricted to Slings alone.
 
 **POLEARM:**  This weapon class allows the character to use Spears, Staffs, and Halberds.  Druids can choose this class, but are restricted to Spears and Staffs only. Mages can choose this category, but are limited to the Staff alone.
-
-**CRITICAL STRIKER:**  This weapon style makes the character's critical hits more damaging.
-- Power Critical (1 slot): The character deals an additional +10 damage on critical hit with any weapon.
-- Improved Critical (2 slots): The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20. 
-- Overwhelming Critical (3 slots): The character deals an additional +20 damage on critical hit with any weapon.
 
 **ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
