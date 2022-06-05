@@ -66,7 +66,10 @@ The character gains +1 bonus to Strength. This feat may be taken multiple times,
 The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.~
 
 @8031 = ~one round~
-
 @8032 = ~three rounds~
+
+@8033 = ~Improved Critical~
+@8034 = ~Improved Critical
+The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20. ~
 
 @9000 = ~[LAST TRA HERE]~

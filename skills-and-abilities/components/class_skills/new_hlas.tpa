@@ -63,6 +63,10 @@ COPY ~skills-and-abilities/spl/MO#HLA14.SPL~       ~override~ // Great Wisdom
   SAY NAME1 @8029
   SAY UNIDENTIFIED_DESC @8030
 
+COPY ~skills-and-abilities/spl/MO#HLA15.SPL~       ~override~ // Improved Critical
+  SAY NAME1 @8033
+  SAY UNIDENTIFIED_DESC @8034
+
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs - Fighter Class                                              //
 ///////////////////////////////////////////////////////////////////////////
@@ -109,6 +113,7 @@ ACTION_FOR_EACH class IN
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA02 END
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA03 END
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA04 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA15 END
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA05 END
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA06 END
       LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA09 END
