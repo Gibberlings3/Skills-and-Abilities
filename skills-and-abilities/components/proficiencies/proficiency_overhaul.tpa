@@ -243,9 +243,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 14 2 1 ~mocon1~
     SET_2DA_ENTRY 14 3 1 ~mocon2~
 
-    SET_2DA_ENTRY 29 0 1 ~CRITICAL~
-    SET_2DA_ENTRY 29 2 1 ~mocri1~
-    SET_2DA_ENTRY 29 3 1 ~mocri2~
+    //SET_2DA_ENTRY 29 0 1 ~CRITICAL~
+    //SET_2DA_ENTRY 29 2 1 ~mocri1~
+    //SET_2DA_ENTRY 29 3 1 ~mocri2~
     SET_2DA_ENTRY 30 0 1 ~ARCHERY~
     SET_2DA_ENTRY 30 2 1 ~moarc1~
     SET_2DA_ENTRY 30 3 1 ~moarc2~     
@@ -263,8 +263,8 @@ REPLACE ~modev2~    @7121
 REPLACE ~mocon1~    @7122
 REPLACE ~mocon2~    @7123
 
-REPLACE ~mocri1~    @7134
-REPLACE ~mocri2~    @7135
+//REPLACE ~mocri1~    @7134
+//REPLACE ~mocri2~    @7135
 REPLACE ~moarc1~    @7128
 REPLACE ~moarc2~    @7129
 PRETTY_PRINT_2DA
@@ -277,7 +277,7 @@ APPEND ~stats.ids~ ~90 SPELLCRAFT~      UNLESS ~90 SPELLCRAFT~
 APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
 APPEND ~stats.ids~ ~92 CONDITIONING~    UNLESS ~92 CONDITIONING~
 
-APPEND ~stats.ids~ ~106 CRITICAL~       UNLESS ~106 CRITICAL~
+//APPEND ~stats.ids~ ~106 CRITICAL~       UNLESS ~106 CRITICAL~
 APPEND ~stats.ids~ ~107 ARCHERY~        UNLESS ~107 ARCHERY~
 
 ///////////////////////////////////////////////////////////////////////////
@@ -312,11 +312,13 @@ ACTION_FOR_EACH spell IN
 APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%107%TAB%1%TAB%2~
 APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 
+/*
 // Critical Stiker Weapon Style
 APPEND ~splprot.2da~ ~mo_crit_prof1%TAB%106%TAB%1%TAB%5~
 APPEND ~splprot.2da~ ~mo_crit_prof2%TAB%106%TAB%2%TAB%5~
 APPEND ~splprot.2da~ ~mo_crit_prof3%TAB%106%TAB%3%TAB%5~
 APPEND ~splprot.2da~ ~mo_crit_prof4%TAB%106%TAB%2%TAB%4~
+*/
 
 // Update all imported files so they point in the correct direction.
 COPY_EXISTING ~splprot.2da~ ~override~
