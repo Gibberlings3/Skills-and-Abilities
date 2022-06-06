@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
+COPY ~skills-and-abilities/2da/RACETHAC.2da~                ~override~ // Remove Racial Thac0 Modifiers to weapons (will be added differently)
 COPY ~skills-and-abilities/itm/moprof.itm~                  ~override~ // For tracking of this mod component
 COPY ~skills-and-abilities/spl/proficiencies/bdhaerpr.spl~  ~override~ // Haer'Dalis Large Sword Specialization
 COPY ~skills-and-abilities/eff/proficiencies/MOARC01.EFF~   ~override~ // Archery Weapon Style
