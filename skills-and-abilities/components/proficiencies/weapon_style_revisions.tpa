@@ -7,12 +7,23 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/eff/proficiencies/MO2HAPR.EFF~   ~override/MO2HAPR.EFF~
-COPY ~skills-and-abilities/spl/proficiencies/MO2HAPR.SPL~   ~override/MO2HAPR.SPL~
-COPY ~skills-and-abilities/spl/proficiencies/MOSWSH01.SPL~  ~override/MOSWSH01.SPL~
-COPY ~skills-and-abilities/spl/proficiencies/MOSWSH11.SPL~  ~override/MOSWSH11.SPL~
-COPY ~skills-and-abilities/eff/proficiencies/MOSWSH01.EFF~  ~override/MOSWSH01.EFF~
-COPY ~skills-and-abilities/2da/STYLBONU.2DA~                ~override/STYLBONU.2DA~
+COPY ~skills-and-abilities/eff/proficiencies/MO2HAPR.EFF~   ~override~
+COPY ~skills-and-abilities/spl/proficiencies/MO2HAPR.SPL~   ~override~
+COPY ~skills-and-abilities/2da/STYLBONU.2DA~                ~override~
+
+ACTION_FOR_EACH shield_resist IN
+      2 // Slashing Resistance
+      3 // Crushing Resistance
+      4 // Piercing Resistance
+      5 // Missile Resistance
+    BEGIN
+      COPY ~skills-and-abilities/eff/proficiencies/MOSWSH0%shield_resist%.EFF~  ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MOSWSH0%shield_resist%.SPL~  ~override~
+    END
+
+//COPY ~skills-and-abilities/spl/proficiencies/MOSWSH01.SPL~  ~override~
+//COPY ~skills-and-abilities/spl/proficiencies/MOSWSH11.SPL~  ~override~
+//COPY ~skills-and-abilities/eff/proficiencies/MOSWSH01.EFF~  ~override~
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Descriptions                                                      //
@@ -33,7 +44,7 @@ END
 // Add Bonuses to SPLPROT.2da                                            //
 ///////////////////////////////////////////////////////////////////////////
 APPEND ~splprot.2da~ ~mo_2h_bonus%TAB%111%TAB%2%TAB%2~   UNLESS ~mo_2h_bonus~
-APPEND ~splprot.2da~ ~mo_swsh_bonus%TAB%112%TAB%2%TAB%1~ UNLESS ~mo_swsh_bonus~
+APPEND ~splprot.2da~ ~mo_swsh_bonus%TAB%112%TAB%2%TAB%2~ UNLESS ~mo_swsh_bonus~
 COPY_EXISTING ~splprot.2da~ ~override~
     COUNT_2DA_COLS cols
     READ_2DA_ENTRIES_NOW rows cols
@@ -48,8 +59,10 @@ COPY_EXISTING ~splprot.2da~ ~override~
       END
     END
 
+/*
 COPY_EXISTING ~moswsh01.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %swsh_bonus% END
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Update all Items                                                      //
@@ -74,7 +87,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   END
 
   PATCH_IF (type = 12) BEGIN // Shields
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH01~ END 
-    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH01~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH05~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH04~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH03~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOSWSH02~ END 
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH05~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH04~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH03~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %swsh_bonus% timing = 2 STR_VAR resource = ~MOSWSH02~ END
   END
   BUT_ONLY
