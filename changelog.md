@@ -1,3 +1,12 @@
+## Version 0.7.6 alpha
+
+June xx, 2022
+
+### Changed
+
+- Updated Sword and Shield Weapon Style.
+- Corrected bug with racial thac0 being added incorrectly.
+
 ## Version 0.7.5 alpha
 
 June 4, 2022
