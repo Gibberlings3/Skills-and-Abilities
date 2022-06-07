@@ -1019,29 +1019,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
   END
 
   // FIGHTER_CLERIC KITS
@@ -1062,29 +1039,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
-    END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
     END
   END
 
@@ -1107,25 +1061,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABTH01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
   END
 
   // FIGHTER_MAGE_THIEF KITS
@@ -1146,29 +1081,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
-    END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
     END
   END
 
@@ -1278,30 +1190,8 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
   END
+
 
   // CLERIC_MAGE KITS
   PATCH_IF (%kit_class% = 14) BEGIN
@@ -1321,50 +1211,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
-    END
-
-    // Spellcraft Prof
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
-
-    // Devotion Prof
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
     END
   END
 
@@ -1387,29 +1233,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
   END
 
   // FIGHTER_DRUID KITS
@@ -1430,29 +1253,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
-    END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABDR01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
     END
   END
 
@@ -1475,50 +1275,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END 
       END
     END
-
-    // Spellcraft Prof
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABMA01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
-
-    // Devotion Prof
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
   END
 
   // CLERIC_RANGER KITS
@@ -1539,52 +1295,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PRETTY_PRINT_2DA
       END 
       END
-    END
-
-      // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABRN01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
-    END
-
-    // Proficiencies
-    PATCH_IF !("%kit_clab%" STRING_EQUAL_CASE "CLABPR01") BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MODEVC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOSPLC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC1 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC2 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC3 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
-            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
-            PRETTY_PRINT_2DA
-          BUT_ONLY
-      END
-    END
     END
   END
   

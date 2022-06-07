@@ -6,6 +6,7 @@ June xx, 2022
 
 - Updated Sword and Shield Weapon Style.
 - Corrected bug with racial thac0 being added incorrectly.
+- Corrected bug from not validating if CLAB files are actually installed.
 
 ## Version 0.7.5 alpha
 
