@@ -27,7 +27,7 @@
 @36 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite similaire a celle des voleurs sous l'effet de la Rage).~
 @37 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite améliorée similaire a celle des voleurs sous l'effet de la Rage).~
 
-@39 = ~Supprime la Rage du Barbare~
+@39 = ~Supprimer la Rage du Barbare~
 
 @40 = ~Mise a jour des Competences des Rodeurs~
 @50 = ~Ajouter Detection des illusions pour les Tueurs de magiciens~
@@ -35,6 +35,8 @@
 @70 = ~Ajouter des capacites speciales pour les moines~
 @80 = ~Ajouter des capacites speciales pour les Paladins~
 @90 = ~Ajouter des capacites de haut niveau pour toutes les classes et kits~
+@91 = ~Mise à jour des HLAs existantes et ajout des nouvelles HLAs~
+@92 = ~Ajouter SEULEMENT les nouvelles HLAs~
 @100 = ~Permettre a l'Inquisiteur de lancer des sorts divins~
 @110 = ~Ajouter la classe de Clerc/Mage/Voleur~
 @120 = ~Revision de la capacite repousser les morts-vivants~

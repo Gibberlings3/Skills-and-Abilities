@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////
 @8001 = ~Résilience~
 @8002 = ~Résilience
-Le personnage gagne 10% de réduction aux dégâts physiques.~
+Le personnage gagne 10 % de réduction aux dégâts physiques.~
 
 @8003 = ~Arts du Voleur~
 @8004 = ~Arts du Voleur
@@ -13,11 +13,11 @@ Le personnage gagne 5 points de compétence dans chaque compétence de voleur. C
 
 @8005 = ~Résistance Élémentaire~
 @8006 = ~Résistance Élémentaire
-Le personnage gagne 10% de résistance à tous les dégâts élémentaires.~
+Le personnage gagne 10 % de résistance à tous les dégâts élémentaires.~
 
 @8007 = ~Résistance Magique~
 @8008 = ~Résistance Magique
-Le personnage gagne 10% de résistance aux dégâts magiques.~
+Le personnage gagne 10 % de résistance aux dégâts magiques.~
 
 @8009 = ~Vitalité Épique~
 @8010 = ~Vitalité Épique
@@ -68,5 +68,12 @@ Le personnage gagne un bonus de 1 à la Force. Cette capacité peut être choisi
 @8029 = ~Sagesse Suprême~
 @8030 = ~Sagesse Suprême
 Le personnage gagne un bonus de 1 à la Sagesse. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Sagesse.~
+
+@8031 = ~un round~
+@8032 = ~trois rounds~
+
+@8033 = ~Amélioration Critique~
+@8034 = ~Amélioration Critique
+Le personnage augmente ses chances de dégâts critiques de 2. Par exemple, une épée longue qui inflige normalement un coup critique sur un jet de 19-20 pourra désormais l'effectuer sur un jet de 17-20.~
 
 @9000 = ~[LAST TRA HERE]~
