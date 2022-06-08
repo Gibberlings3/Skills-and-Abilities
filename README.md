@@ -164,7 +164,7 @@ Greater Whirlwind: Will now last for three rounds instead of one.
 
 **SWORD AND SHIELD:** Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
 - Proficient (1 slot): The wielder gets a -1 bonus to AC and an additional -1 bonus to AC against missile weapons.
-- Specialized (2 slots): The wielder gets a -2 bonus to AC, an additional -2 bonus to AC against missile weapons, and becomes immune to dragon Wing Buffets.
+- Specialized (2 slots): The wielder gets a -2 bonus to AC, an additional -2 bonus to AC against missile weapons, and 10% damage reduction to all physical attacks.
 
 NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.
 
