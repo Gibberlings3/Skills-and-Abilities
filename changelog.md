@@ -1,3 +1,11 @@
+## Version 0.8 alpha
+
+July xx, 2022
+
+### Changed
+
+- Update BALDUR.BCS to apply new proficiencies (applyspellres)
+
 ## Version 0.7.6 alpha
 
 June 7, 2022
