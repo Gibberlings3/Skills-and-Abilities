@@ -4,7 +4,7 @@ July xx, 2022
 
 ### Changed
 
-- Update BALDUR.BCS to apply new proficiencies (applyspellres)
+- Update BALDUR.BCS, BALDUR25.BCS, and BDBALDUR to apply new proficiencies (applyspellres)
 
 ## Version 0.7.6 alpha
 
