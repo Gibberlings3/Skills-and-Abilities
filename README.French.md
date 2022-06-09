@@ -134,11 +134,11 @@ Le talent naturel pour repousser les morts-vivants est remplacé par une nouvell
 
 **PEAU CUIRASSÉE :** Le personnage bénéficie d'un bonus de 1 à la classe d'armure.
 
-**CONCENTRATION ÉPIQUE :** Les combattants gagne un bonus de 2 à TAC0.
+**CONCENTRATION ÉPIQUE (UNIQUEMENT POUR LES COMBATTANTS) :** Les combattants gagne un bonus de 2 à TAC0.
 
-**CONVERGENCE ÉPIQUE :** Les combattants gagne un bonus de 2 aux dégâts.
+**CONVERGENCE ÉPIQUE (UNIQUEMENT POUR LES COMBATTANTS - NÉCESSITE CONCENTRATION ÉPIQUE) :** Les combattants gagne un bonus de 2 aux dégâts.
 
-Nécessite : Concentration Épique
+**AMÉLIORATION CRITIQUE (UNIQUEMENT POUR LES COMBATTANTS) :** Le personnage augmente ses chances de dégâts critique par 2. Par exemple, une épée longue qui inflige normalement un coup critique sur un jet de 19-20 permettra dorénavant d'obtenir un coup critique sur un jet de 17-20.
 
 **CHARISME SUPRÊME :** Le personnage gagne un bonus de 1 au Charisme. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Charisme.
 
@@ -152,6 +152,12 @@ Nécessite : Concentration Épique
 
 **SAGESSE SUPRÊME :** Le personnage gagne un bonus de 1 à la Sagesse. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Sagesse.
 
+#### Update Existing HLAs
+
+Greater Whirlwind: Will now last for three rounds instead of one.
+
+(more in progress)
+
 ## Compétences/Talents
 
 ### Mises a Jour des styles de combat (ARME À DEUX MAINS, ÉPÉE ET BOUCLIER et ARME À UNE MAIN)
@@ -162,7 +168,7 @@ Nécessite : Concentration Épique
 
 **ÉPÉE ET BOUCLIER :** N'importe qui peut prendre un bouclier et bénéficier de sa protection basiques, mais en dépensant des points de compétences dans ce style de combat, un aventurier peut optimiser sa protection.
 - Compétent (1 point de compétence) : Le porteur du bouclier bénéficie d'un bonus de -1 à la CA et un bonus supplémentaire de -1 à la CA contre les armes à projectiles.
-- Spécialisé (2 points de compétences) : Le porteur du bouclier bénéficie d'un bonus de -2 à la CA, un bonus supplémentaire de -2 à la CA contre les armes à projectiles et devient immunisé contre les Coups d'ailes des dragons.
+- Spécialisé (2 points de compétences) : Le porteur du bouclier bénéficie d'un bonus de -2 à la CA, un bonus supplémentaire de -2 à la CA contre les armes à projectiles et gagne 10 % de de réduction contre tous les dégâts physiques.
 
 REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une main combinée à un bouclier bénéficie des bonus mentionnés.
 
@@ -237,11 +243,6 @@ La progression des compétences est désormais plus proche du système de progre
 **ARMES A PROJECTILES :** Cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages et les druides peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Les voleurs seront limités aux frondes et aux fléchettes et arbalètes légères. Quant aux clercs, ils ne pourront se servir que des frondes.
 
 **ARMES À HAMPE :** Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes et les bâtons. Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
-
-**COUP CRITIQUE :** Cette compétence rend les coups critiques plus puissants.
-- Puissance Critique (1 point de compétence) : Le personnage inflige 10 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
-- Amélioration Critique (2 points de compétence) : Le personnage augmente ses chances de dégâts critique par 2. Par exemple, une épée longue effectuant normalement un coup critique sur un jet de 19-20 permettra dorénavant d'obtenir un coup critique sur un jet de 17-20.
-- Démesure Critique (3 points de compétence) : Le personnage inflige 20 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.
 
 **MAÎTRISE DES PROJECTILES :** Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes, Frondes et Fléchettes.
 - Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
