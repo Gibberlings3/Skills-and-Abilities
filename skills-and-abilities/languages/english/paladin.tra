@@ -15,11 +15,12 @@ You deal 2 extra points of magic damage with your attacks.~
 
 - 1st Level: May use the Smite ability once per day.
 
-SMITE: This ability allows the paladin to make a special attack against any enemy. Paladins apply their Charisma modifier to their attack roll and damage roll for one round. Smite may be used once per day at 1st level. At 5th level and every five levels after that, the paladin gains an additional use per day.
+SMITE: This ability allows the paladin to make a special attack against any enemy. Paladins apply their Charisma modifier to their attack roll and damage roll for one round. Smite may be used once per day at 1st level. At 5th level and every five levels after that, the paladin gains an additional use per day.~
 
+/*
 - 3rd Level: Gains the Aura of Courage passive ability.
 
-AURA OF COURAGE: This ability grants protection against all forms of panic, boosts morale, and grants +2 bonus to all saving throws for the character and all allies within 15 feet.~
+AURA OF COURAGE: This ability grants protection against all forms of panic, boosts morale, and grants +2 bonus to all saving throws for the character and all allies within 15 feet.~*/
 
 @6007 = ~level: May use the Aura of Despair ability once per day.
 
