@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-/*
+// /*
 ACTION_FOR_EACH aura IN
       1 // Aura of Courage
       2 // Aura of Despair
@@ -17,7 +17,7 @@ ACTION_FOR_EACH aura IN
       COPY ~skills-and-abilities/spl/MOPAL0%aura%.SPL~        ~override~
       COPY ~skills-and-abilities/spl/MOPALC%aura%.SPL~        ~override~
     END
-*/
+//*/
 
 COPY ~skills-and-abilities/eff/class/MO#PHL01.EFF~ ~override~ // Sanctify Strikes
 COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strikes
@@ -34,7 +34,7 @@ COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
 // Set Base Paladin New Abilities                                        //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABPA01.2DA~ override
-    //LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
     PRETTY_PRINT_2DA
