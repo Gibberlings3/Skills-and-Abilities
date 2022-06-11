@@ -34,7 +34,7 @@ Adds Open Locks, Find/Disarm Traps, and Detect Illusion for all Monks and Monk k
 
 - 1st Level: Gains use of the Flurry of Blows passive ability.
 
-FLURRY OF BLOWS: Monks double their attacks per round allowing for them to exceed the 5 attacks per round limit.
+FLURRY OF BLOWS: Monks gain an extra APR.
 
 - New HLA Ability: Perfect Self.
 
