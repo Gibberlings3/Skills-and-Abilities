@@ -163,18 +163,18 @@ Arcane Defense (4 slots): Character gains +10% Magic Resistance and a +2 bonus t
 
 Quicken Spell (5 slots): The character decreases spellcasting time by 2.~
 
-@7120 = ~Devotion~
-@7121 = ~DEVOTION:  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
+@7120 = ~Divine~
+@7121 = ~DIVINE:  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
 
-Pious (1 slot): The character gains +1 bonus to saving throws.
+Divine Shield (1 slot): The character gains -1 bonus to AC.
 
-Divine Agent (2 slots): The character becomes immune to hold and paralysis.
+Divine Fortune (2 slots): The character gains a +2 bonus to all saving throws.
 
-Divine Channeling (3 slots): The character decreases spellcasting time by 1.
+Divine Vengeance (3 slots): Any enemy who damages the character will receive 2 points of magic damage.
 
-Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
+Divine Armor (4 slots): The character receives a 5% damage reduction to all physical attacks.
 
-Blessing of the Faithful (5 slots): The character grants a +1 bonus to Thac0, +1 bonus to AC, and +1 bonus to all saving throws for the character and all allies within 15 feet.~
+Divine Vigor (5 slots): The character receives a +1 bonus to APR.~
 
 @7122 = ~Conditioning~
 @7123 = ~CONDITIONING:  This proficiency epitomizes pushing ones body harder, faster, and further. All abilities are cumulative.
