@@ -4,7 +4,7 @@ July xx, 2022
 
 ### Changed
 
-- Update BALDUR.BCS, BALDUR25.BCS, and BDBALDUR to apply new proficiencies (applyspellres)
+- Overhauled Devout Proficiencies and renamed to Divine.
 
 ## Version 0.7.6 alpha
 
