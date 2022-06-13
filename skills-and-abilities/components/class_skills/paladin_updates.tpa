@@ -96,12 +96,12 @@ OUTER_SPRINT new_cav    @6014
 // Set the strref for the specific game first
 ACTION_IF GAME_IS ~bgee~ BEGIN
   OUTER_SET pal_strref = 9558 
-  //OUTER_SET black_strref = 28606
-  //OUTER_SET cav_strref = 24287
+  OUTER_SET black_strref = 28606
+  OUTER_SET cav_strref = 24287
 END ELSE ACTION_IF GAME_IS ~bg2ee~ BEGIN
   OUTER_SET pal_strref = 9558   
-  //OUTER_SET black_strref = 77514
-  //OUTER_SET cav_strref = 25206
+  OUTER_SET black_strref = 77514
+  OUTER_SET cav_strref = 25206
 END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
   OUTER_SET palbg1_strref = 209558 // BG1EE archived strref
   OUTER_SET pal_strref = 9558    
@@ -109,8 +109,8 @@ END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
   OUTER_SET cav_strref = 25206   
 END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
   OUTER_SET pal_strref = 9558    
-  //OUTER_SET black_strref = 37145
-  //OUTER_SET cav_strref = 37133
+  OUTER_SET black_strref = 37145
+  OUTER_SET cav_strref = 37133
 END
 
 // Paladin strref
