@@ -195,18 +195,18 @@ Immunité Magique (4 points de compétence) : La magicienne gagne 10 % de résis
 
 Incantation Prodigieuse (5 points de compétence) : La magicienne bénéficie d'un bonus de 2 au temps d'incantation des sorts.~
 
-@7120 = ~Dévotion~
-@7121 = ~DÉVOTION : Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
+@7120 = ~Divinité~
+@7121 = ~DIVINITÉ : Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
 
-Piété (1 point de compétence) : Le personnage bénéficie d'un bonus de 1 aux jets de sauvegarde.
+Bouclier Divin (1 point de compétence) : Le personnage bénéficie d'un bonus de 1 à sa classe d'armure.
 
-Agent Divin (2 points de compétence) : Le personnage devient immunisé contre l'immobilisation et la paralysie.
+Influence Divine (2 points de compétence) : Le personnage bénéficie d'un bonus de 2 à tous ses jets de sauvegarde.
 
-Liens Divins (3 points de compétence) : Réduit le temps d'incantations des sorts de 1.
+Divine Vengeance (3 points de compétence) : Chaque adversaire qui inflige des dommages au personnage subit 2 points de dégâts magiques.
 
-Protection Divine (4 points de compétence) : Le personnage devient immunisé contre la mort magique et les coups vorpales.
+Protection Divine (4 points de compétence) : Le personnage reçoit 5 % de réduction contre tous les dégâts physiques.
 
-Esprit-Saint (5 points de compétence) : Le personnage octroie, un bonus de 1 au TAC0, à la Classe d'armure et à tous les jets de sauvegarde, pour tous ses alliés dans un rayon de 5 mètres, le personnage bénéficie également de ces avantages.~
+Esprit-Saint (5 points de compétence) : Le personnage bénéficie d'une attaque supplémentaire par round.~
 
 @7122 = ~Conditionnement / Préparation~
 @7123 = ~CONDITIONNEMENT / PRÉPARATION : Cette compétence permet de dépasser ses limites physiques. Toutes les capacités sont cumulatives.
