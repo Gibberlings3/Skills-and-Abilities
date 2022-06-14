@@ -34,7 +34,7 @@ Ajoute les capacités Crochetage de serrures, Détection des pieges et Détectio
 
 - 1er niveau : Gagne la capacité passive Bourrasque.
 
-BOURRASQUE : Les moines doublent leurs nombres d'attaques, ce qui leur permet de dépasser la limite de 5 attaques par round.
+BOURRASQUE : Les moines reçoivent une attaque supplémentaire par round.
 
 - Nouvelle capacité Spéciale : Être Parfait.
 
@@ -212,12 +212,12 @@ La progression des compétences est désormais plus proche du système de progre
 - Immunité Magique (4 points de compétence) : Le magicien gagne 10% de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
 - Incantation Prodigieuse (5 points de compétence) : Le magicien bénéficie d'un bonus de 2 au temps d'incantation des sorts.
 
-**DÉVOTION :** Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
-- Piété (1 point de compétence) : Le personnage bénéficie d'un bonus de 1 aux jets de sauvegarde.
-- Agent divin (2 points de compétence) : Le personnage devient immunisé contre l'immobilisation et la paralysie.
-- Liens divins (3 points de compétence) : Réduit le temps d'incantations des sorts de 1.
-- Protection divine (4 points de compétence) : Le personnage devient immunisé contre la mort magique et les coups vorpales.
-- Esprit-Saint (5 points de compétence) : Le personnage octroie, un bonus de 1 au TAC0, à la Classe d'armure et à tous les jets de sauvegarde, pour tous ses alliés dans un rayon de 5 mètres, le personnage bénéficie également de ces avantages.
+**DIVINITÉ :** Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
+- Bouclier Divin (1 point de compétence) : Le personnage bénéficie d'un bonus de 1 à sa classe d'armure.
+- Influence Divine (2 points de compétence) : Le personnage bénéficie d'un bonus de 2 à tous ses jets de sauvegarde.
+- Divine Vengeance (3 points de compétence) : Chaque adversaire qui inflige des dommages au personnage subit 2 points de dégâts magiques.
+- Protection Divine (4 points de compétence) : Le personnage reçoit 5 % de réduction contre tous les dégâts physiques.
+- Esprit-Saint (5 points de compétence) : Le personnage bénéficie d'une attaque supplémentaire par round.
 
 **CONDITIONNEMENT / PRÉPARATION :** Cette compétence permet de dépasser ses limites physiques. Toutes les capacités sont cumulatives.
 - Résistance (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux sauvegardes contre la paralysie, le poison et la mort.
