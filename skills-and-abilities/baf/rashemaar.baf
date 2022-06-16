@@ -1,0 +1,9 @@
+IF
+  InParty(Myself)
+  Global("IKNPCKit","LOCALS",0)
+THEN
+  RESPONSE #100
+    ReallyForceSpellRES("morash",Myself)
+    AddKit(MO_RASHEMAAR)
+    SetGlobal("IKNPCKit","LOCALS",1)
+END

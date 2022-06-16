@@ -1,4 +1,4 @@
-// Minsc Rashemaar for House Rules
+// Rashemaar Berserker Kit 
 
 ADD_KIT ~MO_RASHEMAAR~
   ~MO_RASHEMAAR 0 0 0 0 0 0 0 0~
@@ -9,7 +9,7 @@ ADD_KIT ~MO_RASHEMAAR~
   ~MO_RASHEMAAR 0 0 15 0 0 0~
   ~MO_RASHEMAAR 1 0 0 1 0 0 1 0 0~
   ~MO_RASHEMAAR 0 1 0 0 0 0~
-  ~houserules/2da/CLABRNMO.2DA~
+  ~skills-and-abilities/2da/CLABRNMO.2DA~
   ~K_R_H~
   ~0x00004000 12~
   ~Ra0~
@@ -34,14 +34,14 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   END
   BUT_ONLY
 
-COPY ~houserules/2da/CLABRNMO.2DA~    ~override~ // kit
-COPY ~houserules/spl/morash.spl~      ~override~ // title change
+COPY ~skills-and-abilities/2da/CLABRNMO.2DA~         ~override~ // kit
+COPY ~skills-and-abilities/spl/kits/morash.spl~      ~override~ // title change
 
 ACTION_FOR_EACH script IN minsc mins25 _minsc bgminsc minsc_ bdminsc BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%script%.bcs~ THEN BEGIN // tob
 
-    EXTEND_BOTTOM ~%script%.bcs~  ~houserules/baf/rashemaar.baf~
+    EXTEND_BOTTOM ~%script%.bcs~  ~skills-and-abilities/baf/rashemaar.baf~
 
   END
 
