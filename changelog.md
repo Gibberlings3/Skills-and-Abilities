@@ -5,6 +5,7 @@ July xx, 2022
 ### Changed
 
 - Overhauled Devout Proficiencies and renamed to Divine.
+- Added Rashemaar Berserker kit for Rangers.
 
 ## Version 0.7.6 alpha
 

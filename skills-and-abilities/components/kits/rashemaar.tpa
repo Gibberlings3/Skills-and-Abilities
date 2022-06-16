@@ -2,7 +2,7 @@
 
 ADD_KIT ~MO_RASHEMAAR~
   ~MO_RASHEMAAR 0 0 0 0 0 0 0 0~
-  ~MO_RASHEMAAR 0 0 0 0 0 0 0 0 2 2 2 2 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  ~MO_RASHEMAAR 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
   ~MO_RASHEMAAR 0 0 12 0 0 0~
   ~MO_RASHEMAAR 0 0 0 0 0 0~
   ~MO_RASHEMAAR 0 0 17 0 0 0~
@@ -14,9 +14,9 @@ ADD_KIT ~MO_RASHEMAAR~
   ~0x00004000 12~
   ~Ra0~
   ~LEAT14 * HELM07 BAG24 RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 BOW18 SW1H39 STAF08~
-  SAY @600
-  SAY @601
-  SAY @602
+  SAY @5501
+  SAY @5502
+  SAY @5503
 
 LAF fl#add_kit_ee STR_VAR kit_name = MO_RASHEMAAR END
 
@@ -37,12 +37,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 COPY ~skills-and-abilities/2da/CLABRNMO.2DA~         ~override~ // kit
 COPY ~skills-and-abilities/spl/kits/morash.spl~      ~override~ // title change
 
-ACTION_FOR_EACH script IN minsc mins25 _minsc bgminsc minsc_ bdminsc BEGIN
-
-  ACTION_IF FILE_EXISTS_IN_GAME ~%script%.bcs~ THEN BEGIN // tob
-
-    EXTEND_BOTTOM ~%script%.bcs~  ~skills-and-abilities/baf/rashemaar.baf~
-
+ACTION_IF minsc_rash THEN BEGIN
+  ACTION_FOR_EACH script IN minsc mins25 _minsc bgminsc minsc_ bdminsc BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%script%.bcs~ THEN BEGIN // tob
+      EXTEND_BOTTOM ~%script%.bcs~  ~skills-and-abilities/baf/rashemaar.baf~
+    END
   END
-
 END

@@ -8,6 +8,7 @@
 @3 = ~Proficiencies~
 @4 = ~More Meaningful Stat Bonuses~
 @5 = ~Improved Turning/Wild Sense~
+@6 = ~New Kits~
 
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
@@ -55,6 +56,11 @@
 @400 = ~2H Weapon Additional Strength Bonus~
 
 // Group 5 (Update 500-599)
+
+// Group 6 (Update 600-699)
+@600 = ~Install Rashemaar Berserker Kit for Rangers~
+@601 = ~Assign kit to Minsc~
+@602 = ~Do NOT assign kit to Minsc~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //

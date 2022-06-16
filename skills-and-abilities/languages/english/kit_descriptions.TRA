@@ -1,0 +1,14 @@
+// Skills and Abilities, American English
+//Kit range: @5501 to @6000
+
+@5501 = ~rashemaar berserker~
+@5502 = ~Rashemaar Berserker~
+@5503 = ~RASHEMAAR BERSERKER: Sometimes referred to as Rashemi berserkers, are the legendary defenders of Rashemen that are known for flying into an almost supernatural frenzy on the battlefield. They are among the most respected members of Rashemi society, second to the revered Wychlaran.
+
+Advantages:
+- May use Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+
+RAGE: The enraged state lasts for 1 turn. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The Berserker also gains 15 temporary Hit Points which are taken away at the end of <PRO_HISHER> berserk spree, possibly knocking <PRO_HIMHER> unconscious.
+
+Disadvantages:
+- May not wear armor heavier than splint mail.~
