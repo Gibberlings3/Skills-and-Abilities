@@ -19,6 +19,7 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
    INCLUDE ~skills-and-abilities/lib/functions.tpa~
    INCLUDE ~skills-and-abilities/lib/splprot_kits.tpa~
    INCLUDE ~skills-and-abilities/lib/qd_multiclass.tpa~
+   INCLUDE ~skills-and-abilities/lib/fl#add_kit_ee.tpa~
    OUTER_SPRINT ~folder~ ~skills-and-abilities~
    //INCLUDE ~skills-and-abilities/lib/splprot_attributes.tpa~ // Already present in splprot.2da
    //SILENT
