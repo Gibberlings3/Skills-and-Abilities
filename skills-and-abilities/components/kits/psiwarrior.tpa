@@ -18,7 +18,7 @@ ADD_KIT ~MO_PSIWARRIOR~
   SAY @5505
   SAY @5506
 
-LAF fl#add_kit_ee STR_VAR kit_name = MO_PSIWARRIOR END
+LAF fl#add_kit_ee STR_VAR kit_name = MO_PSIWARRIOR hpclass = HPPRS END
 
 // OUTER_SET psiwarrior_code = (0x4000 + %MO_PSIWARRIOR%)
 
@@ -31,11 +31,11 @@ COPY ~skills-and-abilities/spl/kits/mopsi21.SPL~ ~override~ // Psionic Strike +1
 COPY ~skills-and-abilities/spl/kits/mopsi22.SPL~ ~override~ // Psionic Strike +3 Dmg
 //COPY ~skills-and-abilities/spl/kits/mopsi03.SPL~ ~override~ // Protective Field
 COPY ~skills-and-abilities/spl/kits/mopsic3.SPL~ ~override~ // Protective Field
-  SAY NAME1 @5509
-  SAY UNIDENTIFIED_DESC @5510
-COPY ~skills-and-abilities/spl/kits/mopsic4.SPL~ ~override~ // Psi-Powered Leap
   SAY NAME1 @5513
   SAY UNIDENTIFIED_DESC @5514
+COPY ~skills-and-abilities/spl/kits/mopsic4.SPL~ ~override~ // Psi-Powered Leap
+  SAY NAME1 @5509
+  SAY UNIDENTIFIED_DESC @5510
 COPY ~skills-and-abilities/spl/kits/mopsi31.SPL~ ~override~ // Protective Field +2% DR
 COPY ~skills-and-abilities/spl/kits/mopsi32.SPL~ ~override~ // Protective Field +6% DR
 COPY ~skills-and-abilities/spl/kits/mopsic5.SPL~ ~override~ // Telekinetic Master
