@@ -21,7 +21,7 @@ You can turn or rebuke more undead than usual. You multiply the turning damage f
 @9009 = ~May Turn Undead.~
 @9010 = ~May cast Turn Undead once per day per every 3 levels (starts at 3rd level with one use).~
 
-@9011 = ~Turn Undead Level: +2 (Priests of Lathander and Undead Hunters), +1 (others)~
+@9011 = ~Turn Undead Level: \+2 (Priests of Lathander and Undead Hunters), \+1 (others)~
 @9012 = ~Caster Level: +2 (Priests of Lathander and Undead Hunters), +1 (others)~
 
 @9500 = ~[LAST TRA HERE]~
