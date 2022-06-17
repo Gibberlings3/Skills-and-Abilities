@@ -61,6 +61,7 @@
 @600 = ~Install Rashemaar Berserker Kit for Rangers~
 @601 = ~Assign kit to Minsc~
 @602 = ~Do NOT assign kit to Minsc~
+@610 = ~Install Psi Warrior Kit for Fighters~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //

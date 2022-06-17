@@ -6,6 +6,7 @@ July xx, 2022
 
 - Overhauled Devout Proficiencies and renamed to Divine.
 - Added Rashemaar Berserker kit for Rangers.
+- Added Psi Warrior kit for Fighters.
 
 ## Version 0.7.6 alpha
 
