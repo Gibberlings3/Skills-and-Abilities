@@ -41,3 +41,6 @@ COPY ~skills-and-abilities/spl/kits/mopsi32.SPL~ ~override~ // Protective Field 
 COPY ~skills-and-abilities/spl/kits/mopsic5.SPL~ ~override~ // Telekinetic Master
   SAY NAME1 @5511
   SAY UNIDENTIFIED_DESC @5512
+COPY ~skills-and-abilities/spl/kits/mopsic6.SPL~ ~override~ // Telekinetic Movement
+  SAY NAME1 @5515
+  SAY UNIDENTIFIED_DESC @5516
