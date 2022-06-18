@@ -59,8 +59,6 @@ TELEKINETIC MOVEMENT: The Psi Warrior can move a creature with <PRO_HISHER> mind
 
 GUARDED MIND: The Psi Warrior becomes immune to all psionic attacks.
 
-– 15th Level: The Psi Warrior enhances <PRO_HISHER> Psionic Strike with a Telekinetic Thrust. When the Psi Warrior damages a target with <PRO_HISHER> Psionic Strike, the target must make a saving throw vs. death or be knocked to the ground for half a round.
-
 – 18th Level: May use Telekinetic Master once per day.
 
 TELEKINETIC MASTER: The Psi Master is able to push a target away from <PRO_HIMHER>self while dealing 5d6 magic damage.
@@ -85,9 +83,7 @@ This ability allows the Psi Warrior to make a special attack against any enemy. 
   22 Intelligence: +11 damage
   23 Intelligence: +12 damage
   24 Intelligence: +13 damage
-  25 Intelligence: +14 damage
-
-Once the Psi Warrior reaches level 15, this ability is further enhanced with a Telekinetic Thrust. When the Psi Warrior damages a target with <PRO_HISHER> Psionic Strike, the target must make a saving throw vs. death or be knocked to the ground for half a round.~
+  25 Intelligence: +14 damage~
 
 @5509 = ~Psi-Powered Leap~
 @5510 = ~Psi-Powered Leap
