@@ -1,0 +1,115 @@
+// Skills and Abilities, American English
+//Kit range: @5501 to @6000
+
+@5501 = ~rashemaar berserker~
+@5502 = ~Rashemaar Berserker~
+@5503 = ~RASHEMAAR BERSERKER : Aussi appelés Rashemi Berserkers, ces défenseurs légendaires de la Rashéménie sont redoutés pour leur frénésie quasiment surnaturelle sur le champ de bataille et après les vénérés Wychlarans, ils font partie des membres les plus respectés de cette société.
+
+Avantages :
+- Peut utiliser « Furie » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
+
+FURIE : Cet état dure 1 tour. Sous Furie, le berserker gagne +2 aux jets de toucher et de dégâts ainsi qu'à la classe d'armure, et devient immunisé à charme, à l'immobilisation, à la terreur, à la confusion, à la débilité, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il gagne également 15 points de vie temporaires, qui sont retirés à la fin de la Furie, pouvant rendre le personnage inconscient.
+
+Inconvénients :
+- Ne peut pas porter d'armure plus lourde que l'armure feuilletée.~
+
+@5504 = ~esprit guerrier~
+@5505 = ~Esprit Guerrier~
+@5506 = ~ESPRIT GUERRIER : Un Esprit Guerrier augmente sa puissance physique grâce à des attaques psioniques spéciales et télékinétiques, tout en étant capable d'ériger des barrières mentales. Ils affinent leurs compétences et leurs capacités psioniques lors d'une formation rigoureuse et solitaire, sous l'autorité d'un maître, ou les perfectionnent dans une académie exclusivement dédiée à affûter son esprit afin de le manier comme une arme ou un bouclier.
+
+Avantages :
+– 3ème niveau : Peut utiliser « Choc psionique » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
+– 3ème niveau : Peut utiliser « Champ de force » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
+
+CHOC PSIONIQUE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale et des dégâts supplémentaires contre n'importe quel type d'ennemi en appliquant un modificateur lié à l'intelligence.
+  13 en Intelligence : +1 point de dégâts
+  14 en Intelligence : +2 points de dégâts
+  15 en Intelligence : +3 points de dégâts
+  16 en Intelligence : +4 points de dégâts
+  17 en Intelligence : +4 points de dégâts
+  18 en Intelligence : +5 points de dégâts
+  19 en Intelligence : +8 points de dégâts
+  20 en Intelligence : +9 points de dégâts
+  21 en Intelligence : +10 points de dégâts
+  22 en Intelligence : +11 points de dégâts
+  23 en Intelligence : +12 points de dégâts
+  24 en Intelligence : +13 points de dégâts
+  25 en Intelligence : +14 points de dégâts
+
+CHAMP DE FORCE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'amortir les dégâts physiques en appliquant un modificateur lié à l'intelligence.
+  13 en Intelligence : +2 % de résistance aux dégâts physiques
+  14 en Intelligence : +4 % de résistance aux dégâts physiques
+  15 en Intelligence : +6 % de résistance aux dégâts physiques
+  16 en Intelligence : +8 % de résistance aux dégâts physiques
+  17 en Intelligence : +8 % de résistance aux dégâts physiques
+  18 en Intelligence : +10 % de résistance aux dégâts physiques
+  19 en Intelligence : +16 % de résistance aux dégâts physiques
+  20 en Intelligence : +18 % de résistance aux dégâts physiques
+  21 en Intelligence : +20 % de résistance aux dégâts physiques
+  22 en Intelligence : +22 % de résistance aux dégâts physiques
+  23 en Intelligence : +24 % de résistance aux dégâts physiques
+  24 en Intelligence : +26 % de résistance aux dégâts physiques
+  25 en Intelligence : +28 % de résistance aux dégâts physiques
+
+– 7ème niveau : Peut utiliser « Attraction cinétique » une fois par jour, puis une fois supplémentaire tous les 5 niveaux.
+
+ATTRACTION CINÉTIQUE : L'Esprit Guerrier est capable de déplacer une créature avec son esprit et de l'attirer à sa portée. La cible doit effectuer un jet de sauvegarde contre la mort à -2 pour résister à l'attraction. 
+
+– 10ème niveau : Gagne la capacité passive « Forteresse mentale ».
+
+FORTERESSE MENTALE : L'Esprit Guerrier devient immunisé contre toutes les attaques psioniques.
+
+– 18ème niveau : Peut utiliser « Maîtrise cinétique » une fois par jour
+
+MAÎTRISE CINÉTIQUE : Le maître Esprit Guerrier est capable de catapulter un adversaire au loin tout en lui infligeant 5d6 points de dégâts magiques.
+
+Inconvénients :
+– Ne peut se jumeler.
+– Réservé aux humains.
+– Dés de vie : d8~
+
+@5507 = ~Choc psionique~
+@5508 = ~Choc psionique
+Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale contre n'importe quel type d'ennemi en appliquant des dégâts supplémentaires proportionnels à son intelligence.
+  13 en Intelligence : +1 point de dégâts
+  14 en Intelligence : +2 points de dégâts
+  15 en Intelligence : +3 points de dégâts
+  16 en Intelligence : +4 points de dégâts
+  17 en Intelligence : +4 points de dégâts
+  18 en Intelligence : +5 points de dégâts
+  19 en Intelligence : +8 points de dégâts
+  20 en Intelligence : +9 points de dégâts
+  21 en Intelligence : +10 points de dégâts
+  22 en Intelligence : +11 points de dégâts
+  23 en Intelligence : +12 points de dégâts
+  24 en Intelligence : +13 points de dégâts
+  25 en Intelligence : +14 points de dégâts~
+
+@5509 = ~Impulsion psionique~
+@5510 = ~Impulsion psionique
+L'Esprit Guerrier est capable de propulser son corps avec son esprit. Pendant un round, sa vitesse passe du simple au double.~
+
+@5511 = ~Maîtrise cinétique~
+@5512 = ~Maîtrise cinétique
+Le maître Esprit Guerrier est capable de catapulter un adversaire au loin tout en lui infligeant 5d6 points de dégâts magiques.~
+
+@5513 = ~Champ de force~
+@5514 = ~Champ de force
+Pendant un round, cette capacité permet à l'Esprit Guerrier d'amortir les dégâts physiques en appliquant un modificateur lié à l'intelligence.
+  13 en Intelligence : +2 % de résistance aux dégâts physiques
+  14 en Intelligence : +4 % de résistance aux dégâts physiques
+  15 en Intelligence : +6 % de résistance aux dégâts physiques
+  16 en Intelligence : +8 % de résistance aux dégâts physiques
+  17 en Intelligence : +8 % de résistance aux dégâts physiques
+  18 en Intelligence : +10 % de résistance aux dégâts physiques
+  19 en Intelligence : +16 % de résistance aux dégâts physiques
+  20 en Intelligence : +18 % de résistance aux dégâts physiques
+  21 en Intelligence : +20 % de résistance aux dégâts physiques
+  22 en Intelligence : +22 % de résistance aux dégâts physiques
+  23 en Intelligence : +24 % de résistance aux dégâts physiques
+  24 en Intelligence : +26 % de résistance aux dégâts physiques
+  25 en Intelligence : +28 % de résistance aux dégâts physiques~
+
+@5515 = ~Attraction cinétique~
+@5516 = ~Attraction cinétique
+L'Esprit Guerrier est capable de déplacer une créature avec son esprit et de l'attirer à sa portée. La cible doit effectuer un jet de sauvegarde contre la mort à -2 pour résister à l'attraction.~ 

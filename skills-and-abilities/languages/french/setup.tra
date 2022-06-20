@@ -7,7 +7,8 @@
 @2 = ~Capacites et Talents~
 @3 = ~Competences et Style de Combat~
 @4 = ~Bonus lie aux statistiques plus significatifs~
-@5 = ~Improved Turning/Wild Sense~
+@5 = ~Ameliorer Repousser les morts-vivants et Pistage~
+@6 = ~Nouveaux Kits~
 
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
@@ -55,6 +56,12 @@
 @400 = ~Bonus de force supplementaire pour les armes a deux mains~
 
 // Group 5 (Update 500-599)
+
+// Group 6 (Update 600-699)
+@600 = ~Installer le kit de rodeur Rashemaar Berserker~
+@601 = ~Assigner le kit à Minsc~
+@602 = ~Ne pas assigner le kit à Minsc~
+@610 = ~Installer le kit Esprit Guerrier qui comme son nom l'indique est un kit de guerrier~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
