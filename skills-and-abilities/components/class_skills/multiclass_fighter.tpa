@@ -30,6 +30,11 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       SET_2DA_ENTRY 23 (col + 1) 1 ~weapon_prof~   // FLAILMORNINGSTAR
       SET_2DA_ENTRY 24 (col + 1) 1 ~weapon_prof~   // MACE
       SET_2DA_ENTRY 25 (col + 1) 1 ~weapon_prof~   // QUARTERSTAFF
+      SET_2DA_ENTRY 26 (col + 1) 1 ~weapon_prof~   // CROSSBOW
+      SET_2DA_ENTRY 27 (col + 1) 1 ~weapon_prof~   // LONGBOW
+      SET_2DA_ENTRY 28 (col + 1) 1 ~weapon_prof~   // SHORTBOW
+      SET_2DA_ENTRY 29 (col + 1) 1 ~weapon_prof~   // DART
+      SET_2DA_ENTRY 30 (col + 1) 1 ~weapon_prof~   // SLING
       PRETTY_PRINT_2DA
   END ELSE
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_CLERIC") OR 
@@ -39,6 +44,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       SET_2DA_ENTRY 23 (col + 1) 1 ~weapon_prof~   // FLAILMORNINGSTAR
       SET_2DA_ENTRY 24 (col + 1) 1 ~weapon_prof~   // MACE
       SET_2DA_ENTRY 25 (col + 1) 1 ~weapon_prof~   // QUARTERSTAFF
+      SET_2DA_ENTRY 30 (col + 1) 1 ~weapon_prof~   // SLING
       PRETTY_PRINT_2DA
   END ELSE
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_DRUID") BEGIN
@@ -47,6 +53,8 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       SET_2DA_ENTRY 20 (col + 1) 1 ~weapon_prof~   // CLUB
       SET_2DA_ENTRY 21 (col + 1) 1 ~weapon_prof~   // SPEAR
       SET_2DA_ENTRY 25 (col + 1) 1 ~weapon_prof~   // QUARTERSTAFF
+      SET_2DA_ENTRY 29 (col + 1) 1 ~weapon_prof~   // DART
+      SET_2DA_ENTRY 30 (col + 1) 1 ~weapon_prof~   // SLING
       PRETTY_PRINT_2DA
   END 
   END
