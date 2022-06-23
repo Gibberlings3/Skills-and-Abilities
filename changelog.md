@@ -1,9 +1,10 @@
 ## Version 0.8 alpha
 
-July xx, 2022
+June 23, 2022
 
 ### Changed
 
+- IWDEE Compatible
 - Overhauled Devout Proficiencies and renamed to Divine.
 - Allow multiclass fighters to achieve higher than Specialized (2 pips).
 - Added Rashemaar Berserker kit for Rangers.
