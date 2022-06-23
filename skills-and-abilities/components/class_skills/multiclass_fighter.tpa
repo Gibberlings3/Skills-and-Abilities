@@ -10,7 +10,7 @@
 COPY_EXISTING ~WEAPPROF.2DA~ ~override~
   READ_2DA_ENTRIES_NOW kitnames 3
   COUNT_2DA_COLS cols
-  FOR (col = 22; col < cols - 1; ++col) BEGIN
+  FOR (col = 3; col < cols - 1; ++col) BEGIN
   READ_2DA_ENTRY_FORMER kitnames 0 col column_name
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_MAGE") OR 
            ("%column_name%" STRING_EQUAL_CASE "FIGHTER_THIEF") OR 
