@@ -15,47 +15,38 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_MAGE") OR 
            ("%column_name%" STRING_EQUAL_CASE "FIGHTER_THIEF") OR 
            ("%column_name%" STRING_EQUAL_CASE "FIGHTER_MAGE_THIEF") BEGIN
-      SET_2DA_ENTRY 11 (col + 1) 1 ~weapon_prof~   // BASTARDSWORD
-      SET_2DA_ENTRY 12 (col + 1) 1 ~weapon_prof~   // LONGSWORD
-      SET_2DA_ENTRY 13 (col + 1) 1 ~weapon_prof~   // SHORTSWORD
-      SET_2DA_ENTRY 14 (col + 1) 1 ~weapon_prof~   // AXE
-      SET_2DA_ENTRY 15 (col + 1) 1 ~weapon_prof~   // TWOHANDEDSWORD
-      SET_2DA_ENTRY 16 (col + 1) 1 ~weapon_prof~   // KATANA
-      SET_2DA_ENTRY 17 (col + 1) 1 ~weapon_prof~   // SCIMITARWAKISASHININJATO
-      SET_2DA_ENTRY 18 (col + 1) 1 ~weapon_prof~   // DAGGER
-      SET_2DA_ENTRY 19 (col + 1) 1 ~weapon_prof~   // WARHAMMER
-      SET_2DA_ENTRY 20 (col + 1) 1 ~weapon_prof~   // CLUB
-      SET_2DA_ENTRY 21 (col + 1) 1 ~weapon_prof~   // SPEAR
-      SET_2DA_ENTRY 22 (col + 1) 1 ~weapon_prof~   // HALBERD
-      SET_2DA_ENTRY 23 (col + 1) 1 ~weapon_prof~   // FLAILMORNINGSTAR
-      SET_2DA_ENTRY 24 (col + 1) 1 ~weapon_prof~   // MACE
-      SET_2DA_ENTRY 25 (col + 1) 1 ~weapon_prof~   // QUARTERSTAFF
-      SET_2DA_ENTRY 26 (col + 1) 1 ~weapon_prof~   // CROSSBOW
-      SET_2DA_ENTRY 27 (col + 1) 1 ~weapon_prof~   // LONGBOW
-      SET_2DA_ENTRY 28 (col + 1) 1 ~weapon_prof~   // SHORTBOW
-      SET_2DA_ENTRY 29 (col + 1) 1 ~weapon_prof~   // DART
-      SET_2DA_ENTRY 30 (col + 1) 1 ~weapon_prof~   // SLING
+      FOR (row = 11; row < 31; ++row) BEGIN
+        SET_2DA_ENTRY row (col + 1) 1 ~weapon_prof~
+      END
       PRETTY_PRINT_2DA
   END ELSE
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_CLERIC") OR 
            ("%column_name%" STRING_EQUAL_CASE "FIGHTER_MAGE_CLERIC") BEGIN
-      SET_2DA_ENTRY 19 (col + 1) 1 ~weapon_prof~   // WARHAMMER
-      SET_2DA_ENTRY 20 (col + 1) 1 ~weapon_prof~   // CLUB
-      SET_2DA_ENTRY 23 (col + 1) 1 ~weapon_prof~   // FLAILMORNINGSTAR
-      SET_2DA_ENTRY 24 (col + 1) 1 ~weapon_prof~   // MACE
-      SET_2DA_ENTRY 25 (col + 1) 1 ~weapon_prof~   // QUARTERSTAFF
-      SET_2DA_ENTRY 30 (col + 1) 1 ~weapon_prof~   // SLING
-      PRETTY_PRINT_2DA
+      PATCH_IF tweaks_cleric_prof OR ir_cleric OR ir_cleric_druid BEGIN
+        FOR (row = 11; row < 31; ++row) BEGIN
+          SET_2DA_ENTRY row (col + 1) 1 ~weapon_prof~
+        END
+        PRETTY_PRINT_2DA
+      END ELSE BEGIN
+        PATCH_FOR_EACH cleric IN 19 20 23 24 25 30 BEGIN
+          SET_2DA_ENTRY cleric (col + 1) 1 ~weapon_prof~ 
+        END
+        PRETTY_PRINT_2DA
+      END
   END ELSE
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_DRUID") BEGIN
-      SET_2DA_ENTRY 17 (col + 1) 1 ~weapon_prof~   // SCIMITARWAKISASHININJATO
-      SET_2DA_ENTRY 18 (col + 1) 1 ~weapon_prof~   // DAGGER
-      SET_2DA_ENTRY 20 (col + 1) 1 ~weapon_prof~   // CLUB
-      SET_2DA_ENTRY 21 (col + 1) 1 ~weapon_prof~   // SPEAR
-      SET_2DA_ENTRY 25 (col + 1) 1 ~weapon_prof~   // QUARTERSTAFF
-      SET_2DA_ENTRY 29 (col + 1) 1 ~weapon_prof~   // DART
-      SET_2DA_ENTRY 30 (col + 1) 1 ~weapon_prof~   // SLING
+    PATCH_IF tweaks_druid_prof OR ir_druid OR ir_cleric_druid BEGIN
+      SET_2DA_ENTRY 11 (col + 1) 1 ~weapon_prof~
+        FOR (row = 11; row < 31; ++row) BEGIN
+          SET_2DA_ENTRY row (col + 1) 1 ~weapon_prof~
+        END
+        PRETTY_PRINT_2DA
+    END ELSE BEGIN
+      PATCH_FOR_EACH druid IN 17 18 20 21 25 29 303 BEGIN
+        SET_2DA_ENTRY druid (col + 1) 1 ~weapon_prof~
+      END
       PRETTY_PRINT_2DA
+    END
   END 
   END
 
