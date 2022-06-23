@@ -306,7 +306,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @91 DESIGNATED 91 SUBCOMPONENT @90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA1
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet iwdee~) @3006
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
 
 OUTER_SET existing_hla=1
 INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
@@ -344,7 +344,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 // Update Weapon Fighting Styles                                         //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @300 DESIGNATED 300 GROUP @3 LABEL SkillsAndAbilitiesWeapStyle
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra~
 
@@ -354,7 +354,7 @@ INCLUDE ~skills-and-abilities/components/proficiencies/weapon_style_revisions.tp
 // Overhaul Proficiency System - Add New Proficiencies and Weapon Styles //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @311 DESIGNATED 311 SUBCOMPONENT @310 GROUP @3 LABEL SkillsAndAbilitiesNewProf1
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra~
 
@@ -365,7 +365,7 @@ INCLUDE ~skills-and-abilities/components/proficiencies/proficiency_overhaul.tpa~
 ////////////////////////////////////////////////////
 
 BEGIN @312 DESIGNATED 312 SUBCOMPONENT @310 GROUP @3 LABEL SkillsAndAbilitiesNewProf2
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra~
 
@@ -376,7 +376,7 @@ INCLUDE ~skills-and-abilities/components/proficiencies/proficiency_overhaul.tpa~
 ////////////////////////////////////////////////////
 
 BEGIN @313 DESIGNATED 313 SUBCOMPONENT @310 GROUP @3 LABEL SkillsAndAbilitiesNewProf3
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra~
 
@@ -394,7 +394,7 @@ INCLUDE ~skills-and-abilities/components/proficiencies/proficiency_overhaul.tpa~
 // 2H Weapon Additional Strength Bonus                                   //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @400 DESIGNATED 400 GROUP @4 LABEL SkillsAndAbilitiesSTR
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/stat_bonus/str_bonus.tpa~
