@@ -282,7 +282,7 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Arcane Defense (4 slots): Character gains +10% Magic Resistance and a +2 bonus to save vs. spells.
 - Quicken Spell (5 slots): The character decreases spellcasting time by 2.
 
-**DEVOTION:**  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
+**DIVINE:**  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
 - Divine Shield (1 slot): The character gains -1 bonus to AC.
 - Divine Fortune (2 slots): The character gains a +2 bonus to all saving throws.
 - Divine Vengeance (3 slots): Any enemy who damages the character will receive 2 points of magic damage.
