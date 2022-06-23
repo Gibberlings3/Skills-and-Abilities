@@ -15,16 +15,16 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_MAGE") OR 
            ("%column_name%" STRING_EQUAL_CASE "FIGHTER_THIEF") OR 
            ("%column_name%" STRING_EQUAL_CASE "FIGHTER_MAGE_THIEF") BEGIN
-      FOR (row = 11; row < 31; ++row) BEGIN
-        SET_2DA_ENTRY row (col + 1) 1 ~weapon_prof~
+      FOR (i = 11; i < 31; ++i) BEGIN
+        SET_2DA_ENTRY i (col + 1) 1 ~weapon_prof~
       END
       PRETTY_PRINT_2DA
   END ELSE
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_CLERIC") OR 
            ("%column_name%" STRING_EQUAL_CASE "FIGHTER_MAGE_CLERIC") BEGIN
       PATCH_IF tweaks_cleric_prof OR ir_cleric OR ir_cleric_druid BEGIN
-        FOR (row = 11; row < 31; ++row) BEGIN
-          SET_2DA_ENTRY row (col + 1) 1 ~weapon_prof~
+        FOR (i = 11; i < 31; ++i) BEGIN
+          SET_2DA_ENTRY i (col + 1) 1 ~weapon_prof~
         END
         PRETTY_PRINT_2DA
       END ELSE BEGIN
@@ -37,8 +37,8 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "FIGHTER_DRUID") BEGIN
     PATCH_IF tweaks_druid_prof OR ir_druid OR ir_cleric_druid BEGIN
       SET_2DA_ENTRY 11 (col + 1) 1 ~weapon_prof~
-        FOR (row = 11; row < 31; ++row) BEGIN
-          SET_2DA_ENTRY row (col + 1) 1 ~weapon_prof~
+        FOR (i = 11; i < 31; ++i) BEGIN
+          SET_2DA_ENTRY i (col + 1) 1 ~weapon_prof~
         END
         PRETTY_PRINT_2DA
     END ELSE BEGIN
