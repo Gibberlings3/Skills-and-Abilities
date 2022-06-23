@@ -16,6 +16,75 @@ This mod is a collection of class, skill, proficiency, and stat updates. This is
 
 Some components require EEex to work, and those are identified with **(EEex Required)**.
 
+## New Kits
+
+### Rashemaar Berserker
+
+Sometimes referred to as Rashemi berserkers, are the legendary defenders of Rashemen that are known for flying into an almost supernatural frenzy on the battlefield. They are among the most respected members of Rashemi society, second to the revered Wychlaran.
+
+Advantages:
+– May use Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+
+RAGE: The enraged state lasts for 1 turn. While enraged, a Berserker gains a bonus of +2 to his attack and damage rolls as well as to his Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The Berserker also gains 15 temporary Hit Points which are taken away at the end of his berserk spree, possibly knocking him unconscious.
+
+Disadvantages:
+– May not wear armor heavier than splint mail.
+
+### Psi Warrior
+
+A Psi Warrior is a fighter who augments their physical might with psi-infused weapon strikes, telekinetic lashes, and barriers of mental force. Psi Warriors hone their skills and psionic abilities through solo discipline, unlocked under the tutelage of a master, or refined it at an academy dedicated to wielding the mind's power as both weapon and shield.
+
+Advantages:
+– 3rd Level: May use Psionic Strike once per day and gains an additional use every 4 levels thereafter.
+– 3rd Level: May use Protective Field once per day and gains an additional use every 4 levels thereafter.
+
+PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack against any enemy. Psi Warriors apply their Intelligence modifier to their damage roll for one round.
+  13 Intelligence: +1 damage
+  14 Intelligence: +2 damage
+  15 Intelligence: +3 damage
+  16 Intelligence: +4 damage
+  17 Intelligence: +4 damage
+  18 Intelligence: +5 damage
+  19 Intelligence: +8 damage
+  20 Intelligence: +9 damage
+  21 Intelligence: +10 damage
+  22 Intelligence: +11 damage
+  23 Intelligence: +12 damage
+  24 Intelligence: +13 damage
+  25 Intelligence: +14 damage
+
+PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance based on his Intelligence modifier and lasts for one turn.
+  13 Intelligence: +2% physical damage resistance
+  14 Intelligence: +4% physical damage resistance
+  15 Intelligence: +6% physical damage resistance
+  16 Intelligence: +8% physical damage resistance
+  17 Intelligence: +8% physical damage resistance
+  18 Intelligence: +10% physical damage resistance
+  19 Intelligence: +16% physical damage resistance
+  20 Intelligence: +18% physical damage resistance
+  21 Intelligence: +20% physical damage resistance
+  22 Intelligence: +22% physical damage resistance
+  23 Intelligence: +24% physical damage resistance
+  24 Intelligence: +26% physical damage resistance
+  25 Intelligence: +28% physical damage resistance
+
+– 7th Level: May use Telekinetic Movement once per day and gains an additional use every 5 levels thereafter.
+
+TELEKINETIC MOVEMENT: The Psi Warrior can move a creature with his mind. The Psi Warrior may select to push or pull the target to himself. The target must make a save vs. Death to resist being moved by the Psi Warrior. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being moved by the Psi Warrior.
+
+– 10th Level: Gains the Guarded Mind passive ability.
+
+GUARDED MIND: The Psi Warrior becomes immune to all psionic attacks.
+
+– 18th Level: May use Telekinetic Master once per day.
+
+TELEKINETIC MASTER: The Psi Master is able to push or pull all targets within a 15' radius to a selected point. Targets must make a save vs. Death at -4 to resist being moved by the Psi Warrior.
+
+Disadvantages:
+– Race restricted to human.
+– May not dual class.
+– Hit Die: d8
+
 ## Class Updates
 
 ### Bard Skills (EEex Required)
@@ -25,6 +94,12 @@ Adds the option to either select Open Locks only or Open Locks and Disarm/Find T
 ### Allow Blade Kit to Specialize in Melee Weapons
 
 This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice.
+
+### Allow Fighter Multiclasses to Achieve Higher than Specialized (2 pips) in Weapons Proficiencies
+
+This allows to select if multiclass fighters can achieve Master (3 pips), High Master (4 pips), or Grand Master (5 pips). 
+
+**PLEASE NOTE:** Enemy NPCs will also receive this bonus and have the appropriate weapon proficiencies to match the player.
 
 ### Monk Skills (EEex Required)
 
@@ -208,11 +283,11 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Quicken Spell (5 slots): The character decreases spellcasting time by 2.
 
 **DEVOTION:**  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
-- Pious (1 slot): The character gains +1 bonus to saving throws.
-- Divine Agent (2 slots): The character becomes immune to hold and paralysis.
-- Divine Channeling (3 slots): The character decreases spellcasting time by 1.
-- Divine Intervention (4 slots): The character becomes immune to death magic and vorpal strikes.
-- Blessing of the Faithful (5 slots): The character grants a +1 bonus to Thac0, +1 bonus to AC, and +1 bonus to all saving throws for the character and all allies within 15 feet.
+- Divine Shield (1 slot): The character gains -1 bonus to AC.
+- Divine Fortune (2 slots): The character gains a +2 bonus to all saving throws.
+- Divine Vengeance (3 slots): Any enemy who damages the character will receive 2 points of magic damage.
+- Divine Armor (4 slots): The character receives a 5% damage reduction to all physical attacks.
+- Divine Vigor (5 slots): The character receives a +0.5 bonus to APR.
 
 **CONDITIONING:**  This proficiency epitomizes pushing ones body harder, faster, and further. All abilities are cumulative.
 - Fortitude (1 slot): The character gains a +2 bonus to save vs. Paralysis / Poison / Death
