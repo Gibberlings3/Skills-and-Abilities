@@ -53,7 +53,7 @@ PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance bas
 
 – 7th Level: May use Telekinetic Movement once per day and gains an additional use every 5 levels thereafter.
 
-TELEKINETIC MOVEMENT: The Psi Warrior can move a creature with <PRO_HISHER> mind and pull the target to <PRO_HIMHER>self. The target must make a save vs. Death at -2 to resist being pulled to the Psi Warrior. 
+TELEKINETIC MOVEMENT: The Psi Warrior can move a creature with <PRO_HISHER> mind. The Psi Warrior may select to push or pull the target to <PRO_HIMHER>self. The target must make a save vs. Death to resist being moved by the Psi Warrior. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being moved by the Psi Warrior.
 
 – 10th Level: Gains the Guarded Mind passive ability.
 
@@ -61,7 +61,7 @@ GUARDED MIND: The Psi Warrior becomes immune to all psionic attacks.
 
 – 18th Level: May use Telekinetic Master once per day.
 
-TELEKINETIC MASTER: The Psi Master is able to push a target away from <PRO_HIMHER>self while dealing 5d6 magic damage.
+TELEKINETIC MASTER: The Psi Master is able to push or pull all targets within a 15' radius to a selected point. Targets must make a save vs. Death at -4 to resist being moved by the Psi Warrior.
 
 Disadvantages:
 – Race restricted to human.
@@ -91,7 +91,7 @@ The Psi Warrior is able to propel <PRO_HISHER> body with their mind. For one rou
 
 @5511 = ~Telekinetic Master~
 @5512 = ~Telekinetic Master
-The Psi Master is able to push a target away from <PRO_HIMHER>self while dealing 5d6 magic damage.~
+The Psi Master is able to push or pull all targets within a 15' radius to a selected point. Targets must make a save vs. Death at -4 to resist being moved by the Psi Warrior.~
 
 @5513 = ~Protective Field~
 @5514 = ~Protective Field
@@ -112,4 +112,10 @@ This ability increases the Psi Warrior's damage resistance based on <PRO_HISHER>
 
 @5515 = ~Telekinetic Movement~
 @5516 = ~Telekinetic Movement
-The Psi Warrior can move a creature with <PRO_HISHER> mind and pull the target to <PRO_HIMHER>self. The target may make a save vs. Death at -2 to resist being pulled to the Psi Warrior.~
+The Psi Warrior can move a creature with <PRO_HISHER> mind. The Psi Warrior may select to push or pull the target to <PRO_HIMHER>self. The target must make a save vs. Death to resist being moved by the Psi Warrior. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being moved by the Psi Warrior.~
+
+@5517 = ~Telekinetic Push~
+@5518 = ~Telekinetic Pull~
+
+@5519 = ~Master Telekinetic Push~
+@5520 = ~Master Telekinetic Pull~

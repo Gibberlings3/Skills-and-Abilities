@@ -38,9 +38,27 @@ COPY ~skills-and-abilities/spl/kits/mopsic4.SPL~ ~override~ // Psi-Powered Leap
   SAY UNIDENTIFIED_DESC @5510
 COPY ~skills-and-abilities/spl/kits/mopsi31.SPL~ ~override~ // Protective Field +2% DR
 COPY ~skills-and-abilities/spl/kits/mopsi32.SPL~ ~override~ // Protective Field +6% DR
+
+COPY ~skills-and-abilities/2da/mo_psi03.2da~ ~override~ // Telekinetic Movement  
 COPY ~skills-and-abilities/spl/kits/mopsic5.SPL~ ~override~ // Telekinetic Master
   SAY NAME1 @5511
   SAY UNIDENTIFIED_DESC @5512
+  LPF ALTER_SPELL_EFFECT INT_VAR check_headers = 1 match_opcode = 214 STR_VAR resource = ~mo_psi03~ END
+COPY ~skills-and-abilities/spl/kits/mopsi50.SPL~ ~override~ // Telekinetic Master
+  SAY NAME1 @5519
+  SAY UNIDENTIFIED_DESC @5512
+COPY ~skills-and-abilities/spl/kits/mopsi51.SPL~ ~override~ // Telekinetic Master
+  SAY NAME1 @5520
+  SAY UNIDENTIFIED_DESC @5512
+
+COPY ~skills-and-abilities/2da/mo_psi02.2da~ ~override~ // Telekinetic Movement  
 COPY ~skills-and-abilities/spl/kits/mopsic6.SPL~ ~override~ // Telekinetic Movement
   SAY NAME1 @5515
+  SAY UNIDENTIFIED_DESC @5516
+  LPF ALTER_SPELL_EFFECT INT_VAR check_headers = 1 match_opcode = 214 STR_VAR resource = ~mo_psi02~ END
+COPY ~skills-and-abilities/spl/kits/mopsi60.SPL~ ~override~ // Telekinetic Push
+  SAY NAME1 @5517
+  SAY UNIDENTIFIED_DESC @5516
+COPY ~skills-and-abilities/spl/kits/mopsi61.SPL~ ~override~ // Telekinetic Pull
+  SAY NAME1 @5518
   SAY UNIDENTIFIED_DESC @5516
