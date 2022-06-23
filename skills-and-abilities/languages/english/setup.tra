@@ -42,6 +42,10 @@
 @110 = ~Add Cleric/Mage/Thief Class~
 @120 = ~Turn Undead Overhaul~
 @130 = ~Allow Blade Kit to Specialize in Melee Weapons~
+@140 = ~Allow Fighter Multiclasses to Achieve Higher than Specialized (2 pips) in Weapons Proficiencies~
+@141 = ~Allow Fighter Multiclasses to Achieve Master (3 pips) in Weapon Proficiencies~
+@142 = ~Allow Fighter Multiclasses to Achieve High Master (4 pips) in Weapon Proficiencies~
+@143 = ~Allow Fighter Multiclasses to Achieve Grand Master (5 pips) in Weapon Proficiencies~
 
 // Group 2 (Update 200-299)
 

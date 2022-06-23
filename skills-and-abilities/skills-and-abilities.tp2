@@ -121,6 +121,29 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 INCLUDE ~skills-and-abilities/components/class_skills/blade_kit.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Allow Fighter Multiclasses to Achieve Higher than Specialized         //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @141 DESIGNATED 141 SUBCOMPONENT @140 GROUP @1 LABEL SkillsAndAbilitiesWeaponProf1 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+OUTER_SET weapon_prof=3 // Master (3 pips)
+INCLUDE ~skills-and-abilities/components/class_skills/multiclass_fighter.tpa~
+
+////////////////////////////////////////////////////
+BEGIN @142 DESIGNATED 142 SUBCOMPONENT @140 GROUP @1 LABEL SkillsAndAbilitiesWeaponProf2 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+OUTER_SET weapon_prof=4 // High Master (4 pips)
+INCLUDE ~skills-and-abilities/components/class_skills/multiclass_fighter.tpa~
+
+////////////////////////////////////////////////////
+BEGIN @143 DESIGNATED 143 SUBCOMPONENT @140 GROUP @1 LABEL SkillsAndAbilitiesWeaponProf3
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+OUTER_SET weapon_prof=5 // Grand Master (5 pips)
+INCLUDE ~skills-and-abilities/components/class_skills/multiclass_fighter.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Monks (EEex Required)                                //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @20 DESIGNATED 20 GROUP @1 LABEL SkillsAndAbilitiesMonk 
