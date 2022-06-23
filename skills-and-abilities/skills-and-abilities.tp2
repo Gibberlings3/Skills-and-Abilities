@@ -54,7 +54,7 @@ LANGUAGE ~French~
 // Rashemaar Berserker                                                   //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @601 DESIGNATED 601 SUBCOMPONENT @600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar1
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 OUTER_SET minsc_rash=1 // Minsc becomes Rashemaar Berserker
 INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
@@ -63,7 +63,7 @@ INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
 
 BEGIN @602 DESIGNATED 602 SUBCOMPONENT @600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar2
 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 OUTER_SET minsc_rash=0 // Minsc becomes Rashemaar Berserker
 INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
@@ -72,7 +72,7 @@ INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
 // Psi Warrior                                                           //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @610 DESIGNATED 610 GROUP @6 LABEL SkillsAndAbilitiesPsiWarrior
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 INCLUDE ~skills-and-abilities/components/kits/psiwarrior.tpa~
 
@@ -86,7 +86,7 @@ INCLUDE ~skills-and-abilities/components/kits/psiwarrior.tpa~
 // Assign Skills to Bards (EEex Required)                                //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @11 DESIGNATED 11 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard1 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 OUTER_SET bard_skill=0 // Add Pick Locks
@@ -96,7 +96,7 @@ INCLUDE ~skills-and-abilities/components/item_updates_bard.tpa~
 ////////////////////////////////////////////////////
 
 BEGIN @12 DESIGNATED 12 SUBCOMPONENT @10 GROUP @1 LABEL SkillsAndAbilitiesBard2 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 OUTER_SET bard_skill=1 // Add Pick Locks and Find/Disarm Traps
@@ -107,7 +107,7 @@ INCLUDE ~skills-and-abilities/components/item_updates_bard.tpa~
 // Allow Blade Kit to Specialize in Melee Weapons                        //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @130 DESIGNATED 130 GROUP @1 LABEL SkillsAndAbilitiesBlade 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/blade_kit.tpa~
 
@@ -115,7 +115,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/blade_kit.tpa~
 // Assign Skills to Monks (EEex Required)                                //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @20 DESIGNATED 20 GROUP @1 LABEL SkillsAndAbilitiesMonk 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_monk_skills.tpa~
@@ -125,7 +125,7 @@ INCLUDE ~skills-and-abilities/components/item_updates_monk.tpa~
 // Add New Monk Abilities                                                //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @70 DESIGNATED 70 GROUP @1 LABEL SkillsAndAbilitiesMonk2 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/monk_updates.tpa~
 
@@ -241,7 +241,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 // Assign Skills to Rangers                                              //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @40 DESIGNATED 40 GROUP @1 LABEL SkillsAndAbilitiesRang 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 // REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 // Modify class description
@@ -253,7 +253,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_ranger_skills.tpa~
 // Add Detect Illusion for Wizard Slayer (EEex Required)                 //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @50 DESIGNATED 50 GROUP @1 LABEL SkillsAndAbilitiesDI1 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_wiz_slayer_skills.tpa~
@@ -262,7 +262,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_wiz_slayer_skills.tpa~
 // Assign New Abilities to Paladins                                      //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @80 DESIGNATED 80 GROUP @1 LABEL SkillsAndAbilitiesPaladin1
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/paladin_updates.tpa~
 
@@ -270,7 +270,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/paladin_updates.tpa~
 // Replace Inquisitor True Seeing for Detect Illusion (EEex Required)    //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @60 DESIGNATED 60 GROUP @1 LABEL SkillsAndAbilitiesDI2
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_inquisitor_skills.tpa~
@@ -279,7 +279,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_inquisitor_skills.tpa~
 // Allow Inquisitor's to Cast Divine Spells                              //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @100 DESIGNATED 100 GROUP @1 LABEL SkillsAndAbilitiesInquisitor1
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/inquisitor_updates.tpa~
 
@@ -297,7 +297,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/cleric_mage_thief.tpa~
 // Turn Undead Overhaul                                                  //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @120 DESIGNATED 120 GROUP @1 LABEL SkillsAndAbilitiesTurnUndead
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
@@ -306,7 +306,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @91 DESIGNATED 91 SUBCOMPONENT @90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA1
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet iwdee~) @3006
 
 OUTER_SET existing_hla=1
 INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
