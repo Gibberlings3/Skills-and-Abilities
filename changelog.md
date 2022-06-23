@@ -5,6 +5,7 @@ July xx, 2022
 ### Changed
 
 - Overhauled Devout Proficiencies and renamed to Divine.
+- Allow multiclass fighters to achieve higher than Specialized (2 pips).
 - Added Rashemaar Berserker kit for Rangers.
 - Added Psi Warrior kit for Fighters.
 
