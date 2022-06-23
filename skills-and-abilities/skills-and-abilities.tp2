@@ -54,7 +54,7 @@ LANGUAGE ~French~
 // Rashemaar Berserker                                                   //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @601 DESIGNATED 601 SUBCOMPONENT @600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar1
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 
 OUTER_SET minsc_rash=1 // Minsc becomes Rashemaar Berserker
 INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
