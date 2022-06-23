@@ -63,7 +63,16 @@ INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
 
 BEGIN @602 DESIGNATED 602 SUBCOMPONENT @600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar2
 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+
+OUTER_SET minsc_rash=0 // Minsc becomes Rashemaar Berserker
+INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
+
+////////////////////////////////////////////////////
+// IWDEE ONLY
+
+BEGIN @600 DESIGNATED 600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar3
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @3000
 
 OUTER_SET minsc_rash=0 // Minsc becomes Rashemaar Berserker
 INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
