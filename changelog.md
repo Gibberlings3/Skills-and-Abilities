@@ -1,3 +1,12 @@
+## Version 0.8.1 alpha
+
+July xx, 2022
+
+### Changed
+
+- Added Eldritch Scion kit for Sorcerers.
+- Added component to add new fighter abilities.
+
 ## Version 0.8 alpha
 
 June 23, 2022
