@@ -39,7 +39,10 @@ Advantages:
 – 3rd Level: May use Protective Field once per day and gains an additional use every 4 levels thereafter.
 
 PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack against any enemy. Psi Warriors apply their Intelligence modifier to their damage roll for one round.
-  13 Intelligence: +1 damage
+<details>
+  <summary>Details of damage</summary>
+
+```   13 Intelligence: +1 damage
   14 Intelligence: +2 damage
   15 Intelligence: +3 damage
   16 Intelligence: +4 damage
@@ -52,9 +55,15 @@ PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack aga
   23 Intelligence: +12 damage
   24 Intelligence: +13 damage
   25 Intelligence: +14 damage
+``` 
+
+</details>
 
 PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance based on his Intelligence modifier and lasts for one turn.
-  13 Intelligence: +2% physical damage resistance
+<details>
+  <summary>Details of resistances</summary>
+
+```   13 Intelligence: +2% physical damage resistance
   14 Intelligence: +4% physical damage resistance
   15 Intelligence: +6% physical damage resistance
   16 Intelligence: +8% physical damage resistance
@@ -67,6 +76,9 @@ PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance bas
   23 Intelligence: +24% physical damage resistance
   24 Intelligence: +26% physical damage resistance
   25 Intelligence: +28% physical damage resistance
+``` 
+
+</details>
 
 – 7th Level: May use Telekinetic Movement once per day and gains an additional use every 5 levels thereafter.
 
