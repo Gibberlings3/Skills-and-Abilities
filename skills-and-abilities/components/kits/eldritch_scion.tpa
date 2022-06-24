@@ -21,7 +21,7 @@ ADD_KIT ~MO_ELDRITCH~
 
 LAF fl#add_kit_ee
   INT_VAR
-    briefdesc = RESOLVE_STR_REF (@1002) 
+    briefdesc = RESOLVE_STR_REF (@5523) 
   STR_VAR 
     kit_name = MO_ELDRITCH
     clswpbon = ~1 0 3~
