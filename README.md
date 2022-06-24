@@ -95,8 +95,11 @@ GUARDED MIND: The Psi Warrior becomes immune to all psionic attacks.
 TELEKINETIC MASTER: The Psi Master is able to push or pull all targets within a 15' radius to a selected point. Targets must make a save vs. Death at -4 to resist being moved by the Psi Warrior.
 
 Disadvantages:
+
 – Race restricted to human.
+
 – May not dual class.
+
 – Hit Die: d8
 
 ## Class Updates
