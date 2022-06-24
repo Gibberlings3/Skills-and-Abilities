@@ -8,13 +8,95 @@
 
 **Auteur**: [Grammarsalad](https://www.gibberlings3.net/profile/6114-grammarsalad/) et [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
-**Forum**: [Discussion Topic](https://www.gibberlings3.net/forums/topic/34217-skills-and-abilities-mod-alpha-release/)
+**Forum**: [Sujet de discussion](https://www.gibberlings3.net/forums/topic/34217-skills-and-abilities-mod-alpha-release/)
 
 ## Introduction
 
 Ce mod est une collection de mises à jour pour les classes de personnage, les compétences, les capacités et les statistiques. Il s'agit d'une version alpha avec l'intention d'ajouter d'autres mises à jour pour les classes, les capacités et les statistiques dans un avenir proche, tout en affinant les nouvelles compétences. Oui, ce sont des compétences réelles, fonctionnelles, utilisables, qui peuvent être attribuées à la création de personnage et au passage aux niveaux supérieurs. Oui, EEkeeper peut reconnaître et ajuster ces compétences pour les personnages. Oui, je suis intimement familier avec les ressources limitées du jeu, et aucun sort de détection n'a été endommagé pendant la réalisation de ce mod. 
 
 Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifiés par **(EEex nécessaire)**.
+
+## Nouveaux Kits
+
+### Rashemaar Berserker
+
+Aussi appelés Rashemi Berserkers, ces défenseurs légendaires de la Rashéménie sont redoutés pour leur frénésie quasiment surnaturelle sur le champ de bataille et après les vénérés Wychlarans, ils font partie des membres les plus respectés de cette société.
+
+Avantages :  
+- Peut utiliser « Furie » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
+
+FURIE : Cet état dure 1 tour. Sous Furie, le berserker gagne +2 aux jets de toucher et de dégâts ainsi qu'à la classe d'armure, et devient immunisé aux charmes, à l'immobilisation, à la terreur, à la confusion, à la débilité, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il gagne également 15 points de vie temporaires, qui sont retirés à la fin de la Furie, pouvant rendre le personnage inconscient.
+
+Inconvénients :  
+- Ne peut pas porter d'armure plus lourde que l'armure feuilletée.
+
+### Esprit Guerrier
+
+Un Esprit Guerrier augmente sa puissance physique grâce à des attaques psioniques spéciales et télékinétiques, tout en étant capable d'ériger des barrières mentales. Ils affinent leurs compétences et leurs capacités psioniques lors d'une formation rigoureuse et solitaire, sous l'autorité d'un maître, ou les perfectionnent dans une académie exclusivement dédiée à affûter son esprit afin de le manier comme une arme ou un bouclier.
+
+Avantages :  
+- 3ème niveau : Peut utiliser « Choc psionique » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.  
+- 3ème niveau : Peut utiliser « Champ de force » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
+
+CHOC PSIONIQUE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale et des dégâts supplémentaires contre n'importe quel type d'ennemi en appliquant un modificateur lié à l'intelligence.  
+<details>
+  <summary>Détails des dégâts</summary>
+  
+```	13 en Intelligence : +1 point de dégâts  
+	14 en Intelligence : +2 points de dégâts  
+	15 en Intelligence : +3 points de dégâts  
+	16 en Intelligence : +4 points de dégâts  
+	17 en Intelligence : +4 points de dégâts  
+	18 en Intelligence : +5 points de dégâts  
+	19 en Intelligence : +8 points de dégâts  
+	20 en Intelligence : +9 points de dégâts  
+	21 en Intelligence : +10 points de dégâts  
+	22 en Intelligence : +11 points de dégâts  
+	23 en Intelligence : +12 points de dégâts  
+	24 en Intelligence : +13 points de dégâts  
+	25 en Intelligence : +14 points de dégâts  
+```
+
+</details>
+
+CHAMP DE FORCE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'amortir les dégâts physiques en appliquant un modificateur lié à l'intelligence.  
+<details>
+  <summary>Détails des résistances</summary>
+  
+```	13 en Intelligence : +2 % de résistance aux dégâts physiques  
+	14 en Intelligence : +4 % de résistance aux dégâts physiques  
+	15 en Intelligence : +6 % de résistance aux dégâts physiques  
+	16 en Intelligence : +8 % de résistance aux dégâts physiques  
+	17 en Intelligence : +8 % de résistance aux dégâts physiques  
+	18 en Intelligence : +10 % de résistance aux dégâts physiques  
+	19 en Intelligence : +16 % de résistance aux dégâts physiques  
+	20 en Intelligence : +18 % de résistance aux dégâts physiques  
+	21 en Intelligence : +20 % de résistance aux dégâts physiques  
+	22 en Intelligence : +22 % de résistance aux dégâts physiques  
+	23 en Intelligence : +24 % de résistance aux dégâts physiques  
+	24 en Intelligence : +26 % de résistance aux dégâts physiques  
+	25 en Intelligence : +28 % de résistance aux dégâts physiques  
+```
+
+</details>
+
+- 7ème niveau : Peut utiliser « Attraction cinétique » une fois par jour, puis une fois supplémentaire tous les 5 niveaux.
+
+ATTRACTION CINÉTIQUE : L'Esprit Guerrier est capable de déplacer une créature avec son esprit et peut choisir de repousser la cible au loin ou de l'attirer à sa portée. La cible doit faire un jet de sauvegarde contre la mort pour résister à l'attraction cinétique. Au niveau 14 son jet de sauvegarde devra être à -2, puis -4 au niveau 20.
+
+- 10ème niveau : Gagne la capacité passive « Forteresse mentale ».
+
+
+FORTERESSE MENTALE : L'Esprit Guerrier devient immunisé contre toutes les attaques psioniques.
+
+- 18ème niveau : Peut utiliser « Maîtrise cinétique » une fois par jour
+
+MAÎTRISE CINÉTIQUE : Le maître Esprit Guerrier est capable de catapulter au loin ou d'attirer à sa portée tous ses adversaires dans un rayon de 4,5 m, les cibles doivent faire un jet de sauvegarde contre la mort à -4 pour résister à la maîtrise cinétique.
+
+Inconvénients :
+- Ne peut se jumeler.
+- Réservé aux humains.
+- Dés de vie : d8
 
 ## Mises a Jour des Classes de Personnage
 
@@ -25,6 +107,12 @@ Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit
 ### Permettre au Maître-lames de se spécialiser dans les armes de mêlée
 
 Cette option permet au Maître-lames de se spécialiser (2 points de compétence) dans les armes de mêlée. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
+
+### Permettre au guerrier multi-classé de dépasser la spécialisation (2 points de compétence) pour les compétences d'armes
+
+Cela permet au guerrier multi-classé de devenir maître (3 points de compétence), haut maître (4 points de compétence) ou grand maître (5 points de compétence). 
+
+**REMARQUE :** Les PNJ ennemis recevront également ces bonus et auront les compétences d'armes appropriées pour rivaliser avec le joueur.
 
 ### Mise a jour des capacités des Moines (EEex nécessaire)
 
@@ -217,14 +305,14 @@ La progression des compétences est désormais plus proche du système de progre
 - Influence Divine (2 points de compétence) : Le personnage bénéficie d'un bonus de 2 à tous ses jets de sauvegarde.
 - Divine Vengeance (3 points de compétence) : Chaque adversaire qui inflige des dommages au personnage subit 2 points de dégâts magiques.
 - Protection Divine (4 points de compétence) : Le personnage reçoit 5 % de réduction contre tous les dégâts physiques.
-- Esprit-Saint (5 points de compétence) : Le personnage bénéficie d'une attaque supplémentaire par round.
+- Esprit-Saint (5 points de compétence) : Le personnage bénéficie d'une demi attaque supplémentaire par round.
 
 **CONDITIONNEMENT / PRÉPARATION :** Cette compétence permet de dépasser ses limites physiques. Toutes les capacités sont cumulatives.
 - Résistance (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux sauvegardes contre la paralysie, le poison et la mort.
 - Vigueur (2 points de compétence) : Le personnage est capable de se déplacer 10% plus vite.
 - Aptitude (3 points de compétence) : Le personnage conserve ses facultés de combat et devient immunisé contre la cécité.
 - Inébranlable (4 points de compétence) : Le personnage ne ressent pas la fatigue même après avoir utilisé Rage ou Furie.
-- Récupération Instantanée (5 points de compétence) : Le personnage régénère 1 point de vie par round. Cumulable avec d'autres aptitudes régénérantes.~
+- Récupération Instantanée (5 points de compétence) : Le personnage régénère 1 point de vie par round. Cumulable avec d'autres aptitudes régénérantes.
 
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 
