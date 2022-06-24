@@ -42,7 +42,10 @@
 @110 = ~Ajouter la classe de Clerc/Mage/Voleur~
 @120 = ~Revision de la capacite repousser les morts-vivants~
 @130 = ~Permettre au Maitre-lames de se specialiser dans les armes de melee~
-
+@140 = ~Permettre au guerrier multi-classé de depasser la specialisation (2 points de compétence) pour les compétences d'armes~
+@141 = ~Permettre au guerrier multi-classé de depasser la maitrise (3 points de compétence) pour les compétences d'armes~
+@142 = ~Permettre au guerrier multi-classé de depasser la haute maitrise (4 points de compétence) pour les compétences d'armes~
+@143 = ~Permettre au guerrier multi-classé de depasser la grande maitrise (5 points de compétence) pour les compétences d'armes~
 // Group 2 (Update 200-299)
 
 // Group 3 (Update 300-399)

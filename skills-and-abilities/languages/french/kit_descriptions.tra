@@ -8,7 +8,7 @@
 Avantages :
 - Peut utiliser « Furie » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
 
-FURIE : Cet état dure 1 tour. Sous Furie, le berserker gagne +2 aux jets de toucher et de dégâts ainsi qu'à la classe d'armure, et devient immunisé à charme, à l'immobilisation, à la terreur, à la confusion, à la débilité, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il gagne également 15 points de vie temporaires, qui sont retirés à la fin de la Furie, pouvant rendre le personnage inconscient.
+FURIE : Cet état dure 1 tour. Sous Furie, le berserker gagne +2 aux jets de toucher et de dégâts ainsi qu'à la classe d'armure, et devient immunisé aux charmes, à l'immobilisation, à la terreur, à la confusion, à la débilité, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il gagne également 15 points de vie temporaires, qui sont retirés à la fin de la Furie, pouvant rendre le personnage inconscient.
 
 Inconvénients :
 - Ne peut pas porter d'armure plus lourde que l'armure feuilletée.~
@@ -53,7 +53,7 @@ CHAMP DE FORCE : Pendant un round, cette capacité permet à l'Esprit Guerrier d
 
 – 7ème niveau : Peut utiliser « Attraction cinétique » une fois par jour, puis une fois supplémentaire tous les 5 niveaux.
 
-ATTRACTION CINÉTIQUE : L'Esprit Guerrier est capable de déplacer une créature avec son esprit et de l'attirer à sa portée. La cible doit effectuer un jet de sauvegarde contre la mort à -2 pour résister à l'attraction. 
+ATTRACTION CINÉTIQUE : L'Esprit Guerrier est capable de déplacer une créature avec son esprit et peut choisir de repousser la cible au loin ou de l'attirer à sa portée. La cible doit faire un jet de sauvegarde contre la mort pour résister à l'attraction cinétique. Au niveau 14 son jet de sauvegarde devra être à -2, puis -4 au niveau 20.
 
 – 10ème niveau : Gagne la capacité passive « Forteresse mentale ».
 
@@ -61,7 +61,7 @@ FORTERESSE MENTALE : L'Esprit Guerrier devient immunisé contre toutes les attaq
 
 – 18ème niveau : Peut utiliser « Maîtrise cinétique » une fois par jour
 
-MAÎTRISE CINÉTIQUE : Le maître Esprit Guerrier est capable de catapulter un adversaire au loin tout en lui infligeant 5d6 points de dégâts magiques.
+MAÎTRISE CINÉTIQUE : Le maître Esprit Guerrier est capable de catapulter au loin ou d'attirer à sa portée tous ses adversaires dans un rayon de 4,5 m, les cibles doivent faire un jet de sauvegarde contre la mort à -4 pour résister à la maîtrise cinétique.
 
 Inconvénients :
 – Ne peut se jumeler.
@@ -70,7 +70,7 @@ Inconvénients :
 
 @5507 = ~Choc psionique~
 @5508 = ~Choc psionique
-Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale contre n'importe quel type d'ennemi en appliquant des dégâts supplémentaires proportionnels à son intelligence.
+Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale et des dégâts supplémentaires contre n'importe quel type d'ennemi en appliquant  un modificateur lié à l'intelligence.
   13 en Intelligence : +1 point de dégâts
   14 en Intelligence : +2 points de dégâts
   15 en Intelligence : +3 points de dégâts
@@ -91,7 +91,7 @@ L'Esprit Guerrier est capable de propulser son corps avec son esprit. Pendant un
 
 @5511 = ~Maîtrise cinétique~
 @5512 = ~Maîtrise cinétique
-Le maître Esprit Guerrier est capable de catapulter un adversaire au loin tout en lui infligeant 5d6 points de dégâts magiques.~
+Le maître Esprit Guerrier est capable de catapulter au loin ou d'attirer à sa portée tous ses adversaires dans un rayon de 4,5 m, les cibles doivent faire un jet de sauvegarde contre la mort à -4 pour résister à la maîtrise cinétique.~
 
 @5513 = ~Champ de force~
 @5514 = ~Champ de force
@@ -112,4 +112,10 @@ Pendant un round, cette capacité permet à l'Esprit Guerrier d'amortir les dég
 
 @5515 = ~Attraction cinétique~
 @5516 = ~Attraction cinétique
-L'Esprit Guerrier est capable de déplacer une créature avec son esprit et de l'attirer à sa portée. La cible doit effectuer un jet de sauvegarde contre la mort à -2 pour résister à l'attraction.~ 
+L'Esprit Guerrier est capable de déplacer une créature avec son esprit et peut choisir de repousser la cible au loin ou de l'attirer à sa portée. La cible doit faire un jet de sauvegarde contre la mort pour résister à l'attraction cinétique. Au niveau 14 son jet de sauvegarde devra être à -2, puis -4 au niveau 20.~
+
+@5517 = ~Expulsion cinétique~
+@5518 = ~Aspiration cinétique~
+
+@5519 = ~Explosion cinétique~
+@5520 = ~Tourbillon cinétique~
