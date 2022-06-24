@@ -1,0 +1,34 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Fighter Updates                                                       //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Import                                                                //
+///////////////////////////////////////////////////////////////////////////
+COPY ~skills-and-abilities/spl/MO#HLA07.SPL~       ~override~ // Epic Weapon Focus
+  SAY NAME1 @8015
+  SAY UNIDENTIFIED_DESC @8016
+
+COPY ~skills-and-abilities/spl/MO#HLA08.SPL~       ~override~ // Epic Weapon Specialization
+  SAY NAME1 @8017
+  SAY UNIDENTIFIED_DESC @8018
+
+///////////////////////////////////////////////////////////////////////////
+// Add Fighter HLAs                                                      //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH class IN
+      2  // FIGHTER
+      7  // FIGHTER_MAGE
+      8  // FIGHTER_CLERIC
+      9  // FIGHTER_THIEF
+      10 // FIGHTER_MAGE_THIEF
+      16 // FIGHTER_DRUID
+      17 // FIGHTER_MAGE_THIEF
+    BEGIN
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA07 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA08 prerequisite = AP_MO#HLA07 END      
+END
+
+
