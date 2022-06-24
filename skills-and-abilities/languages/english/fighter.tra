@@ -1,75 +1,16 @@
 // Skills and Abilities, American English
-// Proficiency range @8001 to @9000
+// Proficiency range @9501 to @10000
 ///////////////////////////////////////////////////////////////////////////
 // Groups                                                                //
 ///////////////////////////////////////////////////////////////////////////
-@8001 = ~Epic Damage Reduction~
-@8002 = ~Epic Damage Reduction
-The character gains 10% damage reduction to all physical attacks.~
-
-@8003 = ~Thievery~
-@8004 = ~Thievery
-The character gains +5 skills points in each skill. This ability may be taken multiple times, up to a maximum of +25 skill points in each skill.~
-
-@8005 = ~Elemental Resistance~
-@8006 = ~Elemental Resistance
-The character gains 10% resistance to all elemental damage.~
-
-@8007 = ~Magic Damage Resistance~
-@8008 = ~Magic Damage Resistance
-The character gains 10% resistance to magic damage.~
-
-@8009 = ~Epic Toughness~
-@8010 = ~Epic Toughness
-The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.~
-
-@8011 = ~Epic Prowess~
-@8012 = ~Epic Prowess
-The character's skill at combat grows and <HESHE> gains a +1 bonus to Thac0.~
-
-@8013 = ~Armor Skin~
-@8014 = ~Armor Skin
-The character's natural armor bonus to Armor Class increases by 1.~
-
-@8015 = ~Epic Weapon Focus~
-@8016 = ~Epic Weapon Focus
+@9501 = ~Epic Weapon Focus~
+@9502 = ~Epic Weapon Focus
 The warrior gains +2 bonus to Thac0.~
 
-@8017 = ~Epic Weapon Specialization~
-@8018 = ~Epic Weapon Specialization
+@9503 = ~Epic Weapon Specialization~
+@9504 = ~Epic Weapon Specialization
 The warrior gains +2 bonus to damage.
 
 Requires: Epic Weapon Focus~
 
-@8019 = ~Great Charisma~
-@8020 = ~Great Charisma
-The character gains +1 bonus to Charisma. This feat may be taken multiple times, up to a maximum of +5 Charisma.~
-
-@8021 = ~Great Constitution~
-@8022 = ~Great Constitution
-The character gains +1 bonus to Constitution. This feat may be taken multiple times, up to a maximum of +5 Constitution.~
-
-@8023 = ~Great Dexterity~
-@8024 = ~Great Dexterity
-The character gains +1 bonus to Dexterity. This feat may be taken multiple times, up to a maximum of +5 Dexterity.~
-
-@8025 = ~Great Intelligence~
-@8026 = ~Great Intelligence
-The character gains +1 bonus to Intelligence. This feat may be taken multiple times, up to a maximum of +5 Intelligence.~
-
-@8027 = ~Great Strength~
-@8028 = ~Great Strength
-The character gains +1 bonus to Strength. This feat may be taken multiple times, up to a maximum of +5 Strength.~
-
-@8029 = ~Great Wisdom~
-@8030 = ~Great Wisdom
-The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.~
-
-@8031 = ~one round~
-@8032 = ~three rounds~
-
-@8033 = ~Improved Critical~
-@8034 = ~Improved Critical
-The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.~
-
-@9000 = ~[LAST TRA HERE]~
+@10000 = ~[LAST TRA HERE]~

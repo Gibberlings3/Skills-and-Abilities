@@ -31,14 +31,6 @@ COPY ~skills-and-abilities/spl/MO#HLA06.SPL~       ~override~ // Armor Skin
   SAY NAME1 @8013
   SAY UNIDENTIFIED_DESC @8014
 
-COPY ~skills-and-abilities/spl/MO#HLA07.SPL~       ~override~ // Epic Weapon Focus
-  SAY NAME1 @8015
-  SAY UNIDENTIFIED_DESC @8016
-
-COPY ~skills-and-abilities/spl/MO#HLA08.SPL~       ~override~ // Epic Weapon Specialization
-  SAY NAME1 @8017
-  SAY UNIDENTIFIED_DESC @8018
-
 COPY ~skills-and-abilities/spl/MO#HLA09.SPL~       ~override~ // Great Charisma
   SAY NAME1 @8019
   SAY UNIDENTIFIED_DESC @8020
