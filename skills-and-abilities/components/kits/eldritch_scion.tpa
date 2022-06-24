@@ -3,7 +3,7 @@
 // NEED TO UPDATE ALL OF THESE
 ADD_KIT ~MO_ELDRITCH~
   ~MO_ELDRITCH 0 0 0 0 0 0 0 0~ // clasweap.2da
-  ~MO_ELDRITCH 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~ //weapprof.2da
+  ~MO_ELDRITCH 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~ //weapprof.2da
   ~MO_ELDRITCH 9 0 0 9 0 9~ //abclasrq
   ~MO_ELDRITCH 0 0 0 0 0 0~ // abclsmod
   ~MO_ELDRITCH 0 0 0 0 0 0~ //abdcedsrq
@@ -67,7 +67,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             READ_BYTE   0x20 "mage"
             WRITE_BYTE 0x20 ("%mage%" BAND "0b11111011")
             WRITE_BYTE 0x1e ("%bard%" BAND "0b10111111")
-            LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 parameter1 = 202 parameter2 = 5 power = 0 timing = 2 END
+            LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = 202 parameter2 = 5 power = 0 timing = 2 END
           END 
     END
   END
