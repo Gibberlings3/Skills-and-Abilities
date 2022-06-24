@@ -62,7 +62,7 @@ PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack aga
 
 PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance based on his Intelligence modifier and lasts for one turn.
 <details>
-  <summary>Resistances Details</summary>
+  <summary>Resistance Details</summary>
 
 ```   
   13 Intelligence: +2% physical damage resistance
