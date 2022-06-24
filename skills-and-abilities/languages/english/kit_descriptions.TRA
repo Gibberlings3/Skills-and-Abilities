@@ -120,9 +120,9 @@ The Psi Warrior can move a creature with <PRO_HISHER> mind. The Psi Warrior may 
 @5519 = ~Master Telekinetic Push~
 @5520 = ~Master Telekinetic Pull~
 
-@5221 = ~eldritch scion~
-@5222 = ~Eldritch Scion~
-@5223 = ~ELDRITCH SCION: Unlike typical mages, Eldritch Scions do not study tomes of magic or spend time learning to combine martial and magical skills. Rather, Eldritch Scions find that their spells and abilities come to them instinctively. 
+@5521 = ~eldritch scion~
+@5522 = ~Eldritch Scion~
+@5523 = ~ELDRITCH SCION: Unlike typical mages, Eldritch Scions do not study tomes of magic or spend time learning to combine martial and magical skills. Rather, Eldritch Scions find that their spells and abilities come to them instinctively. 
 
 An Eldritch Scion gains most of the features of a Sorcerer while gaining access to more martial prowess. 
 
