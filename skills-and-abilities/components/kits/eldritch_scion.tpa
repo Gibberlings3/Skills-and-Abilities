@@ -1,78 +1,74 @@
-  // Eldritch Scion kit for Sorcerer for House Rules
+// Eldritch Scion kit for Sorcerer for Skills and Abilities
 
-DEFINE_ACTION_FUNCTION add_eldritch_scion BEGIN
-  //Allow Mages and Sorcerers to equip any weapon/armor/shield/helmet (must still meet race/ability/alignment reqs)
-  COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-    PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-      READ_SHORT 0x31 "prof" ELSE 0
-      READ_SHORT 0x1c "type" ELSE 0
-      PATCH_IF ("%prof%" = 89 || //bastard sword
-            "%prof%" = 90 || //long sword
-            "%prof%" = 91 || //short sword
-            "%prof%" = 92 || //axe
-            "%prof%" = 93 || //2h sword
-            "%prof%" = 94 || //katana
-            "%prof%" = 95 || //scimitar 
-            "%prof%" = 97 || //war hammer
-            "%prof%" = 98 || //spear
-            "%prof%" = 99 || //halberd
-            "%prof%" = 100 || //flail/morningstar
-            "%prof%" = 101 || //mace
-            "%prof%" = 115 || //club
-            "%type%" = 7) BEGIN //helm
-            READ_BYTE 0x1e "bard"
-            READ_BYTE 0x1f "fighter"
-            PATCH_IF (("%fighter%" BAND "0b00001000") = "0b00000000") BEGIN 
-              READ_BYTE   0x20 "mage"
-              WRITE_BYTE 0x20 ("%mage%" BAND "0b11111011")
-              WRITE_BYTE 0x1e ("%bard%" BAND "0b10111111")
-            END 
-      END
-    END
-  BUT_ONLY
+// NEED TO UPDATE ALL OF THESE
+ADD_KIT ~MO_ELDRITCH~
+  ~MO_ELDRITCH 0 0 0 0 0 0 0 0~ // clasweap.2da
+  ~MO_ELDRITCH 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~ //weapprof.2da
+  ~MO_ELDRITCH 9 0 0 9 0 9~ //abclasrq
+  ~MO_ELDRITCH 0 0 0 0 0 0~ // abclsmod
+  ~MO_ELDRITCH 0 0 0 0 0 0~ //abdcedsrq
+  ~MO_ELDRITCH 0 0 0 0 0 0~ //abdcscrq
+  ~MO_ELDRITCH 1 1 1 1 1 1 1 1 1~ // Alignment
+  ~MO_ELDRITCH 0 0 0 0 0 0~ // Dualclass
+  ~skills-and-abilities/2da/MO_ELD01.2DA~ // CLAB
+  ~K_S_H K_S_HE K_S_E~ 
+  ~0x00004000 19~
+  ~FM0~ 
+  ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+  SAY @5521
+  SAY @5522
+  SAY @5523
 
-  // NEED TO UPDATE ALL OF THESE
-  ADD_KIT ~MO_ELDRITCH~
-    ~MO_ELDRITCH 0 0 0 0 0 0 0 0~ // clasweap.2da
-    ~MO_ELDRITCH 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~ //weapprof.2da
-    ~MO_ELDRITCH 9 0 0 9 0 9~ //abclasrq
-    ~MO_ELDRITCH 0 0 0 0 0 0~ // abclsmod
-    ~MO_ELDRITCH 0 0 0 0 0 0~ //abdcedsrq
-    ~MO_ELDRITCH 0 0 0 0 0 0~ //abdcscrq
-    ~MO_ELDRITCH 1 1 1 1 1 1 1 1 1~ // Alignment
-    ~MO_ELDRITCH 0 0 0 0 0 0~ // Dualclass
-    ~houserules/2da/CLABSOMO.2DA~ // CLAB
-    ~K_S_H K_S_HE K_S_E~ 
-    ~0x00004000 19~
-    ~FM0~ 
-    ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-    SAY @1000
-    SAY @1001
-    SAY @1002
-
-  LAF fl#add_kit_ee
-    INT_VAR
-      briefdesc = RESOLVE_STR_REF (@1002) 
-    STR_VAR 
-      kit_name = MO_ELDRITCH
-      clswpbon = ~1 0 3~
-      hpclass = HPPRS
-      numwslot = 2
-  END
-
-  COPY ~houserules/spl/MO#APB01.SPL~    ~override~ // 0.5 APR Increase at level 8
-  COPY ~houserules/spl/MO#APB02.SPL~    ~override~ // 0.5 APR Increase at level 15
-  COPY ~houserules/2da/CLABSOMO.2DA~    ~override~ // kit
-  COPY ~houserules/spl/MO#ELD01.SPL~    ~override~ // Create this to have -1 spell slot
-  COPY ~houserules/spl/MO#ELD02.SPL~    ~override~ // Sets two weapon fighting to 1
-  COPY ~houserules/spl/MO#ELD03.SPL~    ~override~ // Sets two weapon fighting to 2
-  COPY ~houserules/spl/MO#ELD04.SPL~    ~override~ // Sets two weapon fighting to 3
-  COPY ~houserules/spl/MO#ELD05.SPL~    ~override~ // Sets single weapon fighting to 1
-  COPY ~houserules/spl/MO#ELD06.SPL~    ~override~ // Sets single weapon fighting to 2
-  COPY ~houserules/spl/MO#ELD07.SPL~    ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20)
-  COPY ~houserules/spl/MOELD07.SPL~     ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20)
-  COPY ~houserules/eff/MO#ELD07.EFF~    ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20) 
-  COPY ~houserules/spl/MO#tsb01.SPL~    ~override~ // +1 Thaco
-  COPY ~houserules/spl/MO#tsb02.SPL~    ~override~ // -1 Thaco
-  
+LAF fl#add_kit_ee
+  INT_VAR
+    briefdesc = RESOLVE_STR_REF (@1002) 
+  STR_VAR 
+    kit_name = MO_ELDRITCH
+    clswpbon = ~1 0 3~
+    hpclass = HPPRS
+    numwslot = 2
 END
+
+OUTER_SET eldritch_code = (0x4000 + %MO_ELDRITCH%)
+
+COPY ~skills-and-abilities/spl/kits/MO#APB01.SPL~         ~override~ // 0.5 APR Increase at level 8
+COPY ~skills-and-abilities/spl/kits/MO#APB02.SPL~         ~override~ // 0.5 APR Increase at level 15
+COPY ~skills-and-abilities/2da/MO_ELD01.2DA~              ~override~ // kit
+COPY ~skills-and-abilities/spl/kits/MO#ELD01.SPL~         ~override~ // Create this to have -1 spell slot
+COPY ~skills-and-abilities/spl/kits/MO#ELD07.SPL~         ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20)
+COPY ~skills-and-abilities/spl/kits/MOELD07.SPL~          ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20)
+COPY ~skills-and-abilities/eff/kits/MO#ELD07.EFF~         ~override~ // Add +1 Magic Damage every 5 levels (up to lvl 20) 
+COPY ~skills-and-abilities/spl/kits/MO#tsb01.SPL~         ~override~ // +1 Thaco
+COPY ~skills-and-abilities/spl/kits/MO#tsb02.SPL~         ~override~ // -1 Thaco
+  
+//Allow Mages and Sorcerers to equip any weapon, chain armor, and helmet (must still meet race/ability/alignment reqs)
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_SHORT 0x31 prof ELSE 0
+    READ_SHORT 0x1c type ELSE 0
+    PATCH_IF (prof = 89 OR //bastard sword
+              prof = 90 OR //long sword
+              prof = 91 OR //short sword
+              prof = 92 OR //axe
+              prof = 93 OR //2h sword
+              prof = 94 OR //katana
+              prof = 95 OR //scimitar 
+              prof = 97 OR //war hammer
+              prof = 98 OR //spear
+              prof = 99 OR //halberd
+              prof = 100 OR //flail/morningstar
+              prof = 101 OR //mace
+              prof = 115 OR //club
+              ((type = 2) AND (~%appearance%~ STRING_COMPARE_CASE ~3a~ = 0)) OR // Chain Armor
+              type = 7) BEGIN // Helm
+          READ_BYTE 0x1e "bard"
+          READ_BYTE 0x1f "fighter"
+          PATCH_IF (("%fighter%" BAND "0b00001000") = "0b00000000") BEGIN 
+            READ_BYTE   0x20 "mage"
+            WRITE_BYTE 0x20 ("%mage%" BAND "0b11111011")
+            WRITE_BYTE 0x1e ("%bard%" BAND "0b10111111")
+            LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 parameter1 = 202 parameter2 = 5 power = 0 timing = 2 END
+          END 
+    END
+  END
+BUT_ONLY

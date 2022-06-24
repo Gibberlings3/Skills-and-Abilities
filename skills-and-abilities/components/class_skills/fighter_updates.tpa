@@ -7,15 +7,15 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/spl/MO#HLA07.SPL~ ~override~ // Epic Weapon Focus
+COPY ~skills-and-abilities/spl/MO#HLA07.SPL~      ~override~ // Epic Weapon Focus
   SAY NAME1 @9501
   SAY UNIDENTIFIED_DESC @9502
 
-COPY ~skills-and-abilities/spl/MO#HLA08.SPL~ ~override~ // Epic Weapon Specialization
+COPY ~skills-and-abilities/spl/MO#HLA08.SPL~      ~override~ // Epic Weapon Specialization
   SAY NAME1 @9503
   SAY UNIDENTIFIED_DESC @9504
 
-COPY ~skills-and-abilities/spl/MO#APB01.SPL~ ~override~ // 0.5 APR Increase at level 20
+COPY ~skills-and-abilities/spl/kits/MO#APB01.SPL~ ~override~ // 0.5 APR Increase at level 20
 
 ///////////////////////////////////////////////////////////////////////////
 // Add Fighter HLAs                                                      //
