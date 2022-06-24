@@ -40,9 +40,10 @@ Advantages:
 
 PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack against any enemy. Psi Warriors apply their Intelligence modifier to their damage roll for one round.
 <details>
-  <summary>Details of damage</summary>
+  <summary>Damage Details</summary>
 
-```   13 Intelligence: +1 damage
+```   
+  13 Intelligence: +1 damage
   14 Intelligence: +2 damage
   15 Intelligence: +3 damage
   16 Intelligence: +4 damage
@@ -61,9 +62,10 @@ PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack aga
 
 PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance based on his Intelligence modifier and lasts for one turn.
 <details>
-  <summary>Details of resistances</summary>
+  <summary>Resistances Details</summary>
 
-```   13 Intelligence: +2% physical damage resistance
+```   
+  13 Intelligence: +2% physical damage resistance
   14 Intelligence: +4% physical damage resistance
   15 Intelligence: +6% physical damage resistance
   16 Intelligence: +8% physical damage resistance

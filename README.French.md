@@ -42,7 +42,8 @@ CHOC PSIONIQUE : Pendant un round, cette capacité permet à l'Esprit Guerrier d
 <details>
   <summary>Détails des dégâts</summary>
   
-```	13 en Intelligence : +1 point de dégâts  
+```	
+  13 en Intelligence : +1 point de dégâts  
 	14 en Intelligence : +2 points de dégâts  
 	15 en Intelligence : +3 points de dégâts  
 	16 en Intelligence : +4 points de dégâts  
@@ -63,7 +64,8 @@ CHAMP DE FORCE : Pendant un round, cette capacité permet à l'Esprit Guerrier d
 <details>
   <summary>Détails des résistances</summary>
   
-```	13 en Intelligence : +2 % de résistance aux dégâts physiques  
+```	
+  13 en Intelligence : +2 % de résistance aux dégâts physiques  
 	14 en Intelligence : +4 % de résistance aux dégâts physiques  
 	15 en Intelligence : +6 % de résistance aux dégâts physiques  
 	16 en Intelligence : +8 % de résistance aux dégâts physiques  
