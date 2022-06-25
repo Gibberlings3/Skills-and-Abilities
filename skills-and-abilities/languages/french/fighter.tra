@@ -1,0 +1,16 @@
+// Skills and Abilities, American English
+// Proficiency range @9501 to @10000
+///////////////////////////////////////////////////////////////////////////
+// Groups                                                                //
+///////////////////////////////////////////////////////////////////////////
+@9501 = ~Concentration Épique~
+@9502 = ~Concentration Épique
+Les combattants gagne un bonus de 2 au TAC0.~
+
+@9503 = ~Convergence Épique~
+@9504 = ~Convergence Épique
+Les combattants gagne un bonus de 2 aux dégâts.
+
+Nécessite : Concentration Épique~
+
+@10000 = ~[LAST TRA HERE]~

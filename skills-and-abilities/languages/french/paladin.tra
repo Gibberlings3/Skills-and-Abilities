@@ -15,12 +15,11 @@ Vous infligez 2 points de dégâts magiques supplémentaires avec vos attaques.~
 
 - 1er niveau : Peut utiliser la capacité Punition une fois par jour
 
-PUNITION : Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur niveau de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round. Punition peut être utilisé une fois par jour au 1er niveau. Le paladin gagne une utilisation supplémentaire au 5e niveau et tous les cinq niveaux suivants.
+PUNITION : Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur niveau de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round. Punition peut être utilisé une fois par jour au 1er niveau. Le paladin gagne une utilisation supplémentaire au 5e niveau et tous les cinq niveaux suivants.~
 
-/*
-- 3ème niveau : Gagne la capacité passive Aura de Courage.
+/*- 3ème niveau : Gagne la capacité passive Aura de Courage.
 
-AURA DE COURAGE : Cette capacité confère une protection contre toutes les formes de panique, augmente le moral et accorde un bonus de 2 à tous les jets de sauvegarde du personnage et de ses alliés dans un rayon de 5 mètres.~*/
+AURA DE COURAGE : Cette capacité confère une protection contre toutes les formes de panique, augmente le moral et accorde un bonus de 2 à tous les jets de sauvegarde du personnage et de ses alliés dans un rayon de 5 mètres.~ */
 
 @6007 = ~Niveau : Peut utiliser la capacité Aura de désespoir une fois par jour.
 
