@@ -7,11 +7,11 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/spl/MO#HLA07.SPL~      ~override~ // Epic Weapon Focus
+COPY ~skills-and-abilities/spl/MO#HLA07.SPL~      ~override~ // HLA - Epic Weapon Focus
   SAY NAME1 @9501
   SAY UNIDENTIFIED_DESC @9502
 
-COPY ~skills-and-abilities/spl/MO#HLA08.SPL~      ~override~ // Epic Weapon Specialization
+COPY ~skills-and-abilities/spl/MO#HLA08.SPL~      ~override~ // HLA - Epic Weapon Specialization
   SAY NAME1 @9503
   SAY UNIDENTIFIED_DESC @9504
 

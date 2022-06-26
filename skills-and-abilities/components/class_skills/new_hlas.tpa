@@ -60,22 +60,6 @@ COPY ~skills-and-abilities/spl/MO#HLA15.SPL~       ~override~ // Improved Critic
   SAY UNIDENTIFIED_DESC @8034
 
 ///////////////////////////////////////////////////////////////////////////
-// Add HLAs - Fighter Class                                              //
-///////////////////////////////////////////////////////////////////////////
-ACTION_FOR_EACH class IN
-      2  // FIGHTER
-      7  // FIGHTER_MAGE
-      8  // FIGHTER_CLERIC
-      9  // FIGHTER_THIEF
-      10 // FIGHTER_MAGE_THIEF
-      16 // FIGHTER_DRUID
-      17 // FIGHTER_MAGE_THIEF
-    BEGIN
-      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA07 END
-      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA08 prerequisite = AP_MO#HLA07 END      
-END
-
-///////////////////////////////////////////////////////////////////////////
 // Add HLAs - Warrior Classes                                            //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_FOR_EACH class IN
