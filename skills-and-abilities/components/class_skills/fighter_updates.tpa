@@ -15,7 +15,14 @@ COPY ~skills-and-abilities/spl/MO#HLA08.SPL~      ~override~ // HLA - Epic Weapo
   SAY NAME1 @9503
   SAY UNIDENTIFIED_DESC @9504
 
+COPY ~skills-and-abilities/spl/MO2WIND.SPL~       ~override~ // Second Wind
+  SAY NAME1 @9505
+  SAY UNIDENTIFIED_DESC @9506
+
 COPY ~skills-and-abilities/spl/kits/MO#APB01.SPL~ ~override~ // 0.5 APR Increase at level 20
+COPY ~skills-and-abilities/spl/MO#IND01.SPL~      ~override~ // Indomitable 1
+COPY ~skills-and-abilities/spl/MO#IND02.SPL~      ~override~ // Indomitable 2
+COPY ~skills-and-abilities/spl/MO#IND03.SPL~      ~override~ // Indomitable 3
 
 ///////////////////////////////////////////////////////////////////////////
 // Add Fighter HLAs                                                      //
@@ -38,6 +45,10 @@ END
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABFI01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 20 f_MaxLevel = 20 STR_VAR f_Entry = AP_MO#APB01 END // +0.5 APR at Level 20
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 9 f_MaxLevel = 9 STR_VAR f_Entry = AP_MO#IND01 END // Indomitable 1
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_MO#IND02 END // Indomitable 2
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 17 f_MaxLevel = 17 STR_VAR f_Entry = AP_MO#IND03 END // Indomitable 3
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MO2WIND END // Second Wind
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -58,9 +69,43 @@ COPY_EXISTING ~CLABFI01.2DA~ override
       // Add new abilities to all Fighter kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 20 f_MaxLevel = 20 STR_VAR f_Entry = AP_MO#APB01 END // +0.5 APR at Level 20
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 9 f_MaxLevel = 9 STR_VAR f_Entry = AP_MO#IND01 END // Indomitable 1
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_MO#IND02 END // Indomitable 2
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 17 f_MaxLevel = 17 STR_VAR f_Entry = AP_MO#IND03 END // Indomitable 3
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MO2WIND END // Second Wind
         PRETTY_PRINT_2DA
       BUT_ONLY
       END
     END
   END
+  END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Fighter Description                                            //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH description IN 
+    clastext 
+    sodcltxt 
+  BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%description%.2da~ BEGIN
+      COPY_EXISTING ~%description%.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 0; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 0 col_count row_name
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "FIGHTER" BEGIN
+          READ_2DA_ENTRY index 4 col_count fighter_desc
+          SPRINT old_fight @9507
+          SPRINT new_fight @9508
+          GET_STRREF %fighter_desc% fighter_text
+          INNER_PATCH_SAVE fighter_text ~%fighter_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_fight%~ ~%new_fight%~
+          END
+          INNER_ACTION BEGIN
+            STRING_SET_EVALUATE ~%fighter_desc%~ ~%fighter_text%~
+          END
+        END
+      END
+      BUT_ONLY
+    END
   END

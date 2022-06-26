@@ -13,4 +13,20 @@ The warrior gains +2 bonus to damage.
 
 Requires: Epic Weapon Focus~
 
+@9505 = ~Second Wind~
+@9506 = ~Second Wind (Self-Only)
+You have a limited well of stamina that you can draw on to protect yourself from harm. Once day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.~
+
+@9507 = ~– Hit Die: d10~
+@9508 = ~– Hit Die: d10
+– 1st Level: May use Second Wind once per day.
+
+SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
+
+– 9th Level: Gains the Indomitable passive ability.
+
+INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
+
+– 20th Level: The fighter gains an additional +0.5 apr bonus.~
+
 @10000 = ~[LAST TRA HERE]~
