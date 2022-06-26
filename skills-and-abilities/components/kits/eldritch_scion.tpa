@@ -41,7 +41,7 @@ COPY ~skills-and-abilities/eff/kits/MO#ELD07.EFF~         ~override~ // Add +1 M
 COPY ~skills-and-abilities/spl/kits/MO#tsb01.SPL~         ~override~ // +1 Thaco
 COPY ~skills-and-abilities/spl/kits/MO#tsb02.SPL~         ~override~ // -1 Thaco
   
-//Allow Mages and Sorcerers to equip any weapon, chain armor, and helmet (must still meet race/ability/alignment reqs)
+//Allow Sorcerers to equip any weapon, chain armor, and helmet (must still meet race/ability/alignment reqs)
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
     READ_SHORT 0x31 prof ELSE 0
