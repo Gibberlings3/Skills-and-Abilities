@@ -1,6 +1,5 @@
 // Eldritch Scion kit for Sorcerer for Skills and Abilities
 
-// NEED TO UPDATE ALL OF THESE
 ADD_KIT ~MO_ELDRITCH~
   ~MO_ELDRITCH 0 0 0 0 0 0 0 0~ // clasweap.2da
   ~MO_ELDRITCH 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~ //weapprof.2da
