@@ -145,6 +145,14 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 INCLUDE ~skills-and-abilities/components/class_skills/blade_kit.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Add New Fighter Abilities                                             //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @150 DESIGNATED 150 GROUP @1 LABEL SkillsAndAbilitiesFighter
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+INCLUDE ~skills-and-abilities/components/class_skills/fighter_updates.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Allow Fighter Multiclasses to Achieve Higher than Specialized         //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @141 DESIGNATED 141 SUBCOMPONENT @140 GROUP @1 LABEL SkillsAndAbilitiesWeaponProf1 
