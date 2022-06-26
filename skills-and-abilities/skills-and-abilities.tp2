@@ -33,6 +33,19 @@ LANGUAGE ~English~
          ~skills-and-abilities/languages/english/fighter.tra~
 LANGUAGE ~French~
          ~french~
+         ~skills-and-abilities/languages/english/setup.tra~
+         ~skills-and-abilities/languages/english/barbarian.tra~
+         ~skills-and-abilities/languages/english/bard.tra~
+         ~skills-and-abilities/languages/english/paladin.tra~
+         ~skills-and-abilities/languages/english/monk.tra~
+         ~skills-and-abilities/languages/english/proficiency_descriptions.tra~
+         ~skills-and-abilities/languages/english/ranger.tra~
+         ~skills-and-abilities/languages/english/strength.tra~
+         ~skills-and-abilities/languages/english/wizard_slayer.tra~
+         ~skills-and-abilities/languages/english/hla_descriptions.tra~
+         ~skills-and-abilities/languages/english/turn_undead.tra~
+         ~skills-and-abilities/languages/english/kit_descriptions.tra~
+         ~skills-and-abilities/languages/english/fighter.tra~
          ~skills-and-abilities/languages/french/setup.tra~
          ~skills-and-abilities/languages/french/barbarian.tra~
          ~skills-and-abilities/languages/french/bard.tra~
@@ -45,6 +58,7 @@ LANGUAGE ~French~
          ~skills-and-abilities/languages/french/hla_descriptions.tra~
          ~skills-and-abilities/languages/french/turn_undead.tra~
          ~skills-and-abilities/languages/french/kit_descriptions.tra~
+         ~skills-and-abilities/languages/french/fighter.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
