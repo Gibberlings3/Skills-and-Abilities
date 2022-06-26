@@ -33,7 +33,7 @@ LANGUAGE ~English~
          ~skills-and-abilities/languages/english/fighter.tra~
 LANGUAGE ~French~
          ~french~
-		 ~skills-and-abilities/languages/english/setup.tra~
+	 ~skills-and-abilities/languages/english/setup.tra~
          ~skills-and-abilities/languages/english/barbarian.tra~
          ~skills-and-abilities/languages/english/bard.tra~
          ~skills-and-abilities/languages/english/paladin.tra~
@@ -58,7 +58,7 @@ LANGUAGE ~French~
          ~skills-and-abilities/languages/french/hla_descriptions.tra~
          ~skills-and-abilities/languages/french/turn_undead.tra~
          ~skills-and-abilities/languages/french/kit_descriptions.tra~
-		 ~skills-and-abilities/languages/french/fighter.tra~
+	 ~skills-and-abilities/languages/french/fighter.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
