@@ -57,7 +57,7 @@ COPY_EXISTING ~CLABFI01.2DA~ override
 ///////////////////////////////////////////////////////////////////////////
  COPY_EXISTING ~KITLIST.2DA~ ~override~
   READ_2DA_ENTRIES_NOW ~fig_kitlist~ 10
-  FOR (row = 3; row < fig_kitlist; row += 1) BEGIN
+  FOR (row = 1; row < fig_kitlist; row += 1) BEGIN
   READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 5 kit_clab
   READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 1 kit_label
   READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 8 kit_class
@@ -68,12 +68,14 @@ COPY_EXISTING ~CLABFI01.2DA~ override
       INNER_ACTION BEGIN
       // Add new abilities to all Fighter kits
       COPY_EXISTING ~%kit_clab%.2DA~ override
+      PATCH_IF !("%kit_label%" STRING_EQUAL_CASE "C0VNGD") BEGIN
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 20 f_MaxLevel = 20 STR_VAR f_Entry = AP_MO#APB01 END // +0.5 APR at Level 20
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 9 f_MaxLevel = 9 STR_VAR f_Entry = AP_MO#IND01 END // Indomitable 1
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_MO#IND02 END // Indomitable 2
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 17 f_MaxLevel = 17 STR_VAR f_Entry = AP_MO#IND03 END // Indomitable 3
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MO2WIND END // Second Wind
         PRETTY_PRINT_2DA
+      END
       BUT_ONLY
       END
     END
