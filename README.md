@@ -23,20 +23,20 @@ Some components require EEex to work, and those are identified with **(EEex Requ
 Sometimes referred to as Rashemi berserkers, are the legendary defenders of Rashemen that are known for flying into an almost supernatural frenzy on the battlefield. They are among the most respected members of Rashemi society, second to the revered Wychlaran.
 
 Advantages:
-– May use Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+- May use Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
 
 RAGE: The enraged state lasts for 1 turn. While enraged, a Berserker gains a bonus of +2 to his attack and damage rolls as well as to his Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The Berserker also gains 15 temporary Hit Points which are taken away at the end of his berserk spree, possibly knocking him unconscious.
 
 Disadvantages:
-– May not wear armor heavier than splint mail.
+- May not wear armor heavier than splint mail.
 
 ### Psi Warrior
 
 A Psi Warrior is a fighter who augments their physical might with psi-infused weapon strikes, telekinetic lashes, and barriers of mental force. Psi Warriors hone their skills and psionic abilities through solo discipline, unlocked under the tutelage of a master, or refined it at an academy dedicated to wielding the mind's power as both weapon and shield.
 
 Advantages:
-– 3rd Level: May use Psionic Strike once per day and gains an additional use every 4 levels thereafter.
-– 3rd Level: May use Protective Field once per day and gains an additional use every 4 levels thereafter.
+- 3rd Level: May use Psionic Strike once per day and gains an additional use every 4 levels thereafter.
+- 3rd Level: May use Protective Field once per day and gains an additional use every 4 levels thereafter.
 
 PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack against any enemy. Psi Warriors apply their Intelligence modifier to their damage roll for one round.
 <details>
@@ -82,25 +82,46 @@ PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance bas
 
 </details>
 
-– 7th Level: May use Telekinetic Movement once per day and gains an additional use every 5 levels thereafter.
+- 7th Level: May use Telekinetic Movement once per day and gains an additional use every 5 levels thereafter.
 
 TELEKINETIC MOVEMENT: The Psi Warrior can move a creature with his mind. The Psi Warrior may select to push or pull the target to himself. The target must make a save vs. Death to resist being moved by the Psi Warrior. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being moved by the Psi Warrior.
 
-– 10th Level: Gains the Guarded Mind passive ability.
+- 10th Level: Gains the Guarded Mind passive ability.
 
 GUARDED MIND: The Psi Warrior becomes immune to all psionic attacks.
 
-– 18th Level: May use Telekinetic Master once per day.
+- 18th Level: May use Telekinetic Master once per day.
 
 TELEKINETIC MASTER: The Psi Master is able to push or pull all targets within a 15' radius to a selected point. Targets must make a save vs. Death at -4 to resist being moved by the Psi Warrior.
 
 Disadvantages:
+- Race restricted to human.
+- May not dual class.
+- Hit Die: d8
 
-– Race restricted to human.
+### Eldritch Scion
 
-– May not dual class.
+Unlike typical mages, Eldritch Scions do not study tomes of magic or spend time learning to combine martial and magical skills. Rather, Eldritch Scions find that their spells and abilities come to them instinctively. 
 
-– Hit Die: d8
+An Eldritch Scion gains most of the features of a Sorcerer while gaining access to more martial prowess. 
+
+Advantages:
+- Hit Die: d8
+- Can achieve Specialization (2 points) in any melee weapon.
+- Can wear chain mail armor
+- Custom Thaco progression that is a hybrid between fighter and sorcerer.
+- Access to both fighter and sorcerer HLA tables.
+- Gains Enhance Weapon ability.
+
+ENHANCE WEAPON: The Eldritch Scion passively imbues <PRO_HISHER> melee weapon with magic dealing one extra point of magic damage. This magic damage increases by one for every five levels gained to a maximum of five magic damage at 20th level. Additional damage is affected by the target's magic resistance.
+
+- 8th Level: Gains .5 APR.
+- 15th Level: Gains an additional .5 APR.
+
+Disadvantages:
+- May cast one fewer spell per level per day.
+- Receive a -2 penalty to casting speed.
+- Receive a -2 penalty to casting level.
 
 ## Class Updates
 
@@ -358,3 +379,4 @@ The Overhaul Proficiency System Component is not compatible with other mods that
 - JohnBob for the French translation.
 - Ardanis and Graion Dilach for assistance with identifying if a creature is wearing plate armor and other coding assistance.
 - Argent77 for troubleshooting coding issues around REPLACE_TRIGGER_TEXT. 
+- Mike1072, Aquadrizzt, and Subtledoctor
