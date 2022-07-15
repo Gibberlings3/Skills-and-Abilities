@@ -100,6 +100,30 @@ Inconvénients :
 - Réservé aux humains.
 - Dés de vie : d8
 
+### Eldritch Scion
+
+À la différence des mages traditionnels, l'Eldritch Scion ne passe pas son temps à étudier magie ou à concilier ses compétences martiales et ses talents de magicien. En effet, ses aptitudes se développent spontanément. 
+
+L'Eldritch Scion bénéficie de la plupart des caractéristiques de l'ensorceleur, tout en étant capable de prouesses martiales.
+
+Avantages :
+– Dés de vie : d8
+– Peut atteindre la spécialisation (2 points de compétence) pour toutes les armes de mêlée.
+– Peut porter les armures en cotte de mailles.
+– Progression du TAC0 personnalisé, hybride entre le guerrier et l'ensorceleur.
+– Accède aux HLAs du guerrier et de l'ensorceleur.
+– Obtient la capacité Arme acérée.
+
+ARME ACÉRÉE : L'Eldritch Scion imprègne naturellement son arme avec sa magie ce qui lui permet d'infliger des dégâts additionnels. Il génère un point de dégât magique supplémentaire tous les cinq niveaux, pour un maximum de cinq points de dégâts magiques au niveau 20. La résistance à la magie de la cible aura une influence.
+
+– 8ème niveau : Acquiert une demi attaque supplémentaire par round.
+– 15ème niveau : Acquiert à nouveau une demi attaque supplémentaire par round.
+
+Inconvénients :
+– Peut lancer un sort de moins que  l'ensorceleur par niveau et par jour.
+– Pénalité de -2 au temps d'incantation des sorts.
+– Pénalité de -2 au niveau du lanceur de sorts.
+
 ## Mises a Jour des Classes de Personnage
 
 ### Mise a jour des capacités des Bardes (EEex nécessaire)
@@ -109,6 +133,22 @@ Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit
 ### Permettre au Maître-lames de se spécialiser dans les armes de mêlée
 
 Cette option permet au Maître-lames de se spécialiser (2 points de compétence) dans les armes de mêlée. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
+
+### Add New Fighter Abilities
+
+– 1er niveau : Peut utiliser Second souffle une fois par jour.
+
+SECOND SOUFFLE : Vous disposez, dans une certaine mesure, de la capacité de puiser dans vos réserves pour vous protéger des dangers. Une fois par jour, le guerrier peut utiliser Second souffle, afin de regagner 1d10 points de vie auxquels s'ajoute votre niveau actuel de guerrier.
+
+– 9ème niveau: Gagne la capacité passive Irréductible.
+
+IRRÉDUCTIBLE : Le guerrier bénéficie de +1 à tous ses jets de sauvegarde. Ce bonus passe à +2 au niveau 13 et enfin +3 au niveau 17.
+
+– 20ème niveau : Le guerrier gagne une demi-attaque supplémentaire par round.
+
+CONCENTRATION ÉPIQUE : Les combattants gagne un bonus de 2 au TAC0.
+
+CONVERGENCE ÉPIQUE (NÉCESSITE CONCENTRATION ÉPIQUE): Les combattants gagne un bonus de 2 aux dégâts.
 
 ### Permettre au guerrier multi-classé de dépasser la spécialisation (2 points de compétence) pour les compétences d'armes
 
@@ -360,3 +400,4 @@ Le composant "Revision du Systeme de Competence" ( Overhaul Proficiency System )
 - Bubb pour tout son travail sur EEex et son aide générale en codage.
 - aVENGER pour l'utilisation d'une fonction permettant de mettre à jour les fichiers clab.
 - CamDawg_G3 et the_bigg pour l'utilisation de leur code comme référence lors de la consolidation des compétences d'armes dans les groupes d'armes et pour leur aide générale en codage. 
+- Mike1072, Aquadrizzt, and Subtledoctor
