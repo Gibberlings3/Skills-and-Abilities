@@ -137,7 +137,7 @@ This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons. Thi
 
 - 1st Level: May use Second Wind once per day.
 
-SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
+SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
 
 - 9th Level: Gains the Indomitable passive ability.
 
