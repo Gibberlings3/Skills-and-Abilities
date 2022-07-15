@@ -133,6 +133,24 @@ Adds the option to either select Open Locks only or Open Locks and Disarm/Find T
 
 This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice.
 
+### Add New Fighter Abilities
+
+- 1st Level: May use Second Wind once per day.
+
+SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
+
+- 9th Level: Gains the Indomitable passive ability.
+
+INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
+
+- 20th Level: The fighter gains an additional +0.5 apr bonus.
+
+- New HLA Abilities: Epic Weapon Focus and Epic Weapon Specialization.
+
+EPIC WEAPON FOCUS: The warrior gains +2 bonus to Thac0.
+
+EPIC WEAPON SPECIALIZATION (REQUIRES EPIC WEAPON FOCUS): The warrior gains +2 bonus to damage.
+
 ### Allow Fighter Multiclasses to Achieve Higher than Specialized (2 pips) in Weapons Proficiencies
 
 This allows to select if multiclass fighters can achieve Master (3 pips), High Master (4 pips), or Grand Master (5 pips). 
@@ -242,10 +260,6 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 **EPIC PROWESS:** The character's skill at combat grows and (s)he gains a +1 bonus to Thac0.
 
 **ARMOR SKIN:** The character's natural armor bonus to Armor Class increases by 1.
-
-**EPIC WEAPON FOCUS (FIGHTERS ONLY):** The warrior gains +2 bonus to Thac0.
-
-**EPIC WEAPON SPECIALIZATION (FIGHTERS ONLY - REQUIRES EPIC WEAPON FOCUS):** The warrior gains +2 bonus to damage.
 
 **IMPROVED CRITICAL (WARRIOR CLASSES ONLY)** The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.
 
