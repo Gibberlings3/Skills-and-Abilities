@@ -48,6 +48,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
     READ_SHORT 0x31 prof ELSE 0
     READ_SHORT 0x1c type ELSE 0
+    READ_ASCII 0x22 appearance (2)
     PATCH_IF (prof = 89 OR //bastard sword
               prof = 90 OR //long sword
               prof = 91 OR //short sword
