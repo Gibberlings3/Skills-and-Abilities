@@ -69,7 +69,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
             READ_BYTE   0x20 "mage"
             WRITE_BYTE 0x20 ("%mage%" BAND "0b11111011")
             WRITE_BYTE 0x1e ("%bard%" BAND "0b10111111")
-            //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = 1 parameter2 = 5 power = 0 timing = 2 END
+            LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = 1 parameter2 = 5 power = 0 timing = 2 END
             //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = 19 parameter2 = 5 power = 0 timing = 2 END
           END 
     END
