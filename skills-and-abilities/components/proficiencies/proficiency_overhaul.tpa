@@ -1881,6 +1881,7 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
               new_pip_amount += 4 // 4 pips at level 1
             END
 
+/* OLD STYLE WITH 1 PIP FOR MAGES
   // Cycle through all Mage and Sorcerer to capture starting pips
   PATCH_IF ((class = 1) OR                                    // Mage
             ((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
@@ -1906,7 +1907,29 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             (class = 21)) BEGIN                               // Shaman
               new_pip_amount += 2 // 2 pips at level 1
             END
+*/
 
+  // Cycle through all mages, sorcerers, clerics, druids, shamans, monks, theives, and bards to capture starting pips
+  PATCH_IF ((class = 1) OR                                    // Mage
+            ((class = 3) OR                                   // Cleric
+            (class = 4) OR                                    // Thief
+            (class = 5) OR                                    // Bard
+            ((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
+            ((class =  8) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Fighter
+            ((class =  9) AND ((dual & BIT6) = BIT6)) OR      // Thief->Fighter
+            (class = 11) OR                                   // Druid
+            ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
+            ((class = 13) AND !((dual & BIT4) = BIT4)) OR     // Thief_Mage
+            ((class = 14) AND ((dual & BIT4) = BIT4)) OR      // Mage->Cleric
+            ((class = 14) AND !((dual & BIT4) = BIT4)) OR     // Cleric_Mage
+            (class = 15) OR                                   // Cleric_Thief
+            ((class = 16) AND ((dual & BIT7) = BIT7)) OR      // Druid->Fighter
+            ((class = 18) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Ranger
+            (class = 19)) OR                                  // Sorcerer
+            (class = 20) OR                                   // Monk
+            (class = 21)) BEGIN                               // Shaman
+              new_pip_amount += 2 // 2 pips at level 1
+            END
   // Accelerated Profs
   PATCH_IF accelerated_profs BEGIN
     
