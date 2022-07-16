@@ -1,3 +1,11 @@
+## Version 0.8.1.1 alpha
+
+July 15, 2022
+
+### Changed
+
+- Fixed line of code in Eldritch Scion allowing the kit to use Chain armor.
+
 ## Version 0.8.1 alpha
 
 July 14, 2022
