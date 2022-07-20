@@ -501,13 +501,13 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 13  8 1 ~1~   // BARD - Devotion Prof
     SET_2DA_ENTRY 11  9 1 ~5~   // PALADIN - Armor Prof
     SET_2DA_ENTRY 12  9 1 ~1~   // PALADIN - Spellcraft Prof
-    SET_2DA_ENTRY 13  9 1 ~2~   // PALADIN - Devotion Prof
+    SET_2DA_ENTRY 13  9 1 ~5~   // PALADIN - Devotion Prof
     SET_2DA_ENTRY 11 10 1 ~2~   // DRUID - Armor Prof
     SET_2DA_ENTRY 12 10 1 ~1~   // DRUID - Spellcraft Prof
     SET_2DA_ENTRY 13 10 1 ~5~   // DRUID - Devotion Prof
     SET_2DA_ENTRY 11 11 1 ~5~   // RANGER - Armor Prof
     SET_2DA_ENTRY 12 11 1 ~1~   // RANGER - Spellcraft Prof
-    SET_2DA_ENTRY 13 11 1 ~2~   // RANGER - Devotion Prof
+    SET_2DA_ENTRY 13 11 1 ~5~   // RANGER - Devotion Prof
     SET_2DA_ENTRY 11 12 1 ~5~   // FIGHTER_MAGE - Armor Prof
     SET_2DA_ENTRY 12 12 1 ~5~   // FIGHTER_MAGE - Spellcraft Prof
     SET_2DA_ENTRY 13 12 1 ~1~   // FIGHTER_MAGE - Devotion Prof
@@ -968,7 +968,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
-          SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // Devotion Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1140,7 +1140,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
           SET_2DA_ENTRY 11 (col + 1) 1 ~5~   // Armor Prof
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
-          SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // Devotion Prof
+          SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
