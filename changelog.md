@@ -5,6 +5,7 @@ July xx, 2022
 ### Changed
 
 - Allow Paladins and Rangers to get 5 pips in Divine Proficiency.
+- Add Elf racial bonus to short swords.
 
 ## Version 0.8.1.1 alpha
 
