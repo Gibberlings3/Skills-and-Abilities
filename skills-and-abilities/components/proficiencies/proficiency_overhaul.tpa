@@ -1511,6 +1511,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_PRINT ~Moving %weapon_name% to the Spiked weapon group~
   END
 
+  // Add +1 Thac0 to Short Swords if Elf
+  PATCH_IF (prof = 91) BEGIN
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MORATHA~ END 
+  END
+
   // Small Sword Weapon Group
   PATCH_IF (prof = 91) OR (prof = 96) BEGIN
     WRITE_BYTE 0x31 99
