@@ -111,7 +111,6 @@ Avantages :
 – Peut atteindre la spécialisation (2 points de compétence) pour toutes les armes de mêlée.
 – Peut porter les armures en cotte de mailles.
 – Progression du TAC0 personnalisé, hybride entre le guerrier et l'ensorceleur.
-– Accède aux HLAs du guerrier et de l'ensorceleur.
 – Obtient la capacité Arme acérée.
 
 ARME ACÉRÉE : L'Eldritch Scion imprègne naturellement son arme avec sa magie ce qui lui permet d'infliger des dégâts additionnels. Il génère un point de dégât magique supplémentaire tous les cinq niveaux, pour un maximum de cinq points de dégâts magiques au niveau 20. La résistance à la magie de la cible aura une influence.
@@ -263,10 +262,6 @@ Le talent naturel pour repousser les morts-vivants est remplacé par une nouvell
 **PROUESSES ÉPIQUES :** Les compétences de combat du personnage augmentent, bonus de 1 au TAC0.
 
 **PEAU CUIRASSÉE :** Le personnage bénéficie d'un bonus de 1 à la classe d'armure.
-
-**CONCENTRATION ÉPIQUE (UNIQUEMENT POUR LES COMBATTANTS) :** Les combattants gagne un bonus de 2 à TAC0.
-
-**CONVERGENCE ÉPIQUE (UNIQUEMENT POUR LES COMBATTANTS - NÉCESSITE CONCENTRATION ÉPIQUE) :** Les combattants gagne un bonus de 2 aux dégâts.
 
 **AMÉLIORATION CRITIQUE (UNIQUEMENT POUR LES COMBATTANTS) :** Le personnage augmente ses chances de dégâts critique par 2. Par exemple, une épée longue qui inflige normalement un coup critique sur un jet de 19-20 permettra dorénavant d'obtenir un coup critique sur un jet de 17-20.
 
