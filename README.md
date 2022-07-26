@@ -109,7 +109,7 @@ Advantages:
 - Hit Die: d8
 - Can achieve Specialization (2 points) in any melee weapon.
 - Can wear chain mail armor
-- Custom Thaco progression that is a hybrid between fighter and sorcerer.
+- Custom Thac0 progression that is a hybrid between fighter and sorcerer.
 - Gains Enhance Weapon ability.
 
 ENHANCE WEAPON: The Eldritch Scion passively imbues <PRO_HISHER> melee weapon with magic dealing one extra point of magic damage. This magic damage increases by one for every five levels gained to a maximum of five magic damage at 20th level. Additional damage is affected by the target's magic resistance.
