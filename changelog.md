@@ -4,7 +4,7 @@ July 29, 2022
 
 ### Changed
 
-- Replaced Divine Vengeance with Divine Agent
+- Replaced Divine Vengeance with Divine Agent.
 
 ## Version 0.8.2 alpha
 
