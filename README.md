@@ -336,7 +336,7 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 **DIVINE:**  This proficiency grants additional abilities and benefits to all divine spellcasters. All abilities are cumulative.
 - Divine Shield (1 slot): The character gains -1 bonus to AC.
 - Divine Fortune (2 slots): The character gains a +2 bonus to all saving throws.
-- Divine Vengeance (3 slots): Any enemy who damages the character will receive 2 points of magic damage.
+- Divine Agent (3 slots): The character becomes immune to hold and paralysis.
 - Divine Armor (4 slots): The character receives a 5% damage reduction to all physical attacks.
 - Divine Vigor (5 slots): The character receives a +0.5 bonus to APR.
 
