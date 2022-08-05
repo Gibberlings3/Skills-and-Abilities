@@ -118,7 +118,6 @@ ENHANCE WEAPON: The Eldritch Scion passively imbues <PRO_HISHER> melee weapon wi
 - 15th Level: Gains an additional .5 APR.
 
 Disadvantages:
-- May cast one fewer spell per level per day.
 - Receive a -2 penalty to casting speed.
 - Receive a -2 penalty to casting level.
 

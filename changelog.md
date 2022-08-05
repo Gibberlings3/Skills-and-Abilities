@@ -1,3 +1,11 @@
+## Version 0.9 alpha
+
+August xx, 2022
+
+### Changed
+
+- Removed spell per level per day penalty from Eldritch Scion.
+
 ## Version 0.8.4 alpha
 
 August 5, 2022
