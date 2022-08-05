@@ -1,3 +1,11 @@
+## Version 0.8.4 alpha
+
+August xx, 2022
+
+### Changed
+
+- Can achieve Grandmaster at level 8.
+
 ## Version 0.8.3 alpha
 
 July 29, 2022
