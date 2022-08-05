@@ -31,10 +31,10 @@ COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial
 
 ACTION_IF accelerated_profs THEN BEGIN
   COPY ~skills-and-abilities/2da/prof01.2DA~                ~override/PROFS.2DA~
-  COPY ~skills-and-abilities/2da/PROFSMAX.2da~              ~override~ 
+  COPY ~skills-and-abilities/2da/profsmax.2da~              ~override~ 
 END ELSE ACTION_IF nwn_profs THEN BEGIN
   COPY ~skills-and-abilities/2da/prof02.2DA~                ~override/PROFS.2DA~
-  COPY ~skills-and-abilities/2da/PROFSMAX.2da~              ~override~ 
+  COPY ~skills-and-abilities/2da/profsmax.2da~              ~override~ 
 END
 
 ACTION_FOR_EACH prof IN
