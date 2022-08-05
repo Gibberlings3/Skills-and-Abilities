@@ -214,7 +214,7 @@ Supprime Rage du barbare : le barbare ne disposera pas de la capacité spécial 
 
 - 1er niveau : Peut utiliser la capacité Punition une fois par jour
 
-PUNITION : Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur niveau de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round. Punition peut être utilisé une fois par jour au 1er niveau. Le paladin gagne une utilisation supplémentaire au 5e niveau et tous les cinq niveaux suivants.
+PUNITION : Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur modificateur de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round. Punition peut être utilisé une fois par jour au 1er niveau. Le paladin gagne une utilisation supplémentaire au 5e niveau et tous les cinq niveaux suivants.
 
 - 3ème niveau : Gagne la capacité passive Aura de Courage. Le Chevalier Noir disposera à la place de la capacité Aura de Désespoir et le Cavalier de la capacité Aura de Protection.
 
@@ -339,7 +339,7 @@ La progression des compétences est désormais plus proche du système de progre
 **DIVINITÉ :** Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
 - Bouclier Divin (1 point de compétence) : Le personnage bénéficie d'un bonus de 1 à sa classe d'armure.
 - Influence Divine (2 points de compétence) : Le personnage bénéficie d'un bonus de 2 à tous ses jets de sauvegarde.
-- Divine Vengeance (3 points de compétence) : Chaque adversaire qui inflige des dommages au personnage subit 2 points de dégâts magiques.
+- Agent Divin (3 points de compétence) : Le personnage devient immunisé contre l'immobilisation et la paralysie.
 - Protection Divine (4 points de compétence) : Le personnage reçoit 5 % de réduction contre tous les dégâts physiques.
 - Esprit-Saint (5 points de compétence) : Le personnage bénéficie d'une demi attaque supplémentaire par round.
 
@@ -358,7 +358,7 @@ La progression des compétences est désormais plus proche du système de progre
 
 **GRANDE ÉPÉE :** Cette classe d'arme permet au personnage d'utiliser les épées bâtardes, les épées à deux mains et les épées longues. Un voleur peut aussi choisir cette compétence, mais il ne pourra utiliser que l'épée longue. 
 
-**CIMETERRE / WAKIZASHI / NINJATŌ :** Cette classe d'arme permet au personnage de se servir des diverses épées orientales : Cimeterre, Wakizashi et Ninjatō. Un druide peut aussi choisir cette compétence, mais il ne pourra utiliser que les cimeterres.
+**SABRE :** Cette classe d'arme permet au personnage de manier les Cimeterres, Katanas, Wakizashis et Ninjatōs. Un druide peut aussi choisir cette compétence, mais ne pourra utiliser que les cimeterres.
 
 **HACHE :** Cette classe d'armes permet au personnage d'utiliser les haches d'armes et les haches de jet.
 
