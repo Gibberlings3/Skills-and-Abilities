@@ -1455,10 +1455,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (prof = 103) OR     // Crossbow
         (prof = 106) OR     // Dart
         (prof = 107) BEGIN  // Sling
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC02~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof2% timing = 2 STR_VAR resource = ~MOARC02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOARC01~ END
+    PATCH_IF !(type = 5) AND !(type = 31) BEGIN
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC02~ END 
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof2% timing = 2 STR_VAR resource = ~MOARC02~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOARC01~ END 
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOARC01~ END
+    END
   END
 
 /*

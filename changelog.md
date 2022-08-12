@@ -5,6 +5,7 @@ August xx, 2022
 ### Changed
 
 - Removed spell per level per day penalty from Eldritch Scion.
+- Proficiency overhaul bug fix to account for IRR changes to arrows and bolts.
 
 ## Version 0.8.4 alpha
 
