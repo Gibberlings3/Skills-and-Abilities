@@ -151,7 +151,7 @@ END
 ///////////////////                      Tracking                       ///////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 ACTION_IF !FILE_EXISTS_IN_GAME ~SPCL922.spl~ THEN BEGIN
- COPY ~%folder%/data/spl/SPCL922.spl~ ~override~   //tracking
+ COPY ~%folder%/spl/barbarian/SPCL922.spl~ ~override~   //tracking
         SAY NAME1 @4501              //barbarian reference (no need to duplicate)
         SAY NAME2 @4501              //barbarian reference (no need to duplicate)
         SAY UNIDENTIFIED_DESC @5001  //ranger reference (update by class)
