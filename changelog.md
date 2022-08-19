@@ -1,3 +1,19 @@
+## Version 0.9.2 alpha
+
+August xx, 2022
+
+### Changed
+
+- Corrected pip assignment for characters with single weapon style.
+
+## Version 0.9.1 alpha
+
+August 17, 2022
+
+### Changed
+
+- Fixed path to spcl922
+
 ## Version 0.9 alpha
 
 August 12, 2022

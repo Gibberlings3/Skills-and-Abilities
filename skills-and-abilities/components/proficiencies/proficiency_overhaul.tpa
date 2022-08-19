@@ -2160,7 +2160,7 @@ END
 
 // Single Weapon Style
 PATCH_IF (singleweapon > 0) BEGIN
-    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twohanded parameter2 = 113 timing = 9 END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = singleweapon parameter2 = 113 timing = 9 END
 END
 
 // Two Weapon Style
