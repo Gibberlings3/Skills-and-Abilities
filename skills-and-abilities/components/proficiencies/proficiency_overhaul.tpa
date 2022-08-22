@@ -1887,7 +1887,17 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             ((class = 16) AND !((dual & BIT7) = BIT7)) OR     // Fighter_Druid
             (class = 17) OR                                   // FMC
             ((class = 18) AND !((dual & BIT5) = BIT5))) BEGIN // Cleric_Ranger
-              new_pip_amount += 4 // 4 pips at level 1
+              PATCH_IF (level > 0) BEGIN
+                new_pip_amount += 4 // 4 pips at level 1
+              END
+            END
+
+  // Add 2 pips in two weapon fighting for rangers
+  PATCH_IF ((class = 12) OR                                   // Ranger   
+            (class = 18)) BEGIN                               // Cleric_Ranger (all multi/dual)
+              PATCH_IF (level > 0) BEGIN
+                new_pip_amount += 2 // 2 pips at level 1
+              END
             END
 
 /* OLD STYLE WITH 1 PIP FOR MAGES
@@ -1897,7 +1907,9 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
             ((class = 14) AND ((dual & BIT4) = BIT4)) OR      // Mage->Cleric
             (class = 19)) BEGIN                               // Sorcerer
-              new_pip_amount += 1 // 1 pip at level 1
+              PATCH_IF (level > 0) BEGIN
+                new_pip_amount += 1 // 1 pip at level 1
+              END
             END
 
   // Cycle through all clerics, druids, shamans, monks, theives, and bards to capture starting pips
@@ -1914,7 +1926,9 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             ((class = 18) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Ranger
             (class = 20) OR                                   // Monk
             (class = 21)) BEGIN                               // Shaman
-              new_pip_amount += 2 // 2 pips at level 1
+              PATCH_IF (level > 0) BEGIN
+                new_pip_amount += 2 // 2 pips at level 1
+              END
             END
 */
 
@@ -1937,7 +1951,9 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
             (class = 19)) OR                                  // Sorcerer
             (class = 20) OR                                   // Monk
             (class = 21)) BEGIN                               // Shaman
-              new_pip_amount += 2 // 2 pips at level 1
+              PATCH_IF (level > 0) BEGIN
+                new_pip_amount += 2 // 2 pips at level 1
+              END
             END
   // Accelerated Profs
   PATCH_IF accelerated_profs BEGIN
@@ -2169,7 +2185,7 @@ PATCH_IF (twoweapon > 0) BEGIN
 END
 
 // Assign profs to joinable NPC with free pips
-PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
+PATCH_IF (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) AND (level > 0) BEGIN
     // 1 Pip Heavy Armor if NOT a Fighter and is wearing plate armor
     PATCH_IF !(class = 2) AND (is_heavyarmor = 1) BEGIN 
         PATCH_IF (free_pips > 0) BEGIN
