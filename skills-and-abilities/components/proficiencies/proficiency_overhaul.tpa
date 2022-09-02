@@ -1740,10 +1740,16 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
   SPRINT spell_name ~%SOURCE_FILE%~
-  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN2~ END 
-  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen2% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN2~ END
-  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN1~ END 
-  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN1~ END
+  LPF SPELL_PEN_EFF RET value = value END
+  PATCH_IF value BEGIN
+    PATCH_PRINT ~Adding Spell Penetration to: %spell_name%~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN2~ END 
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen2% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN2~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN1~ END 
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN1~ END
+  END
+  
+BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////

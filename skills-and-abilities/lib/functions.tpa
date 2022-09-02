@@ -3853,3 +3853,110 @@ COPY_EXISTING tooltip.2da override
   PRETTY_PRINT_2DA
 END
 
+// Borrowed Heavily from Klatu
+DEFINE_PATCH_FUNCTION SPELL_PEN_EFF
+    INT_VAR abilLen = 0x28
+    RET     value
+BEGIN
+    value = 0
+    LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = abilLen RET ok = ok END
+    PATCH_IF ok BEGIN
+        READ_LONG 0x64 abilOff
+        READ_SHORT 0x68 abilNum
+        READ_LONG 0x6a fxOff
+        READ_SHORT 0x70 fxNum
+        FOR (a = 0; a < abilNum; ++a) BEGIN
+            abOff = abilOff + a * abilLen
+            READ_SHORT (abOff + 0x1e) afxNum
+            READ_SHORT (abOff + 0x20) afxIdx
+            FOR (f = 0; f < afxNum; ++f) BEGIN
+                fOff = fxOff + (afxIdx + f) * 0x30
+                READ_SHORT fOff op
+                PATCH_IF (op = 12) OR  // Damage
+                         (op = 24) OR  // Panic
+                         (op = 217) OR // Power Word, Sleep
+                         (op = 44) OR  // Strength
+                         (op = 80) BEGIN // Deafness
+                    value = 1
+                    f = afxNum
+                    a = abilNum
+                    fxNum = 0
+                END
+            END
+        END
+        FOR (f = 0; f < fxNum; ++f) BEGIN
+            fOff = fxOff + f * 0x30
+            READ_SHORT fOff op
+            PATCH_IF (op = opcode) BEGIN
+                value = 1
+                f = fxNum
+            END
+        END
+    END
+END
+
+// Taken from Klatu
+DEFINE_PATCH_FUNCTION SANITIZE_ITM_OR_SPL
+        INT_VAR abilLen = 0x28
+        RET     ok
+    BEGIN
+        ok = 0
+        off = SOURCE_SIZE
+        PATCH_IF (off >= 0x72) BEGIN
+            READ_LONG 0x64 abilOff
+            READ_SHORT 0x68 abilNum
+            READ_LONG 0x6a fxOff
+            READ_SHORT 0x6e fxIdx
+            READ_SHORT 0x70 fxNum
+            PATCH_IF ((fxOff >= 0x72 AND fxOff <= off) AND (abilNum = 0 OR (abilOff >= 0x72 AND abilOff <= (off - abilNum * abilLen)))) BEGIN
+                abilSize = abilNum * abilLen
+                PATCH_IF (abilOff != 0x72) BEGIN
+                    INSERT_BYTES 0x72 abilSize
+                    LPF COPY_BYTES INT_VAR src = abilOff + abilSize dst = 0x72 len = abilSize END
+                    DELETE_BYTES abilOff abilSize
+                    fxOff += abilSize
+                    WRITE_LONG 0x64 0x72
+                END
+                gapLen = fxOff - 0x72 - abilSize
+                fxOff = 0x72 + abilSize
+                DELETE_BYTES fxOff gapLen
+                WRITE_LONG 0x6a fxOff
+                off -= gapLen
+                afxCount = 0
+                proceed = 0
+                maxExtent = fxIdx + fxNum
+                FOR (ab = 0; ab < abilNum; ab = ab + 1) BEGIN
+                    abOff = 0x72 + ab * abilLen
+                    READ_SHORT (abOff + 0x1e) afxNum
+                    READ_SHORT (abOff + 0x20) afxIdx
+                    PATCH_IF (afxIdx != fxNum + afxCount) BEGIN
+                        proceed = 1
+                    END
+                    abMaxExtent = afxIdx + afxNum
+                    PATCH_IF (abMaxExtent > maxExtent) BEGIN
+                        maxExtent = abMaxExtent
+                    END
+                    afxCount += afxNum
+                END
+                PATCH_IF (fxOff + (maxExtent * 0x30) <= off) BEGIN
+                    ok = 1
+                    PATCH_IF (proceed) BEGIN
+                        INSERT_BYTES off (afxCount * 0x30)
+                        abCopied = 0
+                        FOR (ab = 0; ab < abilNum; ab = ab + 1) BEGIN
+                            abOff = 0x72 + ab * abilLen
+                            READ_SHORT (abOff + 0x1e) afxNum
+                            READ_SHORT (abOff + 0x20) afxIdx
+                            LPF COPY_BYTES INT_VAR src = fxOff + afxIdx * 0x30 dst = off + abCopied * 0x30 len = afxNum * 0x30 END
+                            WRITE_SHORT (abOff + 0x20) (fxNum + abCopied)
+                            abCopied = abCopied + afxNum
+                        END
+                        n = (fxOff + (fxIdx + fxNum) * 0x30) 
+                        DELETE_BYTES n (off - n)
+                        DELETE_BYTES fxOff (fxIdx * 0x30)
+                        WRITE_SHORT 0x6e 0
+                    END
+                END
+            END
+        END
+    END
