@@ -3964,3 +3964,12 @@ DEFINE_PATCH_FUNCTION SANITIZE_ITM_OR_SPL
             END
         END
     END
+
+DEFINE_PATCH_FUNCTION COPY_BYTES
+    INT_VAR src = 0 dst = 0 len = 0
+BEGIN
+    FOR (i = 0; i < len; ++i) BEGIN
+        READ_BYTE (src + i) n
+        WRITE_BYTE (dst + i) n
+    END
+END
