@@ -592,7 +592,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           60 // SHAMAN
         BEGIN
           SET_2DA_ENTRY 14 class_prof 1 ~5~   // Conditioning Prof
-          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          SET_2DA_ENTRY 29 class_prof 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 class_prof 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 class_prof 1 ~2~   // Archery Weapon Style
         END
