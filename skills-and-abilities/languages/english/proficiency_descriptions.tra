@@ -189,8 +189,12 @@ Tireless (4 slots): The character does not become fatigued to include after usin
 
 Fast Healing (5 slots): The character regenerates 1 hit point per round. This will stack with other methods of regeneration.~
 
-@7124 = ~~
-@7125 = ~~
+@7124 = ~Spell Penetration~
+@7125 = ~SPELL PENETRATION: This proficiency allows a caster to bypass a portion of a target's spell resistance.
+
+Spell Penetration (1 slot): The wizard can bypass 10% of a target's spell resistance.
+
+Greater Spell Penetration (2 slots): The wizard can bypass 25% of a target's spell resistance.~
 
 @7126 = ~~
 @7127 = ~~

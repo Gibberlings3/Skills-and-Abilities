@@ -17,6 +17,8 @@ COPY ~skills-and-abilities/spl/proficiencies/MOARC02.SPL~   ~override~ // Archer
 COPY ~skills-and-abilities/spl/proficiencies/MOARM06.SPL~   ~override~ // Armor 6th pip
 COPY ~skills-and-abilities/spl/proficiencies/MOARM66.SPL~   ~override~ // Armor 6th pip
 COPY ~skills-and-abilities/eff/proficiencies/MOARM06.EFF~   ~override~ // Armor 6th pip
+COPY ~skills-and-abilities/spl/proficiencies/MOSPEN1.SPL~   ~override~ // Spell Penetration
+COPY ~skills-and-abilities/spl/proficiencies/MOSPEN2.SPL~   ~override~ // Greater Spell Penetration
 /*
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS01.SPL~   ~override~ // Critical Striker Weapon Style
 COPY ~skills-and-abilities/spl/proficiencies/MOCRS02.SPL~   ~override~ // Critical Striker Weapon Style
@@ -247,6 +249,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 14 2 1 ~mocon1~
     SET_2DA_ENTRY 14 3 1 ~mocon2~
 
+    SET_2DA_ENTRY 29 0 1 ~SPELLPEN~
+    SET_2DA_ENTRY 29 2 1 ~mospen1~
+    SET_2DA_ENTRY 29 3 1 ~mospen2~
     //SET_2DA_ENTRY 29 0 1 ~CRITICAL~
     //SET_2DA_ENTRY 29 2 1 ~mocri1~
     //SET_2DA_ENTRY 29 3 1 ~mocri2~
@@ -267,6 +272,8 @@ REPLACE ~modev2~    @7121
 REPLACE ~mocon1~    @7122
 REPLACE ~mocon2~    @7123
 
+REPLACE ~mospen1~   @7124
+REPLACE ~mospen2~   @7125
 //REPLACE ~mocri1~    @7134
 //REPLACE ~mocri2~    @7135
 REPLACE ~moarc1~    @7128
@@ -281,6 +288,7 @@ APPEND ~stats.ids~ ~90 SPELLCRAFT~      UNLESS ~90 SPELLCRAFT~
 APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
 APPEND ~stats.ids~ ~92 CONDITIONING~    UNLESS ~92 CONDITIONING~
 
+APPEND ~stats.ids~ ~106 SPELLPEN~       UNLESS ~106 SPELLPEN~
 //APPEND ~stats.ids~ ~106 CRITICAL~       UNLESS ~106 CRITICAL~
 APPEND ~stats.ids~ ~107 ARCHERY~        UNLESS ~107 ARCHERY~
 
@@ -315,6 +323,10 @@ ACTION_FOR_EACH spell IN
 // Archery Weapon Style
 APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%107%TAB%1%TAB%2~
 APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
+
+// Spell Penetration
+APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%106%TAB%1%TAB%5~
+APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%106%TAB%2%TAB%5~
 
 /*
 // Critical Stiker Weapon Style
@@ -401,6 +413,14 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Conditioning - 5 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_con_prof5~ BEGIN
         SET con_prof5 = %row%
+
+      // SPELL PENETRATION ----------------------------------------------------//
+      // Spell Penetration - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spell_pen1~ BEGIN
+        SET spell_pen1 = %row%
+      // Spell Penetration - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spell_pen2~ BEGIN
+        SET spell_pen2 = %row%
 
       /*
       // CRITICAL STRIKER -----------------------------------------------------//
@@ -572,6 +592,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           60 // SHAMAN
         BEGIN
           SET_2DA_ENTRY 14 class_prof 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 class_prof 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 class_prof 1 ~2~   // Archery Weapon Style
         END
@@ -756,6 +777,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -800,6 +822,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -807,6 +830,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           PRETTY_PRINT_2DA
       END
@@ -846,6 +870,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -889,6 +914,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -928,6 +954,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -972,6 +999,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1016,6 +1044,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1037,6 +1066,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1058,6 +1088,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1079,6 +1110,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1100,6 +1132,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1144,6 +1177,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1187,6 +1221,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1209,6 +1244,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1230,6 +1266,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1251,6 +1288,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1272,6 +1310,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1293,6 +1332,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1313,6 +1353,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~5~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1356,6 +1397,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1396,6 +1438,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 12 (col + 1) 1 ~1~   // Spellcraft Prof
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
+          SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1691,6 +1734,16 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     END
   END
   BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Proficiencies to Spells                                         //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
+  SPRINT spell_name ~%SOURCE_FILE%~
+  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN2~ END 
+  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen2% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN2~ END
+  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN1~ END 
+  LPF CLONE_EFFECT INT_VAR match_target = 2 opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN1~ END
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
