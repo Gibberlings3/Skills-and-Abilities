@@ -325,8 +325,8 @@ APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%107%TAB%1%TAB%2~
 APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 
 // Spell Penetration
-APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%106%TAB%1%TAB%5~
-APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%106%TAB%2%TAB%5~
+APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%106%TAB%1%TAB%1~
+APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%106%TAB%2%TAB%1~
 
 /*
 // Critical Stiker Weapon Style
@@ -1743,10 +1743,14 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
   LPF SPELL_PEN_EFF RET value = value END
   PATCH_IF value BEGIN
     PATCH_PRINT ~Adding Spell Penetration to: %spell_name%~
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN2~ END 
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen2% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN2~ END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert = 0 STR_VAR resource = ~MOSPEN1~ END 
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 0 duration = 0 insert = 0 STR_VAR resource = ~MOSPEN1~ END
+    /*
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert_point = 0 STR_VAR resource = ~MOSPEN2~ END 
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen2% timing = 0 duration = 0 insert_point = 0 STR_VAR resource = ~MOSPEN2~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 1 duration = 0 resist_dispel = 0 probability1 = 100 insert_point = 0 STR_VAR resource = ~MOSPEN1~ END 
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 0 duration = 0 insert_point = 0 STR_VAR resource = ~MOSPEN1~ END
+    */
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 9 parameter1 = 0 parameter2 = %spell_pen2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 STR_VAR resource = ~MOSPEN2~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 STR_VAR resource = ~MOSPEN1~ END
   END
   
 BUT_ONLY
