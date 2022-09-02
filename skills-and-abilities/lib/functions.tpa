@@ -3887,7 +3887,11 @@ BEGIN
         FOR (f = 0; f < fxNum; ++f) BEGIN
             fOff = fxOff + f * 0x30
             READ_SHORT fOff op
-            PATCH_IF (op = opcode) BEGIN
+            PATCH_IF (op = 12) OR  // Damage
+                     (op = 24) OR  // Panic
+                     (op = 217) OR // Power Word, Sleep
+                     (op = 44) OR  // Strength
+                     (op = 80) BEGIN // Deafness
                 value = 1
                 f = fxNum
             END
