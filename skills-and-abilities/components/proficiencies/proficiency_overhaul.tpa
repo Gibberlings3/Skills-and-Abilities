@@ -1809,14 +1809,34 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
   SPRINT spell_name ~%SOURCE_FILE%~
   
+  /*
   // Swiftblade
   LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS01~ END
   LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS02~ END
   LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS03~ END
   LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS04~ END
   LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS05~ END
-  BUT_ONLY
-  
+  */
+
+  GET_OFFSET_ARRAY ab_array SPL_V10_HEADERS
+  PHP_EACH ab_array AS int => ab_off BEGIN
+  GET_OFFSET_ARRAY2 fx_array ab_off SPL_V10_HEAD_EFFECTS
+  PHP_EACH fx_array AS int => fx_off BEGIN
+    READ_SHORT fx_off fx_type
+
+    // Swiftblade
+    PATCH_IF (fx_type = 16) BEGIN
+      PATCH_PRINT ~Adding Swiftblade to: %spell_name%~
+      LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS01~ END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS02~ END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS03~ END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS04~ END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS05~ END
+    END
+  END
+  END
+BUT_ONLY
+
   /*
   LPF SPELL_PEN_EFF RET spen_value = spen_value END
   PATCH_IF spen_value BEGIN
