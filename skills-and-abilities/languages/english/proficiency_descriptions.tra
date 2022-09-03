@@ -190,14 +190,14 @@ Tireless (4 slots): The character does not become fatigued to include after usin
 Fast Healing (5 slots): The character regenerates 1 hit point per round. This will stack with other methods of regeneration.~
 
 @7124 = ~Spell Penetration~
-@7125 = ~SPELL PENETRATION: This proficiency allows a caster to bypass a portion of a target's spell resistance.
+@7125 = ~SPELL PENETRATION: This proficiency allows a caster to bypass a portion of a target's magic resistance.
 
-Spell Penetration (1 slot): The wizard can bypass 10% of a target's spell resistance.
+Spell Penetration (1 slot): The wizard can bypass 10% of a target's magic resistance.
 
-Greater Spell Penetration (2 slots): The wizard can bypass 25% of a target's spell resistance.~
+Greater Spell Penetration (2 slots): The wizard can bypass 25% of a target's magic resistance.~
 
-@7126 = ~~
-@7127 = ~~
+@7126 = ~Pale Master~
+@7127 = ~PALE MASTER: ~
 
 @7128 = ~Archery Weapon Style~
 @7129 = ~ARCHERY:  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
@@ -206,8 +206,18 @@ Marksman (1 slot): The character gains a +2 bonus to damage rolls.
 
 Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.~
 
-@7130 = ~~
-@7131 = ~~
+@7130 = ~Swiftblade~
+@7131 = ~SWIFTBLADE: This proficiency allows one to combine arcane-assisted speed with melee skill to turn a first strike into a deadly assault. With this proficiency, one discovers unconventional ways to utilize the haste spell. All abilities are cumulative.
+
+Arcane Reflexes (1 slot): The character gains a -2 bonus to Speed Factor while under the effects of a haste spell.
+
+Swift Surge (2 slots): The character gains +1 bonus to Thac0 and AC while under the effects of a haste spell.
+
+Blurred Alacrity (3 slots): The character becomes blurred while under the effects of a haste spell.
+
+Greater Swift Surge (4 slots): The character gains an additional bonus to Thac0 and AC bringing it to +2 while under the effects of a haste spell.
+
+Evasive Celerity (5 slots): The character gains +10% magic resistance while under the effects of a haste spell.~
 
 @7132 = ~~
 @7133 = ~~
