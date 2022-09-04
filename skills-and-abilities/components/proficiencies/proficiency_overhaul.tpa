@@ -69,6 +69,11 @@ ACTION_FOR_EACH prof IN
       COPY ~skills-and-abilities/spl/proficiencies/MOHAS0%prof%.SPL~       ~override~
       COPY ~skills-and-abilities/spl/proficiencies/MOHAS%prof%%prof%.SPL~  ~override~
       COPY ~skills-and-abilities/eff/proficiencies/MOHAS0%prof%.EFF~       ~override~
+      // Pale Master Profs
+      COPY ~skills-and-abilities/spl/proficiencies/MOPMA0%prof%.SPL~       ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MOPMA%prof%%prof%.SPL~  ~override~
+      COPY ~skills-and-abilities/eff/proficiencies/MOPMA0%prof%.EFF~       ~override~
+      COPY ~skills-and-abilities/spl/proficiencies/MOPMAC%prof%.SPL~       ~override~
     END
 
 // Import Blank Wizard/Sorcerer CLAB Files
@@ -255,6 +260,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 15 0 1 ~SWIFTBLADE~
     SET_2DA_ENTRY 15 2 1 ~mohas1~
     SET_2DA_ENTRY 15 3 1 ~mohas2~
+    SET_2DA_ENTRY 16 0 1 ~PALEMASTER~
+    SET_2DA_ENTRY 16 2 1 ~mopma1~
+    SET_2DA_ENTRY 16 3 1 ~mopma2~
 
 
     //SET_2DA_ENTRY 29 0 1 ~SPELLPEN~
@@ -281,6 +289,8 @@ REPLACE ~mocon1~    @7122
 REPLACE ~mocon2~    @7123
 REPLACE ~mohas1~    @7130
 REPLACE ~mohas2~    @7131
+REPLACE ~mopma1~    @7126
+REPLACE ~mopma2~    @7127
 
 //REPLACE ~mospen1~   @7124
 //REPLACE ~mospen2~   @7125
@@ -298,6 +308,7 @@ APPEND ~stats.ids~ ~90 SPELLCRAFT~      UNLESS ~90 SPELLCRAFT~
 APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
 APPEND ~stats.ids~ ~92 CONDITIONING~    UNLESS ~92 CONDITIONING~
 APPEND ~stats.ids~ ~93 SWIFTBLADE~      UNLESS ~93 SWIFTBLADE~
+APPEND ~stats.ids~ ~94 PALEMASTER~      UNLESS ~94 PALEMASTER~
 
 //APPEND ~stats.ids~ ~106 SPELLPEN~       UNLESS ~106 SPELLPEN~
 //APPEND ~stats.ids~ ~106 CRITICAL~       UNLESS ~106 CRITICAL~
@@ -330,6 +341,7 @@ ACTION_FOR_EACH spell IN
       APPEND ~splprot.2da~ ~mo_dev_prof%spell%%TAB%91%TAB%%spell%%TAB%4~ // Devotion
       APPEND ~splprot.2da~ ~mo_con_prof%spell%%TAB%92%TAB%%spell%%TAB%4~ // Conditioning
       APPEND ~splprot.2da~ ~mo_has_prof%spell%%TAB%93%TAB%%spell%%TAB%4~ // Swiftblade
+      APPEND ~splprot.2da~ ~mo_pma_prof%spell%%TAB%94%TAB%%spell%%TAB%4~ // Pale Master
     END
 
 // Archery Weapon Style
@@ -445,6 +457,23 @@ COPY_EXISTING ~splprot.2da~ ~override~
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_has_prof5~ BEGIN
         SET has_prof5 = %row%
 
+      // PALE MASTER ----------------------------------------------------------//
+      // Pale Master - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_pma_prof1~ BEGIN
+        SET pma_prof1 = %row%
+      // Pale Master - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_pma_prof2~ BEGIN
+        SET pma_prof2 = %row%
+      // Pale Master - 3 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_pma_prof3~ BEGIN
+        SET pma_prof3 = %row%
+      // Pale Master - 4 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_pma_prof4~ BEGIN
+        SET pma_prof4 = %row%
+      // Pale Master - 5 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_pma_prof5~ BEGIN
+        SET pma_prof5 = %row%
+
       /*
       // SPELL PENETRATION ----------------------------------------------------//
       // Spell Penetration - 1 Pips
@@ -543,6 +572,18 @@ COPY_EXISTING ~mohas04.spl~ ~override~
 COPY_EXISTING ~mohas05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %has_prof5% END
 
+// Pale Master Prof
+COPY_EXISTING ~mopma01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof1% END
+COPY_EXISTING ~mopma02.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof2% END
+COPY_EXISTING ~mopma03.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof3% END
+COPY_EXISTING ~mopma04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof4% END
+COPY_EXISTING ~mopma05.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof5% END
+
 /*
 // Critical Striker Prof
 COPY_EXISTING ~mocrs04.spl~ ~override~
@@ -556,16 +597,21 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     // Set here if all classes are NOT getting the same amount
     SET_2DA_ENTRY 12  4 1 ~5~   // MAGE - Spellcraft Prof
     SET_2DA_ENTRY 13  4 1 ~1~   // MAGE - Devotion Prof
+    SET_2DA_ENTRY 16  4 1 ~5~   // MAGE - Pale Master
     SET_2DA_ENTRY 11  5 1 ~5~   // FIGHTER - Armor Prof
     SET_2DA_ENTRY 12  5 1 ~1~   // FIGHTER - Spellcraft Prof
     SET_2DA_ENTRY 13  5 1 ~1~   // FIGHTER - Devotion Prof
+    SET_2DA_ENTRY 16  5 1 ~1~   // FIGHTER - Pale Master
     SET_2DA_ENTRY 11  6 1 ~2~   // CLERIC - Armor Prof
     SET_2DA_ENTRY 12  6 1 ~1~   // CLERIC - Spellcraft Prof
     SET_2DA_ENTRY 13  6 1 ~5~   // CLERIC - Devotion Prof
+    SET_2DA_ENTRY 16  6 1 ~1~   // CLERIC - Pale Master
     SET_2DA_ENTRY 12  7 1 ~1~   // THIEF - Spellcraft Prof
     SET_2DA_ENTRY 13  7 1 ~1~   // THIEF - Devotion Prof
+    SET_2DA_ENTRY 16  7 1 ~1~   // THIEF - Pale Master
     SET_2DA_ENTRY 12  8 1 ~5~   // BARD - Spellcraft Prof
     SET_2DA_ENTRY 13  8 1 ~1~   // BARD - Devotion Prof
+    SET_2DA_ENTRY 16  8 1 ~1~   // BARD - Pale Master
     SET_2DA_ENTRY 11  9 1 ~5~   // PALADIN - Armor Prof
     SET_2DA_ENTRY 12  9 1 ~1~   // PALADIN - Spellcraft Prof
     SET_2DA_ENTRY 13  9 1 ~5~   // PALADIN - Devotion Prof
@@ -578,6 +624,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 12 1 ~5~   // FIGHTER_MAGE - Armor Prof
     SET_2DA_ENTRY 12 12 1 ~5~   // FIGHTER_MAGE - Spellcraft Prof
     SET_2DA_ENTRY 13 12 1 ~1~   // FIGHTER_MAGE - Devotion Prof
+    SET_2DA_ENTRY 16 12 1 ~5~   // FIGHTER_MAGE - Pale Master
     SET_2DA_ENTRY 11 13 1 ~5~   // FIGHTER_CLERIC - Armor Prof
     SET_2DA_ENTRY 12 13 1 ~1~   // FIGHTER_CLERIC - Spellcraft Prof
     SET_2DA_ENTRY 13 13 1 ~5~   // FIGHTER_CLERIC - Devotion Prof
@@ -587,11 +634,14 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 15 1 ~5~   // FIGHTER_MAGE_THIEF - Armor Prof
     SET_2DA_ENTRY 12 15 1 ~5~   // FIGHTER_MAGE_THIEF - Spellcraft Prof
     SET_2DA_ENTRY 13 15 1 ~1~   // FIGHTER_MAGE_THIEF - Devotion Prof
+    SET_2DA_ENTRY 16 15 1 ~5~   // FIGHTER_MAGE_THIEF - Pale Master
     SET_2DA_ENTRY 12 16 1 ~5~   // MAGE_THIEF - Spellcraft Prof
     SET_2DA_ENTRY 13 16 1 ~1~   // MAGE_THIEF - Devotion Prof
+    SET_2DA_ENTRY 16 16 1 ~5~   // MAGE_THIEF - Pale Master
     SET_2DA_ENTRY 11 17 1 ~2~   // CLERIC_MAGE - Armor Prof
     SET_2DA_ENTRY 12 17 1 ~5~   // CLERIC_MAGE - Spellcraft Prof
     SET_2DA_ENTRY 13 17 1 ~5~   // CLERIC_MAGE - Devotion Prof
+    SET_2DA_ENTRY 16 17 1 ~5~   // CLERIC_MAGE - Pale Master
     SET_2DA_ENTRY 11 18 1 ~2~   // CLERIC_THIEF - Armor Prof
     SET_2DA_ENTRY 12 18 1 ~1~   // CLERIC_THIEF - Spellcraft Prof
     SET_2DA_ENTRY 13 18 1 ~5~   // CLERIC_THIEF - Devotion Prof
@@ -601,11 +651,13 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 11 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Armor Prof
     SET_2DA_ENTRY 12 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Spellcraft Prof
     SET_2DA_ENTRY 13 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Devotion Prof
+    SET_2DA_ENTRY 16 20 1 ~5~   // FIGHTER_MAGE_CLERIC - Pale Master
     SET_2DA_ENTRY 11 21 1 ~5~   // CLERIC_RANGER - Armor Prof
     SET_2DA_ENTRY 12 21 1 ~1~   // CLERIC_RANGER - Spellcraft Prof
     SET_2DA_ENTRY 13 21 1 ~5~   // CLERIC_RANGER - Devotion Prof
     SET_2DA_ENTRY 12 22 1 ~5~   // ABJURER - Spellcraft Prof
     SET_2DA_ENTRY 13 22 1 ~1~   // ABJURER - Devotion Prof
+    SET_2DA_ENTRY 16 22 1 ~5~   // ABJURER - Pale Master
     SET_2DA_ENTRY 12 51 1 ~1~   // MONK - Spellcraft Prof
     SET_2DA_ENTRY 13 51 1 ~1~   // MONK - Devotion Prof
     SET_2DA_ENTRY 11 60 1 ~2~   // SHAMAN - Armor Prof
@@ -659,6 +711,11 @@ COPY_EXISTING ~CLABMA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC2 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC3 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC5 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -672,6 +729,7 @@ COPY_EXISTING ~CLABFI01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -689,6 +747,7 @@ COPY_EXISTING ~CLABPR01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -702,6 +761,7 @@ COPY_EXISTING ~CLABTH01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
     PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -719,6 +779,7 @@ COPY_EXISTING ~CLABBA01.2DA~ override
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -824,6 +885,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -849,6 +911,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC2 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC3 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC5 END
             PRETTY_PRINT_2DA
           BUT_ONLY
       END
@@ -870,6 +937,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -879,6 +947,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           PRETTY_PRINT_2DA
@@ -899,6 +968,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
             PRETTY_PRINT_2DA
           BUT_ONLY
       END
@@ -920,6 +990,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -945,6 +1016,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
             PRETTY_PRINT_2DA
           BUT_ONLY
       END
@@ -965,6 +1037,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -986,6 +1059,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
             PRETTY_PRINT_2DA
           BUT_ONLY
       END
@@ -1006,6 +1080,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1031,6 +1106,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
             PRETTY_PRINT_2DA
           BUT_ONLY
       END
@@ -1098,6 +1174,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1167,6 +1244,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1281,6 +1359,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1305,6 +1384,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1374,6 +1454,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1419,6 +1500,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
@@ -1444,6 +1526,11 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC4 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCONC5 END
             LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOCRSC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC1 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC2 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC3 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC4 END
+            LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MOPMAC5 END
             PRETTY_PRINT_2DA
           BUT_ONLY
       END
@@ -1836,8 +1923,6 @@ BUT_ONLY
 
 BUT_ONLY
   */
-
-
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////

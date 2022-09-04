@@ -197,7 +197,17 @@ Spell Penetration (1 slot): The wizard can bypass 10% of a target's magic resist
 Greater Spell Penetration (2 slots): The wizard can bypass 25% of a target's magic resistance.~
 
 @7126 = ~Pale Master~
-@7127 = ~PALE MASTER: ~
+@7127 = ~PALE MASTER: This proficiency path allows one to master the deathless arts. With this proficiency, one draws on a font of special lore that provides a macabre power all its own.
+
+Darkvision (1 slot): The character gains the ability to see in the dark.
+
+Bone Skin (2 slots): The character's flesh becomes tough and cadaverous providing +2 bonus to AC. 
+
+Deathless Vigor (3 slots): The character gains a +2 bonus to save vs. Paralysis / Poison / Death
+
+Tough as Bone (4 slots): The character becomes immune to hold, paralysis, and stun effects.
+
+Deathless Mastery (5 slots): The character gains immunity to all forms of death magic.~
 
 @7128 = ~Archery Weapon Style~
 @7129 = ~ARCHERY:  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.

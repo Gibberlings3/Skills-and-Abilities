@@ -1,9 +1,10 @@
 ## Version 0.9.2 alpha
 
-August xx, 2022
+September xx, 2022
 
 ### Changed
 
+- Added Swiftblade and Pale Master proficiencies.
 - Corrected pip assignment for characters with single weapon style.
 - Corrected pip assignment for rangers and two weapon style.
 - Adjusted pip assignment for Level 0 NPC Type Mods.
