@@ -63,4 +63,11 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
       OUTER_SET ir_cleric_druid=0
    END
 
+   // Artisan's Kitpack
+   ACTION_IF MOD_IS_INSTALLED ~ArtisansKitpack.tp2~ ~1100~ BEGIN
+      OUTER_SET fighter_overhaul=1
+   END ELSE BEGIN
+      OUTER_SET fighter_overhaul=0
+   END
+
 END

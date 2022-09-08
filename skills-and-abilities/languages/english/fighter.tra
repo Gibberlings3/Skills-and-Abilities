@@ -29,4 +29,20 @@ INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to 
 
 – 20th Level: The fighter gains an additional +0.5 apr bonus.~
 
+@9509 = ~– Does not suffer penalties for wielding a non-proficient weapon.~
+@9510 = ~– Does not suffer penalties for wielding a non-proficient weapon.
+– 1st Level: May use Second Wind once per day.
+
+SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.~
+
+@9511 = ~– 12th level: Improved Rapid Shot:~
+@9512 = ~– 9th Level: Gains the Indomitable passive ability.
+
+INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
+
+– 12th level: Improved Rapid Shot:~
+
+@9513 = ~– 20th level: The Fighter achieves Specialization (two slots) in all weapons they were not already at least specialized in.~
+@9514 = ~– 20th level: The Fighter gains an additional +0.5 apr bonus and achieves Specialization (two slots) in all weapons they were not already at least specialized in.~
+
 @10000 = ~[LAST TRA HERE]~

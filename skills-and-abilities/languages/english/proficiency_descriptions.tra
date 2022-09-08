@@ -229,8 +229,14 @@ Greater Swift Surge (4 slots): The character gains an additional bonus to Thac0 
 
 Evasive Celerity (5 slots): The character gains +10% magic resistance while under the effects of a haste spell.~
 
-@7132 = ~~
-@7133 = ~~
+@7132 = ~Power Striker Weapon Style~
+@7133 = ~POWER STRIKER: This proficiency allows a warrior to attack with more ferocious Power Attacks. 
+
+Enhanced Power Attack (1 slot): The character gains a +5 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +10 damage bonus (instead of +6).
+
+Supreme Power Attack (2 slots): The character gains a +6 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +12 damage bonus (instead of +6).
+
+NOTE: Even though other classes may have access to this weapon style, only Fighters will be able to use it to improve their Power Attack modal.~
 
 @7134 = ~Critical Striker Weapon Style~
 @7135 = ~CRITICAL STRIKER:  This weapon style makes the character's critical hits more damaging.
