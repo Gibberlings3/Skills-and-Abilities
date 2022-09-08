@@ -336,7 +336,7 @@ APPEND ~stats.ids~ ~93 SWIFTBLADE~      UNLESS ~93 SWIFTBLADE~
 APPEND ~stats.ids~ ~94 PALEMASTER~      UNLESS ~94 PALEMASTER~
 //APPEND ~stats.ids~ ~95 SPELLPEN~       UNLESS ~95 SPELLPEN~
 
-PATCH_IF fighter_overhaul THEN BEGIN
+ACTION_IF fighter_overhaul THEN BEGIN
   APPEND ~stats.ids~ ~106 POWER~        UNLESS ~106 POWER~
 END
 
