@@ -122,7 +122,8 @@ ACTION_FOR_EACH description IN
             STRING_SET_EVALUATE ~%fighter_desc%~ ~%fighter_text%~
           END
         END
+        BUT_ONLY
       END
-      BUT_ONLY
+      //BUT_ONLY
     END
   END
