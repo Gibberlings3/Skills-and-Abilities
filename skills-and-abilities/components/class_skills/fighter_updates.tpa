@@ -110,7 +110,7 @@ ACTION_FOR_EACH description IN
               REPLACE_TEXTUALLY ~%old_fight3%~ ~%new_fight3%~
               REPLACE_TEXTUALLY ~%old_fight4%~ ~%new_fight4%~
             END
-          END ELSE
+          END ELSE BEGIN
             SPRINT old_fight1 @9507
             SPRINT new_fight1 @9508
             GET_STRREF %fighter_desc% fighter_text
@@ -122,8 +122,8 @@ ACTION_FOR_EACH description IN
             STRING_SET_EVALUATE ~%fighter_desc%~ ~%fighter_text%~
           END
         END
-        BUT_ONLY
+        //BUT_ONLY
       END
-      //BUT_ONLY
+      BUT_ONLY
     END
   END
