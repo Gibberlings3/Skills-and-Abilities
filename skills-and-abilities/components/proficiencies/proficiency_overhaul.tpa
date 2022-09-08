@@ -39,6 +39,20 @@ END ELSE ACTION_IF nwn_profs THEN BEGIN
   COPY ~skills-and-abilities/2da/profsmax.2da~              ~override~ 
 END
 
+ACTION_IF fighter_overhaul THEN BEGIN
+  ACTION_FOR_EACH power_prof IN
+        1 // Enhanced Power Attack - Power Attack
+        2 // Enhanced Power Attack - Improved Power Attack
+        3 // Supreme Power Attack - Power Attack
+        4 // Supreme Power Attack - Improved Power Attack
+      BEGIN
+        // Power Striker Prof
+        COPY ~skills-and-abilities/spl/proficiencies/MOPOW0%power_prof%.SPL~            ~override~
+        COPY ~skills-and-abilities/spl/proficiencies/MOPOW%power_prof%%power_prof%.SPL~ ~override~
+        COPY ~skills-and-abilities/eff/proficiencies/MOPOW0%power_prof%.EFF~            ~override~
+      END
+END
+
 ACTION_FOR_EACH prof IN
       1
       2
@@ -263,8 +277,15 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 16 0 1 ~PALEMASTER~
     SET_2DA_ENTRY 16 2 1 ~mopma1~
     SET_2DA_ENTRY 16 3 1 ~mopma2~
+    //SET_2DA_ENTRY 17 0 1 ~SPELLPEN~
+    //SET_2DA_ENTRY 17 2 1 ~mospen1~
+    //SET_2DA_ENTRY 17 3 1 ~mospen2~
 
-
+    PATCH_IF fighter_overhaul THEN BEGIN
+      SET_2DA_ENTRY 29 0 1 ~POWER~
+      SET_2DA_ENTRY 29 2 1 ~mopow1~
+      SET_2DA_ENTRY 29 3 1 ~mopow2~
+    END
     //SET_2DA_ENTRY 29 0 1 ~SPELLPEN~
     //SET_2DA_ENTRY 29 2 1 ~mospen1~
     //SET_2DA_ENTRY 29 3 1 ~mospen2~
@@ -292,6 +313,10 @@ REPLACE ~mohas2~    @7131
 REPLACE ~mopma1~    @7126
 REPLACE ~mopma2~    @7127
 
+PATCH_IF fighter_overhaul THEN BEGIN
+  REPLACE ~mopow1~  @7132
+  REPLACE ~mopow2~  @7133
+END
 //REPLACE ~mospen1~   @7124
 //REPLACE ~mospen2~   @7125
 //REPLACE ~mocri1~    @7134
@@ -309,8 +334,12 @@ APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
 APPEND ~stats.ids~ ~92 CONDITIONING~    UNLESS ~92 CONDITIONING~
 APPEND ~stats.ids~ ~93 SWIFTBLADE~      UNLESS ~93 SWIFTBLADE~
 APPEND ~stats.ids~ ~94 PALEMASTER~      UNLESS ~94 PALEMASTER~
+//APPEND ~stats.ids~ ~95 SPELLPEN~       UNLESS ~95 SPELLPEN~
 
-//APPEND ~stats.ids~ ~106 SPELLPEN~       UNLESS ~106 SPELLPEN~
+PATCH_IF fighter_overhaul THEN BEGIN
+  APPEND ~stats.ids~ ~106 POWER~        UNLESS ~106 POWER~
+END
+
 //APPEND ~stats.ids~ ~106 CRITICAL~       UNLESS ~106 CRITICAL~
 APPEND ~stats.ids~ ~107 ARCHERY~        UNLESS ~107 ARCHERY~
 
@@ -350,9 +379,13 @@ APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 
 /*
 // Spell Penetration
-APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%106%TAB%1%TAB%5~
-APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%106%TAB%2%TAB%5~
+APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%95%TAB%1%TAB%5~
+APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%95%TAB%2%TAB%5~
 */
+
+// Power Striker
+APPEND ~splprot.2da~ ~mo_pow_prof1%TAB%106%TAB%1%TAB%1~
+APPEND ~splprot.2da~ ~mo_pow_prof2%TAB%106%TAB%2%TAB%1~
 
 /*
 // Critical Stiker Weapon Style
@@ -484,6 +517,14 @@ COPY_EXISTING ~splprot.2da~ ~override~
         SET spell_pen2 = %row%
       */
 
+      // POWER STRIKER --------------------------------------------------------//
+      // Power Striker - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_pow_prof1~ BEGIN
+        SET pow_prof1 = %row%
+      // Power Striker - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_pow_prof2~ BEGIN
+        SET pow_prof2 = %row%
+
       /*
       // CRITICAL STRIKER -----------------------------------------------------//
       // Critical Striker - 1 Pips
@@ -583,6 +624,16 @@ COPY_EXISTING ~mopma04.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof4% END
 COPY_EXISTING ~mopma05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof5% END
+
+// Power Striker Prof
+COPY_EXISTING ~mopow01.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof1% END
+COPY_EXISTING ~mopow02.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof1% END
+COPY_EXISTING ~mopow03.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof2% END
+COPY_EXISTING ~mopow04.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof2% END
 
 /*
 // Critical Striker Prof
@@ -690,7 +741,11 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         BEGIN
           SET_2DA_ENTRY 14 class_prof 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 class_prof 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 class_prof 1 ~2~   // Spell Penetration
+          SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 class_prof 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 class_prof 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 class_prof 1 ~2~   // Archery Weapon Style
         END
@@ -886,7 +941,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -938,7 +996,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -948,7 +1009,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           PRETTY_PRINT_2DA
       END
@@ -991,7 +1055,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1038,7 +1105,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1081,7 +1151,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1128,7 +1201,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1175,7 +1251,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1198,7 +1277,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1221,7 +1303,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1245,7 +1330,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1268,7 +1356,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1314,7 +1405,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1360,7 +1454,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1385,7 +1482,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1408,7 +1508,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1431,7 +1534,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1455,7 +1561,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1478,7 +1587,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1501,7 +1613,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1551,7 +1666,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1593,7 +1711,10 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
-          //SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Spell Penetration
+          //SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+          PATCH_IF fighter_overhaul THEN BEGIN
+            SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
+          END
           //SET_2DA_ENTRY 29 (col + 1) 1 ~3~   // Critical Striker Weapon Style
           SET_2DA_ENTRY 30 (col + 1) 1 ~2~   // Archery Weapon Style
           PRETTY_PRINT_2DA
@@ -1923,6 +2044,16 @@ BUT_ONLY
 
 BUT_ONLY
   */
+
+ACTION_IF fighter_overhaul THEN BEGIN
+  COPY_EXISTING ~c0fig01a.spl~ ~override~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~mopow01~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~mopow03~ END
+
+  COPY_EXISTING ~c0fig01b.spl~ ~override~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~mopow02~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~mopow04~ END
+END
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
