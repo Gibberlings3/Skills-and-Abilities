@@ -49,6 +49,8 @@
 @150 = ~Add New Fighter Abilities~
 
 // Group 2 (Update 200-299)
+@200 = ~Add Spell Scroll Crafting~
+@201 = ~Add Spell Scroll Crafting (add missing priest scrolls)~
 
 // Group 3 (Update 300-399)
 @300 = ~Update Weapon Fighting Styles~
@@ -79,6 +81,7 @@
 @3004 = ~Component requires BG: EE, BGII: EE, IWDEE, or EET~
 @3005 = ~Barbarian Rage has been removed~
 @3006 = ~Component requires BGII: EE or EET~
+@3007 = ~Priest scrolls have already been added!~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                          //
@@ -86,5 +89,6 @@
 
 @3401 = ~1e Barbarian 'package'~
 @3402 = ~Add Feral Senses~
+@3403 = ~Scroll Crafting~
 
 @3500 = ~[LAST TRA HERE]~

@@ -7,7 +7,7 @@
 BACKUP ~skills-and-abilities/backup~
 AUTHOR ~Grammarsalad and morpheus562~
 
-VERSION ~v0.9.2-alpha~
+VERSION ~v0.9.3-alpha~
 README ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 
@@ -31,6 +31,7 @@ LANGUAGE ~English~
          ~skills-and-abilities/languages/english/turn_undead.tra~
          ~skills-and-abilities/languages/english/kit_descriptions.tra~
          ~skills-and-abilities/languages/english/fighter.tra~
+         ~skills-and-abilities/languages/english/enchant_items.tra~
 LANGUAGE ~French~
          ~french~
          ~skills-and-abilities/languages/english/setup.tra~
@@ -389,14 +390,33 @@ INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-/*
 ///////////////////////////////////////////////////////////////////////////
-// First Component                                                       //
+// Craft Spell Scrolls                                                      //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @X DESIGNATED X 
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
-*/
+BEGIN @200 SUBCOMPONENT @3403 DESIGNATED 200 GROUP @2
+REQUIRE_PREDICATE (GAME_IS ~iwdee bgee bg2ee eet~) @3004
+
+LAM b_scroll_global_settings
+
+LAM b_scroll_level_settings
+
+INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
+
+////////////////////////////////////////////////////
+
+BEGIN @201 SUBCOMPONENT @3403 DESIGNATED 201
+REQUIRE_PREDICATE (GAME_IS ~iwdee bgee bg2ee eet~) @3004
+//REQUIRE_PREDICATE (CHECK FOR NO SCROLLS) @3007  //~Priest scrolls have already been added!~
+
+LAM b_scroll_global_settings
+
+LAM b_scroll_level_settings
+
+INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
+
+INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
+
+
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////

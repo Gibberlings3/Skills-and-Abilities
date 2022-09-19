@@ -15,7 +15,9 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
 // General variables, macros and functions                               //
 ///////////////////////////////////////////////////////////////////////////
+   INCLUDE ~skills-and-abilities/craft_settings.ini~
    INCLUDE ~skills-and-abilities/lib/lib.tpa~
+   INCLUDE ~skills-and-abilities/lib/effect_return.tpa~
    INCLUDE ~skills-and-abilities/lib/functions.tpa~
    INCLUDE ~skills-and-abilities/lib/splprot_kits.tpa~
    INCLUDE ~skills-and-abilities/lib/qd_multiclass.tpa~

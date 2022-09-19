@@ -1,0 +1,50 @@
+// Skills and Abilities, American English
+//Craft scroll Range: @115003 to @116000
+//Craft Wand Range: @116001 to @117000
+//
+//DO NOT GO BEYOND @499999
+
+///////////////////////////////////////////////////////////////////////////
+// Craft Scroll @115003 to @116000                                                              //
+///////////////////////////////////////////////////////////////////////////
+@115003 = ~Scribe Scrolls~
+@115004 = ~You must have a spell memorized in order to scribe a scroll.  Try again when you have memorized at least one spell.~
+@115005 = ~You must have at least 100 gold to scribe a scroll.  Try again when you have 100 gold or more.~
+@115006 = ~1st Level Spells~
+@115007 = ~2nd Level Spells~
+@115008 = ~3rd Level Spells~
+@115009 = ~4th Level Spells~
+@115010 = ~5th Level Spells~
+@115011 = ~6th Level Spells~
+@115012 = ~7th Level Spells~
+@115013 = ~8th Level Spells~
+@115014 = ~9th Level Spells~
+@115015 = ~Exit~
+@115016 = ~Select another Spell Level~
+@115017 = ~Scribe Scroll
+This ability allows you to scribe a scroll from a spell that you currently have memorized if you have the gold.~
+@115018 = ~You must have at least 100 experience points to scribe a spell.  Try again when you have attained the required experience.~
+@115019 = ~Select Spell Level~
+
+@115020 = ~1st Level Spells (100 gold)~
+@115021 = ~2nd Level Spells (200 gold)~
+@115022 = ~3rd Level Spells (300 gold)~
+@115023 = ~4th Level Spells (400 gold)~
+@115024 = ~5th Level Spells (500 gold)~
+@115025 = ~6th Level Spells (1,000 gold)~
+@115026 = ~7th Level Spells (1,500 gold)~
+@115027 = ~8th Level Spells (2,500 gold)~
+@115028 = ~9th Level Spells (5,000 gold)~
+
+//create scroll innate
+@115100 = ~Create Scroll~
+@115101 = ~Create Scroll
+This ability allows you to scribe a scroll from a spell that you currently have memorized if you have the gold.~
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// Craft Wand @116001 to @117000                                                             //
+///////////////////////////////////////////////////////////////////////////
+
+@499999 = ~[LAST TRA HERE]~
