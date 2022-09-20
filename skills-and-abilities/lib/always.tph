@@ -17,6 +17,7 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
    INCLUDE ~skills-and-abilities/craft_settings.ini~
    INCLUDE ~skills-and-abilities/lib/lib.tpa~
+   INCLUDE ~skills-and-abilities/lib/item_in_store.tpa~
    INCLUDE ~skills-and-abilities/lib/effect_return.tpa~
    INCLUDE ~skills-and-abilities/lib/functions.tpa~
    INCLUDE ~skills-and-abilities/lib/splprot_kits.tpa~
