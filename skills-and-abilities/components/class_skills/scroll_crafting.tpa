@@ -17,6 +17,7 @@ COPY ~%folder%/lib/scroll_lists/levg_scr.tpa~ ~override~  //lev 9 scr
 COPY ~%folder%/lib/scroll_lists/levs_scr.tpa~ ~override~  //lev 9 scr
 COPY ~%folder%/lib/scroll_lists/scrgold.tpa~ ~override~  //scroll gold
 COPY ~%folder%/lib/scroll_lists/clabz.tpa~ ~override~  //lev 9 scr
+//spls for xp cost
 ACTION_IF (%b_xp_scroll_cost% > 0) BEGIN //xp reduction spls
  COPY ~%folder%/data/scrolls/B_RXP01.spl~ ~override~
  COPY ~%folder%/data/scrolls/B_RXP01.spl~ ~override/B_RXP02.spl~
@@ -36,6 +37,7 @@ ACTION_IF (%b_xp_scroll_cost% > 0) BEGIN //xp reduction spls
  COPY ~%folder%/data/scrolls/B_RXP01.spl~ ~override/B_RXP09.spl~
     LPF ALTER_EFFECT INT_VAR parameter1 = (0 - 144) END
 END
+
 COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all itm files
     PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
     READ_BYTE 0x001C type //Item type
@@ -622,6 +624,47 @@ COPY ~%folder%/data/scrolls/QDSCRCK.eff~ ~override~      //eff that applies spl 
 COPY ~%folder%/data/scrolls/B_APS01.spl~ ~override~      //apply spl to sor
 COPY ~%folder%/data/scrolls/B_APM01.spl~ ~override~      //apply spl to mage
 
+//scroll kits
+ACTION_IF (%b_material_scroll_cost% > 0) BEGIN //scroll kits
+//standard materials
+ COPY ~%folder%/data/scrolls/B_BPG02.bam~ ~override~  //blank scroll image
+ COPY ~%folder%/data/scrolls/B_BPG01.itm~ ~override~  //blank scroll item
+        SAY NAME1 @115104
+        SAY NAME2 @115104
+        SAY UNIDENTIFIED_DESC @115105
+	SAY DESC @115105
+//quality materials
+ COPY ~%folder%/data/scrolls/B_BPG01.itm~ ~override/B_BPG02.itm~  //blank scroll item
+        SAY NAME1 @115106
+        SAY NAME2 @115106
+        SAY UNIDENTIFIED_DESC @115107
+	SAY DESC @115107
+	WRITE_LONG 0x0034 ~5~ //gold
+	WRITE_BYTE 0x0038 ~6~ //stack
+//masterwork materials
+ COPY ~%folder%/data/scrolls/B_BPG01.itm~ ~override/B_BPG03.itm~  //blank scroll item
+        SAY NAME1 @115108
+        SAY NAME2 @115108
+        SAY UNIDENTIFIED_DESC @115108
+	SAY DESC @115108
+	WRITE_LONG 0x0034 ~200~ //gold
+	WRITE_BYTE 0x0038 ~9~ //stack
+//scroll kit, posessing standard quality materials (at first)
+ COPY ~%folder%/data/scrolls/B_SCKT2.itm~ ~override~ //scroll kit
+        SAY NAME1 @115102
+        SAY NAME2 @115102
+        SAY UNIDENTIFIED_DESC @115103
+	SAY DESC @115103
+
+ COPY ~%folder%/data/scrolls/B_SCKT1.sto~ ~override~ //scroll kit 'store'
+    SAY NAME2 @115102
+    ADD_STORE_ITEM "B_BPG01" #1 #0 #0 ~IDENTIFIED~ #100
+
+//Make scroll kits having better quality materials
+
+//CONTINUE: have lev 3-6 scrolls morph into standard materials and lev 7-9 scrolls morph into quality materials
+END
+
 ///////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////////
@@ -675,7 +718,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~clabma01.2da~) BEGIN
           END
         END
         PATCH_IF (patch_row > 0) BEGIN
-          SET_2DA_ENTRY patch_row (%b_mage_scroll%) 2 ~AP_B_AM01~ // b_apm01 mag
+          SET_2DA_ENTRY patch_row (%b_mage_scroll%) 2 ~AP_B_APM01~ // b_apm01 mag
           SET_2DA_ENTRY patch_row (%b_sorc_scroll%) 2 ~AP_B_APS01~   //B_APS01 sor
         END
  END
@@ -928,3 +971,39 @@ ACTION_PHP_EACH clabz AS der_clab => der_levs BEGIN
   END
 END
 
+////////////////////////////////////////////////////////////
+//////////////// High Level Abilities
+
+ACTION_IF (%b_mage_scroll% = 0) OR
+          (%b_cleric_scroll% = 0) OR
+          (%b_druid_scroll% = 0) OR
+          (%b_bard_scroll% = 0) OR
+          (%b_paladin_scroll% = 0) OR
+          (%b_ranger_scroll% = 0) OR
+          (%b_sorc_scroll% = 0) OR
+          (%b_monk_scroll% = 0) OR
+          (%b_shaman_scroll% = 0) OR
+          (%b_thief_scroll% = 0) BEGIN
+          //let's deal with rogues and monks as they are the most complicated
+          ACTION_IF (%b_monk_scroll% = 0) OR (%b_bard_scroll% = 0) OR (%b_thief_scroll% = 0) BEGIN
+            //replace vanilla scribe scroll???
+            ACTION_IF (%b_vanilla_scroll_hla% = 0) BEGIN
+              ACTION_IF !(%b_bard_scroll% = 0) BEGIN
+                 LAF DESTRUCTO_REMOVE_HLA INT_VAR class = 5 STR_VAR remove_ability = ~GA_SPCL919~ END
+              END
+              ELSE BEGIN     //CONTINUE (CHANGE SIMPLE_REPLACE_HLA TO SET THE VALUE AT THE RELEVANT LOCATIONS RATHER THAN DELETE AND ADD
+                 LAF SIMPLE_REPLACE_HLA INT_VAR class = 5 STR_VAR remove_ability = ~GA_SPCL919~ ability = ~GA_B_SCRIB~ 2da_row = 9 END
+              END
+            END//remove vanilla scribe scroll entirely
+
+            //Let's begin with vanilla (known) hla tables (non-kit--just do all kits together)
+            ACTION_IF (%b_mage_scroll% = 0) AND (FILE_EXISTS_IN_GAME ~LUMA0.2da~) BEGIN
+
+            
+            END
+                 //CONTINUE
+
+          
+          END//special rogue/monk stuff
+
+END //at least somebody getting scribe scroll as hla

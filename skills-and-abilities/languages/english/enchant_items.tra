@@ -40,6 +40,36 @@ This ability allows you to scribe a scroll from a spell that you currently have 
 @115100 = ~Create Scroll~
 @115101 = ~Create Scroll
 This ability allows you to scribe a scroll from a spell that you currently have memorized if you have the gold.~
+//create scroll kit
+@115102 = ~Scroll Kit~
+@115103 = ~Scroll Kit
+This pack contains inks, a fine quill, and plenty of parchment.
+
+When you aquire a scroll kit, it comes complete with 100 'materials', an abstracted set of material components needed for scroll creation. You need 1 'material' per level of the spell you wish to scribe as a scroll.
+
+While this kit comes with basic materials, you can replenish it with materials of any quality.
+
+STATISTICS:
+'Materials': 100
+Weight: 6
+
+Special Note: Do not have more of these items in your inventory than you need for a particular scroll you plan to create (keep any extras in your scroll kit item). Any excess materials in your inventory will be removed.~
+@115104 = ~Standard Scroll Creation Materials~
+@115105 = ~Standard Scroll Creation Materials
+Use these materials to create a scroll. The quality of these materials are such that you can only create up to level 3 scrolls. Note that you need 1 of these for each level of the scroll you plan to create. So, if you are creating a scroll of a 5th level spell, then you need 5 of these on hand.
+
+Special Note: Do not have more of these items in your inventory than you need for a particular scroll you plan to create (keep any extras in your scroll kit item). Any excess materials in your inventory will be removed.~
+@115106 = ~Quality Scroll Creation Materials~
+@115107 = ~Quality Scroll Creation Materials
+Use these materials to create a scroll. The quality of these materials is above average, and can be used to create up to level 6 scrolls. Note that you need 1 of these for each level of the scroll you plan to create. So, if you are creating a scroll of a 5th level spell, then you need 5 of these on hand.
+
+Special Note: Do not have more of these items in your inventory than you need for a particular scroll you plan to create (keep any extras in your scroll kit item). Any excess materials in your inventory will be removed.~
+@115106 = ~Masterwork Scroll Creation Materials~
+@115107 = ~Masterwork Scroll Creation Materials
+Use these materials to create a scroll. These materials are of the highest quality, allowing the creation of any level scroll. Note that you need 1 of these for each level of the scroll you plan to create. So, if you are creating a scroll of a 5th level spell, then you need 5 of these on hand.
+
+Special Note: Do not have more of these items in your inventory than you need for a particular scroll you plan to create (keep any extras in your scroll kit item). Any excess materials in your inventory will be removed.~
+
 
 
 
