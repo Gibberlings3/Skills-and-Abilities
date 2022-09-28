@@ -1,6 +1,6 @@
 ## Version 0.9.2 alpha
 
-September xx, 2022
+October xx, 2022
 
 ### Changed
 
@@ -8,6 +8,10 @@ September xx, 2022
 - Corrected pip assignment for characters with single weapon style.
 - Corrected pip assignment for rangers and two weapon style.
 - Adjusted pip assignment for Level 0 NPC Type Mods.
+- Changed Fighter Overhaul to just provide all Fighters and Fighter kits with the Second Wind Ability.
+- New Fighter HLAs are added to the HLA Component instead of being part of the Fighter Overhaul.
+- Resist Magic HLA now increments Magic Resist by +40% instead of setting it. Duration is increased.
+- Two-Weapon Style updated to include damage penalties.
 
 ## Version 0.9.1 alpha
 

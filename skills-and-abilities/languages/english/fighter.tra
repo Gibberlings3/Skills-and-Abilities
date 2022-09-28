@@ -21,6 +21,12 @@ You have a limited well of stamina that you can draw on to protect yourself from
 @9508 = ~– Hit Die: d10
 – 1st Level: May use Second Wind once per day.
 
+SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.~
+
+/*
+@9508 = ~– Hit Die: d10
+– 1st Level: May use Second Wind once per day.
+
 SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
 
 – 9th Level: Gains the Indomitable passive ability.
@@ -28,6 +34,7 @@ SECOND WIND: You have a limited well of stamina that you can draw on to protect 
 INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
 
 – 20th Level: The fighter gains an additional +0.5 apr bonus.~
+*/
 
 @9509 = ~– Does not suffer penalties for wielding a non-proficient weapon.~
 @9510 = ~– Does not suffer penalties for wielding a non-proficient weapon.

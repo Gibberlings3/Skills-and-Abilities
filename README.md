@@ -275,7 +275,9 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 
 #### Update Existing HLAs
 
-Greater Whirlwind: Will now last for three rounds instead of one.
+**GREATER WHIRLWIND:** Will now last for three rounds instead of one.
+
+**RESIST MAGIC (Next Release):** This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.
 
 (more in progress)
 
@@ -296,6 +298,11 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 **SINGLE-WEAPON:** This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
 - Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, -1 bonus to Thaco, -1 bonus to AC, and inflicts critical damage on an attack roll of 19 or 20.
 - Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, -2 bonus to Thaco, -2 bonus to AC, and inflicts critical damage on an attack roll of 18 to 20.
+
+**TWO-WEAPON (Next Release):** This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon, a -8 penalty with the off-hand weapon, and a -4 penalty to damage rolls for both weapons. 
+- Proficient (1 slot): The wielder's penalties are reduced to -2, attack and damage rolls, with the main weapon and -6 attack roll and -4 damage roll with the off-hand weapon.
+- Specialized (2 slots): The wielder's penalties are reduced to 0 attack roll with the main weapon, a -4 attack roll with the off-hand weapon, and a -2 penalty to damage rolls for both weapons.
+- Master (3 slots): The wielder's penalties to attack and damage rolls are reduced to 0 with the main weapon and -2 with the off-hand weapon.
 
 ### Overhaul Proficiency System - Add New Proficiencies and Weapon Styles
 
