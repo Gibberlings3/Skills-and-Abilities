@@ -279,6 +279,8 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 
 **RESIST MAGIC (Next Release):** This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.
 
+**WAR CRY (Next Release):** With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.
+
 (more in progress)
 
 ## Proficiencies
