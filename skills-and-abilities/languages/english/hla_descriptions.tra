@@ -73,11 +73,11 @@ The character gains +1 bonus to Wisdom. This feat may be taken multiple times, u
 The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.~
 
 // Resist Magic
-@8035 = ~This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.~
+@8035 = ~Resist Magic
+This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.~
 
-/*
-Hardiness
-Calling upon hidden reserves of strength during times of danger, a warrior can use the Hardiness ability to gain 40% resistance to all forms of physical damage. The ability lasts for 1 round for every 2 levels of the warrior.
-*/
+// Mildly Infuriated
+@8036 = ~War Cry
+With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.~
 
 @9000 = ~[LAST TRA HERE]~

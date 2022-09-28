@@ -149,7 +149,12 @@ ACTION_IF existing_hla BEGIN
   OUTER_SPRINT newgww @8032
 
   COPY ~skills-and-abilities/spl/SPCL904.SPL~ ~override~ // Resist Magic Update
-    SAY UNIDENTIFIED_DESC @9505
+    SAY UNIDENTIFIED_DESC @8035
+
+  COPY ~skills-and-abilities/spl/SPCL908.SPL~ ~override~ // Mildly Infuriated Update
+    SAY UNIDENTIFIED_DESC @8036
+
+    // Need to create a new spellstate for this in my ai scripts
   
   // Alter Greater Whirlwind to last 3 rounds
   LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WARRIOR_GREATER_WHIRLWIND~ RET spell_res END
