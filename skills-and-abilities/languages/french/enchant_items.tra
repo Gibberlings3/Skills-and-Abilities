@@ -7,39 +7,74 @@
 ///////////////////////////////////////////////////////////////////////////
 // Craft Scroll @115003 to @116000                                                              //
 ///////////////////////////////////////////////////////////////////////////
-@115003 = ~Scribe Scrolls~
-@115004 = ~You must have a spell memorized in order to scribe a scroll.  Try again when you have memorized at least one spell.~
-@115005 = ~You must have at least 100 gold to scribe a scroll.  Try again when you have 100 gold or more.~
-@115006 = ~1st Level Spells~
-@115007 = ~2nd Level Spells~
-@115008 = ~3rd Level Spells~
-@115009 = ~4th Level Spells~
-@115010 = ~5th Level Spells~
-@115011 = ~6th Level Spells~
-@115012 = ~7th Level Spells~
-@115013 = ~8th Level Spells~
-@115014 = ~9th Level Spells~
-@115015 = ~Exit~
-@115016 = ~Select another Spell Level~
-@115017 = ~Scribe Scroll
-This ability allows you to scribe a scroll from a spell that you currently have memorized if you have the gold.~
-@115018 = ~You must have at least 100 experience points to scribe a spell.  Try again when you have attained the required experience.~
-@115019 = ~Select Spell Level~
+@115003 = ~Écrire un parchemin~
+@115004 = ~Vous devez avoir mémorisé un sort pour pouvoir rédiger un parchemin. Essayez à nouveau lorsque vous aurez mémorisé au moins un sort.~
+@115005 = ~Vous devez disposer d'au moins 100 pièces d'or pour écrire un sort sur un parchemin. Réessayez quand vous aurez 100 pièces d'or ou plus.~
+@115006 = ~Sorts de 1er niveau~
+@115007 = ~Sorts de 2ème niveau~
+@115008 = ~Sorts de 3ème niveau~
+@115009 = ~Sorts de 4ème niveau~
+@115010 = ~Sorts de 5ème niveau~
+@115011 = ~Sorts de 6ème niveau~
+@115012 = ~Sorts de 7ème niveau~
+@115013 = ~Sorts de 8ème niveau~
+@115014 = ~Sorts de 9ème niveau~
+@115015 = ~J'en ai fini.~
+@115016 = ~Sélectionner des sorts d'un autre niveau~
+@115017 = ~Écrire un parchemin
+Cette aptitude vous permet de rédiger un parchemin à partir d'un sort mémorisé et d'une certaine quantité d'or.~
+@115018 = ~Vous devez disposer d'au moins 100 points d'expérience pour écrire un sort sur un parchemin. Essayez à nouveau lorsque vous aurez atteint l'expérience requise.~
+@115019 = ~Sélectionner le niveau des sorts~
 
-@115020 = ~1st Level Spells (100 gold)~
-@115021 = ~2nd Level Spells (200 gold)~
-@115022 = ~3rd Level Spells (300 gold)~
-@115023 = ~4th Level Spells (400 gold)~
-@115024 = ~5th Level Spells (500 gold)~
-@115025 = ~6th Level Spells (1,000 gold)~
-@115026 = ~7th Level Spells (1,500 gold)~
-@115027 = ~8th Level Spells (2,500 gold)~
-@115028 = ~9th Level Spells (5,000 gold)~
+@115020 = ~Sorts de 1er niveau (100 pièces d'or)~
+@115021 = ~Sorts de 2ème niveau (200 pièces d'or)~
+@115022 = ~Sorts de 3ème niveau (300 pièces d'or)~
+@115023 = ~Sorts de 4ème niveau (400 pièces d'or)~
+@115024 = ~Sorts de 5ème niveau (500 pièces d'or)~
+@115025 = ~Sorts de 6ème niveau (1000 pièces d'or)~
+@115026 = ~Sorts de 7ème niveau (1500 pièces d'or)~
+@115027 = ~Sorts de 8ème niveau (2000 pièces d'or)~
+@115028 = ~Sorts de 9ème niveau (5000 pièces d'or)~
 
 //create scroll innate
-@115100 = ~Create Scroll~
-@115101 = ~Create Scroll
-This ability allows you to scribe a scroll from a spell that you currently have memorized if you have the gold.~
+@115100 = ~Créer un parchemin~
+@115101 = ~Créer un parchemin
+Cette aptitude vous permet de rédiger un parchemin à partir d'un sort mémorisé et d'une certaine quantité d'or.~
+//create scroll kit
+@115102 = ~Nécessaire à parchemin~
+@115103 = ~Nécessaire à parchemin
+Ce paquet contient une plume fine, des encres diverses et une grande quantité de parchemin.
+
+Lorsque vous vous procurez un Nécessaire à parchemin, il est accompagné de 100 « matériaux », un ensemble abstrait de composants nécessaires à la création d'un parchemin. Il vous faut 1 « matériau » pour chaque niveau du sort que vous souhaitez retranscrire.
+
+Bien que ce Nécessaire à parchemin soit fourni avec des matériaux standard, vous pouvez le réapprovisionner avec des matériaux de n'importe quelle qualité.
+
+PARAMÈTRES :
+
+'Matériaux' : 100
+
+Poids : 6
+
+Remarque importante : Ne gardez pas plus de matériaux que ceux dont vous avez besoin pour créer un seul parchemin dans votre inventaire (gardez les éléments supplémentaires dans votre Nécessaire à parchemin). Tout matériau excédentaire présent dans votre inventaire sera supprimé.~
+@115104 = ~Matériaux standard pour la création de parchemins~
+@115105 = ~Matériaux standard pour la création de parchemins
+Utilisez ces matériaux pour créer un parchemin. Le niveau de qualité de ces matériaux vous permet de créer des parchemins jusqu'au niveau 3.
+Vous avez besoin d'un de ces matériaux pour chaque niveau de sort du parchemin que vous envisagez de créer. Ainsi, si vous créez un parchemin pour un sort de 5ème niveau, vous devez disposer de 5 de ces matériaux.
+
+Remarque importante : Ne gardez pas plus de matériaux que ceux dont vous avez besoin pour créer un seul parchemin dans votre inventaire (gardez les éléments supplémentaires dans votre Nécessaire à parchemin). Tout matériau excédentaire présent dans votre inventaire sera supprimé.~
+@115106 = ~Matériaux de qualité pour la création de parchemins~
+@115107 = ~Matériaux de qualité pour la création de parchemins
+Utilisez ces matériaux pour créer un parchemin. Le niveau de qualité supérieur de ces matériaux vous permet de créer des parchemins jusqu'au niveau 6.
+Vous avez besoin d'un de ces matériaux pour chaque niveau de sort du parchemin que vous envisagez de créer. Ainsi, si vous créez un parchemin pour un sort de 5ème niveau, vous devez disposer de 5 de ces matériaux.
+
+Remarque importante : Ne gardez pas plus de matériaux que ceux dont vous avez besoin pour créer un seul parchemin dans votre inventaire (gardez les éléments supplémentaires dans votre Nécessaire à parchemin). Tout matériau excédentaire présent dans votre inventaire sera supprimé.~
+@115106 = ~Matériaux de premier ordre pour la création de parchemins~
+@115107 = ~Matériaux de premier ordre pour la création de parchemins
+Utilisez ces matériaux pour créer un parchemin. Ces matériaux sont de premier ordre et vous permettent de créer des parchemins de n'importe quel niveau.
+Vous avez besoin d'un de ces matériaux pour chaque niveau de sort du parchemin que vous envisagez de créer. Ainsi, si vous créez un parchemin pour un sort de 5ème niveau, vous devez disposer de 5 de ces matériaux.
+
+Remarque importante : Ne gardez pas plus de matériaux que ceux dont vous avez besoin pour créer un seul parchemin dans votre inventaire (gardez les éléments supplémentaires dans votre Nécessaire à parchemin). Tout matériau excédentaire présent dans votre inventaire sera supprimé.~
+
 
 
 
