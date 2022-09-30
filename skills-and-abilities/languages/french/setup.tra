@@ -26,7 +26,7 @@
 @34 = ~Ajouter Detection des illusions comme les voleurs (EEex fortement recommande)~
 @35 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite similaire a un sort sous l'effet de la Rage).~
 @36 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite similaire a celle des voleurs sous l'effet de la Rage).~
-@37 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite améliorée similaire a celle des voleurs sous l'effet de la Rage).~
+@37 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite amelioree similaire a celle des voleurs sous l'effet de la Rage).~
 
 @39 = ~Supprimer la Rage du Barbare~
 
@@ -36,19 +36,21 @@
 @70 = ~Ajouter des capacites speciales pour les moines~
 @80 = ~Ajouter des capacites speciales pour les Paladins~
 @90 = ~Ajouter des capacites de haut niveau pour toutes les classes et kits~
-@91 = ~Mise à jour des HLAs existantes et ajout des nouvelles HLAs~
+@91 = ~Mise a jour des HLAs existantes et ajout des nouvelles HLAs~
 @92 = ~Ajouter SEULEMENT les nouvelles HLAs~
 @100 = ~Permettre a l'Inquisiteur de lancer des sorts divins~
 @110 = ~Ajouter la classe de Clerc/Mage/Voleur~
 @120 = ~Revision de la capacite repousser les morts-vivants~
 @130 = ~Permettre au Maitre-lames de se specialiser dans les armes de melee~
-@140 = ~Permettre au guerrier multi-classé de depasser la specialisation (2 points de compétence) pour les compétences d'armes~
-@141 = ~Permettre au guerrier multi-classé de depasser la maitrise (3 points de compétence) pour les compétences d'armes~
-@142 = ~Permettre au guerrier multi-classé de depasser la haute maitrise (4 points de compétence) pour les compétences d'armes~
-@143 = ~Permettre au guerrier multi-classé de depasser la grande maitrise (5 points de compétence) pour les compétences d'armes~
-@150 = ~Add New Fighter Abilities~
+@140 = ~Permettre au guerrier multi-classe d'atteindre la specialisation (2 points) pour les competences d'armes~
+@141 = ~Permettre au guerrier multi-classe d'atteindre la maitrise (3 points) pour les competences d'armes~
+@142 = ~Permettre au guerrier multi-classe d'atteindre la haute maitrise (4 points) pour les competences d'armes~
+@143 = ~Permettre au guerrier multi-classe d'atteindre la grande maitrise (5 points) pour les competences d'armes~
+@150 = ~Ajouter la capacite Second souffle pour les guerriers~
 
 // Group 2 (Update 200-299)
+@200 = ~Ajouter l'art de retranscrire des sorts sur des parchemins~
+@201 = ~Ajouter l'art de retranscrire des sorts sur des parchemins (Ajouter les parchemins de pretres manquants)~
 
 // Group 3 (Update 300-399)
 @300 = ~Mises a Jour des styles de combat~
@@ -64,8 +66,8 @@
 
 // Group 6 (Update 600-699)
 @600 = ~Installer le kit de rodeur Rashemaar Berserker~
-@601 = ~Assigner le kit à Minsc~
-@602 = ~Ne pas assigner le kit à Minsc~
+@601 = ~Assigner le kit a Minsc~
+@602 = ~Ne pas assigner le kit a Minsc~
 @610 = ~Installer le kit Esprit Guerrier qui comme son nom l'indique est un kit de guerrier~
 @620 = ~Installer le kit d'ensorceleur Eldritch Scion~
 
@@ -77,8 +79,9 @@
 @3002 = ~EEex est necessaire pour ce composant~
 @3003 = ~la Rage du Barbare est necessaire pour Instinct Sauvage~
 @3004 = ~Ce composant necessite BG: EE, BGII: EE, EET, or IWD: EE~
-@3005 = ~le barbare ne disposera pas de la capacite spécial Rage du Barbare.~
+@3005 = ~le barbare ne disposera pas de la capacite special Rage du Barbare.~
 @3006 = ~Ce composant necessite BGII: EE ou EET~
+@3007 = ~Priest scrolls have already been added!~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                          //
@@ -86,6 +89,7 @@
 
 @3401 = ~1er Barbares "contenu"~
 @3402 = ~Ajouter Instinct Sauvage~
+@3403 = ~Scroll Crafting~
 
 @3500 = ~[LAST TRA HERE]~
 
