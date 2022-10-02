@@ -2082,7 +2082,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS04~ END
     LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS05~ END
   END
-BUT_ONLY
+//BUT_ONLY
 
   LPF SPELL_PEN_EFF RET spen_value = spen_value END
   PATCH_IF spen_value AND eeex_present BEGIN
