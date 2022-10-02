@@ -362,6 +362,10 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Tough as Bone (4 slots): The character becomes immune to hold, paralysis, and stun effects.
 - Deathless Mastery (5 slots): The character gains immunity to all forms of death magic.
 
+**SPELL PENETRATION (Next Release & EEex Required):** This proficiency allows a caster to bypass a portion of a target's magic resistance.
+- Spell Penetration (1 slot): The wizard can bypass 10% of a target's magic resistance.
+- Greater Spell Penetration (2 slots): The wizard can bypass 25% of a target's magic resistance.
+
 **SWIFTBLADE (Next Release):** This proficiency allows one to combine arcane-assisted speed with melee skill to turn a first strike into a deadly assault. With this proficiency, one discovers unconventional ways to utilize the haste spell. All abilities are cumulative.
 - Arcane Reflexes (1 slot): The character gains a -2 bonus to Speed Factor while under the effects of a haste spell.
 - Swift Surge (2 slots): The character gains +1 bonus to Thac0 and AC while under the effects of a haste spell.
