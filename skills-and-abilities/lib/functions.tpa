@@ -3856,9 +3856,9 @@ END
 // Borrowed Heavily from Klatu
 DEFINE_PATCH_FUNCTION SPELL_PEN_EFF
     INT_VAR abilLen = 0x28
-    RET     value
+    RET     spen_value
 BEGIN
-    value = 0
+    spen_value = 0
     LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = abilLen RET ok = ok END
     PATCH_IF ok BEGIN
         READ_LONG 0x64 abilOff
@@ -3877,7 +3877,7 @@ BEGIN
                          (op = 217) OR // Power Word, Sleep
                          (op = 44) OR  // Strength
                          (op = 80) BEGIN // Deafness
-                    value = 1
+                    spen_value = 1
                     f = afxNum
                     a = abilNum
                     fxNum = 0
@@ -3892,7 +3892,7 @@ BEGIN
                      (op = 217) OR // Power Word, Sleep
                      (op = 44) OR  // Strength
                      (op = 80) BEGIN // Deafness
-                value = 1
+                spen_value = 1
                 f = fxNum
             END
         END
