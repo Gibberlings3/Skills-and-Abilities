@@ -635,14 +635,16 @@ COPY_EXISTING ~mopma05.spl~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pma_prof5% END
 
 // Power Striker Prof
-COPY_EXISTING ~mopow01.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof1% END
-COPY_EXISTING ~mopow02.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof1% END
-COPY_EXISTING ~mopow03.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof2% END
-COPY_EXISTING ~mopow04.spl~ ~override~
-    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof2% END
+ACTION_IF fighter_overhaul THEN BEGIN
+  COPY_EXISTING ~mopow01.spl~ ~override~
+      LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof1% END
+  COPY_EXISTING ~mopow02.spl~ ~override~
+      LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof1% END
+  COPY_EXISTING ~mopow03.spl~ ~override~
+      LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof2% END
+  COPY_EXISTING ~mopow04.spl~ ~override~
+      LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %pow_prof2% END
+END
 
 /*
 // Critical Striker Prof
