@@ -39,7 +39,11 @@ END
 
 ACTION_IF eeex_present THEN BEGIN
   COPY ~skills-and-abilities/spl/proficiencies/MOSPEN1.SPL~   ~override~ // Spell Penetration
+    SAY NAME1 @7138
+    SAY NAME2 @7138
   COPY ~skills-and-abilities/spl/proficiencies/MOSPEN2.SPL~   ~override~ // Greater Spell Penetration
+    SAY NAME1 @7139
+    SAY NAME2 @7139
 END
 
 ACTION_IF fighter_overhaul THEN BEGIN
@@ -2093,8 +2097,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 0 duration = 0 insert_point = 0 STR_VAR resource = ~MOSPEN1~ END
     */
     // -------------------------------------------
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spell_pen2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 1 STR_VAR resource = ~MOSPEN2~ END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spell_pen1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 1 STR_VAR resource = ~MOSPEN1~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spell_pen2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 2 STR_VAR resource = ~MOSPEN2~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spell_pen1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 2 STR_VAR resource = ~MOSPEN1~ END
   END
 
 BUT_ONLY
