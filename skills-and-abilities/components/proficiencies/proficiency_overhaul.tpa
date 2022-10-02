@@ -2096,7 +2096,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 9 parameter1 = 0 parameter2 = %spell_pen1% timing = 0 duration = 0 insert_point = 0 STR_VAR resource = ~MOSPEN1~ END
     */
     // -------------------------------------------
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spell_pen2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point =  special = 1 STR_VAR resource = ~MOSPEN2~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spell_pen2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 1 STR_VAR resource = ~MOSPEN2~ END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spell_pen1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 1 STR_VAR resource = ~MOSPEN1~ END
   END
 
