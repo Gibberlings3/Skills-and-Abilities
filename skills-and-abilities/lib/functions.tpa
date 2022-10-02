@@ -3877,6 +3877,11 @@ BEGIN
                          (op = 12)  OR    // Damage
                          //(op = 16)  OR    // Haste
                          (op = 24)  OR    // Panic
+                         (op = 33)  OR    // Save vs. death bonus
+                         (op = 34)  OR    // Save vs. wand bonus
+                         (op = 35)  OR    // Save vs. polymorph bonus
+                         (op = 36)  OR    // Save vs. breath bonus
+                         (op = 37)  OR    // Save vs. spell bonus
                          (op = 38)  OR    // Silence
                          (op = 39)  OR    // Sleep
                          (op = 40)  OR    // Slow
@@ -3916,6 +3921,11 @@ BEGIN
                      (op = 12)  OR    // Damage
                      //(op = 16)  OR    // Haste
                      (op = 24)  OR    // Panic
+                     (op = 33)  OR    // Save vs. death bonus
+                     (op = 34)  OR    // Save vs. wand bonus
+                     (op = 35)  OR    // Save vs. polymorph bonus
+                     (op = 36)  OR    // Save vs. breath bonus
+                     (op = 37)  OR    // Save vs. spell bonus
                      (op = 38)  OR    // Silence
                      (op = 39)  OR    // Sleep
                      (op = 40)  OR    // Slow
