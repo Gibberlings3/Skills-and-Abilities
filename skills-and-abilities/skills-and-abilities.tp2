@@ -8,7 +8,7 @@ BACKUP ~skills-and-abilities/backup~
 AUTHOR ~Grammarsalad and morpheus562~
 
 VERSION ~v0.9.3-alpha~
-README ~skills-and-abilities/readme.html~
+README ~skills-and-abilities/readme.%LANGUAGE%.html~ ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 
 ALWAYS
@@ -61,6 +61,7 @@ LANGUAGE ~French~
          ~skills-and-abilities/languages/french/turn_undead.tra~
          ~skills-and-abilities/languages/french/kit_descriptions.tra~
          ~skills-and-abilities/languages/french/fighter.tra~
+         ~skills-and-abilities/languages/french/enchant_items.tra~		 
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////

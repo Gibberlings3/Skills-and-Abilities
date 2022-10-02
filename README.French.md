@@ -88,7 +88,6 @@ ATTRACTION CINÉTIQUE : L'Esprit Guerrier est capable de déplacer une créature
 
 - 10ème niveau : Gagne la capacité passive « Forteresse mentale ».
 
-
 FORTERESSE MENTALE : L'Esprit Guerrier devient immunisé contre toutes les attaques psioniques.
 
 - 18ème niveau : Peut utiliser « Maîtrise cinétique » une fois par jour
@@ -167,6 +166,10 @@ BOURRASQUE : Les moines reçoivent une attaque supplémentaire par round.
 - Nouvelle capacité Spéciale : Être Parfait.
 
 ÊTRE PARFAIT : Le moine n'est plus entravé par les pièges temporels et devient immunisé contre Arrêt du temps.
+
+- 15ème niveau : Bourrasque s'améliore en Ouragan.
+
+OURAGAN : Les moines reçoivent une attaque supplémentaire par round.
 
 ### **Coming Soon** Capacités spéciales pour les Barbares ((EEex recommandé)
 
@@ -278,7 +281,11 @@ Le talent naturel pour repousser les morts-vivants est remplacé par une nouvell
 
 #### Update Existing HLAs
 
-Greater Whirlwind: Will now last for three rounds instead of one.
+**TORNADE D'ACIER :** durera désormais trois rounds au lieu d'un.
+
+**RÉSISTANCE À LA MAGIE (Next Release):** Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieure et de combattre les effets des maléfices. Il gagne 40 % de résistance à la magie pendant 1 round + 1 round tous les 2 niveaux.
+
+**CRI DE GUERRE (Next Release):** Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.
 
 (more in progress)
 
@@ -299,6 +306,11 @@ REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une ma
 **ARME À UNE MAIN :** Ce style de combat est destiné aux personnages qui ne souhaitent pas utiliser de bouclier mais qui désirent un bonus lorsqu'ils utilisent une arme de mêlée à une main.
 - Compétent (1 point de compétence) : Le porteur de l'arme bénéficie d'un bonus de 1 aux jets de dégâts, -1 au TAC0, -1 à la CA, et inflige des coups critiques sur un jet d'attaque de 19 ou 20.
 - Spécialisé (2 points de compétences) : Le porteur de l'arme obtient un bonus de 2 aux jets de dégâts, -2 au TAC0, -2 à la CA, et inflige des coups critiques sur un jet d'attaque de 18 à 20.
+
+**TWO-WEAPON (Next Release):** Ce style de combat permet au personnage d'utiliser deux armes de mêlée en même temps avec moins de pénalités. Un personnage maniant deux armes sans point de compétence dans ce style de combat subit un malus de 4 aux jets d'attaque avec l'arme principale, un malus de 8 à la deuxième main, et un malus de 4 aux jets de dégâts pour les deux armes. 
+- Compétent (1 point de compétence) : Les pénalités du porteur sont réduites à 2 pour les jets d'attaque et de dégâts, avec l'arme principale, à 6 au jet d'attaque et 4 au jet de dégâts avec la deuxième arme.
+- Spécialisé (2 points de compétences) :  Les pénalités du porteur sont réduites à 0 pour les jets d'attaque avec l'arme principale et à 4 au jet d'attaque avec la deuxième arme. le porteur conserve une pénalité de 2 aux jets de dégâts pour les deux mains.
+- Maître (3 points de compétences) : Les pénalités du porteur sont réduites à 0, aux jets d'attaque et de dégâts, avec l'arme principale et à 2 pour la deuxième arme.
 
 ### Révision du Système de Compétence - ajout de nouvelles compétences et de nouveaux styles de combat.
 
@@ -349,6 +361,25 @@ La progression des compétences est désormais plus proche du système de progre
 - Aptitude (3 points de compétence) : Le personnage conserve ses facultés de combat et devient immunisé contre la cécité.
 - Inébranlable (4 points de compétence) : Le personnage ne ressent pas la fatigue même après avoir utilisé Rage ou Furie.
 - Récupération Instantanée (5 points de compétence) : Le personnage régénère 1 point de vie par round. Cumulable avec d'autres aptitudes régénérantes.
+
+**MAÎTRE DE LA MORT (Next Release):** La voie du Maître de la mort consiste à maîtriser les arts de la non-vie. Grâce à cette compétence, il peut faire appel à des connaissances obscures et macabres qui lui confèrent une certaine emprise sur la mort.
+- Sombre vision (1 point de compétence) : Le personnage obtient la capacité de voir même dans les ténèbres.
+- Peau squelettique (2 points de compétence): La peau du personnage devient tanné et cadavérique, ce qui lui confère un bonus de 2 à la CA.. 
+- Vigueur implacable (3 points de compétence): Le personnage bénéficie d'un bonus de 2 aux jets de sauvegarde contre la paralysie, le poison et la mort.
+- Calcification (4 points de compétence): Le personnage devient immunisé contre l'immobilisation, la paralysie et l'étourdissement.
+- Maître de la mort (5 points de compétence): Le personnage devient immunisé contre toutes les formes de mort magique.
+
+**LAME IMPÉTUEUSE (Next Release):** Cette compétence permet de combiner les sortilèges augmentant la vitesse de déplacement avec ses aptitudes de mêlée afin que la première attaque soit la plus meurtrière possible. Lame impétueuse, nous fait découvrir de nouvelles façons d'utiliser le sort de hâte. Toutes les capacités sont cumulatives.
+- Réflexes magiques (1 point de compétence): Le personnage gagne un bonus de 2 au facteur de vitesse lorsqu'il est sous l'effet d'un sort de hâte.
+- Ardeur effrénée (2 points de compétence): Le personnage gagne un bonus de 1 au TAC0 et à la CA lorsqu'il est sous l'effet d'un sort de hâte.
+- Humeur fluctuante ( points de compétence): Le personnage devient flou lorsqu'il est sous l'effet d'un sort de hâte.
+- Fougue effrénée (4 points de compétence): Le personnage gagne un bonus supplémentaire au TAC0 et à la CA, lorsqu'il est sous l'effet d'un sort de hâte. Il disposera donc d'un bonus de 2.
+- Célérité fugace (5 points de compétence): Le personnage gagne 10 % de résistance magique supplémentaire lorsqu'il est sous l'effet d'un sort de hâte.
+
+**ATTAQUE BRUTAL (Next Release & Artisan Kitpack Fighter Overhaul Required):** Cette compétence permet au guerrier d'utiliser l'Attaque puissante avec encore plus de férocité. 
+- Attaque puissante amplifiée (1 point de compétence Le personnage gagne un bonus de 5 aux dégâts (au lieu de 3) lorsque le mode Attaque Puissante est activé. Ce bonus augmente à 10 avec l'Attaque Puissante Améliorée (au lieu de 6).
+- Attaque puissante absolue (2 points de compétence): Le personnage gagne un bonus de 6 aux dégâts (au lieu de 3) lorsque le mode Attaque Puissante est activé. Ce bonus augmente à 12 avec l'Attaque Puissante Améliorée (au lieu de 6).
+- REMARQUE : même si d'autres classes peuvent accéder à ce style d'arme, seuls les guerriers pourront l'utiliser pour améliorer la capacité attaque puissante.
 
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 
