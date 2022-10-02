@@ -280,9 +280,6 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 16 0 1 ~PALEMASTER~
     SET_2DA_ENTRY 16 2 1 ~mopma1~
     SET_2DA_ENTRY 16 3 1 ~mopma2~
-    //SET_2DA_ENTRY 17 0 1 ~SPELLPEN~
-    //SET_2DA_ENTRY 17 2 1 ~mospen1~
-    //SET_2DA_ENTRY 17 3 1 ~mospen2~
 
     PATCH_IF fighter_overhaul THEN BEGIN
       SET_2DA_ENTRY 29 0 1 ~POWER~
@@ -290,9 +287,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       SET_2DA_ENTRY 29 3 1 ~mopow2~
     END
     PATCH_IF eeex_present THEN BEGIN
-      SET_2DA_ENTRY 29 0 1 ~SPELLPEN~
-      SET_2DA_ENTRY 29 2 1 ~mospen1~
-      SET_2DA_ENTRY 29 3 1 ~mospen2~
+      SET_2DA_ENTRY 17 0 1 ~SPELLPEN~
+      SET_2DA_ENTRY 17 2 1 ~mospen1~
+      SET_2DA_ENTRY 17 3 1 ~mospen2~
     END
     //SET_2DA_ENTRY 29 0 1 ~CRITICAL~
     //SET_2DA_ENTRY 29 2 1 ~mocri1~
@@ -390,8 +387,8 @@ APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 
 // Spell Penetration
 ACTION_IF eeex_present THEN BEGIN
-  APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%95%TAB%1%TAB%5~
-  APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%95%TAB%2%TAB%5~
+  APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%95%TAB%1%TAB%1~
+  APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%95%TAB%2%TAB%1~
 END
 
 // Power Striker
