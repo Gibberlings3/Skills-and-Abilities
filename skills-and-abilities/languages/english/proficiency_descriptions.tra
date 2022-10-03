@@ -263,4 +263,14 @@ Overwhelming Critical (3 slots): The character deals an additional +20 damage on
 @7138 = ~Spell Penetration~
 @7139 = ~Greater Spell Penetration~
 
+@7140 = ~Armor Penetration~
+@7141 = ~ARMOR PENETRATION: This proficiency allows a character to bypass a portion of a target's physical damage resistance.
+
+Armor Penetration (1 slot): The character can bypass 5% of a target's physical damage resistance.
+
+Greater Armor Penetration (2 slots): The character can bypass 10% of a target's physical damage resistance.~
+
+@7142 = ~Armor Penetration~
+@7143 = ~Greater Armor Penetration~
+
 @8000 = ~[LAST TRA HERE]~

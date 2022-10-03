@@ -44,6 +44,14 @@ ACTION_IF eeex_present THEN BEGIN
   COPY ~skills-and-abilities/spl/proficiencies/MOSPEN2.SPL~   ~override~ // Greater Spell Penetration
     SAY NAME1 @7139
     SAY NAME2 @7139
+  /*
+  COPY ~skills-and-abilities/spl/proficiencies/MOAPEN1.SPL~   ~override~ // Armor Penetration
+    SAY NAME1 @7142
+    SAY NAME2 @7142
+  COPY ~skills-and-abilities/spl/proficiencies/MOAPEN2.SPL~   ~override~ // Greater Armor Penetration
+    SAY NAME1 @7143
+    SAY NAME2 @7143
+  */
 END
 
 ACTION_IF fighter_overhaul THEN BEGIN
@@ -294,6 +302,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       SET_2DA_ENTRY 17 0 1 ~SPELLPEN~
       SET_2DA_ENTRY 17 2 1 ~mospen1~
       SET_2DA_ENTRY 17 3 1 ~mospen2~
+      //SET_2DA_ENTRY 18 0 1 ~ARMORPEN~
+      //SET_2DA_ENTRY 18 2 1 ~moapen1~
+      //SET_2DA_ENTRY 18 3 1 ~moapen2~
     END
     //SET_2DA_ENTRY 29 0 1 ~CRITICAL~
     //SET_2DA_ENTRY 29 2 1 ~mocri1~
@@ -327,7 +338,10 @@ END
 PATCH_IF eeex_present THEN BEGIN
   REPLACE ~mospen1~   @7124
   REPLACE ~mospen2~   @7125
+  //REPLACE ~moapen1~   @7140
+  //REPLACE ~moapen2~   @7141
 END
+
 //REPLACE ~mocri1~    @7134
 //REPLACE ~mocri2~    @7135
 REPLACE ~moarc1~    @7128
@@ -345,7 +359,8 @@ APPEND ~stats.ids~ ~93 SWIFTBLADE~      UNLESS ~93 SWIFTBLADE~
 APPEND ~stats.ids~ ~94 PALEMASTER~      UNLESS ~94 PALEMASTER~
 
 ACTION_IF eeex_present THEN BEGIN
-  APPEND ~stats.ids~ ~95 SPELLPEN~       UNLESS ~95 SPELLPEN~
+  APPEND ~stats.ids~ ~95 SPELLPEN~      UNLESS ~95 SPELLPEN~
+  //APPEND ~stats.ids~ ~96 ARMORPEN~      UNLESS ~96 ARMORPEN~
 END
 
 ACTION_IF fighter_overhaul THEN BEGIN
@@ -389,10 +404,12 @@ ACTION_FOR_EACH spell IN
 APPEND ~splprot.2da~ ~mo_arch_prof1%TAB%107%TAB%1%TAB%2~
 APPEND ~splprot.2da~ ~mo_arch_prof2%TAB%107%TAB%2%TAB%2~
 
-// Spell Penetration
+// Spell/Armor Penetration
 ACTION_IF eeex_present THEN BEGIN
   APPEND ~splprot.2da~ ~mo_spell_pen1%TAB%95%TAB%1%TAB%1~
   APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%95%TAB%2%TAB%1~
+  //APPEND ~splprot.2da~ ~mo_armor_pen1%TAB%96%TAB%1%TAB%1~
+  //APPEND ~splprot.2da~ ~mo_armor_pen2%TAB%96%TAB%2%TAB%1~
 END
 
 // Power Striker
@@ -526,6 +543,16 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Spell Penetration - 2 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spell_pen2~ BEGIN
         SET spell_pen2 = %row%
+
+      /*
+      // ARMOR PENETRATION ----------------------------------------------------//
+      // Armor Penetration - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_pen1~ BEGIN
+        SET armor_pen1 = %row%
+      // Armor Penetration - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_armor_pen2~ BEGIN
+        SET armor_pen2 = %row%
+      */
 
       // POWER STRIKER --------------------------------------------------------//
       // Power Striker - 1 Pips
@@ -755,6 +782,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 class_prof 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 class_prof 1 ~2~   // Armor Penetration
           END
           SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
           PATCH_IF fighter_overhaul THEN BEGIN
@@ -957,6 +985,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1014,6 +1043,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1029,6 +1059,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1077,6 +1108,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1129,6 +1161,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1177,6 +1210,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1229,6 +1263,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1281,6 +1316,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1309,6 +1345,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1337,6 +1374,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1366,6 +1404,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1394,6 +1433,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1445,6 +1485,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1496,6 +1537,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1526,6 +1568,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1554,6 +1597,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1582,6 +1626,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1611,6 +1656,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1639,6 +1685,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1667,6 +1714,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1722,6 +1770,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1769,6 +1818,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
+            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1841,7 +1891,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   END
 
 /*
-  // Critical Weapon Striker Weapon Style 
+  // Armor Penetration  
   PATCH_IF (prof = 89) OR // Bastard Sword
       (prof = 92)  OR     // Axe
       (prof = 99)  OR     // Halberd
@@ -1863,19 +1913,21 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       (prof = 107) OR     // Sling
       (prof = 108) OR     // Black Jack
       (prof = 115) BEGIN  // Club
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS03~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
+    LPF ADD_ITEM_EFFECT INT_VAR header = 1 opcode = 326 target = 2 parameter1 = 0 parameter2 = %armor_pen2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 2 STR_VAR resource = ~MOAPEN2~ END
+    LPF ADD_ITEM_EFFECT INT_VAR header = 1 opcode = 326 target = 2 parameter1 = 0 parameter2 = %armor_pen1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 2 STR_VAR resource = ~MOAPEN1~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS03~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS01~ END 
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
   END ELSE PATCH_IF (prof = 0) && (type = 28) BEGIN // Fist Weapons
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS03~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS03~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS02~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 341 target = 1 parameter2 = 1 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOCRS01~ END 
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof3% timing = 2 STR_VAR resource = ~MOCRS03~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof2% timing = 2 STR_VAR resource = ~MOCRS02~ END
+    //LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 2 parameter1 = 0 parameter2 = %crit_prof1% timing = 2 STR_VAR resource = ~MOCRS01~ END
   END
 */
 
