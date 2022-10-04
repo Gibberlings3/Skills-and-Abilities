@@ -141,3 +141,17 @@ ENHANCE WEAPON: The Eldritch Scion passively imbues <PRO_HISHER> melee weapon wi
 Disadvantages:
 – Receive a -2 penalty to casting speed.
 – Receive a -2 penalty to casting level.~
+
+@5524 = ~shield breaker~
+@5525 = ~Shield Breaker~
+@5526 = ~SHIELD BREAKER: Shield Breakers are a specialized set of fighters whose main purpose is to break the ranks and defenses of an enemy front line. 
+
+Advantages:
+– Each successful hit bestows a -10% cumulative reduction in the target's physical damage resistance.
+– 4th Level: May use Sunder ability once per day and gains an additional use every 4 levels thereafter.
+
+SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall. 
+
+Disadvantages:
+– Weapons receive a -2 penalty to all damage rolls.
+– May not use ranged weapons.~
