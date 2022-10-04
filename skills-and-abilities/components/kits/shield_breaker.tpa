@@ -51,9 +51,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 
 COPY ~skills-and-abilities/2da/mo_shb01.2DA~     ~override~ // kit
 COPY ~skills-and-abilities/spl/kits/moshb01.spl~ ~override~ // Sunder
+  SAY NAME1 @5527
+  SAY UNIDENTIFIED_DESC @5528
 COPY ~skills-and-abilities/spl/kits/moshb02.spl~ ~override~ // -2 Damage
-COPY ~skills-and-abilities/spl/kits/moshb03.spl~ ~override~ // -5% DR per Hit Spell
-COPY ~skills-and-abilities/eff/kits/moshb3a.eff~ ~override~ // -5% Slashing Effect
-COPY ~skills-and-abilities/eff/kits/moshb3b.eff~ ~override~ // -5% Crushing Effect
-COPY ~skills-and-abilities/eff/kits/moshb3c.eff~ ~override~ // -5% Piercing Effect
-COPY ~skills-and-abilities/eff/kits/moshb3d.eff~ ~override~ // -5% Missile Effect
+COPY ~skills-and-abilities/spl/kits/moshb03.spl~ ~override~ // -10% DR per Hit Spell
+COPY ~skills-and-abilities/eff/kits/moshb3a.eff~ ~override~ // -10% Slashing Effect
+COPY ~skills-and-abilities/eff/kits/moshb3b.eff~ ~override~ // -10% Crushing Effect
+COPY ~skills-and-abilities/eff/kits/moshb3c.eff~ ~override~ // -10% Piercing Effect
+COPY ~skills-and-abilities/eff/kits/moshb3d.eff~ ~override~ // -10% Missile Effect
