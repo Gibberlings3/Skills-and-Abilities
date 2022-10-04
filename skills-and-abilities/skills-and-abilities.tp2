@@ -105,6 +105,14 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 INCLUDE ~skills-and-abilities/components/kits/psiwarrior.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Shield Breaker                                                        //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @630 DESIGNATED 630 GROUP @6 LABEL SkillsAndAbilitiesShieldBreaker
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+INCLUDE ~skills-and-abilities/components/kits/shield_breaker.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Eldritch Scion                                                        //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @620 DESIGNATED 620 GROUP @6 LABEL SkillsAndAbilitiesEldritchScion
@@ -393,7 +401,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Craft Spell Scrolls                                                      //
+// Craft Spell Scrolls                                                   //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @200 SUBCOMPONENT @3403 DESIGNATED 200 GROUP @2
 REQUIRE_PREDICATE (GAME_IS ~iwdee bgee bg2ee eet~) @3004
