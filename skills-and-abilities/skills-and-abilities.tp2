@@ -401,7 +401,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Craft Spell Scrolls                                                      //
+// Craft Spell Scrolls                                                   //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @200 SUBCOMPONENT @3403 DESIGNATED 200 GROUP @2
 REQUIRE_PREDICATE (GAME_IS ~iwdee bgee bg2ee eet~) @3004
@@ -411,7 +411,7 @@ LAM b_scroll_global_settings
 LAM b_scroll_level_settings
 
 //marker
-COPY_EXISTING ~SW1H04.itm~ ~override/B_sna200.itm
+COPY_EXISTING ~SW1H04.itm~ ~override/B_sna200.itm~
 
 INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
 
@@ -426,7 +426,7 @@ LAM b_scroll_global_settings
 LAM b_scroll_level_settings
 
 //marker
-COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm
+COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
 
 INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
 
