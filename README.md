@@ -99,6 +99,21 @@ Disadvantages:
 - May not dual class.
 - Hit Die: d8
 
+### Shield Breaker (Next Release)
+
+Shield Breakers are a specialized set of fighters whose main purpose is to break the ranks and defenses of an enemy front line. These fighters will rend and penetrate enemy armor and defenses to make them vulnerable, so their allies may exploit this newly exposed weakness. As a result, the Shield Breaker's attacks will not hit as hard since they are made to break armor and shields, not sever bones and sinew. 
+
+Advantages:
+- Each successful hit bestows a -10% cumulative reduction in the target's physical damage resistance.
+- 4th Level: May use Sunder ability once per day and gains an additional use every 4 levels thereafter.
+
+SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall. 
+
+Disadvantages:
+- Weapons receive a -2 penalty to all damage rolls.
+- May not use ranged weapons.
+- May not use shields.
+
 ### Eldritch Scion
 
 Unlike typical mages, Eldritch Scions do not study tomes of magic or spend time learning to combine martial and magical skills. Rather, Eldritch Scions find that their spells and abilities come to them instinctively. 
@@ -108,7 +123,7 @@ An Eldritch Scion gains most of the features of a Sorcerer while gaining access 
 Advantages:
 - Hit Die: d8
 - Can achieve Specialization (2 points) in any melee weapon.
-- Can wear chain mail armor
+- Can wear chain and scale mail armor (casting restrictions still apply).
 - Custom Thac0 progression that is a hybrid between fighter and sorcerer.
 - Gains Enhance Weapon ability.
 
