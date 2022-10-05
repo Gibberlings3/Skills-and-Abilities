@@ -39,6 +39,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         (type = 12) BEGIN   // Shields
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 parameter1 = %shieldbreaker_code% parameter2 = 9 power = 0 timing = 2 END
   END ELSE BEGIN
+    // Thanks to Cam for providing the below FOR loop to check for ranged weapons header.
     FOR (index = 0 ; index < abil_num ; ++index) BEGIN
       READ_SHORT (abil_off +        (index * 0x38)) type
       PATCH_IF (type = 2) BEGIN
