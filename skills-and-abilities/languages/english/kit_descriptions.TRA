@@ -168,12 +168,7 @@ The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies wi
 Advantages:
 – May use the Relentless Assault ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
 
-RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows that increases with their experience.
-  
-1st - The Battle Master's APR is set to 3 for 5 rounds
-7th - The Battle Master's APR is set to 5 for 5 rounds
-14th - The Battle Master's APR is set to 7 for 5 rounds
-20th - The Battle Master's APR is set to 10 for 5 rounds
+RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows and doubles the amount of attacks they can do for 5 rounds.
 
 – 4th Level: May use Trip Attack once per day and gains an additional use every 4 levels thereafter.
 
@@ -188,12 +183,7 @@ Disadvantages:
 
 @5532 = ~Relentless Assault~
 @5533 = ~Relentless Assault
-The Battle Master is able to unleash a flurry of blows that increases with their experience.
-  
-1st - The Battle Master's APR is set to 3 for 5 rounds
-7th - The Battle Master's APR is set to 5 for 5 rounds
-14th - The Battle Master's APR is set to 7 for 5 rounds
-20th - The Battle Master's APR is set to 10 for 5 rounds~
+The Battle Master is able to unleash a flurry of blows and doubles the amount of attacks they can do for 5 rounds.~
 
 @5534 = ~Trip Attack~
 @5535 = ~Trip Attack
