@@ -21,7 +21,11 @@ You have a limited well of stamina that you can draw on to protect yourself from
 @9508 = ~– Hit Die: d10
 – 1st Level: May use Second Wind once per day.
 
-SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.~
+SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
+
+– 4th Level: May use Trip Attack once per day and gains an additional use every 4 levels thereafter.
+
+TRIP ATTACK: When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.~
 
 /*
 @9508 = ~– Hit Die: d10
@@ -41,6 +45,10 @@ INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to 
 – 1st Level: May use Second Wind once per day.
 
 SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
+
+– 4th Level: May use Trip Attack once per day and gains an additional use every 4 levels thereafter.
+
+TRIP ATTACK: When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.
 ~
 
 @9511 = ~– 12th level: Improved Rapid Shot:~
@@ -52,5 +60,9 @@ INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to 
 
 @9513 = ~– 20th level: The Fighter achieves Specialization (two slots) in all weapons they were not already at least specialized in.~
 @9514 = ~– 20th level: The Fighter gains an additional +0.5 apr bonus and achieves Specialization (two slots) in all weapons they were not already at least specialized in.~
+
+@9515 = ~Trip Attack~
+@9516 = ~Trip Attack
+When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.~
 
 @10000 = ~[LAST TRA HERE]~

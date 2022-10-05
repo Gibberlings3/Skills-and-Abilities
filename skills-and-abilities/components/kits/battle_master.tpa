@@ -26,12 +26,14 @@ COPY ~skills-and-abilities/2da/mo_btm01.2DA~     ~override~ // kit
 COPY ~skills-and-abilities/spl/kits/mobtm01.spl~ ~override~ // Relentless Assault
   SAY NAME1 @5532
   SAY UNIDENTIFIED_DESC @5533
+/* Moving to ALL Fighters
 COPY ~skills-and-abilities/spl/kits/mobtm02.spl~ ~override~ // Trip Attack
   SAY NAME1 @5534
   SAY UNIDENTIFIED_DESC @5535
 COPY ~skills-and-abilities/eff/kits/mobtm2a.eff~ ~override~ // Trip Attack - Level 1
 COPY ~skills-and-abilities/eff/kits/mobtm2b.eff~ ~override~ // Trip Attack - Level 14
 COPY ~skills-and-abilities/eff/kits/mobtm2c.eff~ ~override~ // Trip Attack - Level 20
+*/
 COPY ~skills-and-abilities/spl/MO#IND01.SPL~     ~override~ // Indomitable 1
 COPY ~skills-and-abilities/spl/MO#IND02.SPL~     ~override~ // Indomitable 2
 COPY ~skills-and-abilities/spl/MO#IND03.SPL~     ~override~ // Indomitable 3
