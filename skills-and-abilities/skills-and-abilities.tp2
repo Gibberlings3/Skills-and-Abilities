@@ -113,6 +113,14 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 INCLUDE ~skills-and-abilities/components/kits/shield_breaker.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Battle Master                                                         //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @640 DESIGNATED 640 GROUP @6 LABEL SkillsAndAbilitiesBattleMaster
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+INCLUDE ~skills-and-abilities/components/kits/battle_master.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Eldritch Scion                                                        //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @620 DESIGNATED 620 GROUP @6 LABEL SkillsAndAbilitiesEldritchScion

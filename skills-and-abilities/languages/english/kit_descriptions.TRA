@@ -150,7 +150,7 @@ Advantages:
 – Each successful hit bestows a -10% cumulative reduction in the target's physical damage resistance.
 – 4th Level: May use Sunder ability once per day and gains an additional use every 4 levels thereafter.
 
-SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall. 
+SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful save vs. Death with a -4 penalty negates the fall. 
 
 Disadvantages:
 – Weapons receive a -2 penalty to all damage rolls.
@@ -163,4 +163,38 @@ The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies wi
 
 @5529 = ~battle master~
 @5530 = ~Battle Master~
-@5531 = ~BATTLE MASTER: ~
+@5531 = ~BATTLE MASTER: An expert in two-handed weapons, the Battle Master is able to wreak havok on any battlefield. Their ferocity and resilience is well renowned, and enemies fear the endless barrage of their attacks. 
+
+Advantages:
+– May use the Relentless Assault ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
+
+RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows that increases with their experience.
+  
+1st - The Battle Master's APR is set to 3 for 5 rounds
+7th - The Battle Master's APR is set to 5 for 5 rounds
+14th - The Battle Master's APR is set to 7 for 5 rounds
+20th - The Battle Master's APR is set to 10 for 5 rounds
+
+– 4th Level: May use Trip Attack once per day and gains an additional use every 4 levels thereafter.
+
+TRIP ATTACK: When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.
+
+– 9th Level: Gains the Indomitable passive ability.
+
+INDOMITABLE: The Battle Master gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
+
+Disadvantages:
+– May only attain Grandmaster in two-handed weapons.~
+
+@5532 = ~Relentless Assault~
+@5533 = ~Relentless Assault
+The Battle Master is able to unleash a flurry of blows that increases with their experience.
+  
+1st - The Battle Master's APR is set to 3 for 5 rounds
+7th - The Battle Master's APR is set to 5 for 5 rounds
+14th - The Battle Master's APR is set to 7 for 5 rounds
+20th - The Battle Master's APR is set to 10 for 5 rounds~
+
+@5534 = ~Trip Attack~
+@5535 = ~Trip Attack
+When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.~

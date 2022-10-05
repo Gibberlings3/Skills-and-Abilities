@@ -29,6 +29,10 @@ COPY ~skills-and-abilities/eff/proficiencies/MOCRS04.EFF~   ~override~ // Improv
 COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial Thac0 Modifier on weapons
 //COPY ~skills-and-abilities/spl/proficiencies/MODEV3C.SPL~   ~override~ // Divine Vengeance Damage
 
+ACTION_IF fighter_overhaul THEN BEGIN
+  COPY ~skills-and-abilities/spl/proficiencies/c0fig04.SPL~ ~override~ // Artisan Kitpack Updates
+END
+
 ACTION_IF accelerated_profs THEN BEGIN
   COPY ~skills-and-abilities/2da/prof01.2DA~                ~override/PROFS.2DA~
   COPY ~skills-and-abilities/2da/profsmax.2da~              ~override~ 

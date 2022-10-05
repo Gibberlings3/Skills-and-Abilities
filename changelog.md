@@ -12,6 +12,7 @@ October xx, 2022
 - New Fighter HLAs are added to the HLA Component instead of being part of the Fighter Overhaul.
 - Resist Magic HLA now increments Magic Resist by +40% instead of setting it. Duration is increased.
 - Two-Weapon Style updated to include damage penalties.
+- Added Shield Breaker and Battle Master Fighter Kits.
 
 ## Version 0.9.1 alpha
 
