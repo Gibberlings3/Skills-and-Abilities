@@ -104,7 +104,7 @@ Disadvantages:
 Shield Breakers are a specialized set of fighters whose main purpose is to break the ranks and defenses of an enemy front line. These fighters will rend and penetrate enemy armor and defenses to make them vulnerable, so their allies may exploit this newly exposed weakness. As a result, the Shield Breaker's attacks will not hit as hard since they are made to break armor and shields, not sever bones and sinew. 
 
 Advantages:
-- Each successful hit bestows a -10% cumulative reduction in the target's physical damage resistance.
+- Each successful hit bestows a -10% cumulative reduction in the target's physical damage resistance that lasts for 10 seconds.
 - 4th Level: May use Sunder ability once per day and gains an additional use every 4 levels thereafter.
 
 SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall. 
