@@ -114,6 +114,22 @@ Disadvantages:
 - May not use ranged weapons.
 - May not use shields.
 
+### Battle Master (Next Release)
+
+An expert in two-handed weapons, the Battle Master is able to wreak havok on any battlefield. Their ferocity and resilience is well renowned, and enemies fear the endless barrage of their attacks. 
+
+Advantages:
+- May use the Relentless Assault ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
+
+RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows and doubles the amount of attacks they can do for 5 rounds.
+
+- 9th Level: Gains the Indomitable passive ability.
+
+INDOMITABLE: The Battle Master gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
+
+Disadvantages:
+- May only attain Grandmaster in two-handed weapons.
+
 ### Eldritch Scion
 
 Unlike typical mages, Eldritch Scions do not study tomes of magic or spend time learning to combine martial and magical skills. Rather, Eldritch Scions find that their spells and abilities come to them instinctively. 
