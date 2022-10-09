@@ -166,7 +166,11 @@ The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies wi
 @5531 = ~BATTLE MASTER: An expert in two-handed weapons, the Battle Master is able to wreak havok on any battlefield. Their ferocity and resilience is well renowned, and enemies fear the endless barrage of their attacks. 
 
 Advantages:
-– May use the Relentless Assault ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
+– 1st Level: May use the Dash ability once per day. Gains one use at level 1, one use at level 3, and an additional use every 3 levels thereafter.
+
+DASH: The Battle Master is able to increase his movement speed by +5 for 3 seconds.
+
+– 4th Level: May use the Relentless Assault ability once per day and gains an additional use every 4 levels thereafter.
 
 RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows and doubles the amount of attacks they can do for 5 rounds.
 
@@ -175,12 +179,12 @@ RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows and d
 INDOMITABLE: The Battle Master gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
 
 Disadvantages:
-– May only attain Grandmaster in two-handed weapons.~
+– May only attain Grandmaster in two-handed weapons while all other weapons can only attain Specialized.~
 
 @5532 = ~Relentless Assault~
 @5533 = ~Relentless Assault
 The Battle Master is able to unleash a flurry of blows and doubles the amount of attacks they can do for 5 rounds.~
 
-@5534 = ~Trip Attack~
-@5535 = ~Trip Attack
-When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.~
+@5534 = ~Dash~
+@5535 = ~Dash
+The Battle Master is able to increase his movement speed by +5 for 3 seconds.~
