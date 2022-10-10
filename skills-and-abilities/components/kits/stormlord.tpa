@@ -22,8 +22,8 @@ LAF fl#add_kit_ee STR_VAR kit_name = MO_STORMLORD END
 
 LAF qd_multiclass
   STR_VAR
-    kit_name = MO_STORMLORD
-    kit_clab = mo_stl01
+    kit_name = ~MO_STORMLORD~
+    kit_clab = ~mo_stl01~
     base_class = ~D~
 END
 
