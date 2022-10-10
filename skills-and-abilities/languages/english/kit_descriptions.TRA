@@ -194,14 +194,22 @@ The Battle Master is able to increase his movement speed by +5 for 3 seconds.~
 @5538 = ~STORMLORD: Stormlords wield thunder and lightning like a warrior wields his sword. Because of their command of one of the most destructive aspects of nature, Stormlords are viewed with awe and fear by lesser folk, regardless of their motivation.
 
 Advantages:
-– 1st Level: Stormlord weapons (Spear, Throwing Axe, or Dart) get a +1 enhancement bonus at 1st level, +2 at 6th level, and +3 at 9th level. This enhancement bonus stacks with any enhancement bonus on the weapon, so if you have a Spear +5 you'll actually get +8 bonus to thac0 and damage at level 9. 
+– May attain Master (3 slots) in Stormlord weapons (Spear, Throwing Axe, or Dart).
+– 1st Level: +1 to hit and damage rolls in Stormlord weapons (Spear, Throwing Axe, or Dart). The Stormlord gains an additional +1 to hit and damage rolls in Stormlord weapons (Spear, Throwing Axe, or Dart) at 6th level and at 9th level.
 
 – 3rd Level: May use Shock Weapon once per day and gains an additional use every 3 levels thereafter.
 
-SHOCK WEAPON: The Stormlord may add 1d8 Electricity damage to their weapon for 2 turns (if they are wielding a Stormlord weapon: Spear, Throwing Axe, or Dart).
+SHOCK WEAPON: The Stormlord adds 1d8 Electricity damage to their weapon for 2 turns (if they are wielding a Stormlord weapon: Spear, Throwing Axe, or Dart).
 
-– 9th Level: The Stormlord is fully Immune to Electrical Damage.
+– 12th Level: The Stormlord is fully Immune to Electrical Damage.
 
 Disadvantages:
 – Restricted to Stormlord weapons (Spear, Throwing Axe, or Dart).
-– Cannot use shapeshift.~
+– Cannot use shapeshift.
+– Does not receive traditional Druid elemental resistances.
+
+NOTE: Stormlords may take the axe proficiency but will only be able to use throwing axes.~
+
+@5539 = ~Shock Weapon~
+@5540 = ~Shock Weapon
+The Stormlord adds 1d8 Electricity damage to their weapon for 2 turns (if they are wielding a Stormlord weapon: Spear, Throwing Axe, or Dart).~

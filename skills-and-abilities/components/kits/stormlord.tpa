@@ -2,7 +2,7 @@
 
 ADD_KIT ~MO_STORMLORD~
   ~MO_STORMLORD 0 0 0 0 0 0 0 0~
-  ~MO_STORMLORD 0 0 0 0 0 0 0 0 0 0 0 2 0 0 2 2 0 2 2 0 0 0 2 0 0 0 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  ~MO_STORMLORD 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 3 0 0 0 0 0 0 0 3 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
   ~MO_STORMLORD 9 0 0 0 12 15~
   ~MO_STORMLORD 0 0 0 0 0 0~
   ~MO_STORMLORD 0 0 0 0 0 0~
@@ -29,8 +29,54 @@ END
 
 OUTER_SET stormlord_code = (0x4000 + %MO_STORMLORD%)
 
-// Allow use of Throwing Axes
+COPY ~skills-and-abilities/2da/mo_stl01.2DA~      ~override~ // kit
+COPY ~skills-and-abilities/spl/kits/mo#stl01.SPL~ ~override~ // +1 bonus to hit and damage
+COPY ~skills-and-abilities/spl/kits/mo#stl02.SPL~ ~override~ // Shock Weapon
+  SAY NAME1 @5539
+  SAY UNIDENTIFIED_DESC @5540
+COPY ~skills-and-abilities/eff/kits/mo#stl02.EFF~ ~override~ // Shock Weapon Effect
+COPY ~skills-and-abilities/spl/kits/mo#stl22.SPL~ ~override~ // Shock Weapon Spell
+COPY ~skills-and-abilities/spl/kits/mo#stl03.SPL~ ~override~ // Electricity Immunity
+
+// Allow use of Throwing Axes and Restrict Non-Stormlord Weapons
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  SET ranged = 0
+
+  PATCH_IF (prof = 89) OR   // Bastard Sword
+        (prof = 90)  OR     // Longsword
+        (prof = 91)  OR     // Shortsword
+        (prof = 93)  OR     // Two-Handed Sword
+        (prof = 94)  OR     // Katana
+        (prof = 95)  OR     // Scimitar
+        (prof = 96)  OR     // Dagger
+        (prof = 97)  OR     // Warhammer
+        (prof = 115) OR     // Club
+        (prof = 99)  OR     // Halberd
+        (prof = 100) OR     // Flail
+        (prof = 101) OR     // Mace
+        (prof = 102) OR     // Quarterstaff
+        (prof = 103) OR     // Crossbow
+        (prof = 104) OR     // Longbow
+        (prof = 105) OR     // Shortbow
+        (type = 107) BEGIN  // Sling
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 parameter1 = %stormlord_code% parameter2 = 9 power = 0 timing = 2 END
+  END ELSE PATCH_IF (prof = 92) BEGIN
+    // Thanks to Cam for providing the below FOR loop to check for ranged weapons header.
+    FOR (index = 0 ; index < abil_num ; ++index) BEGIN
+      READ_SHORT (abil_off +        (index * 0x38)) type
+      PATCH_IF (type = 2) BEGIN
+        SET ranged = 1
+        WRITE_BYTE 0x1f (THIS BAND `BIT4)  // removes f/d flag
+        SET index = abil_num // kills loop, prevents patching if ranged item
+      END
+    END
+    PATCH_IF NOT ranged BEGIN
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 parameter1 = %stormlord_code% parameter2 = 9 power = 0 timing = 2 END
+    END
+  END
+  BUT_ONLY
+
+/*
   PATCH_IF (prof = 92) BEGIN  // Axe
     READ_BYTE 0x1f use
     FOR (index = 0 ; index < abil_num ; ++index) BEGIN
@@ -40,6 +86,6 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         SET index = abil_num // kills loop, prevents patching if ranged item
       END
     END
-    
   END
   BUT_ONLY
+*/
