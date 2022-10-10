@@ -30,13 +30,13 @@ END
 OUTER_SET stormlord_code = (0x4000 + %MO_STORMLORD%)
 
 COPY ~skills-and-abilities/2da/mo_stl01.2DA~      ~override~ // kit
-COPY ~skills-and-abilities/spl/kits/mo#stl01.SPL~ ~override~ // +1 bonus to hit and damage
-COPY ~skills-and-abilities/spl/kits/mo#stl02.SPL~ ~override~ // Shock Weapon
+COPY ~skills-and-abilities/spl/kits/mostl01.SPL~ ~override~ // +1 bonus to hit and damage
+COPY ~skills-and-abilities/spl/kits/mostl02.SPL~ ~override~ // Shock Weapon
   SAY NAME1 @5539
   SAY UNIDENTIFIED_DESC @5540
-COPY ~skills-and-abilities/eff/kits/mo#stl02.EFF~ ~override~ // Shock Weapon Effect
-COPY ~skills-and-abilities/spl/kits/mo#stl22.SPL~ ~override~ // Shock Weapon Spell
-COPY ~skills-and-abilities/spl/kits/mo#stl03.SPL~ ~override~ // Electricity Immunity
+COPY ~skills-and-abilities/eff/kits/mostl02.EFF~ ~override~ // Shock Weapon Effect
+COPY ~skills-and-abilities/spl/kits/mostl22.SPL~ ~override~ // Shock Weapon Spell
+COPY ~skills-and-abilities/spl/kits/mostl03.SPL~ ~override~ // Electricity Immunity
 
 // Allow use of Throwing Axes and Restrict Non-Stormlord Weapons
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
