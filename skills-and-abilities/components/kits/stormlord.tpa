@@ -29,7 +29,7 @@ END
 
 OUTER_SET stormlord_code = (0x4000 + %MO_STORMLORD%)
 
-COPY ~skills-and-abilities/2da/mo_stl01.2DA~      ~override~ // kit
+COPY ~skills-and-abilities/2da/mo_stl01.2DA~     ~override~ // kit
 COPY ~skills-and-abilities/spl/kits/mostl01.SPL~ ~override~ // +1 bonus to hit and damage
 COPY ~skills-and-abilities/spl/kits/mostl02.SPL~ ~override~ // Shock Weapon
   SAY NAME1 @5539
