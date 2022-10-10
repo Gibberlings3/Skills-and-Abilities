@@ -24,7 +24,7 @@ LAF qd_multiclass
   STR_VAR
     kit_name = MO_STORMLORD
     kit_clab = mo_stl01
-    base_class = ~Dr~
+    base_class = ~D~
 END
 
 OUTER_SET stormlord_code = (0x4000 + %MO_STORMLORD%)
