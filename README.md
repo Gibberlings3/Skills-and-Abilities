@@ -18,7 +18,7 @@ Some components require EEex to work, and those are identified with **(EEex Requ
 
 ## New Kits
 
-### Rashemaar Berserker
+### Rashemaar Berserker - Ranger Kit
 
 Sometimes referred to as Rashemi berserkers, are the legendary defenders of Rashemen that are known for flying into an almost supernatural frenzy on the battlefield. They are among the most respected members of Rashemi society, second to the revered Wychlaran.
 
@@ -30,7 +30,7 @@ RAGE: The enraged state lasts for 1 turn. While enraged, a Berserker gains a bon
 Disadvantages:
 - May not wear armor heavier than splint mail.
 
-### Psi Warrior
+### Psi Warrior - Fighter Kit
 
 A Psi Warrior is a fighter who augments their physical might with psi-infused weapon strikes, telekinetic lashes, and barriers of mental force. Psi Warriors hone their skills and psionic abilities through solo discipline, unlocked under the tutelage of a master, or refined it at an academy dedicated to wielding the mind's power as both weapon and shield.
 
@@ -99,7 +99,7 @@ Disadvantages:
 - May not dual class.
 - Hit Die: d8
 
-### Shield Breaker (Next Release)
+### Shield Breaker (Next Release) - Fighter Kit
 
 Shield Breakers are a specialized set of fighters whose main purpose is to break the ranks and defenses of an enemy front line. These fighters will rend and penetrate enemy armor and defenses to make them vulnerable, so their allies may exploit this newly exposed weakness. As a result, the Shield Breaker's attacks will not hit as hard since they are made to break armor and shields, not sever bones and sinew. 
 
@@ -114,7 +114,7 @@ Disadvantages:
 - May not use ranged weapons.
 - May not use shields.
 
-### Battle Master (Next Release)
+### Battle Master (Next Release) - Fighter Kit
 
 An expert in two-handed weapons, the Battle Master is able to wreak havok on any battlefield. Their ferocity and resilience is well renowned, and enemies fear the endless barrage of their attacks. 
 
@@ -134,7 +134,7 @@ INDOMITABLE: The Battle Master gains +1 bonus to all saving throws. This increas
 Disadvantages:
 - May only attain Grandmaster in two-handed weapons while all other weapons can only attain Specialized.
 
-### Eldritch Scion
+### Eldritch Scion - Sorcerer Kit
 
 Unlike typical mages, Eldritch Scions do not study tomes of magic or spend time learning to combine martial and magical skills. Rather, Eldritch Scions find that their spells and abilities come to them instinctively. 
 
@@ -155,6 +155,24 @@ ENHANCE WEAPON: The Eldritch Scion passively imbues <PRO_HISHER> melee weapon wi
 Disadvantages:
 - Receive a -2 penalty to casting speed.
 - Receive a -2 penalty to casting level.
+
+### Stormlord (Next Release) - Fighter/Druid Multiclass Kit
+
+Stormlords wield thunder and lightning like a warrior wields his sword. Because of their command of one of the most destructive aspects of nature, Stormlords are viewed with awe and fear by lesser folk, regardless of their motivation.
+
+Advantages:
+- 1st Level: +1 to hit and damage rolls and gains an additional +1 to hit and damage rolls at 6th level and at 9th level.
+- 3rd Level: May use Shock Weapon once per day and gains an additional use every 3 levels thereafter.
+
+SHOCK WEAPON: The Stormlord adds 1d8 Electricity damage to their weapon for 2 turns.
+
+- 12th Level: The Stormlord is fully Immune to Electrical Damage.
+
+Disadvantages:
+- Restricted to Stormlord weapons (Spear, Throwing Axe, or Dart).
+- Does not receive traditional Druid elemental resistances.
+
+NOTE: Stormlords may take the axe proficiency but will only be able to use throwing axes.
 
 ## Class Updates
 
