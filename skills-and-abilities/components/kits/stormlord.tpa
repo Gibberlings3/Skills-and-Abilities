@@ -1,0 +1,45 @@
+// Stormlord Kit 
+
+ADD_KIT ~MO_STORMLORD~
+  ~MO_STORMLORD 0 0 0 0 0 0 0 0~
+  ~MO_STORMLORD 0 0 0 0 0 0 0 0 0 0 0 2 0 0 2 2 0 2 2 0 0 0 2 0 0 0 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  ~MO_STORMLORD 9 0 0 0 12 15~
+  ~MO_STORMLORD 0 0 0 0 0 0~
+  ~MO_STORMLORD 0 0 0 0 0 0~
+  ~MO_STORMLORD 0 0 0 0 0 0~
+  ~MO_STORMLORD 0 0 0 0 1 0 0 0 0~
+  ~MO_STORMLORD 0 0 0 0 0 0~
+  ~skills-and-abilities/2da/mo_stl01.2DA~
+  ~K_FD_H K_FD_HE~
+  ~0x00004000 12~
+  ~FD0~
+  ~LEAT20 * HELM19 BAG27 RING06 RING31 CLCK02 BOOT01 AMUL19 BRAC14 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
+  SAY @5536
+  SAY @5537
+  SAY @5538
+
+LAF fl#add_kit_ee STR_VAR kit_name = MO_STORMLORD END
+
+LAF qd_multiclass
+  STR_VAR
+    kit_name = MO_STORMLORD
+    kit_clab = mo_stl01
+    base_class = ~D~
+END
+
+OUTER_SET stormlord_code = (0x4000 + %MO_STORMLORD%)
+
+// Allow use of Throwing Axes
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (prof = 92) BEGIN  // Axe
+    READ_BYTE 0x1f use
+    FOR (index = 0 ; index < abil_num ; ++index) BEGIN
+      READ_SHORT (abil_off +        (index * 0x38)) type
+      PATCH_IF (type = 2) BEGIN
+        WRITE_BYTE 0x1f (THIS BAND `BIT4)  // removes f/d flag
+        SET index = abil_num // kills loop, prevents patching if ranged item
+      END
+    END
+    
+  END
+  BUT_ONLY
