@@ -2,7 +2,7 @@
 
 ADD_KIT ~MO_STORMLORD~
   ~MO_STORMLORD 0 0 0 0 0 0 0 0~
-  ~MO_STORMLORD 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 3 0 0 0 0 0 0 0 3 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  ~MO_STORMLORD 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
   ~MO_STORMLORD 9 0 0 0 12 15~
   ~MO_STORMLORD 0 0 0 0 0 0~
   ~MO_STORMLORD 0 0 0 0 0 0~
@@ -37,6 +37,7 @@ COPY ~skills-and-abilities/spl/kits/mostl02.SPL~ ~override~ // Shock Weapon
 COPY ~skills-and-abilities/eff/kits/mostl02.EFF~ ~override~ // Shock Weapon Effect
 COPY ~skills-and-abilities/spl/kits/mostl22.SPL~ ~override~ // Shock Weapon Spell
 COPY ~skills-and-abilities/spl/kits/mostl03.SPL~ ~override~ // Electricity Immunity
+COPY ~skills-and-abilities/spl/kits/mostl04.SPL~ ~override~ // Elemental Resist Prevention
 
 // Allow use of Throwing Axes and Restrict Non-Stormlord Weapons
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
@@ -79,17 +80,3 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     END
   END
   BUT_ONLY
-
-/*
-  PATCH_IF (prof = 92) BEGIN  // Axe
-    READ_BYTE 0x1f use
-    FOR (index = 0 ; index < abil_num ; ++index) BEGIN
-      READ_SHORT (abil_off +        (index * 0x38)) type
-      PATCH_IF (type = 2) BEGIN
-        WRITE_BYTE 0x1f (THIS BAND `BIT4)  // removes f/d flag
-        SET index = abil_num // kills loop, prevents patching if ranged item
-      END
-    END
-  END
-  BUT_ONLY
-*/
