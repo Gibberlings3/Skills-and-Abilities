@@ -40,6 +40,9 @@ COPY ~skills-and-abilities/spl/kits/mo#stl03.SPL~ ~override~ // Electricity Immu
 
 // Allow use of Throwing Axes and Restrict Non-Stormlord Weapons
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_SHORT 0x31 prof ELSE 0
+  READ_LONG  0x64 abil_off
+  READ_SHORT 0x68 abil_num
   SET ranged = 0
 
   PATCH_IF (prof = 89) OR   // Bastard Sword
