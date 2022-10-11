@@ -104,6 +104,12 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       SET_2DA_ENTRY 30 (col + 1) 1 ~weapon_prof~   // SLING
       PRETTY_PRINT_2DA
     END
+  END ELSE
+  PATCH_IF ("%column_name%" STRING_EQUAL_CASE "MO_STORMLORD") BEGIN
+    SET_2DA_ENTRY 14 (col + 1) 1 ~weapon_prof~   // AXE
+    SET_2DA_ENTRY 21 (col + 1) 1 ~weapon_prof~   // SPEAR
+    SET_2DA_ENTRY 29 (col + 1) 1 ~weapon_prof~   // DART
+    PRETTY_PRINT_2DA
   END 
   END
 
