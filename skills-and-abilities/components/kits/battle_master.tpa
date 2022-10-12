@@ -2,7 +2,7 @@
 
 ADD_KIT ~MO_BATTLEMASTER~
   ~MO_BATTLEMASTER 0 0 0 0 0 0 0 0~
-  ~MO_BATTLEMASTER 0 0 0 0 0 0 0 0 2 2 2 2 5 2 2 2 2 2 5 5 2 2 5 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  ~MO_BATTLEMASTER 0 0 0 0 0 0 0 0 1 1 1 1 5 1 1 1 1 1 5 5 1 1 5 1 1 1 1 1 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
   ~MO_BATTLEMASTER 9 0 0 0 0 0~
   ~MO_BATTLEMASTER 0 0 0 0 0 0~
   ~MO_BATTLEMASTER 0 0 17 0 0 0~
@@ -22,13 +22,15 @@ LAF fl#add_kit_ee STR_VAR kit_name = MO_BATTLEMASTER END
 
 OUTER_SET battlemaster_code = (0x4000 + %MO_BATTLEMASTER%)
 
-COPY ~skills-and-abilities/2da/mo_btm01.2DA~     ~override~ // kit
-COPY ~skills-and-abilities/spl/kits/mobtm01.spl~ ~override~ // Relentless Assault
+COPY ~skills-and-abilities/2da/mo_btm01.2DA~      ~override~ // kit
+COPY ~skills-and-abilities/spl/kits/mobtm01.spl~  ~override~ // Relentless Assault
   SAY NAME1 @5532
   SAY UNIDENTIFIED_DESC @5533
-COPY ~skills-and-abilities/spl/kits/mobtm03.spl~ ~override~ // Dash
+COPY ~skills-and-abilities/spl/kits/mobtm01a.spl~ ~override~ // Winded
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@5541) STR_VAR END
+COPY ~skills-and-abilities/spl/kits/mobtm03.spl~  ~override~ // Dash
   SAY NAME1 @5534
   SAY UNIDENTIFIED_DESC @5535
-COPY ~skills-and-abilities/spl/MO#IND01.SPL~     ~override~ // Indomitable 1
-COPY ~skills-and-abilities/spl/MO#IND02.SPL~     ~override~ // Indomitable 2
-COPY ~skills-and-abilities/spl/MO#IND03.SPL~     ~override~ // Indomitable 3
+COPY ~skills-and-abilities/spl/MO#IND01.SPL~      ~override~ // Indomitable 1
+COPY ~skills-and-abilities/spl/MO#IND02.SPL~      ~override~ // Indomitable 2
+COPY ~skills-and-abilities/spl/MO#IND03.SPL~      ~override~ // Indomitable 3

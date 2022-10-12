@@ -129,12 +129,14 @@ DASH: The Battle Master is able to increase his movement speed by +5 for 3 secon
 
 RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows and doubles the amount of attacks they can do for 5 rounds.
 
+After the effects end, the character becomes winded, suffering a -2 penalty to Armor Class, to-hit rolls, and damage rolls for 2 rounds.
+
 - 9th Level: Gains the Indomitable passive ability.
 
 INDOMITABLE: The Battle Master gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
 
 Disadvantages:
-- May only attain Grandmaster in two-handed weapons while all other weapons can only attain Specialized.
+- May only attain Grandmaster in two-handed weapons while all other weapons can only attain Proficient.
 
 ### Eldritch Scion - Sorcerer Kit
 
