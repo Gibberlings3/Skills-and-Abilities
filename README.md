@@ -121,9 +121,9 @@ Disadvantages:
 An expert in two-handed weapons, the Battle Master is able to wreak havok on any battlefield. Their ferocity and resilience is well renowned, and enemies fear the endless barrage of their attacks. 
 
 Advantages:
-- 1st Level: May use the Dash ability once per day. Gains one use at level 1, one use at level 3, and an additional use every 3 levels thereafter.
+- 1st Level: May use the Charge ability once per day. Gains one use at level 1, one use at level 3, and an additional use every 3 levels thereafter.
 
-DASH: The Battle Master is able to increase his movement speed by +5 for 3 seconds.
+CHARGE: The Battle Master is able to increase his movement speed by +5 for 3 seconds.
 
 - 4th Level: May use the Relentless Assault ability once per day and gains an additional use every 4 levels thereafter.
 
