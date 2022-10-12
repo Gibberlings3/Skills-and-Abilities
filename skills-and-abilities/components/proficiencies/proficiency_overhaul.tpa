@@ -109,6 +109,11 @@ ACTION_FOR_EACH prof IN
       COPY ~skills-and-abilities/spl/proficiencies/MOPMAC%prof%.SPL~       ~override~
     END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~mobtm01a.spl~ THEN BEGIN
+  COPY_EXISTING ~mocon44.spl~ ~override~ 
+      LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 318 STR_VAR resource = ~mobtm01a~ END
+END
+
 // Import Blank Wizard/Sorcerer CLAB Files
 ACTION_FOR_EACH wiz_clab IN
       1
