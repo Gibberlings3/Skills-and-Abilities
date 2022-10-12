@@ -152,6 +152,8 @@ Advantages:
 
 SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful save vs. Death with a -4 penalty negates the fall. 
 
+NOTE: The reduction in physical damage resistance is not stackable with multiple uses of Sunder.
+
 Disadvantages:
 – Weapons receive a -2 penalty to all damage rolls.
 – May not use ranged weapons.
@@ -159,7 +161,9 @@ Disadvantages:
 
 @5527 = ~Sunder~
 @5528 = ~Sunder
-The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall.~
+The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall.
+
+NOTE: The reduction in physical damage resistance is not stackable with multiple uses of Sunder.~
 
 @5529 = ~battle master~
 @5530 = ~Battle Master~
