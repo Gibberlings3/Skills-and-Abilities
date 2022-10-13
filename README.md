@@ -104,7 +104,7 @@ Disadvantages:
 Shield Breakers are a specialized set of fighters whose main purpose is to break the ranks and defenses of an enemy front line. These fighters will rend and penetrate enemy armor and defenses to make them vulnerable, so their allies may exploit this newly exposed weakness. As a result, the Shield Breaker's attacks will not hit as hard since they are made to break armor and shields, not sever bones and sinew. 
 
 Advantages:
-- Each successful hit bestows a -5% cumulative reduction in the target's physical damage resistance that lasts for 3 rounds.
+- Each successful hit has a 25% chance of bestowing a -10% cumulative reduction in the target's physical damage resistance that lasts for 4 rounds.
 - 4th Level: May use Sunder ability once per day and gains an additional use every 4 levels thereafter.
 
 SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall. 
@@ -112,7 +112,7 @@ SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all en
 NOTE: The reduction in physical damage resistance is not stackable with multiple uses of Sunder.
 
 Disadvantages:
-- Weapons receive a -3 penalty to all damage rolls.
+- Weapons receive a -2 penalty to all damage rolls.
 - May not use ranged weapons.
 - May not use shields.
 
@@ -170,7 +170,7 @@ Advantages:
 
 SHOCK WEAPON: The Stormlord adds 1d8 Electricity damage to their weapon for 2 turns.
 
-- 12th Level: The Stormlord is fully Immune to Electrical Damage.
+- 4th Level: The Stormlord gains 25% immunity to electrical damage. This increases to 50% at level 8, 75% at level 12, and 100% at level 14.
 
 Disadvantages:
 - Restricted to Stormlord weapons (Spear, Throwing Axe, or Dart).
