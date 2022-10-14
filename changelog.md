@@ -13,6 +13,7 @@ October xx, 2022
 - Resist Magic HLA now increments Magic Resist by +40% instead of setting it. Duration is increased.
 - Two-Weapon Style updated to include damage penalties.
 - Added Shield Breaker and Battle Master Fighter Kits.
+- Added Stormlord Fighter/Druid Multiclass Kit.
 
 ## Version 0.9.1 alpha
 
