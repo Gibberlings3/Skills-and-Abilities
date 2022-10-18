@@ -7,16 +7,16 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/spl/MO2WIND.SPL~       ~override~ // Second Wind
+COPY ~skills-and-abilities/spl/class/MO2WIND.SPL~       ~override~ // Second Wind
   SAY NAME1 @9505
   SAY UNIDENTIFIED_DESC @9506
 
-COPY ~skills-and-abilities/spl/kits/mobtm02.spl~ ~override~ // Trip Attack
+COPY ~skills-and-abilities/spl/class/mobtm02.spl~ ~override~ // Trip Attack
   SAY NAME1 @9515
   SAY UNIDENTIFIED_DESC @9516
-COPY ~skills-and-abilities/eff/kits/mobtm2a.eff~ ~override~ // Trip Attack - Level 1
-COPY ~skills-and-abilities/eff/kits/mobtm2b.eff~ ~override~ // Trip Attack - Level 14
-COPY ~skills-and-abilities/eff/kits/mobtm2c.eff~ ~override~ // Trip Attack - Level 20
+COPY ~skills-and-abilities/eff/class/mobtm2a.eff~ ~override~ // Trip Attack - Level 1
+COPY ~skills-and-abilities/eff/class/mobtm2b.eff~ ~override~ // Trip Attack - Level 14
+COPY ~skills-and-abilities/eff/class/mobtm2c.eff~ ~override~ // Trip Attack - Level 20
 
 /*
 COPY ~skills-and-abilities/spl/kits/MO#APB01.SPL~ ~override~ // 0.5 APR Increase at level 20
