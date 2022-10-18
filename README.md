@@ -272,11 +272,11 @@ SMITE: This ability allows the paladin to make a special attack against any enem
 
 - 3rd Level: Gains the Aura of Courage passive ability. This will be Aura of Despair for Blackguards and Aura of Protection for Cavaliers.
 
-AURA OF COURAGE: This ability grants protection against all forms of panic, boosts morale, and grants +2 bonus to all saving throws for the character and all allies within 15 feet.
+AURA OF COURAGE: This ability grants protection against all forms of panic and boosts morale for the character and all allies within 15 feet.
 
 AURA OF DESPAIR: The blackguard radiates a malign aura that causes all enemies within 15 feet of him/her to suffer a -2 penalty on all saving throws.
 
-AURA OF PROTECTION: This ability grants -2 bonus to AC and +2 bonus to all saving throws for the character and all allies within 15 feet.
+AURA OF PROTECTION: This ability grants -2 bonus to AC and +5% physical damage resistance for the character and all allies within 15 feet.
 
 - New HLA Ability: Sanctify Strikes.
 
