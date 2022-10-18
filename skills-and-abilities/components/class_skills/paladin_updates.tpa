@@ -14,7 +14,6 @@ ACTION_FOR_EACH aura IN
     BEGIN
       COPY ~skills-and-abilities/eff/class/MOPAL0%aura%.EFF~  ~override~ 
       COPY ~skills-and-abilities/spl/MOPAL0%aura%.SPL~        ~override~
-        SAY NAME1 @6015
       COPY ~skills-and-abilities/spl/MOPALC%aura%.SPL~        ~override~
     END
 
