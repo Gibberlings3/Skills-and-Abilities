@@ -46,7 +46,7 @@
 @141 = ~Permettre au guerrier multi-classe d'atteindre la maitrise (3 points) pour les competences d'armes~
 @142 = ~Permettre au guerrier multi-classe d'atteindre la haute maitrise (4 points) pour les competences d'armes~
 @143 = ~Permettre au guerrier multi-classe d'atteindre la grande maitrise (5 points) pour les competences d'armes~
-@150 = ~Ajouter la capacite Second souffle pour les guerriers~
+@150 = ~Ajouter de nouvelles capacites pour les guerriers~
 
 // Group 2 (Update 200-299)
 @200 = ~Ajouter l'art de retranscrire des sorts sur des parchemins~
@@ -65,11 +65,14 @@
 // Group 5 (Update 500-599)
 
 // Group 6 (Update 600-699)
-@600 = ~Installer le kit de rodeur Rashemaar Berserker~
+@600 = ~Installer le kit de rodeur "Rashemaar Berserker"~
 @601 = ~Assigner le kit a Minsc~
 @602 = ~Ne pas assigner le kit a Minsc~
-@610 = ~Installer le kit Esprit Guerrier qui comme son nom l'indique est un kit de guerrier~
-@620 = ~Installer le kit d'ensorceleur Eldritch Scion~
+@610 = ~Installer le kit "Esprit Guerrier" qui comme son nom l'indique est un kit de guerrier~
+@620 = ~Installer le kit d'ensorceleur "Eldritch Scion"~
+@630 = ~Installer le kit de guerrier "Pourfendeur de Bouclier"~
+@640 = ~Installer le kit de guerrier "Maitre de Bataille"~
+@650 = ~Installer le kit de guerrier / druide "Seigneur de l'Orage"~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
@@ -81,7 +84,7 @@
 @3004 = ~Ce composant necessite BG: EE, BGII: EE, EET, or IWD: EE~
 @3005 = ~le barbare ne disposera pas de la capacite special Rage du Barbare.~
 @3006 = ~Ce composant necessite BGII: EE ou EET~
-@3007 = ~Priest scrolls have already been added!~
+@3007 = ~Les parchemins de pretres ont deja ete ajoutes !~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                          //
@@ -89,7 +92,7 @@
 
 @3401 = ~1er Barbares "contenu"~
 @3402 = ~Ajouter Instinct Sauvage~
-@3403 = ~Scroll Crafting~
+@3403 = ~Art de retranscrire des sorts sur des parchemins~
 
 @3500 = ~[LAST TRA HERE]~
 
