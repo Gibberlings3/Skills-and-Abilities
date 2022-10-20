@@ -258,7 +258,7 @@ Amélioration Critique (2 points de compétence) : Le personnage augmente ses ch
 Démesure Critique (3 points de compétence) : Le personnage inflige 20 points de dégâts supplémentaires en cas de coup critique avec n'importe quelle arme.~
 
 @7136 = ~Sabre~
-@7137 = ~SABRE*: Cette classe d'arme permet au personnage de manier les Cimeterres, Katanas, Wakizashis et Ninjatōs. Un druide peut aussi choisir cette compétence, mais ne pourra utiliser que les cimeterres. 
+@7137 = ~SABRE : Cette classe d'arme permet au personnage de manier les Cimeterres, Katanas, Wakizashis et Ninjatōs. Un druide peut aussi choisir cette compétence, mais ne pourra utiliser que les cimeterres. 
 
 <DOTS1>
 
@@ -269,5 +269,18 @@ Démesure Critique (3 points de compétence) : Le personnage inflige 20 points d
 <DOTS4>
 
 <DOTS5>~
+
+@7138 = ~Transgression des sorts~
+@7139 = ~Abrogation des sorts~
+
+@7140 = ~Dissolution d'armure~
+@7141 = ~DISSOLUTION D'ARMURE : Cette compétence permet de contourner, en partie, la résistance aux dégâts physique de la cible.
+
+Dissolution d'armure (1 point de compétence): Le personnage peut outrepasser 5 % de la résistance aux dégâts physique de la cible.
+
+Absolution d'armure (2 points de compétence): Le personnage peut outrepasser 10 % de la résistance aux dégâts physique de la cible.~
+
+@7142 = ~Dissolution d'armure~
+@7143 = ~Absolution d'armure~
 
 @8000 = ~[LAST TRA HERE]~

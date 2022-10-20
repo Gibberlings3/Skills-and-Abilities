@@ -18,7 +18,7 @@ Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifi
 
 ## Nouveaux Kits
 
-### Rashemaar Berserker
+### Rashemaar Berserker - Kit de Rôdeur
 
 Aussi appelés Rashemi Berserkers, ces défenseurs légendaires de la Rashéménie sont redoutés pour leur frénésie quasiment surnaturelle sur le champ de bataille et après les vénérés Wychlarans, ils font partie des membres les plus respectés de cette société.
 
@@ -30,7 +30,7 @@ FURIE : Cet état dure 1 tour. Sous Furie, le berserker gagne +2 aux jets de to
 Inconvénients :  
 - Ne peut pas porter d'armure plus lourde que l'armure feuilletée.
 
-### Esprit Guerrier
+### Esprit Guerrier - Kit de Guerrier 
 
 Un Esprit Guerrier augmente sa puissance physique grâce à des attaques psioniques spéciales et télékinétiques, tout en étant capable d'ériger des barrières mentales. Ils affinent leurs compétences et leurs capacités psioniques lors d'une formation rigoureuse et solitaire, sous l'autorité d'un maître, ou les perfectionnent dans une académie exclusivement dédiée à affûter son esprit afin de le manier comme une arme ou un bouclier.
 
@@ -99,7 +99,46 @@ Inconvénients :
 - Réservé aux humains.
 - Dés de vie : d8
 
-### Eldritch Scion
+### Pourfendeur de Bouclier (Next Release) - Kit de Guerrier
+
+Les Pourfendeurs de bouclier sont des guerriers spécialement formés pour enfoncer les rangs et les défenses ennemies. Ils endommageront les armures et les boucliers permettant ainsi à leurs alliés d'exploiter de nouvelles vulnérabilités chez l'adversaire. Par conséquent, ses attaques ne feront pas de gros dégâts, puisqu'elles sont conçues pour briser armures et boucliers, et non pour sectionner os et tendons.
+
+Avantages :
+– Chaque coup réussi à 25 % de chances d’abaisser de 10 % la résistance aux dégâts physiques de la cible, les effets sont cumulables et durent 4 rounds.
+– 4ème niveau : Peut utiliser « Sillage » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
+
+SILLAGE : Le Pourfendeur de Bouclier trace un sillon dans la terre avant de frapper tous les ennemis présents dans un rayon de 4,5 m. Les ennemis touchés subissent 2d4 points de dégâts contondants, une réduction de 25 % de leur résistance aux dégâts physiques pendant 5 rounds, et se retrouvent au sol pendant 3 secondes. Réussir un jet de sauvegarde contre les sorts à -4 annule la chute. 
+
+REMARQUE : La réduction de la résistance aux dégâts physiques n'est pas cumulable en utilisant Sillage de multiples fois.
+
+Inconvénients :
+– Les armes reçoivent une pénalité de 2 aux jets de dégâts..
+– Ne peut utiliser des armes à distance.
+– Ne peut utiliser de boucliers.
+
+### Maître de Bataille (Next Release) - Kit de Guerrier
+
+Expert dans les armes à deux mains, le Maître de Bataille est capable de faire des ravages sur les champs de bataille. D'une férocité et d'une résistance sans pareil, Ils déferlent sur leurs ennemis qui redoutent leur capacité à attaquer encore et encore sans faillir. 
+
+Avantages :
+– 1er niveau : Peut utiliser « Charge » une fois par jour, obtient une utilisation supplémentaire au niveau 3, puis tous les 3 niveaux.
+
+CHARGE : Le Maître de Bataille est capable d'augmenter sa vitesse de déplacement de 5 pendant 3 secondes.
+
+– 4ème niveau : Peut utiliser « Déferlante » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
+
+DÉFERLANTE : Le Maître de Bataille est capable de déchaîner une avalanche de coups, le nombre d'attaques qu'il peut effectuer pendant 5 rounds est doublé.
+
+Après une telle attaque, le personnage est essoufflé et subit une pénalité de 2 à sa classe d'armure, aux jets d'attaque et aux jets de dégâts, pendant 2 rounds.
+
+– 9ème niveau : Gagne la capacité passive « Irréductible ».
+
+IRRÉDUCTIBLE : Le Maître de Bataille bénéficie d'un bonus de 1 à tous ses jets de sauvegarde. Ce bonus passe à 2 au niveau 13 et à 3 au niveau 17.
+
+Inconvénients :
+– Ne peut atteindre la grande maîtrise qu'avec les armes à deux mains, pour toutes les autres armes il ne pourra être que compétent.
+
+### Eldritch Scion - Kit d'Ensorceleur
 
 À la différence des mages traditionnels, l'Eldritch Scion ne passe pas son temps à étudier magie ou à concilier ses compétences martiales et ses talents de magicien. En effet, ses aptitudes se développent spontanément. 
 
@@ -108,7 +147,7 @@ L'Eldritch Scion bénéficie de la plupart des caractéristiques de l'ensorceleu
 Avantages :
 – Dés de vie : d8
 – Peut atteindre la spécialisation (2 points de compétence) pour toutes les armes de mêlée.
-– Peut porter les armures en cotte de mailles.
+– Peut porter les armures en cotte de mailles et les armure en écailles (les restrictions pour le lancement des sorts s'appliquent toujours).
 – Progression du TAC0 personnalisé, hybride entre le guerrier et l'ensorceleur.
 – Obtient la capacité Arme acérée.
 
@@ -120,6 +159,25 @@ ARME ACÉRÉE : L'Eldritch Scion imprègne naturellement son arme avec sa magie 
 Inconvénients :
 – Pénalité de -2 au temps d'incantation des sorts.
 – Pénalité de -2 au niveau du lanceur de sorts.
+
+### Seigneur de l'Orage (Next Release) - Kit de Guerrier / Druide
+
+Les seigneurs de l'orage manipulent le tonnerre et la foudre comme les guerrier manient leur épée. En raison de leur maîtrise de l'un des éléments les plus destructeurs de la nature, ils sont perçus avec crainte et admiration par les gens ordinaires, quelle que soit leur motivation.
+
+Avantages :
+– 1er niveau : Bonus de 1 aux jets de toucher et de dégâts, gagne un bonus supplémentaire au 6ème niveau et un autre au 9ème niveau.
+
+– 3ème niveau : Peut utiliser « Induction » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
+
+INDUCTION : Le Seigneur de l'Orage insuffle 1d8 points de dégâts d'électricité à son arme pendant 2 tours.
+
+– 4ème niveau : Le Seigneur de l'Orage gagne 25 % d'immunité aux dégâts électriques. Cette immunité passe à 50 % au niveau 8, 75 % au niveau 12 et 100 % au niveau 14.
+
+Inconvénients :
+- Le Seigneur de l'Orage est limité aux armes suivantes : Lance, Hache de jet et fléchette.
+- Ne bénéficie pas des résistances élémentaires traditionnelles des druides.
+
+REMARQUE : Les Seigneurs de l'Orage peuvent investir des points de compétence pour les haches, mais ne pourront utiliser que des haches de jet.
 
 ## Mises a Jour des Classes de Personnage
 
@@ -221,11 +279,11 @@ PUNITION : Cette capacité permet au paladin d'effectuer une attaque spéciale c
 
 - 3ème niveau : Gagne la capacité passive Aura de Courage. Le Chevalier Noir disposera à la place de la capacité Aura de Désespoir et le Cavalier de la capacité Aura de Protection.
 
-AURA DE COURAGE : Cette capacité confère une protection contre toutes les formes de panique, augmente le moral et accorde un bonus de 2 à tous les jets de sauvegarde du personnage et de ses alliés dans un rayon de 5 mètres.
+AURA DE COURAGE : Cette capacité confère une protection contre toutes les formes de panique et augmente le moral du personnage et de ses alliés dans un rayon de 5 mètres.
 
 AURA DE DÉSESPOIR : Le Chevalier Noir dégage une aura maléfique qui fait subir un malus de 2 à tout les jets de sauvegarde des ennemis se trouvant à moins de 5 mètres.
 
-AURA DE PROTECTION : Cette capacité confère un bonus de 2 à la CA et un bonus de 2 à tous les jets de sauvegarde pour le personnage et tous ses alliés dans un rayon de 5 mètres.
+AURA DE PROTECTION : Cette capacité confère un bonus de 2 à la CA et 5 % de résistance aux dégâts physiques pour le personnage et tous ses alliés dans un rayon de 5 mètres.
 
 - Ajoute une capacité de haut niveau : Poings Sanctifier.
 
@@ -307,7 +365,7 @@ REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une ma
 - Compétent (1 point de compétence) : Le porteur de l'arme bénéficie d'un bonus de 1 aux jets de dégâts, -1 au TAC0, -1 à la CA, et inflige des coups critiques sur un jet d'attaque de 19 ou 20.
 - Spécialisé (2 points de compétences) : Le porteur de l'arme obtient un bonus de 2 aux jets de dégâts, -2 au TAC0, -2 à la CA, et inflige des coups critiques sur un jet d'attaque de 18 à 20.
 
-**TWO-WEAPON (Next Release):** Ce style de combat permet au personnage d'utiliser deux armes de mêlée en même temps avec moins de pénalités. Un personnage maniant deux armes sans point de compétence dans ce style de combat subit un malus de 4 aux jets d'attaque avec l'arme principale, un malus de 8 à la deuxième main, et un malus de 4 aux jets de dégâts pour les deux armes. 
+**DEUX-ARMES (Next Release):** Ce style de combat permet au personnage d'utiliser deux armes de mêlée en même temps avec moins de pénalités. Un personnage maniant deux armes sans point de compétence dans ce style de combat subit un malus de 4 aux jets d'attaque avec l'arme principale, un malus de 8 à la deuxième main, et un malus de 4 aux jets de dégâts pour les deux armes. 
 - Compétent (1 point de compétence) : Les pénalités du porteur sont réduites à 2 pour les jets d'attaque et de dégâts, avec l'arme principale, à 6 au jet d'attaque et 4 au jet de dégâts avec la deuxième arme.
 - Spécialisé (2 points de compétences) :  Les pénalités du porteur sont réduites à 0 pour les jets d'attaque avec l'arme principale et à 4 au jet d'attaque avec la deuxième arme. le porteur conserve une pénalité de 2 aux jets de dégâts pour les deux mains.
 - Maître (3 points de compétences) : Les pénalités du porteur sont réduites à 0, aux jets d'attaque et de dégâts, avec l'arme principale et à 2 pour la deuxième arme.
@@ -368,6 +426,10 @@ La progression des compétences est désormais plus proche du système de progre
 - Vigueur implacable (3 points de compétence): Le personnage bénéficie d'un bonus de 2 aux jets de sauvegarde contre la paralysie, le poison et la mort.
 - Calcification (4 points de compétence): Le personnage devient immunisé contre l'immobilisation, la paralysie et l'étourdissement.
 - Maître de la mort (5 points de compétence): Le personnage devient immunisé contre toutes les formes de mort magique.
+
+**TRANSGRESSION DES SORTS (Next Release & EEex Required):** Cette compétence permet de contourner, en partie, la résistance magique de la cible.
+- Transgression des sorts (1 point de compétence): Le magicien peut outrepasser 10 % de la résistance magique de la cible.
+- Abrogation des sorts (2 points de compétence): Le magicien peut outrepasser 25 % de la résistance magique de la cible.
 
 **LAME IMPÉTUEUSE (Next Release):** Cette compétence permet de combiner les sortilèges augmentant la vitesse de déplacement avec ses aptitudes de mêlée afin que la première attaque soit la plus meurtrière possible. Lame impétueuse, nous fait découvrir de nouvelles façons d'utiliser le sort de hâte. Toutes les capacités sont cumulatives.
 - Réflexes magiques (1 point de compétence): Le personnage gagne un bonus de 2 au facteur de vitesse lorsqu'il est sous l'effet d'un sort de hâte.
