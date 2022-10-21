@@ -17,7 +17,7 @@ Requires: Epic Weapon Focus~
 @9506 = ~Second Wind (Self-Only)
 You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.~
 
-@9507 = ~– Hit Die: d10~
+@9507 = ~– Hit Die: d10~ // Must match exactly the original line of the fighter class in the language of your game.
 @9508 = ~– Hit Die: d10
 – 1st Level: May use Second Wind once per day.
 
@@ -40,7 +40,9 @@ INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to 
 – 20th Level: The fighter gains an additional +0.5 apr bonus.~
 */
 
-@9509 = ~– Does not suffer penalties for wielding a non-proficient weapon.~
+// If component Figther overhaul from Artisan kitpack mod is installed
+
+@9509 = ~– Does not suffer penalties for wielding a non-proficient weapon.~ // Must match exactly with the mod original line.
 @9510 = ~– Does not suffer penalties for wielding a non-proficient weapon.
 – 1st Level: May use Second Wind once per day.
 
@@ -51,14 +53,14 @@ SECOND WIND: You have a limited well of stamina that you can draw on to protect 
 TRIP ATTACK: When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.
 ~
 
-@9511 = ~– 12th level: Improved Rapid Shot:~
+@9511 = ~– 12th level: Improved Rapid Shot:~ // Must match exactly with the mod original line.
 @9512 = ~– 9th Level: Gains the Indomitable passive ability.
 
 INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
 
 – 12th level: Improved Rapid Shot:~
 
-@9513 = ~– 20th level: The Fighter achieves Specialization (two slots) in all weapons they were not already at least specialized in.~
+@9513 = ~– 20th level: The Fighter achieves Specialization (two slots) in all weapons they were not already at least specialized in.~ // Must match exactly with the mod original line.
 @9514 = ~– 20th level: The Fighter gains an additional +0.5 apr bonus and achieves Specialization (two slots) in all weapons they were not already at least specialized in.~
 
 @9515 = ~Trip Attack~

@@ -17,7 +17,7 @@ Nécessite : Concentration Épique~
 @9506 = ~Second souffle
 Vous disposez, dans une certaine mesure, de la capacité de puiser dans vos réserves pour vous protéger des dangers. Une fois par jour, le guerrier peut utiliser Second souffle, afin de regagner 1d10 points de vie auxquels s'ajoute votre niveau actuel de guerrier.~
 
-@9507 = ~– Dés de vie : d10~
+@9507 = ~- Dés de vie : d10~ // Must match exactly the original line of the fighter class in the language of your game.
 @9508 = ~– Dés de vie : d10
 - 1er niveau : Peut utiliser Second souffle une fois par jour.
 
@@ -33,7 +33,9 @@ IRRÉDUCTIBLE : Le guerrier bénéficie d'un bonus de 1 à tous ses jets de sauv
 
 – 20ème niveau : Le guerrier gagne une demi-attaque supplémentaire par round.~*/
 
-@9509 = ~– Ne souffre d'aucune pénalité en utilisant une arme pour laquelle il n'est pas entraîné.~
+// If component Figther overhaul from Artisan kitpack mod is installed
+
+@9509 = ~– Does not suffer penalties for wielding a non-proficient weapon.~ // Must match exactly with the mod original line.
 @9510 = ~– Ne souffre d'aucune pénalité en utilisant une arme pour laquelle il n'est pas entraîné.
 - 1er niveau : Peut utiliser Second souffle une fois par jour.
 
@@ -44,14 +46,14 @@ SECOND SOUFFLE : Vous disposez, dans une certaine mesure, de la capacité de pui
 CROCHE-PIED : Lorsque réussissez une attaque sur une créature au cours du prochain round, celle-ci se retrouve au sol pendant 3 secondes. Un jet de sauvegarde contre la mort permet d'échapper à la chute. Le jet de sauvegarde contre la mort passe à -2 au niveau 14 et à -4 au niveau 20.
 ~
 
-@9511 = ~- 12ème niveau : Tir Rapide Amélioré :~
+@9511 = ~– 12th level: Improved Rapid Shot:~ // Must match exactly with the mod original line.
 @9512 = ~– 9ème niveau: Gagne la capacité passive Irréductible.
 
 IRRÉDUCTIBLE : Le guerrier bénéficie d'un bonus de 1 à tous ses jets de sauvegarde. Ce bonus passe à 2 au niveau 13 et à 3 au niveau 17.
 
 - 12ème niveau : Tir Rapide Amélioré :~
 
-@9513 = ~- 20ème niveau : Le guerrier achève la spécialisation (deux étoiles) pour toutes les armes ou il ne l'avait pas encore atteinte.~
+@9513 = ~– 20th level: The Fighter achieves Specialization (two slots) in all weapons they were not already at least specialized in.~ // Must match exactly with the mod original line.
 @9514 = ~– 20ème niveau : Le guerrier peut effectuer une attaque supplémentaire par round et achève la spécialisation (deux étoiles) pour toutes les armes ou il ne l'avait pas encore atteinte.~
 
 @9515 = ~Croche-pied~
