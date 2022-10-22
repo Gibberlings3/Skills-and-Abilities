@@ -189,7 +189,7 @@ Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit
 
 Cette option permet au Maître-lames de se spécialiser (2 points de compétence) dans les armes de mêlée. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
 
-### Add New Fighter Abilities
+### Ajouter de nouvelles capacités pour les guerriers
 
 – 1er niveau : Peut utiliser Second souffle une fois par jour.
 
