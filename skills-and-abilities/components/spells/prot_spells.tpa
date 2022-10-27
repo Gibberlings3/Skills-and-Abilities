@@ -179,8 +179,49 @@ END
 // Block Spell Interruptions                                             //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_BYTE  0x31 prof
+  READ_SHORT 0x1c type
+
   LPF CHECK_DAMAGE INT_VAR abilLen = 0x38 RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
       LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 120 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 121 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 122 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+    END
+
+  PATCH_IF (prof = 89)  OR // Bastard Sword
+           (prof = 90)  OR // Longsword
+           (prof = 91)  OR // Shortsword
+           (prof = 92)  OR // Axe
+           (prof = 93)  OR // Two Handed Sword
+           (prof = 94)  OR // Katana
+           (prof = 95)  OR // Scimitar
+           (prof = 96)  OR // Dagger
+           (prof = 97)  OR // Warhammer
+           (prof = 115) OR // Club
+           (prof = 98)  OR // Spear
+           (prof = 99)  OR // Halberd
+           (prof = 100) OR // Flail
+           (prof = 101) OR // Mace
+           (prof = 102) OR // Staff
+           (prof = 103) OR // Crossbow
+           (prof = 104) OR // Longbow
+           (prof = 105) OR // Shortbow
+           (prof = 106) OR // Dart
+           (prof = 107) OR // Sling
+           ((prof = 0) && (type = 28)) BEGIN  // Fist Weapons
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 120 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 121 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 122 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+           END
+
+BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
+  LPF CHECK_DAMAGE INT_VAR abilLen = 0x28 RET damage_value = damage_value END
+    PATCH_IF damage_value BEGIN
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 120 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 121 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 122 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
     END
 BUT_ONLY
