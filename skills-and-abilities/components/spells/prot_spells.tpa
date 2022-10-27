@@ -35,8 +35,8 @@ ACTION_FOR_EACH spell IN
 
 ACTION_IF FILE_EXISTS_IN_GAME ~SCRL7O.ITM~ THEN BEGIN
   COPY_EXISTING ~SCRL7O.ITM~ ~override~
-    SAY NAME1 @5502
-    SAY UNIDENTIFIED_DESC @5503
+    SAY NAME2 @5502
+    SAY DESC @5503
 END
 
 ///////////////////////////////////////////////////////////////////////////
@@ -61,6 +61,11 @@ ACTION_FOR_EACH spell IN
       END
     END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRL9P.ITM~ THEN BEGIN
+  COPY_EXISTING ~SCRL9P.ITM~ ~override~
+    SAY DESC @5504
+END
+
 ///////////////////////////////////////////////////////////////////////////
 // Protection from Normal Weapons                                        //
 ///////////////////////////////////////////////////////////////////////////
@@ -78,3 +83,9 @@ ACTION_FOR_EACH spell IN
         SAY UNIDENTIFIED_DESC @5506
       END
     END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRL6T.ITM~ THEN BEGIN
+  COPY_EXISTING ~SCRL6T.ITM~ ~override~
+    SAY NAME2 @5505
+    SAY DESC @5506
+END
