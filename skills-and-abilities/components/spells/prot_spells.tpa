@@ -210,9 +210,9 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
            (prof = 106) OR // Dart
            (prof = 107) OR // Sling
            ((prof = 0) && (type = 28)) BEGIN  // Fist Weapons
-              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 120 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
-              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 121 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
-              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 122 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 header = 1 target = 2 parameter1 = 120 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 header = 1 target = 2 parameter1 = 121 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 header = 1 target = 2 parameter1 = 122 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
            END
 
 BUT_ONLY
