@@ -218,7 +218,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 BUT_ONLY
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
-  LPF CHECK_DAMAGE INT_VAR abilLen = 0x28 RET damage_value = damage_value END
+  LPF CHECK_DAMAGE RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
       LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 120 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
       LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 121 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
