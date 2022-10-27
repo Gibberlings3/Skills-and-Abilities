@@ -5,6 +5,11 @@
 /*************************************************************************/
 
 ///////////////////////////////////////////////////////////////////////////
+// Variable Set                                                          //
+///////////////////////////////////////////////////////////////////////////
+OUTER_SET vorpal = RESOLVE_STR_REF (@5001)
+
+///////////////////////////////////////////////////////////////////////////
 // Protection from Magical Weapons                                       //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_FOR_EACH spell IN
@@ -18,13 +23,34 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 87 parameter1 = 100 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 88 parameter1 = 100 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 89 parameter1 = 100 parameter2 = 1 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 101 parameter2 = 13 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 267 parameter1 = ~%vorpal%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
         LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        SAY UNIDENTIFIED_DESC @5002
       END
     END
 
-/*
-ACTION_IF NOT spell_revisions THEN BEGIN
-END
-*/
+///////////////////////////////////////////////////////////////////////////
+// Divine Mantle & Absolute Immunity                                     //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH spell IN
+      MELSPL01
+      SPWI907
+    BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
+      COPY_EXISTING ~%spell%.SPL~ ~override~ 
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 86 parameter1 = 100 parameter2 = 1 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 87 parameter1 = 100 parameter2 = 1 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 88 parameter1 = 100 parameter2 = 1 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 89 parameter1 = 100 parameter2 = 1 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%vorpal%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        SAY UNIDENTIFIED_DESC @5003
+      END
+    END
+
