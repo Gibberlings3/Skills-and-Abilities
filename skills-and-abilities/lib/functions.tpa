@@ -3995,6 +3995,44 @@ BEGIN
     END
 END
 
+// Borrowed Heavily from Klatu
+DEFINE_PATCH_FUNCTION CHECK_DAMAGE
+    INT_VAR abilLen = 0x28
+    RET     damage_value
+BEGIN
+    haste_value = 0
+    LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = abilLen RET ok = ok END
+    PATCH_IF ok BEGIN
+        READ_LONG 0x64 abilOff
+        READ_SHORT 0x68 abilNum
+        READ_LONG 0x6a fxOff
+        READ_SHORT 0x70 fxNum
+        FOR (a = 0; a < abilNum; ++a) BEGIN
+            abOff = abilOff + a * abilLen
+            READ_SHORT (abOff + 0x1e) afxNum
+            READ_SHORT (abOff + 0x20) afxIdx
+            FOR (f = 0; f < afxNum; ++f) BEGIN
+                fOff = fxOff + (afxIdx + f) * 0x30
+                READ_SHORT fOff op
+                PATCH_IF (op = 12) BEGIN
+                    haste_value = 1
+                    f = afxNum
+                    a = abilNum
+                    fxNum = 0
+                END
+            END
+        END
+        FOR (f = 0; f < fxNum; ++f) BEGIN
+            fOff = fxOff + f * 0x30
+            READ_SHORT fOff op
+            PATCH_IF (op = 12) BEGIN
+                haste_value = 1
+                f = fxNum
+            END
+        END
+    END
+END
+
 // Taken from Klatu
 DEFINE_PATCH_FUNCTION SANITIZE_ITM_OR_SPL
         INT_VAR abilLen = 0x28
