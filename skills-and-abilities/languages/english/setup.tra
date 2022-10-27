@@ -8,7 +8,7 @@
 @3 = ~Proficiencies~
 @4 = ~More Meaningful Stat Bonuses~
 @5 = ~Improved Turning/Wild Sense~
-@6 = ~New Kits~
+@6 = ~Spells~
 
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
@@ -65,14 +65,7 @@
 // Group 5 (Update 500-599)
 
 // Group 6 (Update 600-699)
-@600 = ~Install Rashemaar Berserker Kit for Rangers~
-@601 = ~Assign kit to Minsc~
-@602 = ~Do NOT assign kit to Minsc~
-@610 = ~Install Psi Warrior Kit for Fighters~
-@620 = ~Install Eldritch Scion Kit for Sorcerers~
-@630 = ~Install Shield Breaker Kit for Fighters~
-@640 = ~Install Battle Master Kit for Fighters~
-@650 = ~Install Stormlord Multiclass Kit for Fighter/Druids~
+@600 = ~Overhaul PfMW, Mantles, and Absolute Immunity~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
@@ -87,7 +80,7 @@
 @3007 = ~Priest scrolls have already been added!~
 
 ///////////////////////////////////////////////////////////////////////////
-// Misc                                                          //
+// Misc                                                                  //
 ///////////////////////////////////////////////////////////////////////////
 
 @3401 = ~1e Barbarian 'package'~

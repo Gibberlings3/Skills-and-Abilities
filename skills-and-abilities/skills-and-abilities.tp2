@@ -63,82 +63,6 @@ LANGUAGE ~French~
          ~skills-and-abilities/languages/french/fighter.tra~
          ~skills-and-abilities/languages/french/enchant_items.tra~		 
 
-/*
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-// New Kits (Group 6)                                                    //
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////
-// Rashemaar Berserker                                                   //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @601 DESIGNATED 601 SUBCOMPONENT @600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar1
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
-
-OUTER_SET minsc_rash=1 // Minsc becomes Rashemaar Berserker
-INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
-
-////////////////////////////////////////////////////
-
-BEGIN @602 DESIGNATED 602 SUBCOMPONENT @600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar2
-
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
-
-OUTER_SET minsc_rash=0 // Minsc becomes Rashemaar Berserker
-INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
-
-////////////////////////////////////////////////////
-// IWDEE ONLY
-
-BEGIN @600 DESIGNATED 600 GROUP @6 LABEL SkillsAndAbilitiesRashemaar3
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) @3000
-
-OUTER_SET minsc_rash=0 // Minsc becomes Rashemaar Berserker
-INCLUDE ~skills-and-abilities/components/kits/rashemaar.tpa~
-
-///////////////////////////////////////////////////////////////////////////
-// Psi Warrior                                                           //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @610 DESIGNATED 610 GROUP @6 LABEL SkillsAndAbilitiesPsiWarrior
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-
-INCLUDE ~skills-and-abilities/components/kits/psiwarrior.tpa~
-
-///////////////////////////////////////////////////////////////////////////
-// Shield Breaker                                                        //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @630 DESIGNATED 630 GROUP @6 LABEL SkillsAndAbilitiesShieldBreaker
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-
-INCLUDE ~skills-and-abilities/components/kits/shield_breaker.tpa~
-
-///////////////////////////////////////////////////////////////////////////
-// Battle Master                                                         //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @640 DESIGNATED 640 GROUP @6 LABEL SkillsAndAbilitiesBattleMaster
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-
-INCLUDE ~skills-and-abilities/components/kits/battle_master.tpa~
-
-///////////////////////////////////////////////////////////////////////////
-// Eldritch Scion                                                        //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @620 DESIGNATED 620 GROUP @6 LABEL SkillsAndAbilitiesEldritchScion
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-
-INCLUDE ~skills-and-abilities/components/kits/eldritch_scion.tpa~
-
-///////////////////////////////////////////////////////////////////////////
-// Stormlord                                                             //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @650 DESIGNATED 650 GROUP @6 LABEL SkillsAndAbilitiesStormlord
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-
-INCLUDE ~skills-and-abilities/components/kits/stormlord.tpa~
-
-*/
-
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // Class Skills Updates (Group 1)                                        //
@@ -532,3 +456,17 @@ BEGIN @X DESIGNATED X
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 */
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Spells (Group 6)                                                      //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Overhaul PfMW, Mantles, and Absolute Immunity                         //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @600 DESIGNATED 600 GROUP @6 LABEL SkillsAndAbilitiesPfMW
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+INCLUDE ~skills-and-abilities/components/spell/prot_spell.tpa~

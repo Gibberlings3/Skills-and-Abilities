@@ -13,6 +13,7 @@ November xx, 2022
 - Resist Magic HLA now increments Magic Resist by +40% instead of setting it. Duration is increased.
 - Two-Weapon Style updated to include damage penalties.
 - Removed Kits. Those are now being included in my standalone kitpack.
+- Overhaul PfMW, Mantles, and Absolute Immunity.
 
 ## Version 0.9.1 alpha
 

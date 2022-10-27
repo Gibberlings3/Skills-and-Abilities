@@ -32,7 +32,13 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
 // Detect third-party mods                                               //
 ///////////////////////////////////////////////////////////////////////////
-
+   // Detect Spell Revisions
+   ACTION_IF FILE_EXISTS_IN_GAME ~dvimhere.mrk~ THEN BEGIN
+      OUTER_SET spell_revisions=1
+   END ELSE BEGIN
+      OUTER_SET spell_revisions=0
+   END
+   
    // Tweaks Anthology Loosen Cleric Restriction
    ACTION_IF MOD_IS_INSTALLED ~setup-cdtweaks.tp2~ ~2420~ BEGIN
       OUTER_SET tweaks_cleric_prof=1
