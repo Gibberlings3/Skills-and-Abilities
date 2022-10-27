@@ -33,6 +33,12 @@ ACTION_FOR_EACH spell IN
       END
     END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRL7O.ITM~ THEN BEGIN
+  COPY_EXISTING ~SCRL7O.ITM~ ~override~
+    SAY NAME1 @5502
+    SAY UNIDENTIFIED_DESC @5503
+END
+
 ///////////////////////////////////////////////////////////////////////////
 // Divine Mantle & Absolute Immunity                                     //
 ///////////////////////////////////////////////////////////////////////////
