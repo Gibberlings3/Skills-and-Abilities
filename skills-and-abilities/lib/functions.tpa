@@ -4015,7 +4015,7 @@ BEGIN
                 fOff = fxOff + (afxIdx + f) * 0x30
                 READ_SHORT fOff op
                 PATCH_IF (op = 12) BEGIN
-                    haste_value = 1
+                    damage_value = 1
                     f = afxNum
                     a = abilNum
                     fxNum = 0
@@ -4026,7 +4026,7 @@ BEGIN
             fOff = fxOff + f * 0x30
             READ_SHORT fOff op
             PATCH_IF (op = 12) BEGIN
-                haste_value = 1
+                damage_value = 1
                 f = fxNum
             END
         END
