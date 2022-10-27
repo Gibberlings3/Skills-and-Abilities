@@ -18,7 +18,12 @@ ACTION_FOR_EACH spell IN
       SPWI611
     BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
-      COPY_EXISTING ~%spell%.SPL~ ~override~ 
+      COPY_EXISTING ~%spell%.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI511" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI611" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 86 parameter1 = 100 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 87 parameter1 = 100 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 88 parameter1 = 100 parameter2 = 1 END
@@ -47,7 +52,12 @@ ACTION_FOR_EACH spell IN
       SPWI907
     BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
-      COPY_EXISTING ~%spell%.SPL~ ~override~ 
+      COPY_EXISTING ~%spell%.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI511" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI611" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 86 parameter1 = 100 parameter2 = 0 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 87 parameter1 = 100 parameter2 = 0 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 88 parameter1 = 100 parameter2 = 0 END
@@ -73,7 +83,12 @@ ACTION_FOR_EACH spell IN
       SPWI511
     BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
-      COPY_EXISTING ~%spell%.SPL~ ~override~ 
+      COPY_EXISTING ~%spell%.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI511" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI611" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 86 parameter1 = 50 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 87 parameter1 = 50 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 88 parameter1 = 50 parameter2 = 1 END
@@ -88,4 +103,66 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SCRL6T.ITM~ THEN BEGIN
   COPY_EXISTING ~SCRL6T.ITM~ ~override~
     SAY NAME2 @5505
     SAY DESC @5506
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Mantle                                                                //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH spell IN
+      SPWI708
+    BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
+      COPY_EXISTING ~%spell%.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI511" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI611" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 86 parameter1 = 60 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 87 parameter1 = 60 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 88 parameter1 = 60 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 89 parameter1 = 60 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%vorpal%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        SAY UNIDENTIFIED_DESC @5507
+      END
+    END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRL8J.ITM~ THEN BEGIN
+  COPY_EXISTING ~SCRL8J.ITM~ ~override~
+    SAY DESC @5507
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Improved Mantle                                                       //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH spell IN
+      SPWI808
+    BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
+      COPY_EXISTING ~%spell%.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI511" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI611" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 86 parameter1 = 80 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 87 parameter1 = 80 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 88 parameter1 = 80 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 89 parameter1 = 80 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%vorpal%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        SAY UNIDENTIFIED_DESC @5508
+      END
+    END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SCRL9C.ITM~ THEN BEGIN
+  COPY_EXISTING ~SCRL9C.ITM~ ~override~
+    SAY DESC @5508
 END
