@@ -40,6 +40,10 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
         LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI511~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI708~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI808~ END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI907~ END
         SAY NAME1 @5502
         SAY UNIDENTIFIED_DESC @5503
       END
@@ -75,6 +79,7 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
         LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI611~ END
         SAY UNIDENTIFIED_DESC @5504
       END
     END
@@ -102,6 +107,7 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 88 parameter1 = 50 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 89 parameter1 = 50 parameter2 = 1 END
         LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI611~ END
         SAY NAME1 @5505
         SAY UNIDENTIFIED_DESC @5506
       END
@@ -135,6 +141,7 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
         LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI611~ END
         SAY UNIDENTIFIED_DESC @5507
       END
     END
@@ -166,6 +173,7 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
         LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+        LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI611~ END
         SAY UNIDENTIFIED_DESC @5508
       END
     END
