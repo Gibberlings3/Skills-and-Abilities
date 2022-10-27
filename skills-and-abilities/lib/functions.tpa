@@ -4000,7 +4000,7 @@ DEFINE_PATCH_FUNCTION CHECK_DAMAGE
     INT_VAR abilLen = 0x28
     RET     damage_value
 BEGIN
-    haste_value = 0
+    damage_value = 0
     LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = abilLen RET ok = ok END
     PATCH_IF ok BEGIN
         READ_LONG 0x64 abilOff
