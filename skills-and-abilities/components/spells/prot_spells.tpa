@@ -21,6 +21,7 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
         LPF DELETE_EFFECT INT_VAR match_opcode = 120 END
+      END
     END
 
 /*
