@@ -469,4 +469,4 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 BEGIN @600 DESIGNATED 600 GROUP @6 LABEL SkillsAndAbilitiesPfMW
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
-INCLUDE ~skills-and-abilities/components/spell/prot_spell.tpa~
+INCLUDE ~skills-and-abilities/components/spell/prot_spells.tpa~
