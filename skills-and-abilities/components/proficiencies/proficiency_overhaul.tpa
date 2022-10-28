@@ -1946,8 +1946,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Concentration
   LPF CHECK_DAMAGE INT_VAR abilLen = 0x38 RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
-      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
-      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
     END
 
   PATCH_IF (prof = 89)  OR // Bastard Sword
@@ -1975,8 +1975,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
            ((prof = 0) && (type = 14)) OR // Bullets
            ((prof = 0) && (type = 31)) OR // Bolts
            ((prof = 0) && (type = 28)) BEGIN  // Fist Weapons
-              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %mo_concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
-              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %mo_concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
            END
 
 /*
@@ -2230,8 +2230,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
   // Concentration
   LPF CHECK_DAMAGE RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
-      LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
-      LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
     END
 
   LPF SPELL_PEN_EFF RET spen_value = spen_value END
