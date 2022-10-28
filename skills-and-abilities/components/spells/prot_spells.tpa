@@ -276,3 +276,33 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 122 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT01~ END
     END
 BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Updates descriptions for Paladin                                      //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+OUTER_SPRINT old_cesp1  @5514
+OUTER_SPRINT new_cesp1  @5515
+OUTER_SPRINT old_cesp2  @5516
+OUTER_SPRINT new_cesp2  @5517
+OUTER_SET cesp1_strref = 66897
+OUTER_SET cesp2_strref = 66898
+
+// cesp1 strref
+ACTION_GET_STRREF ~%cesp1_strref%~ cesp1_description
+
+OUTER_PATCH_SAVE cesp1_description ~%cesp1_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_cesp1%~ ~%new_cesp1%~
+END
+
+STRING_SET_EVALUATE ~%cesp1_strref%~ ~%cesp1_description%~
+
+// cesp2 strref
+ACTION_GET_STRREF ~%cesp2_strref%~ cesp2_description
+
+OUTER_PATCH_SAVE cesp2_description ~%cesp2_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_cesp2%~ ~%new_cesp2%~
+END
+
+STRING_SET_EVALUATE ~%cesp2_strref%~ ~%cesp2_description%~

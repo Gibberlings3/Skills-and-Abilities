@@ -66,3 +66,8 @@ When the spell is cast, it improves physical damage resistance for slashing, cru
 @5511 = ~Three Levels Drained~
 @5512 = ~Two Levels Drained~
 @5513 = ~One Level Drained~
+
+@5514 = ~If you gets scroll for protection from normal weapons~
+@5515 = ~If you gets scroll for minor protection from physical damage~
+@5516 = ~I uses your scroll protection from normal weapons~
+@5517 = ~I uses your scroll minor protection from physical damage~
