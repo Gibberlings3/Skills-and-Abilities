@@ -14,7 +14,12 @@ COPY ~skills-and-abilities/spl//moint01.spl~ ~override~ // Protects against spel
 ///////////////////////////////////////////////////////////////////////////
 // Variable Set                                                          //
 ///////////////////////////////////////////////////////////////////////////
-OUTER_SET vorpal = RESOLVE_STR_REF (@5501)
+OUTER_SET vorpal      = RESOLVE_STR_REF (@5501)
+OUTER_SET five_level  = RESOLVE_STR_REF (@5509)
+OUTER_SET four_level  = RESOLVE_STR_REF (@5510)
+OUTER_SET three_level = RESOLVE_STR_REF (@5511)
+OUTER_SET two_level   = RESOLVE_STR_REF (@5512)
+OUTER_SET one_level   = RESOLVE_STR_REF (@5513)
 
 ///////////////////////////////////////////////////////////////////////////
 // Protection from Magical Weapons                                       //
@@ -77,6 +82,16 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 12 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 55 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN974" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN975" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 169 parameter2 = 59 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 216 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 142 parameter2 = 90 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%five_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%four_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%three_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%two_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%one_level%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%vorpal%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
@@ -140,6 +155,16 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 89 parameter1 = 60 parameter2 = 0 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 55 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN974" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN975" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 169 parameter2 = 59 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 216 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 142 parameter2 = 90 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%five_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%four_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%three_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%two_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%one_level%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%vorpal%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
@@ -173,6 +198,16 @@ ACTION_FOR_EACH spell IN
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 89 parameter1 = 80 parameter2 = 0 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 55 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN974" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN975" END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 169 parameter2 = 59 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 216 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 142 parameter2 = 90 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%five_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%four_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%three_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%two_level%~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%one_level%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 267 parameter1 = ~%vorpal%~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~MESDIE~ END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 oopcode = 324 parameter2 = 0 STR_VAR resource = ~DIE~ END
