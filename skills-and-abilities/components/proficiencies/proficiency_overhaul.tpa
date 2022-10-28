@@ -437,7 +437,7 @@ APPEND ~splprot.2da~ ~mo_concentration1%TAB%96%TAB%1%TAB%1~
 APPEND ~splprot.2da~ ~mo_concentration2%TAB%96%TAB%2%TAB%1~
 
 // Power Striker
-PATCH_IF fighter_overhaul THEN BEGIN
+ACTION_IF fighter_overhaul THEN BEGIN
   APPEND ~splprot.2da~ ~mo_pow_prof1%TAB%106%TAB%1%TAB%1~
   APPEND ~splprot.2da~ ~mo_pow_prof2%TAB%106%TAB%2%TAB%1~
 END
