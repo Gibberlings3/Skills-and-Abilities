@@ -273,4 +273,14 @@ Greater Armor Penetration (2 slots): The character can bypass 10% of a target's 
 @7142 = ~Armor Penetration~
 @7143 = ~Greater Armor Penetration~
 
+@7144 = ~Concentration~
+@7145 = ~CONCENTRATION: The character is adept at casting spells in combat.
+
+Combat Casting (1 slot): The character has a 10% chance to resist having <PRO_HISHER> spell interrupted when damaged while casting. 
+
+Greater Combat Casting (2 slots): The character has a 25% chance to resist having <PRO_HISHER> spell interrupted when damaged while casting.~
+
+@7146 = ~Combat Casting~
+@7147 = ~Greater Combat Casting~
+
 @8000 = ~[LAST TRA HERE]~

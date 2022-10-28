@@ -28,6 +28,12 @@ COPY ~skills-and-abilities/eff/proficiencies/MOCRS04.EFF~   ~override~ // Improv
 */
 COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial Thac0 Modifier on weapons
 //COPY ~skills-and-abilities/spl/proficiencies/MODEV3C.SPL~   ~override~ // Divine Vengeance Damage
+COPY ~skills-and-abilities/spl/proficiencies/MOINT04.SPL~   ~override~ // Combat Casting
+  SAY NAME1 @7146
+  SAY NAME2 @7146
+COPY ~skills-and-abilities/spl/proficiencies/MOINT05.SPL~   ~override~ // Greater Combat Casting
+  SAY NAME1 @7147
+  SAY NAME2 @7147
 
 ACTION_IF fighter_overhaul THEN BEGIN
   COPY ~skills-and-abilities/spl/proficiencies/c0fig04.SPL~ ~override~ // Artisan Kitpack Updates
@@ -301,6 +307,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
     SET_2DA_ENTRY 16 0 1 ~PALEMASTER~
     SET_2DA_ENTRY 16 2 1 ~mopma1~
     SET_2DA_ENTRY 16 3 1 ~mopma2~
+    SET_2DA_ENTRY 18 0 1 ~CONCENTRATION~
+    SET_2DA_ENTRY 18 2 1 ~moint1~
+    SET_2DA_ENTRY 18 3 1 ~moint2~
 
     PATCH_IF fighter_overhaul THEN BEGIN
       SET_2DA_ENTRY 29 0 1 ~POWER~
@@ -338,6 +347,8 @@ REPLACE ~mohas1~    @7130
 REPLACE ~mohas2~    @7131
 REPLACE ~mopma1~    @7126
 REPLACE ~mopma2~    @7127
+REPLACE ~moint1~    @7144
+REPLACE ~moint2~    @7145
 
 PATCH_IF fighter_overhaul THEN BEGIN
   REPLACE ~mopow1~  @7132
@@ -366,6 +377,7 @@ APPEND ~stats.ids~ ~91 DEVOTION~        UNLESS ~91 DEVOTION~
 APPEND ~stats.ids~ ~92 CONDITIONING~    UNLESS ~92 CONDITIONING~
 APPEND ~stats.ids~ ~93 SWIFTBLADE~      UNLESS ~93 SWIFTBLADE~
 APPEND ~stats.ids~ ~94 PALEMASTER~      UNLESS ~94 PALEMASTER~
+APPEND ~stats.ids~ ~96 CONCENTRATION~   UNLESS ~96 CONCENTRATION~
 
 ACTION_IF eeex_present THEN BEGIN
   APPEND ~stats.ids~ ~95 SPELLPEN~      UNLESS ~95 SPELLPEN~
@@ -420,6 +432,9 @@ ACTION_IF eeex_present THEN BEGIN
   //APPEND ~splprot.2da~ ~mo_armor_pen1%TAB%96%TAB%1%TAB%1~
   //APPEND ~splprot.2da~ ~mo_armor_pen2%TAB%96%TAB%2%TAB%1~
 END
+
+APPEND ~splprot.2da~ ~mo_concentration1%TAB%96%TAB%1%TAB%1~
+APPEND ~splprot.2da~ ~mo_concentration2%TAB%96%TAB%2%TAB%1~
 
 // Power Striker
 APPEND ~splprot.2da~ ~mo_pow_prof1%TAB%106%TAB%1%TAB%1~
@@ -552,6 +567,14 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Spell Penetration - 2 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spell_pen2~ BEGIN
         SET spell_pen2 = %row%
+
+      // CONCENTRATION --------------------------------------------------------//
+      // Concentration - 1 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_concentration1~ BEGIN
+        SET concentration1 = %row%
+      // Concentration - 2 Pips
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_concentration2~ BEGIN
+        SET concentration2 = %row%  
 
       /*
       // ARMOR PENETRATION ----------------------------------------------------//
@@ -789,9 +812,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         BEGIN
           SET_2DA_ENTRY 14 class_prof 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 class_prof 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 class_prof 1 ~2~   // Spell Penetration
-            //SET_2DA_ENTRY 18 class_prof 1 ~2~   // Armor Penetration
           END
           SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
           PATCH_IF fighter_overhaul THEN BEGIN
@@ -992,9 +1015,9 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1050,6 +1073,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1066,6 +1090,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1115,6 +1140,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1168,6 +1194,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1217,6 +1244,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~1~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1270,6 +1298,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1323,6 +1352,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1352,6 +1382,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1381,6 +1412,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1411,6 +1443,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1440,6 +1473,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1492,6 +1526,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1544,6 +1579,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1575,6 +1611,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1604,6 +1641,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1633,6 +1671,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1663,6 +1702,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1692,6 +1732,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1721,6 +1762,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1777,6 +1819,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~1~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1825,6 +1868,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 13 (col + 1) 1 ~5~   // Devotion Prof
           SET_2DA_ENTRY 14 (col + 1) 1 ~5~   // Conditioning Prof
           SET_2DA_ENTRY 15 (col + 1) 1 ~5~   // Swiftblade Prof
+          SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
@@ -1898,6 +1942,42 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
       LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOARC01~ END
     END
   END
+
+  // Concentration
+  LPF CHECK_DAMAGE INT_VAR abilLen = 0x38 RET damage_value = damage_value END
+    PATCH_IF damage_value BEGIN
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
+      LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
+    END
+
+  PATCH_IF (prof = 89)  OR // Bastard Sword
+           (prof = 90)  OR // Longsword
+           (prof = 91)  OR // Shortsword
+           (prof = 92)  OR // Axe
+           (prof = 93)  OR // Two Handed Sword
+           (prof = 94)  OR // Katana
+           (prof = 95)  OR // Scimitar
+           (prof = 96)  OR // Dagger
+           (prof = 97)  OR // Warhammer
+           (prof = 115) OR // Club
+           (prof = 98)  OR // Spear
+           (prof = 99)  OR // Halberd
+           (prof = 100) OR // Flail
+           (prof = 101) OR // Mace
+           (prof = 102) OR // Staff
+           (prof = 103) OR // Crossbow
+           (prof = 104) OR // Longbow
+           (prof = 105) OR // Shortbow
+           (prof = 106) OR // Dart
+           (prof = 107) OR // Sling
+           ((prof = 0) && (type = 0))  OR // Miscellaneous Weapons
+           ((prof = 0) && (type = 5))  OR // Arrows
+           ((prof = 0) && (type = 14)) OR // Bullets
+           ((prof = 0) && (type = 31)) OR // Bolts
+           ((prof = 0) && (type = 28)) BEGIN  // Fist Weapons
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %mo_concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
+              LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %mo_concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
+           END
 
 /*
   // Armor Penetration  
@@ -2146,7 +2226,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS04~ END
     LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS05~ END
   END
-//BUT_ONLY
+
+  // Concentration
+  LPF CHECK_DAMAGE RET damage_value = damage_value END
+    PATCH_IF damage_value BEGIN
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %mo_concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
+    END
 
   LPF SPELL_PEN_EFF RET spen_value = spen_value END
   PATCH_IF spen_value AND eeex_present BEGIN
