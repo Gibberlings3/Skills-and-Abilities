@@ -321,23 +321,6 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Add New HLAs for ALL CLasses and Kits                                 //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @91 DESIGNATED 91 SUBCOMPONENT @90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA1
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
-
-OUTER_SET existing_hla=1
-INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
-
-////////////////////////////////////////////////////
-
-BEGIN @92 DESIGNATED 92 SUBCOMPONENT @90 GROUP @1 LABEL SkillsAndAbilitiesNewHLA2
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
-
-OUTER_SET existing_hla=0
-INCLUDE ~skills-and-abilities/components/class_skills/new_hlas.tpa~
-
-///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // New Skills and Pseudo-Skills (Group 2)                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -389,6 +372,23 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3008
 
 INCLUDE ~skills-and-abilities/components/spells/prot_spells.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Add New HLAs for ALL CLasses and Kits                                 //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @91 DESIGNATED 91 SUBCOMPONENT @90 GROUP @6 LABEL SkillsAndAbilitiesNewHLA1
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
+
+OUTER_SET existing_hla=1
+INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
+
+////////////////////////////////////////////////////
+
+BEGIN @92 DESIGNATED 92 SUBCOMPONENT @90 GROUP @6 LABEL SkillsAndAbilitiesNewHLA2
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
+
+OUTER_SET existing_hla=0
+INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
