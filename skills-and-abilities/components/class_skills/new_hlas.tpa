@@ -171,4 +171,17 @@ ACTION_IF existing_hla BEGIN
             SAY_EVALUATED 0x50 ~%desc%~
           END
     END
+
+  // Update Hardiness so it does NOT get dispelled by Breach
+  ACTION_FOR_EACH hardi IN
+        DW#WISH4
+        SPCL907
+        SPWISH12
+      BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%hardi%.SPL~ BEGIN
+          COPY_EXISTING ~%hardi%.SPL~ ~override~
+            WRITE_BYTE 0x25 0
+            WRITE_BYTE 0x27 0
+        END 
+  END
 END
