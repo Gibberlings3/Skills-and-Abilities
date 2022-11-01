@@ -172,11 +172,12 @@ ACTION_IF existing_hla BEGIN
           END
     END
 
-  // Update Hardiness so it does NOT get dispelled by Breach
+  // Update Hardiness/Resist Magic so it does NOT get dispelled
   ACTION_FOR_EACH hardi IN
-        DW#WISH4
-        SPCL907
-        SPWISH12
+        DW#WISH4 // Hardiness
+        SPCL907  // Hardiness
+        SPWISH12 // Hardiness
+        SPCL904  // Resist Magic
       BEGIN
         ACTION_IF FILE_EXISTS_IN_GAME ~%hardi%.SPL~ BEGIN
           COPY_EXISTING ~%hardi%.SPL~ ~override~
