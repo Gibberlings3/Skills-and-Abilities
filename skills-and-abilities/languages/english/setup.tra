@@ -66,6 +66,8 @@
 
 // Group 6 (Update 600-699)
 @600 = ~Overhaul PfMW, Mantles, and Absolute Immunity~
+@610 = ~Add New HLAs for ALL Classes and Kits~
+@620 = ~Update Existing HLAs~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //

@@ -376,19 +376,18 @@ INCLUDE ~skills-and-abilities/components/spells/prot_spells.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @91 DESIGNATED 91 SUBCOMPONENT @90 GROUP @6 LABEL SkillsAndAbilitiesNewHLA1
+BEGIN @610 DESIGNATED 610 GROUP @6 LABEL SkillsAndAbilitiesNewHLA
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
 
-OUTER_SET existing_hla=1
 INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
 
-////////////////////////////////////////////////////
-
-BEGIN @92 DESIGNATED 92 SUBCOMPONENT @90 GROUP @6 LABEL SkillsAndAbilitiesNewHLA2
+///////////////////////////////////////////////////////////////////////////
+// Update Existing HLAs                                                  //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @620 DESIGNATED 620 GROUP @6 LABEL SkillsAndAbilitiesUpdateHLA
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
 
-OUTER_SET existing_hla=0
-INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
+INCLUDE ~skills-and-abilities/components/spells/update_hlas.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
