@@ -11,12 +11,14 @@ COPY ~skills-and-abilities/spl/class/MO2WIND.SPL~       ~override~ // Second Win
   SAY NAME1 @9505
   SAY UNIDENTIFIED_DESC @9506
 
+/*
 COPY ~skills-and-abilities/spl/class/mobtm02.spl~ ~override~ // Trip Attack
   SAY NAME1 @9515
   SAY UNIDENTIFIED_DESC @9516
 COPY ~skills-and-abilities/eff/class/mobtm2a.eff~ ~override~ // Trip Attack - Level 1
 COPY ~skills-and-abilities/eff/class/mobtm2b.eff~ ~override~ // Trip Attack - Level 14
 COPY ~skills-and-abilities/eff/class/mobtm2c.eff~ ~override~ // Trip Attack - Level 20
+*/
 
 /*
 COPY ~skills-and-abilities/spl/kits/MO#APB01.SPL~ ~override~ // 0.5 APR Increase at level 20
@@ -34,7 +36,7 @@ COPY_EXISTING ~CLABFI01.2DA~ override
     //LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_MO#IND02 END // Indomitable 2
     //LPF set_clab_2da_entries INT_VAR f_MinLevel = 17 f_MaxLevel = 17 STR_VAR f_Entry = AP_MO#IND03 END // Indomitable 3
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MO2WIND END // Second Wind
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_Increment = 4 STR_VAR f_Entry = GA_mobtm02 END // Trip Attack
+    //LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_Increment = 4 STR_VAR f_Entry = GA_mobtm02 END // Trip Attack
     PRETTY_PRINT_2DA
   BUT_ONLY
 
@@ -60,7 +62,7 @@ COPY_EXISTING ~CLABFI01.2DA~ override
         //LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_MO#IND02 END // Indomitable 2
         //LPF set_clab_2da_entries INT_VAR f_MinLevel = 17 f_MaxLevel = 17 STR_VAR f_Entry = AP_MO#IND03 END // Indomitable 3
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MO2WIND END // Second Wind
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_Increment = 4 STR_VAR f_Entry = GA_mobtm02 END // Trip Attack
+        //LPF set_clab_2da_entries INT_VAR f_MinLevel = 4 f_Increment = 4 STR_VAR f_Entry = GA_mobtm02 END // Trip Attack
         PRETTY_PRINT_2DA
       END
       BUT_ONLY
