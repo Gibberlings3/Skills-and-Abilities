@@ -30,12 +30,15 @@ LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WARRIOR_GREATER_WHIRLWIND~ RET s
         END
   END
 
-// Update Hardiness/Resist Magic so it does NOT get dispelled
+// Update HLA Abilities so they do NOT get dispelled
 ACTION_FOR_EACH hardi IN
       DW#WISH4 // Hardiness
       SPCL907  // Hardiness
       SPWISH12 // Hardiness
       SPCL904  // Resist Magic
+      SPCL917  // Avoid Death
+      SPCL913  // Evasion
+      SPCL914  // Greater Evasion
     BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME ~%hardi%.SPL~ BEGIN
         COPY_EXISTING ~%hardi%.SPL~ ~override~
