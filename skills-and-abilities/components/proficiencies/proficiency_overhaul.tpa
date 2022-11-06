@@ -195,7 +195,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
         PATCH_IF (missile < sling) BEGIN SET missile = sling END
 
         // Spear
-        READ_2DA_ENTRY 20 col cols spear
+        READ_2DA_ENTRY 18 col cols spear
         READ_2DA_ENTRY 19 col cols halberd
         READ_2DA_ENTRY 22 col cols staff
         PATCH_IF (spear < halberd) BEGIN SET spear = halberd END
