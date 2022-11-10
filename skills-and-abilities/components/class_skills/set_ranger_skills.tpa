@@ -71,12 +71,14 @@ READ_2DA_ENTRIES_NOW kitlist 3
 BUT_ONLY
 
 
-
+/*
+//old
 COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 9 8 1 ~100~   // SET_TRAPS
   SET_2DA_ENTRY 9 18 1 ~100~  // SET_TRAPS
   PRETTY_PRINT_2DA
 BUT_ONLY
+*/
 
 /* Lets keep 1st level bonus
 ///////////////////////////////////////////////////////////////////////////
