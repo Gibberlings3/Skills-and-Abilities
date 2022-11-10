@@ -38,8 +38,8 @@ INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to 
 
 // If component Figther overhaul from Artisan kitpack mod is installed
 
-@9509 = ~– Does not suffer penalties for wielding a non-proficient weapon.~ // Must match exactly with the mod original line.
-@9510 = ~– Does not suffer penalties for wielding a non-proficient weapon.
+@9509 = ~– May achieve Specialization (two slots) in any fighting style and allocate three slots in Two-Weapon Style.~ // Must match exactly with the mod original line.
+@9510 = ~– May achieve Specialization (two slots) in any fighting style and allocate three slots in Two-Weapon Style.
 – 1st Level: May use Second Wind once per day.
 
 SECOND WIND: You have a limited well of stamina that you can draw on to protect yourself from harm. Once per day, the fighter may use this ability to regain hit points equal to 1d10 + your fighter level.
