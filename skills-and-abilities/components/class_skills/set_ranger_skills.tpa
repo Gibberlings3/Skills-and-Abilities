@@ -46,7 +46,6 @@ READ_2DA_ENTRIES_NOW kitlist 3
 	          COPY_EXISTING ~%clab_ref%.2da~ ~override~
 		    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_B_NTP01 END
 	     END
-	     BUT_ONLY
 	END
 		
     END
@@ -55,6 +54,24 @@ BUT_ONLY
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for Ranger and Cleric/Ranger    //
 ///////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~KITLIST.2da~ ~override~
+READ_2DA_ENTRIES_NOW kitlist 3
+    FOR (row = 1; row < kitlist; ++row) BEGIN //
+	READ_2DA_ENTRY_FORMER kitlist row 1 kit_name
+	READ_2DA_ENTRY_FORMER kitlist row 5 clab_ref
+	READ_2DA_ENTRY_FORMER kitlist row 8 class_ref
+	PATCH_IF ((%class_ref% = 12) OR (%class_ref% = 18)) AND !("%kit_name%" STRING_EQUAL_CASE "MO_RASHEMAAR") BEGIN //
+	    INNER_ACTION BEGIN
+	        COPY_EXISTING ~THIEFSCL.2DA~ ~override~
+		//CONTINUE
+	    END
+	END
+   END
+BUT_ONLY
+
+
+
 COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 9 8 1 ~100~   // SET_TRAPS
   SET_2DA_ENTRY 9 18 1 ~100~  // SET_TRAPS
