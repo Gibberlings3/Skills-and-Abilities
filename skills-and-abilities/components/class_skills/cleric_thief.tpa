@@ -7,4 +7,4 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~skills-and-abilities/lua/M_B3CM01.lua~ ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~skills-and-abilities/lua/M_B3CT01.lua~ ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
