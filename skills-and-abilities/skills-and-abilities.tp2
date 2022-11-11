@@ -312,6 +312,15 @@ INCLUDE ~skills-and-abilities/components/class_skills/cleric_mage_thief.tpa~
 */
 
 ///////////////////////////////////////////////////////////////////////////
+// Adjust Cleric/Mage Actionbar                                          //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @160 DESIGNATED 160 GROUP @1 LABEL SkillsAndAbilitiesClericMage
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+INCLUDE ~skills-and-abilities/components/class_skills/cleric_mage.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Turn Undead Overhaul                                                  //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @120 DESIGNATED 120 GROUP @1 LABEL SkillsAndAbilitiesTurnUndead
