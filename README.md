@@ -302,6 +302,10 @@ As stated, Inquisitors will now gain spellcasting similar to other Paladins.
 
 The existing Turn Undead is being replaced with a new ability. Clerics may now cast Turn Undead once per day per every 3 levels (starts at 3rd level with one use) and paladins may now cast Turn Undead once per day per every 4 levels (starts at 4th level with one use). The ability will now deal 2d6 + Character level + charisma modifier points of damage to any undead within 15 feet. The caster will outright destroy any undead who are half the level (or less) of the cleric/paladin using Turn Undead. The original Turn Undead modal is replaced with an extra quick-spell option. 
 
+### Adjust Cleric/Thief Actionbar (Next Release - EEex Required)
+
+This component replaces the Turn Undead modal button on the Cleric/Thief Actionbar with the Thieving Ability. This is recommended if the Turn Undead Overhaul (previous component) is installed.
+
 ### Add New HLAs for ALL Classes and Kits
 
 **EPIC DAMAGE REDUCTION:** The character gains 10% damage reduction to all physical attacks.
@@ -338,6 +342,7 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 
 **WAR CRY (Next Release):** With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.
 
+This also updates the following HLAs so they CANNOT be removed by Breach or anti-magic spell: Hardiness, Resist Magic, Avoid Death, Evasion, Greater Evasion, and Assassination.
 (more in progress)
 
 ## Proficiencies

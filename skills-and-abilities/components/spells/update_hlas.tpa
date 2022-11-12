@@ -39,6 +39,7 @@ ACTION_FOR_EACH hardi IN
       SPCL917  // Avoid Death
       SPCL913  // Evasion
       SPCL914  // Greater Evasion
+      SPCL916  // Assassination
     BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME ~%hardi%.SPL~ BEGIN
         COPY_EXISTING ~%hardi%.SPL~ ~override~
