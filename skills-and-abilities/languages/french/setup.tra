@@ -39,7 +39,7 @@
 @91 = ~Mise a jour des HLAs existantes et ajout des nouvelles HLAs~
 @92 = ~Ajouter SEULEMENT les nouvelles HLAs~
 @100 = ~Permettre a l'Inquisiteur de lancer des sorts divins~
-@110 = ~Ajouter la classe de Clerc/Mage/Voleur~
+@110 = ~Ajouter la classe de Clerc / Mage / Voleur~
 @120 = ~Revision de la capacite repousser les morts-vivants~
 @130 = ~Permettre au Maitre-lames de se specialiser dans les armes de melee~
 @140 = ~Permettre au guerrier multi-classe d'atteindre la specialisation (2 points) pour les competences d'armes~
@@ -47,7 +47,7 @@
 @142 = ~Permettre au guerrier multi-classe d'atteindre la haute maitrise (4 points) pour les competences d'armes~
 @143 = ~Permettre au guerrier multi-classe d'atteindre la grande maitrise (5 points) pour les competences d'armes~
 @150 = ~Ajouter de nouvelles capacites pour les guerriers~
-@160 = ~Ajustement de la barre d'action pour les Clerc / Voleur~
+@160 = ~Ajustement de la barre d'action pour les personnages Clerc / Voleur~
 
 // Group 2 (Update 200-299)
 @200 = ~Ajouter l'art de retranscrire des sorts sur des parchemins~
