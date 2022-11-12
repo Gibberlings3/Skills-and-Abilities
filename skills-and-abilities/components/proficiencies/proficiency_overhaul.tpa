@@ -434,8 +434,8 @@ ACTION_IF eeex_present THEN BEGIN
   APPEND ~splprot.2da~ ~mo_spell_pen2%TAB%95%TAB%2%TAB%1~
   //APPEND ~splprot.2da~ ~mo_armor_pen1%TAB%96%TAB%1%TAB%1~
   //APPEND ~splprot.2da~ ~mo_armor_pen2%TAB%96%TAB%2%TAB%1~
-  //APPEND ~splprot.2da~ ~mo_concentration1%TAB%96%TAB%1%TAB%1~
-  //APPEND ~splprot.2da~ ~mo_concentration2%TAB%96%TAB%2%TAB%1~
+  APPEND ~splprot.2da~ ~mo_concentration1%TAB%96%TAB%1%TAB%1~
+  APPEND ~splprot.2da~ ~mo_concentration2%TAB%96%TAB%2%TAB%1~
 END
 
 // Power Striker
