@@ -56,14 +56,15 @@ ACTION_IF eeex_present THEN BEGIN
     SAY NAME1 @7143
     SAY NAME2 @7143
   */
-  /*
+  COPY ~skills-and-abilities/2da/concentr.2da~                ~override~ // Concentration 2da
+  COPY ~skills-and-abilities/lua/m_b3test.lua~                ~override~ // lua file
   COPY ~skills-and-abilities/spl/proficiencies/MOINT04.SPL~   ~override~ // Combat Casting
     SAY NAME1 @7146
     SAY NAME2 @7146
   COPY ~skills-and-abilities/spl/proficiencies/MOINT05.SPL~   ~override~ // Greater Combat Casting
     SAY NAME1 @7147
     SAY NAME2 @7147
-  */
+  
 END
 
 ACTION_IF fighter_overhaul THEN BEGIN
@@ -322,9 +323,9 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
       //SET_2DA_ENTRY 18 0 1 ~ARMORPEN~
       //SET_2DA_ENTRY 18 2 1 ~moapen1~
       //SET_2DA_ENTRY 18 3 1 ~moapen2~
-      //SET_2DA_ENTRY 18 0 1 ~CONCENTRATION~
-      //SET_2DA_ENTRY 18 2 1 ~moint1~
-      //SET_2DA_ENTRY 18 3 1 ~moint2~
+      SET_2DA_ENTRY 18 0 1 ~CONCENTRATION~
+      SET_2DA_ENTRY 18 2 1 ~moint1~
+      SET_2DA_ENTRY 18 3 1 ~moint2~
     END
     //SET_2DA_ENTRY 29 0 1 ~CRITICAL~
     //SET_2DA_ENTRY 29 2 1 ~mocri1~
@@ -360,8 +361,8 @@ PATCH_IF eeex_present THEN BEGIN
   REPLACE ~mospen2~   @7125
   //REPLACE ~moapen1~   @7140
   //REPLACE ~moapen2~   @7141
-  //REPLACE ~moint1~    @7144
-  //REPLACE ~moint2~    @7145
+  REPLACE ~moint1~    @7144
+  REPLACE ~moint2~    @7145
 END
 
 //REPLACE ~mocri1~    @7134
@@ -383,7 +384,7 @@ APPEND ~stats.ids~ ~94 PALEMASTER~      UNLESS ~94 PALEMASTER~
 ACTION_IF eeex_present THEN BEGIN
   APPEND ~stats.ids~ ~95 SPELLPEN~      UNLESS ~95 SPELLPEN~
   //APPEND ~stats.ids~ ~96 ARMORPEN~      UNLESS ~96 ARMORPEN~
-  //APPEND ~stats.ids~ ~96 CONCENTRATION~   UNLESS ~96 CONCENTRATION~
+  APPEND ~stats.ids~ ~96 CONCENTRATION~   UNLESS ~96 CONCENTRATION~
 END
 
 ACTION_IF fighter_overhaul THEN BEGIN
@@ -571,7 +572,6 @@ COPY_EXISTING ~splprot.2da~ ~override~
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_spell_pen2~ BEGIN
         SET spell_pen2 = %row%
 
-      /*
       // CONCENTRATION --------------------------------------------------------//
       // Concentration - 1 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_concentration1~ BEGIN
@@ -579,7 +579,6 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Concentration - 2 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_concentration2~ BEGIN
         SET concentration2 = %row%
-      */
 
       /*
       // ARMOR PENETRATION ----------------------------------------------------//
@@ -819,7 +818,7 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
           SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 class_prof 1 ~2~   // Spell Penetration
-            //SET_2DA_ENTRY 18 class_prof 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 class_prof 1 ~2~   // Concentration
           END
           SET_2DA_ENTRY 15 class_prof 1 ~5~   // Swiftblade Prof
           PATCH_IF fighter_overhaul THEN BEGIN
@@ -1022,7 +1021,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           SET_2DA_ENTRY 16 (col + 1) 1 ~5~   // Pale Master
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1081,7 +1080,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1098,7 +1097,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1148,7 +1147,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1202,7 +1201,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1252,7 +1251,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1306,7 +1305,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1360,7 +1359,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1390,7 +1389,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1420,7 +1419,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1451,7 +1450,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1481,7 +1480,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1534,7 +1533,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1587,7 +1586,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1619,7 +1618,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1649,7 +1648,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1679,7 +1678,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1710,7 +1709,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1740,7 +1739,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1770,7 +1769,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1827,7 +1826,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1876,7 +1875,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
           PATCH_IF eeex_present THEN BEGIN
             SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // Spell Penetration
             //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Armor Penetration
-            //SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
+            SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // Concentration
           END
           PATCH_IF fighter_overhaul THEN BEGIN
             SET_2DA_ENTRY 29 (col + 1) 1 ~2~   // Power Striker Weapon Style
@@ -1948,7 +1947,6 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     END
   END
 
-  /*
   // Concentration
   LPF CHECK_DAMAGE INT_VAR abilLen = 0x38 RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
@@ -1984,7 +1982,6 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
               LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
            END
-  */
 
 /*
   // Armor Penetration  
@@ -2234,14 +2231,12 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS05~ END
   END
 
-  /*
   // Concentration
   LPF CHECK_DAMAGE RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
     END
-  */
 
   LPF SPELL_PEN_EFF RET spen_value = spen_value END
   PATCH_IF spen_value AND eeex_present BEGIN
