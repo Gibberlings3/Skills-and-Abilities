@@ -8,7 +8,7 @@
 @3 = ~Competences et Style de Combat~
 @4 = ~Bonus lie aux statistiques plus significatifs~
 @5 = ~Ameliorer Repousser les morts-vivants et Pistage~
-@6 = ~Nouveaux Kits~
+@6 = ~Sorts et Capacites de haut niveau~
 
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
@@ -47,6 +47,7 @@
 @142 = ~Permettre au guerrier multi-classe d'atteindre la haute maitrise (4 points) pour les competences d'armes~
 @143 = ~Permettre au guerrier multi-classe d'atteindre la grande maitrise (5 points) pour les competences d'armes~
 @150 = ~Ajouter de nouvelles capacites pour les guerriers~
+@160 = ~Ajustement de la barre d'action pour les Clerc / Voleur~
 
 // Group 2 (Update 200-299)
 @200 = ~Ajouter l'art de retranscrire des sorts sur des parchemins~
@@ -65,14 +66,9 @@
 // Group 5 (Update 500-599)
 
 // Group 6 (Update 600-699)
-@600 = ~Installer le kit de rodeur "Rashemaar Berserker"~
-@601 = ~Assigner le kit a Minsc~
-@602 = ~Ne pas assigner le kit a Minsc~
-@610 = ~Installer le kit "Esprit Guerrier" qui comme son nom l'indique est un kit de guerrier~
-@620 = ~Installer le kit d'ensorceleur "Eldritch Scion"~
-@630 = ~Installer le kit de guerrier "Pourfendeur de Bouclier"~
-@640 = ~Installer le kit de guerrier "Maitre de Bataille"~
-@650 = ~Installer le kit de guerrier / druide "Seigneur de l'Orage"~
+@600 = ~Revision des sorts de Protection contre les armes magiques, Manteaux et Immunite Absolue~
+@610 = ~Ajouter de nouvelles Capacites de haut niveau pour toutes les Classes et tous les Kits~
+@620 = ~Mise a jour des Capacites de haut niveau du jeu original~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
@@ -85,6 +81,7 @@
 @3005 = ~le barbare ne disposera pas de la capacite special Rage du Barbare.~
 @3006 = ~Ce composant necessite BGII: EE ou EET~
 @3007 = ~Les parchemins de pretres ont deja ete ajoutes !~
+@3008 = ~Composant ignore : Spell Revisions est installe.~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                          //

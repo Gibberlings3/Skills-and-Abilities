@@ -16,174 +16,11 @@ Ce mod est une collection de mises à jour pour les classes de personnage, les c
 
 Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifiés par **(EEex nécessaire)**.
 
-## Nouveaux Kits
-
-### Rashemaar Berserker - Kit de Rôdeur
-
-Aussi appelés Rashemi Berserkers, ces défenseurs légendaires de la Rashéménie sont redoutés pour leur frénésie quasiment surnaturelle sur le champ de bataille et après les vénérés Wychlarans, ils font partie des membres les plus respectés de cette société.
-
-Avantages :  
-- Peut utiliser « Furie » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
-
-FURIE : Cet état dure 1 tour. Sous Furie, le berserker gagne +2 aux jets de toucher et de dégâts ainsi qu'à la classe d'armure, et devient immunisé aux charmes, à l'immobilisation, à la terreur, à la confusion, à la débilité, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il gagne également 15 points de vie temporaires, qui sont retirés à la fin de la Furie, pouvant rendre le personnage inconscient.
-
-Inconvénients :  
-- Ne peut pas porter d'armure plus lourde que l'armure feuilletée.
-
-### Esprit Guerrier - Kit de Guerrier 
-
-Un Esprit Guerrier augmente sa puissance physique grâce à des attaques psioniques spéciales et télékinétiques, tout en étant capable d'ériger des barrières mentales. Ils affinent leurs compétences et leurs capacités psioniques lors d'une formation rigoureuse et solitaire, sous l'autorité d'un maître, ou les perfectionnent dans une académie exclusivement dédiée à affûter son esprit afin de le manier comme une arme ou un bouclier.
-
-Avantages :  
-- 3ème niveau : Peut utiliser « Choc psionique » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.  
-- 3ème niveau : Peut utiliser « Champ de force » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
-
-CHOC PSIONIQUE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale et des dégâts supplémentaires contre n'importe quel type d'ennemi en appliquant un modificateur lié à l'intelligence.  
-<details>
-  <summary>Détails des dégâts</summary>
-  
-```	
-	13 en Intelligence : +1 point de dégâts  
-	14 en Intelligence : +2 points de dégâts  
-	15 en Intelligence : +3 points de dégâts  
-	16 en Intelligence : +4 points de dégâts  
-	17 en Intelligence : +4 points de dégâts  
-	18 en Intelligence : +5 points de dégâts  
-	19 en Intelligence : +8 points de dégâts  
-	20 en Intelligence : +9 points de dégâts  
-	21 en Intelligence : +10 points de dégâts  
-	22 en Intelligence : +11 points de dégâts  
-	23 en Intelligence : +12 points de dégâts  
-	24 en Intelligence : +13 points de dégâts  
-	25 en Intelligence : +14 points de dégâts  
-```
-
-</details>
-
-CHAMP DE FORCE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'amortir les dégâts physiques en appliquant un modificateur lié à l'intelligence.  
-<details>
-  <summary>Détails des résistances</summary>
-  
-```	
-	13 en Intelligence : +2 % de résistance aux dégâts physiques  
-	14 en Intelligence : +4 % de résistance aux dégâts physiques  
-	15 en Intelligence : +6 % de résistance aux dégâts physiques  
-	16 en Intelligence : +8 % de résistance aux dégâts physiques  
-	17 en Intelligence : +8 % de résistance aux dégâts physiques  
-	18 en Intelligence : +10 % de résistance aux dégâts physiques  
-	19 en Intelligence : +16 % de résistance aux dégâts physiques  
-	20 en Intelligence : +18 % de résistance aux dégâts physiques  
-	21 en Intelligence : +20 % de résistance aux dégâts physiques  
-	22 en Intelligence : +22 % de résistance aux dégâts physiques  
-	23 en Intelligence : +24 % de résistance aux dégâts physiques  
-	24 en Intelligence : +26 % de résistance aux dégâts physiques  
-	25 en Intelligence : +28 % de résistance aux dégâts physiques  
-```
-
-</details>
-
-- 7ème niveau : Peut utiliser « Attraction cinétique » une fois par jour, puis une fois supplémentaire tous les 5 niveaux.
-
-ATTRACTION CINÉTIQUE : L'Esprit Guerrier est capable de déplacer une créature avec son esprit et peut choisir de repousser la cible au loin ou de l'attirer à sa portée. La cible doit faire un jet de sauvegarde contre la mort pour résister à l'attraction cinétique. Au niveau 14 son jet de sauvegarde devra être à -2, puis -4 au niveau 20.
-
-- 10ème niveau : Gagne la capacité passive « Forteresse mentale ».
-
-FORTERESSE MENTALE : L'Esprit Guerrier devient immunisé contre toutes les attaques psioniques.
-
-- 18ème niveau : Peut utiliser « Maîtrise cinétique » une fois par jour
-
-MAÎTRISE CINÉTIQUE : Le maître Esprit Guerrier est capable de catapulter au loin ou d'attirer à sa portée tous ses adversaires dans un rayon de 4,5 m, les cibles doivent faire un jet de sauvegarde contre la mort à -4 pour résister à la maîtrise cinétique.
-
-Inconvénients :
-- Ne peut se jumeler.
-- Réservé aux humains.
-- Dés de vie : d8
-
-### Pourfendeur de Bouclier (Next Release) - Kit de Guerrier
-
-Les Pourfendeurs de bouclier sont des guerriers spécialement formés pour enfoncer les rangs et les défenses ennemies. Ils endommageront les armures et les boucliers permettant ainsi à leurs alliés d'exploiter de nouvelles vulnérabilités chez l'adversaire. Par conséquent, ses attaques ne feront pas de gros dégâts, puisqu'elles sont conçues pour briser armures et boucliers, et non pour sectionner os et tendons.
-
-Avantages :
-– Chaque coup réussi à 25 % de chances d’abaisser de 10 % la résistance aux dégâts physiques de la cible, les effets sont cumulables et durent 4 rounds.
-– 4ème niveau : Peut utiliser « Sillage » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
-
-SILLAGE : Le Pourfendeur de Bouclier trace un sillon dans la terre avant de frapper tous les ennemis présents dans un rayon de 4,5 m. Les ennemis touchés subissent 2d4 points de dégâts contondants, une réduction de 25 % de leur résistance aux dégâts physiques pendant 5 rounds, et se retrouvent au sol pendant 3 secondes. Réussir un jet de sauvegarde contre les sorts à -4 annule la chute. 
-
-REMARQUE : La réduction de la résistance aux dégâts physiques n'est pas cumulable en utilisant Sillage de multiples fois.
-
-Inconvénients :
-– Les armes reçoivent une pénalité de 2 aux jets de dégâts..
-– Ne peut utiliser des armes à distance.
-– Ne peut utiliser de boucliers.
-
-### Maître de Bataille (Next Release) - Kit de Guerrier
-
-Expert dans les armes à deux mains, le Maître de Bataille est capable de faire des ravages sur les champs de bataille. D'une férocité et d'une résistance sans pareil, Ils déferlent sur leurs ennemis qui redoutent leur capacité à attaquer encore et encore sans faillir. 
-
-Avantages :
-– 1er niveau : Peut utiliser « Charge » une fois par jour, obtient une utilisation supplémentaire au niveau 3, puis tous les 3 niveaux.
-
-CHARGE : Le Maître de Bataille est capable d'augmenter sa vitesse de déplacement de 5 pendant 3 secondes.
-
-– 4ème niveau : Peut utiliser « Déferlante » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
-
-DÉFERLANTE : Le Maître de Bataille est capable de déchaîner une avalanche de coups, le nombre d'attaques qu'il peut effectuer pendant 5 rounds est doublé.
-
-Après une telle attaque, le personnage est essoufflé et subit une pénalité de 2 à sa classe d'armure, aux jets d'attaque et aux jets de dégâts, pendant 2 rounds.
-
-– 9ème niveau : Gagne la capacité passive « Irréductible ».
-
-IRRÉDUCTIBLE : Le Maître de Bataille bénéficie d'un bonus de 1 à tous ses jets de sauvegarde. Ce bonus passe à 2 au niveau 13 et à 3 au niveau 17.
-
-Inconvénients :
-– Ne peut atteindre la grande maîtrise qu'avec les armes à deux mains, pour toutes les autres armes il ne pourra être que compétent.
-
-### Eldritch Scion - Kit d'Ensorceleur
-
-À la différence des mages traditionnels, l'Eldritch Scion ne passe pas son temps à étudier magie ou à concilier ses compétences martiales et ses talents de magicien. En effet, ses aptitudes se développent spontanément. 
-
-L'Eldritch Scion bénéficie de la plupart des caractéristiques de l'ensorceleur, tout en étant capable de prouesses martiales.
-
-Avantages :
-– Dés de vie : d8
-– Peut atteindre la spécialisation (2 points de compétence) pour toutes les armes de mêlée.
-– Peut porter les armures en cotte de mailles et les armure en écailles (les restrictions pour le lancement des sorts s'appliquent toujours).
-– Progression du TAC0 personnalisé, hybride entre le guerrier et l'ensorceleur.
-– Obtient la capacité Arme acérée.
-
-ARME ACÉRÉE : L'Eldritch Scion imprègne naturellement son arme avec sa magie ce qui lui permet d'infliger des dégâts additionnels. Il génère un point de dégât magique supplémentaire tous les cinq niveaux, pour un maximum de cinq points de dégâts magiques au niveau 20. La résistance à la magie de la cible aura une influence.
-
-– 8ème niveau : Acquiert une demi attaque supplémentaire par round.
-– 15ème niveau : Acquiert à nouveau une demi attaque supplémentaire par round.
-
-Inconvénients :
-– Pénalité de -2 au temps d'incantation des sorts.
-– Pénalité de -2 au niveau du lanceur de sorts.
-
-### Seigneur de l'Orage (Next Release) - Kit de Guerrier / Druide
-
-Les seigneurs de l'orage manipulent le tonnerre et la foudre comme les guerrier manient leur épée. En raison de leur maîtrise de l'un des éléments les plus destructeurs de la nature, ils sont perçus avec crainte et admiration par les gens ordinaires, quelle que soit leur motivation.
-
-Avantages :
-– 1er niveau : Bonus de 1 aux jets de toucher et de dégâts, gagne un bonus supplémentaire au 6ème niveau et un autre au 9ème niveau.
-
-– 3ème niveau : Peut utiliser « Induction » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
-
-INDUCTION : Le Seigneur de l'Orage insuffle 1d8 points de dégâts d'électricité à son arme pendant 2 tours.
-
-– 4ème niveau : Le Seigneur de l'Orage gagne 25 % d'immunité aux dégâts électriques. Cette immunité passe à 50 % au niveau 8, 75 % au niveau 12 et 100 % au niveau 14.
-
-Inconvénients :
-- Le Seigneur de l'Orage est limité aux armes suivantes : Lance, Hache de jet et fléchette.
-- Ne bénéficie pas des résistances élémentaires traditionnelles des druides.
-
-REMARQUE : Les Seigneurs de l'Orage peuvent investir des points de compétence pour les haches, mais ne pourront utiliser que des haches de jet.
-
 ## Mises a Jour des Classes de Personnage
 
 ### Mise a jour des capacités des Bardes (EEex nécessaire)
 
-Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit Crochetage de serrures et Detection des pieges pour Le barde et ses kits.
+Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit Crochetage de serrures et Détection des pièges pour Le barde et ses kits.
 
 ### Permettre au Maître-lames de se spécialiser dans les armes de mêlée
 
@@ -213,7 +50,7 @@ Cela permet au guerrier multi-classé de devenir maître (3 points de compétenc
 
 ### Mise a jour des capacités des Moines (EEex nécessaire)
 
-Ajoute les capacités Crochetage de serrures, Détection des pieges et Détection des illusions pour le moine et ses kits.
+Ajoute les capacités Crochetage de serrures, Détection des pièges et Détection des illusions pour le moine et ses kits.
 
 ### Ajoute des capacités spéciales pour les moines
 
@@ -247,9 +84,9 @@ Ajoute Pose de Pièges Ancestral, permet de poser de pièges dans la nature uniq
 
 POSE DE PIEGE ANCESTRAL : Pose un piège à l'endroit choisi si aucune créature hostile n'est en vue. Les pièges deviennent plus puissants avec le niveau du personnage et ne peuvent être déclenchés que par les ennemis.
   1er niveau : Inflige 2d8+5 points de dégâts perforants.
-  11th Level : Inflige 2d8+5 points de dégâts perforants, plus 2d6 dégâts de poison par round pendant 3 rounds.
-  16th Level : Inflige 3d8+5 points de dégâts perforants, plus 4d8+2 dégâts de feu.
-  21st Level : Inflige 3d8+5 points de dégâts perforants et 20 dégâts de poison sans jet de sauvegarde possible ; la cible est tuée si elle échoue son jet de sauvegarde contre la mort avec un bonus de +4.
+  11ème niveau : Inflige 2d8+5 points de dégâts perforants, plus 2d6 dégâts de poison par round pendant 3 rounds.
+  16ème niveau : Inflige 3d8+5 points de dégâts perforants, plus 4d8+2 dégâts de feu.
+  21ème niveau : Inflige 3d8+5 points de dégâts perforants et 20 dégâts de poison sans jet de sauvegarde possible ; la cible est tuée si elle échoue son jet de sauvegarde contre la mort avec un bonus de +4.
 
 Se cacher dans la Nature permet au barbare de se cacher à l'extérieur uniquement (EEex fortement recommande).
 
@@ -291,7 +128,7 @@ POINGS SANCTIFIER : Vous infligez 2 points de dégâts magiques supplémentaires
 
 ### Capacités spéciales pour les Rôdeurs
 
-Ajoute Pose de Pieges Ancestral et Pistage, utilisable uniquement en extérieur, pour tous les Rôdeurs et leurs kits. les capacités de Rôdeurs Déplacement silencieux et Se cacher dans l'ombre devienent utilisable uniquement en extérieur.
+Ajoute Pose de Pièges Ancestral et Pistage, utilisable uniquement en extérieur, pour tous les Rôdeurs et leurs kits. les capacités de Rôdeurs Déplacement silencieux et Se cacher dans l'ombre deviennent utilisable uniquement en extérieur.
 
 ### Détection des illusions pour les Tueurs de magiciens (EEex nécessaire)
 
@@ -299,7 +136,7 @@ Ajouter Détection des illusions (mis à 100 points de talent) au Tueurs de magi
 
 ### Détection des illusions pour les Inquisiteurs (EEex nécessaire)
 
-Remplacer la Vision veritable de l'Inquisiteur par la capacite Detection des illusions (mis à 100 points de talent).
+Remplacer la Vision véritable de l'Inquisiteur par la capacité Détection des illusions (mis à 100 points de talent).
 
 ### Permettre à l'Inquisiteur de lancer des sorts divins
 
@@ -308,7 +145,7 @@ Comme indiqué, les inquisiteurs obtiendront désormais des sorts similaires à 
 ### Révision de la capacité Repousser les morts-vivants (EEex nécessaire)
 
 Le talent naturel pour repousser les morts-vivants est remplacé par une nouvelle capacité. Les clercs peuvent désormais lancer Repousser les morts-vivants une fois par jour, à partir du 3éme niveau,(gagne une utilisation supplémentaire tous les 3 niveaux) et les paladins une fois par jour, à partir du 4éme niveau (gagne une utilisation supplémentaire tous les 4 niveaux). Cette capacité inflige, 2d6 points de dégâts + 1 point par niveau du prêtre/paladin + modificateur de Charisme, à tous les morts-vivants dans un rayon de 4,5 mètre autour du prêtre/paladin. Si le prêtre/paladin a deux fois plus de niveaux que la créature en question, celle-ci sera détruite. Le modèle original de Repousser les morts-vivants est donc remplacé par une option supplémentaire de sort rapide.
- 
+
 ### Ajouter des capacités de haut niveau pour toutes les classes et kits
 
 **RÉSILIENCE :** Le personnage gagne 10% de réduction aux dégâts physiques.
@@ -443,6 +280,14 @@ La progression des compétences est désormais plus proche du système de progre
 - Attaque puissante absolue (2 points de compétence): Le personnage gagne un bonus de 6 aux dégâts (au lieu de 3) lorsque le mode Attaque Puissante est activé. Ce bonus augmente à 12 avec l'Attaque Puissante Améliorée (au lieu de 6).
 - REMARQUE : même si d'autres classes peuvent accéder à ce style d'arme, seuls les guerriers pourront l'utiliser pour améliorer la capacité attaque puissante.
 
+**DISSOLUTION D'ARMURE :** Cette compétence permet de contourner, en partie, la résistance aux dégâts physique de la cible.
+- Dissolution d'armure (1 point de compétence): Le personnage peut outrepasser 5 % de la résistance aux dégâts physique de la cible.
+- Absolution d'armure (2 points de compétence): Le personnage peut outrepasser 10 % de la résistance aux dégâts physique de la cible.~
+
+**CONCENTRATION :** Le personnage est expert dans l'art de lancer des sorts en cours de combat.
+- Incantation sereine (1 point de compétence) : Le personnage a 10 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts. 
+- Incantation impassible (2 points de compétence) : Le personnage a 25 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts.
+
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 
 **FLÉAU/ÉTOILE DU MATIN :** Cette classe d'arme permet au personnage d'utiliser les morgensterns et les fléaux.
@@ -459,7 +304,7 @@ La progression des compétences est désormais plus proche du système de progre
 
 **ARMES A PROJECTILES :** Cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages et les druides peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Les voleurs seront limités aux frondes et aux fléchettes et arbalètes légères. Quant aux clercs, ils ne pourront se servir que des frondes.
 
-**ARMES À HAMPE :** Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes et les bâtons. Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
+**ARMES À HAMPE :** Cette classe d'armes permet au personnage d'utiliser les armes d'hast (bâton, lance et hallebarde). Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
 
 **MAÎTRISE DES PROJECTILES :** Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes, Frondes et Fléchettes.
 - Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
@@ -480,7 +325,7 @@ Ce mod possède des composants (décrits ci-dessus) nécessitant [EEex](https://
 
 Étant donné que le fonctionnement d'EEex est nécessaire, Windows est requis pour le moment.
 
-Le composant "Revision du Systeme de Competence" ( Overhaul Proficiency System ) n'est pas compatible avec les mods qui modifient ou changent le système de compétence comme Tweaks Anthology et Scales of Balance. Ces deux mods sont excellents, choisissez celui qui vous convient le mieux.
+Le composant "Révision du Système de Compétence" ( Overhaul Proficiency System ) n'est pas compatible avec les mods qui modifient ou changent le système de compétence comme Tweaks Anthology et Scales of Balance. Ces deux mods sont excellents, choisissez celui qui vous convient le mieux.
 
 ## Remerciements
 

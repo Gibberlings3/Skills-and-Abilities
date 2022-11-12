@@ -125,7 +125,7 @@ Maître (3 points de compétences) : Les pénalités du porteur sont réduites �
 <DOTS5>~
 
 @7114 = ~Armes à Hampe~
-@7115 = ~ARMES À HAMPE : Cette classe d'armes permet au personnage d'utiliser les lances et les hallebardes et les bâtons. Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
+@7115 = ~ARMES À HAMPE : Cette classe d'armes permet au personnage d'utiliser les armes d'hast (bâton, lance et hallebarde). Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
 
 <DOTS1>
 
@@ -153,25 +153,15 @@ Armure Lourde Optimisation Épique (5 points de compétence): Le personnage bén
 @7118 = ~Art des Sortilèges~
 @7119 = ~ART DES SORTILÈGES : Cette compétence accorde des capacités et des avantages supplémentaires aux magiciens. Toutes les capacités sont cumulatives.
 
-Privilège Magique (1 point de compétence) : Le magicien bénéficie d'un bonus de 10 à ses connaissances.
+Privilège Magique (1 point de compétence) : Le mage bénéficie d'un bonus de 10 à ses connaissances.
 
-Incantation Silencieuse (2 points de compétence) : Le magicien gagne la capacité de Vocaliser de manière permanente.
+Incantation Silencieuse (2 points de compétence) : Le mage gagne la capacité de Vocaliser de manière permanente.
 
-Magicien Expérimenté (3 points de compétence) : Le niveau du lanceur de sorts est augmenté de 1.
+Magie éclairée (3 points de compétence) : Le niveau du lanceur de sorts est augmenté de 1.
 
-Immunité Magique (4 points de compétence) : Le magicien gagne 10 % de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
+Immunité Magique (4 points de compétence) : Le mage gagne 10 % de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
 
-Incantation Prodigieuse (5 points de compétence) : Le magicien bénéficie d'un bonus de 2 au temps d'incantation des sorts.~ ~ART DES SORTILÈGES : Cette compétence accorde des capacités et des avantages supplémentaires aux magiciennes. Toutes les capacités sont cumulatives.
-
-Privilège Magique (1 point de compétence) : La magicienne bénéficie d'un bonus de 10 à ses connaissances.
-
-Incantation Silencieuse (2 points de compétence) : La magicienne gagne la capacité de Vocaliser de manière permanente.
-
-Magicienne Expérimentée (3 points de compétence) : Le niveau de la lanceuse de sorts est augmenté de 1.
-
-Immunité Magique (4 points de compétence) : La magicienne gagne 10 % de résistance à la magie et un bonus de 2 aux sauvegardes contre les sorts.
-
-Incantation Prodigieuse (5 points de compétence) : La magicienne bénéficie d'un bonus de 2 au temps d'incantation des sorts.~
+Incantation Prodigieuse (5 points de compétence) : Le mage bénéficie d'un bonus de 2 au temps d'incantation des sorts.~
 
 @7120 = ~Divinité~
 @7121 = ~DIVINITÉ : Cette compétence accorde des capacités et des avantages supplémentaires à tous les lanceurs et lanceuses de sorts divins. Toutes les capacités sont cumulatives.
@@ -282,5 +272,15 @@ Absolution d'armure (2 points de compétence): Le personnage peut outrepasser 10
 
 @7142 = ~Dissolution d'armure~
 @7143 = ~Absolution d'armure~
+
+@7144 = ~Concentration~
+@7145 = ~CONCENTRATION : Le personnage est expert dans l'art de lancer des sorts en cours de combat.
+
+Incantation sereine (1 point de compétence) : Le personnage a 10 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts. 
+
+Incantation impassible (2 points de compétence) : Le personnage a 25 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts.~
+
+@7146 = ~Incantation sereine~
+@7147 = ~Incantation impassible~
 
 @8000 = ~[LAST TRA HERE]~

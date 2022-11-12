@@ -1,223 +1,90 @@
 // Skills and Abilities, American English
-//Kit range: @5501 to @6000
+//Spells range: @5501 to @6000
 
-@5501 = ~rashemaar berserker~
-@5502 = ~Rashemaar Berserker~
-@5503 = ~RASHEMAAR BERSERKER : Aussi appelés Rashemi Berserkers, ces défenseurs légendaires de la Rashéménie sont redoutés pour leur frénésie quasiment surnaturelle sur le champ de bataille et après les vénérés Wychlarans, ils font partie des membres les plus respectés de cette société.
+@5501 = ~Coup vorpal !~
 
-Avantages :
-- Peut utiliser « Furie » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
+@5502 = ~Protection contre les dégâts physiques~
+@5503 = ~Protection contre les dégâts physiques
+(Abjuration)
 
-FURIE : Cet état dure 1 tour. Sous Furie, le berserker gagne +2 aux jets de toucher et de dégâts ainsi qu'à la classe d'armure, et devient immunisé aux charmes, à l'immobilisation, à la terreur, à la confusion, à la débilité, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il gagne également 15 points de vie temporaires, qui sont retirés à la fin de la Furie, pouvant rendre le personnage inconscient.
+Niveau : 6
+Portée : personnelle
+Durée : 4 rounds
+Temps d'incantation : 1
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
 
-Inconvénients :
-- Ne peut pas porter d'armure plus lourde que l'armure feuilletée.~
+Ce sort porte à 100 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Pendant la durée du sort le lanceur est aussi immunisé à l'interruption de ses propres sort lorsqu'il subit une attaque. De plus, il devient immunisé contre la pétrification et tous les effets vorpal ou provoquant une mort instantanée. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. La puissance de ce sort et son temps d'incantation très court sont compensée par une durée très limitée qui permet au magicien de souffler seulement quelques rounds au milieu d'un combat intense. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.~
 
-@5504 = ~esprit guerrier~
-@5505 = ~Esprit Guerrier~
-@5506 = ~ESPRIT GUERRIER : Un Esprit Guerrier augmente sa puissance physique grâce à des attaques psioniques spéciales et télékinétiques, tout en étant capable d'ériger des barrières mentales. Ils affinent leurs compétences et leurs capacités psioniques lors d'une formation rigoureuse et solitaire, sous l'autorité d'un maître, ou les perfectionnent dans une académie exclusivement dédiée à affûter son esprit afin de le manier comme une arme ou un bouclier.
+@5504 = ~Immunité Absolue
+(Abjuration) 
 
-Avantages :
-– 3ème niveau : Peut utiliser « Choc psionique » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
-– 3ème niveau : Peut utiliser « Champ de force » une fois par jour au niveau 1, puis une fois supplémentaire tous les 4 niveaux.
+Niveau : 9
+Portée : personnelle
+Durée : 4 rounds 
+Temps d'incantation : 1
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun 
 
-CHOC PSIONIQUE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale et des dégâts supplémentaires contre n'importe quel type d'ennemi en appliquant un modificateur lié à l'intelligence.
-  13 en Intelligence : +1 point de dégâts
-  14 en Intelligence : +2 points de dégâts
-  15 en Intelligence : +3 points de dégâts
-  16 en Intelligence : +4 points de dégâts
-  17 en Intelligence : +4 points de dégâts
-  18 en Intelligence : +5 points de dégâts
-  19 en Intelligence : +8 points de dégâts
-  20 en Intelligence : +9 points de dégâts
-  21 en Intelligence : +10 points de dégâts
-  22 en Intelligence : +11 points de dégâts
-  23 en Intelligence : +12 points de dégâts
-  24 en Intelligence : +13 points de dégâts
-  25 en Intelligence : +14 points de dégâts
+Ce sort confère une invulnérabilité totale contre absolument tous les dégâts. De plus, le lanceur devient immunisé contre les ordres magiques, le drainage de niveau, les attaques psioniques, la pétrification et tous les effets vorpal ou provoquant une mort instantanée. Ce sort étant incroyablement puissant, sa durée est très limitée dans le temps. Le temps d'incantation très court permet par contre de gagner quelques précieuses secondes de répit pendant un combat. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.~
 
-CHAMP DE FORCE : Pendant un round, cette capacité permet à l'Esprit Guerrier d'amortir les dégâts physiques en appliquant un modificateur lié à l'intelligence.
-  13 en Intelligence : +2 % de résistance aux dégâts physiques
-  14 en Intelligence : +4 % de résistance aux dégâts physiques
-  15 en Intelligence : +6 % de résistance aux dégâts physiques
-  16 en Intelligence : +8 % de résistance aux dégâts physiques
-  17 en Intelligence : +8 % de résistance aux dégâts physiques
-  18 en Intelligence : +10 % de résistance aux dégâts physiques
-  19 en Intelligence : +16 % de résistance aux dégâts physiques
-  20 en Intelligence : +18 % de résistance aux dégâts physiques
-  21 en Intelligence : +20 % de résistance aux dégâts physiques
-  22 en Intelligence : +22 % de résistance aux dégâts physiques
-  23 en Intelligence : +24 % de résistance aux dégâts physiques
-  24 en Intelligence : +26 % de résistance aux dégâts physiques
-  25 en Intelligence : +28 % de résistance aux dégâts physiques
+@5505 = ~Protection mineure contre les dégâts physiques~
+@5506 = ~Protection mineure contre les dégâts physiques
+(Abjuration)
 
-– 7ème niveau : Peut utiliser « Attraction cinétique » une fois par jour, puis une fois supplémentaire tous les 5 niveaux.
+Niveau : 5
+Portée : personnelle
+Durée : 1 round par niveau
+Temps d'incantation : 2
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
 
-ATTRACTION CINÉTIQUE : L'Esprit Guerrier est capable de déplacer une créature avec son esprit et peut choisir de repousser la cible au loin ou de l'attirer à sa portée. La cible doit faire un jet de sauvegarde contre la mort pour résister à l'attraction cinétique. Au niveau 14 son jet de sauvegarde devra être à -2, puis -4 au niveau 20.
+Ce sort porte à 50 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.~
 
-– 10ème niveau : Gagne la capacité passive « Forteresse mentale ».
+@5507 = ~Manteau
+(Abjuration)
 
-FORTERESSE MENTALE : L'Esprit Guerrier devient immunisé contre toutes les attaques psioniques.
+Niveau : 7
+Portée : personnelle
+Durée : 4 rounds 
+Temps d'incantation : 1
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun 
 
-– 18ème niveau : Peut utiliser « Maîtrise cinétique » une fois par jour
+Ce sort augmente de 60 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Pendant la durée du sort le lanceur bénéficie de 60 % de chance d'éviter l'interruption de ses propres sort lorsqu'il subit une attaque. De plus, il devient immunisé contre le drainage de niveau, les attaques psioniques, la pétrification et tous les effets vorpal ou provoquant une mort instantanée. L'incroyable puissance de ce sort est compensée par sa durée très limitée qui permet tout au plus au magicien de souffler au beau milieu d'un combat intense. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.~
 
-MAÎTRISE CINÉTIQUE : Le maître Esprit Guerrier est capable de catapulter au loin ou d'attirer à sa portée tous ses adversaires dans un rayon de 4,5 m, les cibles doivent faire un jet de sauvegarde contre la mort à -4 pour résister à la maîtrise cinétique.
+@5508 = ~Manteau amélioré
+(Abjuration)
 
-Inconvénients :
-– Ne peut se jumeler.
-– Réservé aux humains.
-– Dés de vie : d8~
+Niveau : 8
+Portée : personnelle
+Durée : 4 rounds 
+Temps d'incantation : 1
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
 
-@5507 = ~Choc psionique~
-@5508 = ~Choc psionique
-Pendant un round, cette capacité permet à l'Esprit Guerrier d'effectuer une attaque spéciale et des dégâts supplémentaires contre n'importe quel type d'ennemi en appliquant  un modificateur lié à l'intelligence.
-  13 en Intelligence : +1 point de dégâts
-  14 en Intelligence : +2 points de dégâts
-  15 en Intelligence : +3 points de dégâts
-  16 en Intelligence : +4 points de dégâts
-  17 en Intelligence : +4 points de dégâts
-  18 en Intelligence : +5 points de dégâts
-  19 en Intelligence : +8 points de dégâts
-  20 en Intelligence : +9 points de dégâts
-  21 en Intelligence : +10 points de dégâts
-  22 en Intelligence : +11 points de dégâts
-  23 en Intelligence : +12 points de dégâts
-  24 en Intelligence : +13 points de dégâts
-  25 en Intelligence : +14 points de dégâts~
+Ce sort augmente de 80 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Pendant la durée du sort le lanceur bénéficie de 80 % de chance d'éviter l'interruption de ses propres sort lorsqu'il subit une attaque. De plus, il devient immunisé contre les ordres magiques, le drainage de niveau, les attaques psioniques, la pétrification et tous les effets vorpal ou provoquant une mort instantanée. L'incroyable puissance de ce sort est compensée par sa durée très limitée qui permet tout au plus au magicien de souffler au beau milieu d'un combat intense. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.~
 
-@5509 = ~Impulsion psionique~
-@5510 = ~Impulsion psionique
-L'Esprit Guerrier est capable de propulser son corps avec son esprit. Pendant un round, sa vitesse passe du simple au double.~
+@5509 = ~Cinq niveaux drainés~
+@5510 = ~Quatre niveaux drainés~
+@5511 = ~Trois niveaux drainés~
+@5512 = ~Deux niveaux drainés~
+@5513 = ~Un niveau drainé~
 
-@5511 = ~Maîtrise cinétique~
-@5512 = ~Maîtrise cinétique
-Le maître Esprit Guerrier est capable de catapulter au loin ou d'attirer à sa portée tous ses adversaires dans un rayon de 4,5 m, les cibles doivent faire un jet de sauvegarde contre la mort à -4 pour résister à la maîtrise cinétique.~
+@5514 = ~Si vous obtenez un parchemin de Protection contre les armes non-magiques~
+@5515 = ~Si vous obtenez un parchemin de Protection mineure contre les dégâts physiques~
+@5516 = ~J'utilise votre parchemin de parchemin de Protection contre les armes non-magiques~
+@5517 = ~J'utilise votre parchemin de parchemin de Protection mineure contre les dégâts physiques~
 
-@5513 = ~Champ de force~
-@5514 = ~Champ de force
-Pendant un round, cette capacité permet à l'Esprit Guerrier d'amortir les dégâts physiques en appliquant un modificateur lié à l'intelligence.
-  13 en Intelligence : +2 % de résistance aux dégâts physiques
-  14 en Intelligence : +4 % de résistance aux dégâts physiques
-  15 en Intelligence : +6 % de résistance aux dégâts physiques
-  16 en Intelligence : +8 % de résistance aux dégâts physiques
-  17 en Intelligence : +8 % de résistance aux dégâts physiques
-  18 en Intelligence : +10 % de résistance aux dégâts physiques
-  19 en Intelligence : +16 % de résistance aux dégâts physiques
-  20 en Intelligence : +18 % de résistance aux dégâts physiques
-  21 en Intelligence : +20 % de résistance aux dégâts physiques
-  22 en Intelligence : +22 % de résistance aux dégâts physiques
-  23 en Intelligence : +24 % de résistance aux dégâts physiques
-  24 en Intelligence : +26 % de résistance aux dégâts physiques
-  25 en Intelligence : +28 % de résistance aux dégâts physiques~
+@5518 = ~Pétrifié~
+@5519 = ~Étourdissement~
+@5520 = ~Étourdi~
+@5521 = ~Sommeil~
+@5522 = ~Dominé~
+@5523 = ~Sous l'emprise d'un charme néfaste~
+@5524 = ~Charmé~
+@5525 = ~Immobilisé~
+@5526 = ~Obstination bornée~
+@5527 = ~Confus~
 
-@5515 = ~Attraction cinétique~
-@5516 = ~Attraction cinétique
-L'Esprit Guerrier est capable de déplacer une créature avec son esprit et peut choisir de repousser la cible au loin ou de l'attirer à sa portée. La cible doit faire un jet de sauvegarde contre la mort pour résister à l'attraction cinétique. Au niveau 14 son jet de sauvegarde devra être à -2, puis -4 au niveau 20.~
-
-@5517 = ~Expulsion cinétique~
-@5518 = ~Aspiration cinétique~
-
-@5519 = ~Explosion cinétique~
-@5520 = ~Tourbillon cinétique~
-
-@5521 = ~eldritch scion~
-@5522 = ~Eldritch Scion~
-@5523 = ~ELDRITCH SCION : À la différence des mages traditionnels, l'Eldritch Scion ne passe pas son temps à étudier magie ou à concilier ses compétences martiales et ses talents de magicien. En effet, ses aptitudes se développent spontanément. 
-
-L'Eldritch Scion bénéficie de la plupart des caractéristiques de l'ensorceleur, tout en étant capable de prouesses martiales. 
-
-Avantages :
-– Dés de vie : d8
-– Peut atteindre la spécialisation (2 points de compétence) pour toutes les armes de mêlée.
-– Peut porter les armures en cotte de mailles et les armure en écailles (les restrictions pour le lancement des sorts s'appliquent toujours).
-– Progression du TAC0 personnalisé, hybride entre le guerrier et l'ensorceleur.
-– Obtient la capacité « Arme acérée ».
-
-ARME ACÉRÉE : L'Eldritch Scion imprègne naturellement son arme avec sa magie ce qui lui permet d'infliger des dégâts additionnels. Il génère un point de dégât magique supplémentaire tous les cinq niveaux, pour un maximum de cinq points de dégâts magiques au niveau 20. La résistance à la magie de la cible aura une influence.
-
-– 8ème niveau : Acquiert une demi attaque supplémentaire par round.
-– 15ème niveau : Acquiert à nouveau une demi attaque supplémentaire par round.
-
-Inconvénients :
-– Pénalité de -2 au temps d'incantation des sorts.
-– Pénalité de -2 au niveau du lanceur de sorts.~
-
-@5524 = ~pourfendeur de bouclier~
-@5525 = ~Pourfendeur de Bouclier~
-@5526 = ~POURFENDEUR DE BOUCLIER : Les Pourfendeurs de bouclier sont des guerriers spécialement formés pour enfoncer les rangs et les défenses ennemies. Ils endommageront les armures et les boucliers permettant ainsi à leurs alliés d'exploiter de nouvelles vulnérabilités chez l'adversaire. Par conséquent, ses attaques ne feront pas de gros dégâts, puisqu'elles sont conçues pour briser armures et boucliers, et non pour sectionner os et tendons.
-
-Avantages :
-– Chaque coup réussi à 25 % de chances d’abaisser de 10 % la résistance aux dégâts physiques de la cible, les effets sont cumulables et durent 4 rounds.
-– 4ème niveau : Peut utiliser « Sillage » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
-
-SILLAGE : Le Pourfendeur de Bouclier trace un sillon dans la terre avant de frapper tous les ennemis présents dans un rayon de 4,5 m. Les ennemis touchés subissent 2d4 points de dégâts contondants, une réduction de 25 % de leur résistance aux dégâts physiques pendant 5 rounds, et se retrouvent au sol pendant 3 secondes. Réussir un jet de sauvegarde contre les sorts à -4 annule la chute. 
-
-REMARQUE : La réduction de la résistance aux dégâts physiques n'est pas cumulable en utilisant Sillage de multiples fois.
-
-Inconvénients :
-– Les armes reçoivent une pénalité de 2 aux jets de dégâts.
-– Ne peut utiliser des armes à distance.
-– Ne peut utiliser de boucliers.~
-
-@5527 = ~Sillage~
-@5528 = ~Sillage
-Le Pourfendeur de Bouclier trace un sillon dans la terre avant de frapper tous les ennemis présents dans un rayon de 4,5 m. Les ennemis touchés subissent 2d4 points de dégâts contondants, une réduction de 25 % de leur résistance aux dégâts physiques pendant 5 rounds, et se retrouvent au sol pendant 3 secondes. Réussir un jet de sauvegarde contre les sorts à -4 annule la chute.
-
-REMARQUE : La réduction de la résistance aux dégâts physiques n'est pas cumulable en utilisant Sillage de multiples fois.~
-
-@5529 = ~maître de bataille~
-@5530 = ~Maître de Bataille~
-@5531 = ~MAÎTRE DE BATAILLE : Expert dans les armes à deux mains, le Maître de Bataille est capable de faire des ravages sur les champs de bataille. D'une férocité et d'une résistance sans pareil, Ils déferlent sur leurs ennemis qui redoutent leur capacité à attaquer encore et encore sans faillir.
-
-Avantages :
-– 1er niveau : Peut utiliser « Charge » une fois par jour, obtient une utilisation supplémentaire au niveau 3, puis tous les 3 niveaux.
-
-CHARGE : Le Maître de Bataille est capable d'augmenter sa vitesse de déplacement de 5 pendant 3 secondes.
-
-– 4ème niveau : Peut utiliser « Déferlante » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
-
-DÉFERLANTE : Le Maître de Bataille est capable de déchaîner une avalanche de coups, le nombre d'attaques qu'il peut effectuer pendant 5 rounds est doublé.
-
-Après une telle attaque, le personnage est essoufflé et subit une pénalité de 2 à sa classe d'armure, aux jets d'attaque et aux jets de dégâts, pendant 2 rounds.
-
-– 9ème niveau : Gagne la capacité passive « Irréductible ».
-
-IRRÉDUCTIBLE : Le Maître de Bataille bénéficie d'un bonus de 1 à tous ses jets de sauvegarde. Ce bonus passe à 2 au niveau 13 et à 3 au niveau 17.
-
-Inconvénients :
-– Ne peut atteindre la grande maîtrise qu'avec les armes à deux mains, pour toutes les autres armes il ne pourra être que compétent.~
-
-@5532 = ~Déferlante~
-@5533 = ~Déferlante
-Le Maître de Bataille est capable de déchaîner une avalanche de coups, le nombre d'attaques qu'il peut effectuer pendant 5 rounds est doublé.
-
-Après une telle attaque, le personnage est essoufflé et subit une pénalité de 2 à sa classe d'armure, aux jets d'attaque et aux jets de dégâts, pendant 2 rounds.~
-
-@5534 = ~Charge~
-@5535 = ~Charge
-Le Maître de Bataille est capable d'augmenter sa vitesse de déplacement de 5 pendant 3 secondes.~
-
-@5536 = ~seigneur de l'orage~
-@5537 = ~Seigneur de l'Orage~
-@5538 = ~SEIGNEUR DE L'ORAGE : Les seigneurs de l'orage manipulent le tonnerre et la foudre comme les guerrier manient leur épée. En raison de leur maîtrise de l'un des éléments les plus destructeurs de la nature, ils sont perçus avec crainte et admiration par les gens ordinaires, quelle que soit leur motivation.
-
-Avantages :
-– 1er niveau : Bonus de 1 aux jets de toucher et de dégâts, gagne un bonus supplémentaire au 6ème niveau et un autre au 9ème niveau.
-
-– 3ème niveau : Peut utiliser « Induction » une fois par jour, puis une fois supplémentaire tous les 4 niveaux.
-
-INDUCTION : Le Seigneur de l'Orage insuffle 1d8 points de dégâts d'électricité à son arme pendant 2 tours.
-
-– 4ème niveau : Le Seigneur de l'Orage gagne 25 % d'immunité aux dégâts électriques. Cette immunité passe à 50 % au niveau 8, 75 % au niveau 12 et 100 % au niveau 14.
-
-Inconvénients :
-- Le Seigneur de l'Orage est limité aux armes suivantes : Lance, Hache de jet et fléchette.
-- Ne bénéficie pas des résistances élémentaires traditionnelles des druides.
-
-REMARQUE : Les Seigneurs de l'Orage peuvent investir des points de compétence pour les haches, mais ne pourront utiliser que des haches de jet.~
-
-@5539 = ~Induction~
-@5540 = ~Induction
-Le Seigneur de l'Orage insuffle 1d8 points de dégâts d'électricité à son arme pendant 2 tours (Le Seigneur de l'Orage peut utiliser : lance, hache de jet et fléchette).~
-
-@5541 = ~Votre déferlante d'attaques prend fin et vous êtes maintenant à bout de souffle.~
+@5528 = ~Protégé contre l'interruption des sorts~
