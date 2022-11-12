@@ -186,6 +186,7 @@ Ce composant remplace le bouton Repousser les morts-vivants de la barre d'action
 
 **CRI DE GUERRE (Next Release):** Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.
 
+Ce composant met également à jour les HLAs suivantes afin qu'elles ne puissent plus être retirés par un sort de Brèche ou d'anti-magie : Résistance d'acier, Résistance à la magie, Esquive, Évasion et Assassinat.
 (more in progress)
 
 ## Compétences/Talents
