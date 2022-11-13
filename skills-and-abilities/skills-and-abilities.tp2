@@ -73,7 +73,7 @@ LANGUAGE ~French~
 // Add HLAs to IWDEE (Lefreut UI Required)                               //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @630 DESIGNATED 630 GROUP @6 LABEL SkillsAndAbilitiesIWDEEHLA
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) && leui @3009
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) && MOD_IS_INSTALLED ~LeUI-IWDEE.tp2~ ~0~ @3009
 
 INCLUDE ~skills-and-abilities/components/spells/iwdee_hlas.tpa~
 
