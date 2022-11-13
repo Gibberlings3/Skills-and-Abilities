@@ -1947,6 +1947,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     END
   END
 
+  /*
   // Concentration
   LPF CHECK_DAMAGE INT_VAR abilLen = 0x38 RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
@@ -1982,6 +1983,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
               LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
               LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 type = 99 target = 2 parameter2 = %concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
            END
+  */
 
 /*
   // Armor Penetration  
@@ -2231,12 +2233,14 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     LPF CLONE_EFFECT INT_VAR match_opcode = 16 opcode = 177 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~MOHAS05~ END
   END
 
+  /*
   // Concentration
   LPF CHECK_DAMAGE RET damage_value = damage_value END
     PATCH_IF damage_value BEGIN
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration1% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT04~ END
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter2 = %concentration2% timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT05~ END
     END
+  */
 
   LPF SPELL_PEN_EFF RET spen_value = spen_value END
   PATCH_IF spen_value AND eeex_present BEGIN
