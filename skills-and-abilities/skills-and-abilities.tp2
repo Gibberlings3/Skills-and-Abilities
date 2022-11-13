@@ -255,6 +255,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 
 */
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Rangers                                              //
 ///////////////////////////////////////////////////////////////////////////
@@ -266,7 +267,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 // use REPLACE_TEXTUALLY to update set trap descriptions (check mods--Trap Revisions, what else?) 
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_ranger_skills.tpa~
-
+*/
 ///////////////////////////////////////////////////////////////////////////
 // Add Detect Illusion for Wizard Slayer (EEex Required)                 //
 ///////////////////////////////////////////////////////////////////////////
