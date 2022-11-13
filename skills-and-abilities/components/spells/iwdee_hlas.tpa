@@ -1,0 +1,142 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// New HLAs for ALL Classes and Kits                                     //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Import                                                                //
+///////////////////////////////////////////////////////////////////////////
+COPY ~skills-and-abilities/spl/MO#HLA01.SPL~       ~override~ // Epic Toughness
+  SAY NAME1 @8009
+  SAY UNIDENTIFIED_DESC @8010
+
+COPY ~skills-and-abilities/spl/MO#HLA02.SPL~       ~override~ // Epic Damage Reduction
+  SAY NAME1 @8001
+  SAY UNIDENTIFIED_DESC @8002
+
+COPY ~skills-and-abilities/spl/MO#HLA03.SPL~       ~override~ // Elemental Resiliency
+  SAY NAME1 @8005
+  SAY UNIDENTIFIED_DESC @8006
+
+COPY ~skills-and-abilities/spl/MO#HLA04.SPL~       ~override~ // Magid Damage Resistance
+  SAY NAME1 @8007
+  SAY UNIDENTIFIED_DESC @8008
+
+COPY ~skills-and-abilities/spl/MO#HLA05.SPL~       ~override~ // Epic Prowess
+  SAY NAME1 @8011
+  SAY UNIDENTIFIED_DESC @8012
+
+COPY ~skills-and-abilities/spl/MO#HLA06.SPL~       ~override~ // Armor Skin
+  SAY NAME1 @8013
+  SAY UNIDENTIFIED_DESC @8014
+
+COPY ~skills-and-abilities/spl/MO#HLA09.SPL~       ~override~ // Great Charisma
+  SAY NAME1 @8019
+  SAY UNIDENTIFIED_DESC @8020
+
+COPY ~skills-and-abilities/spl/MO#HLA10.SPL~       ~override~ // Great Constitution
+  SAY NAME1 @8021
+  SAY UNIDENTIFIED_DESC @8022
+
+COPY ~skills-and-abilities/spl/MO#HLA11.SPL~       ~override~ // Great Dexterity
+  SAY NAME1 @8023
+  SAY UNIDENTIFIED_DESC @8024
+
+COPY ~skills-and-abilities/spl/MO#HLA12.SPL~       ~override~ // Great Intelligence
+  SAY NAME1 @8025
+  SAY UNIDENTIFIED_DESC @8026
+
+COPY ~skills-and-abilities/spl/MO#HLA13.SPL~       ~override~ // Great Strength
+  SAY NAME1 @8027
+  SAY UNIDENTIFIED_DESC @8028
+
+COPY ~skills-and-abilities/spl/MO#HLA14.SPL~       ~override~ // Great Wisdom
+  SAY NAME1 @8029
+  SAY UNIDENTIFIED_DESC @8030
+
+COPY ~skills-and-abilities/spl/MO#HLA15.SPL~       ~override~ // Improved Critical
+  SAY NAME1 @8033
+  SAY UNIDENTIFIED_DESC @8034
+
+COPY ~skills-and-abilities/spl/MO#HLA07.SPL~       ~override~ // Epic Weapon Focus
+  SAY NAME1 @9501
+  SAY UNIDENTIFIED_DESC @9502
+
+COPY ~skills-and-abilities/spl/MO#HLA08.SPL~       ~override~ // Epic Weapon Specialization
+  SAY NAME1 @9503
+  SAY UNIDENTIFIED_DESC @9504
+
+///////////////////////////////////////////////////////////////////////////
+// Add Fighter HLAs                                                      //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH class IN
+      2  // FIGHTER
+      7  // FIGHTER_MAGE
+      8  // FIGHTER_CLERIC
+      9  // FIGHTER_THIEF
+      10 // FIGHTER_MAGE_THIEF
+      16 // FIGHTER_DRUID
+      17 // FIGHTER_MAGE_THIEF
+    BEGIN
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA07 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA08 prerequisite = AP_MO#HLA07 END      
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Add HLAs - Warrior Classes                                            //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH class IN
+      2  // FIGHTER
+      6  // PALADIN
+      7  // FIGHTER_MAGE
+      8  // FIGHTER_CLERIC
+      9  // FIGHTER_THIEF
+      10 // FIGHTER_MAGE_THIEF
+      12 // RANGER
+      16 // FIGHTER_DRUID
+      17 // FIGHTER_MAGE_THIEF
+      18 // CLERIC_RANGER
+    BEGIN
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA15 END     
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Add HLAs - All Classes                                                //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH class IN
+      1  // MAGE
+      2  // FIGHTER
+      3  // CLERIC
+      4  // THIEF
+      5  // BARD
+      6  // PALADIN
+      7  // FIGHTER_MAGE
+      8  // FIGHTER_CLERIC
+      9  // FIGHTER_THIEF
+      10 // FIGHTER_MAGE_THIEF
+      11 // DRUID
+      12 // RANGER
+      13 // MAGE_THIEF
+      14 // CLERIC_MAGE
+      15 // CLERIC_THIEF
+      16 // FIGHTER_DRUID
+      17 // FIGHTER_MAGE_THIEF
+      18 // CLERIC_RANGER
+      19 // SORCERER
+      20 // MONK
+      21 // SHAMAN
+    BEGIN
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA01 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA02 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA03 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA04 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA05 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#HLA06 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA09 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA10 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA11 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA12 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA13 END
+      LAF ADD_HLA INT_VAR class = %class% min_lev = 1 max_lev = 99 num_allowed = 5 STR_VAR ability = AP_MO#HLA14 END   
+END

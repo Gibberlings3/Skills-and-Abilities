@@ -88,4 +88,11 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
       OUTER_SET eeex_present=0
    END
 
+   // LEUI
+   ACTION_IF MOD_IS_INSTALLED ~LeUI-IWDEE.tp2~ ~0~ BEGIN
+      OUTER_SET leui=1
+   END ELSE BEGIN
+      OUTER_SET leui=0
+   END
+
 END

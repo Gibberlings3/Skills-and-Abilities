@@ -69,6 +69,7 @@
 @600 = ~Overhaul PfMW, Mantles, and Absolute Immunity~
 @610 = ~Add New HLAs for ALL Classes and Kits~
 @620 = ~Update Existing HLAs~
+@630 = ~Add HLAs to IWDEE (Lefreut UI Required)~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
@@ -82,6 +83,7 @@
 @3006 = ~Component requires BGII: EE or EET~
 @3007 = ~Priest scrolls have already been added!~
 @3008 = ~Component Skipped: Spell Revisions Installed.~
+@3009 = ~Component requires IWDEE and Lefreut UI~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                                  //
