@@ -283,7 +283,7 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Combat Casting (1 slot): The character increases his chance to resist spell disruption by +4.
 - Greater Combat Casting (2 slots): The character increases his chance to resist spell disruption by an additional +4 bringing it to +8 total.
 
-NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution / 2) - 5 + Concentration Proficiency Bonus < Damage Taken + 10.
+NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution / 2) - 5 + Concentration Proficiency Bonus > Damage Taken + 10.
 
 **POWER STRIKER (Next Release & Artisan Kitpack Fighter Overhaul Required):** This proficiency allows a warrior to attack with more ferocious Power Attacks. 
 - Enhanced Power Attack (1 slot): The character gains a +5 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +10 damage bonus (instead of +6).
