@@ -80,10 +80,11 @@
 @3003 = ~Barbarian Rage is required for Feral Senses~
 @3004 = ~Component requires BG: EE, BGII: EE, IWDEE, or EET~
 @3005 = ~Barbarian Rage has been removed~
-@3006 = ~Component requires BGII: EE or EET~
+@3006 = ~Component requires BGII: EE, IWDEE, or EET~
 @3007 = ~Priest scrolls have already been added!~
 @3008 = ~Component Skipped: Spell Revisions Installed.~
 @3009 = ~Component requires IWDEE and Lefreut UI~
+@3010 = ~No HLAs detected~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                                  //

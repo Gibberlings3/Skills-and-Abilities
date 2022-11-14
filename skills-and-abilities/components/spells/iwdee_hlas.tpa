@@ -8,3 +8,4 @@
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
 COPY ~skills-and-abilities/2da/lunumab.2da~ ~override~ // HLA Progression
+COPY ~skills-and-abilities/itm/mohla01.itm~ ~override~ // HLA Check Item

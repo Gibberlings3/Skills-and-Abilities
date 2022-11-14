@@ -92,7 +92,8 @@ INCLUDE ~skills-and-abilities/components/spells/prot_spells.tpa~
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @610 DESIGNATED 610 GROUP @6 LABEL SkillsAndAbilitiesNewHLA
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet iwdee~) @3006
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
 
 INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
 
@@ -100,7 +101,8 @@ INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
 // Update Existing HLAs                                                  //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @620 DESIGNATED 620 GROUP @6 LABEL SkillsAndAbilitiesUpdateHLA
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3006
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet iwdee~) @3006
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
 
 INCLUDE ~skills-and-abilities/components/spells/update_hlas.tpa~
 
