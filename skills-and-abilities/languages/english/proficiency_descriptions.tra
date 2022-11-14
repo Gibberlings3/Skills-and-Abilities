@@ -274,11 +274,13 @@ Greater Armor Penetration (2 slots): The character can bypass 10% of a target's 
 @7143 = ~Greater Armor Penetration~
 
 @7144 = ~Concentration~
-@7145 = ~CONCENTRATION: The character is adept at casting spells in combat.
+@7145 = ~CONCENTRATION: The character is adept at casting spells in combat. Points spent in this proficiency reduce the chance of spell interruption when damaged.
 
-Combat Casting (1 slot): The character has a 10% chance to resist having <PRO_HISHER> spell interrupted when damaged while casting. 
+Combat Casting (1 slot): The character increases <PRO_HISHER> chance to resist spell disruption by +4.
 
-Greater Combat Casting (2 slots): The character has a 25% chance to resist having <PRO_HISHER> spell interrupted when damaged while casting.~
+Greater Combat Casting (2 slots): The character increases <PRO_HISHER> chance to resist spell disruption by an additional +4 bringing it to +8 total.
+
+NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution / 2) - 5 + Concentration Proficiency Bonus < Damage Taken + 10.~
 
 @7146 = ~Combat Casting~
 @7147 = ~Greater Combat Casting~

@@ -4,7 +4,7 @@ November xx, 2022
 
 ### Changed
 
-- Added Swiftblade, Spell Penetration, and Pale Master proficiencies.
+- Added Swiftblade, Spell Penetration, Concentration, and Pale Master proficiencies.
 - Corrected pip assignment for characters with single weapon style.
 - Corrected pip assignment for rangers and two weapon style.
 - Adjusted pip assignment for Level 0 NPC Type Mods.
@@ -14,7 +14,7 @@ November xx, 2022
 - Resist Magic HLA now increments Magic Resist by +40% instead of setting it. Duration is increased.
 - Two-Weapon Style updated to include damage penalties.
 - Removed Kits. Those are now being included in my standalone kitpack.
-- Overhaul PfMW, Mantles, and Absolute Immunity.
+- Add HLAs to IWDEE.
 
 ## Version 0.9.1 alpha
 

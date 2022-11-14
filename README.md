@@ -16,167 +16,50 @@ This mod is a collection of class, skill, proficiency, and stat updates. This is
 
 Some components require EEex to work, and those are identified with **(EEex Required)**.
 
-## New Kits
+## Spells and HLAs
 
-### Rashemaar Berserker - Ranger Kit
+### Add HLAs to IWDEE (Lefreut UI Required - Next Release)
 
-Sometimes referred to as Rashemi berserkers, are the legendary defenders of Rashemen that are known for flying into an almost supernatural frenzy on the battlefield. They are among the most respected members of Rashemi society, second to the revered Wychlaran.
+This allows for HLAs to be useable within IWDEE under the same BG2: EE requirements.
 
-Advantages:
-- May use Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+### Add New HLAs for ALL Classes and Kits
 
-RAGE: The enraged state lasts for 1 turn. While enraged, a Berserker gains a bonus of +2 to his attack and damage rolls as well as to his Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The Berserker also gains 15 temporary Hit Points which are taken away at the end of his berserk spree, possibly knocking him unconscious.
+**EPIC DAMAGE REDUCTION:** The character gains 10% damage reduction to all physical attacks.
 
-Disadvantages:
-- May not wear armor heavier than splint mail.
+**ELEMENTAL RESISTANCE:** The character gains 10% resistance to all elemental damage.
 
-### Psi Warrior - Fighter Kit
+**MAGIC DAMAGE RESISTANCE:** The character gains 10% resistance to magic damage.
 
-A Psi Warrior is a fighter who augments their physical might with psi-infused weapon strikes, telekinetic lashes, and barriers of mental force. Psi Warriors hone their skills and psionic abilities through solo discipline, unlocked under the tutelage of a master, or refined it at an academy dedicated to wielding the mind's power as both weapon and shield.
+**EPIC TOUGHNESS:** The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.
 
-Advantages:
-- 3rd Level: May use Psionic Strike once per day and gains an additional use every 4 levels thereafter.
-- 3rd Level: May use Protective Field once per day and gains an additional use every 4 levels thereafter.
+**EPIC PROWESS:** The character's skill at combat grows and (s)he gains a +1 bonus to Thac0.
 
-PSIONIC STRIKE: This ability allows the Psi Warrior to make a special attack against any enemy. Psi Warriors apply their Intelligence modifier to their damage roll for one round.
-<details>
-  <summary>Damage Details</summary>
+**ARMOR SKIN:** The character's natural armor bonus to Armor Class increases by 1.
 
-```   
-  13 Intelligence: +1 damage
-  14 Intelligence: +2 damage
-  15 Intelligence: +3 damage
-  16 Intelligence: +4 damage
-  17 Intelligence: +4 damage
-  18 Intelligence: +5 damage
-  19 Intelligence: +8 damage
-  20 Intelligence: +9 damage
-  21 Intelligence: +10 damage
-  22 Intelligence: +11 damage
-  23 Intelligence: +12 damage
-  24 Intelligence: +13 damage
-  25 Intelligence: +14 damage
-``` 
+**IMPROVED CRITICAL (WARRIOR CLASSES ONLY)** The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.
 
-</details>
+**GREAT CHARISMA:** The character gains +1 bonus to Charisma. This feat may be taken multiple times, up to a maximum of +5 Charisma.
 
-PROTECTIVE FIELD: This ability increases the Psi Warrior's damage resistance based on his Intelligence modifier and lasts for one turn.
-<details>
-  <summary>Resistance Details</summary>
+**GREAT CONSTITUTION:** The character gains +1 bonus to Constitution. This feat may be taken multiple times, up to a maximum of +5 Constitution.
 
-```   
-  13 Intelligence: +2% physical damage resistance
-  14 Intelligence: +4% physical damage resistance
-  15 Intelligence: +6% physical damage resistance
-  16 Intelligence: +8% physical damage resistance
-  17 Intelligence: +8% physical damage resistance
-  18 Intelligence: +10% physical damage resistance
-  19 Intelligence: +16% physical damage resistance
-  20 Intelligence: +18% physical damage resistance
-  21 Intelligence: +20% physical damage resistance
-  22 Intelligence: +22% physical damage resistance
-  23 Intelligence: +24% physical damage resistance
-  24 Intelligence: +26% physical damage resistance
-  25 Intelligence: +28% physical damage resistance
-``` 
+**GREAT DEXTERITY:** The character gains +1 bonus to Dexterity. This feat may be taken multiple times, up to a maximum of +5 Dexterity.
 
-</details>
+**GREAT INTELLIGENCE:** The character gains +1 bonus to Intelligence. This feat may be taken multiple times, up to a maximum of +5 Intelligence.
 
-- 7th Level: May use Telekinetic Movement once per day and gains an additional use every 5 levels thereafter.
+**GREAT STRENGTH:** The character gains +1 bonus to Strength. This feat may be taken multiple times, up to a maximum of +5 Strength.
 
-TELEKINETIC MOVEMENT: The Psi Warrior can move a creature with his mind. The Psi Warrior may select to push or pull the target to himself. The target must make a save vs. Death to resist being moved by the Psi Warrior. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being moved by the Psi Warrior.
+**GREAT WISDOM:** The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.
 
-- 10th Level: Gains the Guarded Mind passive ability.
+### Update Existing HLAs
 
-GUARDED MIND: The Psi Warrior becomes immune to all psionic attacks.
+**GREATER WHIRLWIND:** Will now last for three rounds instead of one.
 
-- 18th Level: May use Telekinetic Master once per day.
+**RESIST MAGIC (Next Release):** This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.
 
-TELEKINETIC MASTER: The Psi Master is able to push or pull all targets within a 15' radius to a selected point. Targets must make a save vs. Death at -4 to resist being moved by the Psi Warrior.
+**WAR CRY (Next Release):** With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.
 
-Disadvantages:
-- Race restricted to human.
-- May not dual class.
-- Hit Die: d8
-
-### Shield Breaker (Next Release) - Fighter Kit
-
-Shield Breakers are a specialized set of fighters whose main purpose is to break the ranks and defenses of an enemy front line. These fighters will rend and penetrate enemy armor and defenses to make them vulnerable, so their allies may exploit this newly exposed weakness. As a result, the Shield Breaker's attacks will not hit as hard since they are made to break armor and shields, not sever bones and sinew. 
-
-Advantages:
-- Each successful hit has a 25% chance of bestowing a -10% cumulative reduction in the target's physical damage resistance that lasts for 4 rounds.
-- 4th Level: May use Sunder ability once per day and gains an additional use every 4 levels thereafter.
-
-SUNDER: The Shield Breaker sunders the earth before <PRO_HIMHER> striking all enemies within a 15-ft. radius. Enemies struck will receive 2d4 crushing damage, -25% reduction in physical damage resistance for 5 rounds, and falls to the ground for 3 seconds. A successful Saving Throw vs. Spell with a -4 penalty negates the fall. 
-
-NOTE: The reduction in physical damage resistance is not stackable with multiple uses of Sunder.
-
-Disadvantages:
-- Weapons receive a -2 penalty to all damage rolls.
-- May not use ranged weapons.
-- May not use shields.
-
-### Battle Master (Next Release) - Fighter Kit
-
-An expert in two-handed weapons, the Battle Master is able to wreak havok on any battlefield. Their ferocity and resilience is well renowned, and enemies fear the endless barrage of their attacks. 
-
-Advantages:
-- 1st Level: May use the Charge ability once per day. Gains one use at level 1, one use at level 3, and an additional use every 3 levels thereafter.
-
-CHARGE: The Battle Master is able to increase his movement speed by +5 for 3 seconds.
-
-- 4th Level: May use the Relentless Assault ability once per day and gains an additional use every 4 levels thereafter.
-
-RELENTLESS ASSAULT: The Battle Master is able to unleash a flurry of blows and doubles the amount of attacks they can do for 5 rounds.
-
-After the effects end, the character becomes winded, suffering a -2 penalty to Armor Class, to-hit rolls, and damage rolls for 2 rounds.
-
-- 9th Level: Gains the Indomitable passive ability.
-
-INDOMITABLE: The Battle Master gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
-
-Disadvantages:
-- May only attain Grandmaster in two-handed weapons while all other weapons can only attain Proficient.
-
-### Eldritch Scion - Sorcerer Kit
-
-Unlike typical mages, Eldritch Scions do not study tomes of magic or spend time learning to combine martial and magical skills. Rather, Eldritch Scions find that their spells and abilities come to them instinctively. 
-
-An Eldritch Scion gains most of the features of a Sorcerer while gaining access to more martial prowess. 
-
-Advantages:
-- Hit Die: d8
-- Can achieve Specialization (2 points) in any melee weapon.
-- Can wear chain and scale mail armor (casting restrictions still apply).
-- Custom Thac0 progression that is a hybrid between fighter and sorcerer.
-- Gains Enhance Weapon ability.
-
-ENHANCE WEAPON: The Eldritch Scion passively imbues <PRO_HISHER> melee weapon with magic dealing one extra point of magic damage. This magic damage increases by one for every five levels gained to a maximum of five magic damage at 20th level. Additional damage is affected by the target's magic resistance.
-
-- 8th Level: Gains .5 APR.
-- 15th Level: Gains an additional .5 APR.
-
-Disadvantages:
-- Receive a -2 penalty to casting speed.
-- Receive a -2 penalty to casting level.
-
-### Stormlord (Next Release) - Fighter/Druid Multiclass Kit
-
-Stormlords wield thunder and lightning like a warrior wields his sword. Because of their command of one of the most destructive aspects of nature, Stormlords are viewed with awe and fear by lesser folk, regardless of their motivation.
-
-Advantages:
-- 1st Level: +1 to hit and damage rolls and gains an additional +1 to hit and damage rolls at 6th level and at 9th level.
-- 3rd Level: May use Shock Weapon once per day and gains an additional use every 3 levels thereafter.
-
-SHOCK WEAPON: The Stormlord adds 1d8 Electricity damage to their weapon for 2 turns.
-
-- 4th Level: The Stormlord gains 25% immunity to electrical damage. This increases to 50% at level 8, 75% at level 12, and 100% at level 14.
-
-Disadvantages:
-- Restricted to Stormlord weapons (Spear, Throwing Axe, or Dart).
-- Does not receive traditional Druid elemental resistances.
-
-NOTE: Stormlords may take the axe proficiency but will only be able to use throwing axes.
+This also updates the following HLAs so they CANNOT be removed by Breach or anti-magic spell: Hardiness, Resist Magic, Avoid Death, Evasion, Greater Evasion, and Assassination.
+(more in progress)
 
 ## Class Updates
 
@@ -306,45 +189,6 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 
 This component replaces the Turn Undead modal button on the Cleric/Thief Actionbar with the Thieving Ability. This is recommended if the Turn Undead Overhaul (previous component) is installed.
 
-### Add New HLAs for ALL Classes and Kits
-
-**EPIC DAMAGE REDUCTION:** The character gains 10% damage reduction to all physical attacks.
-
-**ELEMENTAL RESISTANCE:** The character gains 10% resistance to all elemental damage.
-
-**MAGIC DAMAGE RESISTANCE:** The character gains 10% resistance to magic damage.
-
-**EPIC TOUGHNESS:** The character gains +20 hit points. This feat may be taken multiple times, up to a maximum of +100 hit points.
-
-**EPIC PROWESS:** The character's skill at combat grows and (s)he gains a +1 bonus to Thac0.
-
-**ARMOR SKIN:** The character's natural armor bonus to Armor Class increases by 1.
-
-**IMPROVED CRITICAL (WARRIOR CLASSES ONLY)** The character increases their critical threat range by 2. For example, a longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.
-
-**GREAT CHARISMA:** The character gains +1 bonus to Charisma. This feat may be taken multiple times, up to a maximum of +5 Charisma.
-
-**GREAT CONSTITUTION:** The character gains +1 bonus to Constitution. This feat may be taken multiple times, up to a maximum of +5 Constitution.
-
-**GREAT DEXTERITY:** The character gains +1 bonus to Dexterity. This feat may be taken multiple times, up to a maximum of +5 Dexterity.
-
-**GREAT INTELLIGENCE:** The character gains +1 bonus to Intelligence. This feat may be taken multiple times, up to a maximum of +5 Intelligence.
-
-**GREAT STRENGTH:** The character gains +1 bonus to Strength. This feat may be taken multiple times, up to a maximum of +5 Strength.
-
-**GREAT WISDOM:** The character gains +1 bonus to Wisdom. This feat may be taken multiple times, up to a maximum of +5 Wisdom.
-
-#### Update Existing HLAs
-
-**GREATER WHIRLWIND:** Will now last for three rounds instead of one.
-
-**RESIST MAGIC (Next Release):** This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.
-
-**WAR CRY (Next Release):** With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.
-
-This also updates the following HLAs so they CANNOT be removed by Breach or anti-magic spell: Hardiness, Resist Magic, Avoid Death, Evasion, Greater Evasion, and Assassination.
-(more in progress)
-
 ## Proficiencies
 
 ### Update Weapon Fighting Styles (2H Weapons, 1H Weapons, Sword & Shield)
@@ -434,6 +278,12 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Blurred Alacrity (3 slots): The character becomes blurred while under the effects of a haste spell.
 - Greater Swift Surge (4 slots): The character gains an additional bonus to Thac0 and AC bringing it to +2 while under the effects of a haste spell.
 - Evasive Celerity (5 slots): The character gains +10% magic resistance while under the effects of a haste spell.
+
+**CONCENTRATION (Next Release):** The character is adept at casting spells in combat. Points spent in this proficiency reduce the chance of spell interruption when damaged.
+- Combat Casting (1 slot): The character increases his chance to resist spell disruption by +4.
+- Greater Combat Casting (2 slots): The character increases his chance to resist spell disruption by an additional +4 bringing it to +8 total.
+
+NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution / 2) - 5 + Concentration Proficiency Bonus < Damage Taken + 10.
 
 **POWER STRIKER (Next Release & Artisan Kitpack Fighter Overhaul Required):** This proficiency allows a warrior to attack with more ferocious Power Attacks. 
 - Enhanced Power Attack (1 slot): The character gains a +5 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +10 damage bonus (instead of +6).
