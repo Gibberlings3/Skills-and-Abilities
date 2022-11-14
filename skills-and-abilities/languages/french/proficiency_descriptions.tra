@@ -274,11 +274,14 @@ Absolution d'armure (2 points de compétence): Le personnage peut outrepasser 10
 @7143 = ~Absolution d'armure~
 
 @7144 = ~Concentration~
-@7145 = ~CONCENTRATION : Le personnage est expert dans l'art de lancer des sorts en cours de combat.
+@7145 = ~CONCENTRATION : Le personnage est expert dans l'art de lancer des sorts en cours de combat. Les points investis dans cette compétence augmentent les chances de résister à l'interruption des sorts lorsque vous subissez des dégâts.
 
-Incantation sereine (1 point de compétence) : Le personnage a 10 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts. 
+Incantation sereine (1 point de compétence) : Le personnage augmente ses chances de résister à l'interruption des sorts de 4. 
 
-Incantation impassible (2 points de compétence) : Le personnage a 25 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts.~
+Incantation impassible (2 points de compétence) : Le personnage augmente de nouveau ses chances de résister à l'interruption des sorts de 4, ce qui porte cette résistance à 8.
+
+REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis + 10].
+Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis + 10).~
 
 @7146 = ~Incantation sereine~
 @7147 = ~Incantation impassible~

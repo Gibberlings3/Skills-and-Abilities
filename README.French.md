@@ -16,6 +16,51 @@ Ce mod est une collection de mises à jour pour les classes de personnage, les c
 
 Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifiés par **(EEex nécessaire)**.
 
+## Sorts et Capacités de haut niveau
+
+### Ajouter les Capacités de haut niveau a IWDEE (Lefreut UI doit être installe - Next Release)
+
+Cela permet aux capacités de haut niveau d'être utilisables dans le jeu IWDEE tel quelles sont implémentées dans BG2 : EE.
+
+### Ajouter des capacités de haut niveau pour toutes les classes et kits
+
+**RÉSILIENCE :** Le personnage gagne 10% de réduction aux dégâts physiques.
+
+**RÉSISTANCE ÉLEMENTAIRE :** Le personnage gagne 10% de résistance à tous les dégâts élémentaires.
+
+**RÉSISTANCE MAGIQUE :** Le personnage gagne 10% de résistance aux dégâts magiques.
+
+**VITALITÉ ÉPIQUE :** Le personnage gagne 20 points de vie. Cet avantage peut être choisi plusieurs fois, jusqu'à un maximum de 100 points de vie
+
+**PROUESSES ÉPIQUES :** Les compétences de combat du personnage augmentent, bonus de 1 au TAC0.
+
+**PEAU CUIRASSÉE :** Le personnage bénéficie d'un bonus de 1 à la classe d'armure.
+
+**AMÉLIORATION CRITIQUE (UNIQUEMENT POUR LES COMBATTANTS) :** Le personnage augmente ses chances de dégâts critique par 2. Par exemple, une épée longue qui inflige normalement un coup critique sur un jet de 19-20 permettra dorénavant d'obtenir un coup critique sur un jet de 17-20.
+
+**CHARISME SUPRÊME :** Le personnage gagne un bonus de 1 au Charisme. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Charisme.
+
+**CONSTITUTION SUPRÊME :** Le personnage gagne un bonus de 1 à la Constitution. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Constitution.
+
+**DEXTÉRITÉ SUPRÊME :** Le personnage gagne un bonus de 1 à la Dextérité. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Dextérité.
+
+**INTELLIGENCE SUPRÊME :** Le personnage gagne un bonus de 1 à l'Intelligence. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Intelligence.
+
+**FORCE SUPRÊME :** Le personnage gagne un bonus de 1 à la Force. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Force.
+
+**SAGESSE SUPRÊME :** Le personnage gagne un bonus de 1 à la Sagesse. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Sagesse.
+
+#### Mise à jour des Capacités de haut niveau du jeu original
+
+**TORNADE D'ACIER :** durera désormais trois rounds au lieu d'un.
+
+**RÉSISTANCE À LA MAGIE (Next Release):** Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieure et de combattre les effets des maléfices. Il gagne 40 % de résistance à la magie pendant 1 round + 1 round tous les 2 niveaux.
+
+**CRI DE GUERRE (Next Release):** Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.
+
+Ce composant met également à jour les HLAs suivantes afin qu'elles ne puissent plus être retirés par un sort de Brèche ou d'anti-magie : Résistance d'acier, Résistance à la magie, Esquive, Évasion et Assassinat.
+(more in progress)
+
 ## Mises a Jour des Classes de Personnage
 
 ### Mise a jour des capacités des Bardes (EEex nécessaire)
@@ -150,45 +195,6 @@ Le talent naturel pour repousser les morts-vivants est remplacé par une nouvell
 
 Ce composant remplace le bouton Repousser les morts-vivants de la barre d'action des clercs / voleurs par les capacités de voleur. Il est recommandé si le composant précédent "Révision de la capacité repousser les morts-vivants" est installé.
 
-### Ajouter des capacités de haut niveau pour toutes les classes et kits
-
-**RÉSILIENCE :** Le personnage gagne 10% de réduction aux dégâts physiques.
-
-**RÉSISTANCE ÉLEMENTAIRE :** Le personnage gagne 10% de résistance à tous les dégâts élémentaires.
-
-**RÉSISTANCE MAGIQUE :** Le personnage gagne 10% de résistance aux dégâts magiques.
-
-**VITALITÉ ÉPIQUE :** Le personnage gagne 20 points de vie. Cet avantage peut être choisi plusieurs fois, jusqu'à un maximum de 100 points de vie
-
-**PROUESSES ÉPIQUES :** Les compétences de combat du personnage augmentent, bonus de 1 au TAC0.
-
-**PEAU CUIRASSÉE :** Le personnage bénéficie d'un bonus de 1 à la classe d'armure.
-
-**AMÉLIORATION CRITIQUE (UNIQUEMENT POUR LES COMBATTANTS) :** Le personnage augmente ses chances de dégâts critique par 2. Par exemple, une épée longue qui inflige normalement un coup critique sur un jet de 19-20 permettra dorénavant d'obtenir un coup critique sur un jet de 17-20.
-
-**CHARISME SUPRÊME :** Le personnage gagne un bonus de 1 au Charisme. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Charisme.
-
-**CONSTITUTION SUPRÊME :** Le personnage gagne un bonus de 1 à la Constitution. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Constitution.
-
-**DEXTÉRITÉ SUPRÊME :** Le personnage gagne un bonus de 1 à la Dextérité. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Dextérité.
-
-**INTELLIGENCE SUPRÊME :** Le personnage gagne un bonus de 1 à l'Intelligence. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Intelligence.
-
-**FORCE SUPRÊME :** Le personnage gagne un bonus de 1 à la Force. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Force.
-
-**SAGESSE SUPRÊME :** Le personnage gagne un bonus de 1 à la Sagesse. Cette capacité peut être choisie plusieurs fois, jusqu'à un maximum de +5 en Sagesse.
-
-#### Update Existing HLAs
-
-**TORNADE D'ACIER :** durera désormais trois rounds au lieu d'un.
-
-**RÉSISTANCE À LA MAGIE (Next Release):** Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieure et de combattre les effets des maléfices. Il gagne 40 % de résistance à la magie pendant 1 round + 1 round tous les 2 niveaux.
-
-**CRI DE GUERRE (Next Release):** Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.
-
-Ce composant met également à jour les HLAs suivantes afin qu'elles ne puissent plus être retirés par un sort de Brèche ou d'anti-magie : Résistance d'acier, Résistance à la magie, Esquive, Évasion et Assassinat.
-(more in progress)
-
 ## Compétences/Talents
 
 ### Mises a Jour des styles de combat (ARME À DEUX MAINS, ÉPÉE ET BOUCLIER et ARME À UNE MAIN)
@@ -289,9 +295,12 @@ La progression des compétences est désormais plus proche du système de progre
 - Dissolution d'armure (1 point de compétence): Le personnage peut outrepasser 5 % de la résistance aux dégâts physique de la cible.
 - Absolution d'armure (2 points de compétence): Le personnage peut outrepasser 10 % de la résistance aux dégâts physique de la cible.~
 
-**CONCENTRATION :** Le personnage est expert dans l'art de lancer des sorts en cours de combat.
-- Incantation sereine (1 point de compétence) : Le personnage a 10 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts. 
-- Incantation impassible (2 points de compétence) : Le personnage a 25 % de chance d'éviter que son incantation ne soit interrompue lorsqu'il subit des dégâts.
+**CONCENTRATION :** Le personnage est expert dans l'art de lancer des sorts en cours de combat. Les points investis dans cette compétence augmentent les chances de résister à l'interruption des sorts lorsque vous subissez des dégâts.
+- Incantation sereine (1 point de compétence) : Le personnage augmente ses chances de résister à l'interruption des sorts de 4. 
+- Incantation impassible (2 points de compétence) : Le personnage augmente de nouveau ses chances de résister à l'interruption des sorts de 4, ce qui porte cette résistance à 8.
+
+REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis + 10].
+Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis + 10).
 
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 

@@ -8,7 +8,8 @@
 @3 = ~Competences et Style de Combat~
 @4 = ~Bonus lie aux statistiques plus significatifs~
 @5 = ~Ameliorer Repousser les morts-vivants et Pistage~
-@6 = ~Sorts et Capacites de haut niveau~
+@6 = ~Nouveaux kits - Obsolete~
+@7 = ~Sorts et Capacites de haut niveau~
 
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
@@ -65,10 +66,11 @@
 
 // Group 5 (Update 500-599)
 
-// Group 6 (Update 600-699)
-@600 = ~Revision des sorts de Protection contre les armes magiques, Manteaux et Immunite Absolue~
-@610 = ~Ajouter de nouvelles Capacites de haut niveau pour toutes les Classes et tous les Kits~
-@620 = ~Mise a jour des Capacites de haut niveau du jeu original~
+// Group 7 (Update 700-799)
+@700 = ~Revision des sorts de Protection contre les armes magiques, Manteaux et Immunite Absolue~
+@710 = ~Ajouter de nouvelles Capacites de haut niveau pour toutes les Classes et tous les Kits~
+@720 = ~Mise a jour des Capacites de haut niveau du jeu original~
+@730 = ~Ajouter les Capacites de haut niveau pour IWDEE (Lefreut UI doit etre installe)~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
@@ -79,9 +81,11 @@
 @3003 = ~la Rage du Barbare est necessaire pour Instinct Sauvage~
 @3004 = ~Ce composant necessite BG: EE, BGII: EE, EET, or IWD: EE~
 @3005 = ~le barbare ne disposera pas de la capacite special Rage du Barbare.~
-@3006 = ~Ce composant necessite BGII: EE ou EET~
+@3006 = ~Ce composant necessite BGII: EE, IWDEE ou EET~
 @3007 = ~Les parchemins de pretres ont deja ete ajoutes !~
 @3008 = ~Composant ignore : Spell Revisions est installe.~
+@3009 = ~Ce composant necessite IWDEE et Lefreut UI~
+@3010 = ~Capacites de haut niveau non detectees~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                          //
