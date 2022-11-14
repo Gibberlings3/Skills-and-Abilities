@@ -65,14 +65,14 @@ LANGUAGE ~French~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// Spells (Group 6)                                                      //
+// Spells and HLAs (Group 7)                                             //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs to IWDEE (Lefreut UI Required)                               //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @630 DESIGNATED 630 GROUP @6 LABEL SkillsAndAbilitiesIWDEEHLA
+BEGIN @730 DESIGNATED 730 GROUP @7 LABEL SkillsAndAbilitiesIWDEEHLA
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) && MOD_IS_INSTALLED ~LeUI-IWDEE.tp2~ ~0~ @3009
 
 INCLUDE ~skills-and-abilities/components/spells/iwdee_hlas.tpa~
@@ -81,7 +81,7 @@ INCLUDE ~skills-and-abilities/components/spells/iwdee_hlas.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Overhaul PfMW, Mantles, and Absolute Immunity                         //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @600 DESIGNATED 600 GROUP @6 LABEL SkillsAndAbilitiesPfMW
+BEGIN @700 DESIGNATED 700 GROUP @7 LABEL SkillsAndAbilitiesPfMW
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3008
 
@@ -91,7 +91,7 @@ INCLUDE ~skills-and-abilities/components/spells/prot_spells.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @610 DESIGNATED 610 GROUP @6 LABEL SkillsAndAbilitiesNewHLA
+BEGIN @710 DESIGNATED 710 GROUP @7 LABEL SkillsAndAbilitiesNewHLA
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet iwdee~) @3006
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
 
@@ -100,7 +100,7 @@ INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Update Existing HLAs                                                  //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @620 DESIGNATED 620 GROUP @6 LABEL SkillsAndAbilitiesUpdateHLA
+BEGIN @720 DESIGNATED 720 GROUP @7 LABEL SkillsAndAbilitiesUpdateHLA
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet iwdee~) @3006
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
 

@@ -12,6 +12,7 @@ November xx, 2022
 - Changed Fighter Overhaul to just provide all Fighters and Fighter kits with the Second Wind Ability.
 - New Fighter HLAs are added to the HLA Component instead of being part of the Fighter Overhaul.
 - Resist Magic HLA now increments Magic Resist by +40% instead of setting it. Duration is increased.
+- Warcry HLA now provides immunities similar to a Berserker Rage.
 - Two-Weapon Style updated to include damage penalties.
 - Removed Kits. Those are now being included in my standalone kitpack.
 - Add HLAs to IWDEE.

@@ -8,7 +8,8 @@
 @3 = ~Proficiencies~
 @4 = ~More Meaningful Stat Bonuses~
 @5 = ~Improved Turning/Wild Sense~
-@6 = ~Spells and HLAs~
+@6 = ~New Kits - DEPRICATED~
+@7 = ~Spells and HLAs~
 
 ///////////////////////////////////////////////////////////////////////////
 // Components/Sub-Components                                             //
@@ -65,11 +66,11 @@
 
 // Group 5 (Update 500-599)
 
-// Group 6 (Update 600-699)
-@600 = ~Overhaul PfMW, Mantles, and Absolute Immunity~
-@610 = ~Add New HLAs for ALL Classes and Kits~
-@620 = ~Update Existing HLAs~
-@630 = ~Add HLAs to IWDEE (Lefreut UI Required)~
+// Group 7 (Update 700-799)
+@700 = ~Overhaul PfMW, Mantles, and Absolute Immunity~
+@710 = ~Add New HLAs for ALL Classes and Kits~
+@720 = ~Update Existing HLAs~
+@730 = ~Add HLAs to IWDEE (Lefreut UI Required)~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
