@@ -1,6 +1,6 @@
-function B3Test(sprite)
+function B3Test(sprite, damageData)
     --local damageCheck = sprite.m_triggerID(0x40CD) + 10 -- Damage Taken +10
-    local damageCheck = sprite.m_nLastDamageTaken + 10 -- Damage Taken + 10
+    local damageCheck = damageData.totalDamageTaken + 10 -- Damage Taken + 10
     local diceRoll = Infinity_RandomNumber(1, 20) -- 1d20
     local luckBonus = sprite:getStat(32) -- Luck Bonus
     local conBonus = (sprite:getStat(41) / 2) - 5 -- (Constitution / 2) - 5
