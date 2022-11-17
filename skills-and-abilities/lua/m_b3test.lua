@@ -1,11 +1,14 @@
 function B3Test(sprite, damageData)
     --local damageCheck = sprite.m_triggerID(0x40CD) + 10 -- Damage Taken +10
-    local damageCheck = damageData.damageTaken + 10 -- Damage Taken + 10
+    local damageCheck = damageData.damageTaken -- Damage Taken
     local diceRoll = Infinity_RandomNumber(1, 20) -- 1d20
     local luckBonus = sprite:getStat(32) -- Luck Bonus
     local conBonus = (sprite:getStat(41) / 2) - 5 -- (Constitution / 2) - 5
     local concentrationProf = sprite:getStat(96) -- Concentration Prof
     local profBonus = 0
+    if damageCheck < 10 then
+        damageCheck = 10
+    end
     if concentrationProf == 1 then
         profBonus = 4
     elseif concentrationProf == 2 then
