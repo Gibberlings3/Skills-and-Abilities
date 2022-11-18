@@ -38,6 +38,11 @@ END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
   STRING_SET ~25045~ @7002 // Sword and Shield Style
   STRING_SET ~25046~ @7003 // Single Weapon Style
   STRING_SET ~24999~ @7004 // Two-Weapon Style
+END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
+  STRING_SET ~37728~ @7001 // 2H Weapon Style
+  STRING_SET ~37730~ @7002 // Sword and Shield Style
+  STRING_SET ~37732~ @7003 // Single Weapon Style
+  STRING_SET ~37734~ @7004 // Two-Weapon Style
 END
 
 ///////////////////////////////////////////////////////////////////////////
