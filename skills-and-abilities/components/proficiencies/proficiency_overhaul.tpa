@@ -2283,6 +2283,14 @@ READ_SHORT 0x010 dual
 READ_BYTE 0x234 level
 READ_BYTE 0x235 level_second
 READ_BYTE 0x273 class
+READ_BYTE 0x6e olsword
+READ_BYTE 0x6f ossword
+READ_BYTE 0x70 obow
+READ_BYTE 0x71 ospear
+READ_BYTE 0x72 oblunt
+READ_BYTE 0x73 ospiked
+READ_BYTE 0x74 oaxe
+READ_BYTE 0x75 omissile
 // READ_LONG  0x1cc biography ELSE 0
 SET free_pips = 0
 SET bow = 0
@@ -2694,6 +2702,56 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Remove all old profs, these will be replaced
 LPF DELETE_EFFECT INT_VAR match_opcode = 233 END
+
+// Check old school profs here.
+PATCH_IF (olsword > lsword) BEGIN
+  lsword = olsword
+END
+
+PATCH_IF (olsword > exotic) BEGIN
+  exotic = olsword
+END
+
+PATCH_IF (ossword > ssword) BEGIN
+  ssword = ossword
+END
+
+PATCH_IF (obow > bow) BEGIN
+  bow = obow
+END
+
+PATCH_IF (ospear > spear) BEGIN
+  spear = ospear
+END
+
+PATCH_IF (oblunt > blunt) BEGIN
+  blunt = oblunt
+END
+
+PATCH_IF (oblunt > spear) BEGIN
+  spear = oblunt
+END
+
+PATCH_IF (ospiked > spiked) BEGIN
+  spiked = ospiked
+END
+
+PATCH_IF (oaxe > axe) BEGIN
+  axe = oaxe
+END
+
+PATCH_IF (omissile > missile) BEGIN
+  missile = omissile
+END
+
+WRITE_BYTE 0x6e 0
+WRITE_BYTE 0x6f 0
+WRITE_BYTE 0x70 0
+WRITE_BYTE 0x71 0
+WRITE_BYTE 0x72 0
+WRITE_BYTE 0x73 0
+WRITE_BYTE 0x74 0
+WRITE_BYTE 0x75 0
 
 // Bow
 PATCH_IF (bow > 0) BEGIN
