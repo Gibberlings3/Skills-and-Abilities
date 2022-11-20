@@ -11,7 +11,6 @@
 @115004 = ~You must have a spell memorized in order to scribe a scroll.  Try again when you have memorized at least one spell.~
 @115005 = ~You must have at least 100 gold to scribe a scroll.  Try again when you have 100 gold or more.~
 
-//TRANSLATOR NOTE: @115006 to @115014 have changed
 @115006 = ~1st Level Arcane Scrolls~
 @115007 = ~2nd Level Arcane Scrolls~
 @115008 = ~3rd Level Arcane Scrolls~
@@ -29,8 +28,7 @@ This ability allows you to scribe a scroll from a spell that you currently have 
 @115018 = ~You must have at least 100 experience points to scribe a spell.  Try again when you have attained the required experience.~
 @115019 = ~Select Spell Level~
 
-//TRANSLATOR NOTE: @115020 to @115028 have changed - Please delete this line when tra references have been updated
-//TRANSLATOR NOTE 2: Do not translate "%lowest_arcane_gold_x%"
+//TRANSLATOR NOTE: Do not translate "%lowest_arcane_gold_x%"
 @115020 = ~1st Level Spells (Requires Minimum %lowest_arcane_1% gold)~
 @115021 = ~2nd Level Spells (Requires Minimum %lowest_arcane_2% gold)~
 @115022 = ~3rd Level Spells (Requires Minimum %lowest_arcane_3% gold)~
@@ -48,7 +46,6 @@ This ability allows you to scribe a scroll from a spell that you currently have 
 //create scroll kit
 @115102 = ~Scroll Kit~
 
-//TRANSLATOR NOTE: @115103 has changed - Please delete this line when tra references have been updated
 @115103 = ~Scroll Kit
 This pack contains inks, a fine quill, and plenty of parchment.
 
@@ -63,21 +60,18 @@ Weight: 6
 Special Note: Do not have more 'materials' in your inventory than you need for a particular scroll you plan to create (keep any extras in your scroll kit item). This will help to avoid the loss of extra materials.~
 @115104 = ~Standard Scroll Creation Materials~
 
-//TRANSLATOR NOTE: @115105 has changed - Please delete this line when tra references have been updated
 @115105 = ~Standard Scroll Creation Materials
 Use these materials to create a scroll. The quality of these materials are such that you can only create up to level 3 scrolls. Note that you need 1 of these for each level of the scroll you plan to create. So, if you are creating a scroll of a 5th level spell, then you need 5 of these on hand.
 
 Special Note: Do not have more 'materials' in your inventory than you need for a particular scroll you plan to create (keep any extras in your scroll kit item). This will help to avoid the loss of extra materials.~
 @115106 = ~Quality Scroll Creation Materials~
 
-//TRANSLATOR NOTE: @115107 has changed - Please delete this line when tra references have been updated
 @115107 = ~Quality Scroll Creation Materials
 Use these materials to create a scroll. The quality of these materials is above average, and can be used to create up to level 6 scrolls. Note that you need 1 of these for each level of the scroll you plan to create. So, if you are creating a scroll of a 5th level spell, then you need 5 of these on hand.
 
 Special Note: Do not have more 'materials' in your inventory than you need for a particular scroll you plan to create (keep any extras in your scroll kit item). This will help to avoid the loss of extra materials.~
 @115108 = ~Masterwork Scroll Creation Materials~
 
-//TRANSLATOR NOTE: @115109 has changed - Please delete this line when tra references have been updated
 @115109 = ~Masterwork Scroll Creation Materials
 Use these materials to create a scroll. These materials are of the highest quality, allowing the creation of any level scroll. Note that you need 1 of these for each level of the scroll you plan to create. So, if you are creating a scroll of a 5th level spell, then you need 5 of these on hand.
 
