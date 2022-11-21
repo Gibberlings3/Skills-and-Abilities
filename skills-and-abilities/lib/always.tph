@@ -33,6 +33,13 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
 // Detect third-party mods                                               //
 ///////////////////////////////////////////////////////////////////////////
+   // Enhanced Edition
+   ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ THEN BEGIN
+      OUTER_SET enhanced_edition=1
+   END ELSE BEGIN
+      OUTER_SET enhanced_edition=0
+   END
+
    // Detect Spell Revisions
    ACTION_IF FILE_EXISTS_IN_GAME ~dvimhere.mrk~ THEN BEGIN
       OUTER_SET spell_revisions=1
