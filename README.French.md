@@ -67,9 +67,9 @@ Ce composant met également à jour les HLAs suivantes afin qu'elles ne puissent
 
 Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit Crochetage de serrures et Détection des pièges pour Le barde et ses kits.
 
-### Permettre au Maître-lames de se spécialiser dans les armes de mêlée
+### Améliorer le kit du Maître-lames
 
-Cette option permet au Maître-lames de se spécialiser (2 points de compétence) dans les armes de mêlée. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
+Cette option permet au Maître-lames de se spécialiser (2 points de compétence) dans les armes de mêlée, il recevra également une demi attaque supplémentaire au niveau 10 et 20. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
 
 ### Ajouter de nouvelles capacités pour les guerriers
 
