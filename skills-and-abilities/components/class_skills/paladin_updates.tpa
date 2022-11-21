@@ -34,7 +34,7 @@ COPY ~skills-and-abilities/spl/MOPAL31.SPL~        ~override~ // Smite +1 Thac0/
 COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
   SAY NAME1 @6009
   SAY UNIDENTIFIED_DESC @6010
-  LPF CLONE_EFFECT INT_VAR match_opcode = 328 opcode 142 parameter2 = MOPAL3A END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 328 opcode = 142 parameter2 = MOPAL3A END
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Base Paladin New Abilities                                        //
