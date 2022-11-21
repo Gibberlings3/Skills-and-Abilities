@@ -1,6 +1,6 @@
 //special thanks to Subtledoctor and Aquadrizzt for this code
 
-ACTION_DEFINE_ASSOCIATIVE_ARRAY spell_to_gold BEGIN
+ACTION_DEFINE_ASSOCIATIVE_ARRAY scroll_text BEGIN
 
 
 END

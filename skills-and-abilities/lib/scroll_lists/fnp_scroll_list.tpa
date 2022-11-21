@@ -1,7 +1,8 @@
 //special thanks to Subtledoctor and Aquadrizzt for this code
 
-ACTION_DEFINE_ASSOCIATIVE_ARRAY spell_to_gold BEGIN
+ACTION_DEFINE_ASSOCIATIVE_ARRAY fnp_scroll BEGIN
 
+~%scr_spl%~ => ~%scr_sph%~
 
 END
 
