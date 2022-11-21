@@ -7,6 +7,10 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Aura of Courage~) STR_VAR bam_file = SPWI210C RET MOPAL1A = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Aura of Despair~) STR_VAR bam_file = SPPR314C RET MOPAL2A = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Aura of Protection~) STR_VAR bam_file = SPPR111C RET MOPAL4A = icon END
+
 ACTION_FOR_EACH aura IN
       1 // Aura of Courage
       2 // Aura of Despair
@@ -14,6 +18,7 @@ ACTION_FOR_EACH aura IN
     BEGIN
       COPY ~skills-and-abilities/eff/class/MOPAL0%aura%.EFF~  ~override~ 
       COPY ~skills-and-abilities/spl/MOPAL0%aura%.SPL~        ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 parameter2 = ~MOPAL%aura%A~ timing = 0 duration = 8 END
       COPY ~skills-and-abilities/spl/MOPALC%aura%.SPL~        ~override~
     END
 
@@ -22,11 +27,14 @@ COPY ~skills-and-abilities/spl/MOPHL01.SPL~        ~override~ // Sanctify Strike
 COPY ~skills-and-abilities/spl/MO#PHL01.SPL~       ~override~ // Sanctify Strikes
   SAY NAME1 @6003
   SAY UNIDENTIFIED_DESC @6004
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Smite~) STR_VAR bam_file = SPWI915C RET MOPAL3A = icon END
 COPY ~skills-and-abilities/spl/MOPAL32.SPL~        ~override~ // Smite +3 Thac0/Dmg
 COPY ~skills-and-abilities/spl/MOPAL31.SPL~        ~override~ // Smite +1 Thac0/Dmg
 COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
   SAY NAME1 @6009
   SAY UNIDENTIFIED_DESC @6010
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 1 parameter2 = ~MOPAL3A~ timing = 0 duration = 6 probability1 = 100 END
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Base Paladin New Abilities                                        //

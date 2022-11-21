@@ -67,9 +67,9 @@ This also updates the following HLAs so they CANNOT be removed by Breach or anti
 
 Adds the option to either select Open Locks only or Open Locks and Disarm/Find Traps for Bards and Bard kits.
 
-### Allow Blade Kit to Specialize in Melee Weapons
+### Blade Kit Enhancements
 
-This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice.
+This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons and receive a 0.5 APR boost at level 10 and again at level 20. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice.
 
 ### Add New Fighter Abilities
 

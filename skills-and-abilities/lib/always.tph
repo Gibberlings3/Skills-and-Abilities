@@ -25,6 +25,7 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
    INCLUDE ~skills-and-abilities/lib/splprot_kits.tpa~
    INCLUDE ~skills-and-abilities/lib/qd_multiclass.tpa~
    INCLUDE ~skills-and-abilities/lib/fl#add_kit_ee.tpa~
+   INCLUDE ~skills-and-abilities/lib/cdfunctions.tpa~ // borrowed with permission from Cam
    OUTER_SPRINT ~folder~ ~skills-and-abilities~
    //INCLUDE ~skills-and-abilities/lib/splprot_attributes.tpa~ // Already present in splprot.2da
    //SILENT
@@ -32,6 +33,13 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
 // Detect third-party mods                                               //
 ///////////////////////////////////////////////////////////////////////////
+   // Enhanced Edition
+   ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ THEN BEGIN
+      OUTER_SET enhanced_edition=1
+   END ELSE BEGIN
+      OUTER_SET enhanced_edition=0
+   END
+
    // Detect Spell Revisions
    ACTION_IF FILE_EXISTS_IN_GAME ~dvimhere.mrk~ THEN BEGIN
       OUTER_SET spell_revisions=1
