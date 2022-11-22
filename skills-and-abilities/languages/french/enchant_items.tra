@@ -11,15 +11,15 @@
 @115004 = ~Vous devez avoir mémorisé un sort pour pouvoir rédiger un parchemin. Essayez à nouveau lorsque vous aurez mémorisé au moins un sort.~
 @115005 = ~Vous devez disposer d'au moins 100 pièces d'or pour écrire un sort sur un parchemin. Réessayez quand vous aurez 100 pièces d'or ou plus.~
 									
-@115006 = ~Sorts profanes de niveau 1~
-@115007 = ~Sorts profanes de niveau 2~
-@115008 = ~Sorts profanes de niveau 3~
-@115009 = ~Sorts profanes de niveau 4~
-@115010 = ~Sorts profanes de niveau 5~
-@115011 = ~Sorts profanes de niveau 6~
-@115012 = ~Sorts profanes de niveau 7~
-@115013 = ~Sorts profanes de niveau 8~
-@115014 = ~Sorts profanes de niveau 9~
+@115006 = ~Parchemins de sorts profanes de niveau 1~
+@115007 = ~Parchemins de sorts profanes de niveau 2~
+@115008 = ~Parchemins de sorts profanes de niveau 3~
+@115009 = ~Parchemins de sorts profanes de niveau 4~
+@115010 = ~Parchemins de sorts profanes de niveau 5~
+@115011 = ~Parchemins de sorts profanes de niveau 6~
+@115012 = ~Parchemins de sorts profanes de niveau 7~
+@115013 = ~Parchemins de sorts profanes de niveau 8~
+@115014 = ~Parchemins de sorts profanes de niveau 9~
 @115015 = ~J'en ai fini.~
 @115016 = ~Sélectionner des sorts d'un autre niveau~
 @115017 = ~Écrire un parchemin
@@ -28,15 +28,15 @@ Cette aptitude vous permet de rédiger un parchemin à partir d'un sort mémoris
 @115019 = ~Sélectionner le niveau des sorts~
 
 //TRANSLATOR NOTE: Do not translate "%lowest_arcane_gold_x%"
-@115020 = ~Sorts profanes de 1er niveau (nécessite un minimum de %lowest_arcane_1% pièces d'or)~
-@115021 = ~Sorts profanes de 2ème niveau (nécessite un minimum de %lowest_arcane_2% pièces d'or)~
-@115022 = ~Sorts profanes de 3ème niveau (nécessite un minimum de %lowest_arcane_3% pièces d'or)~
-@115023 = ~Sorts profanes de 4ème niveau (nécessite un minimum de %lowest_arcane_4% pièces d'or)~
-@115024 = ~Sorts profanes de 5ème niveau (nécessite un minimum de %lowest_arcane_5% pièces d'or)~
-@115025 = ~Sorts profanes de 6ème niveau (nécessite un minimum de %lowest_arcane_6% pièces d'or)~
-@115026 = ~Sorts profanes de 7ème niveau (nécessite un minimum de %lowest_arcane_7% pièces d'or)~
-@115027 = ~Sorts profanes de 8ème niveau (nécessite un minimum de %lowest_arcane_8% pièces d'or)~
-@115028 = ~Sorts profanes de 9ème niveau (nécessite un minimum de %lowest_arcane_9% pièces d'or)~
+@115020 = ~Parchemins de sorts profanes de 1er niveau (nécessite un minimum de %lowest_arcane_1% pièces d'or)~
+@115021 = ~Parchemins de sorts profanes de 2ème niveau (nécessite un minimum de %lowest_arcane_2% pièces d'or)~
+@115022 = ~Parchemins de sorts profanes de 3ème niveau (nécessite un minimum de %lowest_arcane_3% pièces d'or)~
+@115023 = ~Parchemins de sorts profanes de 4ème niveau (nécessite un minimum de %lowest_arcane_4% pièces d'or)~
+@115024 = ~Parchemins de sorts profanes de 5ème niveau (nécessite un minimum de %lowest_arcane_5% pièces d'or)~
+@115025 = ~Parchemins de sorts profanes de 6ème niveau (nécessite un minimum de %lowest_arcane_6% pièces d'or)~
+@115026 = ~Parchemins de sorts profanes de 7ème niveau (nécessite un minimum de %lowest_arcane_7% pièces d'or)~
+@115027 = ~Parchemins de sorts profanes de 8ème niveau (nécessite un minimum de %lowest_arcane_8% pièces d'or)~
+@115028 = ~Parchemins de sorts profanes de 9ème niveau (nécessite un minimum de %lowest_arcane_9% pièces d'or)~
 
 //create scroll innate
 @115100 = ~Créer un parchemin~
@@ -84,21 +84,21 @@ Remarque importante : Ne gardez pas plus de matériaux que ceux dont vous avez b
 @115110 = ~Créer un parchemin de %s_name%~
 
 //TRANSLATION NOTE: Do Not Translate "%x_divine_gold%" below.
-@115111 = ~Sorts divins de 1er niveau (nécessite un minimum de %lowest_divine_1% pièces d'or)~
-@115112 = ~Sorts divins de 2ème niveau (nécessite un minimum de %lowest_divine_2% pièces d'or)~
-@115113 = ~Sorts divins de 3ème niveau (nécessite un minimum de %lowest_divine_3% pièces d'or)~
-@115114 = ~Sorts divins de 4ème niveau (nécessite un minimum de %lowest_divine_4% pièces d'or)~
-@115115 = ~Sorts divins de 5ème niveau (nécessite un minimum de %lowest_divine_5% pièces d'or)~
-@115116 = ~Sorts divins de 6ème niveau (nécessite un minimum de %lowest_divine_6% pièces d'or)~
-@115117 = ~Sorts divins de 7ème niveau (nécessite un minimum de %lowest_divine_7% pièces d'or)~
+@115111 = ~Parchemins de sorts divins de 1er niveau (nécessite un minimum de %lowest_divine_1% pièces d'or)~
+@115112 = ~Parchemins de sorts divins de 2ème niveau (nécessite un minimum de %lowest_divine_2% pièces d'or)~
+@115113 = ~Parchemins de sorts divins de 3ème niveau (nécessite un minimum de %lowest_divine_3% pièces d'or)~
+@115114 = ~Parchemins de sorts divins de 4ème niveau (nécessite un minimum de %lowest_divine_4% pièces d'or)~
+@115115 = ~Parchemins de sorts divins de 5ème niveau (nécessite un minimum de %lowest_divine_5% pièces d'or)~
+@115116 = ~Parchemins de sorts divins de 6ème niveau (nécessite un minimum de %lowest_divine_6% pièces d'or)~
+@115117 = ~Parchemins de sorts divins de 7ème niveau (nécessite un minimum de %lowest_divine_7% pièces d'or)~
 
-@115118 = ~Sorts divins de niveau 1~
-@115119 = ~Sorts divins de niveau 2~
-@115120 = ~Sorts divins de niveau 3~
-@115121 = ~Sorts divins de niveau 4~
-@115122 = ~Sorts divins de niveau 5~
-@115123 = ~Sorts divins de niveau 6~
-@115124 = ~Sorts divins de niveau 7~
+@115118 = ~Parchemins de sorts divins de niveau 1~
+@115119 = ~Parchemins de sorts divins de niveau 2~
+@115120 = ~Parchemins de sorts divins de niveau 3~
+@115121 = ~Parchemins de sorts divins de niveau 4~
+@115122 = ~Parchemins de sorts divins de niveau 5~
+@115123 = ~Parchemins de sorts divins de niveau 6~
+@115124 = ~Parchemins de sorts divins de niveau 7~
 
 @116000 = ~[LAST SCROLL]~
 
