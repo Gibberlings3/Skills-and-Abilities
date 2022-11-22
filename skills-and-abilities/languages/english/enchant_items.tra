@@ -28,16 +28,17 @@ This ability allows you to scribe a scroll from a spell that you currently have 
 @115018 = ~You must have at least 100 experience points to scribe a spell.  Try again when you have attained the required experience.~
 @115019 = ~Select Spell Level~
 
+//Apologies. Revised tra ref @11520 to @226028 yet again. Shouldn't happen again. Please delete this line after translation
 //TRANSLATOR NOTE: Do not translate "%lowest_arcane_gold_x%"
-@115020 = ~1st Level Spells (Requires Minimum %lowest_arcane_1% gold)~
-@115021 = ~2nd Level Spells (Requires Minimum %lowest_arcane_2% gold)~
-@115022 = ~3rd Level Spells (Requires Minimum %lowest_arcane_3% gold)~
-@115023 = ~4th Level Spells (Requires Minimum %lowest_arcane_4% gold)~
-@115024 = ~5th Level Spells (Requires Minimum %lowest_arcane_5% gold)~
-@115025 = ~6th Level Spells (Requires Minimum %lowest_arcane_6% gold)~
-@115026 = ~7th Level Spells (Requires Minimum %lowest_arcane_7% gold)~
-@115027 = ~8th Level Spells (Requires Minimum %lowest_arcane_8% gold)~
-@115028 = ~9th Level Spells (Requires Minimum %lowest_arcane_9% gold)~
+@115020 = ~1st Arcane Scrolls (Requires Minimum %lowest_arcane_1% gold)~
+@115021 = ~2nd Arcane Scrolls (Requires Minimum %lowest_arcane_2% gold)~
+@115022 = ~3rd Arcane Scrolls (Requires Minimum %lowest_arcane_3% gold)~
+@115023 = ~4th Arcane Scrolls (Requires Minimum %lowest_arcane_4% gold)~
+@115024 = ~5th Arcane Scrolls (Requires Minimum %lowest_arcane_5% gold)~
+@115025 = ~6th Arcane Scrolls (Requires Minimum %lowest_arcane_6% gold)~
+@115026 = ~7th Arcane Scrolls (Requires Minimum %lowest_arcane_7% gold)~
+@115027 = ~8th Arcane Scrolls (Requires Minimum %lowest_arcane_8% gold)~
+@115028 = ~9th Arcane Scrolls (Requires Minimum %lowest_arcane_9% gold)~
 
 //create scroll innate
 @115100 = ~Create Scroll~
