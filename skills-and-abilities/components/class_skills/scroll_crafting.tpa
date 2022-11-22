@@ -1,6 +1,4 @@
 
-//CONTINUE THIEF AND MONK SCROLLS
-
 ///////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////////
@@ -340,7 +338,7 @@ ACTION_PHP_EACH lev_general_scroll AS der_spell => der_scroll  BEGIN
           READ_LONG  0x0034 level //spell level
           READ_SHORT 0x001c type //spell type
           //level gold if needed and materials
-               PATCH_IF (level > 0) AND (level < 6) BEGIN
+               PATCH_IF (level < 6) BEGIN
                     SET level_gold = (%level% * 100)
                         PATCH_IF (level < 4) AND ((type = %b_material_scroll_cost%) OR (%b_material_scroll_cost% > 2)) BEGIN
                              SET materials = (1)
@@ -422,6 +420,7 @@ ACTION_PHP_EACH lev_general_scroll AS der_spell => der_scroll  BEGIN
                                      SET xp_cost = (level * 16)
                                  END
                         END
+                        //ISSUE STARTS HERE
                         ELSE BEGIN //not right spell type for reduced gold cost (either because no xp cost or not applicable to spell type)
                                SET new_gold = (%level_gold%)
                                SET xp_cost = (0)
@@ -1266,3 +1265,4 @@ ACTION_IF (%b_mage_scroll% = 0) OR
 
 
 END //at least somebody getting scribe scroll as hla
+
