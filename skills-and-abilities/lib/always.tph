@@ -103,4 +103,11 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
       OUTER_SET leui=0
    END
 
+   // Bardic Wonders - Blade Kit
+   ACTION_IF MOD_IS_INSTALLED ~BARDICWONDERS.TP2~ ~0~ BEGIN
+      OUTER_SET bw_blade=1
+   END ELSE BEGIN
+      OUTER_SET bw_blade=0
+   END
+
 END

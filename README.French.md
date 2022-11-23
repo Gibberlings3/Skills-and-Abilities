@@ -81,8 +81,6 @@ SECOND SOUFFLE : Vous disposez, dans une certaine mesure, de la capacité de pui
 
 IRRÉDUCTIBLE : Le guerrier bénéficie de +1 à tous ses jets de sauvegarde. Ce bonus passe à +2 au niveau 13 et enfin +3 au niveau 17.
 
-– 20ème niveau : Le guerrier gagne une demi-attaque supplémentaire par round.
-
 CONCENTRATION ÉPIQUE : Les combattants gagne un bonus de 2 au TAC0.
 
 CONVERGENCE ÉPIQUE (NÉCESSITE CONCENTRATION ÉPIQUE): Les combattants gagne un bonus de 2 aux dégâts.
