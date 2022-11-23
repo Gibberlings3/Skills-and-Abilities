@@ -7,10 +7,19 @@
 @3502 = ~Vol à la tire, Crochetage de serrures~
 @3503 = ~Vol à la tire, Détection des pièges~
 
-@3504 = ~Peut placer 3 points de compétence dans le style de combat à deux armes.~
+@3504 = ~- Peut attribuer 3 étoiles dans le style de combat à deux armes.~
 @3505 = ~Peut placer 3 points de compétence dans le style de combat à deux armes.
 – Peut se spécialiser (2 points de compétence) dans les armes de mêlée.~
 
 @3506 = ~– May not Pick Pockets.~
+
+@3507 = ~May achieve Grand Mastery (five slots) in any bladed weapon.~
+@3508 = ~Peut atteindre la spécialisation (2 points de compétence) avec les armes de mêlée~
+
+@3509 = ~Disadvantages:~
+@3510 = ~– 10ème niveau : Gagne une demi-attaque supplémentaire par round..
+– 20ème niveau : Gagne à nouveau une demi-attaque supplémentaire par round.
+
+Inconvénients :~
 
 @4000 = ~[LAST TRA HERE]~
