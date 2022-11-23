@@ -81,8 +81,6 @@ SECOND WIND: You have a limited well of stamina that you can draw on to protect 
 
 INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to a +2 bonus at level 13 and a +3 bonus at level 17.
 
-- 20th Level: The fighter gains an additional +0.5 apr bonus.
-
 - New HLA Abilities: Epic Weapon Focus and Epic Weapon Specialization.
 
 EPIC WEAPON FOCUS: The warrior gains +2 bonus to Thac0.
