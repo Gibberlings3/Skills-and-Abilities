@@ -300,7 +300,7 @@ ACTION_FOR_EACH description IN
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "BLADE" BEGIN
           READ_2DA_ENTRY index 4 col_count blade_desc
           PATCH_IF !(blade_text = blade_desc) BEGIN
-            OUTER_SET bade_text = blade_desc
+            OUTER_SET blade_text = blade_desc
             SPRINT old_blade3 @3509
             SPRINT new_blade3 @3510
             PATCH_IF bw_blade BEGIN
