@@ -21,13 +21,13 @@ Vous disposez, dans une certaine mesure, de la capacité de puiser dans vos rés
 @9508 = ~– Dés de vie : d10
 - 1er niveau : Peut utiliser Second souffle une fois par jour.
 
-SECOND SOUFFLE : Vous disposez, dans une certaine mesure, de la capacité de puiser dans vos réserves pour vous protéger des dangers. Une fois par jour, le guerrier peut utiliser Second souffle, afin de regagner 1d10 points de vie auxquels s'ajoute votre niveau actuel de guerrier.~
+SECOND SOUFFLE : Vous disposez, dans une certaine mesure, de la capacité de puiser dans vos réserves pour vous protéger des dangers. Une fois par jour, le guerrier peut utiliser Second souffle, afin de regagner 1d10 points de vie auxquels s'ajoute votre niveau actuel de guerrier.
 
-/*– 9ème niveau: Gagne la capacité passive Irréductible.
+– 9ème niveau: Gagne la capacité passive Irréductible.
 
-IRRÉDUCTIBLE : Le guerrier bénéficie d'un bonus de 1 à tous ses jets de sauvegarde. Ce bonus passe à 2 au niveau 13 et enfin 3 au niveau 17.
+IRRÉDUCTIBLE : Le guerrier bénéficie d'un bonus de 1 à tous ses jets de sauvegarde. Ce bonus passe à 2 au niveau 13 et enfin 3 au niveau 17.~
 
-– 20ème niveau : Le guerrier gagne une demi-attaque supplémentaire par round.~*/
+/*– 20ème niveau : Le guerrier gagne une demi-attaque supplémentaire par round.~*/
 
 // If component Figther overhaul from Artisan kitpack mod is installed
 
