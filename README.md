@@ -69,7 +69,7 @@ Adds the option to either select Open Locks only or Open Locks and Disarm/Find T
 
 ### Blade Kit Enhancements
 
-This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons and receive a 0.5 APR boost at level 10 and again at level 20. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice.
+This allows the Bard Blade Kit to specialize (2 slots) in all melee weapons and receive a 0.5 APR boost at level 10 and again at level 20. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice. This is compatible with Bardic Wonders improved Blade Kit; however, this will need to be installed after it AND it will remove the GM bonuses provided by Bardic Wonders for the APR boosts at levels 10 and 20.
 
 ### Add New Fighter Abilities
 
