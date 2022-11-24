@@ -1,4 +1,4 @@
-function moTest(sprite, damageData)
+function MoTest(sprite, damageData)
     --local damageCheck = sprite.m_triggerID(0x40CD) + 10 -- Damage Taken +10
     local damageCheck = damageData.damageTaken -- Damage Taken
     local diceRoll = Infinity_RandomNumber(1, 20) -- 1d20
