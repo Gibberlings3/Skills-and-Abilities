@@ -1,4 +1,4 @@
-function B3RemoveTurnUndeadActionbarListener(config, state)
+function MoRemoveTurnUndeadActionbarListener(config, state)
    if 
       state == 3 or 
       state == 6 or 
@@ -12,4 +12,4 @@ function B3RemoveTurnUndeadActionbarListener(config, state)
       EEex_Actionbar_SetButton(5, EEex_Actionbar_ButtonType.QUICK_SPELL_1)
    end
 end
-EEex_Actionbar_AddListener(B3RemoveTurnUndeadActionbarListener)
+EEex_Actionbar_AddListener(MoRemoveTurnUndeadActionbarListener)

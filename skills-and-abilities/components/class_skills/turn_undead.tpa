@@ -8,14 +8,14 @@
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
 // Lua files required for EEex
-ACTION_IF FILE_EXISTS_IN_GAME ~M_B3THI7.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR1.lua~ ~override~ // Inquisitor Dispel Illusion
+ACTION_IF FILE_EXISTS_IN_GAME ~m_moTHI7.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/lua/m_moTUR1.lua~ ~override~ // Inquisitor Dispel Illusion
 END ELSE BEGIN
-  COPY ~skills-and-abilities/lua/M_B3TUR2.lua~ ~override~ // NO Inquisitor Dispel Illusion
+  COPY ~skills-and-abilities/lua/m_moTUR2.lua~ ~override~ // NO Inquisitor Dispel Illusion
 END
-COPY ~skills-and-abilities/lua/M_B3TUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
-COPY ~skills-and-abilities/lua/M_B3TUR4.lua~   ~override~ // Cleric/Thief 
-COPY ~skills-and-abilities/lua/M_B3TUR5.lua~   ~override~ // Cleric/Ranger
+COPY ~skills-and-abilities/lua/m_moTUR3.lua~   ~override~ // Cleric, Fighter/Cleric, Cleric/Mage, FMC 
+COPY ~skills-and-abilities/lua/m_moTUR4.lua~   ~override~ // Cleric/Thief 
+COPY ~skills-and-abilities/lua/m_moTUR5.lua~   ~override~ // Cleric/Ranger
 
 // Creates 2d6 + Character Level damage eff files for levels 1-9
 FOR (i = 1; i < 10; ++i) BEGIN

@@ -7,15 +7,15 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3THI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+ACTION_IF !FILE_EXISTS_IN_GAME ~m_moTHI1.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/lua/m_moTHI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 END
 
 // Lockpicking and Find/Disarm Traps ONLY
 ACTION_IF bard_skill THEN BEGIN
   COPY ~skills-and-abilities/spl/MO#BSK01.SPL~    ~override~ // Assigns 5-10-10 thief skill points to bards
   COPY ~skills-and-abilities/spl/MO#BSK02.SPL~    ~override~ // Assigns 5-5-5 thief skill points to bards
-  COPY ~skills-and-abilities/lua/M_B3THI2.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+  COPY ~skills-and-abilities/lua/m_moTHI2.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 // Lockpicking ONLY
 END ELSE BEGIN

@@ -7,11 +7,11 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3THI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+ACTION_IF !FILE_EXISTS_IN_GAME ~m_moTHI1.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/lua/m_moTHI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 END
 
-COPY ~skills-and-abilities/lua/M_B3THI6.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~skills-and-abilities/lua/m_moTHI6.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 COPY ~skills-and-abilities/spl/MO#BSK05.SPL~   ~override~ // Sets Detect Illusions to 100 EVERY level for Wizard Slayer
 
 ///////////////////////////////////////////////////////////////////////////

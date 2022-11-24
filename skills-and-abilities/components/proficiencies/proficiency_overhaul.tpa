@@ -57,7 +57,7 @@ ACTION_IF eeex_present THEN BEGIN
     SAY NAME2 @7143
   */
   COPY ~skills-and-abilities/2da/concentr.2da~                ~override~ // Concentration 2da
-  COPY ~skills-and-abilities/lua/m_b3test.lua~                ~override~ // lua file
+  COPY ~skills-and-abilities/lua/m_motest.lua~                ~override~ // lua file
   COPY ~skills-and-abilities/spl/proficiencies/MOINT04.SPL~   ~override~ // Combat Casting
     SAY NAME1 @7146
     SAY NAME2 @7146

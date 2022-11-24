@@ -7,11 +7,11 @@
 ///////////////////////////////////////////////////////////////////////////
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/M_B3THI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+ACTION_IF !FILE_EXISTS_IN_GAME ~m_moTHI1.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/lua/m_moTHI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 END
 
-COPY ~skills-and-abilities/lua/M_B3THI8.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~skills-and-abilities/lua/m_moTHI8.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
   // NEED TO UPDATE ALL OF THESE
   ADD_KIT ~MO_ClericMageThief~

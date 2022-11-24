@@ -1,4 +1,4 @@
-function B3BarbarianThievingActionbarListener(config, state)
+function MoBarbarianThievingActionbarListener(config, state)
    if 
       state == 2 
       and EEex_GameObject_GetSelected():getActiveStats().m_nKit == 0x40000000
@@ -7,4 +7,4 @@ function B3BarbarianThievingActionbarListener(config, state)
       EEex_Actionbar_SetButton(5, EEex_Actionbar_ButtonType.STEALTH)
    end
 end
-EEex_Actionbar_AddListener(B3BarbarianThievingActionbarListener)
+EEex_Actionbar_AddListener(MoBarbarianThievingActionbarListener)

@@ -1,4 +1,4 @@
-function B3ClericMageThiefActionbarListener(config, state)
+function MoClericMageThiefActionbarListener(config, state)
    if 
       state == 6 
       and EEex_GameObject_GetSelected():getActiveStats().m_nKit == 0x4005
@@ -8,4 +8,4 @@ function B3ClericMageThiefActionbarListener(config, state)
       EEex_Actionbar_SetButton(5, EEex_Actionbar_ButtonType.STEALTH)
    end
 end
-EEex_Actionbar_AddListener(B3ClericMageThiefActionbarListener)
+EEex_Actionbar_AddListener(MoClericMageThiefActionbarListener)
