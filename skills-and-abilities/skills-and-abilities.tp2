@@ -400,7 +400,8 @@ INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
 BEGIN @201 SUBCOMPONENT @3403 DESIGNATED 201
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004
 REQUIRE_PREDICATE (!(GAME_IS ~iwdee~) OR (FILE_EXISTS_IN_GAME ~mohla01.itm~ )) @3010
-//REQUIRE_PREDICATE (CHECK FOR NO SCROLLS) @3007  //~Priest scrolls have already been added!~
+REQUIRE_PREDICATE !(FILE_EXISTS_IN_GAME ~B_sna201.itm~) AND !(FILE_EXISTS_IN_GAME ~B_fnp070.itm~) AND !(FILE_EXISTS_IN_GAME ~B_sam201.itm~) @3007  //~Priest scrolls have already been added!~
+
 
 LAM b_scroll_global_settings
 
