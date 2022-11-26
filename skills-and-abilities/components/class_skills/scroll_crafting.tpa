@@ -1,3 +1,47 @@
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////////
+/////////////////       NO HLA
+
+ACTION_IF (GAME_IS ~iwdee~) AND !(FILE_EXISTS_IN_GAME ~mohla01.itm~ ) BEGIN 
+  ACTION_IF (FILE_EXISTS_IN_GAME ~B_sna200.itm~) BEGIN //2e pnp
+    ACTION_IF (%b_mage_scroll% = 0) BEGIN 
+        OUTER_SET b_mage_scroll = 9
+    END
+    ACTION_IF (%b_cleric_scroll% = 0) BEGIN 
+        OUTER_SET b_cleric_scroll = 7
+    END
+    ACTION_IF (%b_druid_scroll% = 0) BEGIN 
+        OUTER_SET b_druid_scroll = 7
+    END
+    ACTION_IF (%b_bard_scroll% = 0) BEGIN 
+        OUTER_SET b_bard_scroll = 27
+    END
+    ACTION_IF (%b_bard_divine_scroll% = 0) BEGIN 
+        OUTER_SET b_bard_divine_scroll = 27
+    END
+    ACTION_IF (%b_paladin_scroll% = 0) BEGIN 
+        OUTER_SET b_paladin_scroll = 24
+    END
+    ACTION_IF (%b_ranger_scroll% = 0) BEGIN 
+        OUTER_SET b_ranger_scroll = 24
+    END
+    ACTION_IF (%b_sorc_scroll% = 0) BEGIN 
+        OUTER_SET b_sorc_scroll = 9
+    END
+    ACTION_IF (%b_monk_scroll% = 0) BEGIN 
+        OUTER_SET b_monk_scroll = 30
+    END
+    ACTION_IF (%b_thief_scroll% = 0) BEGIN 
+        OUTER_SET b_thief_scroll = 30
+    END
+    ACTION_IF (%b_shaman_scroll% = 0) BEGIN 
+        OUTER_SET b_shaman_scroll = 7
+    END  
+  END
+END
+
+
 
 ///////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
