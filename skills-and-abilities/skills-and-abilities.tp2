@@ -392,7 +392,7 @@ LAM b_scroll_level_settings
 
 //marker
 COPY_EXISTING ~SW1H04.itm~ ~override/B_sna200.itm~
-ACTION_IF (%b_add_priest_scrolls5 = 1) BEGIN //if set to add priest scrolls
+ACTION_IF (%b_add_priest_scrolls% = 1) BEGIN //if set to add priest scrolls
   COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
 
   INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
@@ -425,7 +425,7 @@ OUTER_SET b_sorc_scroll     =  4
 OUTER_SET b_shaman_scroll   =  6
 
 //marker
-ACTION_IF (%b_add_priest_scrolls5 = 1) BEGIN //if set to add priest scrolls
+ACTION_IF (%b_add_priest_scrolls% = 1) BEGIN //if set to add priest scrolls
 
   COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
 
