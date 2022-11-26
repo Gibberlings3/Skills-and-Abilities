@@ -380,7 +380,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/cleric_thief.tpa~
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Craft Spell Scrolls                                                   //
+// Craft Spell Scrolls: Add Spell Scroll Crafting: 2e pnp                                                   //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @200 SUBCOMPONENT @3403 DESIGNATED 200 GROUP @2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004
@@ -392,10 +392,16 @@ LAM b_scroll_level_settings
 
 //marker
 COPY_EXISTING ~SW1H04.itm~ ~override/B_sna200.itm~
+ACTION_IF (%b_add_priest_scrolls5 = 1) BEGIN //if set to add priest scrolls
+  COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
+
+  INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
+END
 
 INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
 
 ////////////////////////////////////////////////////
+// Craft Spell Scrolls: Add Spell Scroll Crafting: 2e modified   
 
 BEGIN @201 SUBCOMPONENT @3403 DESIGNATED 201
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004
@@ -408,9 +414,12 @@ LAM b_scroll_global_settings
 LAM b_scroll_level_settings
 
 //marker
-COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
+ACTION_IF (%b_add_priest_scrolls5 = 1) BEGIN //if set to add priest scrolls
 
-INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
+  COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
+
+  INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
+END
 
 INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
 
