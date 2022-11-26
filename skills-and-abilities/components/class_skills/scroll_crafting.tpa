@@ -3,8 +3,8 @@
 //////////////////
 /////////////////       NO HLA
 
-ACTION_IF (GAME_IS ~iwdee~) AND !(FILE_EXISTS_IN_GAME ~mohla01.itm~ ) BEGIN 
-  ACTION_IF (FILE_EXISTS_IN_GAME ~B_sna200.itm~) BEGIN //2e pnp
+ACTION_IF (GAME_IS ~iwdee~) AND !(FILE_EXISTS_IN_GAME ~mohla01.itm~ ) AND !(FILE_EXISTS_IN_GAME ~B_fnp070.itm~) AND !(FILE_EXISTS_IN_GAME ~B_sam201.itm~) BEGIN 
+  ACTION_IF (%b_scroll_component% = 200) BEGIN //2e pnp
     ACTION_IF (%b_mage_scroll% = 0) BEGIN 
         OUTER_SET b_mage_scroll = 9
     END
@@ -41,7 +41,80 @@ ACTION_IF (GAME_IS ~iwdee~) AND !(FILE_EXISTS_IN_GAME ~mohla01.itm~ ) BEGIN
   END
 END
 
+ACTION_IF (GAME_IS ~iwdee~) AND !(FILE_EXISTS_IN_GAME ~mohla01.itm~ ) AND !(FILE_EXISTS_IN_GAME ~B_fnp070.itm~) AND !(FILE_EXISTS_IN_GAME ~B_sam201.itm~) BEGIN 
+  ACTION_IF (%b_scroll_component% = 201) BEGIN //modified 2e pnp
+    ACTION_IF (%b_mage_scroll% = 0) BEGIN 
+        OUTER_SET b_mage_scroll = 1
+    END
+    ACTION_IF (%b_cleric_scroll% = 0) BEGIN 
+        OUTER_SET b_cleric_scroll = 4
+    END
+    ACTION_IF (%b_druid_scroll% = 0) BEGIN 
+        OUTER_SET b_druid_scroll = 6
+    END
+    ACTION_IF (%b_bard_scroll% = 0) BEGIN 
+        OUTER_SET b_bard_scroll = 13
+    END
+    ACTION_IF (%b_bard_divine_scroll% = 0) BEGIN 
+        OUTER_SET b_bard_divine_scroll = 27
+    END
+    ACTION_IF (%b_paladin_scroll% = 0) BEGIN 
+        OUTER_SET b_paladin_scroll = 24
+    END
+    ACTION_IF (%b_ranger_scroll% = 0) BEGIN 
+        OUTER_SET b_ranger_scroll = 24
+    END
+    ACTION_IF (%b_sorc_scroll% = 0) BEGIN 
+        OUTER_SET b_sorc_scroll = 4
+    END
+    ACTION_IF (%b_monk_scroll% = 0) BEGIN 
+        OUTER_SET b_monk_scroll = 30
+    END
+    ACTION_IF (%b_thief_scroll% = 0) BEGIN 
+        OUTER_SET b_thief_scroll = 30
+    END
+    ACTION_IF (%b_shaman_scroll% = 0) BEGIN 
+        OUTER_SET b_shaman_scroll = 6
+    END  
+  END
+END
+//2e modified settings
 
+ACTION_IF (%b_scroll_component% = 201) BEGIN //modified 2e pnp
+    ACTION_IF (%b_mage_scroll% = 9) BEGIN 
+        OUTER_SET b_mage_scroll = 1
+    END
+    ACTION_IF (%b_cleric_scroll% = 7) BEGIN 
+        OUTER_SET b_cleric_scroll = 4
+    END
+    ACTION_IF (%b_druid_scroll% = 7) BEGIN 
+        OUTER_SET b_druid_scroll = 6
+    END
+    ACTION_IF (%b_bard_scroll% = 27) BEGIN 
+        OUTER_SET b_bard_scroll = 13
+    END
+    ACTION_IF (%b_bard_divine_scroll% = 0) BEGIN 
+        OUTER_SET b_bard_divine_scroll = 27
+    END
+    ACTION_IF (%b_paladin_scroll% = 0) BEGIN 
+        OUTER_SET b_paladin_scroll = 24
+    END
+    ACTION_IF (%b_ranger_scroll% = 0) BEGIN 
+        OUTER_SET b_ranger_scroll = 24
+    END
+    ACTION_IF (%b_sorc_scroll% = 9) BEGIN 
+        OUTER_SET b_sorc_scroll = 4
+    END
+    ACTION_IF (%b_monk_scroll% = 0) BEGIN 
+        OUTER_SET b_monk_scroll = 30
+    END
+    ACTION_IF (%b_thief_scroll% = 0) BEGIN 
+        OUTER_SET b_thief_scroll = 30
+    END
+    ACTION_IF (%b_shaman_scroll% = 7) BEGIN 
+        OUTER_SET b_shaman_scroll = 6
+    END  
+END
 
 ///////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
