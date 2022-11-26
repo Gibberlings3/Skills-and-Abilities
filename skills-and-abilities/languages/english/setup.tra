@@ -51,7 +51,6 @@
 @160 = ~Adjust Cleric/Thief Actionbar~
 
 // Group 2 (Update 200-299)
-//Translator Note: @200 and @201 have been revised. Please erase this line after translating. 
 @200 = ~Add Spell Scroll Crafting: 2e pnp~
 @201 = ~Add Spell Scroll Crafting: 2e modified~
 
