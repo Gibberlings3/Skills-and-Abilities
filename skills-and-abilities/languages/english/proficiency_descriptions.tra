@@ -285,4 +285,11 @@ NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution 
 @7146 = ~Combat Casting~
 @7147 = ~Greater Combat Casting~
 
+@7148 = ~Thrown Weapon Style~
+@7149 = ~THROWN WEAPON STYLE: This proficiency allows a character to bypass a portion of a target's physical damage resistance.
+
+Armor Penetration (1 slot): The character can bypass 5% of a target's physical damage resistance.
+
+Greater Armor Penetration (2 slots): The character can bypass 10% of a target's physical damage resistance.~
+
 @8000 = ~[LAST TRA HERE]~
