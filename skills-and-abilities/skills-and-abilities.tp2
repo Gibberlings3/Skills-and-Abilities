@@ -70,23 +70,22 @@ LANGUAGE ~French~
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
+// Overhaul PfNW and PfMW                                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @700 DESIGNATED 700 GROUP @7 LABEL SkillsAndAbilitiesPfMW
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3008
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+INCLUDE ~skills-and-abilities/components/spells/prot_spells.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Add HLAs to IWDEE (Lefreut UI Required)                               //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @730 DESIGNATED 730 GROUP @7 LABEL SkillsAndAbilitiesIWDEEHLA
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) && MOD_IS_INSTALLED ~LeUI-IWDEE.tp2~ ~0~ @3009
 
 INCLUDE ~skills-and-abilities/components/spells/iwdee_hlas.tpa~
-
-/*
-///////////////////////////////////////////////////////////////////////////
-// Overhaul PfMW, Mantles, and Absolute Immunity                         //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @700 DESIGNATED 700 GROUP @7 LABEL SkillsAndAbilitiesPfMW
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3008
-
-INCLUDE ~skills-and-abilities/components/spells/prot_spells.tpa~
-*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Add New HLAs for ALL CLasses and Kits                                 //

@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
+/*
 ACTION_FOR_EACH import IN
       1 // PfMW - 100% Prot
       2 // Mantel - 60% Prot
@@ -16,6 +17,11 @@ ACTION_FOR_EACH import IN
         SAY NAME1 @5528
         SAY NAME2 @5528
     END
+*/
+ACTION_IF !FILE_EXISTS_IN_GAME ~m_motest.lua~ THEN BEGIN
+  COPY ~skills-and-abilities/2da/concentr.2da~  ~override~ // Concentration 2da
+  COPY ~skills-and-abilities/lua/m_motest1.lua~ ~override/m_motest~ // lua file
+END
 
 ///////////////////////////////////////////////////////////////////////////
 // Variable Set                                                          //
@@ -49,9 +55,9 @@ ACTION_FOR_EACH spell IN
       COPY_EXISTING ~%spell%.SPL~ ~override~
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI511" END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI611" END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
+        //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
+        //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
+        //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 86 parameter1 = 100 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 87 parameter1 = 100 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 88 parameter1 = 100 parameter2 = 1 END
@@ -79,6 +85,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SCRL7O.ITM~ THEN BEGIN
     SAY DESC @5503
 END
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Divine Mantle & Absolute Immunity                                     //
 ///////////////////////////////////////////////////////////////////////////
@@ -159,6 +166,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SCRL9P.ITM~ THEN BEGIN
   COPY_EXISTING ~SCRL9P.ITM~ ~override~
     SAY DESC @5504
 END
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Protection from Normal Weapons                                        //
@@ -170,9 +178,9 @@ ACTION_FOR_EACH spell IN
       COPY_EXISTING ~%spell%.SPL~ ~override~
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI511" END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI611" END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
+        //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
+        //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
+        //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 86 parameter1 = 50 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 87 parameter1 = 50 parameter2 = 1 END
         LPF CLONE_EFFECT INT_VAR match_opcode = 120 opcode = 88 parameter1 = 50 parameter2 = 1 END
@@ -190,6 +198,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SCRL6T.ITM~ THEN BEGIN
     SAY DESC @5506
 END
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Mantle                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -315,7 +324,8 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SCRL9C.ITM~ THEN BEGIN
   COPY_EXISTING ~SCRL9C.ITM~ ~override~
     SAY DESC @5508
 END
-
+*/
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Block Spell Interruptions                                             //
 ///////////////////////////////////////////////////////////////////////////
@@ -370,10 +380,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 122 parameter2 = 110 timing = 1 dispel_resist = 0 probability1 = 100 insert_point = 0 special = 0 STR_VAR resource = ~MOINT03~ END
     END
 BUT_ONLY
-
+*/
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// Updates descriptions for Paladin                                      //
+// Updates Cespenar Scroll Requirement Dialog                            //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 OUTER_SPRINT old_cesp1  @5514
