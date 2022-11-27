@@ -4,7 +4,7 @@ November xx, 2022
 
 ### Changed
 
-- Added Swiftblade, Spell Penetration, Concentration, and Pale Master proficiencies.
+- Added Swiftblade, Spell Penetration, Concentration, and Thrown Weapon Style proficiencies.
 - Corrected pip assignment for characters with single weapon style.
 - Corrected pip assignment for rangers and two weapon style.
 - Adjusted pip assignment for Level 0 NPC Type Mods.
