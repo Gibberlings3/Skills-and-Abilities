@@ -20,6 +20,8 @@ Some components require EEex to work, and those are identified with **(EEex Requ
 
 ### Overhaul PfNW and PfMW
 
+Adds a calculation to resist spell disruption. The caluclation is 1d20 + Luck + (Constitution / 2) - 5 > Damage Taken. If Damage Taken is less than 10, it will be set to 10 for the purposes of the spell disruption calculation. The proficiency overhaul component will further update this with a new Concentration Proficiency.
+
 Minor Protection From Physical Damage
 - Abjuration
 - Level: 5

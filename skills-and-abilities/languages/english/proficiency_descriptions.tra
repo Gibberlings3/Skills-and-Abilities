@@ -280,7 +280,7 @@ Combat Casting (1 slot): The character increases <PRO_HISHER> chance to resist s
 
 Greater Combat Casting (2 slots): The character increases <PRO_HISHER> chance to resist spell disruption by an additional +4 bringing it to +8 total.
 
-NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution / 2) - 5 + Concentration Proficiency Bonus > Damage Taken + 10.~
+NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution / 2) - 5 + Concentration Proficiency Bonus > Damage Taken. If Damage Taken is less than 10, it will be set to 10 for the purposes of the spell disruption calculation.~
 
 @7146 = ~Combat Casting~
 @7147 = ~Greater Combat Casting~
