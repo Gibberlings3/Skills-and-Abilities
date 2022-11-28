@@ -1967,6 +1967,8 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   SPRINT weapon_name ~%SOURCE_FILE%~
   READ_BYTE  0x31 prof
+  READ_LONG  0x64 abil_off
+  READ_SHORT 0x68 abil_num
   READ_SHORT 0x1c type
   //READ_LONG  0x22 appearance
   READ_ASCII 0x22 appearance (2)
