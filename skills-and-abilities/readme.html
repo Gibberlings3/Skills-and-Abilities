@@ -31,6 +31,30 @@
 <p>This mod is a collection of class, skill, proficiency, and stat updates. This is an alpha release with the intention of adding more class, skill, and stat updates in the near future while further refining the new proficiencies that are being added. Yes, these are actual, functional, useable, proficiencies that can be assinged on the character creation and level up screens. Yes, eekeeper can recognize and adjust these proficiencies for characters. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod.</p>
 <p>Some components require EEex to work, and those are identified with <strong>(EEex Required)</strong>.</p>
 <h2 id="spells-and-hlas">Spells and HLAs</h2>
+<h3 id="overhaul-pfnw-and-pfmw">Overhaul PfNW and PfMW</h3>
+<p>Adds a calculation to resist spell disruption. The caluclation is 1d20 + Luck + (Constitution / 2) - 5 &gt; Damage Taken. If Damage Taken is less than 10, it will be set to 10 for the purposes of the spell disruption calculation. The proficiency overhaul component will further update this with a new Concentration Proficiency.</p>
+<p>Minor Protection From Physical Damage</p>
+<ul>
+<li>Abjuration</li>
+<li>Level: 5</li>
+<li>Range: 0</li>
+<li>Duration: 1 round/level</li>
+<li>Casting Time: 2</li>
+<li>Area of Effect: The caster</li>
+<li>Saving Throw: None</li>
+</ul>
+<p>When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 50%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. This effect lasts for the duration of the spell or until dispelled.</p>
+<p>Protection From Physical Damage (Previously PfMW)</p>
+<ul>
+<li>Abjuration</li>
+<li>Level: 6</li>
+<li>Range: 0</li>
+<li>Duration: 4 rounds</li>
+<li>Casting Time: 1</li>
+<li>Area of Effect: The caster</li>
+<li>Saving Throw: None</li>
+</ul>
+<p>When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 100%. For duration of the spell, the character will be immune to spell interruptions from physical attacks. Additionally, the user becomes immune to any petrification, vorpal, or slaying effects. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.</p>
 <h3 id="add-hlas-to-iwdee-lefreut-ui-required---next-release">Add HLAs to IWDEE (Lefreut UI Required - Next Release)</h3>
 <p>This allows for HLAs to be useable within IWDEE under the same BG2: EE requirements.</p>
 <h3 id="add-new-hlas-for-all-classes-and-kits">Add New HLAs for ALL Classes and Kits</h3>
@@ -249,7 +273,7 @@
 <p><strong>BLUNT WEAPONS:</strong>  This weapon class allows the character to use Maces, Clubs, and Warhammers. Druids and thieves can choose this category, but are limited to the Club only.</p>
 <p><strong>MISSILE WEAPONS:</strong> This weapon class allows the character to use Slings, Darts, and Crossbows. Mages and Druids can choose this proficiency but are restricted to Slings and Darts. Thieves can choose this proficiency but are restricted to Slings, Darts, and Light Crossbows. Clerics can choose this proficiency but are restricted to Slings alone.</p>
 <p><strong>POLEARM:</strong>  This weapon class allows the character to use Spears, Staffs, and Halberds.  Druids can choose this class, but are restricted to Spears and Staffs only. Mages can choose this category, but are limited to the Staff alone.</p>
-<p><strong>ARCHERY:</strong>  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.</p>
+<p><strong>ARCHERY:</strong>  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, and Slings.</p>
 <ul>
 <li>Marksman (1 slot): The character gains a +2 bonus to damage rolls.</li>
 <li>Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.</li>

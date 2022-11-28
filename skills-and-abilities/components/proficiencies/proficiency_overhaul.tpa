@@ -637,7 +637,6 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Archery - 2 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_arch_prof2~ BEGIN
         SET arch_prof2 = %row%
-      END
 
       // THROWN ---------------------------------------------------------------//
       // Thrown - 1 Pips
