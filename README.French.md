@@ -18,6 +18,32 @@ Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifi
 
 ## Sorts et Capacités de haut niveau
 
+### Révision des sorts de Protection contre les armes magiques et non-magiques.
+
+Protection mineure contre les dégâts physiques
+(Abjuration)
+
+Niveau : 5
+Portée : personnelle
+Durée : 1 round par niveau
+Temps d'incantation : 2
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
+
+Ce sort porte à 50 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.
+
+Protection contre les dégâts physiques (Précédemment Protection contre les armes magiques)
+(Abjuration)
+
+Niveau : 6
+Portée : personnelle
+Durée : 4 rounds
+Temps d'incantation : 1
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
+
+Ce sort porte à 100 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Pendant la durée du sort le lanceur est aussi immunisé à l'interruption de ses propres sort lorsqu'il subit une attaque. De plus, il devient immunisé contre la pétrification et tous les effets vorpal ou provoquant une mort instantanée. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. La puissance de ce sort et son temps d'incantation très court sont compensée par une durée très limitée qui permet au magicien de souffler seulement quelques rounds au milieu d'un combat intense. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.
+
 ### Ajouter les Capacités de haut niveau a IWDEE (Lefreut UI doit être installe - Next Release)
 
 Cela permet aux capacités de haut niveau d'être utilisables dans le jeu IWDEE tel quelles sont implémentées dans BG2 : EE.
@@ -267,13 +293,6 @@ La progression des compétences est désormais plus proche du système de progre
 - Inébranlable (4 points de compétence) : Le personnage ne ressent pas la fatigue même après avoir utilisé Rage ou Furie.
 - Récupération Instantanée (5 points de compétence) : Le personnage régénère 1 point de vie par round. Cumulable avec d'autres aptitudes régénérantes.
 
-**MAÎTRE DE LA MORT (Next Release):** La voie du Maître de la mort consiste à maîtriser les arts de la non-vie. Grâce à cette compétence, il peut faire appel à des connaissances obscures et macabres qui lui confèrent une certaine emprise sur la mort.
-- Sombre vision (1 point de compétence) : Le personnage obtient la capacité de voir même dans les ténèbres.
-- Peau squelettique (2 points de compétence): La peau du personnage devient tanné et cadavérique, ce qui lui confère un bonus de 2 à la CA.. 
-- Vigueur implacable (3 points de compétence): Le personnage bénéficie d'un bonus de 2 aux jets de sauvegarde contre la paralysie, le poison et la mort.
-- Calcification (4 points de compétence): Le personnage devient immunisé contre l'immobilisation, la paralysie et l'étourdissement.
-- Maître de la mort (5 points de compétence): Le personnage devient immunisé contre toutes les formes de mort magique.
-
 **TRANSGRESSION DES SORTS (Next Release & EEex Required):** Cette compétence permet de contourner, en partie, la résistance magique de la cible.
 - Transgression des sorts (1 point de compétence): Le magicien peut outrepasser 10 % de la résistance magique de la cible.
 - Abrogation des sorts (2 points de compétence): Le magicien peut outrepasser 25 % de la résistance magique de la cible.
@@ -298,8 +317,8 @@ La progression des compétences est désormais plus proche du système de progre
 - Incantation sereine (1 point de compétence) : Le personnage augmente ses chances de résister à l'interruption des sorts de 4. 
 - Incantation impassible (2 points de compétence) : Le personnage augmente de nouveau ses chances de résister à l'interruption des sorts de 4, ce qui porte cette résistance à 8.
 
-REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis + 10].
-Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis + 10).
+REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis].
+Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis). Si les dégâts subits sont inférieur à 10 points de dégâts, ils seront portés à 10 pour le bon fonctionnement du calcul de l'interruption des sorts..
 
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 
@@ -319,7 +338,11 @@ Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution div
 
 **ARMES À HAMPE :** Cette classe d'armes permet au personnage d'utiliser les armes d'hast (bâton, lance et hallebarde). Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.
 
-**MAÎTRISE DES PROJECTILES :** Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes, Frondes et Fléchettes.
+**ARMES DE JETS :** Ce style d'arme améliore les compétences du personnage en matière d'armes de jets : Haches, dagues, fléchettes, et autres objets avec cette caractéristique.
+- Poids léger (1 point de compétence) : Le personnage bénéficie d'un bonus de 4 au facteur de vitesse.
+- Poids lourd (2 points de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
+
+**MAÎTRISE DES PROJECTILES :** Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes et Frondes.
 - Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
 - Élite (2 points de compétence) : Le personnage gagne 1/2 attaque supplémentaire par round lorsqu'il utilise des armes à distance.
 

@@ -210,7 +210,7 @@ Calcification (4 points de compétence): Le personnage devient immunisé contre 
 Maître de la mort (5 points de compétence): Le personnage devient immunisé contre toutes les formes de mort magique.~
 
 @7128 = ~Maîtrise des Projectiles~
-@7129 = ~MAÎTRISE DES PROJECTILES : Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes, Frondes et Fléchettes.
+@7129 = ~MAÎTRISE DES PROJECTILES : Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes et Frondes.
 
 Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
 
@@ -280,10 +280,17 @@ Incantation sereine (1 point de compétence) : Le personnage augmente ses chance
 
 Incantation impassible (2 points de compétence) : Le personnage augmente de nouveau ses chances de résister à l'interruption des sorts de 4, ce qui porte cette résistance à 8.
 
-REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis + 10].
-Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis + 10).~
+REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis].
+Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis). Si les dégâts subits sont inférieur à 10 points de dégâts, ils seront portés à 10 pour le bon fonctionnement du calcul de l'interruption des sorts.~
 
 @7146 = ~Incantation sereine~
 @7147 = ~Incantation impassible~
+
+@7148 = ~Armes de jets~
+@7149 = ~ARMES DE JETS : Ce style d'arme améliore les compétences du personnage en matière d'armes de jets : Haches, dagues, fléchettes, et autres objets avec cette caractéristique.
+
+Poids léger (1 point de compétence) : Le personnage bénéficie d'un bonus de 4 au facteur de vitesse.
+
+Poids lourd (2 points de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.~
 
 @8000 = ~[LAST TRA HERE]~
