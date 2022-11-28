@@ -431,7 +431,7 @@ ACTION_FOR_EACH spell IN
       APPEND ~splprot.2da~ ~mo_dev_prof%spell%%TAB%91%TAB%%spell%%TAB%4~ // Devotion
       APPEND ~splprot.2da~ ~mo_con_prof%spell%%TAB%92%TAB%%spell%%TAB%4~ // Conditioning
       APPEND ~splprot.2da~ ~mo_has_prof%spell%%TAB%93%TAB%%spell%%TAB%4~ // Swiftblade
-      APPEND ~splprot.2da~ ~mo_pma_prof%spell%%TAB%94%TAB%%spell%%TAB%4~ // Pale Master
+      //APPEND ~splprot.2da~ ~mo_pma_prof%spell%%TAB%94%TAB%%spell%%TAB%4~ // Pale Master
     END
 
 // Archery Weapon Style
