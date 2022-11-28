@@ -332,7 +332,7 @@ NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution 
 
 **POLEARM:**  This weapon class allows the character to use Spears, Staffs, and Halberds.  Druids can choose this class, but are restricted to Spears and Staffs only. Mages can choose this category, but are limited to the Staff alone.
 
-**ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, Slings, and Darts.
+**ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, and Slings.
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
 - Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.
 

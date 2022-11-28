@@ -2001,9 +2001,9 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   // Axe, Dart, Dagger, Hammer, Spear, etc.
   PATCH_IF (prof = 106) BEGIN  // Dart
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOTHR02~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof2% timing = 2 STR_VAR resource = ~MOTHR02~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %thrown_prof2% timing = 2 STR_VAR resource = ~MOTHR02~ END
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOTHR01~ END 
-    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOTHR01~ END
+    LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %thrown_prof1% timing = 2 STR_VAR resource = ~MOTHR01~ END
     END ELSE PATCH_IF (prof = 92) OR    // Axe
                       (prof = 96) OR    // Dagger
                       (prof = 97) OR    // Warhammer
@@ -2013,12 +2013,17 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         READ_SHORT (abil_off +        (index * 0x38)) type
         PATCH_IF (type = 2) BEGIN
           LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOTHR02~ END 
-          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof2% timing = 2 STR_VAR resource = ~MOTHR02~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %thrown_prof2% timing = 2 STR_VAR resource = ~MOTHR02~ END
           LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~MOTHR01~ END 
-          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %arch_prof1% timing = 2 STR_VAR resource = ~MOTHR01~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %thrown_prof1% timing = 2 STR_VAR resource = ~MOTHR01~ END
           SET index = abil_num // kills loop, prevents patching if ranged item
         END
       END
+    END ELSE PATCH_IF (type = 12) BEGIN // Shields
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 parameter2 = 0 timing = 2 STR_VAR resource = ~MOTHR02~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 parameter2 = 0 timing = 2 STR_VAR resource = ~MOTHR01~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %thrown_prof2% timing = 2 STR_VAR resource = ~MOTHR02~ END
+      LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = 0 parameter2 = %thrown_prof1% timing = 2 STR_VAR resource = ~MOTHR01~ END
     END
   END
 
