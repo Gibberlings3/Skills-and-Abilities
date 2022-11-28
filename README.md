@@ -285,13 +285,6 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Tireless (4 slots): The character does not become fatigued to include after using rage or frenzy.
 - Fast Healing (5 slots): The character regenerates 1 hit point per round. This will stack with other methods of regeneration.
 
-**PALE MASTER (Next Release):** This proficiency path allows one to master the deathless arts. With this proficiency, one draws on a font of special lore that provides a macabre power all its own.
-- Darkvision (1 slot): The character gains the ability to see in the dark.
-- Bone Skin (2 slots): The character's flesh becomes tough and cadaverous providing +2 bonus to AC. 
-- Deathless Vigor (3 slots): The character gains a +2 bonus to save vs. Paralysis / Poison / Death
-- Tough as Bone (4 slots): The character becomes immune to hold, paralysis, and stun effects.
-- Deathless Mastery (5 slots): The character gains immunity to all forms of death magic.
-
 **SPELL PENETRATION (Next Release & EEex Required):** This proficiency allows a caster to bypass a portion of a target's magic resistance.
 - Spell Penetration (1 slot): The wizard can bypass 10% of a target's magic resistance.
 - Greater Spell Penetration (2 slots): The wizard can bypass 25% of a target's magic resistance.
@@ -332,7 +325,11 @@ NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution 
 
 **POLEARM:**  This weapon class allows the character to use Spears, Staffs, and Halberds.  Druids can choose this class, but are restricted to Spears and Staffs only. Mages can choose this category, but are limited to the Staff alone.
 
-**ARCHERY:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, and Slings.
+**THROWN WEAPON STYLE (Next Release):** This weapon style improves the character's use of thrown weaponry to include: Axes, Daggers, Darts, and anything else that may be used as a thrown projectile.
+- Improved Initiative (1 slot): The character gains a -4 bonus to Speed Factor.
+- Heavy Throw (2 slots): The character gains a +2 bonus to damage rolls.
+
+**ARCHERY WEAPON STYLE:**  This weapon style improves the character's use of ranged weaponry to include: Bows, Crossbows, and Slings.
 - Marksman (1 slot): The character gains a +2 bonus to damage rolls.
 - Rapid Shot/Reload (2 slots): The character gains an extra 1/2 attack per round when using ranged weapons.
 
