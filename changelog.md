@@ -9,7 +9,7 @@ November xx, 2022
 - Corrected pip assignment for rangers and two weapon style.
 - Adjusted pip assignment for Level 0 NPC Type Mods.
 - Corrected check for Spears that was erroneously pointing to Flails.
-- Changed Fighter Overhaul to just provide all Fighters and Fighter kits with the Second Wind Ability.
+- Changed Fighter Overhaul to just provide all Fighters and Fighter kits with the Second Wind Ability and Indomitable passive ability.
 - New Fighter HLAs are added to the HLA Component instead of being part of the Fighter Overhaul.
 - Resist Magic HLA now increments Magic Resist by +40% instead of setting it. Duration is increased.
 - Warcry HLA now provides immunities similar to a Berserker Rage.
