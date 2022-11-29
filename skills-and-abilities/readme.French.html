@@ -31,6 +31,29 @@
 <p>Ce mod est une collection de mises à jour pour les classes de personnage, les compétences, les capacités et les statistiques. Il s'agit d'une version alpha avec l'intention d'ajouter d'autres mises à jour pour les classes, les capacités et les statistiques dans un avenir proche, tout en affinant les nouvelles compétences. Oui, ce sont des compétences réelles, fonctionnelles, utilisables, qui peuvent être attribuées à la création de personnage et au passage aux niveaux supérieurs. Oui, EEkeeper peut reconnaître et ajuster ces compétences pour les personnages. Oui, je suis intimement familier avec les ressources limitées du jeu, et aucun sort de détection n'a été endommagé pendant la réalisation de ce mod.</p>
 <p>Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifiés par <strong>(EEex nécessaire)</strong>.</p>
 <h2 id="sorts-et-capacités-de-haut-niveau">Sorts et Capacités de haut niveau</h2>
+<h3 id="révision-des-sorts-de-protection-contre-les-armes-magiques-et-non---magiques">Révision des sorts de Protection contre les armes magiques et non-magiques.</h3>
+<p>Protection mineure contre les dégâts physiques :</p>
+<ul>
+<li>Abjuration</li>
+<li>Niveau : 5</li>
+<li>Portée : personnelle</li>
+<li>Durée : 1 round par niveau</li>
+<li>Temps d'incantation : 2</li>
+<li>Zone d'effet : le lanceur</li>
+<li>Jet de sauvegarde : aucun</li>
+</ul>
+<p>Ce sort porte à 50 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.</p>
+<p>Protection contre les dégâts physiques (Précédemment Protection contre les armes magiques) :</p>
+<ul>
+<li>Abjuration</li>
+<li>Niveau : 6</li>
+<li>Portée : personnelle</li>
+<li>Durée : 4 rounds</li>
+<li>Temps d'incantation : 1</li>
+<li>Zone d'effet : le lanceur</li>
+<li>Jet de sauvegarde : aucun</li>
+</ul>
+<p>Ce sort porte à 100 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Pendant la durée du sort le lanceur est aussi immunisé à l'interruption de ses propres sort lorsqu'il subit une attaque. De plus, il devient immunisé contre la pétrification et tous les effets vorpal ou provoquant une mort instantanée. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. La puissance de ce sort et son temps d'incantation très court sont compensée par une durée très limitée qui permet au magicien de souffler seulement quelques rounds au milieu d'un combat intense. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.</p>
 <h3 id="ajouter-les-capacités-de-haut-niveau-a-iwdee-lefreut-ui-doit-être-installe---next-release">Ajouter les Capacités de haut niveau a IWDEE (Lefreut UI doit être installe - Next Release)</h3>
 <p>Cela permet aux capacités de haut niveau d'être utilisables dans le jeu IWDEE tel quelles sont implémentées dans BG2 : EE.</p>
 <h3 id="ajouter-des-capacités-de-haut-niveau-pour-toutes-les-classes-et-kits">Ajouter des capacités de haut niveau pour toutes les classes et kits</h3>
@@ -246,8 +269,8 @@ Compatible avec le kit du Maître-lames de Bardic Wonders ; ce composant devra �
 <li>Incantation sereine (1 point de compétence) : Le personnage augmente ses chances de résister à l'interruption des sorts de 4.</li>
 <li>Incantation impassible (2 points de compétence) : Le personnage augmente de nouveau ses chances de résister à l'interruption des sorts de 4, ce qui porte cette résistance à 8.</li>
 </ul>
-<p>REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] &gt; [Dégâts subis + 10].
-Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis + 10).</p>
+<p>REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis].
+Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis). Si les dégâts subits sont inférieur à 10 points de dégâts, ils seront portés à 10 pour le bon fonctionnement du calcul de l'interruption des sorts.</p>
 <p><strong>ARC :</strong> Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.</p>
 <p><strong>FLÉAU/ÉTOILE DU MATIN :</strong> Cette classe d'arme permet au personnage d'utiliser les morgensterns et les fléaux.</p>
 <p><strong>PETITE ÉPÉE :</strong> Cette classe d'arme permet au personnage d'utiliser les dagues et les épées courtes. Un mage ou un druide peut aussi choisir cette compétence, mais il ne pourra utiliser que les dagues.</p>
@@ -257,7 +280,12 @@ Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution div
 <p><strong>ARMES CONTONDANTES :</strong> Cette classe d'armes permet au personnage d'utiliser les masses, les gourdins et les marteaux de guerre. Les druides et les voleurs peuvent choisir cette compétence, mais ne pourront utiliser que les gourdins.</p>
 <p><strong>ARMES A PROJECTILES :</strong> Cette classe d'armes permet au personnage d'utiliser les frondes, les fléchettes et les arbalètes. Les mages et les druides peuvent sélectionner cette compétence, mais seront limités aux frondes et aux fléchettes. Les voleurs seront limités aux frondes et aux fléchettes et arbalètes légères. Quant aux clercs, ils ne pourront se servir que des frondes.</p>
 <p><strong>ARMES À HAMPE :</strong> Cette classe d'armes permet au personnage d'utiliser les armes d'hast (bâton, lance et hallebarde). Les druides peuvent sélectionner cette classe, mais ne se serviront que des lances et des bâtons. Quant aux mages, ils ne pourront utiliser que les bâtons.</p>
-<p><strong>MAÎTRISE DES PROJECTILES :</strong> Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes, Frondes et Fléchettes.</p>
+<p><strong>ARMES DE JETS :</strong> Ce style d'arme améliore les compétences du personnage en matière d'armes de jets : Haches, dagues, fléchettes, et autres objets avec cette caractéristique.</p>
+<ul>
+<li>Poids léger (1 point de compétence) : Le personnage bénéficie d'un bonus de 4 au facteur de vitesse.</li>
+<li>Poids lourd (2 points de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.</li>
+</ul>
+<p><strong>MAÎTRISE DES PROJECTILES :</strong> Cette compétence perfectionne les capacités du personnage pour les armes à distance, incluant : Arcs, Arbalètes et Frondes.</p>
 <ul>
 <li>Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.</li>
 <li>Élite (2 points de compétence) : Le personnage gagne 1/2 attaque supplémentaire par round lorsqu'il utilise des armes à distance.</li>
