@@ -51,7 +51,8 @@
 @160 = ~Adjust Cleric/Thief Actionbar~
 
 // Group 2 (Update 200-299)
-@200 = ~Add Spell Scroll Crafting: 2e pnp~
+//Revised @200 (please delete this line once translated)
+@200 = ~Add Spell Scroll Crafting: 2e pnp (install this if you plan to make any changes to craft_settings.ini)~
 @201 = ~Add Spell Scroll Crafting: 2e modified~
 
 // Group 3 (Update 300-399)
