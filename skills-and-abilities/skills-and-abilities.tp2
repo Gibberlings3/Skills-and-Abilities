@@ -393,7 +393,7 @@ OUTER_SET b_scroll_component = 200
 //marker
 COPY_EXISTING ~SW1H04.itm~ ~override/B_sna200.itm~
 ACTION_IF (%b_add_priest_scrolls% = 1) BEGIN //if set to add priest scrolls
-  COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
+  COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~ //marks added priest scrolls from _this_ mod, Skills & Abilities
 
   INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
 END
@@ -418,7 +418,7 @@ OUTER_SET b_scroll_component = 201
 //marker
 ACTION_IF (%b_add_priest_scrolls% = 1) BEGIN //if set to add priest scrolls
 
-  COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~
+  COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~ //marks added priest scrolls from _this_ mod, Skills & Abilities
 
   INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
 END
