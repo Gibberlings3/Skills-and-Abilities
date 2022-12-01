@@ -53,6 +53,7 @@
 // Group 2 (Update 200-299)
 @200 = ~Add Spell Scroll Crafting: 2e pnp (install this if you plan to make any changes to craft_settings.ini)~
 @201 = ~Add Spell Scroll Crafting: 2e modified~
+@202 = ~Add Spell Scroll Crafting: 3e pnp~
 
 // Group 3 (Update 300-399)
 @300 = ~Update Weapon Fighting Styles~
