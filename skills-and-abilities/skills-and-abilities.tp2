@@ -101,7 +101,7 @@ INCLUDE ~skills-and-abilities/components/spells/new_hlas.tpa~
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @720 DESIGNATED 720 GROUP @7 LABEL SkillsAndAbilitiesUpdateHLA
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR ((GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~mohla01.itm~) @3006
-REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3008
+REQUIRE_PREDICATE !MOD_IS_INSTALLED ~setup-spell_rev.tp2~ ~65~ @3008
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
 
 INCLUDE ~skills-and-abilities/components/spells/update_hlas.tpa~
