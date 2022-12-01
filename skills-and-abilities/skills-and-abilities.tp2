@@ -426,6 +426,27 @@ END
 INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Craft Spell Scrolls: Add Spell Scroll Crafting: 3e pnp                                                   //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @202 SUBCOMPONENT @3403 DESIGNATED 202 GROUP @2
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004
+
+LAM b_scroll_global_settings
+
+LAM b_scroll_level_settings
+
+OUTER_SET b_scroll_component = 202
+
+//marker
+COPY_EXISTING ~SW1H04.itm~ ~override/B_sna202.itm~
+ACTION_IF (%b_add_priest_scrolls% = 1) BEGIN //if set to add priest scrolls
+  COPY_EXISTING ~SW1H04.itm~ ~override/B_sna201.itm~ //marks added priest scrolls from _this_ mod, Skills & Abilities
+
+  INCLUDE ~%folder%/lib/Setup_Priest_Scrolls.tpa~
+END
+
+INCLUDE ~%folder%/components/class_skills/scroll_crafting.tpa~
+///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // New Proficiencies (Group 3)                                           //
 ///////////////////////////////////////////////////////////////////////////
