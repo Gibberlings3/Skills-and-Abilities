@@ -67,9 +67,9 @@ ACTION_IF (%b_scroll_component% = 202) BEGIN //3e pnp
     
   OUTER_SET b_material_scroll_cost    =	0 //0 no material cost
    
-  OUTER_SET b_scroll_failure_arcane   =	2 //wasted failure (less harsh) (NOT AVAILABLE ATM. THIS SETTING DOES NOTHING RIGHT NOW)
+  OUTER_SET b_scroll_failure_arcane   =	4 // failure delays creation (NOT AVAILABLE ATM. THIS SETTING DOES NOTHING RIGHT NOW)
 
-  OUTER_SET b_scroll_failure_divine   =	2 //wasted failure (less harsh) (NOT AVAILABLE ATM. THIS SETTING DOES NOTHING RIGHT NOW)
+  OUTER_SET b_scroll_failure_divine   =	4 // failure delays creation (NOT AVAILABLE ATM. THIS SETTING DOES NOTHING RIGHT NOW)
 
 
 
