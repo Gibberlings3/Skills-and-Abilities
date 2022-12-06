@@ -53,6 +53,7 @@
 // Group 2 (Update 200-299)
 @200 = ~Ajouter l'art de retranscrire des sorts sur des parchemins : 2ème édition PnP (installez ce composant si vous prevoyez de configurer le fichier craft_settings.ini)~
 @201 = ~Ajouter l'art de retranscrire des sorts sur des parchemins : 2ème édition alternative~
+@202 = ~Ajouter l'art de retranscrire des sorts sur des parchemins : 3ème édition~
 
 // Group 3 (Update 300-399)
 @300 = ~Mises a Jour des styles de combat~
