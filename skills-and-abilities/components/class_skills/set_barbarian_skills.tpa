@@ -54,10 +54,10 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP01.spl~ THEN BEGIN
  COPY_EXISTING ~SPCL412.spl~ ~override/B_NTP01.spl~   //thief trap to set nat snares
   LPF CLONE_EFFECT INT_VAR match_opcode = 252 opcode = 318 timing = 0 duration = 1 parameter1 = 8 parameter2 = %not_ar% STR_VAR resource = ~B_NTP01~ END  //Protection complete below
   LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 326 STR_VAR resource = ~B_NTP02~ END  //For notifications
-        SAY NAME1 @4501              //barbarian reference (no need to duplicate)
-        SAY NAME2 @4501              //barbarian reference (no need to duplicate)
-        SAY UNIDENTIFIED_DESC @4502  //barbarian reference (no need to duplicate)
-	SAY DESC @4502               //barbarian reference (no need to duplicate)
+        SAY NAME1 @4503              //barbarian reference (no need to duplicate)
+        SAY NAME2 @4503              //barbarian reference (no need to duplicate)
+        SAY UNIDENTIFIED_DESC @4504  //barbarian reference (no need to duplicate)
+	SAY DESC @4504               //barbarian reference (no need to duplicate)
 END
 ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP02.spl~ THEN BEGIN
  COPY ~%folder%/spl/barbarian/B_NTP02.spl~ ~override~   //Set Natural Snares only works in natural environments
