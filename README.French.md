@@ -142,7 +142,7 @@ Choisissez un " ensemble " pour les barbares ou choisissez chaque compétence in
 
 Barbares 1ère édition " ensemble numéro 1 " ((EEex recommandé): Ajouter Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et supprimer Rage du Barbare. (Le barbare ne disposera pas de la capacité spécial Rage du Barbare.)
 
-Barbares 1ère " ensemble numéro 2 " ((EEex recommandé): Ajouter Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et conserver Rage du Barbare
+Barbares 1ère édition " ensemble numéro 2 " ((EEex recommandé): Ajouter Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et conserver Rage du Barbare
 
 Compétences individuelles pour les barbares :
 
