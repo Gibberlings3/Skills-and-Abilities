@@ -15,7 +15,7 @@ COPY ~skills-and-abilities/lua/m_moTHI5.lua~   ~override~ // Lua file read by EE
 COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override/B_#BSK04.SPL~ // In case MO#BSK04.SPL is being used for something else
      LPF ALTER_EFFECT INT_VAR match_opcode = 275 parameter1 = 10 END //Hide 10
      LPF ALTER_EFFECT INT_VAR match_opcode = 59 parameter1 = 20 END //MS 20
-     LPF ALTER_EFFECT INT_VAR match_opcode = 276 parameter1 = 10 END //D.Illusion 10%
+     LPF ALTER_EFFECT INT_VAR match_opcode = 276 parameter1 = 5 END //D.Illusion 5%
      LPF ALTER_EFFECT INT_VAR match_opcode = 252 parameter1 = 10 END //Set Snares 10%
      LPF ALTER_EFFECT INT_VAR match_opcode = 95 parameter1 = 100 END // 100% track
 COPY ~skills-and-abilities/spl/barbarian/B_BRBADV.spl~   ~override~ // +4% NOTE TO SELF: alter the actual spl to get rid of track if present
@@ -69,6 +69,11 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP02.spl~ THEN BEGIN
  COPY ~%folder%/spl/barbarian/B_NTP02.spl~ ~override~   //Set Natural Snares only works in natural environments
   LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4505) STR_VAR END        //barbarian reference (no need to duplicate)
 END
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                    Bind Wound                       ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+//To do (1 hp/level and 10% cure poison--+5%/level) 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////                      Tracking                       ///////////////////
