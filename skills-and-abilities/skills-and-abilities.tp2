@@ -373,7 +373,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 INCLUDE ~skills-and-abilities/components/class_skills/turn_undead.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
-// Adjust Cleric/Thief Actionbar                                          //
+// Adjust Cleric/Thief Actionbar                                         //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @160 DESIGNATED 160 GROUP @1 LABEL SkillsAndAbilitiesClericThief
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
