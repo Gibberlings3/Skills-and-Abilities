@@ -36,5 +36,5 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME ~SPCL321D.SPL~ BEGIN
   COPY_EXISTING ~SPCL321D.SPL~ ~override~
     LPF DELETE_EFFECT INT_VAR match_opcode = 0 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 126 target = 1 parameter1 = ~-2 parameter2 = 0 timing = 0 resist_dispel = 2 duration = 30 probability1 = 100 END~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 126 target = 1 parameter1 = ~-2~ parameter2 = 0 timing = 0 resist_dispel = 2 duration = 30 probability1 = 100 END
 END
