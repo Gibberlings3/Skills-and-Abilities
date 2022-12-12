@@ -87,6 +87,12 @@ This allows for HLAs to be useable within IWDEE under the same BG2: EE requireme
 This also updates the following HLAs so they CANNOT be removed by Breach or anti-magic spell: Hardiness, Resist Magic, Avoid Death, Evasion, Greater Evasion, and Assassination.
 (more in progress)
 
+### Update Berserker's Enrage
+
+The character becomes enraged for 1 turn. While enraged, the character gains a +10% bonus to his damage rolls and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The character also receives a -2 penalty to Armor Class, takes 1 point of damage per round while enraged (knocking the character unconscious if this causes the character's hit points to be reduced to 0), and receives +10% increase to all physical damage taken.
+
+After the effects end, the character becomes winded, suffering a -2 penalty to movement rate, to-hit rolls, and damage rolls.
+
 ## Class Updates
 
 ### Bard Skills (EEex Required)
