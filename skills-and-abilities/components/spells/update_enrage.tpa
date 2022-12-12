@@ -12,7 +12,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~%spell_res%.SPL~ BEGIN
     LPF DELETE_EFFECT INT_VAR match_opcode = 18 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 73 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 278 END
-    LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter1 = ~-2~ END
+    LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 0 parameter1 = ~-2~ END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 6 probability1 = 100 savingthrow = BIT24 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 12 probability1 = 100 savingthrow = BIT24 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 18 probability1 = 100 savingthrow = BIT24 END
