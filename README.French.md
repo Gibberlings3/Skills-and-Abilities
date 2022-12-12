@@ -138,17 +138,15 @@ OURAGAN : Les moines reçoivent une attaque supplémentaire par round.
 
 ### **Coming Soon** Capacités spéciales pour les Barbares ((EEex recommandé)
 
-Choisissez le "contenu" du 1er barbare ou choisissez chaque compétence séparément.
+Choisissez un " ensemble " pour les barbares ou choisissez chaque compétence individuellement.
 
-1er barbare "contenu" (Deux composants)
+Barbares 1ère édition " ensemble numéro 1 " ((EEex recommandé): Ajouter Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et supprimer Rage du Barbare. (Le barbare ne disposera pas de la capacité spécial Rage du Barbare.)
 
-1er barbare "contenu 1"((EEex recommandé): Ajoute Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et supprime Rage du Barbare (Le 1er barbare ne disposera pas de la capacité spécial Rage du Barbare.)
-
-1er barbare "contenu 2"((EEex recommandé): Ajoute Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et conserve Rage du Barbare
+Barbares 1ère édition " ensemble numéro 2 " ((EEex recommandé): Ajouter Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et conserver Rage du Barbare
 
 Compétences individuelles pour les barbares :
 
-Ajoute Pose de Pièges Ancestral, permet de poser de pièges dans la nature uniquement.
+Ajouter Pose de Pièges Ancestral, permet de poser de pièges dans la nature uniquement.
 
 - 1er niveau : Gagne la capacité Pose de Pièges Ancestral. Gagne une utilisation supplémentaire tous les 5 niveaux.
 
@@ -160,7 +158,7 @@ POSE DE PIEGE ANCESTRAL : Pose un piège à l'endroit choisi si aucune créature
 
 Se cacher dans la Nature permet au barbare de se cacher à l'extérieur uniquement (EEex fortement recommande).
 
-Ajoute Détection des illusions similaire aux compétences de voleurs (EEex fortement recommande)
+Ajouter Détection des illusions similaire aux compétences de voleurs (EEex fortement recommande)
 
 ### **Coming Soon** Capacités pour les Barbares
 
@@ -170,11 +168,7 @@ RAGE DU BARBARE : Pendant 5 rounds, la rage confère un bonus de 4 en Constituti
 
 Instinct Sauvage : Détection des illusions comme une compétences de voleur, sous l'effet de la Rage.
 
-RAGE DU BARBARE : DESC
-
 Instinct Sauvage: Détection des illusions comme une compétences améliorée de voleur, sous l'effet de la Rage.
-
-RAGE DU BARBARE : DESC
 
 Supprime Rage du barbare : le barbare ne disposera pas de la capacité spécial Rage du Barbare.
 
