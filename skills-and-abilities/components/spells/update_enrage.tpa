@@ -7,12 +7,12 @@ LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~BERSERKER_RAGE~ RET spell_res EN
 ACTION_IF FILE_EXISTS_IN_GAME ~%spell_res%.SPL~ BEGIN
   COPY_EXISTING ~%spell_res%.SPL~ ~override~
     SAY UNIDENTIFIED_DESC @5529
+    LPF DELETE_EFFECT INT_VAR match_opcode = 0 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 12 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 17 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 18 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 73 END
     LPF DELETE_EFFECT INT_VAR match_opcode = 278 END
-    LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 0 parameter1 = ~-2~ END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 6 probability1 = 100 savingthrow = BIT24 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 12 probability1 = 100 savingthrow = BIT24 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 18 probability1 = 100 savingthrow = BIT24 END
@@ -23,6 +23,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~%spell_res%.SPL~ BEGIN
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 48 probability1 = 100 savingthrow = BIT24 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 54 probability1 = 100 savingthrow = BIT24 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 1 parameter1 = 1 parameter2 = 134217728 timing = 4 resist_dispel = 2 duration = 60 probability1 = 100 savingthrow = BIT24 END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 0 target = 1 parameter1 = ~-2~ parameter2 = 0 timing = 0 resist_dispel = 2 duration = 60 probability1 = 100 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 target = 1 parameter1 = ~-10~ parameter2 = 0 timing = 0 resist_dispel = 2 duration = 60 probability1 = 100 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 target = 1 parameter1 = ~-10~ parameter2 = 0 timing = 0 resist_dispel = 2 duration = 60 probability1 = 100 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 target = 1 parameter1 = ~-10~ parameter2 = 0 timing = 0 resist_dispel = 2 duration = 60 probability1 = 100 END
