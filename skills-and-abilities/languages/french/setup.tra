@@ -20,15 +20,15 @@
 @12 = ~Ajouter Crochetage de serrures et Detection des pieges~	
 @20 = ~Mise a jour des Capacites des Moines~	
 
-@30 = ~1er Barbares (EEex fortement recommande) : Ajoute Pose de Pieges Ancestral, Se cacher dans la Nature, Detection des illusions, et supprime Rage du Barbare~
-@31 = ~1er Barbares (EEex fortement recommande) : Ajoute Pose de Pieges Ancestral, Se cacher dans la Nature, Detection des illusions, et conserve Rage du Barbare~
+@30 = ~Barbares 1ère édition (EEex fortement recommande) "ensemble numéro 1" : Ajouter Pose de Pieges Ancestral, Se cacher dans la Nature, Detection des illusions, Panser les plaies et supprimer Rage du Barbare~
+@31 = ~Barbares 1ère édition (EEex fortement recommande) "ensemble numéro 2" : Ajouter Pose de Pieges Ancestral, Se cacher dans la Nature, Detection des illusions, Panser les plaies et conserver Rage du Barbare~
 @32 = ~Ajouter Pose de Pieges Ancestral~
 @33 = ~Ajouter Se cacher dans la Nature (EEex fortement recommande)~			
 @34 = ~Ajouter Detection des illusions comme les voleurs (EEex fortement recommande)~
 @35 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite similaire a un sort sous l'effet de la Rage).~
 @36 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite similaire a celle des voleurs sous l'effet de la Rage).~
 @37 = ~Ajouter Instinct Sauvage (Detection des illusions, capacite amelioree similaire a celle des voleurs sous l'effet de la Rage).~
-
+@38 = ~Ajouter la capacité "Panser les plaies".~
 @39 = ~Supprimer la Rage du Barbare~
 
 @40 = ~Mise a jour des Competences des Rodeurs~
@@ -92,7 +92,7 @@
 // Misc                                                          //
 ///////////////////////////////////////////////////////////////////////////
 
-@3401 = ~1er Barbares "contenu"~
+@3401 = ~Barbares 1ère édition "ensemble de capacités"~
 @3402 = ~Ajouter Instinct Sauvage~
 @3403 = ~Art de retranscrire des sorts sur des parchemins~
 
