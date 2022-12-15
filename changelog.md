@@ -1,6 +1,6 @@
 ## Version 1.0 beta
 
-November xx, 2022
+December 15, 2022
 
 ### Changed
 

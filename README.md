@@ -44,7 +44,7 @@ Protection From Physical Damage (Previously PfMW)
 
 When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 100%. For duration of the spell, the character will be immune to spell interruptions from physical attacks. Additionally, the user becomes immune to any petrification, vorpal, or slaying effects. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.
 
-### Add HLAs to IWDEE (Lefreut UI Required - Next Release)
+### Add HLAs to IWDEE (Lefreut UI Required)
 
 This allows for HLAs to be useable within IWDEE under the same BG2: EE requirements.
 
@@ -80,9 +80,9 @@ This allows for HLAs to be useable within IWDEE under the same BG2: EE requireme
 
 **GREATER WHIRLWIND:** Will now last for three rounds instead of one.
 
-**RESIST MAGIC (Next Release):** This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.
+**RESIST MAGIC:** This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.
 
-**WAR CRY (Next Release):** With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.
+**WAR CRY:** With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.
 
 This also updates the following HLAs so they CANNOT be removed by Breach or anti-magic spell: Hardiness, Resist Magic, Avoid Death, Evasion, Greater Evasion, and Assassination.
 (more in progress)
@@ -215,9 +215,15 @@ As stated, Inquisitors will now gain spellcasting similar to other Paladins.
 
 The existing Turn Undead is being replaced with a new ability. Clerics may now cast Turn Undead once per day per every 3 levels (starts at 3rd level with one use) and paladins may now cast Turn Undead once per day per every 4 levels (starts at 4th level with one use). The ability will now deal 2d6 + Character level + charisma modifier points of damage to any undead within 15 feet. The caster will outright destroy any undead who are half the level (or less) of the cleric/paladin using Turn Undead. The original Turn Undead modal is replaced with an extra quick-spell option. 
 
-### Adjust Cleric/Thief Actionbar (Next Release - EEex Required)
+### Adjust Cleric/Thief Actionbar (EEex Required)
 
 This component replaces the Turn Undead modal button on the Cleric/Thief Actionbar with the Thieving Ability. This is recommended if the Turn Undead Overhaul (previous component) is installed.
+
+## New Skills and Pseudo-Skills
+
+### Add Spell Scroll Crafting
+
+This allows the player to craft scrolls either using 2e rules, modified 2e rules, or 3e rules.
 
 ## Proficiencies
 
@@ -237,7 +243,7 @@ NOTE: Despite the name of this style, any one-handed melee weapon in combination
 - Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, -1 bonus to Thaco, -1 bonus to AC, and inflicts critical damage on an attack roll of 19 or 20.
 - Specialized (2 slots): The wielder gets a +2 bonus to damage rolls, -2 bonus to Thaco, -2 bonus to AC, and inflicts critical damage on an attack roll of 18 to 20.
 
-**TWO-WEAPON (Next Release):** This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon, a -8 penalty with the off-hand weapon, and a -4 penalty to damage rolls for both weapons. 
+**TWO-WEAPON:** This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon, a -8 penalty with the off-hand weapon, and a -4 penalty to damage rolls for both weapons. 
 - Proficient (1 slot): The wielder's penalties are reduced to -2, attack and damage rolls, with the main weapon and -6 attack roll and -4 damage roll with the off-hand weapon.
 - Specialized (2 slots): The wielder's penalties are reduced to 0 attack roll with the main weapon, a -4 attack roll with the off-hand weapon, and a -2 penalty to damage rolls for both weapons.
 - Master (3 slots): The wielder's penalties to attack and damage rolls are reduced to 0 with the main weapon and -2 with the off-hand weapon.
@@ -291,24 +297,24 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Tireless (4 slots): The character does not become fatigued to include after using rage or frenzy.
 - Fast Healing (5 slots): The character regenerates 1 hit point per round. This will stack with other methods of regeneration.
 
-**SPELL PENETRATION (Next Release & EEex Required):** This proficiency allows a caster to bypass a portion of a target's magic resistance.
+**SPELL PENETRATION (EEex Required):** This proficiency allows a caster to bypass a portion of a target's magic resistance.
 - Spell Penetration (1 slot): The wizard can bypass 10% of a target's magic resistance.
 - Greater Spell Penetration (2 slots): The wizard can bypass 25% of a target's magic resistance.
 
-**SWIFTBLADE (Next Release):** This proficiency allows one to combine arcane-assisted speed with melee skill to turn a first strike into a deadly assault. With this proficiency, one discovers unconventional ways to utilize the haste spell. All abilities are cumulative.
+**SWIFTBLADE:** This proficiency allows one to combine arcane-assisted speed with melee skill to turn a first strike into a deadly assault. With this proficiency, one discovers unconventional ways to utilize the haste spell. All abilities are cumulative.
 - Arcane Reflexes (1 slot): The character gains a -2 bonus to Speed Factor while under the effects of a haste spell.
 - Swift Surge (2 slots): The character gains +1 bonus to Thac0 and AC while under the effects of a haste spell.
 - Blurred Alacrity (3 slots): The character becomes blurred while under the effects of a haste spell.
 - Greater Swift Surge (4 slots): The character gains an additional bonus to Thac0 and AC bringing it to +2 while under the effects of a haste spell.
 - Evasive Celerity (5 slots): The character gains +10% magic resistance while under the effects of a haste spell.
 
-**CONCENTRATION (Next Release):** The character is adept at casting spells in combat. Points spent in this proficiency reduce the chance of spell interruption when damaged.
+**CONCENTRATION:** The character is adept at casting spells in combat. Points spent in this proficiency reduce the chance of spell interruption when damaged.
 - Combat Casting (1 slot): The character increases his chance to resist spell disruption by +4.
 - Greater Combat Casting (2 slots): The character increases his chance to resist spell disruption by an additional +4 bringing it to +8 total.
 
 NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution / 2) - 5 + Concentration Proficiency Bonus > Damage Taken + 10.
 
-**POWER STRIKER (Next Release & Artisan Kitpack Fighter Overhaul Required):** This proficiency allows a warrior to attack with more ferocious Power Attacks. 
+**POWER STRIKER (Artisan Kitpack Fighter Overhaul Required):** This proficiency allows a warrior to attack with more ferocious Power Attacks. 
 - Enhanced Power Attack (1 slot): The character gains a +5 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +10 damage bonus (instead of +6).
 - Supreme Power Attack (2 slots): The character gains a +6 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +12 damage bonus (instead of +6).
 - NOTE: Even though other classes may have access to this weapon style, only Fighters will be able to use it to improve their Power Attack modal.
@@ -331,7 +337,7 @@ NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution 
 
 **POLEARM:**  This weapon class allows the character to use Spears, Staffs, and Halberds.  Druids can choose this class, but are restricted to Spears and Staffs only. Mages can choose this category, but are limited to the Staff alone.
 
-**THROWN WEAPON STYLE (Next Release):** This weapon style improves the character's use of thrown weaponry to include: Axes, Daggers, Darts, and anything else that may be used as a thrown projectile.
+**THROWN WEAPON STYLE:** This weapon style improves the character's use of thrown weaponry to include: Axes, Daggers, Darts, and anything else that may be used as a thrown projectile.
 - Improved Initiative (1 slot): The character gains a -4 bonus to Speed Factor.
 - Heavy Throw (2 slots): The character gains a +2 bonus to damage rolls.
 
