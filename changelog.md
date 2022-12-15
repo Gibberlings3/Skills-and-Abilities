@@ -16,6 +16,7 @@ December 15, 2022
 - Two-Weapon Style updated to include damage penalties.
 - Removed Kits. Those are now being included in my standalone kitpack.
 - Add HLAs to IWDEE.
+- Added Scroll Crafting abilities.
 
 ## Version 0.9.1 alpha
 
