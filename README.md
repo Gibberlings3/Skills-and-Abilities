@@ -308,7 +308,7 @@ Proficiency progression is now more in line with the NWN2 (3.5e) feat progressio
 - Greater Swift Surge (4 slots): The character gains an additional bonus to Thac0 and AC bringing it to +2 while under the effects of a haste spell.
 - Evasive Celerity (5 slots): The character gains +10% magic resistance while under the effects of a haste spell.
 
-**CONCENTRATION:** The character is adept at casting spells in combat. Points spent in this proficiency reduce the chance of spell interruption when damaged.
+**CONCENTRATION (EEex Required):** The character is adept at casting spells in combat. Points spent in this proficiency reduce the chance of spell interruption when damaged.
 - Combat Casting (1 slot): The character increases his chance to resist spell disruption by +4.
 - Greater Combat Casting (2 slots): The character increases his chance to resist spell disruption by an additional +4 bringing it to +8 total.
 
