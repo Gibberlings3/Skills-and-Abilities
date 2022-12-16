@@ -317,7 +317,8 @@ NOTE: The calculation to resist spell disruption is 1d20 + Luck + (Constitution 
 **POWER STRIKER (Artisan Kitpack Fighter Overhaul Required):** This proficiency allows a warrior to attack with more ferocious Power Attacks. 
 - Enhanced Power Attack (1 slot): The character gains a +5 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +10 damage bonus (instead of +6).
 - Supreme Power Attack (2 slots): The character gains a +6 damage bonus (instead of +3) when using the Power Attack modal. When using the Improved Power Attack modal, the character gains a +12 damage bonus (instead of +6).
-- NOTE: Even though other classes may have access to this weapon style, only Fighters will be able to use it to improve their Power Attack modal.
+
+NOTE: Even though other classes may have access to this weapon style, only Fighters will be able to use it to improve their Power Attack modal.
 
 **BOW:**  This weapon class allows the character to use Long bows, Composite Long bows, and Short bows. Only Fighters, Rangers, and Paladins can use the Composite Long bow. Thieves can choose this category, but are restricted to Short Bows only. 
 
