@@ -88,3 +88,8 @@ Ce sort augmente de 80 % la résistance aux dégâts physique contre les armes t
 @5527 = ~Confus~
 
 @5528 = ~Protégé contre l'interruption des sorts~
+
+@5529 = ~Furie
+Cet état dure 1 tour. Sous Furie, le berserker gagne un bonus de 10 % à ses jets de dégâts, et devient immunisé aux charmes, à l'immobilisation, à la terreur, à la confusion, à la débilité mentale, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il reçoit également une pénalité de 2 à la classe d'armure, subit 1 point de dégâts par round lorsqu'il est en furie (si cela entraîne une réduction de ses points de vie à 0, le personnage tombe inconscient), ainsi que 10 % de dégâts physiques supplémentaires.
+
+Une fois les effets terminés, le personnage est essoufflé et subit une une pénalité de 2 à sa vitesse de déplacement, ainsi qu'à ses jets de toucher et de dégâts.~
