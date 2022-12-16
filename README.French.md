@@ -44,7 +44,7 @@ Jet de sauvegarde : aucun
 
 Ce sort porte à 100 % la résistance aux dégâts physique contre les armes tranchantes, contondantes et perforantes, ainsi que les dégâts des projectiles. Pendant la durée du sort le lanceur est aussi immunisé à l'interruption de ses propres sort lorsqu'il subit une attaque. De plus, il devient immunisé contre la pétrification et tous les effets vorpal ou provoquant une mort instantanée. Il convient également de noter qu'il remplacera les protections précédemment lancées de Protection mineure contre les dégâts physiques, Protection contre les dégâts physiques, Manteau, Manteau amélioré ou même Immunité Absolue. La puissance de ce sort et son temps d'incantation très court sont compensée par une durée très limitée qui permet au magicien de souffler seulement quelques rounds au milieu d'un combat intense. Ses effets se prolongent jusqu'à son expiration naturelle ou sa dissipation par une source extérieure.
 
-### Ajouter les Capacités de haut niveau a IWDEE (Lefreut UI doit être installe - Next Release)
+### Ajouter les Capacités de haut niveau a IWDEE (Lefreut UI doit être installé)
 
 Cela permet aux capacités de haut niveau d'être utilisables dans le jeu IWDEE tel quelles sont implémentées dans BG2 : EE.
 
@@ -80,12 +80,19 @@ Cela permet aux capacités de haut niveau d'être utilisables dans le jeu IWDEE 
 
 **TORNADE D'ACIER :** durera désormais trois rounds au lieu d'un.
 
-**RÉSISTANCE À LA MAGIE (Next Release):** Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieure et de combattre les effets des maléfices. Il gagne 40 % de résistance à la magie pendant 1 round + 1 round tous les 2 niveaux.
+**RÉSISTANCE À LA MAGIE :** Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieure et de combattre les effets des maléfices. Il gagne 40 % de résistance à la magie pendant 1 round + 1 round tous les 2 niveaux.
 
-**CRI DE GUERRE (Next Release):** Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.
+**CRI DE GUERRE :** Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.
 
 Ce composant met également à jour les HLAs suivantes afin qu'elles ne puissent plus être retirés par un sort de Brèche ou d'anti-magie : Résistance d'acier, Résistance à la magie, Esquive, Évasion et Assassinat.
+
 (more in progress)
+
+### Mise à jour de la Rage du Berserker
+
+Cet état dure 1 tour. Sous Furie, le berserker gagne un bonus de 10 % à ses jets de dégâts, et devient immunisé aux charmes, à l'immobilisation, à la terreur, à la confusion, à la débilité mentale, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il reçoit également une pénalité de 2 à la classe d'armure, subit 1 point de dégâts par round lorsqu'il est en furie (si cela entraîne une réduction de ses points de vie à 0, le personnage tombe inconscient), ainsi que 10 % de dégâts physiques supplémentaires.
+
+Une fois les effets terminés, le personnage est essoufflé et subit une une pénalité de 2 à sa vitesse de déplacement, ainsi qu'à ses jets de toucher et de dégâts.
 
 ## Mises a Jour des Classes de Personnage
 
@@ -210,9 +217,15 @@ Comme indiqué, les inquisiteurs obtiendront désormais des sorts similaires à 
 
 Le talent naturel pour repousser les morts-vivants est remplacé par une nouvelle capacité. Les clercs peuvent désormais lancer Repousser les morts-vivants une fois par jour, à partir du 3éme niveau,(gagne une utilisation supplémentaire tous les 3 niveaux) et les paladins une fois par jour, à partir du 4éme niveau (gagne une utilisation supplémentaire tous les 4 niveaux). Cette capacité inflige, 2d6 points de dégâts + 1 point par niveau du prêtre/paladin + modificateur de Charisme, à tous les morts-vivants dans un rayon de 4,5 mètre autour du prêtre/paladin. Si le prêtre/paladin a deux fois plus de niveaux que la créature en question, celle-ci sera détruite. Le modèle original de Repousser les morts-vivants est donc remplacé par une option supplémentaire de sort rapide.
 
-### Ajustement de la barre d'action pour les Clerc / Voleur (Next Release - EEex nécessaire)
+### Ajustement de la barre d'action pour les Clerc / Voleur (EEex nécessaire)
 
 Ce composant remplace le bouton Repousser les morts-vivants de la barre d'action des clercs / voleurs par les capacités de voleur. Il est recommandé si le composant précédent "Révision de la capacité repousser les morts-vivants" est installé.
+
+## Nouvelles compétences et assimilées
+
+### Art de retranscrire des sorts sur des parchemins
+
+Ce composant permet au joueur de créer des parchemins en utilisant les règles de 2ème édition PnP, 2ème édition alternative et 3ème édition.
 
 ## Compétences/Talents
 
@@ -232,7 +245,7 @@ REMARQUE : malgré le nom de ce style de combat, toute arme de mêlée à une ma
 - Compétent (1 point de compétence) : Le porteur de l'arme bénéficie d'un bonus de 1 aux jets de dégâts, -1 au TAC0, -1 à la CA, et inflige des coups critiques sur un jet d'attaque de 19 ou 20.
 - Spécialisé (2 points de compétences) : Le porteur de l'arme obtient un bonus de 2 aux jets de dégâts, -2 au TAC0, -2 à la CA, et inflige des coups critiques sur un jet d'attaque de 18 à 20.
 
-**DEUX-ARMES (Next Release):** Ce style de combat permet au personnage d'utiliser deux armes de mêlée en même temps avec moins de pénalités. Un personnage maniant deux armes sans point de compétence dans ce style de combat subit un malus de 4 aux jets d'attaque avec l'arme principale, un malus de 8 à la deuxième main, et un malus de 4 aux jets de dégâts pour les deux armes. 
+**DEUX-ARMES :** Ce style de combat permet au personnage d'utiliser deux armes de mêlée en même temps avec moins de pénalités. Un personnage maniant deux armes sans point de compétence dans ce style de combat subit un malus de 4 aux jets d'attaque avec l'arme principale, un malus de 8 à la deuxième main, et un malus de 4 aux jets de dégâts pour les deux armes. 
 - Compétent (1 point de compétence) : Les pénalités du porteur sont réduites à 2 pour les jets d'attaque et de dégâts, avec l'arme principale, à 6 au jet d'attaque et 4 au jet de dégâts avec la deuxième arme.
 - Spécialisé (2 points de compétences) :  Les pénalités du porteur sont réduites à 0 pour les jets d'attaque avec l'arme principale et à 4 au jet d'attaque avec la deuxième arme. le porteur conserve une pénalité de 2 aux jets de dégâts pour les deux mains.
 - Maître (3 points de compétences) : Les pénalités du porteur sont réduites à 0, aux jets d'attaque et de dégâts, avec l'arme principale et à 2 pour la deuxième arme.
@@ -287,27 +300,28 @@ La progression des compétences est désormais plus proche du système de progre
 - Inébranlable (4 points de compétence) : Le personnage ne ressent pas la fatigue même après avoir utilisé Rage ou Furie.
 - Récupération Instantanée (5 points de compétence) : Le personnage régénère 1 point de vie par round. Cumulable avec d'autres aptitudes régénérantes.
 
-**TRANSGRESSION DES SORTS (Next Release & EEex Required):** Cette compétence permet de contourner, en partie, la résistance magique de la cible.
+**TRANSGRESSION DES SORTS (EEex Required):** Cette compétence permet de contourner, en partie, la résistance magique de la cible.
 - Transgression des sorts (1 point de compétence): Le magicien peut outrepasser 10 % de la résistance magique de la cible.
 - Abrogation des sorts (2 points de compétence): Le magicien peut outrepasser 25 % de la résistance magique de la cible.
 
-**LAME IMPÉTUEUSE (Next Release):** Cette compétence permet de combiner les sortilèges augmentant la vitesse de déplacement avec ses aptitudes de mêlée afin que la première attaque soit la plus meurtrière possible. Lame impétueuse, nous fait découvrir de nouvelles façons d'utiliser le sort de hâte. Toutes les capacités sont cumulatives.
+**LAME IMPÉTUEUSE :** Cette compétence permet de combiner les sortilèges augmentant la vitesse de déplacement avec ses aptitudes de mêlée afin que la première attaque soit la plus meurtrière possible. Lame impétueuse, nous fait découvrir de nouvelles façons d'utiliser le sort de hâte. Toutes les capacités sont cumulatives.
 - Réflexes magiques (1 point de compétence): Le personnage gagne un bonus de 2 au facteur de vitesse lorsqu'il est sous l'effet d'un sort de hâte.
 - Ardeur effrénée (2 points de compétence): Le personnage gagne un bonus de 1 au TAC0 et à la CA lorsqu'il est sous l'effet d'un sort de hâte.
 - Humeur fluctuante ( points de compétence): Le personnage devient flou lorsqu'il est sous l'effet d'un sort de hâte.
 - Fougue effrénée (4 points de compétence): Le personnage gagne un bonus supplémentaire au TAC0 et à la CA, lorsqu'il est sous l'effet d'un sort de hâte. Il disposera donc d'un bonus de 2.
 - Célérité fugace (5 points de compétence): Le personnage gagne 10 % de résistance magique supplémentaire lorsqu'il est sous l'effet d'un sort de hâte.
 
-**ATTAQUE BRUTAL (Next Release & Artisan Kitpack Fighter Overhaul Required):** Cette compétence permet au guerrier d'utiliser l'Attaque puissante avec encore plus de férocité. 
+**ATTAQUE BRUTAL (Artisan Kitpack Fighter Overhaul Required):** Cette compétence permet au guerrier d'utiliser l'Attaque puissante avec encore plus de férocité. 
 - Attaque puissante amplifiée (1 point de compétence Le personnage gagne un bonus de 5 aux dégâts (au lieu de 3) lorsque le mode Attaque Puissante est activé. Ce bonus augmente à 10 avec l'Attaque Puissante Améliorée (au lieu de 6).
 - Attaque puissante absolue (2 points de compétence): Le personnage gagne un bonus de 6 aux dégâts (au lieu de 3) lorsque le mode Attaque Puissante est activé. Ce bonus augmente à 12 avec l'Attaque Puissante Améliorée (au lieu de 6).
-- REMARQUE : même si d'autres classes peuvent accéder à ce style d'arme, seuls les guerriers pourront l'utiliser pour améliorer la capacité attaque puissante.
+
+REMARQUE : même si d'autres classes peuvent accéder à ce style d'arme, seuls les guerriers pourront l'utiliser pour améliorer la capacité attaque puissante.
 
 **DISSOLUTION D'ARMURE :** Cette compétence permet de contourner, en partie, la résistance aux dégâts physique de la cible.
 - Dissolution d'armure (1 point de compétence): Le personnage peut outrepasser 5 % de la résistance aux dégâts physique de la cible.
 - Absolution d'armure (2 points de compétence): Le personnage peut outrepasser 10 % de la résistance aux dégâts physique de la cible.~
 
-**CONCENTRATION :** Le personnage est expert dans l'art de lancer des sorts en cours de combat. Les points investis dans cette compétence augmentent les chances de résister à l'interruption des sorts lorsque vous subissez des dégâts.
+**CONCENTRATION (EEex Required):** Le personnage est expert dans l'art de lancer des sorts en cours de combat. Les points investis dans cette compétence augmentent les chances de résister à l'interruption des sorts lorsque vous subissez des dégâts.
 - Incantation sereine (1 point de compétence) : Le personnage augmente ses chances de résister à l'interruption des sorts de 4. 
 - Incantation impassible (2 points de compétence) : Le personnage augmente de nouveau ses chances de résister à l'interruption des sorts de 4, ce qui porte cette résistance à 8.
 
