@@ -177,8 +177,8 @@ ACTION_FOR_EACH description IN
         READ_2DA_ENTRY index 0 col_count row_name
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "MO_REAVER" BEGIN
           READ_2DA_ENTRY index 4 col_count reaver_desc
-          SPRINT old_reav1 @9507
-          SPRINT new_reav1 @9508
+          SPRINT old_reav1 @6015
+          SPRINT new_reav1 @6016
           GET_STRREF %reaver_desc% reaver_text
           INNER_PATCH_SAVE reaver_text ~%reaver_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_reav1%~ ~%new_reav1%~
