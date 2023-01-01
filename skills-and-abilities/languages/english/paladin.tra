@@ -46,4 +46,8 @@ This ability allows the paladin to make a special attack against any enemy. Pala
 
 AURA OF PROTECTION: This ability grants -2 bonus to AC and +5% physical damage resistance for the character and all allies within 15 feet.~
 
+@6015 = ~– May not use the Lay on Hands ability.~
+@6016 = ~– May not use the Lay on Hands ability.
+– Does not gain a Paladin Aura.~
+
 @6500 = ~[LAST TRA HERE]~
