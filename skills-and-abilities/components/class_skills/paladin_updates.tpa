@@ -80,7 +80,11 @@ END
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         PRETTY_PRINT_2DA
-      END ELSE PATCH_IF !("%kit_label%" STRING_EQUAL_CASE "MO_REAVER") BEGIN
+      END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "MO_REAVER") BEGIN
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+        PRETTY_PRINT_2DA
+      END ELSE BEGIN
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
