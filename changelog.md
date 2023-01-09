@@ -1,3 +1,11 @@
+## Version 1.1 beta
+
+January xx, 2023
+
+### Changed
+
+- Update Blade kit to get Master (3 slots) in bladed weapons instead of Specialization in ALL weapons.
+
 ## Version 1.0 beta
 
 December 15, 2022

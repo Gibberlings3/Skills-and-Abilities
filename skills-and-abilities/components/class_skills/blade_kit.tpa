@@ -25,21 +25,21 @@ COPY_EXISTING ~WEAPPROF.2DA~ ~override~
   FOR (col = 22; col < cols - 1; ++col) BEGIN
   READ_2DA_ENTRY_FORMER kitnames 0 col column_name
   PATCH_IF ("%column_name%" STRING_EQUAL_CASE "BLADE") BEGIN
-      SET_2DA_ENTRY 11 (col + 1) 1 ~2~   // BASTARDSWORD
-      SET_2DA_ENTRY 12 (col + 1) 1 ~2~   // LONGSWORD
-      SET_2DA_ENTRY 13 (col + 1) 1 ~2~   // SHORTSWORD
-      SET_2DA_ENTRY 14 (col + 1) 1 ~2~   // AXE
-      SET_2DA_ENTRY 15 (col + 1) 1 ~2~   // TWOHANDEDSWORD
-      SET_2DA_ENTRY 16 (col + 1) 1 ~2~   // KATANA
-      SET_2DA_ENTRY 17 (col + 1) 1 ~2~   // SCIMITARWAKISASHININJATO
-      SET_2DA_ENTRY 18 (col + 1) 1 ~2~   // DAGGER
-      SET_2DA_ENTRY 19 (col + 1) 1 ~2~   // WARHAMMER
-      SET_2DA_ENTRY 20 (col + 1) 1 ~2~   // CLUB
-      SET_2DA_ENTRY 21 (col + 1) 1 ~2~   // SPEAR
-      SET_2DA_ENTRY 22 (col + 1) 1 ~2~   // HALBERD
-      SET_2DA_ENTRY 23 (col + 1) 1 ~2~   // FLAILMORNINGSTAR
-      SET_2DA_ENTRY 24 (col + 1) 1 ~2~   // MACE
-      SET_2DA_ENTRY 25 (col + 1) 1 ~2~   // QUARTERSTAFF
+      SET_2DA_ENTRY 11 (col + 1) 1 ~3~   // BASTARDSWORD
+      SET_2DA_ENTRY 12 (col + 1) 1 ~3~   // LONGSWORD
+      SET_2DA_ENTRY 13 (col + 1) 1 ~3~   // SHORTSWORD
+      SET_2DA_ENTRY 14 (col + 1) 1 ~1~   // AXE
+      SET_2DA_ENTRY 15 (col + 1) 1 ~3~   // TWOHANDEDSWORD
+      SET_2DA_ENTRY 16 (col + 1) 1 ~3~   // KATANA
+      SET_2DA_ENTRY 17 (col + 1) 1 ~3~   // SCIMITARWAKISASHININJATO
+      SET_2DA_ENTRY 18 (col + 1) 1 ~3~   // DAGGER
+      SET_2DA_ENTRY 19 (col + 1) 1 ~1~   // WARHAMMER
+      SET_2DA_ENTRY 20 (col + 1) 1 ~1~   // CLUB
+      SET_2DA_ENTRY 21 (col + 1) 1 ~1~   // SPEAR
+      SET_2DA_ENTRY 22 (col + 1) 1 ~1~   // HALBERD
+      SET_2DA_ENTRY 23 (col + 1) 1 ~1~   // FLAILMORNINGSTAR
+      SET_2DA_ENTRY 24 (col + 1) 1 ~1~   // MACE
+      SET_2DA_ENTRY 25 (col + 1) 1 ~1~   // QUARTERSTAFF
       PRETTY_PRINT_2DA
   END
   END
@@ -187,77 +187,77 @@ PATCH_IF (~%kit%~ = 0x400d0000) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%de
 
   // bastard
   PATCH_IF (bastard > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 89 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 89 timing = 9 END
   END
 
   // longsword
   PATCH_IF (longsword > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
   END
 
   // shortsword
   PATCH_IF (shortsword > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 91 timing = 9 END
   END
 
   // axe
   PATCH_IF (axe > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 92 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = axe parameter2 = 92 timing = 9 END
   END
 
   // twohandedsword
   PATCH_IF (twohandedsword > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 93 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 93 timing = 9 END
   END
 
   // katana
   PATCH_IF (katana > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 94 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 94 timing = 9 END
   END
 
   // swn
   PATCH_IF (swn > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 95 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 95 timing = 9 END
   END
 
   // dagger
   PATCH_IF (dagger > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 96 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 96 timing = 9 END
   END
 
   // warhammer
   PATCH_IF (warhammer > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 97 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = warhammer parameter2 = 97 timing = 9 END
   END
 
   // club
   PATCH_IF (club > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 115 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = club parameter2 = 115 timing = 9 END
   END
 
   // spear
   PATCH_IF (spear > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 98 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = spear parameter2 = 98 timing = 9 END
   END
 
   // halberd
   PATCH_IF (halberd > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 99 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = halberd parameter2 = 99 timing = 9 END
   END
 
   // flailmorningstar
   PATCH_IF (flailmorningstar > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 100 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = flailmorningstar parameter2 = 100 timing = 9 END
   END
 
   // mace
   PATCH_IF (mace > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 101 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = mace parameter2 = 101 timing = 9 END
   END
 
   // quarterstaff
   PATCH_IF (quarterstaff > 0) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 102 timing = 9 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = quarterstaff parameter2 = 102 timing = 9 END
   END
 
   // Two-Handed Weapon Style
