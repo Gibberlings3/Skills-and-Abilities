@@ -199,9 +199,9 @@ SANCTIFY STRIKES: You deal 2 extra points of magic damage with your attacks.
 
 Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers and Ranger kits. Ranger's Move Silently/Hide in Shadows becomes an outdoor area only ability.
 
-### Wizard Slayer Detect Illusion (EEex Required)
+### Wizard Slayer Enhancements (EEex Required)
 
-Adds Detect Illusions (Set at 100) to the Wizard Slayer.
+Adds Detect Illusions (Set at 100) to the Wizard Slayer and will make the miscast magic a passive aura impacting all enemies within 15' of the Wizard Slayer. 
 
 ### Inquisitor Detect Illusion (EEex Required)
 
