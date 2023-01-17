@@ -7,9 +7,13 @@ OUTER_SPRINT oldgww @8031
 OUTER_SPRINT newgww @8032
 
 COPY ~skills-and-abilities/spl/SPCL904.SPL~ ~override~ // Resist Magic Update
+  SAY NAME1 @8037
+  SAY NAME2 @8037
   SAY UNIDENTIFIED_DESC @8035
 
 COPY ~skills-and-abilities/spl/SPCL908.SPL~ ~override~ // Mildly Infuriated Update
+  SAY NAME1 @8038
+  SAY NAME2 @8038
   SAY UNIDENTIFIED_DESC @8036
 
   // Need to create a new spellstate for this in my ai scripts

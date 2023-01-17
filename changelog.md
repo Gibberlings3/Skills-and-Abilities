@@ -5,6 +5,8 @@ January xx, 2023
 ### Changed
 
 - Update Blade kit to get Master (3 slots) in bladed weapons instead of Specialization in ALL weapons.
+- Corrected HLA description updates for IWD: EE.
+- Updated bug where m_motest1.lua was located in the wrong folder.
 
 ## Version 1.0 beta
 
