@@ -80,4 +80,7 @@ Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieur
 @8036 = ~Cri de guerre
 Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.~
 
+@8037 = ~Résistance à la magie~
+@8038 = ~Cri de guerre~
+
 @9000 = ~[LAST TRA HERE]~
