@@ -201,7 +201,7 @@ Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers an
 
 ### Wizard Slayer Enhancements (EEex Required)
 
-Adds Detect Illusions (Set at 100) to the Wizard Slayer and will make the miscast magic a passive aura impacting all enemies within 15' of the Wizard Slayer. 
+Adds Detect Illusions (Set at 100) to the Wizard Slayer.
 
 ### Inquisitor Detect Illusion (EEex Required)
 
