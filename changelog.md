@@ -6,7 +6,9 @@ January xx, 2023
 
 - Update Blade kit to get Master (3 slots) in bladed weapons instead of Specialization in ALL weapons.
 - Corrected HLA description updates for IWD: EE.
+- Updated Paladin HLAs to be present in IWD: EE if the corresponding component is installed.
 - Updated bug where m_motest1.lua was located in the wrong folder.
+- Add archer component so the kit receives the +1 to hit and damage rolls with any missile weapon every 3 levels.
 
 ## Version 1.0 beta
 

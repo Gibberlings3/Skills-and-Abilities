@@ -39,7 +39,7 @@ COPY ~skills-and-abilities/spl/MOPALC3.SPL~        ~override~ // Smite
 ///////////////////////////////////////////////////////////////////////////
 // Set Base Paladin New Abilities                                        //
 ///////////////////////////////////////////////////////////////////////////
-COPY_EXISTING ~CLABPA01.2DA~ override
+COPY_EXISTING ~CLABPA01.2DA~ ~override~
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
     LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
@@ -49,7 +49,7 @@ COPY_EXISTING ~CLABPA01.2DA~ override
 ///////////////////////////////////////////////////////////////////////////
 // Add HLAs                                                              //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+ACTION_IF (GAME_IS ~bg2ee eet~) OR ((GAME_IS ~iwdee~) AND FILE_EXISTS_IN_GAME ~moiwd01.itm~) BEGIN
   LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 1 STR_VAR ability = AP_MO#PHL01 END
   LAF ADD_HLA INT_VAR class = 6 min_lev = 1 max_lev = 99 num_allowed = 20 STR_VAR ability = GA_MOPALC3 END  
 END

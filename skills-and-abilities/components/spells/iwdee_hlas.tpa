@@ -9,3 +9,17 @@
 ///////////////////////////////////////////////////////////////////////////
 COPY ~skills-and-abilities/2da/lunumab.2da~ ~override~ // HLA Progression
 COPY ~skills-and-abilities/itm/mohla01.itm~ ~override~ // HLA Check Item
+
+///////////////////////////////////////////////////////////////////////////
+//  Show HLA Names                                                       //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~SPCL904.SPL~ ~override~ // Resist Magic
+  SAY NAME1 @8037
+  SAY NAME2 @8037
+
+COPY_EXISTING ~SPCL908.SPL~ ~override~ // Warcry
+  SAY NAME1 @8038
+  SAY NAME2 @8038
+
+// Add Item to Check Against for Paladin HLAs
+COPY_EXISTING ~SW1H01.itm~ ~override/moiwd01.itm~
