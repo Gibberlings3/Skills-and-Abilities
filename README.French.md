@@ -107,11 +107,11 @@ Compatible avec le kit du Maître-lames de Bardic Wonders ; ce composant devra �
 
 ### Ajouter de nouvelles capacités pour les guerriers
 
-– 1er niveau : Peut utiliser Second souffle une fois par jour.
+- 1er niveau : Peut utiliser Second souffle une fois par jour.
 
 SECOND SOUFFLE : Vous disposez, dans une certaine mesure, de la capacité de puiser dans vos réserves pour vous protéger des dangers. Une fois par jour, le guerrier peut utiliser Second souffle, afin de regagner 1d10 points de vie auxquels s'ajoute votre niveau actuel de guerrier.
 
-– 9ème niveau: Gagne la capacité passive Irréductible.
+- 9ème niveau: Gagne la capacité passive Irréductible.
 
 IRRÉDUCTIBLE : Le guerrier bénéficie de +1 à tous ses jets de sauvegarde. Ce bonus passe à +2 au niveau 13 et enfin +3 au niveau 17.
 
@@ -201,9 +201,9 @@ POINGS SANCTIFIER : Vous infligez 2 points de dégâts magiques supplémentaires
 
 Ajoute Pose de Pièges Ancestral et Pistage, utilisable uniquement en extérieur, pour tous les Rôdeurs et leurs kits. les capacités de Rôdeurs Déplacement silencieux et Se cacher dans l'ombre deviennent utilisable uniquement en extérieur.
 
-### Détection des illusions pour les Tueurs de magiciens (EEex nécessaire)
+### Améliorations pour les Tueurs de magiciens (EEex nécessaire)
 
-Ajouter Détection des illusions (mis à 100 points de talent) au Tueurs de magiciens.
+Ajoute Détection des illusions (avec un score de 100 points de talent) au Tueurs de magiciens et modifie son fourvoiement magique qui deviendra une capacité passive affectant tous les ennemis dans un rayon de 4,5 m.
 
 ### Détection des illusions pour les Inquisiteurs (EEex nécessaire)
 
