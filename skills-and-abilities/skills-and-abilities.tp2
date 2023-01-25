@@ -106,6 +106,7 @@ REQUIRE_PREDICATE !MOD_IS_INSTALLED ~setup-spell_rev.tp2~ ~65~ @3008
 
 INCLUDE ~skills-and-abilities/components/spells/update_hlas.tpa~
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Update Berserker Enrage                                               //
 ///////////////////////////////////////////////////////////////////////////
@@ -114,6 +115,7 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
 
 INCLUDE ~skills-and-abilities/components/spells/update_enrage.tpa~
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
