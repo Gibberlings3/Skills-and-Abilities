@@ -11,13 +11,27 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~m_moTHI1.lua~ THEN BEGIN
   COPY ~skills-and-abilities/lua/m_moTHI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 END
 
-COPY ~skills-and-abilities/lua/m_moTHI6.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
-COPY ~skills-and-abilities/spl/MO#BSK05.SPL~   ~override~ // Sets Detect Illusions to 100 EVERY level for Wizard Slayer
+COPY ~skills-and-abilities/lua/m_moTHI6.lua~      ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~skills-and-abilities/spl/MO#BSK05.SPL~      ~override~ // Sets Detect Illusions to 100 EVERY level for Wizard Slayer
+//COPY ~skills-and-abilities/spl/mowsl01.spl~     ~override~ // Adds non-abjuration version of dispel magic
+COPY ~skills-and-abilities/eff/class/mowsl01.eff~ ~override~ // Adds 10% chance of dispel magic on hit 
+COPY ~skills-and-abilities/eff/class/mowsl02.eff~ ~override~ // Reduces on hit miscast magic percentage
+
+///////////////////////////////////////////////////////////////////////////
+// Modify Wizard Slayer On-Hit Effects                                   //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~SPCL133.SPL~ ~override~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 248 special = 1 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 249 special = 1 END
+  LPF ALTER_EFFECT STR_VAR match_resource = "spcl132" resource = "mowsl02" END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 248 target = 2 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 special = 1 STR_VAR resource = "mowsl01" END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 249 target = 2 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 special = 1 STR_VAR resource = "mowsl01" END
+  //LPF ALTER_EFFECT INT_VAR match_opcode = 233 match_parameter2 = 124 opcode = 328 parameter2 = %regen% special = 1 END
 
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Wizard Slayer CLAB File to Assign Thief Skills Points     //
 ///////////////////////////////////////////////////////////////////////////
-COPY_EXISTING ~CLABFI03.2DA~ override
+COPY_EXISTING ~CLABFI03.2DA~ ~override~
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK05 END
   PRETTY_PRINT_2DA
 BUT_ONLY
