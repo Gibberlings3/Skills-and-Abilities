@@ -26,7 +26,20 @@ COPY_EXISTING ~SPCL133.SPL~ ~override~
   LPF ALTER_EFFECT STR_VAR match_resource = "spcl132" resource = "mowsl02" END
   LPF ADD_SPELL_EFFECT INT_VAR opcode = 248 target = 2 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 special = 1 STR_VAR resource = "mowsl01" END
   LPF ADD_SPELL_EFFECT INT_VAR opcode = 249 target = 2 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 special = 1 STR_VAR resource = "mowsl01" END
-  //LPF ALTER_EFFECT INT_VAR match_opcode = 233 match_parameter2 = 124 opcode = 328 parameter2 = %regen% special = 1 END
+
+///////////////////////////////////////////////////////////////////////////
+// Modify Wizard Slayer Dual Class                                       //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~dualclas.2DA~ ~override~
+  COUNT_2DA_COLS col_count
+  COUNT_2DA_ROWS col_count rows
+  FOR (index = 0; index < rows; ++index) BEGIN
+    READ_2DA_ENTRY index 0 col_count row_name
+    PATCH_IF "%row_name%" STRING_EQUAL_CASE "WIZARD_SLAYER" BEGIN
+      SET_2DA_ENTRY index 3 1 ~5~ // Remove Mage
+    END
+  END
+BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Wizard Slayer CLAB File to Assign Thief Skills Points     //
@@ -44,3 +57,35 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   PRETTY_PRINT_2DA
 BUT_ONLY
 
+///////////////////////////////////////////////////////////////////////////
+// Update Kit Descriptions                                               //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH description IN 
+    clastext 
+    sodcltxt 
+  BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%description%.2da~ BEGIN
+      COPY_EXISTING ~%description%.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 0; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 0 col_count row_name
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "WIZARD_SLAYER" BEGIN
+          READ_2DA_ENTRY index 4 col_count ws_desc
+          SPRINT old_ws1 @5501
+          SPRINT new_ws1 @5502
+          SPRINT old_ws2 @5503
+          SPRINT new_ws2 @5504
+          GET_STRREF %ws_desc% ws_text
+          INNER_PATCH_SAVE ws_text ~%ws_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_ws1%~ ~%new_ws1%~
+            REPLACE_TEXTUALLY ~%old_ws2%~ ~%new_ws2%~
+          END
+          INNER_ACTION BEGIN
+            STRING_SET_EVALUATE ~%ws_desc%~ ~%ws_text%~
+          END
+        END
+      END
+      BUT_ONLY
+    END
+  END
