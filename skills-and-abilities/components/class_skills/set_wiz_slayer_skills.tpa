@@ -13,8 +13,8 @@ END
 
 COPY ~skills-and-abilities/lua/m_moTHI6.lua~      ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 COPY ~skills-and-abilities/spl/MO#BSK05.SPL~      ~override~ // Sets Detect Illusions to 100 EVERY level for Wizard Slayer
-//COPY ~skills-and-abilities/spl/mowsl01.spl~     ~override~ // Adds non-abjuration version of dispel magic
-COPY ~skills-and-abilities/eff/class/mowsl01.eff~ ~override~ // Adds 10% chance of dispel magic on hit 
+COPY ~skills-and-abilities/spl/class/mowsl01.spl~ ~override~ // Adds 10% chance of dispel magic on hit spell
+COPY ~skills-and-abilities/eff/class/mowsl01.eff~ ~override~ // Adds 10% chance of dispel magic on hit effect
 COPY ~skills-and-abilities/eff/class/mowsl02.eff~ ~override~ // Reduces on hit miscast magic percentage
 
 ///////////////////////////////////////////////////////////////////////////
