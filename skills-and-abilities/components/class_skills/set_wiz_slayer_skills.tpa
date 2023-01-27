@@ -36,7 +36,7 @@ COPY_EXISTING ~dualclas.2DA~ ~override~
   FOR (index = 0; index < rows; ++index) BEGIN
     READ_2DA_ENTRY index 0 col_count row_name
     PATCH_IF "%row_name%" STRING_EQUAL_CASE "WIZARD_SLAYER" BEGIN
-      SET_2DA_ENTRY index 3 1 ~5~ // Remove Mage
+      SET_2DA_ENTRY index 3 col_count ~5~ // Remove Mage
     END
   END
 BUT_ONLY
