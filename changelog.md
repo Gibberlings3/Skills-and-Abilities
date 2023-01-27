@@ -9,6 +9,7 @@ January xx, 2023
 - Updated Paladin HLAs to be present in IWD: EE if the corresponding component is installed.
 - Updated bug where m_motest1.lua was located in the wrong folder.
 - Add archer component so the kit receives the +1 to hit and damage rolls with any missile weapon every 3 levels.
+- Wizard Slayer Enhancement to now Dispel on hit which will bypass protections.
 
 ## Version 1.0 beta
 
