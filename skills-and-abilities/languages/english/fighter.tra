@@ -63,4 +63,14 @@ INDOMITABLE: The fighter gains +1 bonus to all saving throws. This increases to 
 @9516 = ~Trip Attack
 When you hit a creature with a weapon attack within the next round, they will fall to the ground for 3 seconds. A successful save vs. Death negates the fall. This increases to save vs. Death at -2 at level 14 and -4 at level 20 to resist being tripped.~
 
+@9517 = ~Each successful hit bestows a 25% cumulative chance of spell failure on the target.~
+@9518 = ~Each successful hit bestows a 10% cumulative chance of spell failure on the target and has a 10% chance of casting dispel magic at level 30 on the target. These strikes will bypass protections such as Protection from Normal Weapons, Protection from Magical Weapons, Mantle, Improved Mantle, and Absolute Immunity.
+– May use the Detect Illusion ability which is set to 100.~
+
+@9519 = ~Disadvantages:
+– May not use any magic items apart from weapons and armor.~
+@9520 = ~Disadvantages:
+– May not dual class to mage.
+– May not use any magic items apart from weapons and armor.~
+
 @10000 = ~[LAST TRA HERE]~

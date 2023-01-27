@@ -36,7 +36,7 @@ COPY_EXISTING ~dualclas.2DA~ ~override~
   FOR (index = 0; index < rows; ++index) BEGIN
     READ_2DA_ENTRY index 0 col_count row_name
     PATCH_IF "%row_name%" STRING_EQUAL_CASE "WIZARD_SLAYER" BEGIN
-      SET_2DA_ENTRY (index+3) 3 1 ~5~ // Remove Mage
+      SET_2DA_ENTRY (index+3) 3 1 ~0~ // Remove Mage
     END
   END
 BUT_ONLY
@@ -72,10 +72,10 @@ ACTION_FOR_EACH description IN
         READ_2DA_ENTRY index 0 col_count row_name
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "WIZARD_SLAYER" BEGIN
           READ_2DA_ENTRY index 4 col_count ws_desc
-          SPRINT old_ws1 @5501
-          SPRINT new_ws1 @5502
-          SPRINT old_ws2 @5503
-          SPRINT new_ws2 @5504
+          SPRINT old_ws1 @9517
+          SPRINT new_ws1 @9518
+          SPRINT old_ws2 @9519
+          SPRINT new_ws2 @9520
           GET_STRREF %ws_desc% ws_text
           INNER_PATCH_SAVE ws_text ~%ws_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_ws1%~ ~%new_ws1%~
