@@ -88,12 +88,6 @@ Ce composant met également à jour les HLAs suivantes afin qu'elles ne puissent
 
 (more in progress)
 
-### Mise à jour de la Rage du Berserker
-
-Cet état dure 1 tour. Sous Furie, le berserker gagne un bonus de 10 % à ses jets de dégâts, et devient immunisé aux charmes, à l'immobilisation, à la terreur, à la confusion, à la débilité mentale, au labyrinthe, à l'absorption de niveaux, à l'emprisonnement, à l'étourdissement et au sommeil. Il reçoit également une pénalité de 2 à la classe d'armure, subit 1 point de dégâts par round lorsqu'il est en furie (si cela entraîne une réduction de ses points de vie à 0, le personnage tombe inconscient), ainsi que 10 % de dégâts physiques supplémentaires.
-
-Une fois les effets terminés, le personnage est essoufflé et subit une une pénalité de 2 à sa vitesse de déplacement, ainsi qu'à ses jets de toucher et de dégâts.
-
 ## Mises a Jour des Classes de Personnage
 
 ### Mise a jour des capacités des Bardes (EEex nécessaire)
@@ -102,7 +96,7 @@ Ajout d'une option permettant de sélectionner soit Crochetage de serrures, soit
 
 ### Améliorer le kit du Maître-lames
 
-Cette option permet au Maître-lames de se spécialiser (2 points de compétence) dans les armes de mêlée, il recevra également une demi attaque supplémentaire au niveau 10 et 20. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
+Cette option permet au Maître-lames d'atteindre la maîtrise (3 points de compétence) dans les armes à lames / blanches., il recevra également une demi attaque supplémentaire au niveau 10 et 20. Elle mettra également à jour tous les Maîtres-lames non recrutables présent dans le jeu pour qu'eux aussi soient spécialisés dans l'arme ou les armes de mêlée de leur choix.
 Compatible avec le kit du Maître-lames de Bardic Wonders ; ce composant devra être installé après Bardic Wonders ET supprimera l’accès à la grande maîtrise ajouter par Bardic Wonders pour le remplacer par des attaques par round supplémentaires aux niveaux 10 et 20.
 
 ### Ajouter de nouvelles capacités pour les guerriers
@@ -203,7 +197,8 @@ Ajoute Pose de Pièges Ancestral et Pistage, utilisable uniquement en extérieur
 
 ### Améliorations pour les Tueurs de magiciens (EEex nécessaire)
 
-Ajoute Détection des illusions (avec un score de 100 points de talent) au Tueurs de magiciens et modifie son fourvoiement magique qui deviendra une capacité passive affectant tous les ennemis dans un rayon de 4,5 m.
+Ajoute Détection des illusions (avec un score de 100 points de talent). De plus une cible touché subit 10 % de probabilité cumulative de rater ses incantations, ainsi que 10 % de chances d'être atteinte par les effets d'un sort de dissipation de la magie de niveau 30. Ces attaques permettent de contourner les protections telles que « Protection contre les armes normales », « Protection contre les armes magiques », « Manteau », « Manteau amélioré » et « Immunité absolue ».
+
 
 ### Détection des illusions pour les Inquisiteurs (EEex nécessaire)
 

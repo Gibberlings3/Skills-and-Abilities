@@ -13,11 +13,11 @@ Les combattants gagne un bonus de 2 aux dégâts.
 
 Nécessite : Concentration Épique~
 
-@9505 = ~Second souffle~
-@9506 = ~Second souffle
+@9505 = ~Second souffle !~
+@9506 = ~Second souffle !
 Vous disposez, dans une certaine mesure, de la capacité de puiser dans vos réserves pour vous protéger des dangers. Une fois par jour, le guerrier peut utiliser Second souffle, afin de regagner 1d10 points de vie auxquels s'ajoute votre niveau actuel de guerrier.~
 
-@9507 = ~- Dés de vie : d10~ // Must match exactly the original line of the fighter class in the language of your game.
+@9507 = ~- Dés de vie : d10.~ // Must match exactly the original line of the fighter class in the language of your game.
 @9508 = ~– Dés de vie : d10
 - 1er niveau : Peut utiliser Second souffle une fois par jour.
 
@@ -51,5 +51,15 @@ IRRÉDUCTIBLE : Le guerrier bénéficie d'un bonus de 1 à tous ses jets de sauv
 @9515 = ~Croche-pied~
 @9516 = ~Croche-pied
 Lorsque réussissez une attaque sur une créature au cours du prochain round, celle-ci se retrouve au sol pendant 3 secondes. Un jet de sauvegarde contre la mort permet d'échapper à la chute. Le jet de sauvegarde contre la mort passe à -2 au niveau 14 et à -4 au niveau 20.~
+
+@9517 = ~Tout lanceur de sort touché subit 25 % de probabilité cumulative de rater ses incantations.~  // Must match exactly the original line of the Wizard slayer kit in the language of your game.
+@9518 = ~Une cible touché subit 10 % de probabilité cumulative de rater ses incantations, ainsi que 10 % de chances de lui infliger les effets d'un sort de dissipation de la magie de niveau 30. Ces attaques permettent de contourner les protections telles que « Protection contre les armes normales », « Protection contre les armes magiques », « Manteau », « Manteau amélioré » et « Immunité absolue ».
+- Peut utiliser la capacité Détection des illusions avec un score de 100 points de talent.~
+
+@9519 = ~Désavantages :
+- Ne peut pas utiliser d'objets magiques autres qu'armures et armes.~ // Must match exactly the original line of the Wizard slayer kit in the language of your game.
+@9520 = ~Désavantages :
+– Ne peut pas utiliser se jumelé en mage.
+- Ne peut pas utiliser d'objets magiques autres qu'armures et armes.~
 
 @10000 = ~[LAST TRA HERE]~
