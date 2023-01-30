@@ -1,3 +1,11 @@
+## Version 1.2 beta
+
+February xx, 2023
+
+### Changed
+
+- Fixed bug where Fighters were not receiving the Indomitable passive ability.
+
 ## Version 1.1 beta
 
 January 29, 2023
