@@ -1,6 +1,6 @@
 ## Version 1.1 beta
 
-January xx, 2023
+January 29, 2023
 
 ### Changed
 
