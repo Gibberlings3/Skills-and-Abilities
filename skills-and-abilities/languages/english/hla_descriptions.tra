@@ -78,7 +78,7 @@ This ability allows the warrior to temporarily tap a great inner strength and fi
 
 // Mildly Infuriated
 @8036 = ~War Cry
-With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.~
+With a War Cry, the warrior emits a powerful yell inspiring all allies within a 15-ft. radius. Allies increase their physical damage dealt by 10% for 1 turn.~
 
 @8037 = ~Resist Magic~
 @8038 = ~War Cry~
