@@ -150,6 +150,14 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 INCLUDE ~skills-and-abilities/components/class_skills/blade_kit.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
+// Increase Bard Song Duration to 1 Turn                                 //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @180 DESIGNATED 180 GROUP @1 LABEL SkillsAndAbilitiesSongDuration
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
+
+INCLUDE ~skills-and-abilities/components/class_skills/bard_song_duration.tpa~
+
+///////////////////////////////////////////////////////////////////////////
 // Add New Fighter Abilities                                             //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @150 DESIGNATED 150 GROUP @1 LABEL SkillsAndAbilitiesFighter
