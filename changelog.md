@@ -7,6 +7,7 @@ February xx, 2023
 - Fixed bug where Fighters were not receiving the Indomitable passive ability.
 - Remove updated enrage ability. This is transferring over to the Battlerager in my kitpack.
 - Updated War Cry HLA.
+- New componenet: Increase Bard Song durations to 1 turn.
 
 ## Version 1.1 beta
 

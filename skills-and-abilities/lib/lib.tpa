@@ -143,7 +143,9 @@ DEFINE_ACTION_FUNCTION ADD_HLA
       READ_2DA_ENTRY index 0 2 row_name
       PATCH_IF ~%row_name%~ STRING_EQUAL_CASE ~%kit_label%~ BEGIN
         READ_2DA_ENTRY index 1 2 kitlu
+        PATCH_PRINT ~Checking if lu%kitlu%.2da exists.~
         PATCH_IF FILE_EXISTS_IN_GAME ~lu%kitlu%.2da~ BEGIN
+        PATCH_PRINT ~lu%kitlu%.2da exists and is being patched.~
           INNER_ACTION BEGIN
           COPY_EXISTING ~lu%kitlu%.2da~ ~override~
             LPF ADD_NEW_HLA_ROW END
