@@ -78,7 +78,7 @@ Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieur
 
 // Mildly Infuriated
 @8036 = ~Cri de guerre
-Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.~
+Le combattant émet un cri de guerre d'une puissance impressionnante, cette source d'inspiration pour tous les alliés présents dans un rayon de 4,5 m leur permet d'infliger 10 % de dégâts physiques supplémentaires et augmente de 5 % les chances d'effectuer un coup critique. Les effets du cri perdurent pendant 1 tour.~
 
 @8037 = ~Résistance à la magie~
 @8038 = ~Cri de guerre~
