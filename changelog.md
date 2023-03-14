@@ -1,5 +1,9 @@
 ## Version 1.2 beta
 
+March xx, 2023
+
+- Fixed a compiling issue with craft scrolls
+
 February xx, 2023
 
 ### Changed
