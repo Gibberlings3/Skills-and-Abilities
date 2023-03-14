@@ -1,15 +1,10 @@
 ## Version 1.2 beta
 
-March xx, 2023
+March 14, 2023
 
 - Fixed a compiling issue with craft scrolls
 - Disabled crafting as a hla because of mod conflict (temp fix)
 - Accounted for out of bounds spell level checks for xp cost (temp fix)
-
-February xx, 2023
-
-### Changed
-
 - Fixed bug where Fighters were not receiving the Indomitable passive ability.
 - Remove updated enrage ability. This is transferring over to the Battlerager in my kitpack.
 - Updated War Cry HLA.
