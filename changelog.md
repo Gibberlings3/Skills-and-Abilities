@@ -3,6 +3,8 @@
 March xx, 2023
 
 - Fixed a compiling issue with craft scrolls
+- Disabled crafting as a hla because of mod conflict (temp fix)
+- Accounted for out of bounds spell level checks for xp cost (temp fix)
 
 February xx, 2023
 

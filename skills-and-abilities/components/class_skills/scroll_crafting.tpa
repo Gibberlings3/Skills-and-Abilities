@@ -624,6 +624,9 @@ ACTION_PHP_EACH lev_general_scroll AS der_spell => der_scroll  BEGIN
                                  ELSE PATCH_IF (level > 6) BEGIN
                                      SET xp_cost = (level * 16)
                                  END
+                                 ELSE  BEGIN
+                                     SET xp_cost = (level * 16)
+                                 END
                         END
                         //ISSUE STARTS HERE
                         ELSE BEGIN //not right spell type for reduced gold cost (either because no xp cost or not applicable to spell type)
@@ -1041,7 +1044,7 @@ END
 /////////////////       compiling, cre, ability, etc.
 
 COMPILE ~%folder%/data/scrolls/b_scrib.baf~
-COMPILE ~%folder%/data/scrolls/b_scrib.d~ 
+COMPILE ~%folder%/data/scrolls/b_scrib.d~
 COPY ~%folder%/data/scrolls/b_scrib.cre~ ~override~      //scribe creature
 COPY ~%folder%/data/scrolls/B_SCRIBB.bam~ ~override~      //scribe spl
 COPY ~%folder%/data/scrolls/B_SCRIBC.bam~ ~override~      //scribe spl
