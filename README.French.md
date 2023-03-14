@@ -82,7 +82,7 @@ Cela permet aux capacités de haut niveau d'être utilisables dans le jeu IWDEE 
 
 **RÉSISTANCE À LA MAGIE :** Cette aptitude permet au guerrier d'exploiter temporairement sa force intérieure et de combattre les effets des maléfices. Il gagne 40 % de résistance à la magie pendant 1 round + 1 round tous les 2 niveaux.
 
-**CRI DE GUERRE :** Le combattant émet un cri de guerre d'une puissance impressionnante et devient immunisé contre les charmes, la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, le drainage de niveau, le sort de labyrinthe, l'étourdissement et le sommeil. Les effets du cri perdurent pendant 1 tour.
+**CRI DE GUERRE :** Le combattant émet un cri de guerre d'une puissance impressionnante, cette source d'inspiration pour tous les alliés présents dans un rayon de 4,5 m leur permet d'infliger 10 % de dégâts physiques supplémentaires et augmente de 5 % les chances d'effectuer un coup critique. Les effets du cri perdurent pendant 1 tour.
 
 Ce composant met également à jour les HLAs suivantes afin qu'elles ne puissent plus être retirés par un sort de Brèche ou d'anti-magie : Résistance d'acier, Résistance à la magie, Esquive, Évasion et Assassinat.
 

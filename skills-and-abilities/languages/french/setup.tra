@@ -50,6 +50,7 @@
 @150 = ~Ajouter de nouvelles capacites pour les guerriers~
 @160 = ~Ajustement de la barre d'action pour les personnages Clerc / Voleur~
 @170 = ~Mise à jour du kit d'Archer pour accorder les bonus de toucher et de dégâts avec sa description~
+@180 = ~Les Chants du Barde durent 1 tour~
 
 // Group 2 (Update 200-299)
 @200 = ~Ajouter l'art de retranscrire des sorts sur des parchemins : 2ème édition PnP (installez ce composant si vous prevoyez de configurer le fichier craft_settings.ini)~
