@@ -1,4 +1,10 @@
-## Version 1.2 beta
+## Version 1.2.3 beta
+
+March 14, 2023
+
+- Added critical success/failure for concentration checks.
+
+## Version 1.2.2 beta
 
 March 14, 2023
 

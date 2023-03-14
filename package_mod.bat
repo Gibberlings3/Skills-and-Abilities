@@ -6,7 +6,7 @@ call "%~dp0..\ModPackaging\utilities\ie_games.bat"
 
 REM /* MODIFY: set the values of the 3 variables below to reflect the current mod version */
 set "mod_name=Skills and Abilities"
-set "mod_version=v1.2-beta"
+set "mod_version=v1.2.3-beta"
 set mod_folder=skills-and-abilities
 
 REM /* MODIFY: list here which IE games the mod is compatible with, from this list of possibilities: */
