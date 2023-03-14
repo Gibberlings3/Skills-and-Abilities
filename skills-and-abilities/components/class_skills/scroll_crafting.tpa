@@ -1040,8 +1040,8 @@ END
 //////////////////
 /////////////////       compiling, cre, ability, etc.
 
-COMPILE ~%folder%/data/scrolls/b_scrib.baf~ ~override~
-COMPILE ~%folder%/data/scrolls/b_scrib.d~ ~override~
+COMPILE ~%folder%/data/scrolls/b_scrib.baf~
+COMPILE ~%folder%/data/scrolls/b_scrib.d~ 
 COPY ~%folder%/data/scrolls/b_scrib.cre~ ~override~      //scribe creature
 COPY ~%folder%/data/scrolls/B_SCRIBB.bam~ ~override~      //scribe spl
 COPY ~%folder%/data/scrolls/B_SCRIBC.bam~ ~override~      //scribe spl
