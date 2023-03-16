@@ -649,7 +649,15 @@ ACTION_PHP_EACH lev_general_scroll AS der_spell => der_scroll  BEGIN
                         END
                         //apply final product to 2da
                         INNER_ACTION BEGIN
+                          ACTION_IF ("%der_spell%" STRING_CONTAINS_REGEXP "D5ZARVO") AND
+                                    ("%der_spell%" STRING_CONTAINS_REGEXP "mdk2summ") AND
+                                    ("%der_spell%" STRING_CONTAINS_REGEXP "SpIn593") AND
+                                    ("%der_spell%" STRING_CONTAINS_REGEXP "B_LOV02") AND
+                                    ("%der_spell%" STRING_CONTAINS_REGEXP "SpIn592") AND
+                                    ("%der_spell%" STRING_CONTAINS_REGEXP "GIFTOF_#") AND
+                                    ("%der_spell%" STRING_CONTAINS_REGEXP "MEWI751") BEGIN   //exlude specific spells
                              APPEND ~scrcrft.2da~ ~B_%der_spell%%TAB%%type%%TAB%%name%%TAB%%desc%%TAB%%der_scroll%%TAB%%der_spell%%TAB%%final_gold%%TAB%%level%%TAB%%materials%%TAB%%xp_cost%%TAB%%can_fail%~  //current hp Greater than
+                          END
                         END
                    END//type check
          END//source size
