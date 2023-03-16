@@ -1,9 +1,12 @@
 ## Version 1.2.3 beta
 
+March 15, 2023
+
+- Excluded specific spells that were messing with scroll crafting. 
+
 March 14, 2023
 
 - Added critical success/failure for concentration checks.
-- Excluded specific spells that were messing with scroll crafting. 
 
 ## Version 1.2.2 beta
 
