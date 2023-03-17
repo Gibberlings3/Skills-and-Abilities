@@ -1,5 +1,10 @@
 ## Version 1.2.3 beta
 
+March 17, 2023
+
+- Deleted that weird xp dialog block in craft scrolls (bug 3)
+
+
 March 15, 2023
 
 - Excluded specific spells that were messing with scroll crafting. 
