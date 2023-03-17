@@ -3,7 +3,8 @@
 March 17, 2023
 
 - Deleted that weird xp dialog block in craft scrolls (bug 3)
-
+- Added Make_Cantrip tpa 
+- Make craft scroll spell self renewing (bug 1)
 
 March 15, 2023
 

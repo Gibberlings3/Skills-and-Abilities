@@ -1061,6 +1061,7 @@ COPY ~%folder%/data/scrolls/b_scrib.spl~ ~override~      //scribe spl
         SAY NAME2 @115100
         SAY UNIDENTIFIED_DESC @115101
 	SAY DESC @115101
+	LPF MAKE_CANTRIP INT_VAR type = 1  STR_VAR level_text = "SAME"  END
 COPY ~%folder%/data/scrolls/QDSCRCK.eff~ ~override~      //eff that applies spl to mage or sor
 COPY ~%folder%/data/scrolls/B_APS01.spl~ ~override~      //apply spl to sor
 COPY ~%folder%/data/scrolls/B_APM01.spl~ ~override~      //apply spl to mage
