@@ -591,12 +591,17 @@ ACTION_PHP_EACH lev_general_scroll AS der_spell => der_scroll  BEGIN
                              SET materials = (0)
                         END
                END
-               READ_STRREF 0x0008 s_name
+               READ_STRREF 0x0008 z_name
                READ_LONG  0x0008 name //name ref
                READ_LONG  0x0050 desc //description
                INNER_PATCH_SAVE da_splze ~%SOURCE_RES%~ BEGIN  END
+               INNER_PATCH_SAVE s_name ~%z_name%~ BEGIN
+                 REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~"~ ~~
+                 REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "~" ""
+                 // PATCH_PRINT "What does %s_name% say for %da_splze%?"
+                 END  //now, create spell to scroll list for later use, as well as scroll to level
                //scribe text
-               SPRINT new @115110//new text
+               SPRINT new @115110 //new text
                INNER_ACTION BEGIN
                     COPY ~%folder%/lib/scroll_lists/scroll_text.tpa~ ~%folder%/lib/scroll_lists/scroll_text.tpa~ //spl --> text
                         REPLACE_TEXTUALLY "BEGIN" "BEGIN
@@ -1089,6 +1094,11 @@ COPY_EXISTING kitlist.2da override
                   END
                 END
                 BUT_ONLY
+//now mage clab (which icould be missing if e.g. wild mage clab is altered)
+ACTION_IF (!FILE_EXISTS_IN_GAME ~clabma01.2da~) BEGIN
+ COPY ~%folder%/data/clab/clabma01.2da~ ~override~ 
+END 
+
 ACTION_IF (FILE_EXISTS_IN_GAME ~clabma01.2da~) BEGIN
     OUTER_SET patch_row = 0
  ACTION_IF (%b_mage_scroll% = %b_sorc_scroll%) BEGIN
@@ -1130,7 +1140,7 @@ END
 //Bards first I guess
 ACTION_IF (FILE_EXISTS_IN_GAME ~clabba01.2da~) AND (%b_bard_scroll% > 0) BEGIN
    APPEND ~clabba01.2da~ ~SCRLCRFT ****       ****       ****       ****       ****     ****       ****       ****       ****       ****      ****       ****       ****       ****       ****      ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****~
-   COPY_EXISTING ~clabma01.2da~ ~override~
+   COPY_EXISTING ~clabba01.2da~ ~override~
         READ_2DA_ENTRIES_NOW rows 2
         FOR (row = 0; row < rows; ++row) BEGIN
           FOR (col = 0; col < cols; ++col) BEGIN
@@ -1212,6 +1222,75 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~CLABMO01.2da~) AND (%b_monk_scroll% > 0) BEGIN
           SET_2DA_ENTRY patch_row (%b_monk_scroll%) 2 ~GA_B_SCRIB~ //   b_scrib
         END
 END
+//cleric
+ACTION_IF (FILE_EXISTS_IN_GAME ~CLABPR01.2da~) AND (%b_cleric_scroll% > 0) BEGIN
+   APPEND ~CLABPR01.2da~ ~SCRLCRFT ****       ****       ****       ****       ****     ****       ****       ****       ****       ****      ****       ****       ****       ****       ****      ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****~
+   COPY_EXISTING ~CLABPR01.2da~ ~override~
+        READ_2DA_ENTRIES_NOW rows 2
+        FOR (row = 0; row < rows; ++row) BEGIN
+          FOR (col = 0; col < cols; ++col) BEGIN
+            READ_2DA_ENTRY_FORMER rows row col ~row_title~
+          PATCH_IF (~%row_title%~ STRING_EQUAL_CASE ~SCRLCRFT~) BEGIN
+            SET patch_row = row
+          END
+          END
+        END
+        PATCH_IF (patch_row > 0) BEGIN
+          SET_2DA_ENTRY patch_row (%b_cleric_scroll%) 2 ~GA_B_SCRIB~ //   b_scrib
+        END
+END
+//druid
+ACTION_IF (FILE_EXISTS_IN_GAME ~CLABDR01.2da~) AND (%b_druid_scroll% > 0) BEGIN
+   APPEND ~CLABDR01.2da~ ~SCRLCRFT ****       ****       ****       ****       ****     ****       ****       ****       ****       ****      ****       ****       ****       ****       ****      ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****~
+   COPY_EXISTING ~CLABDR01.2da~ ~override~
+        READ_2DA_ENTRIES_NOW rows 2
+        FOR (row = 0; row < rows; ++row) BEGIN
+          FOR (col = 0; col < cols; ++col) BEGIN
+            READ_2DA_ENTRY_FORMER rows row col ~row_title~
+          PATCH_IF (~%row_title%~ STRING_EQUAL_CASE ~SCRLCRFT~) BEGIN
+            SET patch_row = row
+          END
+          END
+        END
+        PATCH_IF (patch_row > 0) BEGIN
+          SET_2DA_ENTRY patch_row (%b_druid_scroll%) 2 ~GA_B_SCRIB~ //   b_scrib
+        END
+END
+//Shaman (two possible clabs. Not sure if different ones used in different engines, so modify both as base) 
+ACTION_IF (FILE_EXISTS_IN_GAME ~CLABSH01.2da~) AND (%b_shaman_scroll% > 0) BEGIN
+   APPEND ~CLABSH01.2da~ ~SCRLCRFT ****       ****       ****       ****       ****     ****       ****       ****       ****       ****      ****       ****       ****       ****       ****      ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****~
+   COPY_EXISTING ~CLABSH01.2da~ ~override~
+        READ_2DA_ENTRIES_NOW rows 2
+        FOR (row = 0; row < rows; ++row) BEGIN
+          FOR (col = 0; col < cols; ++col) BEGIN
+            READ_2DA_ENTRY_FORMER rows row col ~row_title~
+          PATCH_IF (~%row_title%~ STRING_EQUAL_CASE ~SCRLCRFT~) BEGIN
+            SET patch_row = row
+          END
+          END
+        END
+        PATCH_IF (patch_row > 0) BEGIN
+          SET_2DA_ENTRY patch_row (%b_shaman_scroll%) 2 ~GA_B_SCRIB~ //   b_scrib
+        END
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~CLABSHGS.2da~) AND (%b_shaman_scroll% > 0) BEGIN
+   APPEND ~CLABSHGS.2da~ ~SCRLCRFT ****       ****       ****       ****       ****     ****       ****       ****       ****       ****      ****       ****       ****       ****       ****      ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****       ****~
+   COPY_EXISTING ~CLABSHGS.2da~ ~override~
+        READ_2DA_ENTRIES_NOW rows 2
+        FOR (row = 0; row < rows; ++row) BEGIN
+          FOR (col = 0; col < cols; ++col) BEGIN
+            READ_2DA_ENTRY_FORMER rows row col ~row_title~
+          PATCH_IF (~%row_title%~ STRING_EQUAL_CASE ~SCRLCRFT~) BEGIN
+            SET patch_row = row
+          END
+          END
+        END
+        PATCH_IF (patch_row > 0) BEGIN
+          SET_2DA_ENTRY patch_row (%b_shaman_scroll%) 2 ~GA_B_SCRIB~ //   b_scrib
+        END
+END
+
+
 
 //////////////
 //////kits
