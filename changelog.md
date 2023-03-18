@@ -1,5 +1,12 @@
 ## Version 1.2.3 beta
 
+March 18, 2023
+
+- Fixed an error that was improperly assigning bard craft scroll to mages
+- Fixed issue that was not properly adding craft scroll to base class shamans, druids and clerics
+- Fixed issue that was not properly adding craft scroll to fighter/mages
+- Added a check to remove problematic characters that can interfere with dialog compile
+
 March 17, 2023
 
 - Deleted that weird xp dialog block in craft scrolls (bug 3)
