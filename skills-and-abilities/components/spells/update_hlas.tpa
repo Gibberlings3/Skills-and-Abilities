@@ -11,7 +11,7 @@ COPY ~skills-and-abilities/spl/SPCL904.SPL~ ~override~ // Resist Magic Update
   SAY NAME2 @8037
   SAY UNIDENTIFIED_DESC @8035
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~War Cry~) STR_VAR bam_file = SPCL941C RET MOWCR1A = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@8038) STR_VAR bam_file = SPCL941C RET MOWCR1A = icon END
 COPY ~skills-and-abilities/spl/SPCL908.SPL~ ~override~ // War Cry Update
   SAY NAME1 @8038
   SAY NAME2 @8038
