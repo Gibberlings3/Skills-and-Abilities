@@ -74,6 +74,8 @@ COPY_EXISTING ~CLABFI01.2DA~ override
 ///////////////////////////////////////////////////////////////////////////
 // Update Fighter Description                                            //
 ///////////////////////////////////////////////////////////////////////////
+OUTER_SET fighter_check = 0
+
 ACTION_FOR_EACH description IN 
     clastext 
     sodcltxt 
@@ -86,25 +88,29 @@ ACTION_FOR_EACH description IN
         READ_2DA_ENTRY index 0 col_count row_name
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "FIGHTER" BEGIN
           READ_2DA_ENTRY index 4 col_count fighter_desc
-          PATCH_IF fighter_overhaul BEGIN
-            SPRINT old_fight2 @9509
-            SPRINT new_fight2 @9510
-            SPRINT old_fight3 @9511
-            SPRINT new_fight3 @9512
-            //SPRINT old_fight4 @9513
-            //SPRINT new_fight4 @9514
-            GET_STRREF %fighter_desc% fighter_text
-            INNER_PATCH_SAVE fighter_text ~%fighter_text%~ BEGIN
-              REPLACE_TEXTUALLY ~%old_fight2%~ ~%new_fight2%~
-              REPLACE_TEXTUALLY ~%old_fight3%~ ~%new_fight3%~
-              //REPLACE_TEXTUALLY ~%old_fight4%~ ~%new_fight4%~
-            END
-          END ELSE BEGIN
-            SPRINT old_fight1 @9507
-            SPRINT new_fight1 @9508
-            GET_STRREF %fighter_desc% fighter_text
-            INNER_PATCH_SAVE fighter_text ~%fighter_text%~ BEGIN
-              REPLACE_TEXTUALLY ~%old_fight1%~ ~%new_fight1%~
+          //PATCH_PRINT ~fighter_check = %fighter_check% and fighter_desc = %fighter_desc%~
+          PATCH_IF !(fighter_check = %fighter_desc%) BEGIN
+            fighter_check = %fighter_desc%
+            PATCH_IF fighter_overhaul BEGIN
+              SPRINT old_fight2 @9509
+              SPRINT new_fight2 @9510
+              SPRINT old_fight3 @9511
+              SPRINT new_fight3 @9512
+              //SPRINT old_fight4 @9513
+              //SPRINT new_fight4 @9514
+              GET_STRREF %fighter_desc% fighter_text
+              INNER_PATCH_SAVE fighter_text ~%fighter_text%~ BEGIN
+                REPLACE_TEXTUALLY ~%old_fight2%~ ~%new_fight2%~
+                REPLACE_TEXTUALLY ~%old_fight3%~ ~%new_fight3%~
+                //REPLACE_TEXTUALLY ~%old_fight4%~ ~%new_fight4%~
+              END
+            END ELSE BEGIN
+              SPRINT old_fight1 @9507
+              SPRINT new_fight1 @9508
+              GET_STRREF %fighter_desc% fighter_text
+              INNER_PATCH_SAVE fighter_text ~%fighter_text%~ BEGIN
+                REPLACE_TEXTUALLY ~%old_fight1%~ ~%new_fight1%~
+              END
             END
           END
           INNER_ACTION BEGIN
