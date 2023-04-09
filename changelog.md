@@ -3,25 +3,16 @@
 April 8, 2023
 
 - Corrected bug where fighter abilities were duplicated in the description.
+- Fixed an error that was improperly assigning bard craft scroll to mages.
+- Fixed issue that was not properly adding craft scroll to base class shamans, druids and clerics.
+- Fixed issue that was not properly adding craft scroll to fighter/mages.
+- Added a check to remove problematic characters that can interfere with dialog compile.
+- Deleted that weird xp dialog block in craft scrolls (bug 3).
+- Added Make_Cantrip tpa. 
+- Make craft scroll spell self renewing (bug 1).
+- Excluded specific spells that were messing with scroll crafting. 
 
 ## Version 1.2.3 beta
-
-March 18, 2023
-
-- Fixed an error that was improperly assigning bard craft scroll to mages
-- Fixed issue that was not properly adding craft scroll to base class shamans, druids and clerics
-- Fixed issue that was not properly adding craft scroll to fighter/mages
-- Added a check to remove problematic characters that can interfere with dialog compile
-
-March 17, 2023
-
-- Deleted that weird xp dialog block in craft scrolls (bug 3)
-- Added Make_Cantrip tpa 
-- Make craft scroll spell self renewing (bug 1)
-
-March 15, 2023
-
-- Excluded specific spells that were messing with scroll crafting. 
 
 March 14, 2023
 
