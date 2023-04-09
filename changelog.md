@@ -1,3 +1,9 @@
+## Version 1.3 beta
+
+April 8, 2023
+
+- Corrected bug where fighter abilities were duplicated in the description.
+
 ## Version 1.2.3 beta
 
 March 18, 2023
