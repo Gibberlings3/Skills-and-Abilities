@@ -1,3 +1,9 @@
+## Version 1.4 beta
+
+June xx, 2023
+
+- Corrected Blade update to assign APR to creatures who are a blade.
+
 ## Version 1.3 beta
 
 April 8, 2023

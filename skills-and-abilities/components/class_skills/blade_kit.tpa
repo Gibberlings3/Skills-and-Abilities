@@ -54,6 +54,7 @@ READ_LONG 0x2c8 fx_num ELSE 0
 READ_BYTE 0x33  fx_type ELSE 2
 READ_ASCII  0x280 deathvar
 READ_LONG 0x244 kit
+READ_BYTE 0x234 level
 SET bastard = 0
 SET longsword = 0
 SET shortsword = 0
@@ -279,6 +280,15 @@ PATCH_IF (~%kit%~ = 0x400d0000) AND !(FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%de
   PATCH_IF (twoweapon > 0) BEGIN
       LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = twoweapon parameter2 = 114 timing = 9 END
   END
+
+ // Add APR Bonus
+ PATCH_IF (level > 9) BEGIN
+  LPF ADD_CRE_EFFECT INT_VAR opcode = 1 parameter1 = 6 parameter2 = 0 timing = 9 END
+ END
+ PATCH_IF (level > 19) BEGIN
+  LPF ADD_CRE_EFFECT INT_VAR opcode = 1 parameter1 = 6 parameter2 = 0 timing = 9 END
+ END
+
 END
 BUT_ONLY
 
