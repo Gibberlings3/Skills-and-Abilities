@@ -82,7 +82,7 @@ This allows for HLAs to be useable within IWDEE under the same BG2: EE requireme
 
 **RESIST MAGIC:** This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. A warrior can use the Resist Magic ability to gain 40% Magic Resistance. The ability lasts for 1 round for every 2 levels of the warrior.
 
-**WAR CRY:** With a War Cry, the warrior emits a powerful yell and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep. The effects from the yell last for 1 turn.
+**WAR CRY:** With a War Cry, the warrior emits a powerful yell inspiring all allies within a 15-ft. radius. Allies increase their physical damage dealt by 10% and critical hit chance by 5% for 1 turn.
 
 This also updates the following HLAs so they CANNOT be removed by Breach or anti-magic spell: Hardiness, Resist Magic, Avoid Death, Evasion, Greater Evasion, and Assassination.
 (more in progress)
