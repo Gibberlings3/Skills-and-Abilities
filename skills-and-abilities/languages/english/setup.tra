@@ -70,7 +70,7 @@
 // Group 5 (Update 500-599)
 
 // Group 7 (Update 700-799)
-@700 = ~Overhaul PfNW and PfMW~
+@700 = ~Overhaul PfNW and PfMW (EXPERIMENTAL)~
 @710 = ~Add New HLAs for ALL Classes and Kits~
 @720 = ~Update Existing HLAs~
 @730 = ~Add HLAs to IWDEE (Lefreut UI Required)~
