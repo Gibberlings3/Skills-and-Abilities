@@ -355,6 +355,8 @@ Being this requires EEex to run, Windows is required at this time.
 
 The Overhaul Proficiency System Component is not compatible with other mods that alter or change the proficiency system like Tweaks Anthology and Scales of Balance. Both are great mods, so choose whichever component you like best. 
 
+I recommend installing this mod near the end of your install. I do my install after SCS but before EET_END.
+
 ## Special Thanks
 
 - Bubb for all of his work on EEex and general coding assistance.
