@@ -3,6 +3,7 @@
 June xx, 2023
 
 - Corrected Blade update to assign APR to creatures who are a blade.
+- ini option to allow Bardic Wonders Skalds to use Theiving Skills (defaulted to no).
 
 ## Version 1.3 beta
 

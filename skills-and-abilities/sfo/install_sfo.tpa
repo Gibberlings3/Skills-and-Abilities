@@ -1,0 +1,37 @@
+// NB: as of SCS v33.5 SFO needs the ini system to have been installed already (from lib_ini)
+// Taken and modified from SCS
+
+ACTION_IF !VARIABLE_IS_SET sfo_installed BEGIN
+
+  OUTER_SET sfo_installed=1
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Sanity check for AUTO_EVAL_STRINGS
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ OUTER_SPRINT var testers
+ OUTER_SPRINT players var
+ ACTION_IF !"%%players%%" STRING_EQUAL testers BEGIN
+      FAIL "AUTO_EVAL_STRINGS is not set (you need to include it in your tp2 preamble to use SFO)"
+ END
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Get the debug variable from ini; run silent if it's set to zero
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+LAF check_ini STR_VAR ini="debug_variable" RET debug_variable=value END
+ACTION_IF debug_variable=0 BEGIN SILENT END
+
+///////////////////////////////////////////////////////////////////////////
+// Detect ini Presets                                                    //
+///////////////////////////////////////////////////////////////////////////
+    LAF check_ini STR_VAR ini="skald_thieving" RET value END
+    ACTION_IF value BEGIN
+      OUTER_SET skld_thf=1
+    END ELSE BEGIN
+      OUTER_SET skld_thf=0
+    END
+END
+VERBOSE
+
+
+

@@ -99,18 +99,16 @@ ACTION_IF bard_skill THEN BEGIN
   BUT_ONLY
 END
 
-/*
 ///////////////////////////////////////////////////////////////////////////
 // Remove Bardic Wonders Restriction on No Pickpocketing for Skald       //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_IF bard_skill THEN BEGIN
+ACTION_IF bard_skill AND skld_thf THEN BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~SPCL542.SPL~ BEGIN
     COPY_EXISTING ~SPCL542.SPL~ ~override~
       LPF DELETE_EFFECT INT_VAR match_opcode = 144 END
     BUT_ONLY
   END
 END
-*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Skills for ALL Bard Kits                                          //

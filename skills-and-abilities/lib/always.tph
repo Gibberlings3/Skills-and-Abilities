@@ -13,8 +13,16 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
   OUTER_SET monk_skills=0
 
 ///////////////////////////////////////////////////////////////////////////
+// Set up ini system                                                     //
+///////////////////////////////////////////////////////////////////////////
+   INCLUDE ~skills-and-abilities/lib/lib_ini.tpa~
+    OUTER_SPRINT ini_to_read "skills-and-abilities/skills-and-abilities.ini"
+    LAF SFO_read_ini_file RET_ARRAY SFO_reserved_ini_hash END
+
+///////////////////////////////////////////////////////////////////////////
 // General variables, macros and functions                               //
 ///////////////////////////////////////////////////////////////////////////
+   INCLUDE ~skills-and-abilities/sfo/install_sfo.tpa~
    INCLUDE ~skills-and-abilities/craft_settings.ini~
    INCLUDE ~skills-and-abilities/lib/hla_actions.tpa~
    INCLUDE ~skills-and-abilities/lib/make_cantrip.tpa~
