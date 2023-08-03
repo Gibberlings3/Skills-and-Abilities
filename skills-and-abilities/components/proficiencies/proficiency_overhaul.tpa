@@ -2319,6 +2319,9 @@ END
 // Update Proficiency Stats for all Creatures                            //
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
+OUTER_SET blinded = RESOLVE_STR_REF (@7150)
+OUTER_SET held = RESOLVE_STR_REF (@7151)
+
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~
 SPRINT source ~%SOURCE_FILE%~
 READ_LONG 0x2c4 fx_off ELSE 0
@@ -2507,15 +2510,15 @@ END
 PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.2da~ ~%deathvar%~)) BEGIN
   
   // Cycle through all Warriors to capture starting pips
-  PATCH_IF ((class = 2) OR                                    // Fighter
-            (class = 6) OR                                    // Paladin
+  PATCH_IF ((class = 2)   OR                                  // Fighter
+            (class = 6)   OR                                  // Paladin
             ((class =  7) AND !((dual & BIT4) = BIT4)) OR     // Fighter_Mage
             ((class =  8) AND !((dual & BIT5) = BIT5)) OR     // Fighter_Cleric
             ((class =  9) AND !((dual & BIT6) = BIT6)) OR     // Fighter_Thief
-            (class = 10) OR                                   // FMT
-            (class = 12) OR                                   // Ranger    
+            (class = 10)  OR                                  // FMT
+            (class = 12)  OR                                  // Ranger    
             ((class = 16) AND !((dual & BIT7) = BIT7)) OR     // Fighter_Druid
-            (class = 17) OR                                   // FMC
+            (class = 17)  OR                                  // FMC
             ((class = 18) AND !((dual & BIT5) = BIT5))) BEGIN // Cleric_Ranger
               PATCH_IF (level > 0) BEGIN
                 new_pip_amount += 4 // 4 pips at level 1
@@ -2563,23 +2566,23 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
 */
 
   // Cycle through all mages, sorcerers, clerics, druids, shamans, monks, theives, and bards to capture starting pips
-  PATCH_IF ((class = 1) OR                                    // Mage
-            ((class = 3) OR                                   // Cleric
-            (class = 4) OR                                    // Thief
-            (class = 5) OR                                    // Bard
+  PATCH_IF ((class = 1)   OR                                  // Mage
+            ((class = 3)  OR                                  // Cleric
+            (class = 4)   OR                                  // Thief
+            (class = 5)   OR                                  // Bard
             ((class =  7) AND ((dual & BIT4) = BIT4)) OR      // Mage->Fighter
             ((class =  8) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Fighter
             ((class =  9) AND ((dual & BIT6) = BIT6)) OR      // Thief->Fighter
-            (class = 11) OR                                   // Druid
+            (class = 11)  OR                                  // Druid
             ((class = 13) AND ((dual & BIT4) = BIT4)) OR      // Mage->Thief
             ((class = 13) AND !((dual & BIT4) = BIT4)) OR     // Thief_Mage
             ((class = 14) AND ((dual & BIT4) = BIT4)) OR      // Mage->Cleric
             ((class = 14) AND !((dual & BIT4) = BIT4)) OR     // Cleric_Mage
-            (class = 15) OR                                   // Cleric_Thief
+            (class = 15)  OR                                  // Cleric_Thief
             ((class = 16) AND ((dual & BIT7) = BIT7)) OR      // Druid->Fighter
             ((class = 18) AND ((dual & BIT5) = BIT5)) OR      // Cleric->Ranger
             (class = 19)) OR                                  // Sorcerer
-            (class = 20) OR                                   // Monk
+            (class = 20)  OR                                  // Monk
             (class = 21)) BEGIN                               // Shaman
               PATCH_IF (level > 0) BEGIN
                 new_pip_amount += 2 // 2 pips at level 1
@@ -3083,6 +3086,7 @@ END ELSE BEGIN
 
     // Conditioning FIGHTER ONLY
     PATCH_IF (class = 2) BEGIN
+        /*
         PATCH_IF (level >= 16) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 92 timing = 9 END
         END ELSE PATCH_IF (level >= 12) AND (level < 16) BEGIN
@@ -3094,15 +3098,42 @@ END ELSE BEGIN
         END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 92 timing = 9 END
         END
+        */
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 33 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        PATCH_IF (level >= 4) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 126 target = 1 parameter1 = 1 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 8) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 267 target = 1 parameter1 = ~%blinded%~ timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 169 target = 1 parameter2 = 8 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 74 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 12) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 318 target = 1 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 STR_VAR resource = ~SPCL321D~ END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 93 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 16) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 98 target = 1 parameter1 = 6 parameter2 = 3 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END
     END
     // PALADIN and RANGER
     PATCH_IF (class = 6) OR (class = 12) BEGIN 
         // Devotion
+        /*
         PATCH_IF (level >= 4) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 91 timing = 9 END
         END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
         END
+        */
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 0 target = 1 parameter1 = 1 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        PATCH_IF (level >= 4) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 33 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 34 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 35 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 36 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 37 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END 
     END
 
     // CLERICs and DRUIDs 
@@ -3114,6 +3145,7 @@ END ELSE BEGIN
         (class = 18) OR // CLERIC_RANGER
         (class = 21) BEGIN // Shaman
         // Devotion
+        /*
         PATCH_IF (level >= 12) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
         END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
@@ -3125,12 +3157,41 @@ END ELSE BEGIN
         END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
         END
+        */
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 0 target = 1 parameter1 = 1 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        PATCH_IF (level > 1) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 33 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 34 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 35 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 36 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 37 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END 
+        PATCH_IF (level >= 4) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 296 target = 1 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~SPFLAYER~ END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 296 target = 1 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~SPMINDAT~ END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 267 target = 1 parameter1 = ~%held%~ timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 328 target = 1 parameter2 = 144 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 109 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 142 target = 1 parameter2 = 19 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 169 target = 1 parameter2 = 13 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 175 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 8) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 86 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 87 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 88 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 89 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 12) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 1 target = 1 parameter1 = 6 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END
     END
 
     // CLERIC_MAGE and FIGHTER_MAGE_CLERIC
     PATCH_IF (class = 14) OR (class = 17) BEGIN
         // Hybrid Spellcraft and Devotion 
         // PATCH_IF (level >= 20) AND (level < 24) BEGIN
+        /*
         PATCH_IF (level >= 20) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 91 timing = 9 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 3 parameter2 = 90 timing = 9 END
@@ -3152,6 +3213,42 @@ END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 91 timing = 9 END
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
         END
+        */
+        LPF ADD_CRE_EFFECT INT_VAR opcode = 0 target = 1 parameter1 = 1 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        PATCH_IF (level > 1) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 33 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 34 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 35 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 36 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 37 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END
+        PATCH_IF (level >= 4) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 296 target = 1 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~SPFLAYER~ END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 296 target = 1 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~SPMINDAT~ END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 267 target = 1 parameter1 = ~%held%~ timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 328 target = 1 parameter2 = 144 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 109 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 142 target = 1 parameter2 = 19 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 169 target = 1 parameter2 = 13 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 parameter2 = 175 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 8) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 86 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 87 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 88 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 89 target = 1 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 12) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 1 target = 1 parameter1 = 6 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END
+        PATCH_IF (level >= 16) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 48 target = 1 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 169 target = 1 parameter2 = 34 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 142 target = 1 parameter2 = 103 timing = 9 resist_dispel = 2 probability1 = 100 END 
+        END
+        PATCH_IF (level >= 20) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 191 target = 1 parameter1 = 1 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END
     END
 
     // MAGES, BARDS, and SORCERER
@@ -3162,6 +3259,7 @@ END ELSE BEGIN
         (class = 13) OR     // MAGE_THIEF
         (class = 19) BEGIN  // SORCERER
         // Spellcraft
+        /*
         PATCH_IF (level >= 12) BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 5 parameter2 = 90 timing = 9 END
         END ELSE PATCH_IF (level >= 8) AND (level < 12) BEGIN
@@ -3172,6 +3270,23 @@ END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 2 parameter2 = 90 timing = 9 END
         END ELSE BEGIN
             LPF ADD_CRE_EFFECT INT_VAR opcode = 233 parameter1 = 1 parameter2 = 90 timing = 9 END
+        END
+        */
+        PATCH_IF (level > 1) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 48 target = 1 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 169 target = 1 parameter2 = 34 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 142 target = 1 parameter2 = 103 timing = 9 resist_dispel = 2 probability1 = 100 END
+        END
+        PATCH_IF (level >= 4) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 191 target = 1 parameter1 = 1 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END
+        PATCH_IF (level >= 8) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 166 target = 1 parameter1 = 10 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 142 target = 1 parameter2 = 63 timing = 9 resist_dispel = 2 probability1 = 100 END
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 37 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END
+        END
+        PATCH_IF (level >= 12) BEGIN
+          LPF ADD_CRE_EFFECT INT_VAR opcode = 189 target = 1 parameter1 = 2 parameter2 = 0 timing = 9 resist_dispel = 2 probability1 = 100 END
         END
     END
 END
