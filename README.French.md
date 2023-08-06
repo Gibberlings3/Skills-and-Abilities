@@ -137,42 +137,6 @@ BOURRASQUE : Les moines reçoivent une attaque supplémentaire par round.
 
 OURAGAN : Les moines reçoivent une attaque supplémentaire par round.
 
-### **Coming Soon** Capacités spéciales pour les Barbares ((EEex recommandé)
-
-Choisissez un " ensemble " pour les barbares ou choisissez chaque compétence individuellement.
-
-Barbares 1ère édition " ensemble numéro 1 " ((EEex recommandé): Ajouter Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et supprimer Rage du Barbare. (Le barbare ne disposera pas de la capacité spécial Rage du Barbare.)
-
-Barbares 1ère édition " ensemble numéro 2 " ((EEex recommandé): Ajouter Pose de Pièges Ancestral, Se cacher dans la Nature, Détection des illusions, et conserver Rage du Barbare
-
-Compétences individuelles pour les barbares :
-
-Ajouter Pose de Pièges Ancestral, permet de poser de pièges dans la nature uniquement.
-
-- 1er niveau : Gagne la capacité Pose de Pièges Ancestral. Gagne une utilisation supplémentaire tous les 5 niveaux.
-
-POSE DE PIEGE ANCESTRAL : Pose un piège à l'endroit choisi si aucune créature hostile n'est en vue. Les pièges deviennent plus puissants avec le niveau du personnage et ne peuvent être déclenchés que par les ennemis.
-  1er niveau : Inflige 2d8+5 points de dégâts perforants.
-  11ème niveau : Inflige 2d8+5 points de dégâts perforants, plus 2d6 dégâts de poison par round pendant 3 rounds.
-  16ème niveau : Inflige 3d8+5 points de dégâts perforants, plus 4d8+2 dégâts de feu.
-  21ème niveau : Inflige 3d8+5 points de dégâts perforants et 20 dégâts de poison sans jet de sauvegarde possible ; la cible est tuée si elle échoue son jet de sauvegarde contre la mort avec un bonus de +4.
-
-Se cacher dans la Nature permet au barbare de se cacher à l'extérieur uniquement (EEex fortement recommande).
-
-Ajouter Détection des illusions similaire aux compétences de voleurs (EEex fortement recommande)
-
-### **Coming Soon** Capacités pour les Barbares
-
-Instinct Sauvage : Détection des illusions comme capacité spéciale ou comme une compétences de voleur, sous l'effet de la Rage.
-
-RAGE DU BARBARE : Pendant 5 rounds, la rage confère un bonus de 4 en Constitution et en Force, une pénalité de 2 à la Classe d'armure et un bonus de 2 aux jets de sauvegarde contre les sorts. La rage immunise aussi contre les sorts de charme, d'immobilisation, d'effroi, de labyrinthe, d'étourdissement, de sommeil, de confusion et d'absorption de niveau.
-
-Instinct Sauvage : Détection des illusions comme une compétences de voleur, sous l'effet de la Rage.
-
-Instinct Sauvage: Détection des illusions comme une compétences améliorée de voleur, sous l'effet de la Rage.
-
-Supprime Rage du barbare : le barbare ne disposera pas de la capacité spécial Rage du Barbare.
-
 ### Capacités spéciales pour les Paladins
 
 - 1er niveau : Peut utiliser la capacité Punition une fois par jour
@@ -190,10 +154,6 @@ AURA DE PROTECTION : Cette capacité confère un bonus de 2 à la CA et 5 % de r
 - Ajoute une capacité de haut niveau : Poings Sanctifier.
 
 POINGS SANCTIFIER : Vous infligez 2 points de dégâts magiques supplémentaires avec vos attaques. 
-
-### Capacités spéciales pour les Rôdeurs
-
-Ajoute Pose de Pièges Ancestral et Pistage, utilisable uniquement en extérieur, pour tous les Rôdeurs et leurs kits. les capacités de Rôdeurs Déplacement silencieux et Se cacher dans l'ombre deviennent utilisable uniquement en extérieur.
 
 ### Améliorations pour les Tueurs de magiciens (EEex nécessaire)
 
@@ -215,12 +175,6 @@ Le talent naturel pour repousser les morts-vivants est remplacé par une nouvell
 ### Ajustement de la barre d'action pour les Clerc / Voleur (EEex nécessaire)
 
 Ce composant remplace le bouton Repousser les morts-vivants de la barre d'action des clercs / voleurs par les capacités de voleur. Il est recommandé si le composant précédent "Révision de la capacité repousser les morts-vivants" est installé.
-
-## Nouvelles compétences et assimilées
-
-### Art de retranscrire des sorts sur des parchemins
-
-Ce composant permet au joueur de créer des parchemins en utilisant les règles de 2ème édition PnP, 2ème édition alternative et 3ème édition.
 
 ## Compétences/Talents
 
@@ -349,15 +303,11 @@ Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution div
 - Tireur (1 point de compétence) : Le personnage bénéficie d'un bonus de 2 aux jets de dégâts.
 - Élite (2 points de compétence) : Le personnage gagne 1/2 attaque supplémentaire par round lorsqu'il utilise des armes à distance.
 
-**Coming soon** Plus de Compétences/Talents.
-
 ## Bonus lié aux statistiques plus significatifs
 
 ### Force 
 
 Les armes à deux mains font 50% de dégâts de Force en plus, arrondi à l'unité inférieure.
-
-**Coming soon** Plus d'avantages pour d'autres statistiques.
 
 ## Compatibilité
 Ce mod possède des composants (décrits ci-dessus) nécessitant [EEex](https://github.com/Bubb13/EEex/releases/latest) créé par Bubb pour fonctionner. Si vous installez ces composants, vous devrez lancer votre jeu avec InfinityLoader.exe au lieu du fichier standard Baldur.exe.

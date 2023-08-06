@@ -1,11 +1,12 @@
-## Version 1.4 beta
+## Version 2.0
 
-June xx, 2023
+August 6, 2023
 
-- Corrected Blade update to assign APR to creatures who are a blade.
+- Corrected Blade to assign APR to creatures who are a blade.
 - ini option to allow Bardic Wonders Skalds to use Theiving Skills (defaulted to no).
 - Renamed Pladin overhaul's Smite to Divine Smite.
-- Non-playable npcs/enemies will now gain the benefits of Spellcraft, Conditioning and Divine.
+- Non-playable npcs/enemies will now gain the benefits of Spellcraft, Conditioning, and Divine.
+- Removed scroll crafting due to interference from notrorious community member.
 
 ## Version 1.3 beta
 

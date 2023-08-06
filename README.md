@@ -133,44 +133,6 @@ FLURRY OF BLOWS: Monks gain an extra APR.
 
 PERFECT SELF: The monk is no longer constrained by the trappings of time and becomes immune to Time Stop.
 
-### **Coming Soon** Barbarian Skills (EEex Recommended)
-
-Select 1e Barbarian for the 1e barbarian 'package' or select each skill separately.
-
-1e Barbarian 'package' (two subcomponents)
-
-1e Barbarian 'package 1'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Removes Rage (1e barbarian did not have rage)
-
-1e Barbarian 'package 2'(EEex Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, and Keeps Rage 
-
-Individual Barbarian Skills:
-
-Add Set Natural Snares, allowing snares to be set in outdoor areas only.  
-
-- 1st Level: Gains use of the Set Natural Snares ability. Gains an additional use every 5 levels. 
-
-SET NATURAL SNARES: DESC
-
-Hide in Natural Settings, allowing the barbarian to hide outdoors only (EEex Strongly Recommended).
-
-Add Detect Illusions as a thief (EEex Strongly Recommended)
-
-### **Coming Soon** Barbarian Abilities 
-
-Feral Senses: Detect Illusion spell-like ability or as a thief-like ability while raging
-
-BARBARIAN RAGE: DESC
-
-Feral Senses: Detect Illusion thief-like ability while raging 
-
-BARBARIAN RAGE: DESC
-
-Feral Senses: Detect Illusion as an improved thief-like ability while raging 
-
-BARBARIAN RAGE: DESC
-
-Remove Rage: Removes rage from the barbarian
-
 ### Add New Paladin Abilities
 
 - 1st Level: May use the Smite ability once per day.
@@ -188,10 +150,6 @@ AURA OF PROTECTION: This ability grants -2 bonus to AC and +5% physical damage r
 - New HLA Ability: Sanctify Strikes.
 
 SANCTIFY STRIKES: You deal 2 extra points of magic damage with your attacks. 
-
-### Ranger Skills
-
-Adds Set Natural Snares and Tracking, both outdoor areas only, to all Rangers and Ranger kits. Ranger's Move Silently/Hide in Shadows becomes an outdoor area only ability.
 
 ### Wizard Slayer Enhancements (EEex Required)
 
@@ -212,12 +170,6 @@ The existing Turn Undead is being replaced with a new ability. Clerics may now c
 ### Adjust Cleric/Thief Actionbar (EEex Required)
 
 This component replaces the Turn Undead modal button on the Cleric/Thief Actionbar with the Thieving Ability. This is recommended if the Turn Undead Overhaul (previous component) is installed.
-
-## New Skills and Pseudo-Skills
-
-### Add Spell Scroll Crafting
-
-This allows the player to craft scrolls either using 2e rules, modified 2e rules, or 3e rules.
 
 ## Proficiencies
 
@@ -345,8 +297,6 @@ NOTE: Even though other classes may have access to this weapon style, only Fight
 ### Strength 
 
 Two-handed attacks receive one and a half times the Strength damage bonus, rounded down.
-
-**Coming soon** more benefits to other stats.
 
 ## Compatibility
 This mod has components (outlined above) requiring [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. If you install these components, you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file.
