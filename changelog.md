@@ -6,7 +6,7 @@ August 6, 2023
 - ini option to allow Bardic Wonders Skalds to use Theiving Skills (defaulted to no).
 - Renamed Pladin overhaul's Smite to Divine Smite.
 - Non-playable npcs/enemies will now gain the benefits of Spellcraft, Conditioning, and Divine.
-- Removed scroll crafting due to interference from notrorious community member.
+- Removed scroll crafting due to interference from notorious community member.
 
 ## Version 1.3 beta
 
