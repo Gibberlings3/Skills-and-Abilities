@@ -119,7 +119,6 @@ INCLUDE ~skills-and-abilities/components/spells/update_enrage.tpa~
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @750 DESIGNATED 750 GROUP @7 LABEL SkillsAndAbilitiesConcentration
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3008
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/spells/concentration.tpa~
