@@ -1,3 +1,9 @@
+## Version 2.1
+
+September xx, 2023
+
+- Add Concentration Check to Resist Spell Disruption component.
+
 ## Version 2.0
 
 August 6, 2023
