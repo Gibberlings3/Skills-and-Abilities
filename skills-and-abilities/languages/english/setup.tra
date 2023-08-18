@@ -75,6 +75,7 @@
 @720 = ~Update Existing HLAs~
 @730 = ~Add HLAs to IWDEE (Lefreut UI Required)~
 @740 = ~Update Berserker's Enrage Ability~
+@750 = ~Add Concentration Check to Resist Spell Disruption~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //

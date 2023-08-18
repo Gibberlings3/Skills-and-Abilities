@@ -17,11 +17,12 @@ ACTION_FOR_EACH import IN
         SAY NAME1 @5528
         SAY NAME2 @5528
     END
-*/
+
 ACTION_IF !FILE_EXISTS_IN_GAME ~m_motest.lua~ THEN BEGIN
   COPY ~skills-and-abilities/2da/concentr.2da~  ~override~ // Concentration 2da
   COPY ~skills-and-abilities/lua/m_motest1.lua~ ~override/m_motest~ // lua file
 END
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Variable Set                                                          //
