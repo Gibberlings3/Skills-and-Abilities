@@ -13,9 +13,9 @@ Vous infligez 2 points de dégâts magiques supplémentaires avec vos attaques.~
 @6005 = ~Dés de vie : d10~
 @6006 = ~Dés de vie : d10
 
-- 1er niveau : Peut utiliser la capacité Punition une fois par jour
+- 1er niveau : Peut utiliser la capacité Punition divine une fois par jour
 
-PUNITION : Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur niveau de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round. Punition peut être utilisé une fois par jour au 1er niveau. Le paladin gagne une utilisation supplémentaire au 5e niveau et tous les cinq niveaux suivants.
+PUNITION DIVINE : Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur niveau de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round. Punition peut être utilisé une fois par jour au 1er niveau. Le paladin gagne une utilisation supplémentaire au 5e niveau et tous les cinq niveaux suivants.
 
 - 3ème niveau : Gagne la capacité passive Aura de Courage.
 
@@ -32,8 +32,8 @@ AURA DE DÉSESPOIR: Lorsque cette capacité est activée, tous les ennemis situ�
 
 AURA DE DÉSESPOIR : Le Chevalier Noir dégage une aura maléfique qui fait subir un malus de 2 à tout les jets de sauvegarde des ennemis se trouvant à moins de 5 mètres.~
 
-@6009 = ~Punition~
-@6010 = ~Punition
+@6009 = ~Punition divine~
+@6010 = ~Punition divine
 Cette capacité permet au paladin d'effectuer une attaque spéciale contre n'importe quel ennemi. Les paladins ajoutent leur modificateur de Charisme à leur jet d'attaque et à leur jet de dégâts pendant un round.~
 
 @6011 = ~– Ne peut pas utiliser de sorts de prêtres~

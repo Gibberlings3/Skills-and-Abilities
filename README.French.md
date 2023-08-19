@@ -18,7 +18,12 @@ Certains composants nécessitent EEex pour fonctionner, et ceux-ci sont identifi
 
 ## Sorts et Capacités de haut niveau
 
-### Révision des sorts de Protection contre les armes magiques et non-magiques.
+### Ajouter un jet de concentration afin de résister à l'interruption des sorts (EEex nécessaire)
+
+Ajout d'un calcul pour résister à l'interruption des sorts. [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis].
+Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis). Si les dégâts subits sont inférieur à 10 points de dégâts, ils seront portés à 10 pour le bon fonctionnement du calcul de l'interruption des sorts. Le composant "Révision du Système de Compétence" sera mis à jour avec une nouvelle compétence.
+
+### Révision des sorts de Protection contre les armes magiques et non-magiques. (EXPERIMENTAL)
 
 Protection mineure contre les dégâts physiques
 (Abjuration)
@@ -275,7 +280,7 @@ REMARQUE : même si d'autres classes peuvent accéder à ce style d'arme, seuls 
 - Incantation impassible (2 points de compétence) : Le personnage augmente de nouveau ses chances de résister à l'interruption des sorts de 4, ce qui porte cette résistance à 8.
 
 REMARQUE : le calcul pour résister à l'interruption des sorts est [1d20 + Chance + (Constitution / 2) - 5 + Concentration] > [Dégâts subis].
-Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis). Si les dégâts subits sont inférieur à 10 points de dégâts, ils seront portés à 10 pour le bon fonctionnement du calcul de l'interruption des sorts..
+Soit un jet de 1d20 + les bonus dû à la Chance + (le score de Constitution divisé par 2) - 5 + les bonus de la compétence Concentration, le tout doit être supérieur aux (dégâts subis). Si les dégâts subits sont inférieur à 10 points de dégâts, ils seront portés à 10 pour le bon fonctionnement du calcul de l'interruption des sorts.
 
 **ARC :** Cette classe d'arme permet au personnage d'utiliser des arcs longs, des arcs longs composites et des arcs courts. Seuls les Guerriers, les Rôdeurs et les Paladins peuvent utiliser l'arc long composite. Les voleurs peuvent aussi choisir cette compétence, mais ils ne pourront utiliser que les arcs courts.  
 
@@ -315,6 +320,9 @@ Ce mod possède des composants (décrits ci-dessus) nécessitant [EEex](https://
 Étant donné que le fonctionnement d'EEex est nécessaire, Windows est requis pour le moment.
 
 Le composant "Révision du Système de Compétence" ( Overhaul Proficiency System ) n'est pas compatible avec les mods qui modifient ou changent le système de compétence comme Tweaks Anthology et Scales of Balance. Ces deux mods sont excellents, choisissez celui qui vous convient le mieux.
+
+
+L'auteur recommande d'installer Skills-and-Abilities après Sword Coast Stratagems (SCS), mais avant EET_End !
 
 ## Remerciements
 
