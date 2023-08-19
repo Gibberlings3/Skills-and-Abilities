@@ -75,7 +75,7 @@
 @720 = ~Mise a jour des Capacites de haut niveau du jeu original~
 @730 = ~Ajouter les Capacites de haut niveau pour IWDEE (Lefreut UI doit etre installe)~
 @740 = ~Mise a jour de la Rage du Berserker~
-@750 = ~Add Concentration Check to Resist Spell Disruption~
+@750 = ~Ajouter un jet de concentration afin de résister à l'interruption des sorts ~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
