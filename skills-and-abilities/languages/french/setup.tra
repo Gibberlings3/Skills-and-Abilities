@@ -70,11 +70,12 @@
 // Group 5 (Update 500-599)
 
 // Group 7 (Update 700-799)
-@700 = ~Revision des sorts de Protection contre les armes magiques et non-magiques.~
+@700 = ~Revision des sorts de Protection contre les armes magiques et non-magiques. (EXPERIMENTAL)~
 @710 = ~Ajouter de nouvelles Capacites de haut niveau pour toutes les Classes et tous les Kits~
 @720 = ~Mise a jour des Capacites de haut niveau du jeu original~
 @730 = ~Ajouter les Capacites de haut niveau pour IWDEE (Lefreut UI doit etre installe)~
 @740 = ~Mise a jour de la Rage du Berserker~
+@750 = ~Add Concentration Check to Resist Spell Disruption~
 
 ///////////////////////////////////////////////////////////////////////////
 // Requirements                                                          //
