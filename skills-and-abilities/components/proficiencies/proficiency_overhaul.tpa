@@ -37,6 +37,7 @@ COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial
 
 
 ACTION_IF fighter_overhaul THEN BEGIN
+  // This ensures correct assignment of specialized weapon profs to where everything is relocated
   COPY ~skills-and-abilities/spl/proficiencies/c0fig04.SPL~ ~override~ // Artisan Kitpack Updates
 END
 
