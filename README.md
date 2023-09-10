@@ -96,6 +96,8 @@ This also updates the following HLAs so they CANNOT be removed by Breach or anti
 
 Adds the option to either select Open Locks only or Open Locks and Disarm/Find Traps for Bards and Bard kits.
 
+PLEASE NOTE: Bardic Wonders restricts Skalds from being able to use theiving skills. If you have Bardic Wonders installed and want a Skald to use full theiving, then you will need to update "skald_thieving" in the ini from 0 to 1.
+
 ### Blade Kit Enhancements
 
 This allows the Bard Blade Kit to master (3 slots) in all bladed weapons and receive a 0.5 APR boost at level 10 and again at level 20. This will also update all non-recruitable Blades within the game to have specialization in the melee weapon(s) of their choice. This is compatible with Bardic Wonders improved Blade Kit; however, this will need to be installed after it AND it will remove the GM bonuses provided by Bardic Wonders for the APR boosts at levels 10 and 20.
