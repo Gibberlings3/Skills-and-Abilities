@@ -14,7 +14,7 @@ Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None 
 
-When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 100%. For duration of the spell, the character will be immune to spell interruptions from physical attacks. Additionally, the user becomes immune to any petrification, vorpal, or slaying effects. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage, Protection From Damage, Mantle, Improved Mantle, or Absolute Immunity. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.~
+When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 90%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.~
 
 @5504 = ~Absolute Immunity
 (Abjuration) 
@@ -26,7 +26,7 @@ Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None 
 
-When the spell is cast, it confers complete invulnerability to all damage, regardless of the source. Additionally, the user becomes immune to magical commands, level drain, psionic attacks, petrification, and any vorpal or slaying effects. This spell is incredibly powerful, hence the short duration. However, the casting time is also very short, making this spell incredibly useful in the thick of combat, where buying a few seconds can mean the difference between life or death. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage, Protection From Damage, Mantle, Improved Mantle, or Absolute Immunity. This spell lasts for the duration or until dispelled.~
+When the spell is cast it confers complete invulnerability to all weapons except for those of +5 or better enchantment and increases damage resistance across all damage types by 80%. This spell is incredibly powerful yet has a very short duration, and this combined with the very short casting time makes this spell useful only in the thick of intense combat. This effect lasts for the duration of the spell or until dispelled.~
 
 @5505 = ~Minor Protection From Physical Damage~
 @5506 = ~Minor Protection From Physical Damage
@@ -39,7 +39,7 @@ Casting Time: 2
 Area of Effect: The caster
 Saving Throw: None 
 
-When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 50%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. This effect lasts for the duration of the spell or until dispelled.~
+When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 40%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. This effect lasts for the duration of the spell or until dispelled.~
 
 @5507 = ~Mantle (Abjuration)
 Level: 7
@@ -49,7 +49,7 @@ Casting Time: 1
 Area of Effect: Caster
 Saving Throw: None 
 
-When the spell is cast, it improves physical damage resistance for slashing, crushing, piercing, and missile damage by +60%. For duration of the spell, the character will have a 60% chance to resist spell interruptions from all forms of attacks. Additionally, the user becomes immune to level drain, psionic attacks, petrification, and any vorpal or slaying effects. This spell is incredibly powerful yet has a very short duration, and this combined with the very short casting time makes this spell useful only in the thick of intense combat. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. This effect lasts for the duration of the spell or until dispelled.~
+When the spell is cast it confers complete invulnerability to all weapons except for those of +4 or better enchantment and increases damage resistance across all damage types by 40%. This spell is incredibly powerful yet has a very short duration, and this combined with the very short casting time makes this spell useful only in the thick of intense combat. This effect lasts for the duration of the spell or until dispelled.~
 
 @5508 = ~Improved Mantle (Abjuration)
 Level: 8
@@ -59,7 +59,7 @@ Casting Time: 1
 Area of Effect: Caster
 Saving Throw: None 
 
-When the spell is cast, it improves physical damage resistance for slashing, crushing, piercing, and missile damage by +80%. For duration of the spell, the character will have an 80% chance to resist spell interruptions from all forms of attacks. Additionally, the user becomes immune to magical commands, level drain, psionic attacks, petrification, and any vorpal or slaying effects. This spell is incredibly powerful yet has a very short duration, and this combined with the very short casting time makes this spell useful only in the thick of intense combat. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage, Protection From Damage, Mantle, Improved Mantle, or Absolute Immunity. This effect lasts for the duration of the spell or until dispelled.~
+When the spell is cast it confers complete invulnerability to all weapons except for those of +5 or better enchantment and increases damage resistance across all damage types by 60%. This spell is incredibly powerful hence the duration is so short. However, the casting time is also very short making this spell incredibly useful in the thick of combat where buying a few seconds can mean the difference between life or death. This spell lasts for the duration or until dispelled.~
 
 @5509 = ~Five Levels Drained~
 @5510 = ~Four Levels Drained~

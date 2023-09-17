@@ -34,7 +34,7 @@ Minor Protection From Physical Damage
 - Area of Effect: The caster
 - Saving Throw: None 
 
-When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 50%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. This effect lasts for the duration of the spell or until dispelled.
+When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 40%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. This effect lasts for the duration of the spell or until dispelled.
 
 Protection From Physical Damage (Previously PfMW)
 - Abjuration
@@ -45,7 +45,7 @@ Protection From Physical Damage (Previously PfMW)
 - Area of Effect: The caster
 - Saving Throw: None 
 
-When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 100%. For duration of the spell, the character will be immune to spell interruptions from physical attacks. Additionally, the user becomes immune to any petrification, vorpal, or slaying effects. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.
+When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 90%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.
 
 ### Add HLAs to IWDEE (Lefreut UI Required)
 

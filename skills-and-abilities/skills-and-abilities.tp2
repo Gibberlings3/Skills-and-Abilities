@@ -72,7 +72,7 @@ LANGUAGE ~French~
 BEGIN @700 DESIGNATED 700 GROUP @7 LABEL SkillsAndAbilitiesPfMW
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~dvimhere.mrk~ @3008
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+//REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~skills-and-abilities/components/spells/prot_spells.tpa~
 
