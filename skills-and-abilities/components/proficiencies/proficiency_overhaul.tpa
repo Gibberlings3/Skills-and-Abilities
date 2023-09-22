@@ -35,6 +35,20 @@ COPY ~skills-and-abilities/eff/proficiencies/MOCRS04.EFF~   ~override~ // Improv
 COPY ~skills-and-abilities/eff/proficiencies/MORATHA.EFF~   ~override~ // Racial Thac0 Modifier on weapons
 //COPY ~skills-and-abilities/spl/proficiencies/MODEV3C.SPL~   ~override~ // Divine Vengeance Damage
 
+ACTION_IF !FILE_EXISTS_IN_GAME ~moyag01.itm~ AND imp_yaga BEGIN
+  COPY ~skills-and-abilities/itm/moyag01.itm~ ~override~
+
+  ACTION_FOR_EACH yaga IN
+      yaga01  // Yaga-Shura Siege Camp
+      finyaga // Yaga-Shura Final 5
+    BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~%yaga%.CRE~ BEGIN
+
+        COPY_EXISTING ~%yaga%.CRE~ ~override~
+          ADD_CRE_ITEM ~moyag01~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~ARMOR~ EQUIP
+      END
+    END
+END 
 
 ACTION_IF fighter_overhaul THEN BEGIN
   // This ensures correct assignment of specialized weapon profs to where everything is relocated

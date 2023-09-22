@@ -119,4 +119,11 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
       OUTER_SET bw_blade=0
    END
 
+   // Detect Improved Yaga-Shura
+   ACTION_IF MOD_IS_INSTALLED ~ascension.tp2~ ~1500~ THEN BEGIN
+      OUTER_SET imp_yaga=1
+   END ELSE BEGIN
+      OUTER_SET imp_yaga=0
+   END
+
 END
