@@ -24,3 +24,4 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
         //SET index = abil_num // kills loop, prevents patching if ranged item
       END
     END
+    BUT_ONLY
