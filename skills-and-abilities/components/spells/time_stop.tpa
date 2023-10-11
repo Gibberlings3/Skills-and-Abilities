@@ -16,11 +16,11 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     FOR (index = 0 ; index < abil_num ; ++index) BEGIN
       READ_SHORT (abil_off +        (index * 0x38)) type
       PATCH_IF (type = 1) BEGIN
-        LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 310 target = 2 parameter2 = 1 timing = 0 resist_dispel = 0 duration = 18 probability1 = 100 END
+        LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 310 target = 2 parameter2 = 1 timing = 0 resist_dispel = 0 duration = 6 probability1 = 100 END
       END
 
       PATCH_IF (type = 2) BEGIN
-        LPF ADD_ITEM_EFFECT INT_VAR type = 2 opcode = 310 target = 2 parameter2 = 1 timing = 0 resist_dispel = 0 duration = 18 probability1 = 100 END
+        LPF ADD_ITEM_EFFECT INT_VAR type = 2 opcode = 310 target = 2 parameter2 = 1 timing = 0 resist_dispel = 0 duration = 6 probability1 = 100 END
         //SET index = abil_num // kills loop, prevents patching if ranged item
       END
     END
