@@ -1,0 +1,26 @@
+/*************************************************************************/
+///////////////////////////////////////////////////////////////////////////
+// Skills and Abilities - Time Stop Change                               //
+///////////////////////////////////////////////////////////////////////////
+/*************************************************************************/
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  SPRINT weapon_name ~%SOURCE_FILE%~
+  READ_BYTE  0x31 prof
+  READ_LONG  0x64 abil_off
+  READ_SHORT 0x68 abil_num
+  READ_SHORT 0x1c type
+  //READ_LONG  0x22 appearance
+  READ_ASCII 0x22 appearance (2)
+
+    // Thanks to Cam for providing the below FOR loop to check for weapons header.
+    FOR (index = 0 ; index < abil_num ; ++index) BEGIN
+      READ_SHORT (abil_off +        (index * 0x38)) type
+      PATCH_IF (type = 1) BEGIN
+        LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 310 target = 2 parameter2 = 1 timing = 0 resist_dispel = 0 duration = 18 probability1 = 100 END
+      END
+
+      PATCH_IF (type = 2) BEGIN
+        LPF ADD_ITEM_EFFECT INT_VAR type = 2 opcode = 310 target = 2 parameter2 = 1 timing = 0 resist_dispel = 0 duration = 18 probability1 = 100 END
+        //SET index = abil_num // kills loop, prevents patching if ranged item
+      END
+    END
