@@ -92,7 +92,7 @@ This also updates the following HLAs so they CANNOT be removed by Breach or anti
 
 ### Physical Attacks Break Time Stop (Completed - Next Release)
 
-If a creature is attacked during a Time Stop, they will break free and become immune to the effects of the Time Stop for the next round.
+If a creature is attacked and physically damaged during a Time Stop, they will break free and become immune to the effects of the Time Stop for the next round.
 
 ## Class Updates
 
