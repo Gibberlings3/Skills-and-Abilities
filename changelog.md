@@ -5,6 +5,7 @@ October xx, 2023
 - Add Concentration Check to Resist Spell Disruption component.
 - Updated Wizard Slayer chance to dispel magic on hit from 10% to 25%.
 - New component: Physically Attacked Breaks Time Stop.
+- Stat increase HLAs now show as permanent stat increases (non-highlighted).
 
 ## Version 2.0
 
