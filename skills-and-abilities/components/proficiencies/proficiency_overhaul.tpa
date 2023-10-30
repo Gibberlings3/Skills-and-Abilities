@@ -663,6 +663,26 @@ COPY_EXISTING ~splprot.2da~ ~override~
       // Thrown - 2 Pips
       END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~mo_thrown_prof2~ BEGIN
         SET thrown_prof2 = %row%
+
+      // Weapon Groups - < 2 Pips - addition courtesy of ewelsh42
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_97~ BEGIN
+        SET bow_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_98~ BEGIN
+        SET spiked_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_99~ BEGIN
+        SET ssword_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_100~ BEGIN
+        SET lsword_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_101~ BEGIN
+        SET exotic_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_102~ BEGIN
+        SET axe_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_103~ BEGIN
+        SET blunt_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_104~ BEGIN
+        SET missile_lt2 = %row%
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_105~ BEGIN
+        SET polearm_lt2 = %row%
       END
     END
 
@@ -2327,6 +2347,19 @@ ACTION_IF fighter_overhaul THEN BEGIN
   COPY_EXISTING ~c0fig01b.spl~ ~override~
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~mopow02~ END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 0 parameter2 = 2 timing = 9 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~mopow04~ END
+
+  // 16th level specialization; only apply each spell if its proficiency has fewer than 2 pips - below code courtesy of ewelsh42
+  COPY_EXISTING ~c0fig04.spl~ ~override~
+    LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 326 END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %bow_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04i.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %spiked_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04j.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %ssword_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04k.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %lsword_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04l.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %exotic_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04m.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %axe_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04n.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %blunt_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04o.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %missile_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04p.SPL~ END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = 0 parameter2 = %polearm_lt2% timing = 1 resist_dispel = 2 probability1 = 100 STR_VAR resource = ~c0fig04q.SPL~ END
 END
 
 ///////////////////////////////////////////////////////////////////////////

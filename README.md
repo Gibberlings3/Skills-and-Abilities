@@ -324,4 +324,5 @@ I recommend installing this mod near the end of your install. I do my install af
 - JohnBob for the French translation.
 - Ardanis and Graion Dilach for assistance with identifying if a creature is wearing plate armor and other coding assistance.
 - Argent77 for troubleshooting coding issues around REPLACE_TRIGGER_TEXT. 
+- ewelsh42 for providing a bug fix correcting 16th level specialization from Artisan's kitpack Fighter Overhaul not applying.
 - Mike1072, Aquadrizzt, and Subtledoctor
