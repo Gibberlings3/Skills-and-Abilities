@@ -102,6 +102,7 @@ DEFINE_ACTION_FUNCTION ADD_HLA
   COUNT_2DA_ROWS 2 rows
   PATCH_IF (%class% > 0) AND (%class% < rows) BEGIN
     READ_2DA_ENTRY class 1 2 class_name
+    PATCH_PRINT ~Found class: %class%.~
   END ELSE BEGIN
     PATCH_PRINT ~The selected class number, %class%, is out of bounds.~
   END
