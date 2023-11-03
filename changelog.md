@@ -7,6 +7,7 @@ October xx, 2023
 - New component: Physically Attacked Breaks Time Stop.
 - Stat increase HLAs now show as permanent stat increases (non-highlighted).
 - Bug fix provided by ewelsh42 to improve compatability with Artisan's Kitpack Fighter Overhaul (16th lvl spec not applying).
+- Updated class.ids check to be compatible with IWDEE.
 
 ## Version 2.0
 
