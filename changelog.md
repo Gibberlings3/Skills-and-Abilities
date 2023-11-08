@@ -6,7 +6,7 @@ November 8, 2023
 - Updated Wizard Slayer chance to dispel magic on hit from 10% to 25%.
 - New component: Physically Attacked Breaks Time Stop.
 - Stat increase HLAs now show as permanent stat increases (non-highlighted).
-- Bug fix provided by ewelsh42 to improve compatability with Artisan's Kitpack Fighter Overhaul (16th lvl spec not applying).
+- Bug fix provided by ewelsh42 to improve compatibility with Artisan's Kitpack Fighter Overhaul (16th lvl spec not applying).
 - Updated class.ids check to be compatible with IWDEE.
 
 ## Version 2.0
