@@ -47,6 +47,8 @@ Protection From Physical Damage (Previously PfMW)
 
 When the spell is cast, it sets physical damage resistance for slashing, crushing, piercing, and missile damage to 90%. It is important to note that this spell will override and replace protections granted from previous castings of Minor Protection From Damage and Protection From Damage. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.
 
+Mantles, Absolute Immunity, and Divine Protections will improve damage resistance by +40%.
+
 ### Add HLAs to IWDEE (Lefreut UI Required)
 
 This allows for HLAs to be useable within IWDEE under the same BG2: EE requirements.
