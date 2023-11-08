@@ -130,15 +130,15 @@ ACTION_FOR_EACH spell IN
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 86 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 87 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 88 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 89 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 27 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 28 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 29 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 30 parameter1 = 40 parameter2 = 0 END      
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 31 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 86 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 87 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 88 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 89 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 27 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 28 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 29 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 30 parameter1 = 40 parameter2 = 0 END      
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 31 parameter1 = 40 parameter2 = 0 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 55 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN974" END
@@ -180,15 +180,15 @@ ACTION_FOR_EACH spell IN
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 86 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 87 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 88 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 89 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 27 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 28 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 29 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 30 parameter1 = 40 parameter2 = 0 END      
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 31 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 86 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 87 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 88 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 89 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 27 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 28 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 29 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 30 parameter1 = 40 parameter2 = 0 END      
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 31 parameter1 = 40 parameter2 = 0 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 55 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 206 STR_VAR resource = "SPIN974" END
@@ -265,15 +265,15 @@ ACTION_FOR_EACH spell IN
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI708" END
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI808" END
         //LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 0 insert_point = 0 STR_VAR resource = "SPWI907" END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 86 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 87 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 88 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 89 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 27 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 28 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 29 parameter1 = 40 parameter2 = 0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 30 parameter1 = 40 parameter2 = 0 END      
-        LPF CLONE_EFFECT INT_VAR match_opcode = 233 match_parameter1 = 0 opcode = 31 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 86 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 87 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 88 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 89 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 27 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 28 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 29 parameter1 = 40 parameter2 = 0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 30 parameter1 = 40 parameter2 = 0 END      
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 31 parameter1 = 40 parameter2 = 0 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 12 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 13 END
         //LPF CLONE_EFFECT INT_VAR match_opcode = 120 match_parameter1 = 0 opcode = 101 parameter2 = 55 END
