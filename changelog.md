@@ -1,6 +1,6 @@
 ## Version 2.1
 
-October xx, 2023
+November xx, 2023
 
 - Add Concentration Check to Resist Spell Disruption component.
 - Updated Wizard Slayer chance to dispel magic on hit from 10% to 25%.
