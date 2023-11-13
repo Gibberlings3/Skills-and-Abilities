@@ -224,6 +224,7 @@ BEGIN @30 DESIGNATED 30 SUBCOMPONENT @3401 GROUP @1 LABEL SkillsAndAbilitiesBarb
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 
 OUTER_SET remove_rage=1 // Remove rage-- only care about rage, all else automatically added
+OUTER_SET no_nat_skills_barbi=1 // do not display special skills for barbarian (already included)
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 
@@ -231,6 +232,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 //1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, Bind Wound, and Keeps Rage
 BEGIN @31 DESIGNATED 31 SUBCOMPONENT @3401 GROUP @1 LABEL SkillsAndAbilitiesBarb1
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
+
 
 OUTER_SET remove_rage=0 // Keep rage-- only care about rage, all else automatically added
 
@@ -240,7 +242,8 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 //Add Set Natural Snares
 BEGIN @32 DESIGNATED 32 GROUP @1 LABEL SkillsAndAbilitiesBarb2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
-//exclude 30 and 31 above
+REQUIRE_PREDICATE !(%no_nat_skills_barbi% = 1) @3011 // Already included with 1e barbarian
+
 OUTER_SET barb_trap=1 // set natural snares
 
 INCLUDE ~skills-and-abilities/components/class_skills/barb_trap.tpa~
@@ -250,7 +253,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/barb_trap.tpa~
 BEGIN @33 DESIGNATED 33 GROUP @1 LABEL SkillsAndAbilitiesBarb3
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
-//exclude 30 and 31 above
+REQUIRE_PREDICATE !(%no_nat_skills_barbi% = 1) @3011 // Already included with 1e barbarian
 
 OUTER_SET barb_hide=1 // barb hide
 

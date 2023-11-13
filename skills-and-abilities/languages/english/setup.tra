@@ -22,7 +22,7 @@
 
 @30 = ~1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, Bind Wound, and Removes Rage~
 @31 = ~1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, Bind Wound, and Keeps Rage~
-@32 = ~Add Set Natural Snares~
+@32 = ~Add Set Natural Snares to barbarian~
 @33 = ~Add Hide in Natural Settings (EEex Strongly Recommended)~			
 @34 = ~Add Detect Illusions as a thief (EEex Strongly Recommended)~
 @35 = ~Add Feral Senses (detect illusions as a spell like ability during rage).~
@@ -92,6 +92,7 @@
 @3008 = ~Component Skipped: Spell Revisions Installed.~
 @3009 = ~Component requires IWDEE and Lefreut UI~
 @3010 = ~No HLAs detected~
+@3011 = ~Already included with 1e barbarian~
 
 ///////////////////////////////////////////////////////////////////////////
 // Misc                                                                  //

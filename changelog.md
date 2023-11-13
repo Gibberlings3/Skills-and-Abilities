@@ -1,6 +1,7 @@
 ## Version 2.1.1
 
 - Reorganize tp2 slightly (moved berserker from section 7 to section 1)
+- tp2: exclude duplicate skill additions for barbarian
 
 ## Version 2.1
 
