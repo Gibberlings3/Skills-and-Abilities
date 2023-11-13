@@ -51,6 +51,7 @@
 @160 = ~Adjust Cleric/Thief Actionbar~
 @170 = ~Update Archer to provide to hit and damage bonuses per the kit description~
 @180 = ~Bard Songs Last 1 Turn~
+@190 = ~Update Berserker's Enrage Ability~
 
 // Group 2 (Update 200-299)
 @200 = ~Add Spell Scroll Crafting: 2e pnp (install this if you plan to make any changes to craft_settings.ini)~
@@ -74,7 +75,6 @@
 @710 = ~Add New HLAs for ALL Classes and Kits~
 @720 = ~Update Existing HLAs~
 @730 = ~Add HLAs to IWDEE (Lefreut UI Required)~
-@740 = ~Update Berserker's Enrage Ability~
 @750 = ~Add Concentration Check to Resist Spell Disruption~
 @760 = ~Physical Attacks Break Time Stop~
 

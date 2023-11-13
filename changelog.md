@@ -1,3 +1,7 @@
+## Version 2.1.1
+
+- Reorganize tp2 slightly (moved berserker from section 7 to section 1)
+
 ## Version 2.1
 
 November 8, 2023

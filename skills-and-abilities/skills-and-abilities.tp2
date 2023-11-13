@@ -103,16 +103,6 @@ REQUIRE_PREDICATE !MOD_IS_INSTALLED ~setup-spell_rev.tp2~ ~65~ @3008
 
 INCLUDE ~skills-and-abilities/components/spells/update_hlas.tpa~
 
-/*
-///////////////////////////////////////////////////////////////////////////
-// Update Berserker Enrage                                               //
-///////////////////////////////////////////////////////////////////////////
-BEGIN @740 DESIGNATED 740 GROUP @7 LABEL SkillsAndAbilitiesUpdateEnrage
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004
-//REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
-
-INCLUDE ~skills-and-abilities/components/spells/update_enrage.tpa~
-*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Add Concentration Check to Resist Spell Disruption                    //
@@ -341,6 +331,17 @@ INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 
 /*
 ///////////////////////////////////////////////////////////////////////////
+// Update Berserker Enrage                                               //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @190 DESIGNATED 190 GROUP @1 LABEL SkillsAndAbilitiesUpdateEnrage
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004
+//REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mohla01.itm~ @3010
+
+INCLUDE ~skills-and-abilities/components/spells/update_enrage.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
 // Assign Skills to Rangers                                              //
 ///////////////////////////////////////////////////////////////////////////
 BEGIN @40 DESIGNATED 40 GROUP @1 LABEL SkillsAndAbilitiesRang 
@@ -422,6 +423,7 @@ BEGIN @170 DESIGNATED 170 GROUP @1 LABEL SkillsAndAbilitiesUpdateArcher
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/archer_updates.tpa~
+
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
