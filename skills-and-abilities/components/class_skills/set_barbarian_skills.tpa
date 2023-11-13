@@ -63,7 +63,7 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP01.spl~ THEN BEGIN
         SAY NAME1 @4503              																														//barbarian reference (no need to duplicate)
         SAY NAME2 @4503              																														//barbarian reference (no need to duplicate)
         SAY UNIDENTIFIED_DESC @4504  																														//barbarian reference (no need to duplicate)
-		SAY DESC @4504               																															//barbarian reference (no need to duplicate)
+	SAY DESC @4504               																															//barbarian reference (no need to duplicate)
 END
 ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP02.spl~ THEN BEGIN
  COPY ~%folder%/spl/barbarian/B_NTP02.spl~ ~override~   																									//Set Natural Snares only works in natural environments
@@ -75,10 +75,11 @@ END
 ///////////////////////////////////////////////////////////////////////////////////////////
 //To do (1 hp level and 10% cure poison--+5%/level Max 99%) 
  COPY ~%folder%/spl/barbarian/B_BNDW1.spl~ ~override~  
-        SAY NAME1 @4506              																														//barbarian reference (no need to duplicate)
+  LPF ALTER_EFFECT INT_VAR power = 1 resist_dispel = 0 END 	//Hide 10
+	SAY NAME1 @4506              																														//barbarian reference (no need to duplicate)
         SAY NAME2 @4506              																														//barbarian reference (no need to duplicate)
         SAY UNIDENTIFIED_DESC @4507  																														//barbarian reference (no need to duplicate)
-		SAY DESC @4507              																														//barbarian reference (no need to duplicate)
+	SAY DESC @4507              																														//barbarian reference (no need to duplicate)
  
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////                      Tracking                       ///////////////////
