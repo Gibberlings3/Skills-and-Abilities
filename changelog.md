@@ -2,6 +2,7 @@
 
 - Reorganize tp2 slightly (moved berserker from section 7 to section 1)
 - tp2: exclude duplicate skill additions for barbarian
+- Merge barbarian detect illusions/feral senses to competing subcomponents
 
 ## Version 2.1
 

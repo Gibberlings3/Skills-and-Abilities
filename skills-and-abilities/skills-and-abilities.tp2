@@ -219,7 +219,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/monk_updates.tpa~
 ///////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
-//1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, Bind Wound, and Removes Rage
+//1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Bind Wound, and Removes Rage
 BEGIN @30 DESIGNATED 30 SUBCOMPONENT @3401 GROUP @1 LABEL SkillsAndAbilitiesBarb0
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 
@@ -229,7 +229,7 @@ OUTER_SET no_nat_skills_barbi=1 // do not display special skills for barbarian (
 INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
 
 ////////////////////////////////////////////////////
-//1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Detect Illusions, Bind Wound, and Keeps Rage
+//1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Bind Wound, and Keeps Rage
 BEGIN @31 DESIGNATED 31 SUBCOMPONENT @3401 GROUP @1 LABEL SkillsAndAbilitiesBarb1
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 
@@ -237,6 +237,14 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires B
 OUTER_SET remove_rage=0 // Keep rage-- only care about rage, all else automatically added
 
 INCLUDE ~skills-and-abilities/components/class_skills/set_barbarian_skills.tpa~
+
+
+
+////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Abilities to Barbarians                                        //
+///////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
 //Add Set Natural Snares
@@ -247,6 +255,8 @@ REQUIRE_PREDICATE !(%no_nat_skills_barbi% = 1) @3011 // Already included with 1e
 OUTER_SET barb_trap=1 // set natural snares
 
 INCLUDE ~skills-and-abilities/components/class_skills/barb_trap.tpa~
+
+////////////
 
 ////////////////////////////////////////////////////
 //Add Hide in Natural Settings (EEex Strongly Recommended)
@@ -259,21 +269,17 @@ OUTER_SET barb_hide=1 // barb hide
 
 INCLUDE ~skills-and-abilities/components/class_skills/barb_hide.tpa~
 
+////////////
+
 ////////////////////////////////////////////////////
 //Add Detect Illusions as a thief (EEex Strongly Recommended)
-BEGIN @34 DESIGNATED 34 GROUP @1 LABEL SkillsAndAbilitiesBarb4
+BEGIN @34 DESIGNATED 34 SUBCOMPONENT @3402 GROUP @1 LABEL SkillsAndAbilitiesBarb4
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 OUTER_SET barb_detect=1 // barb detect
 
 INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
-
-////////////
-
-///////////////////////////////////////////////////////////////////////////
-// Assign Abilities to Barbarians                                        //
-///////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
 //Add Feral Senses as a spell-like ability
@@ -285,8 +291,6 @@ OUTER_SET barb_detect=2 // barb detect
 
 INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
 
-////////////
-
 ////////////////////////////////////////////////////
 //Add Feral Senses as a thief-like ability
 BEGIN @36 DESIGNATED 36 SUBCOMPONENT @3402 GROUP @1 LABEL SkillsAndAbilitiesBarb6
@@ -296,8 +300,6 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires B
 OUTER_SET barb_detect=3 // barb detect
 
 INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
-
-////////////
 
 ////////////////////////////////////////////////////
 //Add Feral Senses as an improved thief-like ability while raging
@@ -315,6 +317,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
 //bind wound
 BEGIN @38 DESIGNATED 38 GROUP @1 LABEL SkillsAndAbilitiesBarb8
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
+REQUIRE_PREDICATE !(%no_nat_skills_barbi% = 1) @3011 // Already included with 1e barbarian
 //TO DO
 
 ////////////
