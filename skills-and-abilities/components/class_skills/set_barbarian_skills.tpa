@@ -8,17 +8,17 @@
 // Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_IF !FILE_EXISTS_IN_GAME ~m_moTHI1.lua~ THEN BEGIN
-  COPY ~skills-and-abilities/lua/m_moTHI1.lua~  ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+  COPY ~skills-and-abilities/lua/m_moTHI1.lua~  ~override~ 				// Lua file read by EEex, provided by Bubb and further edited by myself
 END
 
-COPY ~skills-and-abilities/lua/m_moTHI5.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
-COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override/B_#BSK04.SPL~ // In case MO#BSK04.SPL is being used for something else
-     LPF ALTER_EFFECT INT_VAR match_opcode = 275 parameter1 = 10 END //Hide 10
-     LPF ALTER_EFFECT INT_VAR match_opcode = 59 parameter1 = 20 END //MS 20
-     LPF ALTER_EFFECT INT_VAR match_opcode = 276 parameter1 = 5 END //D.Illusion 5%
-     LPF ALTER_EFFECT INT_VAR match_opcode = 252 parameter1 = 10 END //Set Snares 10%
-     LPF ALTER_EFFECT INT_VAR match_opcode = 95 parameter1 = 100 END // 100% track
-COPY ~skills-and-abilities/spl/barbarian/B_BRBADV.spl~   ~override~ // +4% NOTE TO SELF: alter the actual spl to get rid of track if present
+COPY ~skills-and-abilities/lua/m_moTHI5.lua~   ~override~ 				// Lua file read by EEex, provided by Bubb and further edited by myself
+COPY ~skills-and-abilities/spl/MO#BSK04.SPL~   ~override/B_#BSK04.SPL~ 	// In case MO#BSK04.SPL is being used for something else
+     LPF ALTER_EFFECT INT_VAR match_opcode = 275 parameter1 = 10 END 	//Hide 10
+     LPF ALTER_EFFECT INT_VAR match_opcode = 59 parameter1 = 20 END 	//MS 20
+     LPF ALTER_EFFECT INT_VAR match_opcode = 276 parameter1 = 5 END 	//D.Illusion 5%
+     LPF ALTER_EFFECT INT_VAR match_opcode = 252 parameter1 = 10 END 	//Set Snares 10%
+     LPF ALTER_EFFECT INT_VAR match_opcode = 95 parameter1 = 100 END 	// 100% track
+COPY ~skills-and-abilities/spl/barbarian/B_BRBADV.spl~   ~override~ 	// +4% NOTE TO SELF: alter the actual spl to get rid of track if present
 
 APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
 
@@ -27,12 +27,12 @@ APPEND ~TRAPLIMT.2da~ ~BARBARIAN 6~            // Sets Trap Limit
 ///////////////////////////////////////////////////////////////////////////
 // This gives Barbarian the Thief snare at the same frequency Thieves get them.
 COPY_EXISTING ~CLABFI05.2DA~ override
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_B_#BSK04 END //1 time bonus at 1st to relevant skills
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_B_#BSK04 END 				//1 time bonus at 1st to relevant skills
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_B_BRBVNC END //+4%/level for all but track (which is 100%)
-//  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_ END //outdoors only hide--check for eeex TO DO
-//  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_ END //detect illusion--check for eeex TO DO
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_B_NTP01 END   //set natrual snare
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 6 STR_VAR f_Entry = GA_SPCL922 END   //tracking
+//  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_ END 						//outdoors only hide--check for eeex TO DO
+//  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_ END 						//detect illusion--check for eeex TO DO
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 5 STR_VAR f_Entry = GA_B_NTP01 END  //set natrual snare
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 6 STR_VAR f_Entry = GA_SPCL922 END  //tracking
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -57,24 +57,29 @@ BUT_ONLY
 ///////////////////                    Set Snares Skill                 ///////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP01.spl~ THEN BEGIN
- COPY_EXISTING ~SPCL412.spl~ ~override/B_NTP01.spl~   //thief trap to set nat snares
-  LPF CLONE_EFFECT INT_VAR match_opcode = 252 opcode = 318 timing = 0 duration = 1 parameter1 = 8 parameter2 = %not_ar% STR_VAR resource = ~B_NTP01~ END  //Protection complete below
-  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 326 STR_VAR resource = ~B_NTP02~ END  //For notifications
-        SAY NAME1 @4503              //barbarian reference (no need to duplicate)
-        SAY NAME2 @4503              //barbarian reference (no need to duplicate)
-        SAY UNIDENTIFIED_DESC @4504  //barbarian reference (no need to duplicate)
-	SAY DESC @4504               //barbarian reference (no need to duplicate)
+ COPY_EXISTING ~SPCL412.spl~ ~override/B_NTP01.spl~   																										//thief trap to set nat snares
+  LPF CLONE_EFFECT INT_VAR match_opcode = 252 opcode = 318 timing = 0 duration = 1 parameter1 = 8 parameter2 = %not_ar% STR_VAR resource = ~B_NTP01~ END  	//Protection complete below
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 326 STR_VAR resource = ~B_NTP02~ END  																//For notifications
+        SAY NAME1 @4503              																														//barbarian reference (no need to duplicate)
+        SAY NAME2 @4503              																														//barbarian reference (no need to duplicate)
+        SAY UNIDENTIFIED_DESC @4504  																														//barbarian reference (no need to duplicate)
+		SAY DESC @4504               																															//barbarian reference (no need to duplicate)
 END
 ACTION_IF !FILE_EXISTS_IN_GAME ~B_NTP02.spl~ THEN BEGIN
- COPY ~%folder%/spl/barbarian/B_NTP02.spl~ ~override~   //Set Natural Snares only works in natural environments
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4505) STR_VAR END        //barbarian reference (no need to duplicate)
+ COPY ~%folder%/spl/barbarian/B_NTP02.spl~ ~override~   																									//Set Natural Snares only works in natural environments
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4505) STR_VAR END        														//barbarian reference (no need to duplicate)
 END
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////                    Bind Wound                       ///////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
-//To do (1 hp/level and 10% cure poison--+5%/level) 
-
+//To do (1 hp level and 10% cure poison--+5%/level Max 99%) 
+ COPY ~%folder%/spl/barbarian/B_BNDW1.spl~ ~override~  
+        SAY NAME1 @4506              																														//barbarian reference (no need to duplicate)
+        SAY NAME2 @4506              																														//barbarian reference (no need to duplicate)
+        SAY UNIDENTIFIED_DESC @4507  																														//barbarian reference (no need to duplicate)
+		SAY DESC @4507              																														//barbarian reference (no need to duplicate)
+ 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////                      Tracking                       ///////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////

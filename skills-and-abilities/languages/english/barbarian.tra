@@ -16,5 +16,8 @@
 @4504 = ~Tracking
 With an intimate knowledge of <PRO_HISHER> surroundings and the creatures that live within them, a barbarian can use the Tracking ability to give <PRO_HIMHER>self a general idea of what creatures are in an area and which direction they are. Red arrows at the edge of the screen will point in the general direction of the creatures in the area.~
 @4505 = ~Set Natural Snares only works in natural environments~
+@4506 = ~Bind Wound~
+@4507 = ~Bind Wound
+The barbarian can use <PRO_HISHER> knowledge of natural remedies to heal <PRO_HIMHER>self and others by 1 hit point/level (max 20 hit points at 20th level). In addition, <PRO_HESHE> has a chance to cure poisons equal to 10% + 5%/level (max 99% at level 19).~
 
 @5000 = ~[LAST TRA HERE]~

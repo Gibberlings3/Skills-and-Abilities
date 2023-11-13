@@ -215,11 +215,11 @@ INCLUDE ~skills-and-abilities/components/class_skills/monk_updates.tpa~
 
 /*
 ///////////////////////////////////////////////////////////////////////////
-// Assign Skills to Barbarians (EEex Recommended)                                         //
+// Assign Skills to Barbarians (EEex Recommended)                        //
 ///////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
-//1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Bind Wound, and Removes Rage
+//1e Barbarians (EEex Strongly Recommended): Adds Set Natural Snares, Hide in Natural Settings, Search, Bind Wound, and Removes Rage
 BEGIN @30 DESIGNATED 30 SUBCOMPONENT @3401 GROUP @1 LABEL SkillsAndAbilitiesBarb0
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 
@@ -318,6 +318,7 @@ INCLUDE ~skills-and-abilities/components/class_skills/barb_sense.tpa~
 BEGIN @38 DESIGNATED 38 GROUP @1 LABEL SkillsAndAbilitiesBarb8
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 REQUIRE_PREDICATE !(%no_nat_skills_barbi% = 1) @3011 // Already included with 1e barbarian
+
 //TO DO
 
 ////////////
@@ -327,6 +328,7 @@ REQUIRE_PREDICATE !(%no_nat_skills_barbi% = 1) @3011 // Already included with 1e
 BEGIN @39 DESIGNATED 39 GROUP @1 LABEL SkillsAndAbilitiesBarb9
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3004 // Component requires BG: EE, BGII: EE, IWDEE, or EET
 REQUIRE_PREDICATE !(%remove_rage% = 2)                        @3003 // Barbarian Rage is required for Feral Senses~
+REQUIRE_PREDICATE !(%no_nat_skills_barbi% = 1) 				  @3012 // Already determined by 1e barbarian
 //add req not feral senses spl in game in case var gets reset @3003 // Barbarian Rage is required for Feral Senses~
 
 OUTER_SET remove_rage=1 // Remove rage

@@ -3,7 +3,10 @@
 - Reorganize tp2 slightly (moved berserker from section 7 to section 1)
 - tp2: exclude duplicate skill additions for barbarian
 - Merge barbarian detect illusions/feral senses to competing subcomponents
-(Next: skills-and-abilities/components/class_skills/set_barbarian_skills.tpa) 
+- Included Add Extended Skill function
+- Added Bind Wound
+(Next: skills-and-abilities/components/class_skills/set_barbarian_skills.tpa)
+(verify not_ar variable is set correctly 
 
 ## Version 2.1
 
