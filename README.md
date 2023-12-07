@@ -92,10 +92,6 @@ This allows for HLAs to be useable within IWDEE under the same BG2: EE requireme
 This also updates the following HLAs so they CANNOT be removed by Breach or anti-magic spell: Hardiness, Resist Magic, Avoid Death, Evasion, Greater Evasion, and Assassination.
 (more in progress)
 
-### Physical Attacks Break Time Stop (Completed - Next Release)
-
-If a creature is attacked and physically damaged during a Time Stop, they will break free and become immune to the effects of the Time Stop for the next round.
-
 ## Class Updates
 
 ### Bard Skills (EEex Required)
