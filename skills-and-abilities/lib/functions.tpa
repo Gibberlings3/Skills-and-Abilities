@@ -4108,6 +4108,7 @@ BEGIN
     END
 END
 
+/*
 //Here's a function for adding a new skill to the game. Feel free to put this function in your own mod.
 DEFINE_ACTION_FUNCTION ADD_EXTENDED_SKILL
 	INT_VAR
@@ -4170,6 +4171,7 @@ BEGIN
 			END
 	END
 END
+*/
 //To add the example skill shown in M__SKILL.LUA, you'd do this:
 /* LAF ADD_EXTENDED_SKILL
 INT_VAR
@@ -4193,7 +4195,7 @@ END
 //Just like REPLACE_BCS_BLOCK the function ignores pattern whitespace.
 //The function can be also used as a COUNT_REGEXP_INSTANCES alternative with the above mentioned features.
 //Optional PATCH_WARN message is printed if the task could not be performed (pattern not found or different amount of pattern matches than expected).
-
+/*
 DEFINE_PATCH_FUNCTION REPLACE_MULTILINE //By K4thos
 	INT_VAR
 		num = "-1"     //amount of times the pattern should be replaced with string (-1 by default which is at least 1 but without max limit)
@@ -4249,13 +4251,14 @@ DEFINE_PATCH_FUNCTION REPLACE_MULTILINE //By K4thos
 END
 
 COPY ~%MOD_FOLDER%/m__skill.lua~ ~override~
-
+*/
 /*
 The patches to UI.MENU are done in an awkward way. Basically, at the point in UI.MENU where I
 want to insert some code, I see if there is a line of code that doesn't exist anywhere else in
 the file. The patch replaces that line with itself and my own code. If another UI mod adds copies
 of the line I replace, that mod might conflict with this one.
 */
+/*
 COPY_EXISTING ~ui.menu~ ~override~
 	SPRINT aiscriptstring ~oogleblah~
 	SPRINT turnundeadstring ~oogleblah~
@@ -4545,6 +4548,7 @@ end
 			end
 		end
 		createCharScreen:OnDoneButtonClick()~~~~~ END
+        */
 /*
 	LPF REPLACE_MULTILINE STR_VAR pattern= EVAL ~%donebuttonstring%\([^`]*\)createCharScreen:OnDoneButtonClick()~ string= EVAL ~~~~~%donebuttonstring%\1
 
@@ -4568,7 +4572,7 @@ end
 		createCharScreen:OnDoneButtonClick()~~~~~ END
 */
 
-	END ELSE BEGIN
+//	END ELSE BEGIN
 /*
 		LPF REPLACE_MULTILINE STR_VAR pattern= EVAL ~name [\'\"]CHARGEN_SKILLS[\'\"]\([^`]*\)createCharScreen:OnDoneButtonClick()~ string= EVAL ~~~~~name 'CHARGEN_SKILLS'\1
 
@@ -4591,6 +4595,7 @@ end
 		end
 		createCharScreen:OnDoneButtonClick()~~~~~ END
 */
+/*
 		LPF REPLACE_MULTILINE STR_VAR pattern= EVAL ~name [\'\"]LEVELUP_PROFICIENCIES[\'\"]\([^`]*\)createCharScreen:OnDoneButtonClick()~ string= EVAL ~~~~~name 'LEVELUP_PROFICIENCIES'\1
 
 		for i = 1, #extendedSkills, 1 do
@@ -4636,6 +4641,7 @@ end
 		createCharScreen:OnDoneButtonClick();~~~~~ END
 
 	END
+*/
 /*
 	REPLACE_EVALUATE ~createCharScreen:OnHighLevelAbilitiesButtonClick()~
 	BEGIN
@@ -4659,7 +4665,7 @@ end
 		end
 		createCharScreen:OnHighLevelAbilitiesButtonClick()~~~~~
 */
-
+/*
 	PATCH_IF (GAME_IS ~bg2ee eet~) AND (MOD_IS_INSTALLED ~LeUI.tp2~ ~0~) BEGIN
 		LPF REPLACE_MULTILINE STR_VAR pattern= EVAL ~createCharScreen:OnHighLevelAbilitiesButtonClick()~ string= EVAL ~~~~~
 		for i = 1, #extendedSkills, 1 do
@@ -4681,3 +4687,4 @@ end
 		end
 		createCharScreen:OnHighLevelAbilitiesButtonClick()~~~~~ END
 	END
+*/
