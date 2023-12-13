@@ -2388,6 +2388,7 @@ READ_BYTE 0x72 oblunt
 READ_BYTE 0x73 ospiked
 READ_BYTE 0x74 oaxe
 READ_BYTE 0x75 omissile
+READ_BYTE 0x272 race
 // READ_LONG  0x1cc biography ELSE 0
 SET free_pips = 0
 SET bow = 0
@@ -2792,6 +2793,11 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
   assigned_pips = bow + spiked + ssword + lsword + exotic + axe + blunt + missile + spear + twohanded + swordandshield + singleweapon + twoweapon
   free_pips = new_pip_amount - assigned_pips
 
+END
+
+// Check if race is human (Talents of Faerun)
+PATCH_IF dw_races AND (race = 1) BEGIN
+  assigned_pips +=1
 END
 
 ///////////////////////////////////////////////////////////////////////////
