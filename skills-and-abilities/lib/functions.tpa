@@ -4108,6 +4108,8 @@ BEGIN
     END
 END
 
+/*
+
 //Here's a function for adding a new skill to the game. Feel free to put this function in your own mod.
 DEFINE_ACTION_FUNCTION ADD_EXTENDED_SKILL
 	INT_VAR
@@ -4681,3 +4683,4 @@ end
 		end
 		createCharScreen:OnHighLevelAbilitiesButtonClick()~~~~~ END
 	END
+*/

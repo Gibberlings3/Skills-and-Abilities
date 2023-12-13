@@ -310,7 +310,7 @@ This mod has components (outlined above) requiring [EEex](https://github.com/Bub
 
 Being this requires EEex to run, Windows is required at this time.
 
-The Overhaul Proficiency System Component is not compatible with other mods that alter or change the proficiency system like Tweaks Anthology and Scales of Balance. Both are great mods, so choose whichever component you like best. 
+The Overhaul Proficiency System Component is not compatible with other mods that alter or change the proficiency system like Tweaks Anthology, Scales of Balance, and the Talents of Faerun (only the Revised Weapon Proficiency System component). Choose whichever component you like best. This is compatible with the Talents of Faerun Races and Subraces component; however, you must use the vanilla proficiency progression.
 
 I recommend installing this mod near the end of your install. I do my install after SCS but before EET_END.
 
