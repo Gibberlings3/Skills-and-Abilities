@@ -2795,11 +2795,12 @@ PATCH_IF (accelerated_profs OR nwn_profs) AND (FILE_CONTAINS_EVALUATED(~pdialog.
 
 END
 
+/*
 // Check if race is human (Talents of Faerun)
 PATCH_IF dw_races AND (race = 1) BEGIN
   assigned_pips +=1
 END
-
+*/
 ///////////////////////////////////////////////////////////////////////////
 // Assign Pips                                                           //
 ///////////////////////////////////////////////////////////////////////////
