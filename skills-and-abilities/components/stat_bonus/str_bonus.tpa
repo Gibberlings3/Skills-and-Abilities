@@ -7,18 +7,42 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import Files                                                          //
 ///////////////////////////////////////////////////////////////////////////
-ACTION_FOR_EACH str_import IN
-      1 // 18 STR +1 DMG
-      2 // 19 STR +3 DMG
-      3 // 20 STR +4 DMG
-      4 // 22 STR +5 DMG
-      5 // 24 STR +6 DMG
-      6 // 25 STR +7 DMG
-    BEGIN
-      COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
-      COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
-      COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
-    END
+ACTION_IF tof_abilitys BEGIN
+  ACTION_FOR_EACH str_import IN
+        1 // 14 STR +1 DMG
+        2 // 18 STR +2 DMG
+        3 // 22 STR +3 DMG
+      BEGIN
+        COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
+        COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
+        COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
+      END
+END ELSE ACTION_IF tofabilityo BEGIN
+  ACTION_FOR_EACH str_import IN
+        1 // 14 STR +1 DMG
+        2 // 18 STR +2 DMG
+        3 // 20 STR +3 DMG
+        4 // 22 STR +4 DMG
+        5 // 24 STR +5 DMG
+      BEGIN
+        COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
+        COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
+        COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
+      END
+END ELSE BEGIN
+  ACTION_FOR_EACH str_import IN
+        1 // 18 STR +1 DMG
+        2 // 19 STR +3 DMG
+        3 // 20 STR +4 DMG
+        4 // 22 STR +5 DMG
+        5 // 24 STR +6 DMG
+        6 // 25 STR +7 DMG
+      BEGIN
+        COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
+        COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
+        COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
+      END
+END
 
 ///////////////////////////////////////////////////////////////////////////
 // Update all 2H Weapons                                                 //
@@ -37,12 +61,24 @@ ACTION_IF FILE_EXISTS_IN_GAME ~moprof.itm~ THEN BEGIN
         (prof = 103) OR      // Blunt
         (prof = 105) BEGIN   // Spear
       PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+        PATCH_IF tof_abilitys BEGIN
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
+        END ELSE PATCH_IF tof_abilityo BEGIN
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+        END ELSE BEGIN
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+        END
       END
     END
     BUT_ONLY
@@ -62,12 +98,24 @@ END ELSE BEGIN
         (prof = 98) OR      // Spear
         (prof = 93) BEGIN   // Two-Handed Sword
       PATCH_IF ((%handed% BAND 0b00000010) = 0b00000010) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+        PATCH_IF tof_abilitys BEGIN
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
+        END ELSE PATCH_IF tof_abilityo BEGIN
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+        END ELSE BEGIN
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr01~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr02~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr03~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr04~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr05~ END
+          LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = ~mostr06~ END
+        END
       END
     END
     BUT_ONLY
