@@ -11,22 +11,22 @@ ACTION_IF tof_abilitys BEGIN
   ACTION_FOR_EACH str_import IN
         1 // 14 STR +1 DMG
         2 // 18 STR +2 DMG
-        3 // 22 STR +3 DMG
+        3 // 20 STR +3 DMG
+        4 // 22 STR +4 DMG
+        5 // 24 STR +5 DMG
       BEGIN
-        COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
-        COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
+        COPY ~skills-and-abilities/spl/str_bonus/standard/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
+        COPY ~skills-and-abilities/spl/str_bonus/standard/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
         COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
       END
 END ELSE ACTION_IF tofabilityo BEGIN
   ACTION_FOR_EACH str_import IN
         1 // 14 STR +1 DMG
         2 // 18 STR +2 DMG
-        3 // 20 STR +3 DMG
-        4 // 22 STR +4 DMG
-        5 // 24 STR +5 DMG
+        3 // 22 STR +3 DMG
       BEGIN
-        COPY ~skills-and-abilities/spl/str_bonus/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
-        COPY ~skills-and-abilities/spl/str_bonus/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
+        COPY ~skills-and-abilities/spl/str_bonus/3e/MOSTR0%str_import%.SPL~             ~override/MOSTR0%str_import%.SPL~
+        COPY ~skills-and-abilities/spl/str_bonus/3e/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
         COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
       END
 END ELSE BEGIN
