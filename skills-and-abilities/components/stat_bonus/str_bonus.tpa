@@ -19,7 +19,7 @@ ACTION_IF tof_abilitys BEGIN
         COPY ~skills-and-abilities/spl/str_bonus/standard/MOSTR%str_import%%str_import%.SPL~  ~override/MOSTR%str_import%%str_import%.SPL~
         COPY ~skills-and-abilities/eff/str_bonus/MOSTR0%str_import%.EFF~             ~override/MOSTR0%str_import%.EFF~
       END
-END ELSE ACTION_IF tofabilityo BEGIN
+END ELSE ACTION_IF tof_abilityo BEGIN
   ACTION_FOR_EACH str_import IN
         1 // 14 STR +1 DMG
         2 // 18 STR +2 DMG
