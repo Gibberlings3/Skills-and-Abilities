@@ -127,21 +127,21 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
    END
 
    // DW Talents New Races
-   ACTION_IF MOD_IS_INSTALLED ~dwtalents.tp2~ ~60100~ THEN BEGIN
+   ACTION_IF MOD_IS_INSTALLED ~dw_talents.tp2~ ~60100~ THEN BEGIN
       OUTER_SET dw_races=1
    END ELSE BEGIN
       OUTER_SET dw_races=0
    END
 
    // DW ToF Revised Ability Scores (Standard)
-   ACTION_IF MOD_IS_INSTALLED ~dwtalents.tp2~ ~80000~ THEN BEGIN
+   ACTION_IF MOD_IS_INSTALLED ~dw_talents.tp2~ ~80000~ THEN BEGIN
       OUTER_SET tof_abilitys=1
    END ELSE BEGIN
       OUTER_SET tof_abilitys=0
    END
 
    // DW ToF Revised Ability Scores (3E)
-   ACTION_IF MOD_IS_INSTALLED ~dwtalents.tp2~ ~80000~ THEN BEGIN
+   ACTION_IF MOD_IS_INSTALLED ~dw_talents.tp2~ ~80000~ THEN BEGIN
       OUTER_SET tof_abilityo=1
    END ELSE BEGIN
       OUTER_SET tof_abilityo=0
