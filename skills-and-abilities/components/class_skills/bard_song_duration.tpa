@@ -27,7 +27,7 @@ COPY_EXISTING ~CLABBA01.2DA~ override
   READ_2DA_ENTRY_FORMER ~bard_kitlist~ row 1 kit_label
   READ_2DA_ENTRY_FORMER ~bard_kitlist~ row 8 kit_class
   
-  PATCH_IF ~%kit_class%~ NOT STRING_EQUAL_CASE ~*~ BEGIN
+  PATCH_IF NOT ~%kit_class%~ STRING_EQUAL_CASE ~*~ BEGIN
     PATCH_IF (%kit_class% = 5) BEGIN
       // Modify Bard CLAB File to Assign Thief Skills Points Every Level
       // Remove once EEex is updated for Bard Thief Skill Natural Progression
