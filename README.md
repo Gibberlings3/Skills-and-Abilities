@@ -13,7 +13,7 @@
 
 ## Introduction
 
-This mod is a collection of class, skill, proficiency, and stat updates. This is an alpha release with the intention of adding more class, skill, and stat updates in the near future while further refining the new proficiencies that are being added. Yes, these are actual, functional, useable, proficiencies that can be assinged on the character creation and level up screens. Yes, eekeeper can recognize and adjust these proficiencies for characters. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod. 
+This mod is a collection of class, skill, proficiency, and stat updates. Yes, these are actual, functional, useable, proficiencies that can be assinged on the character creation and level up screens. Yes, eekeeper can recognize and adjust these proficiencies for characters. Yes, I am intimately familiar with the limited resources in the game, and no detectable spells were harmed in the making of this mod. 
 
 Some components require EEex to work, and those are identified with **(EEex Required)**.
 
