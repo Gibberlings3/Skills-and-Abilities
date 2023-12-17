@@ -7,7 +7,7 @@
 BACKUP ~skills-and-abilities/backup~
 AUTHOR ~Grammarsalad and morpheus562~
 
-VERSION ~v2.2~
+VERSION ~v2.3~
 README ~skills-and-abilities/readme.%LANGUAGE%.html~ ~skills-and-abilities/readme.html~
 AUTO_EVAL_STRINGS
 
@@ -30,35 +30,7 @@ LANGUAGE ~English~
          ~skills-and-abilities/languages/english/turn_undead.tra~
          ~skills-and-abilities/languages/english/spell_descriptions.tra~
          ~skills-and-abilities/languages/english/fighter.tra~
-         ~skills-and-abilities/languages/english/enchant_items.tra~
-LANGUAGE ~French~
-         ~french~
-         ~skills-and-abilities/languages/english/setup.tra~
-         ~skills-and-abilities/languages/english/barbarian.tra~
-         ~skills-and-abilities/languages/english/bard.tra~
-         ~skills-and-abilities/languages/english/paladin.tra~
-         ~skills-and-abilities/languages/english/monk.tra~
-         ~skills-and-abilities/languages/english/proficiency_descriptions.tra~
-         ~skills-and-abilities/languages/english/ranger.tra~
-         ~skills-and-abilities/languages/english/strength.tra~
-         ~skills-and-abilities/languages/english/hla_descriptions.tra~
-         ~skills-and-abilities/languages/english/turn_undead.tra~
-         ~skills-and-abilities/languages/english/spell_descriptions.tra~
-         ~skills-and-abilities/languages/english/fighter.tra~
-         ~skills-and-abilities/languages/english/enchant_items.tra~
-         ~skills-and-abilities/languages/french/setup.tra~
-         ~skills-and-abilities/languages/french/barbarian.tra~
-         ~skills-and-abilities/languages/french/bard.tra~
-         ~skills-and-abilities/languages/french/paladin.tra~
-         ~skills-and-abilities/languages/french/monk.tra~
-         ~skills-and-abilities/languages/french/proficiency_descriptions.tra~
-         ~skills-and-abilities/languages/french/ranger.tra~
-         ~skills-and-abilities/languages/french/strength.tra~
-         ~skills-and-abilities/languages/french/hla_descriptions.tra~
-         ~skills-and-abilities/languages/french/turn_undead.tra~
-         ~skills-and-abilities/languages/french/spell_descriptions.tra~
-         ~skills-and-abilities/languages/french/fighter.tra~
-         ~skills-and-abilities/languages/french/enchant_items.tra~		 
+         ~skills-and-abilities/languages/english/enchant_items.tra~	 
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////

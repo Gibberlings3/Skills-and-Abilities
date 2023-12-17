@@ -2,7 +2,7 @@
 
 [![Latest Release](https://img.shields.io/github/v/release/gibberlings3/Skills-and-Abilities?include_prereleases)](https://github.com/Gibberlings3/Skills-and-Abilities/releases/latest)
 [![Github downloads (all releases)](https://img.shields.io/github/downloads/gibberlings3/Skills-and-Abilities/total.svg?color=informational)](https://github.com/gibberlings3/Skills-and-Abilities/releases)
-![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20french&color=informational)
+![Language](https://img.shields.io/static/v1?label=language&message=english&color=informational)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
@@ -319,7 +319,6 @@ I recommend installing this mod near the end of your install. I do my install af
 - Bubb for all of his work on EEex and general coding assistance.
 - aVENGER for use of a function to update clab files.
 - CamDawg_G3 and the_bigg for using their code as reference when consolidating weapon proficiencies into weapon groups and general coding assistance. Additionally, many thanks to CamDawg_G3 for various other assistance with coding. 
-- JohnBob for the French translation.
 - Ardanis and Graion Dilach for assistance with identifying if a creature is wearing plate armor and other coding assistance.
 - Argent77 for troubleshooting coding issues around REPLACE_TRIGGER_TEXT. 
 - ewelsh42 for providing a bug fix correcting 16th level specialization from Artisan's kitpack Fighter Overhaul not applying.

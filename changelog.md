@@ -8,6 +8,11 @@
 (Next: skills-and-abilities/components/class_skills/set_barbarian_skills.tpa)
 (verify not_ar variable is set correctly 
 
+## Version 2.3
+
+December 16, 2023
+- Compatibility updates with ToF.
+
 ## Version 2.2
 
 December 13, 2023
