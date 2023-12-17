@@ -1076,6 +1076,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
   READ_2DA_ENTRY_FORMER ~all_kitlist~ row 8 kit_class
   PATCH_PRINT ~%kit_label% proficiencies are being updated.~
 
+  PATCH_IF NOT ~%kit_class%~ STRING_EQUAL_CASE ~*~ BEGIN
   // MAGE KITS
   PATCH_IF (%kit_class% = 1) BEGIN
     INNER_ACTION BEGIN
@@ -2002,6 +2003,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
     END
+  END
   END
   END
 

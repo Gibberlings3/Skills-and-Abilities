@@ -64,41 +64,44 @@ END
   READ_2DA_ENTRY_FORMER ~pal_kitlist~ row 1 kit_label
   READ_2DA_ENTRY_FORMER ~pal_kitlist~ row 8 kit_class
   
-  PATCH_IF (%kit_class% = 6) BEGIN
-    // Set New Paladin Abilities
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      // Add new abilities to all Paladin kits
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-      PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Blackguard") BEGIN
-        REPLACE_TEXTUALLY ~GA_SPCL103~ ~AP_MOPALC2~ // Aura of Despair
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        PRETTY_PRINT_2DA
-      END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Cavalier") BEGIN
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC4 END // Aura of Protection
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        PRETTY_PRINT_2DA
-      END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "MO_REAVER") BEGIN
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        PRETTY_PRINT_2DA
-      END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "MO_OATHBREAKER") BEGIN
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        PRETTY_PRINT_2DA
-      END ELSE BEGIN
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
-        PRETTY_PRINT_2DA
-      END
-      BUT_ONLY
+  PATCH_IF NOT ~%kit_class%~ STRING_EQUAL_CASE ~*~ BEGIN
+    PATCH_IF (%kit_class% = 6) BEGIN
+      // Set New Paladin Abilities
+      PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+        INNER_ACTION BEGIN
+        // Add new abilities to all Paladin kits
+        COPY_EXISTING ~%kit_clab%.2DA~ override
+        PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Blackguard") BEGIN
+          REPLACE_TEXTUALLY ~GA_SPCL103~ ~AP_MOPALC2~ // Aura of Despair
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          PRETTY_PRINT_2DA
+        END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "Cavalier") BEGIN
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC4 END // Aura of Protection
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          PRETTY_PRINT_2DA
+        END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "MO_REAVER") BEGIN
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          PRETTY_PRINT_2DA
+        END ELSE PATCH_IF ("%kit_label%" STRING_EQUAL_CASE "MO_OATHBREAKER") BEGIN
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          PRETTY_PRINT_2DA
+        END ELSE BEGIN
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_MOPALC1 END // Aura of Courage
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 5 f_Increment = 5 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_MOPALC3 END // Smite
+          PRETTY_PRINT_2DA
+        END
+        BUT_ONLY
+        END
       END
     END
   END
   END
+  
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // Updates descriptions for Paladin                                      //
