@@ -182,10 +182,12 @@ INCLUDE ~skills-and-abilities/components/item_updates_monk.tpa~
 ///////////////////////////////////////////////////////////////////////////
 // Add New Monk Abilities                                                //
 ///////////////////////////////////////////////////////////////////////////
+/* Just use Artisan's Overhaul.
 BEGIN @70 DESIGNATED 70 GROUP @1 LABEL SkillsAndAbilitiesMonk2 
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
 
 INCLUDE ~skills-and-abilities/components/class_skills/monk_updates.tpa~
+*/
 
 /*
 ///////////////////////////////////////////////////////////////////////////
