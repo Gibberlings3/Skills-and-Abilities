@@ -58,6 +58,22 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
 BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
+// Update Items                                                          //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_SHORT 0x1c type
+
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    PATCH_IF (type = 3)  OR     // Belts and Girdles
+             (type = 4)  OR     // Boots
+             (type = 6)  OR     // Bracers and Gauntlets
+             (type = 32) BEGIN  // Cloaks
+      WRITE_BYTE 0x2f (THIS BAND 0b11111101)
+    END
+  END
+  BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
 // Update Kit Descriptions                                               //
 ///////////////////////////////////////////////////////////////////////////
 ACTION_FOR_EACH description IN 
