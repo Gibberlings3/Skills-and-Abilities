@@ -518,7 +518,7 @@ INCLUDE ~skills-and-abilities/components/proficiencies/proficiency_overhaul.tpa~
 
 BEGIN @312 DESIGNATED 312 SUBCOMPONENT @310 GROUP @3 LABEL SkillsAndAbilitiesNewProf2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-REQUIRE_PREDICATE !MOD_IS_INSTALLED ~dw_talents.tp2~ ~60100~ @3013
+REQUIRE_PREDICATE !MOD_IS_INSTALLED ~dw_talents.tp2~ ~20000~ @3013
 
 LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra~
 
@@ -530,7 +530,7 @@ INCLUDE ~skills-and-abilities/components/proficiencies/proficiency_overhaul.tpa~
 
 BEGIN @313 DESIGNATED 313 SUBCOMPONENT @310 GROUP @3 LABEL SkillsAndAbilitiesNewProf3
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @3000
-REQUIRE_PREDICATE !MOD_IS_INSTALLED ~dw_talents.tp2~ ~60100~ @3013
+REQUIRE_PREDICATE !MOD_IS_INSTALLED ~dw_talents.tp2~ ~20000~ @3013
 
 LOAD_TRA ~skills-and-abilities/languages/%LANGUAGE%/proficiency_descriptions.tra~
 
